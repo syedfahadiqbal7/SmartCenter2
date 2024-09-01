@@ -1,0 +1,2 @@
+2024-08-19T08:37:51.3981446+04:00 0HN6011VASN17:00000001 [INF] UploadFiles method called with UserId: 2 (8b46a149)
+2024-08-19T08:37:51.5294808+04:00 0HN6011VASN17:00000001 [INF] Files uploaded successfully for UserId: 2 (c2cd0574)

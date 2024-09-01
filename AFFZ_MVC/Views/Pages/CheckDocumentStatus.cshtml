@@ -1,0 +1,101 @@
+﻿@model AFFZ_Customer.Controllers.FileUploadViewModel
+
+@{
+    var paginatedSubCategories = ViewBag.SaveResponse as AFFZ_Customer.Controllers.FileUploadViewModel;
+    ViewData["Title"] = "UploadDocuments";
+}
+
+<div class="col-lg-9">
+  
+    <div class="table-responsive">
+        <table class="table mb-0 custom-table">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>File Name</th>
+                    <th>File Type</th>
+                    <th>File Size</th>
+                    <th>Download</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @if (paginatedSubCategories == null || paginatedSubCategories.UploadedFiles == null)
+                {
+                    <p><em>Loading Sub Categories...</em></p>
+                }
+                else
+                {
+
+                    string RFDFU = !string.IsNullOrEmpty(ViewContext.HttpContext.Request.Query["RFDFU"].ToString()) ? ViewContext.HttpContext.Request.Query["RFDFU"] : "";
+                    string MerchantID = !string.IsNullOrEmpty(ViewContext.HttpContext.Request.Query["MerchantID"].ToString()) ? ViewContext.HttpContext.Request.Query["MerchantID"] : "";
+
+                    @foreach (var file in paginatedSubCategories.UploadedFiles)
+                    {
+                        <tr>
+                            <td></td>
+                            <td>@file.FileName</td>
+                            <td class="text-body">@file.ContentType</td>
+                            <td class="text-body">@(file.FileSize / 1024) KB</td>
+                            <td class="text-body">
+                                <a asp-action="DownloadFile" asp-route-fileName="@file.FileName" asp-route-folderName="@file.FolderName" class="btn btn-sm badge-success">Download</a>
+                            </td>
+                            <td class="text-body">
+                                @if (file.Status == "Pending")
+                                {
+                                    <span class="badge badge-warning">Pending Review</span>
+                                }
+                                else if (file.Status == "Resend")
+                                {
+                                    <span class="badge badge-danger">Rejected</span>
+                                }
+                                else if (file.Status == "Verified")
+                                {
+                                    <span class="badge badge-success">Approved</span>
+                                }
+                            </td>
+                            <td>
+                                <a asp-action="DeleteDocument" class="btn btn-sm btn-danger eye-btn " asp-route-documentId="@file.UFID"><i class="ri-eye-line align-bottom me-1"></i>Delete</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Scripts -->
+<script src="assets/js/jquery-3.7.0.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/feather.min.js"></script>
+<script src="assets/plugins/select2/js/select2.min.js"></script>
+<script src="assets/js/moment.min.js"></script>
+<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+<script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var output = document.getElementById('imagePreview');
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+    $(document).ready(function () {
+        
+        $("form").submit(function () {
+            if ($("#fileUpload")[0].files.length === 0) {
+                $("#fileError").show();
+                return false;
+            }
+            $("#fileError").hide();
+            return true;
+        });
+    });
+</script>

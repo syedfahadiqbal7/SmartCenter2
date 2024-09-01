@@ -1,0 +1,77 @@
+﻿@{
+    var paginatedSubCategories = ViewBag.ResponseForDisCountFromMerchant as List<AFFZ_Customer.Controllers.RequestForDisCountToUserViewModel>;
+    ViewData["Title"] = "Index";
+}
+
+<div class="col-lg-9">
+    <!-- Wallet Transactions -->
+    <h6 class="user-title">Merchant Responses</h6>
+
+    <div class="table-responsive">
+        <table class="table mb-0 custom-table">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>Service Name</th>
+                    <th>Amount Before Discount</th>
+                    <th>Amount After Discount</th>
+                    <th>Response Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (paginatedSubCategories == null)
+                {
+                    <p><em>Loading Sub Categories...</em></p>
+                }
+                else
+                {
+
+                    @foreach (var data in paginatedSubCategories)
+                    {
+                        <tr>
+                            <td>@data.RFDFU</td>
+                            <td>@data.ServiceName</td>
+                            <td class="text-light-success">@data.ServicePrice</td>
+                            <td class="text-body">@data.FINALPRICE</td>
+                            <td class="text-body">@data.ResponseDateTime</td>
+                            <td>
+                                @if (data.IsMerchantSelected == 1)
+                                {
+                                    if (data.IsPaymentDone == 1)
+                                    {
+                                        <a asp-action="SendMessage" asp-controller="Message" asp-route-MerchantID="@data.MerchantID" class="btn btn-sm badge-success">Send Message</a>
+                                        <a asp-action="UploadDocuments" class="btn btn-sm badge-success" asp-route-RFDFU="@data.RFDFU" asp-route-UID="@data.UID" asp-route-MerchantID="@data.MerchantID">
+                                            Upload Documents
+                                        </a>
+                                        <a asp-action="CheckDocumentStatus" class="btn btn-sm badge-success" asp-route-RFDFU="@data.RFDFU" asp-route-UID="@data.UID" asp-route-MerchantID="@data.MerchantID">
+                                            Documents Approval Status
+                                        </a>
+                                        <a asp-action="DeSelectFinalMerchant" class="btn btn-sm badge-success" asp-route-RFDFU="@data.RFDFU" asp-route-UID="@data.UID" asp-route-MerchantID="@data.MerchantID">
+                                            Cancel Merchant
+                                        </a>
+
+                                    }
+                                    else
+                                    {
+                                        <a asp-action="Payment" class="btn btn-sm badge-success" asp-route-RFDFU="@data.RFDFU" asp-route-UID="@data.UID" asp-route-MerchantID="@data.MerchantID">
+                                            Payment Due
+                                        </a>
+                                    }
+                                }
+                                else
+                                {
+                                    <a asp-action="SelectFinalMerchant" class="btn btn-sm badge-success" asp-route-RFDFU="@data.RFDFU" asp-route-UID="@data.UID" asp-route-MerchantID="@data.MerchantID">
+                                        Select Merchant
+                                    </a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- /Wallet Transactions -->
+
+</div>

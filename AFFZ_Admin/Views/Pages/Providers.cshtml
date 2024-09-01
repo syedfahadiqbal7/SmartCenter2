@@ -1,0 +1,166 @@
+﻿@model List<ProviderUser>
+
+let selectedIndex;
+
+<div class="page-wrapper page-settings">
+    <div class="content">
+        <div class="content-page-header content-page-headersplit">
+            <h5>Customers</h5>
+            <div class="list-btn">
+                <ul>
+                    <li>
+                        <a class="btn-filters active" href="customers.html"><i class="fe fe-list"></i> </a>
+                    </li>
+                    <li>
+                        <a class="btn-filters" href="localization.html"><i class="fe fe-settings"></i> </a>
+                    </li>
+                    <li>
+                        <div class="filter-sorting">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);" class="filter-sets"><img src="assets/img/icons/filter1.svg" class="me-2" alt="img">Filter</a>
+                                </li>
+                                <li>
+                                    <span><img src="assets/img/icons/sort.svg" class="me-2" alt="img"></span>
+                                    <div class="review-sort">
+                                        <select class="select">
+                                            <option>A - Z</option>
+                                            <option>Z - A</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 ">
+                <div class="table-resposnive">
+                    <table class="table datatable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Provider Name</th>
+                                <th>Mobile</th>
+                                <th>Reg Date</th>
+                                <th>Address</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int index = 0;
+                            }
+                            @foreach(var item in Model)
+                            {
+                                <tr class="data-row" data-index="@index">
+                                    <td>@item.ProviderId</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.PhoneNumber</td>
+                                    <td>@item.CreatedDate.ToString("dd MMM yyyy")</td>
+                                    <td>@item.Address</td>
+                                    <td>
+                                        <div class="table-actions d-flex">
+                                            <button class="btn delete-table me-2" type="button" data-bs-toggle="modal" data-bs-target="#edit-customer">
+                                                <i class="fe fe-file"></i>
+                                            </button>
+                                            @* <button class="btn delete-table" type="button" data-bs-toggle="modal" data-bs-target="#delete-customer">
+                                                <i class="fe fe-trash-2"></i>
+                                            </button> *@
+                                        </div>
+                                    </td>
+                                </tr>
+                                index++;
+                            }
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Edit Customer -->
+<div class="modal fade" id="edit-customer">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="width:auto;">
+            <div class="modal-header">
+                <h5 class="modal-title">Documents</h5>
+                <button type="button" class="btn-close close-modal" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fe fe-x"></i>
+                </button>
+            </div>
+            <div class="modal-body pt-0">
+                <form>
+                   
+                    <div class="table-resposnive">
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Document</th>
+                                    <th>File Name</th>
+                                    <th>Download</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <span>Passport</span>
+                                    </td>
+                                    <td>
+                                        <a><span>Passport.pdf</span></a>
+                                    </td>
+                                    <td>
+                                        <div class="table-download">
+                                            <a href="@Url.Action("Download", "Providers", new { filePath = Model[0].Passport })">Download File</a>
+                                        </div>
+                                    </td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>
+                                        <span>Driving Licence</span>
+                                    </td>
+                                    <td>
+                                        <a><span> DrivingLicence.pdf</span></a>
+                                    </td>
+                                    <td>
+                                        <div class="table-download">
+                                            <a href="@Url.Action("Download", "Providers", new { filePath = Model[0].DrivingLicense })">Download File</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>
+                                        <span>Emirates Id</span>
+                                    </td>
+                                    <td>
+                                        <a><span>EmiratesId.pdf</span></a>
+                                    </td>
+                                    <td>
+                                        <div class="table-download">
+                                            <a href="@Url.Action("Download", "Providers", new { filePath = Model[0].EmiratesId })">Download File</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Edit Customer -->

@@ -1,0 +1,174 @@
+﻿@model AFFZ_Provider.Controllers.FileUploadViewModel
+
+@{
+    var paginatedSubCategories = ViewBag.SaveResponse as AFFZ_Provider.Controllers.FileUploadViewModel;
+    ViewData["Title"] = "ReViewDocuments";
+}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="provider-subtitle">
+                        <h6>User File List</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="provide-table manage-table">
+                    <!-- Display messages -->
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success">
+                            @TempData["SuccessMessage"]
+                        </div>
+                    }
+                    @if (TempData["FailMessage"] != null)
+                    {
+                        <div class="alert alert-danger">
+                            @TempData["FailMessage"]
+                        </div>
+                    }
+                    <div class="table-responsive">
+                        <table class="table custom-table datatable mb-0" id="data-table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>File Name</th>
+                                    <th>File Type</th>
+                                    <th>File Size</th>
+                                    <th>Download</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (paginatedSubCategories.UploadedFiles == null)
+                                {
+                                    <p><em>Loading Sub Categories...</em></p>
+                                }
+                                else
+                                {
+                                    @foreach (var file in paginatedSubCategories.UploadedFiles)
+                                    {
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <a href="javascript:void(0);" onclick="showImagePopup('@file.FileName', '@file.FolderName')">
+                                                    @file.FileName
+                                                </a>
+                                            </td>
+                                            <td>@file.ContentType</td>
+                                            <td>@file.FileSize</td>
+                                            <td>@file.Status</td>
+                                            <td>
+                                                @if (@file.Status != "Verified")
+                                                {
+                                                    <form asp-controller="MerchantResponseToUser" asp-action="VerifyDocument" method="post" style="display:inline;">
+                                                        <input type="hidden" name="documentId" value="@file.UFID" />
+                                                        <input type="hidden" name="userId" value="@ViewBag.UserId" />
+                                                        <button type="submit" class="btn btn-success">Verify</button>
+                                                    </form>
+                                                    <form asp-controller="MerchantResponseToUser" asp-action="ResendDocument" method="post" style="display:inline;">
+                                                        <input type="hidden" name="documentId" value="@file.UFID" />
+                                                        <input type="hidden" name="userId" value="@ViewBag.UserId" />
+                                                        <button type="submit" class="btn btn-warning">Resend</button>
+                                                    </form>
+                                                }
+                                                @if (@file.Status == "Verified")
+                                                {
+                                                    <a asp-action="DownloadFile" asp-route-fileName="@file.FileName" asp-route-folderName="@file.FolderName" class="btn btn-sm badge-success">Download</a>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div id="tablelength"></div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="table-ingopage">
+                            <div id="tableinfo"></div>
+                            <div id="tablepagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Image Modal -->
+<div class="modal fade custom-modal" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content doctor-profile">
+            <div class="modal-header border-bottom-0 justify-content-between">
+                <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
+                <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="feather-x"></i></button>
+            </div>
+            <div class="modal-body pt-0">
+                <img id="modalImage" src="" alt="Image" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Scripts -->
+<script src="~/assets/js/jquery-3.7.0.min.js"></script>
+<script src="~/assets/js/bootstrap.bundle.min.js"></script>
+<script src="~/assets/js/feather.min.js"></script>
+<script src="~/assets/plugins/select2/js/select2.min.js"></script>
+<script src="~/assets/js/moment.min.js"></script>
+<script src="~/assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="~/assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+<script src="~/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+<script src="~/assets/js/script.js"></script>
+<script>
+    function showImagePopup(fileName, folderName) {
+        // Construct the full image URL
+        //var imageUrl = '@Url.Content("~/uploads/")' + folderName + '/' + fileName;
+        var imageUrl = 'https://localhost:7195/uploads/' + folderName + '/' + fileName;
+
+        // Set the src attribute of the image in the modal
+        $('#modalImage').attr('src', imageUrl);
+
+        // Show the modal
+        $('#imageModal').modal('show');
+    }
+    $(document).ready(function () {
+        var responseMessage = @ViewBag.SaveResponse;
+        console.log(responseMessage);
+        if (responseMessage != "") {
+            // Show popup with the response message
+            alert(responseMessage);
+        }
+        $("#fileUpload").change(function () {
+            var fileInput = $(this)[0];
+            var files = fileInput.files;
+
+            var fileList = "";
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                fileList += file.name + "<br>";
+            }
+
+            $("#selectedFiles").html(fileList);
+        });
+
+        $("form").submit(function () {
+            if ($("#fileUpload")[0].files.length === 0) {
+                $("#fileError").show();
+                return false;
+            }
+            $("#fileError").hide();
+            return true;
+        });
+    });
+</script>

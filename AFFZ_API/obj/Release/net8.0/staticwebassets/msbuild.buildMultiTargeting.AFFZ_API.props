@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AFFZ_API.props" />
+</Project>

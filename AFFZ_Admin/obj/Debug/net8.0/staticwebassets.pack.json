@@ -1,0 +1,2969 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\css\\admin.css",
+      "PackagePath": "staticwebassets\\assets\\css\\admin.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\css\\admin.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\admin.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\css\\animate.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\animate.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\css\\bootstrap-datetimepicker.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap-datetimepicker.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\css\\ckeditor.css",
+      "PackagePath": "staticwebassets\\assets\\css\\ckeditor.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\css\\dataTables.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\dataTables.bootstrap4.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\css\\feather.css",
+      "PackagePath": "staticwebassets\\assets\\css\\feather.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\css\\select2.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\select2.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\fonts\\CircularStd-Black.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Black.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\fonts\\CircularStd-BlackItalic.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BlackItalic.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\fonts\\CircularStd-Bold.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Bold.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\fonts\\CircularStd-BoldItalic.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BoldItalic.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\fonts\\CircularStd-Book.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Book.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\fonts\\CircularStd-BookItalic.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-BookItalic.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\fonts\\CircularStd-Medium.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-Medium.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\fonts\\CircularStd-MediumItalic.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\CircularStd-MediumItalic.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\fonts\\Feather.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Feather.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\fonts\\Feather.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Feather.ttf"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\fonts\\Feather.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Feather.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\app.png",
+      "PackagePath": "staticwebassets\\assets\\img\\app.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\break.png",
+      "PackagePath": "staticwebassets\\assets\\img\\break.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\blog-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\blog-1.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\blog-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\blog-2.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\blog-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\blog-3.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\blog-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\blog-4.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\blog-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\blog-5.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\blog-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\blog-6.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\blog-detail.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\blog-detail.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\category-01.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\category-01.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\category-02.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\category-02.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\category-03.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\category-03.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\category-04.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\category-04.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\category-05.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\category-05.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\category-06.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\category-06.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\category-07.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\category-07.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\category-08.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\category-08.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\category\\category-09.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\category-09.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\chart-bar.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\chart-bar.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\2-factor.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\2-factor.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\bank-transfer.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\bank-transfer.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\checkout.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\checkout.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\cod.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\cod.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\facebook.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\facebook.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\flutterwave.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\flutterwave.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\google.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\google.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\mercoda.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\mercoda.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\midtrans.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\midtrans.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\nexmo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\nexmo.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\pay.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\pay.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\paypal.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\paypal.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\paystack.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\paystack.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\paytm.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\paytm.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\payu.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\payu.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\razorpay.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\razorpay.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\stripe.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\stripe.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\company\\twilio.png",
+      "PackagePath": "staticwebassets\\assets\\img\\company\\twilio.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\customer\\image 4.png",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\image 4.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\customer\\user-01.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\user-01.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\customer\\user-02.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\user-02.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\customer\\user-03.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\user-03.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\customer\\user-04.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\user-04.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\customer\\user-05.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\user-05.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\customer\\user-06.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\user-06.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\customer\\user-07.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\user-07.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\customer\\user-08.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\user-08.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\customer\\user-09.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\user-09.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\customer\\user-10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\user-10.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\favicon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\favicon.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ad.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ad.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ae.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ae.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ae1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ae1.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\af.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\af.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ag.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ag.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ai.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ai.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\al.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\al.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\am.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\am.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ao.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ao.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ar.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ar.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\as.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\as.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\at.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\at.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\au.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\au.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\aw.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\aw.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ax.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ax.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\az.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\az.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ba.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ba.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bb.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bb.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bd.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bd.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\be.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\be.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bf.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bf.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bg.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bh.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bi.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bi.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bj.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bj.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bl.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bl.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bm.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bm.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bn.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bn.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bo.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bq.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bq.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\br.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\br.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bs.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bs.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bt.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bt.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bv.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bv.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bw.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bw.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\by.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\by.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\bz.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\bz.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ca.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ca.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cc.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cc.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cd.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cd.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cf.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cf.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cg.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ch.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ch.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ci.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ci.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ck.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ck.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cl.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cl.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cm.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cm.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cn.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cn.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\co.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\co.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cr.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cr.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cu.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cu.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cv.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cv.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cw.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cw.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cx.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cx.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cy.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cy.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\cz.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\cz.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\de.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\de.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\dj.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\dj.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\dk.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\dk.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\dm.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\dm.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\do.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\do.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\dz.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\dz.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ec.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ec.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ee.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ee.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\eg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\eg.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\er.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\er.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\es.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\es.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\et.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\et.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\fi.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\fi.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\fj.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\fj.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\fk.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\fk.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\fm.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\fm.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\fo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\fo.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\fr.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\fr.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ga.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ga.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gb.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gb.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gd.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gd.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ge.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ge.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gf.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gf.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gg.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gh.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gi.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gi.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gl.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gl.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gm.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gm.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gn.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gn.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gp.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gp.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gq.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gq.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gr.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gr.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gs.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gs.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gt.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gt.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gu.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gu.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gw.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gw.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\gy.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\gy.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\hk.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\hk.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\hn.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\hn.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\hr.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\hr.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ht.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ht.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\hu.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\hu.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\id.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\id.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ie.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ie.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\il.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\il.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\im.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\im.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\in.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\in.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\io.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\io.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\iq.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\iq.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ir.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ir.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\is.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\is.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\it.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\it.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\je.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\je.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\jm.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\jm.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\jo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\jo.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\jp.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\jp.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ke.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ke.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\kg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\kg.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\kh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\kh.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ki.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ki.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\km.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\km.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\kn.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\kn.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\kp.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\kp.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\kr.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\kr.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\kw.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\kw.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ky.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ky.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\kz.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\kz.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\la.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\la.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\lb.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\lb.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\lc.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\lc.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\li.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\li.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\lk.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\lk.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\lr.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\lr.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ls.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ls.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\lt.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\lt.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\lu.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\lu.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\lv.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\lv.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ly.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ly.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ma.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ma.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mc.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mc.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\md.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\md.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\me.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\me.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mg.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mh.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mk.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mk.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ml.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ml.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mm.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mm.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mn.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mn.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mo.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mp.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mp.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mq.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mq.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mr.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mr.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ms.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ms.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mt.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mt.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mu.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mu.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mv.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mv.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mw.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mw.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mx.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mx.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\my.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\my.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\mz.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\mz.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\na.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\na.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\nc.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\nc.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ne.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ne.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\nf.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\nf.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ng.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ng.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ni.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ni.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\nl.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\nl.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\no.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\no.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\np.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\np.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\nr.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\nr.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\nu.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\nu.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\nz.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\nz.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\om.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\om.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\pa.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\pa.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\pe.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\pe.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\pf.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\pf.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\pg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\pg.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ph.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ph.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\pk.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\pk.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\pl.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\pl.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\pm.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\pm.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\pn.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\pn.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\pr.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\pr.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ps.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ps.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\pt.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\pt.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\pw.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\pw.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\py.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\py.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\qa.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\qa.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\re.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\re.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ro.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ro.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\rs.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\rs.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ru.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ru.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\rw.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\rw.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sa.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sa.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sb.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sb.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sc.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sc.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sd.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sd.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\se.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\se.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sg.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sh.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\si.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\si.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sk.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sk.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sl.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sl.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sm.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sm.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sn.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sn.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\so.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\so.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sr.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sr.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ss.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ss.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\st.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\st.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sv.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sv.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sx.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sx.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sy.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sy.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\sz.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\sz.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\tc.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\tc.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\td.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\td.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\tf.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\tf.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\tg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\tg.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\th.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\th.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\tj.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\tj.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\tk.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\tk.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\tl.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\tl.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\tm.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\tm.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\tn.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\tn.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\to.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\to.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\tr.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\tr.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\tt.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\tt.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\tv.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\tv.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\tw.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\tw.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\tz.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\tz.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ua.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ua.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ug.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ug.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\um.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\um.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\us.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\us.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\us1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\us1.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\uy.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\uy.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\uz.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\uz.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\va.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\va.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\vc.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\vc.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ve.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ve.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\vg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\vg.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\vi.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\vi.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\vn.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\vn.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\vu.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\vu.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\wf.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\wf.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ws.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ws.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\ye.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\ye.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\yt.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\yt.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\za.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\za.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\zm.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\zm.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\flags\\zw.png",
+      "PackagePath": "staticwebassets\\assets\\img\\flags\\zw.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\gallery\\gallery-01.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\gallery-01.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\gallery\\gallery-02.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\gallery-02.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\gallery\\gallery-03.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\gallery-03.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\gallery\\gallery-big-01.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\gallery-big-01.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\gallery\\gallery-big-02.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\gallery-big-02.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\gallery\\gallery-big-03.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\gallery-big-03.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\googlepay.png",
+      "PackagePath": "staticwebassets\\assets\\img\\googlepay.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\graph\\graph1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\graph\\graph1.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\graph\\graph2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\graph\\graph2.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\graph\\graph3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\graph\\graph3.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\graph\\graph4.png",
+      "PackagePath": "staticwebassets\\assets\\img\\graph\\graph4.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\angry.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\angry.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\anguish.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\anguish.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\arrow-right.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\arrow-right.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\arrow-up.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\arrow-up.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\bx-error.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\bx-error.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\calendar-alt.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\calendar-alt.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\calendar.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\calendar.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\check-icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\check-icon.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\clock.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\clock.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\close-icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\close-icon.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\delete.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\delete.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\edit.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\edit.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\email.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\email.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\excel-icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\excel-icon.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\eye-icon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\eye-icon.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\eye.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\eye.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\filter.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\filter.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\filter1.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\filter1.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\filter2.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\filter2.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\gallery.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\gallery.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\global.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\global.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\gmail.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\gmail.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\google.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\google.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\info.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\info.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\invoices-icon1.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\invoices-icon1.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\invoices-icon2.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\invoices-icon2.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\invoices-icon3.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\invoices-icon3.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\invoices-icon4.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\invoices-icon4.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\invoices-icon5.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\invoices-icon5.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\lanuage.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\lanuage.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\lanuage1.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\lanuage1.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\lock.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\lock.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\mobile.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\mobile.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\money.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\money.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\monitor.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\monitor.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\pdf-icon.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\pdf-icon.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\pdf.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\pdf.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\reply-icon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\reply-icon.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\scan.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\scan.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-01.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-01.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-02.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-02.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-03.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-03.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-04.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-04.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-05.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-05.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-06.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-06.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-07.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-07.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-08.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-08.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-09.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-09.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-10.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-10.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-11.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-11.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-12.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-12.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-13.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-13.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service-icon-14.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service-icon-14.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\service.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\service.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\smile.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\smile.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\smily.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\smily.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\sms.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\sms.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\sort.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\sort.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\trash-alt.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\trash-alt.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\upload.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\upload.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\user-circle.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\user-circle.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\user-edit.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\user-edit.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\icons\\user.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\user.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\img1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\img1.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\img2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\img2.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\img3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\img3.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\invoice-circle1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\invoice-circle1.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\invoice-circle2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\invoice-circle2.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\invoice.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\invoice.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\login-banner.png",
+      "PackagePath": "staticwebassets\\assets\\img\\login-banner.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\logo-icon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-icon.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\logo-login.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-login.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\logo-small.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-small.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\logo-small.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-small.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\logo.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\logo1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo1.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\logo2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo2.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\man.png",
+      "PackagePath": "staticwebassets\\assets\\img\\man.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\nav1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\nav1.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\nav2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\nav2.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-01.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-01.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-02.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-02.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-03.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-03.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-04.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-04.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-05.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-05.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-06.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-06.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-07.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-07.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-08.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-08.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-09.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-09.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-10.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-11.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-12.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-13.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-13.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-14.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-14.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-15.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-15.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-16.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-16.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-17.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-17.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-18.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-18.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-19.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-19.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\profiles\\avatar-20.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\profiles\\avatar-20.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\provider\\provider-01.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\provider\\provider-01.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\provider\\provider-02.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\provider\\provider-02.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\provider\\provider-03.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\provider\\provider-03.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\provider\\provider-04.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\provider\\provider-04.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\provider\\provider-05.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\provider\\provider-05.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\provider\\provider-06.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\provider\\provider-06.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\provider\\provider-07.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\provider\\provider-07.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\provider\\provider-08.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\provider\\provider-08.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\provider\\provider-09.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\provider\\provider-09.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\provider\\provider-10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\provider\\provider-10.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\service-ban-01.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\service-ban-01.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-01.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-01.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-02.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-02.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-03.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-03.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-04.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-04.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-05.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-05.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-06.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-06.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-07.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-07.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-08.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-08.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-09.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-09.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-10.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-11.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-12.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-13.png",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-13.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-14.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-14.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-15.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-15.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\services\\service-16.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\services\\service-16.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\signature.png",
+      "PackagePath": "staticwebassets\\assets\\img\\signature.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\sub-category\\sub-category-01.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub-category\\sub-category-01.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\sub-category\\sub-category-02.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub-category\\sub-category-02.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\sub-category\\sub-category-03.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub-category\\sub-category-03.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\sub-category\\sub-category-04.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub-category\\sub-category-04.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\sub-category\\sub-category-05.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub-category\\sub-category-05.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\sub-category\\sub-category-06.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub-category\\sub-category-06.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\sub-category\\sub-category-07.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub-category\\sub-category-07.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\sub-category\\sub-category-08.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub-category\\sub-category-08.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\sub-category\\sub-category-09.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub-category\\sub-category-09.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\sub-category\\sub-category-10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\sub-category\\sub-category-10.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\user.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\user.jpg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\img\\user1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\user1.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\admin.js",
+      "PackagePath": "staticwebassets\\assets\\js\\admin.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\bootstrap-datetimepicker.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap-datetimepicker.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\ckeditor.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ckeditor.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\dataTables.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\dataTables.bootstrap4.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\feather.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\feather.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\feather.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\feather.min.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\jquery-3.7.0.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery-3.7.0.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\jquery-3.7.0.min.map",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery-3.7.0.min.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery-ui.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\jvectormap.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jvectormap.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\moment.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\moment.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\moment.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\moment.min.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\select2.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\select2.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\simplebar.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\simplebar.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\js\\validation.js",
+      "PackagePath": "staticwebassets\\assets\\js\\validation.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\apexchart\\apexcharts.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\apexchart\\apexcharts.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\apexchart\\chart-data.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\apexchart\\chart-data.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap-tagsinput\\css\\bootstrap-tagsinput.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap-tagsinput\\css\\bootstrap-tagsinput.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap-tagsinput\\js\\bootstrap-tagsinput.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap-tagsinput\\js\\bootstrap-tagsinput.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap-datetimepicker.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap-datetimepicker.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\datatables\\datatables.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\datatables\\datatables.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\datatables\\datatables.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\datatables\\datatables.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\datatables\\datatables.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\datatables\\datatables.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\datatables\\datatables.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\datatables\\datatables.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\datatables\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\datatables\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\feather\\feather.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\feather\\feather.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\feather\\fonts\\feather-webfont.woff",
+      "PackagePath": "staticwebassets\\assets\\plugins\\feather\\fonts\\feather-webfont.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\all.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\all.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\all.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\brands.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\brands.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\brands.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\brands.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\fontawesome.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\fontawesome.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\regular.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\regular.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\regular.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\regular.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\solid.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\solid.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\solid.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\solid.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\svg-with-js.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\svg-with-js.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\svg-with-js.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\svg-with-js.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\v4-font-face.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\v4-font-face.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\v4-font-face.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\v4-font-face.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\v4-shims.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\v4-shims.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\v4-shims.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\v4-shims.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\v5-font-face.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\v5-font-face.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\css\\v5-font-face.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\css\\v5-font-face.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\all.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\all.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\all.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\all.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\brands.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\brands.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\brands.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\brands.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\conflict-detection.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\conflict-detection.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\conflict-detection.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\conflict-detection.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\fontawesome.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\fontawesome.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\fontawesome.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\fontawesome.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\regular.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\regular.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\regular.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\regular.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\solid.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\solid.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\solid.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\solid.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\v4-shims.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\v4-shims.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\js\\v4-shims.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\js\\v4-shims.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-brands-400-1.eot",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-brands-400-1.eot"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-regular-400-1.eot",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-regular-400-1.eot"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-solid-900-1.eot",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-solid-900-1.eot"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-v4compatibility.ttf",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-v4compatibility.ttf"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fontawesome\\webfonts\\fa-v4compatibility.woff2",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fontawesome\\webfonts\\fa-v4compatibility.woff2"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fullcalendar\\fullcalendar.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fullcalendar\\fullcalendar.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fullcalendar\\fullcalendar.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fullcalendar\\fullcalendar.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\fullcalendar\\jquery.fullcalendar.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\fullcalendar\\jquery.fullcalendar.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\icons\\feather\\feather.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\icons\\feather\\feather.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\icons\\feather\\fonts\\feather-webfont.woff",
+      "PackagePath": "staticwebassets\\assets\\plugins\\icons\\feather\\fonts\\feather-webfont.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\intltelinput\\css\\demo.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\intltelinput\\css\\demo.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\intltelinput\\css\\intlTelInput.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\intltelinput\\css\\intlTelInput.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\intltelinput\\css\\intlTelInput.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\intltelinput\\css\\intlTelInput.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\intltelinput\\img\\flags.png",
+      "PackagePath": "staticwebassets\\assets\\plugins\\intltelinput\\img\\flags.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\intltelinput\\img\\flags@2x.png",
+      "PackagePath": "staticwebassets\\assets\\plugins\\intltelinput\\img\\flags@2x.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\intltelinput\\js\\data.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\intltelinput\\js\\data.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\intltelinput\\js\\data.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\intltelinput\\js\\data.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\intltelinput\\js\\intlTelInput-jquery.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\intltelinput\\js\\intlTelInput-jquery.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\intltelinput\\js\\intlTelInput-jquery.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\intltelinput\\js\\intlTelInput-jquery.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\intltelinput\\js\\intlTelInput.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\intltelinput\\js\\intlTelInput.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\intltelinput\\js\\intlTelInput.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\intltelinput\\js\\intlTelInput.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\intltelinput\\js\\utils.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\intltelinput\\js\\utils.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-in-mill.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-in-mill.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-ru-mill.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-ru-mill.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-uk_countries-mill.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-uk_countries-mill.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-us-aea.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-us-aea.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-world-mill.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-world-mill.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\moment\\moment.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\moment\\moment.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\moment\\moment.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\moment\\moment.min.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\owlcarousel\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\assets\\plugins\\owlcarousel\\ajax-loader.gif"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\owlcarousel\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\owlcarousel\\owl.carousel.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\owlcarousel\\owl.carousel.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\owlcarousel\\owl.carousel.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\owlcarousel\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\owlcarousel\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\owlcarousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\owlcarousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\owlcarousel\\owl.theme.default.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\owlcarousel\\owl.theme.default.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\owlcarousel\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\owlcarousel\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\owlcarousel\\owl.theme.green.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\owlcarousel\\owl.theme.green.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\owlcarousel\\owl.theme.green.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\owlcarousel\\owl.theme.green.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\owlcarousel\\owl.video.play.png",
+      "PackagePath": "staticwebassets\\assets\\plugins\\owlcarousel\\owl.video.play.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\select2\\css\\select2.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\css\\select2.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\select2\\css\\select2.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\css\\select2.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\select2\\js\\select2.full.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\select2.full.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\select2\\js\\select2.full.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\select2.full.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\select2\\js\\select2.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\select2.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\select2\\js\\select2.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\select2\\js\\select2.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\slimscroll\\jquery.slimscroll.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\slimscroll\\jquery.slimscroll.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\slimscroll\\jquery.slimscroll.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\slimscroll\\jquery.slimscroll.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\font\\summernote.eot",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\font\\summernote.eot"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\font\\summernote.ttf",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\font\\summernote.ttf"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\font\\summernote.woff",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\font\\summernote.woff"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-ar-AR.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-ar-AR.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-bg-BG.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-bg-BG.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-ca-ES.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-ca-ES.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-cs-CZ.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-cs-CZ.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-da-DK.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-da-DK.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-de-DE.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-de-DE.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-el-GR.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-el-GR.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-es-ES.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-es-ES.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-es-EU.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-es-EU.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-fa-IR.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-fa-IR.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-fi-FI.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-fi-FI.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-fr-FR.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-fr-FR.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-gl-ES.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-gl-ES.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-he-IL.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-he-IL.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-hr-HR.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-hr-HR.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-hu-HU.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-hu-HU.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-id-ID.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-id-ID.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-it-IT.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-it-IT.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-ja-JP.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-ja-JP.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-ko-KR.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-ko-KR.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-lt-LT.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-lt-LT.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-lt-LV.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-lt-LV.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-mn-MN.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-mn-MN.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-nb-NO.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-nb-NO.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-nl-NL.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-nl-NL.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-pl-PL.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-pl-PL.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-pt-BR.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-pt-BR.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-pt-PT.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-pt-PT.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-ro-RO.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-ro-RO.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-ru-RU.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-ru-RU.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-sk-SK.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-sk-SK.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-sl-SI.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-sl-SI.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-sr-RS-Latin.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-sr-RS-Latin.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-sr-RS.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-sr-RS.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-sv-SE.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-sv-SE.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-ta-IN.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-ta-IN.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-th-TH.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-th-TH.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-tr-TR.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-tr-TR.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-uk-UA.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-uk-UA.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-uz-UZ.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-uz-UZ.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-vi-VN.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-vi-VN.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-zh-CN.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-zh-CN.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\lang\\summernote-zh-TW.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\lang\\summernote-zh-TW.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\plugin\\databasic\\summernote-ext-databasic.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\plugin\\databasic\\summernote-ext-databasic.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\plugin\\databasic\\summernote-ext-databasic.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\plugin\\databasic\\summernote-ext-databasic.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\plugin\\hello\\summernote-ext-hello.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\plugin\\hello\\summernote-ext-hello.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\plugin\\specialchars\\summernote-ext-specialchars.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\plugin\\specialchars\\summernote-ext-specialchars.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\summernote-bs4.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\summernote-bs4.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\summernote-bs4.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\summernote-bs4.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\summernote-bs4.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\summernote-bs4.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\summernote-lite.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\summernote-lite.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\summernote-lite.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\summernote-lite.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\summernote-lite.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\summernote-lite.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\summernote.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\summernote.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\summernote.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\summernote.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\summernote\\dist\\summernote.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\summernote\\dist\\summernote.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\sweetalert\\sweetalert2.all.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\sweetalert\\sweetalert2.all.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\sweetalert\\sweetalerts.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\sweetalert\\sweetalerts.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\theia-sticky-sidebar\\ResizeSensor.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\theia-sticky-sidebar\\ResizeSensor.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\theia-sticky-sidebar\\ResizeSensor.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\theia-sticky-sidebar\\ResizeSensor.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\theia-sticky-sidebar\\maps\\ResizeSensor.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\theia-sticky-sidebar\\maps\\ResizeSensor.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\theia-sticky-sidebar\\maps\\ResizeSensor.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\theia-sticky-sidebar\\maps\\ResizeSensor.min.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\theia-sticky-sidebar\\maps\\theia-sticky-sidebar.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\theia-sticky-sidebar\\maps\\theia-sticky-sidebar.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\theia-sticky-sidebar\\maps\\theia-sticky-sidebar.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\theia-sticky-sidebar\\maps\\theia-sticky-sidebar.min.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\theia-sticky-sidebar\\theia-sticky-sidebar.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\theia-sticky-sidebar\\theia-sticky-sidebar.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\assets\\plugins\\theia-sticky-sidebar\\theia-sticky-sidebar.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\theia-sticky-sidebar\\theia-sticky-sidebar.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AFFZ_Admin.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.AFFZ_Admin.props",
+      "PackagePath": "build\\AFFZ_Admin.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.AFFZ_Admin.props",
+      "PackagePath": "buildMultiTargeting\\AFFZ_Admin.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.AFFZ_Admin.props",
+      "PackagePath": "buildTransitive\\AFFZ_Admin.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

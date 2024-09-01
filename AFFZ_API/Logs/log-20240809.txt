@@ -1,0 +1,222 @@
+2024-08-09T08:58:10.8421766+04:00 0HN5O5VCODCAB:00000003 [INF] Generated SQL: DECLARE @__userId_0 int = 2;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__userId_0 OR [c].[ReceiverID] = @__userId_0 (e9155f7c)
+2024-08-09T08:58:10.8976792+04:00 0HN5O5VCODCAB:00000003 [WRN] No Messages found (bcd8fac9)
+2024-08-09T09:04:26.7874090+04:00 0HN5O628N4UE5:00000006 [ERR] An error occurred while saving the message. (22f72637)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ChatMessage_CreatedBy". The conflict occurred in database "Click2", table "dbo.Users", column 'UserID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:d068d5eb-5c09-469a-ba92-b311ac1597f5
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.MessageController.SendMessage(ChatterMessage message) in D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\Controllers\MessageController.cs:line 95
+2024-08-09T09:09:11.3717270+04:00 0HN5O659RPDKD:00000007 [INF] Generated SQL: DECLARE @__userId_0 int = 2;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__userId_0 OR [c].[ReceiverID] = @__userId_0 (e9155f7c)
+2024-08-09T09:09:11.4006444+04:00 0HN5O659RPDKD:00000007 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T09:09:28.6007898+04:00 0HN5O659RPDKD:00000009 [INF] Generated SQL: DECLARE @__userId_0 int = 2;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__userId_0 OR [c].[ReceiverID] = @__userId_0 (e9155f7c)
+2024-08-09T09:09:28.6091939+04:00 0HN5O659RPDKD:00000009 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T09:20:44.8227699+04:00 0HN5O6C0JPI6M:00000002 [INF] Generated SQL: DECLARE @__merchantId_0 int = 3;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__merchantId_0 OR [c].[ReceiverID] = @__merchantId_0 (a4a74139)
+2024-08-09T09:20:44.9031831+04:00 0HN5O6C0JPI6M:00000002 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T09:23:39.1412374+04:00 0HN5O6C0JPI6N:00000001 [INF] Generated SQL: DECLARE @__merchantId_0 int = 3;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__merchantId_0 OR [c].[ReceiverID] = @__merchantId_0 (a4a74139)
+2024-08-09T09:23:39.1465419+04:00 0HN5O6C0JPI6N:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T09:25:54.5630441+04:00 0HN5O6C0JPI6O:00000001 [INF] Generated SQL: DECLARE @__merchantId_0 int = 3;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__merchantId_0 OR [c].[ReceiverID] = @__merchantId_0 (a4a74139)
+2024-08-09T09:25:54.5683090+04:00 0HN5O6C0JPI6O:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T09:29:22.3559077+04:00 0HN5O6C0JPI6P:00000001 [INF] Generated SQL: DECLARE @__merchantId_0 int = 3;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__merchantId_0 OR [c].[ReceiverID] = @__merchantId_0 (a4a74139)
+2024-08-09T09:29:22.3602132+04:00 0HN5O6C0JPI6P:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T09:30:03.6639714+04:00 0HN5O6C0JPI6P:00000002 [INF] Generated SQL: DECLARE @__merchantId_0 int = 3;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__merchantId_0 OR [c].[ReceiverID] = @__merchantId_0 (a4a74139)
+2024-08-09T09:30:03.6704131+04:00 0HN5O6C0JPI6P:00000002 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T09:31:50.8440981+04:00 0HN5O6C0JPI6Q:00000001 [INF] Generated SQL: DECLARE @__merchantId_0 int = 3;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__merchantId_0 OR [c].[ReceiverID] = @__merchantId_0 (a4a74139)
+2024-08-09T09:31:50.8507765+04:00 0HN5O6C0JPI6Q:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T11:49:22.3294284+04:00 0HN5O8KHCU7UD:00000002 [INF] Generated SQL: DECLARE @__merchantId_0 int = 3;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__merchantId_0 OR [c].[ReceiverID] = @__merchantId_0 (a4a74139)
+2024-08-09T11:49:22.4175943+04:00 0HN5O8KHCU7UD:00000002 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T11:52:43.0032180+04:00 0HN5O90TM0VJC:00000002 [INF] Generated SQL: DECLARE @__merchantId_0 int = 3;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__merchantId_0 OR [c].[ReceiverID] = @__merchantId_0 (a4a74139)
+2024-08-09T11:52:43.1472320+04:00 0HN5O90TM0VJC:00000002 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T11:54:50.9633070+04:00 0HN5O90TM0VJD:00000002 [INF] Generated SQL: DECLARE @__merchantId_0 int = 3;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__merchantId_0 OR [c].[ReceiverID] = @__merchantId_0 (a4a74139)
+2024-08-09T11:54:50.9719069+04:00 0HN5O90TM0VJD:00000002 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T11:55:04.6654410+04:00 0HN5O90TM0VJE:00000003 [INF] Generated SQL: DECLARE @__userId_0 int = 2;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__userId_0 OR [c].[ReceiverID] = @__userId_0 (e9155f7c)
+2024-08-09T11:55:04.6768115+04:00 0HN5O90TM0VJE:00000003 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T11:57:30.1598778+04:00 0HN5O90TM0VJG:00000001 [INF] Generated SQL: DECLARE @__userId_0 int = 2;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__userId_0 OR [c].[ReceiverID] = @__userId_0 (e9155f7c)
+2024-08-09T11:57:30.1678470+04:00 0HN5O90TM0VJG:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T15:20:19.0124137+04:00 0HN5OCKUMUP7V:00000003 [INF] Generated SQL: DECLARE @__userId_0 int = 2;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__userId_0 OR [c].[ReceiverID] = @__userId_0 (e9155f7c)
+2024-08-09T15:20:19.1027858+04:00 0HN5OCKUMUP7V:00000003 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T15:21:13.9654815+04:00 0HN5OCKUMUP7V:00000004 [INF] Generated SQL: DECLARE @__userId_0 int = 2;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__userId_0 OR [c].[ReceiverID] = @__userId_0 (e9155f7c)
+2024-08-09T15:21:13.9714929+04:00 0HN5OCKUMUP7V:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:09:06.3726295+04:00 0HN5ODG66373U:00000003 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:09:06.5835965+04:00 0HN5ODG66373U:00000004 [WRN] No Messages found (bcd8fac9)
+2024-08-09T16:11:07.7894833+04:00 0HN5ODG66373V:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:11:07.8124697+04:00 0HN5ODG66373V:00000002 [WRN] No Messages found (bcd8fac9)
+2024-08-09T16:11:14.6219584+04:00 0HN5ODG66373V:00000003 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:11:14.6426576+04:00 0HN5ODG66373V:00000004 [WRN] No Messages found (bcd8fac9)
+2024-08-09T16:11:21.8427643+04:00 0HN5ODG66373V:00000006 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:11:21.8791961+04:00 0HN5ODG66373V:00000007 [WRN] No Messages found (bcd8fac9)
+2024-08-09T16:11:38.8425497+04:00 0HN5ODG66373V:00000008 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:12:32.5309122+04:00 0HN5ODG66373V:00000009 [WRN] No Messages found (bcd8fac9)
+2024-08-09T16:13:46.6874970+04:00 0HN5ODG663740:00000002 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:13:48.3130070+04:00 0HN5ODG663740:00000003 [WRN] No Messages found (bcd8fac9)
+2024-08-09T16:18:01.3251720+04:00 0HN5ODG663741:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:18:01.3475885+04:00 0HN5ODG663741:00000002 [WRN] No Messages found (bcd8fac9)
+2024-08-09T16:19:01.0648455+04:00 0HN5ODG663741:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:19:01.0890170+04:00 0HN5ODG663741:00000005 [WRN] No Messages found (bcd8fac9)
+2024-08-09T16:20:21.9204731+04:00 0HN5ODG663742:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:20:21.9501945+04:00 0HN5ODG663742:00000002 [WRN] No Messages found (bcd8fac9)
+2024-08-09T16:20:43.6861642+04:00 0HN5ODG663742:00000003 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:21:00.3185442+04:00 0HN5ODG663742:00000004 [WRN] No Messages found (bcd8fac9)
+2024-08-09T16:22:37.4895137+04:00 0HN5ODNP3KCDD:00000003 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:22:37.7298135+04:00 0HN5ODNP3KCDD:00000004 [WRN] No Messages found (bcd8fac9)
+2024-08-09T16:26:00.2230656+04:00 0HN5ODNP3KCDE:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:26:00.2488014+04:00 0HN5ODNP3KCDE:00000002 [WRN] No Messages found (bcd8fac9)
+2024-08-09T16:39:56.6820986+04:00 0HN5ODNP3KCDF:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T16:39:56.7259711+04:00 0HN5ODNP3KCDF:00000002 [WRN] No Messages found (bcd8fac9)
+2024-08-09T17:02:33.2989288+04:00 0HN5ODNP3KCDG:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:02:33.3290059+04:00 0HN5ODNP3KCDG:00000002 [WRN] No Messages found (bcd8fac9)
+2024-08-09T17:03:00.4982593+04:00 0HN5ODNP3KCDG:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:03:00.5195527+04:00 0HN5ODNP3KCDG:00000005 [WRN] No Messages found (bcd8fac9)
+2024-08-09T17:03:18.5565684+04:00 0HN5ODNP3KCDG:00000007 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:03:20.1777626+04:00 0HN5ODNP3KCDG:00000008 [WRN] No Messages found (bcd8fac9)
+2024-08-09T17:06:04.4221878+04:00 0HN5OEFUFTRCA:00000003 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:07:37.9758132+04:00 0HN5OEFUFTRCA:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:07:42.8414407+04:00 0HN5OEFUFTRCA:00000006 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:07:44.9603539+04:00 0HN5OEFUFTRCA:00000007 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:12:54.9804442+04:00 0HN5OEJR4EDAK:00000003 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:13:04.4958009+04:00 0HN5OEJR4EDAK:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:14:03.4677178+04:00 0HN5OEJR4EDAK:00000006 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:14:16.2842501+04:00 0HN5OEJR4EDAK:00000007 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:14:21.9613626+04:00 0HN5OEJR4EDAK:00000009 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:14:21.9784479+04:00 0HN5OEJR4EDAK:0000000A [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:15:35.1478215+04:00 0HN5OEJR4EDAL:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:15:35.1756391+04:00 0HN5OEJR4EDAL:00000002 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:52:47.3191162+04:00 0HN5OFA4EEFML:00000003 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:52:47.5898134+04:00 0HN5OFA4EEFML:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:55:02.1562707+04:00 0HN5OFA4EEFMM:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T17:55:02.1852923+04:00 0HN5OFA4EEFMM:00000002 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:15:33.0034677+04:00 0HN5OFMRAEMPK:00000003 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:15:33.2244734+04:00 0HN5OFMRAEMPK:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:16:21.8505389+04:00 0HN5OFMRAEMPK:00000006 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:16:21.8700892+04:00 0HN5OFMRAEMPK:00000007 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:17:15.5337006+04:00 0HN5OFMRAEMPK:00000009 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:17:15.5610447+04:00 0HN5OFMRAEMPK:0000000A [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:17:15.6593861+04:00 0HN5OFMRAEMPK:0000000C [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:17:15.6793808+04:00 0HN5OFMRAEMPK:0000000D [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:17:18.0792016+04:00 0HN5OFMRAEMPK:0000000F [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:17:18.1271199+04:00 0HN5OFMRAEMPK:00000010 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:19:27.5654553+04:00 0HN5OFP0A1P0T:00000003 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:19:27.7934351+04:00 0HN5OFP0A1P0T:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:20:41.2215783+04:00 0HN5OFPNGAC30:00000003 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:20:41.4774290+04:00 0HN5OFPNGAC30:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:21:45.1762235+04:00 0HN5OFPNGAC30:00000006 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:21:45.1958491+04:00 0HN5OFPNGAC30:00000007 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:22:36.8994395+04:00 0HN5OFPNGAC31:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:22:36.9321856+04:00 0HN5OFPNGAC31:00000002 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:22:54.2165795+04:00 0HN5OFPNGAC31:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:22:54.2450597+04:00 0HN5OFPNGAC31:00000005 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:23:01.5213027+04:00 0HN5OFPNGAC31:00000007 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:23:01.5588759+04:00 0HN5OFPNGAC31:00000008 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:23:25.9142883+04:00 0HN5OFPNGAC31:0000000A [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:23:25.9440099+04:00 0HN5OFPNGAC31:0000000B [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:24:57.8317899+04:00 0HN5OFPNGAC32:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:24:57.8524589+04:00 0HN5OFPNGAC32:00000002 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:25:36.0298640+04:00 0HN5OFPNGAC32:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:25:36.0587210+04:00 0HN5OFPNGAC32:00000005 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:25:43.1703615+04:00 0HN5OFPNGAC32:00000007 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:25:43.1952457+04:00 0HN5OFPNGAC32:00000008 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:26:37.7674649+04:00 0HN5OFPNGAC32:0000000A [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:26:37.7926321+04:00 0HN5OFPNGAC32:0000000B [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:27:55.6628728+04:00 0HN5OFPNGAC33:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:27:55.6880334+04:00 0HN5OFPNGAC33:00000002 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:28:26.7426717+04:00 0HN5OFPNGAC33:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:28:26.7764186+04:00 0HN5OFPNGAC33:00000005 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:29:15.1052066+04:00 0HN5OFPNGAC33:00000007 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:29:15.1710609+04:00 0HN5OFPNGAC33:00000008 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:30:06.7799153+04:00 0HN5OFPNGAC34:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:30:06.8133375+04:00 0HN5OFPNGAC34:00000002 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:31:02.6565260+04:00 0HN5OFPNGAC34:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:31:02.6843123+04:00 0HN5OFPNGAC34:00000005 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:31:29.2291564+04:00 0HN5OFPNGAC34:00000007 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:31:29.2614776+04:00 0HN5OFPNGAC34:00000008 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:43:30.1935045+04:00 0HN5OFPNGAC35:00000001 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:43:30.2343564+04:00 0HN5OFPNGAC35:00000002 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:43:46.0433929+04:00 0HN5OFPNGAC35:00000004 [INF] No Messages found retrieved successfully (59f49028)
+2024-08-09T18:43:46.0708167+04:00 0HN5OFPNGAC35:00000005 [INF] No Messages found retrieved successfully (59f49028)

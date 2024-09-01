@@ -1,0 +1,92 @@
+﻿@model List<AFFZ_Provider.Controllers.UserDocumentsViewModel>
+@{
+    var paginatedSubCategories = ViewBag.UsersWithDocuments as List<AFFZ_Provider.Controllers.UserDocumentsViewModel>;
+    ViewData["Title"] = "UserList For Merchant";
+}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="provider-subtitle">
+                        <h6>Files</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        <div class="col-lg-9">
+            <div class="table-responsive">
+                <table class="table mb-0 custom-table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>#</th>
+                            <th>User ID</th>
+                            <th>Document Count</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (paginatedSubCategories == null)
+                        {
+                            <p><em>Loading Sub Categories...</em></p>
+                        }
+                        else
+                        {
+                            @foreach (var user in paginatedSubCategories)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@user.UserId</td>
+                                    <td>@user.DocumentCount</td>
+                                    <td>
+                                        <a asp-controller="MerchantResponseToUser" asp-action="ReviewDocument" asp-route-userId="@user.UserId" class="btn btn-primary">Review</a>
+                                        <a asp-controller="Message" asp-action="SendMessage" asp-route-SenderId="@user.UserId" class="btn btn-primary"><i class="fa fa-paper-plane me-1"></i>Chat</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- Scripts -->
+<script src="assets/js/jquery-3.7.0.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/feather.min.js"></script>
+<script src="assets/plugins/select2/js/select2.min.js"></script>
+<script src="assets/js/moment.min.js"></script>
+<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+<script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#fileUpload").change(function () {
+            var fileInput = $(this)[0];
+            var files = fileInput.files;
+
+            var fileList = "";
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                fileList += file.name + "<br>";
+            }
+
+            $("#selectedFiles").html(fileList);
+        });
+
+        $("form").submit(function () {
+            if ($("#fileUpload")[0].files.length === 0) {
+                $("#fileError").show();
+                return false;
+            }
+            $("#fileError").hide();
+            return true;
+        });
+    });
+</script>

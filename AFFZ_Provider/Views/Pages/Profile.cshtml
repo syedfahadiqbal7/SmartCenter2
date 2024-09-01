@@ -1,0 +1,246 @@
+﻿@model AFFZ_Provider.Models.ProviderUser
+
+
+@{
+    string formattedDOB = Model.DOB.HasValue ? Model.DOB.Value.ToString("dd/MM/yyyy") : string.Empty;
+}
+
+
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="widget-title">
+                    <h4>Account Settings</h4>
+                </div>
+                <form action="@Url.Action("UpdateProfile", "Profile")" method="post" , new { enctype="multipart/form-data" }>
+                    <h6 class="user-title">Profile Picture</h6>
+                    <div class="pro-picture">
+                        <div class="pro-img">
+                            <img src="@Url.Action("GetImage", "Login", new { userId = "5" })" alt="User Image">
+                        </div>
+                        <div class="pro-info">
+                            <div class="d-flex">
+                                <div class="img-upload">
+                                    <i class="feather-upload-cloud me-1"></i>Upload
+                                    <input type="file" name="ProfileImage">
+                                </div>
+                                <a href="#" class="btn btn-remove">Remove</a>
+                            </div>
+                            @* <p>*image size should be at least 320px big,and less then 500kb. Allowed files .png and .jpg.</p> *@
+                        </div>
+                    </div>
+                    <h6 class="user-title">General Information</h6>
+                    <div class="general-info">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">First Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="FirstName" value="@Model.FirstName" placeholder="Enter Your First Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Last Name</label>
+                                    <input type="text" class="form-control" name="LastName" value="@Model.LastName" placeholder="Enter Your Last Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Email <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" name="Email" disabled value="@Model.Email" placeholder="Enter Email Address">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Mobile Number <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="PhoneNumber" value="@Model.PhoneNumber" placeholder="Enter Mobile Number">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-form-label">Date of birth</label>
+                                    <div class="form-icon">
+                                        <input type="text" class="form-control datetimepicker" name="DOB" value="@formattedDOB" placeholder="DD/MM/YYYY">
+                                        <span class="cus-icon"><i class="feather-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <h6 class="user-title" style="margin-top: 10px;">Address </h6>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-form-label">Address</label>
+                                <input type="text" class="form-control" name="Address" value="@Model.Address" placeholder="Enter Your Address">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label class="col-form-label">Postal Code</label>
+                                <input type="text" class="form-control" name="PostalCode" value="@Model.PostalCode" placeholder="00000">
+                            </div>
+                        </div>
+
+
+
+                        <h6 class="user-title" style="margin-top: 10px;">Document Verification </h6>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="linked-acc">
+                                    <span class="link-icon">
+                                        <img src="assets/img/icons/document-pdf.svg" alt="Icons">
+                                    </span>
+                                    <div class="linked-info">
+                                        <h6>
+                                            <a href="javascript:void(0);">
+                                                Passport
+                                            </a>
+                                        </h6>
+                                        <p>Not Yet Verified </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-md-end">
+                                <div class="verfification-modal-block">
+                                    <div class="img-upload">
+                                        <i class="feather-upload-cloud me-1"></i>Upload
+                                        <input type="file" name="PassportFile">
+                                    </div>
+                                    <a href="javascript:void(0);" class="btn-acc">Remove</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="linked-acc">
+                                    <span class="link-icon">
+                                        <img src="assets/img/icons/document-pdf.svg" alt="Icons">
+                                    </span>
+                                    <div class="linked-info">
+                                        <h6>
+                                            <a href="javascript:void(0);">
+                                                License
+                                            </a>
+                                        </h6>
+                                        <p>Not Yet Verified </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-md-end">
+                                <div class="img-upload">
+                                    <i class="feather-upload-cloud me-1"></i>Upload
+                                    <input type="file" name="EmiratesIdFile">
+                                </div>
+                                <a href="javascript:void(0);" class="btn-acc">Remove</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="linked-acc">
+                                    <span class="link-icon">
+                                        <img src="assets/img/icons/document-pdf.svg" alt="Icons">
+                                    </span>
+                                    <div class="linked-info">
+                                        <h6>
+                                            <a href="javascript:void(0);">
+                                                EmiratesID
+                                            </a>
+                                        </h6>
+                                        <p>Not Yet Verified </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-md-end">
+                                <div class="img-upload">
+                                    <i class="feather-upload-cloud me-1"></i>Upload
+                                    <input type="file" name="DrivingLicenseFile">
+                                </div>
+                                <a href="javascript:void(0);" class="btn-acc">Remove</a>
+                            </div>
+                        </div>
+                        @* <div class="row">
+                            <div class="col-md-2">
+                                <div class="linked-acc">
+                                    <span class="link-icon">
+                                        <img src="assets/img/icons/document-pdf.svg" alt="Icons">
+                                    </span>
+                                    <div class="linked-info">
+                                        <h6>
+                                            <a href="javascript:void(0);">
+                                                EmiratesID
+                                            </a>
+                                        </h6>
+                                        <p>Not Yet Verified </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-md-end">
+                                <div class="verfification-modal-block">
+                                    <a href="javascript:void(0);" class="link-close" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Not Verified"><i class="fa-solid fa-circle-xmark"></i></a>
+                                    <a href="javascript:void(0);" style="vertical-align: middle;" class="btn btn-primary btn-connect" data-bs-toggle="modal" data-bs-target="#change-document">Change</a>
+                                    <a href="javascript:void(0);" class="btn-acc">Remove</a>
+                                </div>
+                            </div>
+                        </div>
+ *@
+
+                        <!-- Hidden fields to retain original values -->
+                        <input type="hidden" name="ProviderId" value="@Model.ProviderId" />
+                        <!-- Additional hidden fields as needed -->
+
+
+                        <div class="acc-submit">
+                            <a href="/UserDashboard" class="btn btn-secondary">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Change Document -->
+<div class="modal fade custom-modal verify-modal" id="change-document">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content doctor-profile">
+            <div class="modal-header verfication-modal-head">
+                <h4 class="modal-title">Upload Document</h4>
+            </div>
+            <div class="modal-body">
+                <form action="provider-security-settings.html">
+                    <div class="wallet-add">
+                        <div class="file-uploaded-mail">
+                            <img src="./assets/img/icons/upload-icon-02.svg" class="img-fluid" alt="Upload">
+                            <h4>Drag & drop files or <span> Browse </span></h4>
+                            <p>Supported formats: PDF</p>
+                            <input type="file" id="file-input" class="image-upload">
+                        </div>
+                        <div class="document-upload-file">
+                            <p> <img src="./assets/img/icons/file-pdf.svg" class="img-fluid" alt="Pdf"> licence.pdf </p>
+                            <span>
+                                <a href="#">
+                                    <img src="./assets/img/icons/trash-alt.svg" class="img-fluid" alt="Trash">
+                                </a>
+                            </span>
+                        </div>
+                        <div class="document-update-success">
+                            <p><i class="fa-regular fa-circle-check"></i> Document uploaded successfully </p>
+                        </div>
+                        <div class="modal-submit">
+                            <a href="" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#success-document">Continue</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Change Phone  -->

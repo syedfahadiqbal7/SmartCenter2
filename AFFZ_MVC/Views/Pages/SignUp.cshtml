@@ -1,0 +1,48 @@
+﻿@model AFFZ_Customer.Models.Customers
+
+<div class="col-md-6 col-lg-6 mx-auto">
+    <div class="login-wrap">
+        <div class="login-header">
+            <h3>Sign Up</h3>
+        </div>
+
+        <!-- Sign Up Form -->
+        <form action="@Url.Action("CustomersRegister", "SignUp")" method="post">
+            <div class="form-group">
+                <label class="col-form-label">Name</label>
+                <input type="text" class="form-control" placeholder="Enter your name" name="CustomerName" value="@Model.CustomerName">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label">Email</label>
+                <input type="email" class="form-control" placeholder="johndoe@example.com" name="Email" value="@Model.Email">
+            </div>
+            @* <div class="row">
+            <div class="col-md-12">
+            <label class="col-form-label">Phone Number</label>
+            <div class="form-group">
+            <input type="text" class="form-control form-control-lg group_formcontrol" id="phone" name="phone" placeholder="(256) 789-6253" value="">
+            </div>
+            </div>
+            </div> *@
+            <div class="form-group">
+                <label class="col-form-label d-block">Password<span class="brief-bio float-end">Must be 8 Characters at Least</span></label>
+                <div class="pass-group">
+                    <input type="password" class="form-control pass-input" placeholder="*************" name="Password" value="@Model.Password">
+                    <span class="toggle-password feather-eye-off"></span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 login-btn">Signup</button>
+        </form>
+        <div class="login-or">
+            <span class="or-line"></span>
+            <span class="span-or">OR</span>
+        </div>
+        <div class="social-login">
+            <a href="#" class="btn btn-google w-100"><img src="/assets/img/icons/google.svg" class="me-2" alt="img">Log in with Google</a>
+        </div>
+        <p class="no-acc">Already have an account? <a href="~/Login">Login</a></p>
+        <!-- /Login Form -->
+
+    </div>
+</div>

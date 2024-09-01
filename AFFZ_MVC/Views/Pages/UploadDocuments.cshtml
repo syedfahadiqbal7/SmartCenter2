@@ -1,0 +1,58 @@
+﻿@model AFFZ_Customer.Controllers.FileUploadViewModel
+
+@{
+    var paginatedSubCategories = ViewBag.SaveResponse as AFFZ_Customer.Controllers.FileUploadViewModel;
+    ViewData["Title"] = "UploadDocuments";
+}
+
+<div class="col-lg-9">
+    <h6 class="user-title">Upload Your Documents</h6>
+    <form method="post" enctype="multipart/form-data" asp-action="UploadDocuments">
+        <input type="hidden" name="Merchant" value="@ViewBag.MerchantID" />
+        <div class="form-group">
+            <label for="fileUpload">Choose Files:</label>
+            <input type="file" class="form-control" id="fileUpload" name="UserDocuments" accept=".pdf,.jpg,.png" multiple />
+        </div>
+        <div class="alert alert-danger" role="alert" style="display: none;" id="fileError">
+            Please select at least one file to upload.
+        </div>
+       
+        <input type="submit" class="btn btn-primary" value="Upload Files" />
+    </form>
+    <div class="table-responsive">
+       
+    </div>
+</div>
+
+
+<!-- Scripts -->
+<script src="assets/js/jquery-3.7.0.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/feather.min.js"></script>
+<script src="assets/plugins/select2/js/select2.min.js"></script>
+<script src="assets/js/moment.min.js"></script>
+<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+<script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var output = document.getElementById('imagePreview');
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+    // $(document).ready(function () {
+        
+    //     $("form").submit(function () {
+    //         if ($("#fileUpload")[0].files.length === 0) {
+    //             $("#fileError").show();
+    //             return false;
+    //         }
+    //         $("#fileError").hide();
+    //         return true;
+    //     });
+    // });
+</script>

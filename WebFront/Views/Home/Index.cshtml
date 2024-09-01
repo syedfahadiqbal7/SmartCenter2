@@ -1,0 +1,328 @@
+﻿@{
+    var categories = ViewBag.Categories as List<SCAPI.WebFront.Controllers.ServiceCat>;
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="main-wrapper">
+    <!-- Header -->
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="home-banner">
+                <div class="row align-items-center w-100">
+                    <div class="col-lg-7 col-md-10 mx-auto">
+                        <div class="section-search aos" data-aos="fade-up">
+                            <h1>Professional Services at your door step.</h1>
+                            <p>Search From more than 1000 Typing Centers.</p>
+                            <div class="search-box">
+                                <form action="Categories/Index">
+                                    <div class="search-input line">
+                                        <div class="search-group-icon">
+                                            <i class="feather-map-pin"></i>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <label>Your Location</label>
+                                            <input type="text" name="CityName" id="CityName" class="form-control" placeholder="Sharjah">
+                                        </div>
+                                    </div>
+                                    <div class="search-input">
+                                        <div class="search-group-icon search-icon">
+                                            <i class="feather-search"></i>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <label>What are you looking for?</label>
+                                            <input type="text" name="serviceCategoryName" id="serviceCategoryName" class="form-control" placeholder="Service Type...">
+                                        </div>
+                                    </div>
+                                    <div class="search-btn">
+                                        <button class="btn btn-primary" type="submit"><i class="feather-search me-2"></i>Search</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="banner-imgs">
+                            <div class="banner-1 shape-1">
+                                <img class="img-fluid" alt="banner" src="assets/img/banner1.png">
+                            </div>
+                            <div class="banner-2 shape-3">
+                                <img class="img-fluid" alt="banner" src="assets/img/banner2.png">
+                            </div>
+                            <div class="banner-3 shape-3">
+                                <img class="img-fluid" alt="banner" src="assets/img/banner3.png">
+                            </div>
+                            <div class="banner-4 shape-2">
+                                <img class="img-responsive" alt="banner" src="assets/img/banner4.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Hero Section -->
+    <!-- Feature Section -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="section-heading">
+                <div class="row align-items-center">
+                    <div class="col-md-6 aos" data-aos="fade-up">
+                        <h2>Top Categories</h2>
+                        <p>What do you need to find?</p>
+                    </div>
+                    <div class="col-md-6 text-md-end aos" data-aos="fade-up">
+                        <a href="Categories" class="btn btn-primary btn-view">View All<i class="feather-arrow-right-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                @if (categories == null)
+                {
+                    <p><em>Loading...</em></p>
+                }
+                else
+                {
+                    @foreach (var cate in categories)
+                    {
+                        <div class="col-md-6 col-lg-3">
+                            <a href="#" class="feature-box aos aos-init aos-animate" data-aos="fade-up">
+                                <div class="feature-icon">
+                                    <span>
+                                        <img src="~/assets/img/icons/feature-icon-01.svg" alt="img">
+                                    </span>
+                                </div>
+                                <h5>@cate.CategoryName</h5>
+                                <div class="feature-overlay">
+                                    <img src="~/assets/img/services/service-02.jpg" alt="img">
+                                </div>
+                            </a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </section>
+    <!-- /Feature Section -->
+    <!-- pricing Section -->
+    <section class="service-section pricing-sections pt-0">
+        <div class="container">
+            <div class="section-heading">
+                <div class="row">
+                    <div class="col-md-12 text-center aos" data-aos="fade-up">
+                        <h2>Pricing Plans</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row aos" data-aos="fade-up">
+                <div class="col-lg-4 col-sm-12">
+                    <div class="pricing-popular">
+                        <span class="btn w-100">Popular</span>
+                    </div>
+                    <div class="pricing-plans">
+                        <div class="pricing-planshead">
+                            <h4>Basic</h4>
+                            <h5>Lorem ipsum dolor sit amet, consectetur</h5>
+                            <h6>$50<span>/month</span></h6>
+                        </div>
+                        <div class="pricing-planscontent">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Sed perspiciatis unde omnis natus error</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Lorem dolor consecteturadipiscing elit</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Duis irure dolor reprehenderit voluptate</span>
+                                </li>
+                                <li class="inactive">
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Nemo enim ipsam voluptatem quia </span>
+                                </li>
+                                <li class="inactive">
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Sed perspiciatis iste natus error </span>
+                                </li>
+                                <li class="inactive">
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Lorem dolor consecteturadipiscing elit </span>
+                                </li>
+                            </ul>
+                            <div class="pricing-btn">
+                                <a href="search.html" class="btn btn-primary btn-view">Get Started<i class="feather-arrow-right-circle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="pricing-popular active">
+                        <span class="btn w-100">Popular</span>
+                    </div>
+                    <div class="pricing-plans active">
+                        <div class="pricing-planshead">
+                            <h4>Standard</h4>
+                            <h5>Lorem ipsum dolor sit amet, consectetur</h5>
+                            <h6>$100<span>/month</span></h6>
+                        </div>
+                        <div class="pricing-planscontent">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Sed perspiciatis unde omnis natus error</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Lorem dolor consecteturadipiscing elit</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Duis irure dolor reprehenderit voluptate</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Nemo enim ipsam voluptatem quia </span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Sed perspiciatis iste natus error </span>
+                                </li>
+                                <li class="inactive">
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Lorem dolor consecteturadipiscing elit </span>
+                                </li>
+                            </ul>
+                            <div class="pricing-btn">
+                                <a href="search.html" class="btn btn-primary btn-view">Get Started<i class="feather-arrow-right-circle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="pricing-popular ">
+                        <span class="btn w-100">Popular</span>
+                    </div>
+                    <div class="pricing-plans ">
+                        <div class="pricing-planshead">
+                            <h4>Premium</h4>
+                            <h5>Lorem ipsum dolor sit amet, consectetur</h5>
+                            <h6>$150<span>/month</span></h6>
+                        </div>
+                        <div class="pricing-planscontent">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Sed perspiciatis unde omnis natus error</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Lorem dolor consecteturadipiscing elit</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Duis irure dolor reprehenderit voluptate</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Nemo enim ipsam voluptatem quia </span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Sed perspiciatis iste natus error </span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-circle me-2 text-primary"></i>
+                                    <span>Lorem dolor consecteturadipiscing elit </span>
+                                </li>
+                            </ul>
+                            <div class="pricing-btn">
+                                <a href="search.html" class="btn btn-primary btn-view">Get Started<i class="feather-arrow-right-circle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /pricing Section -->
+</div>
+
+<!-- Bootstrap Core JS -->
+<script src="~/assets/js/bootstrap.bundle.min.js"></script>
+<!-- Fearther JS -->
+<script src="~/assets/js/feather.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="~/assets/js/owl.carousel.min.js"></script>
+<!-- select JS -->
+<script src="~/assets/plugins/select2/js/select2.min.js"></script>
+<!-- Aos -->
+<script src="~/assets/plugins/aos/aos.js"></script>
+<!-- Top JS -->
+<script src="~/assets/js/backToTop.js"></script>
+<!-- Custom JS -->
+<script src="~/assets/js/script.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $("#CityName").autocomplete({
+            source: function (request, response) {
+                console.log(request);
+                $.ajax({
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    url: "https://localhost:7047/api/MainPage/GetCities/" + request.term,
+                    dataType: "json",
+                    crossDomain: true,
+                    format: "json",
+                    success: function (data) {
+                        console.log('message: ' + "success" + JSON.stringify(data));
+
+                        // Extract city names and create an array
+                        var cityNames = data.map(function (city) {
+                            return city.Name;
+                        });
+                        console.log(cityNames)
+                        response(cityNames); // Pass the city names array to the response callback
+
+                    },
+                    error: function (error) {
+                        console.log('message Error' + JSON.stringify(error));
+                    }
+                    //}
+                });
+            }
+        });
+        $("#serviceCategoryName").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    url: "https://localhost:7047/api/MainPage/GetCategories/" + request.term,
+                    dataType: "json",
+                    crossDomain: true,
+                    format: "json",
+                    success: function (data) {
+                        console.log('message: ' + "success" + JSON.stringify(data));
+
+                        // Extract city names and create an array
+                        var ServiceCategoryNames = data.map(function (Json) {
+                            return Json.CategoryName;
+                        });
+
+                        response(ServiceCategoryNames); // Pass the city names array to the response callback
+
+                    },
+                    error: function (error) {
+                        console.log('message Error' + JSON.stringify(error));
+                    }
+                    //}
+                });
+            }
+        });
+    });
+</script>

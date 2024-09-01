@@ -1,0 +1,21 @@
+﻿
+@model AFFZ_Customer.Models.MenuView
+
+<div class="settings-menu">
+    <ul>
+        @foreach(var item in Model.MenuItems)
+        {
+            <li>
+                <a href="@item.MenuUrl">
+                    <i class="@item.MenuIcon"></i> <span>@item.MenuName</span>
+                </a>
+            </li>
+        }
+        
+        <li>
+            <a class="dropdown-item" href="@Url.Action("Logout", "Login")">
+                <i class="feather-log-out me-2"></i> Logout
+            </a>
+        </li>
+    </ul>
+</div>
