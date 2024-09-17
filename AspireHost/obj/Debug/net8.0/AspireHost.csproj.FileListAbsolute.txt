@@ -77,7 +77,6 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\D
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Polly.Core.dll
-D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Prometheus.NetStandard.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\YamlDotNet.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\cs\Aspire.Hosting.resources.dll
@@ -110,3 +109,8 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\D
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\AspireHost.pdb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\AspireHost.genruntimeconfig.cache
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\ref\AspireHost.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\AspireHost.sourcelink.json

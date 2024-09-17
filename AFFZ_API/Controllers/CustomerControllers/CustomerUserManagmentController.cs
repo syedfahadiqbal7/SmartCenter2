@@ -1,4 +1,5 @@
-﻿using AFFZ_API.Models;
+﻿using AFFZ_API.Interfaces;
+using AFFZ_API.Models;
 using AFFZ_API.Models.Partial;
 using AFFZ_API.Utils;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +12,12 @@ namespace AFFZ_API.Controllers.CustomerControllers
     [ApiController]
     public class CustomerUserManagmentController : ControllerBase
     {
+        private readonly IEmailService _emailService;
         private readonly MyDbContext _context;
-        public CustomerUserManagmentController(MyDbContext context)
+        public CustomerUserManagmentController(MyDbContext context, IEmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
 
         [HttpPost]
@@ -62,13 +65,30 @@ namespace AFFZ_API.Controllers.CustomerControllers
         {
             try
             {
+
                 customers.RoleId = _context.Roles.Where(x => x.RoleName.ToLower() == "customers").Select(x => x.RoleId).FirstOrDefault();
                 customers.CreatedBy = 1;
                 customers.CreatedDate = DateTime.Now;
                 customers.Password = Cryptography.Encrypt(customers.Password); //need to encrypt
                 _context.Customers.Add(customers);
                 await _context.SaveChangesAsync();
-
+                bool res = await _emailService.SendEmail(customers.Email, "Welcome On Board with Smart Center", "You have successfully signup. Please remember your password for future reference and make sure to bookmark the website for future.", customers.CustomerName);
+                //if (res)
+                //{
+                //    return new SResponse
+                //    {
+                //        StatusCode = HttpStatusCode.OK,
+                //        Message = $"Customers Successfully Registered!",
+                //    };
+                //}
+                //else
+                //{
+                //    return new SResponse
+                //    {
+                //        StatusCode = HttpStatusCode.GatewayTimeout,
+                //        Message = $"Failed to send email!",
+                //    };
+                //}
                 return new SResponse
                 {
                     StatusCode = HttpStatusCode.OK,

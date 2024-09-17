@@ -322,3 +322,7 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\bin\Deb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\bin\Debug\net8.0\AFFZ_Customer.staticwebassets.endpoints.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\obj\Debug\net8.0\AFFZ_Customer.sourcelink.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\obj\Debug\net8.0\staticwebassets\msbuild.AFFZ_Customer.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

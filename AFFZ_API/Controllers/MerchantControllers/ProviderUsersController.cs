@@ -1,4 +1,5 @@
-﻿using AFFZ_API.Models;
+﻿using AFFZ_API.Interfaces;
+using AFFZ_API.Models;
 using AFFZ_API.Models.Partial;
 using AFFZ_API.Utils;
 using Microsoft.AspNetCore.Mvc;
@@ -12,10 +13,11 @@ namespace AFFZ_API.Controllers.MerchantControllers
     public class ProviderUsersController : ControllerBase
     {
         private readonly MyDbContext _context;
-
-        public ProviderUsersController(MyDbContext context)
+        private readonly IEmailService _emailService;
+        public ProviderUsersController(MyDbContext context, IEmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
 
         // GET: api/ProviderUsers
@@ -77,7 +79,7 @@ namespace AFFZ_API.Controllers.MerchantControllers
                 merchant.Password = Cryptography.Encrypt(merchant.Password); //need to encrypt
                 _context.ProviderUsers.Add(merchant);
                 await _context.SaveChangesAsync();
-
+                bool res = await _emailService.SendEmail(merchant.Email, "Welcome On Board with Smart Center", "You have successfully signup. Please remember your password for future reference and make sure to bookmark the website for future.", merchant.ProviderName);
                 return new SResponse
                 {
                     StatusCode = HttpStatusCode.OK,

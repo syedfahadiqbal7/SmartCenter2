@@ -2501,7 +2501,10 @@
           "OpenTelemetry.Instrumentation.Runtime": "1.8.0"
         },
         "runtime": {
-          "SCAPI.ServiceDefaults.dll": {}
+          "SCAPI.ServiceDefaults.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

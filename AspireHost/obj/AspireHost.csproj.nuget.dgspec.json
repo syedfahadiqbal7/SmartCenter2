@@ -50,6 +50,22 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Aspire.Dashboard.Sdk.win-x64": {
+              "target": "Package",
+              "version": "[8.2.0, )",
+              "autoReferenced": true
+            },
+            "Aspire.Hosting.AppHost": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            },
+            "Aspire.Hosting.Orchestration.win-x64": {
+              "target": "Package",
+              "version": "[8.2.0, )",
+              "autoReferenced": true
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -61,6 +77,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
         }
       }

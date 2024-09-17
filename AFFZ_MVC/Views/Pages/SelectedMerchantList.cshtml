@@ -57,13 +57,46 @@
                             </div>
                         </div>
                         <div class="service-action">
-                            <h6>AED@_subcat.PRICE @*<span class="old-price">AED@_subcat.PRICE</span>*@</h6>
-                            <a asp-action="RequestForDiscount" class="btn btn-secondary" asp-route-id="@_subcat.MID~@_subcat.SID">Request For Discount</a>
+                            <h6>AED@_subcat.PRICE</h6>
+                            @if (_subcat.IsRequestedAlready)
+                            {
+                                <a asp-action="RequestForDiscount" class="btn btn-light-danger disabled" asp-route-id="@_subcat.MID~@_subcat.SID">Request Sent</a>
+                            }
+                            else
+                            {
+                                <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@_subcat.MID~@_subcat.SID', 'RequestForDiscount' )">
+                                    AED@_subcat.PRICE
+                                </a>
+                                <a asp-action="RequestForDiscount" class="btn btn-secondary" asp-route-id="@_subcat.MID~@_subcat.SID">Ask for Discount</a>
+                            }
                         </div>
                     </div>
                 }
+                <!-- Image Modal -->
+                <div class="modal fade custom-modal" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content doctor-profile">
+                            <div class="modal-header border-bottom-0 justify-content-between">
+                                <h5 class="modal-title" id="imageModalLabel">Proceed to Payment</h5>
+                                <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="feather-x"></i></button>
+                            </div>
+                            <div class="modal-body pt-0">
+                                <p id="Modalpayment"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             }
         </div>
     </div>
 
 </div>
+<script src="~/assets/js/script.js"></script>
+<script>
+    function showPaymentPopup(mid, sid) {
+        $('#Modalpayment').html("This is payment screen of MerchantId="+mid+" and Service Id = "+sid);
+        // Show the modal
+        $('#paymentModal').modal('show');
+    }
+</script>

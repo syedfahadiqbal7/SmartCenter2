@@ -100,3 +100,7 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\ob
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\AFFZ_Provider.genruntimeconfig.cache
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\ref\AFFZ_Provider.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\bin\Debug\net8.0\AFFZ_Provider.staticwebassets.endpoints.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\AFFZ_Provider.sourcelink.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\staticwebassets\msbuild.AFFZ_Provider.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

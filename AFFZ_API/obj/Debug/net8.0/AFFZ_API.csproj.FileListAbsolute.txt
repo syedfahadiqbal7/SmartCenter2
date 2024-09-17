@@ -523,3 +523,10 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Deb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\AFFZ_API.staticwebassets.endpoints.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\obj\Debug\net8.0\AFFZ_API.sourcelink.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\obj\Debug\net8.0\staticwebassets\msbuild.AFFZ_API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\MailKit.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\MimeKit.dll

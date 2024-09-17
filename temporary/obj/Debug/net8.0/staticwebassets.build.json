@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "CPX4iUVT0sJMwgp1eTJNnaokqUiohyyLbmbQ375tZJs=",
+  "Hash": "V+i8CO22f+SZsRjRHVgotA0rk/zhmek1Pg/W10LzJnI=",
   "Source": "temporary",
   "BasePath": "_content/temporary",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

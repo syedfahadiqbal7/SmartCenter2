@@ -1,4 +1,5 @@
-﻿using AFFZ_API.Models;
+﻿using AFFZ_API.Interfaces;
+using AFFZ_API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
@@ -11,10 +12,12 @@ namespace AFFZ_API.Controllers
     {
         private readonly MyDbContext _context;
         private readonly ILogger<CategoryWithMerchant> _logger;
-        public CategoryWithMerchant(MyDbContext context, ILogger<CategoryWithMerchant> logger)
+        private readonly IEmailService _emailService;
+        public CategoryWithMerchant(MyDbContext context, ILogger<CategoryWithMerchant> logger, IEmailService emailService)
         {
             _context = context;
             _logger = logger;
+            _emailService = emailService;
         }
         [HttpGet("AllRequestMerchant")]
         public async Task<ActionResult<IEnumerable<object>>> AllRequestMerchant(string Mid)
@@ -38,6 +41,11 @@ namespace AFFZ_API.Controllers
             var result = await query.ToListAsync();
 
             return Ok(result);
+        }
+
+        public bool IsRequestedService(int Mid, int sid)
+        {
+            return _context.RequestForDisCountToMerchants.Where(x => x.MID == Mid && x.SID == sid).Any();
         }
         [HttpGet("search")]
         public async Task<IActionResult> Search([FromQuery] SearchRequest request)
@@ -173,14 +181,15 @@ namespace AFFZ_API.Controllers
             var query = from merchant in _context.Merchants
                         join service in _context.Services
                         on merchant.MerchantId equals service.MerchantId
-                        select new
+                        select new ServiceMerchantDTO
                         {
                             MID = merchant.MerchantId,
                             SID = service.ServiceId,
                             MERCHANTNAME = merchant.CompanyName,
                             SERVICENAME = service.ServiceName,
                             PRICE = service.ServicePrice,
-                            MERCHANTLOCATION = merchant.MerchantLocation
+                            MERCHANTLOCATION = merchant.MerchantLocation,
+                            IsRequestedAlready = false
                         };
 
             if (!string.IsNullOrEmpty(CatName))
@@ -189,6 +198,11 @@ namespace AFFZ_API.Controllers
             }
 
             var result = await query.ToListAsync();
+            // Modify the IsRequestedAlready property for each item
+            foreach (var item in result)
+            {
+                item.IsRequestedAlready = IsRequestedService(item.MID, item.SID);
+            }
             return Ok(result);
         }
         [HttpPost("sendRequestForDiscount")]
@@ -201,6 +215,7 @@ namespace AFFZ_API.Controllers
 
             try
             {
+                int mid = Convert.ToInt32(data.MerchantId);
                 var requestForDisCountToMerchant = new RequestForDisCountToMerchant
                 {
                     SID = data.ServiceId,
@@ -209,9 +224,12 @@ namespace AFFZ_API.Controllers
                     IsResponseSent = 0,
                     RequestDateTime = DateTime.Now,
                 };
-
                 _context.Add(requestForDisCountToMerchant);
                 await _context.SaveChangesAsync();
+                string MerchantEmail = _context.ProviderUsers.Where(x => x.ProviderId == mid).Select(x => x.Email).FirstOrDefault();
+                string MerchantName = _context.ProviderUsers.Where(x => x.ProviderId == mid).Select(x => x.ProviderName).FirstOrDefault();
+                string ServiceName = _context.Services.Where(x => x.ServiceId == data.ServiceId).Select(x => x.ServiceName).FirstOrDefault();
+                bool res = await _emailService.SendEmail(MerchantEmail, "Service Inquiry-SmartCenter", "Dear " + MerchantName + ", You Have recieved a request from a user. Inquiry type:" + ServiceName, MerchantName);
                 return Ok("Request Sent To Merchant");
             }
             catch (Exception ex)
@@ -407,6 +425,16 @@ namespace AFFZ_API.Controllers
         }
     }
     //Defines the data structure returned by the search endpoint, including service name, company name, merchant location, price, and average rating.
+    public class ServiceMerchantDTO
+    {
+        public int MID { get; set; }
+        public int SID { get; set; }
+        public string MERCHANTNAME { get; set; }
+        public string SERVICENAME { get; set; }
+        public int? PRICE { get; set; }
+        public string MERCHANTLOCATION { get; set; }
+        public bool IsRequestedAlready { get; set; }
+    }
     public class CatWithMerchant
     {
         public string? MID { get; set; }

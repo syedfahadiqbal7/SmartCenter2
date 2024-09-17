@@ -270,3 +270,7 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\temporary\obj\De
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\temporary\obj\Debug\net8.0\temporary.pdb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\temporary\obj\Debug\net8.0\temporary.genruntimeconfig.cache
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\temporary\obj\Debug\net8.0\ref\temporary.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\temporary\bin\Debug\net8.0\temporary.staticwebassets.endpoints.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\temporary\obj\Debug\net8.0\temporary.sourcelink.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\temporary\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\temporary\obj\Debug\net8.0\staticwebassets\msbuild.temporary.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

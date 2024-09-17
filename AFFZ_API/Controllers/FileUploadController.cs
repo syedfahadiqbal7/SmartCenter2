@@ -1,4 +1,5 @@
-﻿using AFFZ_API.Models;
+﻿using AFFZ_API.Interfaces;
+using AFFZ_API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
@@ -11,10 +12,12 @@ namespace AFFZ_API.Controllers
     {
         private readonly MyDbContext _context;
         private readonly ILogger<FileUploadController> _logger;
-        public FileUploadController(MyDbContext context, ILogger<FileUploadController> logger)
+        private readonly IEmailService _emailService;
+        public FileUploadController(MyDbContext context, ILogger<FileUploadController> logger, IEmailService emailService)
         {
             _context = context;
             _logger = logger;
+            _emailService = emailService;
         }
         [HttpGet("GetFilesList")]
         public async Task<ActionResult<IEnumerable<UploadedFile>>> GetFilesList()
@@ -232,13 +235,10 @@ namespace AFFZ_API.Controllers
         }
         private void SendEmail(string to, string subject, string body)
         {
-            // Implement your email sending logic here
+            _emailService.SendEmail(to, subject, body, to.Split("@")[0]);
         }
     }
-    public interface IEmailService
-    {
-        void SendEmail(string to, string subject, string body);
-    }
+
 
     public class FileUploadViewModel
     {

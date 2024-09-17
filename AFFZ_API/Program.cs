@@ -1,3 +1,5 @@
+using AFFZ_API;
+using AFFZ_API.Interfaces;
 using AFFZ_API.Models;
 using AFFZ_API.SignalRHub;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -57,7 +59,9 @@ builder.Services.AddAuthentication(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+// Configure email service with settings from appsettings.json
+builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
+builder.Services.AddTransient<IEmailService, EmailNotifications>();
 var app = builder.Build();
 var loggerFactory = app.Services.GetService<ILoggerFactory>();
 

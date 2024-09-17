@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_MVC\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AFFZ_Customer.bundle.scp.css",
-      "PackagePath": "staticwebassets\\AFFZ_Customer.bundle.scp.css"
+      "PackagePath": "staticwebassets\\AFFZ_Customer.u2aqiibcg3.bundle.scp.css"
     },
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_MVC\\wwwroot\\assets\\css\\bootstrap-datetimepicker.min.css",
@@ -4343,6 +4343,10 @@
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_MVC\\wwwroot\\uploads\\Documents_2\\Screenshot 2024-08-18 at 16-05-15 Khuram EID_2025.pdf.png",
       "PackagePath": "staticwebassets\\uploads\\Documents_2\\Screenshot 2024-08-18 at 16-05-15 Khuram EID_2025.pdf.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AFFZ_Customer.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AFFZ_Customer.Microsoft.AspNetCore.StaticWebAssets.props",
