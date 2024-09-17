@@ -12,19 +12,10 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("11bc7270-e8e7-4349-a89d-21626873204c")]
-[assembly: System.Reflection.AssemblyMetadata("dcpclipath", "C:\\Program Files\\dotnet\\packs\\Aspire.Hosting.Orchestration.win-x64\\8.0.0\\tools\\dc" +
-    "p.exe")]
-[assembly: System.Reflection.AssemblyMetadata("dcpextensionpaths", "C:\\Program Files\\dotnet\\packs\\Aspire.Hosting.Orchestration.win-x64\\8.0.0\\tools\\ex" +
-    "t\\")]
-[assembly: System.Reflection.AssemblyMetadata("dcpbinpath", "C:\\Program Files\\dotnet\\packs\\Aspire.Hosting.Orchestration.win-x64\\8.0.0\\tools\\ex" +
-    "t\\bin\\")]
-[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "C:\\Users\\conta\\Downloads\\AspireHost\\AspireHost")]
-[assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", "C:\\Program Files\\dotnet\\packs\\Aspire.Dashboard.Sdk.win-x64\\8.0.0\\tools\\Aspire.Das" +
-    "hboard.exe")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("AspireHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1d0d915ebe6fb444a14a69c124f9a3ac4b38cf0")]
 [assembly: System.Reflection.AssemblyProductAttribute("AspireHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AspireHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\conta\\Downloads\\AspireHost\\WebFront\\SCAPI.WebFront.csproj": {}
+    "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\WebFront\\SCAPI.WebFront.csproj": {}
   },
   "projects": {
-    "C:\\Users\\conta\\Downloads\\AspireHost\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj": {
+    "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\conta\\Downloads\\AspireHost\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj",
+        "projectUniqueName": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj",
         "projectName": "SCAPI.ServiceDefaults",
-        "projectPath": "C:\\Users\\conta\\Downloads\\AspireHost\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj",
-        "packagesPath": "C:\\Users\\conta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\conta\\Downloads\\AspireHost\\SCAPI.ServiceDefaults\\obj\\",
+        "projectPath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj",
+        "packagesPath": "C:\\Users\\syed.fahad\\.nuget\\packages\\",
+        "outputPath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\SCAPI.ServiceDefaults\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\conta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\syed.fahad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,8 +43,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -94,21 +99,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\conta\\Downloads\\AspireHost\\WebFront\\SCAPI.WebFront.csproj": {
+    "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\WebFront\\SCAPI.WebFront.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\conta\\Downloads\\AspireHost\\WebFront\\SCAPI.WebFront.csproj",
+        "projectUniqueName": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\WebFront\\SCAPI.WebFront.csproj",
         "projectName": "SCAPI.WebFront",
-        "projectPath": "C:\\Users\\conta\\Downloads\\AspireHost\\WebFront\\SCAPI.WebFront.csproj",
-        "packagesPath": "C:\\Users\\conta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\conta\\Downloads\\AspireHost\\WebFront\\obj\\",
+        "projectPath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\WebFront\\SCAPI.WebFront.csproj",
+        "packagesPath": "C:\\Users\\syed.fahad\\.nuget\\packages\\",
+        "outputPath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\WebFront\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\conta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\syed.fahad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -123,8 +132,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\conta\\Downloads\\AspireHost\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj": {
-                "projectPath": "C:\\Users\\conta\\Downloads\\AspireHost\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj"
+              "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj": {
+                "projectPath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj"
               }
             }
           }
@@ -137,8 +146,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -180,7 +190,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

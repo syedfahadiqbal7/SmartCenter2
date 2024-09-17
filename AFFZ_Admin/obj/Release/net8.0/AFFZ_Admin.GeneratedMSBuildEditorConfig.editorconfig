@@ -17,6 +17,8 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
 [D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Admin/Views/Pages/AdminUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQWRtaW5Vc2Vycy5jc2h0bWw=
