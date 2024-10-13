@@ -45,7 +45,7 @@ namespace AFFZ_API.Controllers
 
         public bool IsRequestedService(int Mid, int sid)
         {
-            return _context.RequestForDisCountToMerchants.Where(x => x.MID == Mid && x.SID == sid).Any();
+            return _context.RequestForDisCountToMerchants.Where(x => x.MID == Mid && x.SID == sid && x.IsResponseSent == 0).Any();
         }
         [HttpGet("search")]
         public async Task<IActionResult> Search([FromQuery] SearchRequest request)

@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQm9va2luZ3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_MVC/Views/Pages/cancel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcY2FuY2VsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_MVC/Views/Pages/Chats.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQ2hhdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -90,6 +94,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_MVC/Views/Pages/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_MVC/Views/Pages/success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcc3VjY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_MVC/Views/Pages/UploadDocuments.cshtml]

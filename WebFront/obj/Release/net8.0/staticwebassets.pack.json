@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\WebFront\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\SCAPI.WebFront.bundle.scp.css",
-      "PackagePath": "staticwebassets\\SCAPI.WebFront.bundle.scp.css"
+      "PackagePath": "staticwebassets\\SCAPI.WebFront.uss2xdiy2t.bundle.scp.css"
     },
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\WebFront\\wwwroot\\Custom_JavaScript.js",
@@ -4351,6 +4351,10 @@
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\WebFront\\wwwroot\\uploads\\Documents_1\\what is devops.png",
       "PackagePath": "staticwebassets\\uploads\\Documents_1\\what is devops.png"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.SCAPI.WebFront.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.SCAPI.WebFront.Microsoft.AspNetCore.StaticWebAssets.props",

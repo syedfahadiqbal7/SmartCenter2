@@ -63,23 +63,31 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.Extensions.Caching.SqlServer": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[8.0.8, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[112.0.0, )"
+            },
             "Serilog.Extensions.Logging.File": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[45.13.0, )"
             }
           },
           "imports": [

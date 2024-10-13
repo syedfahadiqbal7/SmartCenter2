@@ -1,10 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "NJSH4QW2a8E=",
+  "dgSpecHash": "EmwIvrZIZHM=",
   "success": true,
   "projectFilePath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Admin\\AFFZ_Admin.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\syed.fahad\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\syed.fahad\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\syed.fahad\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\syed.fahad\\.nuget\\packages\\stripe.net\\45.13.0\\stripe.net.45.13.0.nupkg.sha512",
+    "C:\\Users\\syed.fahad\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
+    "C:\\Users\\syed.fahad\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\syed.fahad\\.nuget\\packages\\system.security.accesscontrol\\6.0.0\\system.security.accesscontrol.6.0.0.nupkg.sha512",
+    "C:\\Users\\syed.fahad\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
+    "C:\\Users\\syed.fahad\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
+    "C:\\Users\\syed.fahad\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

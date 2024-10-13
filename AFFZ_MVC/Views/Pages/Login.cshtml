@@ -11,7 +11,7 @@
 
         <!-- Login Form -->
         <form action="@Url.Action("CustomersLogin", "Login")" method="post">
-            <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+            <input type="hidden" name="returnUrl" id="returnUrl" value="@ViewBag.ReturnUrl" />
             <div class="log-form">
                 <div class="form-group">
                     <label class="col-form-label">Email</label>
@@ -56,3 +56,9 @@
 
     </div>
 </div>
+<script>
+    const params = new URL(location.href).searchParams;
+    const c = params.get('returnUrl');
+    //console.log(c);
+    document.getElementById("returnUrl").value = c;
+</script>

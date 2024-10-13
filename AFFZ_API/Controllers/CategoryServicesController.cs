@@ -33,6 +33,16 @@ namespace AFFZ_API.Controllers
 
             return Ok(categories);
         }
+
+        [HttpGet("getServiceByName")]
+        public async Task<ActionResult<Service>> GetServiceByName(string id)
+        {
+
+            int sid = Convert.ToInt32(id);
+            var servicedata = _context.Services.Where(x => x.ServiceId == sid);
+
+            return Ok(servicedata);
+        }
     }
     //Defines the data structure returned by the search endpoint, including service name, company name, merchant location, price, and average rating.
     public class ServiceCategoryDto

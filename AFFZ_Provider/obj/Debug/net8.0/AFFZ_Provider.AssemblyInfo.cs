@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AFFZ_Provider")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+953a678f15c1810799ae94e3e323999734173bbb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ecf5786694d1c229f51d39d650d62302a0a387cd")]
 [assembly: System.Reflection.AssemblyProductAttribute("AFFZ_Provider")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AFFZ_Provider")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

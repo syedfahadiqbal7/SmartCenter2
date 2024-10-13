@@ -2,7 +2,27 @@
   "Files": [
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\AFFZ_Provider.bundle.scp.css",
-      "PackagePath": "staticwebassets\\AFFZ_Provider.bundle.scp.css"
+      "PackagePath": "staticwebassets\\AFFZ_Provider.bdg1r0a6qo.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\DrivingLicense.png",
+      "PackagePath": "staticwebassets\\Uploads\\User_3\\DrivingLicense.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\EmiratesId.png",
+      "PackagePath": "staticwebassets\\Uploads\\User_3\\EmiratesId.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\Passport.png",
+      "PackagePath": "staticwebassets\\Uploads\\User_3\\Passport.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\admin.css",
+      "PackagePath": "staticwebassets\\assets\\css\\admin.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\admin.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\admin.css.map"
     },
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\bootstrap-datetimepicker.min.css",
@@ -4081,6 +4101,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\js\\notification.js",
+      "PackagePath": "staticwebassets\\js\\notification.js"
+    },
+    {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -4311,6 +4335,10 @@
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.AFFZ_Provider.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.AFFZ_Provider.Microsoft.AspNetCore.StaticWebAssets.props",

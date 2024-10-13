@@ -84,6 +84,170 @@
       ]
     },
     {
+      "Route": "assets/css/admin.css",
+      "AssetFile": "assets/css/admin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "250620"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"N+wJ6hc2D6oiphM/GVQek/O31TcwKp7ESHa1ziJSZG0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Oct 2024 20:07:18 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-N+wJ6hc2D6oiphM/GVQek/O31TcwKp7ESHa1ziJSZG0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/css/admin.css.map",
+      "AssetFile": "assets/css/admin.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45684"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uFvAtv2T2STgxWitYevw0Rugyegb27iFwP19zAUQI2k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:03 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uFvAtv2T2STgxWitYevw0Rugyegb27iFwP19zAUQI2k="
+        }
+      ]
+    },
+    {
+      "Route": "assets/css/admin.css.wa8txhzwl7.map",
+      "AssetFile": "assets/css/admin.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45684"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uFvAtv2T2STgxWitYevw0Rugyegb27iFwP19zAUQI2k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:03 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wa8txhzwl7"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uFvAtv2T2STgxWitYevw0Rugyegb27iFwP19zAUQI2k="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/css/admin.css.map"
+        }
+      ]
+    },
+    {
+      "Route": "assets/css/admin.zpxms357hv.css",
+      "AssetFile": "assets/css/admin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "250620"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"N+wJ6hc2D6oiphM/GVQek/O31TcwKp7ESHa1ziJSZG0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Oct 2024 20:07:18 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zpxms357hv"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-N+wJ6hc2D6oiphM/GVQek/O31TcwKp7ESHa1ziJSZG0="
+        },
+        {
+          "Name": "label",
+          "Value": "assets/css/admin.css"
+        }
+      ]
+    },
+    {
       "Route": "assets/css/bootstrap-datetimepicker.min.css",
       "AssetFile": "assets/css/bootstrap-datetimepicker.min.css",
       "Selectors": [],

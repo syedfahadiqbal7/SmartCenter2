@@ -3,6 +3,9 @@ using AFFZ_Customer.Utils;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using RestSharp;
+using Stripe;
+using Stripe.Checkout;
 using System.ComponentModel.DataAnnotations;
 
 namespace AFFZ_Customer.Controllers
@@ -65,18 +68,62 @@ namespace AFFZ_Customer.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> PaymentDone(string amount, string paymentType, string payerId, string merchantId, string serviceId, string rfdfu)
+        public async Task<ActionResult> PaymentDone(string amount, string payerId, string merchantId, string serviceId, string rfdfu)
         {
-            _logger.LogInformation("PaymentDone called with amount: {Amount}, paymentType: {PaymentType}, payerId: {PayerId}, merchantId: {MerchantId}, serviceId: {ServiceId}, rfdfu: {RFDFU}", amount, paymentType, payerId, merchantId, serviceId, rfdfu);
+            _logger.LogInformation("PaymentDone called with amount: {Amount}, payerId: {PayerId}, merchantId: {MerchantId}, serviceId: {ServiceId}, rfdfu: {RFDFU}", amount, payerId, merchantId, serviceId, rfdfu);
 
-            if (string.IsNullOrEmpty(amount) || string.IsNullOrEmpty(paymentType) || string.IsNullOrEmpty(payerId) || string.IsNullOrEmpty(merchantId) || string.IsNullOrEmpty(serviceId) || string.IsNullOrEmpty(rfdfu))
+            if (string.IsNullOrEmpty(amount) || string.IsNullOrEmpty(payerId) || string.IsNullOrEmpty(merchantId) || string.IsNullOrEmpty(serviceId) || string.IsNullOrEmpty(rfdfu))
             {
                 _logger.LogWarning("Invalid parameters passed to PaymentDone");
                 return BadRequest("Invalid parameters.");
             }
+            ProviderUser p = new ProviderUser();
+            var getMerchantName = await _httpClient.GetAsync("Providers/" + merchantId);
+            getMerchantName.EnsureSuccessStatusCode();
+            if (getMerchantName != null)
+            {
+                var responseString = await getMerchantName.Content.ReadAsStringAsync();
+                p = JsonConvert.DeserializeObject<ProviderUser>(responseString);
 
+            }
+            Service s = new Service();
+            var getServiceName = await _httpClient.GetAsync("CategoryServices/getServiceByName?id=" + serviceId);
+            getServiceName.EnsureSuccessStatusCode();
+            if (getServiceName != null)
+            {
+                var responseString = await getServiceName.Content.ReadAsStringAsync();
+                // Deserialize the JSON into a List<Service>
+                List<Service> services = JsonConvert.DeserializeObject<List<Service>>(responseString);
+                s = services[0];
+
+            }
+            HttpContext.Session.SetEncryptedString("amount", $"{amount}", _protector);
+            HttpContext.Session.SetEncryptedString("paymentType", "Online", _protector);
+            HttpContext.Session.SetEncryptedString("payerId", $"{payerId}", _protector);
+            HttpContext.Session.SetEncryptedString("merchantId", $"{merchantId}", _protector);
+            HttpContext.Session.SetEncryptedString("serviceId", $"{serviceId}", _protector);
+            HttpContext.Session.SetEncryptedString("rfdfu", $"{rfdfu}", _protector);
+
+            var paymentGatewayResponse = await PaymentGateway(amount, 1, s.serviceName, p.ProviderName);//stripe
+            //var paymentGatewayResponse = await PaymentGatewaytelr(amount, 1, s.serviceName, p.ProviderName);//telr
+            return paymentGatewayResponse;
+
+        }
+        [HttpGet]
+        public async Task<ActionResult> cancel()
+        { return View(); }
+        [HttpGet]
+        public async Task<ActionResult> success()
+        {
             try
             {
+                string amount = HttpContext.Session.GetEncryptedString("amount", _protector);
+                string paymentType = HttpContext.Session.GetEncryptedString("paymentType", _protector);
+                string payerId = HttpContext.Session.GetEncryptedString("payerId", _protector);
+                string merchantId = HttpContext.Session.GetEncryptedString("merchantId", _protector);
+                string serviceId = HttpContext.Session.GetEncryptedString("serviceId", _protector);
+                string rfdfu = HttpContext.Session.GetEncryptedString("rfdfu", _protector);
+
                 var paymentHistory = new PaymentHistory
                 {
                     PAYMENTTYPE = paymentType,
@@ -122,7 +169,7 @@ namespace AFFZ_Customer.Controllers
                 }
 
                 TempData["SuccessResponse"] = responseString;
-                return RedirectToAction("MerchantResponseIndex");
+                return View();
             }
             catch (Exception ex)
             {
@@ -130,11 +177,10 @@ namespace AFFZ_Customer.Controllers
                 return StatusCode(500, "An internal server error occurred. Please try again later.");
             }
         }
-
         [HttpGet]
         public async Task<ActionResult> Payment(string rfdfu, string uid, string merchantId)
         {
-            string userId = HttpContext.Session.GetEncryptedString("UserId", _protector); ; // Placeholder for session user ID retrieval
+            string userId = HttpContext.Session.GetEncryptedString("UserId", _protector); // Placeholder for session user ID retrieval
 
             try
             {
@@ -171,6 +217,74 @@ namespace AFFZ_Customer.Controllers
             }
 
             return View();
+        }
+        private async Task<ActionResult> PaymentGatewaytelr(string _price, long _quantity, string servicetype, string merchantname)
+        {
+
+            var domain = "https://localhost:7195/MerchantResponseToUser/";
+            string SuccessUrl = domain + "success";
+            string CancelUrl = domain + "cancel";
+
+            var optionstelr = new RestClientOptions("https://secure.telr.com/gateway/order.json");
+            var client = new RestClient(optionstelr);
+            var request = new RestRequest("");
+            request.AddHeader("accept", "application/json");
+            request.AddJsonBody("{\"method\":\"create\",\"store\":1234,\"authkey\":\"mykey1234\",\"framed\":0,\"order\":{\"cartid\":\"1234\",\"test\":\"1\",\"amount\":\"" + _price + "\",\"currency\":\"AED\",\"description\":\"1 month Visa\"},\"return\":{\"authorised\":\"" + SuccessUrl + "\",\"declined\":\"" + CancelUrl + "\",\"cancelled\":\"" + CancelUrl + "\"}}", false);
+            var response = await client.PostAsync(request);
+
+            return Ok(response.Content);
+        }
+        private async Task<ActionResult> PaymentGateway(string _price, long _quantity, string servicetype, string merchantname)
+        {
+
+            StripeConfiguration.ApiKey = "sk_test_51Q0Hq0KyRuGjwLZlAu0o3PzTHoVHZhb9HZwJuvGFl7CLsa1NI3xgPJwYKITHYYVbQKVHVv2h85E1b7YBB2OTa5bF00k0mbfMR3";
+            var domain = "https://localhost:7195/MerchantResponseToUser/";
+            var optionsProduct = new ProductCreateOptions
+            {
+                Name = "1 month Visa",
+                Description = "1 month Visa Purchase from Merchant",
+            };
+            var serviceProduct = new ProductService();
+            Product product = serviceProduct.Create(optionsProduct);
+            // Console.Write("Success! Here is your starter subscription product id: {0}\n", product.Id);
+            double priceValue = Convert.ToDouble(_price);
+
+            // Multiply by 100 and then convert to long
+            long finalPrice = Convert.ToInt64(priceValue * 100);
+            var optionsPrice = new PriceCreateOptions
+            {
+                UnitAmount = finalPrice,
+                Currency = "aed",
+                //Recurring = new PriceRecurringOptions
+                //{
+                //    Interval = "one-time",
+                //},
+                Product = product.Id
+            };
+            var servicePrice = new PriceService();
+            Price price = servicePrice.Create(optionsPrice);
+            var options = new SessionCreateOptions
+            {
+                LineItems = new List<SessionLineItemOptions>
+                {
+                  new SessionLineItemOptions
+                  {
+                    // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+                    Price = price.Id,
+                    Quantity = 1,
+                  },
+                },
+                Mode = "payment",
+                SuccessUrl = domain + "success",
+                CancelUrl = domain + "cancel",
+
+
+            };
+            var service = new SessionService();
+            Session session = service.Create(options);
+
+            Response.Headers.Add("Location", session.Url);
+            return new StatusCodeResult(303);
         }
         public async Task<ActionResult> SelectFinalMerchant(RequestForDisCountToUserViewModel requestForDisCount)
         {

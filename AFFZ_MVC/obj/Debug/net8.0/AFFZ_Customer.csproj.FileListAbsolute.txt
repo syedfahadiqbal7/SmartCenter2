@@ -326,3 +326,5 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\bin\Deb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\obj\Debug\net8.0\AFFZ_Customer.sourcelink.json
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\obj\Debug\net8.0\staticwebassets\msbuild.AFFZ_Customer.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\bin\Debug\net8.0\Stripe.net.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\bin\Debug\net8.0\RestSharp.dll

@@ -64,10 +64,11 @@
                             }
                             else
                             {
-                                <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@_subcat.MID~@_subcat.SID', 'RequestForDiscount' )">
-                                    AED@_subcat.PRICE
-                                </a>
-                                <a asp-action="RequestForDiscount" class="btn btn-secondary" asp-route-id="@_subcat.MID~@_subcat.SID">Ask for Discount</a>
+                                @* <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@_subcat.MID~@_subcat.SID', 'RequestForDiscount' )">
+                                    PAY AED@_subcat.PRICE
+                                </a> *@
+                                <a class="btn btn-secondary" asp-action="ProceedDirecttoPayment" asp-route-id="@_subcat.MID~@_subcat.SID" style="float: right;">PAY AED@_subcat.PRICE</a>
+                                <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@_subcat.MID~@_subcat.SID', 'RequestForDiscount','PAY AED@_subcat.PRICE')" style="font-size: 10px;margin-top:10px;padding: 5px 10px;font-weight: bold;color: red;">Ask for Discount*</a>
                             }
                         </div>
                     </div>
@@ -77,11 +78,14 @@
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content doctor-profile">
                             <div class="modal-header border-bottom-0 justify-content-between">
-                                <h5 class="modal-title" id="imageModalLabel">Proceed to Payment</h5>
+                                <h5 class="modal-title" id="imageModalLabel">Request For Discount</h5>
                                 <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="feather-x"></i></button>
                             </div>
                             <div class="modal-body pt-0">
                                 <p id="Modalpayment"></p>
+                                <p id="buttonset">
+                                    
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -94,8 +98,9 @@
 </div>
 <script src="~/assets/js/script.js"></script>
 <script>
-    function showPaymentPopup(mid, sid) {
-        $('#Modalpayment').html("This is payment screen of MerchantId="+mid+" and Service Id = "+sid);
+    function showPaymentPopup(mid, sid,amount) {
+        $('#Modalpayment').html('<b style="color:red;font-size:12px">Please note: Requesting a discount may take 12 to 24 hours to process. If you like to proceed without a discount proceed with payment.</b > ');
+        $('#buttonset').html('<a class="btn btn-secondary" href="/MerchantList/RequestForDiscount?id=' + mid + '" style="float: left;">Ask for Discount</a> <a class="btn btn-secondary" href="/MerchantList/ProceedDirecttoPayment?id=' + mid + '" style="float: right;">' + amount + '</a>');
         // Show the modal
         $('#paymentModal').modal('show');
     }

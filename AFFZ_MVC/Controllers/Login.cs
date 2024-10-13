@@ -20,43 +20,41 @@ namespace AFFZ_Customer.Controllers
             _protector = provider.CreateProtector("Example.SessionProtection");
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string returnUrl = "")
         {
+            // Save the returnUrl in ViewBag to use it on the login page
+            ViewBag.ReturnUrl = returnUrl;
             return View("Login", new LoginModel());
         }
 
         [HttpPost]
-        public async Task<IActionResult> CustomersLogin(LoginModel model)
+        public async Task<IActionResult> CustomersLogin(LoginModel model, string returnUrl = null)
         {
             try
             {
                 var response = await _httpClient.PostAsync("Customers/Login", Customs.GetJsonContent(model));
                 response.EnsureSuccessStatusCode();
-
                 var responseString = await response.Content.ReadAsStringAsync();
                 SResponse sResponse = JsonConvert.DeserializeObject<SResponse>(responseString);
-
-
-
                 if (sResponse.StatusCode == HttpStatusCode.OK)
                 {
-
                     Customers customerDetail = JsonConvert.DeserializeObject<Customers>(sResponse.Data.ToString());
-
                     HttpContext.Session.SetEncryptedString("UserId", $"{customerDetail?.CustomerId}", _protector);
                     HttpContext.Session.SetEncryptedString("RoleId", $"{customerDetail?.RoleId}", _protector);
                     HttpContext.Session.SetEncryptedString("ProfilePicturePath", $"{customerDetail?.ProfilePicture}", _protector);
                     HttpContext.Session.SetEncryptedString("Email", $"{customerDetail?.Email}", _protector);
                     HttpContext.Session.SetEncryptedString("MemberSince", $"{customerDetail?.CreatedDate.ToString("MMM yyyy")}", _protector);
                     HttpContext.Session.SetEncryptedString("FirstName", $"{customerDetail?.FirstName}", _protector);
-
+                    if (!string.IsNullOrEmpty(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
                     return RedirectToAction("Index", "Dashboard");
                 }
                 else
                 {
                     return RedirectToAction("Index", "Login");
                 }
-
             }
             catch (Exception ex)
             {

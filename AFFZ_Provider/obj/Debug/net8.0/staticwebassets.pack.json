@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\AFFZ_Provider.bdg1r0a6qo.bundle.scp.css"
     },
     {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\admin.css",
+      "PackagePath": "staticwebassets\\assets\\css\\admin.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\admin.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\admin.css.map"
+    },
+    {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\bootstrap-datetimepicker.min.css",
       "PackagePath": "staticwebassets\\assets\\css\\bootstrap-datetimepicker.min.css"
     },

@@ -12,6 +12,30 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-4dtUQD7IpjXhAvD1onl7Dnm9SQbLpX/goDSrlkN2ZFA="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00224dtUQD7IpjXhAvD1onl7Dnm9SQbLpX/goDSrlkN2ZFA=\u0022"},{"Name":"Last-Modified","Value":"Tue, 17 Sep 2024 04:35:01 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AFFZ_Provider/assets/css/admin.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\admin.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-N\u002BwJ6hc2D6oiphM/GVQek/O31TcwKp7ESHa1ziJSZG0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"250620"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022N\u002BwJ6hc2D6oiphM/GVQek/O31TcwKp7ESHa1ziJSZG0=\u0022"},{"Name":"Last-Modified","Value":"Fri, 11 Oct 2024 20:07:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AFFZ_Provider/assets/css/admin.css.map">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\admin.css.map'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-uFvAtv2T2STgxWitYevw0Rugyegb27iFwP19zAUQI2k="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"45684"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022uFvAtv2T2STgxWitYevw0Rugyegb27iFwP19zAUQI2k=\u0022"},{"Name":"Last-Modified","Value":"Mon, 27 May 2024 10:27:03 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AFFZ_Provider/assets/css/admin.css.wa8txhzwl7.map">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\admin.css.map'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wa8txhzwl7"},{"Name":"integrity","Value":"sha256-uFvAtv2T2STgxWitYevw0Rugyegb27iFwP19zAUQI2k="},{"Name":"label","Value":"_content/AFFZ_Provider/assets/css/admin.css.map"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"45684"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022uFvAtv2T2STgxWitYevw0Rugyegb27iFwP19zAUQI2k=\u0022"},{"Name":"Last-Modified","Value":"Mon, 27 May 2024 10:27:03 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AFFZ_Provider/assets/css/admin.zpxms357hv.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\admin.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zpxms357hv"},{"Name":"integrity","Value":"sha256-N\u002BwJ6hc2D6oiphM/GVQek/O31TcwKp7ESHa1ziJSZG0="},{"Name":"label","Value":"_content/AFFZ_Provider/assets/css/admin.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"250620"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022N\u002BwJ6hc2D6oiphM/GVQek/O31TcwKp7ESHa1ziJSZG0=\u0022"},{"Name":"Last-Modified","Value":"Fri, 11 Oct 2024 20:07:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AFFZ_Provider/assets/css/bootstrap-datetimepicker.min.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\bootstrap-datetimepicker.min.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

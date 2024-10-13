@@ -64,3 +64,15 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\D
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\AFFZ_Admin.sourcelink.json
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\staticwebassets\msbuild.AFFZ_Admin.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Debug\net8.0\Stripe.net.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Debug\net8.0\System.Security.Permissions.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll

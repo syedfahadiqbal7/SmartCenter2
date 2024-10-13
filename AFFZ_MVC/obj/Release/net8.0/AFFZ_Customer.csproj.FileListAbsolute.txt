@@ -154,3 +154,10 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\obj\Rel
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\obj\Release\net8.0\AFFZ_Customer.pdb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\obj\Release\net8.0\AFFZ_Customer.genruntimeconfig.cache
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\obj\Release\net8.0\ref\AFFZ_Customer.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\bin\Release\net8.0\AFFZ_Customer.staticwebassets.endpoints.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\bin\Release\net8.0\RestSharp.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\bin\Release\net8.0\Stripe.net.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\bin\Release\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\obj\Release\net8.0\AFFZ_Customer.sourcelink.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\obj\Release\net8.0\staticwebassets.build.endpoints.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\obj\Release\net8.0\staticwebassets\msbuild.AFFZ_Customer.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
