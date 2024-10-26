@@ -25,7 +25,7 @@ namespace AFFZ_API.Controllers
             int id = Convert.ToInt32(Mid);
             var query = from rm in _context.RequestForDisCountToMerchants
                         join ser in _context.Services
-                        on new { MID = (int)rm.MID, SID = (int)rm.SID } equals new { MID = (int)ser.MerchantId, SID = (int)ser.ServiceId }
+                        on new { MID = (int)rm.MID, SID = (int)rm.SID } equals new { MID = (int)ser.MerchantID, SID = (int)ser.ServiceId }
                         where rm.MID == id && rm.IsResponseSent == 0
                         select new RequestForDiscountViewModel
                         {
@@ -43,7 +43,7 @@ namespace AFFZ_API.Controllers
             return Ok(result);
         }
 
-        public bool IsRequestedService(int Mid, int sid)
+        private bool IsRequestedService(int Mid, int sid)
         {
             return _context.RequestForDisCountToMerchants.Where(x => x.MID == Mid && x.SID == sid && x.IsResponseSent == 0).Any();
         }
@@ -57,7 +57,7 @@ namespace AFFZ_API.Controllers
 
             var query = _context.Services
                 .Join(_context.Merchants,
-                      service => service.MerchantId,
+                      service => service.MerchantID,
                       merchant => merchant.MerchantId,
                       (service, merchant) => new { service, merchant })
                 .GroupJoin(_context.MerchantRatings,
@@ -180,7 +180,7 @@ namespace AFFZ_API.Controllers
         {
             var query = from merchant in _context.Merchants
                         join service in _context.Services
-                        on merchant.MerchantId equals service.MerchantId
+                        on merchant.MerchantId equals service.MerchantID
                         select new ServiceMerchantDTO
                         {
                             MID = merchant.MerchantId,
@@ -226,6 +226,9 @@ namespace AFFZ_API.Controllers
                 };
                 _context.Add(requestForDisCountToMerchant);
                 await _context.SaveChangesAsync();
+                /*  await _context.Database.ExecuteSqlRawAsync("sp_InsertRequestForDisCountToMerchant @p0, @p1, @p2, @p3, @p4",
+             parameters: new object[] { data.ServiceId, data.MerchantId, data.UserId, 0, DateTime.Now });*/
+
                 string MerchantEmail = _context.ProviderUsers.Where(x => x.ProviderId == mid).Select(x => x.Email).FirstOrDefault();
                 string MerchantName = _context.ProviderUsers.Where(x => x.ProviderId == mid).Select(x => x.ProviderName).FirstOrDefault();
                 string ServiceName = _context.Services.Where(x => x.ServiceId == data.ServiceId).Select(x => x.ServiceName).FirstOrDefault();
@@ -249,14 +252,14 @@ namespace AFFZ_API.Controllers
             {
                 var query = from service in _context.Services
                             join request in _context.RequestForDisCountToUsers
-                             on new { TSID = service.ServiceId, TMID = service.MerchantId ?? 0 } equals new { TSID = request.SID, TMID = request.MID }
-                            where service.MerchantId.HasValue
+                             on new { TSID = service.ServiceId, TMID = service.MerchantID ?? 0 } equals new { TSID = request.SID, TMID = request.MID }
+                            where service.MerchantID.HasValue
                             select new RequestForDisCountToUserViewModel
                             {
                                 SID = request.SID,
                                 ServicePrice = service.ServicePrice ?? 0,
                                 ServiceName = service.ServiceName,
-                                MerchantID = service.MerchantId ?? 0,
+                                MerchantID = service.MerchantID ?? 0,
                                 FINALPRICE = request.FINALPRICE,
                                 UID = request.UID,
                                 RFDFU = request.RFDFU,

@@ -1,0 +1,161 @@
+﻿@model AFFZ_Provider.Models.Service
+@{
+
+}
+
+<h2>Modify Service</h2>
+<link href="~/assets/js/multi.js/multi.min.css" rel="stylesheet" />
+<script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var _ServiceNameDropdown = document.getElementById("ServiceName");
+        var _CategoryIDDropdown = document.getElementById("CategoryID");
+        // Enable or disable dropdowns based on the initial value of the branch dropdown
+
+        _ServiceNameDropdown.addEventListener("change", function() {
+            var ServId = this.value;
+            if (ServId) {
+                // Enable the other dropdowns
+
+                // Reload the page with the selected branch as a query parameter
+                var CatId = _CategoryIDDropdown.value;
+                window.location.href = '@Url.Action("MerchantServiceCreate", "MerchantService")?ServiceName=' + ServId + '&CategoryID=' + CatId;
+            }
+        });
+        var form = document.querySelector("form");
+        form.addEventListener("submit", function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+                alert("Please correct the errors in the form before submitting.");
+            }
+        });
+    });
+</script>
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+
+            <div class="col-lg-12 m-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-sm-0 float-start">@ViewData["Title"]</h4>
+                        <a asp-action="MerchantServiceIndex" class="btn btn-info btn-sm waves-effect waves-light float-end">Back to List</a>
+                    </div><!-- end card header -->
+                    <div class="card-body">
+                        @using (Html.BeginForm("MerchantServiceEdit", null, FormMethod.Post, new { @class = "form", @novalidate = "novalidate" }))
+                        {
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+                            @Html.Hidden("id", Model.ServiceId)
+                            ;
+                            @Html.HiddenFor(x => x.ServiceId, Model.ServiceId)
+                            ;
+                            <!-- Service Information -->
+                            <fieldset id="first-field">
+                                <div class="container-service space-service">
+                                    <div class="sub-title">
+                                        <h6>Edit - Service </h6>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Service Category</label>
+                                                <select class="form-select" name="CategoryID" id="CategoryID" asp-items="@ViewBag.ServiceCategoryComboData">
+                                                    <option value="">--Select--</option>
+                                                </select>
+                                                @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Service Title</label>
+                                                <select class="form-select" name="ServiceName" id="ServiceName" asp-items="@ViewBag.ServiceListComboData">
+                                                    <option value="">--Select--</option>
+                                                </select>
+                                                @Html.ValidationMessageFor(model => model.ServiceName, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group price">
+                                                <label>Price <span>Set 0 for free</span></label>
+                                                <input asp-for="ServicePrice" class="form-control" />
+                                                @Html.ValidationMessageFor(model => model.ServicePrice, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group price">
+                                                <label>Amount To Pay to System Admin<span>Set 0 for free</span></label>
+                                                <input asp-for="ServiceAmountPaidToAdmin" class="form-control" />
+                                                @Html.ValidationMessageFor(model => model.ServiceAmountPaidToAdmin, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Duration</label>
+                                                <div class="form-duration">
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @placeholder = "Description" })
+                                                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Select Documents</label>
+                                                @* @Html.DropDownList("SelectedDocumentIds", (IEnumerable<SelectListItem>)ViewBag.DocumentListComboData, " ", new { @class = "form-select", @required = "required", @multiple = "multiple", @name = "SelectedDocumentIds", @id = "multiselect-basic" }) *@
+
+                                                <select id="multiselect-basic" name="SelectedDocumentIds" class="form-select" multiple="multiple" asp-items="@ViewBag.DocumentListComboData">
+                                                </select>
+                                                @Html.ValidationMessageFor(model => model.SelectedDocumentIds, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="bottom-btn">
+                                            <div class="field-btns">
+                                                <button class="btn btn-primary" type="submit">Submit <i class="fas fa-save"></i></button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <!-- /Service Information -->
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/assets/js/multi.js/multi.min.js"></script>
+    <script>
+        var multiSelectBasic = document.getElementById("multiselect-basic");
+        multi(multiSelectBasic, {
+            "enable_search": true,
+            "search_placeholder": "Search...",
+            "non_selected_header": "All Documents",
+            "selected_header": "Selected Documents",
+            "limit": -1,
+            "limit_reached": function() { },
+            "hide_empty_groups": false,
+        });
+    </script>
+}

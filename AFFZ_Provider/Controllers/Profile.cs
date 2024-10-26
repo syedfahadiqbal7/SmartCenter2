@@ -82,7 +82,7 @@ namespace AFFZ_Provider.Controllers
                 }
                 if (model.DrivingLicenseFile != null)
                 {
-                    string userId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);                   
+                    string userId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
                     string fileName = $"DrivingLicense{model.DrivingLicenseFile.FileName.Substring(model.DrivingLicenseFile.FileName.LastIndexOf("."))}";
                     drivingLicensePath = Path.Combine(_uploadPath, fileName);
                     using (var fileStream = new FileStream(drivingLicensePath, FileMode.Create))

@@ -1,228 +1,138 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>Truelysell | Template</title>
+﻿@using AFFZ_Provider.Utils
+@using Microsoft.AspNetCore.DataProtection
+@inject NotificationService NotificationService
+@{
+    var notifications = await NotificationService.GetNotificationsAsync();
+    ViewBag.MerchantId = NotificationService.GetMerchantId();
+    var controllerName = ViewContext.RouteData.Values["controller"]?.ToString();
+}
+<div class="header">
+    <div class="header-left">
+        <a href="Dashboard" class="logo">
+            <img src="/assets/img/logo.png" alt="Logo" width="30" height="30">
+        </a>
+        <a href="Dashboard" class=" logo-small">
+            <img src="/assets/img/logo-small.png" alt="Logo" width="30" height="30">
+        </a>
+    </div>
+    <a class="mobile_btn" id="mobile_btn" href="javascript:void(0);">
+        <i class="fas fa-align-left"></i>
+    </a>
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="/assets/img/favicon.png">
+    <div class="header-split">
+        <div class="page-headers">
+            <div class="search-bar">
+                <span><i class="fe fe-search"></i></span>
+                <input type="text" placeholder="Search" class="form-control">
+            </div>
+        </div>
+        <ul class="nav user-menu">
+            <li class="nav-item">
+                <a href="https://localhost:7204/" class="viewsite"><i class="fe fe-globe me-2"></i>View Site</a>
+            </li>
+            <li class="nav-item dropdown has-arrow dropdown-heads flag-nav">
+                <a class="nav-link" data-bs-toggle="dropdown" href="javascript:void(0);" role="button">
+                    <img src="/assets/img/flags/us1.png" alt="Flag" height="20">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a href="javascript:void(0);" class="dropdown-item">
+                        <img src="/assets/img/flags/us.png" class="me-2" alt="Flag" height="16"> English
+                    </a>
+                    <a href="javascript:void(0);" class="dropdown-item">
+                        <img src="/assets/img/flags/fr.png" class="me-2" alt="Flag" height="16"> French
+                    </a>
+                    <a href="javascript:void(0);" class="dropdown-item">
+                        <img src="/assets/img/flags/es.png" class="me-2" alt="Flag" height="16"> Spanish
+                    </a>
+                    <a href="javascript:void(0);" class="dropdown-item">
+                        <img src="/assets/img/flags/de.png" class="me-2" alt="Flag" height="16"> German
+                    </a>
+                </div>
+            </li>
+            <!-- Notifications -->
+            <li class="nav-item dropdown has-arrow dropdown-heads">
+                <a href="#" class="dropdown-toggle nav-link notify-link" data-bs-toggle="dropdown">
+                    <span class="noti-message">@notifications.Where(a => a.IsRead == false).ToList().Count</span>
+                    <img src="/assets/img/icons/bell-icon.svg" alt="Bell">
+                </a>
+                <div class="dropdown-menu notifications">
+                    <div class="topnav-dropdown-header">
+                        <span class="notification-title">Notifications <bold>@notifications.Where(a => a.IsRead == false).ToList().Count</bold></span>
+                        <a href="javascript:void(0)" class="clear-noti" onclick="markAllAsRead(@ViewBag.MerchantId)">Mark all as read</a>
+                    </div>
+                    <div class="noti-content">
+                        <ul class="notification-list">
+                            @foreach (var notification in notifications)
+                            {
+                                string style = notification.IsRead ? "font-weight:100" : "";
+                                <li class="notification-message">
+                                    <a href="javascript:void(0)" onclick="markAsReadAndRedirect(@notification.Id, '@notification.RedirectToActionUrl')">
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+                                        <div class="media d-flex">
+                                            <span class="avatar avatar-sm flex-shrink-0">
+                                                <img class="avatar-img rounded-circle" alt="user" src="/assets/img/provider/provider-01.jpg">
+                                            </span>
+                                            <div class="media-body flex-grow-1">
+                                                <p class="noti-details">
+                                                    <span class="noti-title" style="@style">@notification.Message</span>
+                                                </p>
+                                                <p class="noti-time">
+                                                    <span class="notification-time">@notification.CreatedDate.ToString("g")</span>
+                                                </p>
+                                                @* <p class="noti-details" style="@style">@notification.Message</p>
+                                            <p class="noti-time"><span class="notification-time">@notification.CreatedDate.ToString("g")</span></p> *@
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="topnav-dropdown-footer">
+                        <a href="notification.html">View All Notifications</a>
+                    </div>
+                </div>
+            </li>
+            <!-- /Notifications -->
+            <li class="nav-item  has-arrow dropdown-heads ">
+                <a href="#" class="win-maximize">
+                    <i class="feather-maximize"></i>
+                </a>
+            </li>
 
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+            <!-- User Menu -->
+            <li class="nav-item dropdown">
+                <a href="javascript:void(0)" class="user-link  nav-link" data-bs-toggle="dropdown">
+                    <span class="user-img">
+                        <img class="rounded-circle" src="/assets/img/profiles/avatar-02.jpg" width="40" alt="Admin">
+                        <span class="animate-circle"></span>
+                    </span>
+                    <span class="user-content">
+                        <span class="user-name">John Smith</span>
+                        <span class="user-details">Demo User</span>
+                    </span>
+                </a>
+                <div class="dropdown-menu menu-drop-user">
+                    <div class="profilemenu ">
+                        <div class="subscription-menu">
+                            <ul>
+                                <li>
+                                    <a class="dropdown-item" href="/Profile">
+                                        <i class="feather-user me-2"></i> Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="@Url.Action("Logout", "Login")">
+                                        <i class="feather-log-out me-2"></i> Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- /User Menu -->
+        </ul>
+    </div>
 
-	<!-- Fearther CSS -->
-	<link rel="stylesheet" href="/assets/css/feather.css">
-
-	<!-- select CSS -->
-	<link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
-
-	<!-- Datetimepicker CSS -->
-	<link rel="stylesheet" href="/assets/css/bootstrap-datetimepicker.min.css">
-
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="/assets/css/style.css">
-
-</head>
-
-<body>
-
-	<div class="main-wrapper">
-
-		<!-- Header -->
-		<header class="header">
-			<div class="container">
-				<nav class="navbar navbar-expand-lg header-nav">
-					<div class="navbar-header">
-						<a id="mobile_btn" href="javascript:void(0);">
-							<span class="bar-icon">
-								<span></span>
-								<span></span>
-								<span></span>
-							</span>
-						</a>
-						<a href="index.html" class="navbar-brand logo">
-							<img src="/assets/img/logo.png" class="img-fluid" alt="Logo">
-						</a>
-						<a href="index.html" class="navbar-brand logo-small">
-							<img src="/assets/img/logo-small.png" class="img-fluid" alt="Logo">
-						</a>
-					</div>
-					<div class="main-menu-wrapper">
-						<div class="menu-header">
-							<a href="index.html" class="menu-logo">
-								<img src="/assets/img/logo.svg" class="img-fluid" alt="Logo">
-							</a>
-							<a id="menu_close" class="menu-close" href="javascript:void(0);"> <i class="fas fa-times"></i></a>
-						</div>
-						<ul class="main-nav">
-
-							<li class="login-link">
-								<a href="choose-signup.html">Register</a>
-							</li>
-							<li class="login-link">
-								<a href="login.html">Login</a>
-							</li>
-						</ul>
-					</div>
-					<ul class="nav header-navbar-rht noti-pop-detail">
-						<!-- Chat -->
-						<li class="nav-item logged-item msg-nav">
-							<a href="/UserChats" class="nav-link">
-								<img src="/assets/img/icons/message-icon.svg" alt="Message Icon">
-							</a>
-						</li>
-						<!-- /Chat -->
-						<!-- Notifications -->
-						<li class="nav-item dropdown logged-item noti-nav noti-wrapper">
-							<a href="#" class="dropdown-toggle nav-link notify-link" data-bs-toggle="dropdown">
-								<span class="noti-message">1</span>
-								<img src="/assets/img/icons/bell-icon.svg" alt="Bell">
-							</a>
-							<div class="dropdown-menu notify-blk notifications">
-								<div class="topnav-dropdown-header">
-									<div>
-										<p class="notification-title">Notifications <span> 3 </span></p>
-									</div>
-									<a href="javascript:void(0)" class="clear-noti"><i class="fa-regular fa-circle-check"></i> Mark all as read </a>
-								</div>
-								<div class="noti-content">
-									<ul class="notification-list">
-										<li class="notification-message">
-											<a href="notification.html">
-												<div class="media noti-img d-flex">
-													<span class="avatar avatar-sm flex-shrink-0">
-														<img class="avatar-img rounded-circle img-fluid" alt="User Image" src="/assets/img/notifications/avatar-01.jpg">
-													</span>
-													<div class="media-body flex-grow-1">
-														<p class="noti-details">Lex Murphy left 6 comments on Isla Nublar SOC2 compliance report</p>
-														<p class="noti-time"><span class="notification-time">1m ago</span></p>
-													</div>
-												</div>
-											</a>
-										</li>
-										<li class="notification-message">
-											<div class="media noti-img d-flex">
-												<a href="notification.html">
-													<span class="avatar avatar-sm flex-shrink-0">
-														<img class="avatar-img rounded-circle img-fluid" alt="User Image" src="/assets/img/notifications/avatar-02.jpg">
-													</span>
-												</a>
-												<div class="media-body flex-grow-1">
-													<a href="notification.html"><p class="noti-details">Ray Arnold requested access to UNIX directory tree hierarchy</p></a>
-													<p class="noti-time"><span class="notification-time">1 min</span></p>
-													<div class="notify-btns">
-														<button class="btn btn-secondary">Decline</button>
-														<button class="btn btn-primary">Accept</button>
-													</div>
-
-												</div>
-											</div>
-										</li>
-										<li class="notification-message">
-											<a href="notification.html">
-												<div class="media noti-img d-flex">
-													<span class="avatar avatar-sm flex-shrink-0">
-														<img class="avatar-img rounded-circle img-fluid" alt="User Image" src="/assets/img/notifications/avatar-03.jpg">
-													</span>
-													<div class="media-body flex-grow-1">
-														<p class="noti-details">Dennis Nedry commented on Isla Nublar SOC2 compliance report</p>
-														<p class="noti-time"><span class="notification-time">1m ago</span></p>
-													</div>
-												</div>
-											</a>
-										</li>
-										<li class="notification-message">
-											<a href="notification.html">
-												<div class="media noti-img d-flex">
-													<span class="avatar avatar-sm flex-shrink-0">
-														<img class="avatar-img rounded-circle img-fluid" alt="User Image" src="/assets/img/notifications/avatar-04.jpg">
-													</span>
-													<div class="media-body flex-grow-1">
-														<p class="noti-details">John Hammond created Isla Nublar SOC2 compliance report  </p>
-														<p class="noti-time"><span class="notification-time">1m ago</span></p>
-													</div>
-												</div>
-											</a>
-										</li>
-									</ul>
-								</div>
-								<div class="topnav-dropdown-footer">
-									<a href="notification.html">View All Notifications <img src="/assets/img/icons/arrow-right-01.svg" alt="Arrow"></a>
-								</div>
-							</div>
-						</li>
-						<!-- /Notifications -->
-						<!-- User Menu -->
-						<li class="nav-item dropdown has-arrow account-item">
-							<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-								<div class="user-infos">
-									<span class="user-img">
-										@* <img src="/assets/img/profiles/user.png" class="rounded-circle" alt="User Image"> *@
-										<img src="@Url.Action("GetImage", "Login", new { userId = "5" })" class="rounded-circle" alt="User Image">
-									</span>
-									<div class="user-info">
-										<h6>John Smith</h6>
-									</div>
-								</div>
-							</a>
-							<div class="dropdown-menu dropdown-menu-end emp">
-								<a class="dropdown-item" href="/Profile">
-									<i class="feather-user me-2"></i> Profile
-								</a>
-								<a class="dropdown-item" href="@Url.Action("Logout", "Login")">
-									<i class="feather-log-out me-2"></i> Logout
-								</a>
-							</div>
-						</li>
-						<!-- /User Menu -->
-					</ul>
-				</nav>
-			</div>
-		</header>
-		<!-- /Header -->
-
-		<div class="content">
-			<div class="container">
-
-				@RenderBody()
-
-			</div>
-		</div>
-
-		<!-- Cursor -->
-		<div class="mouse-cursor cursor-outer"></div>
-		<div class="mouse-cursor cursor-inner"></div>
-		<!-- /Cursor -->
-
-	</div>
-
-	<!-- jQuery -->
-	<script src="/assets/js/jquery-3.7.0.min.js"></script>
-
-	<!-- Bootstrap Core JS -->
-	<script src="/assets/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Fearther JS -->
-	<script src="/assets/js/feather.min.js"></script>
-
-	<!-- select JS -->
-	<script src="/assets/plugins/select2/js/select2.min.js"></script>
-
-	<!-- Datetimepicker JS -->
-	<script src="/assets/js/moment.min.js"></script>
-	<script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
-
-	<!-- Sticky Sidebar JS -->
-	<script src="/assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
-	<script src="/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
-
-	<!-- Custom JS -->
-	<script src="/assets/js/script.js"></script>
-
-</body>
-</html>
+</div>

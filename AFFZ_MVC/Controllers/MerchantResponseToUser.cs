@@ -409,38 +409,62 @@ namespace AFFZ_Customer.Controllers
                 return View(new FileUploadViewModel());
             }
         }
+        //[HttpGet]
+        //public async Task<ActionResult> UploadDocuments(string MerchantID)
+        //{
+        //    try
+        //    {
+        //        int UserId = Convert.ToInt32(HttpContext.Session.GetEncryptedString("UserId", _protector));//Convert.ToInt32(HttpContext.Session.GetString("UserId"));
+
+        //        var jsonResponse = await _httpClient.GetAsync("FileUpload/GetFilesList");
+        //        string responseString = await jsonResponse.Content.ReadAsStringAsync();
+        //        FileUploadViewModel model = new FileUploadViewModel();
+
+        //        if (!string.IsNullOrEmpty(responseString))
+        //        {
+        //            List<UploadedFile> documentList = JsonConvert.DeserializeObject<List<UploadedFile>>(responseString);
+        //            model.UploadedFiles = documentList.Where(x => x.UserId == UserId).ToList();
+        //        }
+        //        ViewBag.MerchantID = MerchantID;
+        //        ViewBag.SaveResponse = model;
+
+        //        return View(model);
+        //    }
+        //    catch (JsonSerializationException ex)
+        //    {
+        //        _logger.LogError(ex, "JSON deserialization error while fetching file list.");
+        //        ModelState.AddModelError(string.Empty, "Failed to load data.");
+        //        return View(new FileUploadViewModel());
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, "An unexpected error occurred while fetching file list.");
+        //        ModelState.AddModelError(string.Empty, "An unexpected error occurred while loading data.");
+        //        return View(new FileUploadViewModel());
+        //    }
+        //}
         [HttpGet]
-        public async Task<ActionResult> UploadDocuments(string MerchantID)
+        public async Task<ActionResult> UploadDocuments(int rfdfu, string MerchantID)
         {
             try
             {
-                int UserId = Convert.ToInt32(HttpContext.Session.GetEncryptedString("UserId", _protector));//Convert.ToInt32(HttpContext.Session.GetString("UserId"));
+                int UserId = Convert.ToInt32(HttpContext.Session.GetEncryptedString("UserId", _protector));
 
-                var jsonResponse = await _httpClient.GetAsync("FileUpload/GetFilesList");
+                // Fetching the document list from the API
+                var jsonResponse = await _httpClient.GetAsync($"FileUpload/GetServiceFileListByRFDFUId?rfdfuId={rfdfu}");
                 string responseString = await jsonResponse.Content.ReadAsStringAsync();
-                FileUploadViewModel model = new FileUploadViewModel();
+
+                List<DocumentInfo> documentList = new List<DocumentInfo>();
 
                 if (!string.IsNullOrEmpty(responseString))
                 {
-                    List<UploadedFile> documentList = JsonConvert.DeserializeObject<List<UploadedFile>>(responseString);
-                    model.UploadedFiles = documentList.Where(x => x.UserId == UserId).ToList();
+                    documentList = JsonConvert.DeserializeObject<List<DocumentInfo>>(responseString);
                 }
-                ViewBag.MerchantID = MerchantID;
-                ViewBag.SaveResponse = model;
-                //// Trigger notification
-                //var notification = new Notification
-                //{
-                //    UserId = UserId.ToString(),
-                //    Message = $"User[{UserId.ToString()}] has uploaded Documents. Please Check.",
-                //    MerchantId = MerchantID.ToString(),
-                //    RedirectToActionUrl = "#",
-                //    MessageFromId = UserId
-                //};
 
-                //var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
-                //string resString = await res.Content.ReadAsStringAsync();
-                //_logger.LogInformation("Notification Response : " + resString);
-                return View(model);
+                ViewBag.MerchantID = MerchantID;
+                ViewBag.DocumentList = documentList;
+
+                return View(new FileUploadViewModel { UserId = UserId });
             }
             catch (JsonSerializationException ex)
             {
@@ -515,6 +539,7 @@ namespace AFFZ_Customer.Controllers
                     var fileUploadModelAPI = new FileUploadModelAPI
                     {
                         UserId = loginUserId,
+                        MID = model.Merchant,
                         UploadedFiles = new List<UploadedFile>()
                     };
 
@@ -538,7 +563,9 @@ namespace AFFZ_Customer.Controllers
                                 FolderName = username,
                                 Status = "Pending",
                                 UserId = loginUserId,
-                                MerchantId = model.Merchant
+                                MerchantId = model.Merchant,
+                                DocumentAddedDate = DateTime.Now,
+                                DocumentModifiedDate = DateTime.Now
                             };
 
                             fileUploadModelAPI.UploadedFiles.Add(uploadedFile);
@@ -552,7 +579,7 @@ namespace AFFZ_Customer.Controllers
                     var notification = new Notification
                     {
                         UserId = loginUserId.ToString(),
-                        Message = $"User[{loginUserId.ToString()}] has upload some documents.",
+                        Message = $"User[{loginUserId.ToString()}] has uploaded some documents.",
                         MerchantId = model.Merchant.ToString(),
                         RedirectToActionUrl = "MerchantResponseToUser/GetUsersWithDocuments",
                         MessageFromId = Convert.ToInt32(loginUserId)
@@ -570,7 +597,6 @@ namespace AFFZ_Customer.Controllers
             {
                 _logger.LogError(ex, "An error occurred while uploading documents.");
                 return StatusCode(500, "An error occurred. Please try again later.");
-
             }
         }
 
@@ -689,7 +715,8 @@ namespace AFFZ_Customer.Controllers
     public class FileUploadViewModel
     {
         [Required]
-        public IFormFileCollection UserDocuments { get; set; }
+        //public IFormFileCollection UserDocuments { get; set; }
+        public List<IFormFile> UserDocuments { get; set; } // Change from IFormFileCollection to List<IFormFile>
         public int UserId { get; set; }
         public int Merchant { get; set; }
         public List<UploadedFile>? UploadedFiles { get; set; }
@@ -704,6 +731,7 @@ namespace AFFZ_Customer.Controllers
     {
 
         public int UserId { get; set; }
+        public int MID { get; set; }
         public List<UploadedFile>? UploadedFiles { get; set; }
     }
 }

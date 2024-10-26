@@ -23,9 +23,9 @@ namespace AFFZ_API.Controllers
 			 
 			 */
 
-            var categories = await _context.Services.GroupBy(sc => new { sc.ServiceName, sc.ServicePrice, sc.Merchant.MerchantLocation, sc.CategoryId }).Select(g => new SubCatPage
+            var categories = await _context.Services.GroupBy(sc => new { sc.ServiceName, sc.ServicePrice, sc.Merchant.MerchantLocation, sc.CategoryID }).Select(g => new SubCatPage
             {
-                CatId = g.Key.CategoryId,
+                CatId = g.Key.CategoryID,
                 ServiceName = g.Key.ServiceName,
                 ServicePrice = g.Key.ServicePrice,
                 Location = g.Key.MerchantLocation

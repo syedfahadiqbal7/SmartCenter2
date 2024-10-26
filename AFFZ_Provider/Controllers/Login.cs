@@ -47,6 +47,7 @@ namespace AFFZ_Provider.Controllers
                     //HttpContext.Session.SetEncryptedString("RoleId", $"{providerDetail?.RoleId}", _protector);
 
                     HttpContext.Session.SetEncryptedString("ProviderId", $"{providerDetail?.ProviderId}", _protector);
+                    HttpContext.Session.SetEncryptedString("ProviderName", $"{providerDetail?.ProviderName}", _protector);
                     HttpContext.Session.SetEncryptedString("RoleId", $"{providerDetail?.RoleId}", _protector);
 
                     return RedirectToAction("Index", "Dashboard");

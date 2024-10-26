@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nlskvGDZJKWpqeRZccEF9Vnu1G/CrJH5qEW+6wm0rUo=",
+  "Hash": "Gyp3U6ui5el7XxiXuxbrTfWp4b3ORgsfHmwtyvTdNd0=",
   "Source": "AFFZ_Provider",
   "BasePath": "_content/AFFZ_Provider",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "zpxms357hv",
-      "Integrity": "N+wJ6hc2D6oiphM/GVQek/O31TcwKp7ESHa1ziJSZG0=",
+      "Fingerprint": "7resva15av",
+      "Integrity": "s3A1oMPNkGE7qT0sUfLj6hHjCpPVTvBOe004MGkAP1w=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\admin.css"
@@ -206,6 +206,48 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\bootstrap-datetimepicker.min.css"
     },
     {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\ckeditor.css",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/css/ckeditor#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "76c1ysajd7",
+      "Integrity": "IVrfOikfkiG2fQ1DihFkoMy/LEYUU/MzSClR/+vZ6uc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\ckeditor.css"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\dataTables.bootstrap4.min.css",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/css/dataTables.bootstrap4.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vgmyampn7w",
+      "Integrity": "P1jasbHjK1FV2EbhzPvtXzwIzQUaCZCo3/pQeH6rvLs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\dataTables.bootstrap4.min.css"
+    },
+    {
       "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\feather.css",
       "SourceId": "AFFZ_Provider",
       "SourceType": "Discovered",
@@ -246,6 +288,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\select2.min.css",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/css/select2.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2ev8remmxd",
+      "Integrity": "6iN5hUJ9tVc9p9AuLOaI/iM3owj5oI29c2l0MPa8Cu0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\select2.min.css"
     },
     {
       "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\slick.css",
@@ -18812,6 +18875,27 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\works-six-3.png"
     },
     {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\admin.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/js/admin#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yxklsjcoqy",
+      "Integrity": "RuVTdqb6hgsCZXcbdWsRPQB8X/UK9IIxttdtY5xCeXg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\admin.js"
+    },
+    {
       "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\backToTop.js",
       "SourceId": "AFFZ_Provider",
       "SourceType": "Discovered",
@@ -18959,6 +19043,48 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\calander.js"
     },
     {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\ckeditor.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/js/ckeditor#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ukbfexocro",
+      "Integrity": "oqUvXgeEEKnQKPXANexemVZs+FmjdGhctnZZE+Fmne0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\ckeditor.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\dataTables.bootstrap4.min.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/js/dataTables.bootstrap4.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cc0hte31q6",
+      "Integrity": "BD86qK4LhH6iFPyHZXKio8Ahut9XjF9I5mOEVRWnYPw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\dataTables.bootstrap4.min.js"
+    },
+    {
       "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\feather.min.js",
       "SourceId": "AFFZ_Provider",
       "SourceType": "Discovered",
@@ -19020,6 +19146,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\jquery.counterup.min.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\jquery.dataTables.min.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/js/jquery.dataTables.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2knfsi53hj",
+      "Integrity": "/qa0IAZKJTmfqp8ZabUkpFE1wK3Unjj28JALWM1KuPo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\jquery.dataTables.min.js"
     },
     {
       "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\jquery.waypoints.js",
@@ -19106,6 +19253,48 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\moment.min.js"
     },
     {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\multi.js\\multi.min.css",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/js/multi.js/multi.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "l122lfza8u",
+      "Integrity": "2feYnOrcS15OCyYi4G4D436mqLmNdHF4jSajVYpYqY0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\multi.js\\multi.min.css"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\multi.js\\multi.min.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/js/multi.js/multi.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "y7neq51fna",
+      "Integrity": "8jSy4FoSFxH4c82XE8D7qLVbXrEG+zj498RnbSeg6m8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\multi.js\\multi.min.js"
+    },
+    {
       "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\owl.carousel.min.js",
       "SourceId": "AFFZ_Provider",
       "SourceType": "Discovered",
@@ -19141,11 +19330,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "a0pjowakrc",
-      "Integrity": "Wj1YODSr/hY+GpKCorKnVcaC1Gf8sYV50Lv2T5er/v8=",
+      "Fingerprint": "cunyjde7v4",
+      "Integrity": "zGsw6Y9wCuXZD6Mu2ktVQIfRmU0nhLxCjFWt+dOU+TA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\script.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\select2.min.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/js/select2.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7ax058ykat",
+      "Integrity": "gfL+iZ8v2CiftU9vSmg1RyQwVO5+qw9bgDqfdW7RdSo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\select2.min.js"
     },
     {
       "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\slick.js",
@@ -19230,6 +19440,363 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\plugins\\aos\\aos.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.css",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/css/bootstrap#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0al6ztee2g",
+      "Integrity": "OKjG6lDAxEQIwlsGVXM7pruc5rRuO74G9zI6KcOursA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.css.map",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/css/bootstrap.css#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "priv05uvv0",
+      "Integrity": "O7snp3BOoHHJYg1RU1JV1Rks8zC5MYmHuwLZBD+u68s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/css/bootstrap.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "phwklrx2ki",
+      "Integrity": "gw2ultXFnkPH+A1vQrvYGpV65moDUZmeLbD2X+7SWos=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css.map",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/css/bootstrap.min.css#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "sfua1mugok",
+      "Integrity": "aK6EaF3bzgKXu86ktHC98MlPeLQlS93BVKSjhnOFLwM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/js/bootstrap.bundle#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vr29y6m4cb",
+      "Integrity": "te81aD6F9aa2SJuw8Do7gTLc3NG7baRzPSe1Cw5+Y1o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/js/bootstrap.bundle.js#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qm38hbak0o",
+      "Integrity": "nt6dM/isl7bjessuHdkV9PU4lygDbdsJu3BlPeRbyAs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/js/bootstrap.bundle.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cgnkm5grl2",
+      "Integrity": "RIIp+d6RhFDpPAxTdGO/skjFbNZM0Axu+v3uBxhe1sI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/js/bootstrap.bundle.min.js#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "llx8tuhx2q",
+      "Integrity": "GSH9nQGDQNh9D2nORvaKUuolz5n+lrmOHedM/P+WVZw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/js/bootstrap.esm#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9l606n85tv",
+      "Integrity": "XWMH5YUP9GlrXNls5oJm21kZHe6LeE7XrWwsKgK3Ml4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js.map",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/js/bootstrap.esm.js#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "o6r5icn62k",
+      "Integrity": "IPVMyDWoTT+wyxMWqyZcAtByCdSYtiPZhH0lBrbCjP4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/js/bootstrap.esm.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c0v9te1kh1",
+      "Integrity": "PErEAMNs0j4c54siz+tj6U+8YnBbP6GoAlwCYkuDq3c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/js/bootstrap.esm.min.js#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "o1d4puk7gs",
+      "Integrity": "DAwUlccSFtUDppCbLxTVrMFHr+x0gs0hLsigIs/BTOI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/js/bootstrap#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3z7e6jcchw",
+      "Integrity": "IS6B+GOXVkHvvszifQot/evx5FFan8zpIOwMmUCSZ70=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js.map",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/js/bootstrap.js#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s9kdte20bp",
+      "Integrity": "4PzS+joOjuZh3PmGu53C0hw+22N6yM8MIofFXsMeYvo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js.map"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/js/bootstrap.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kta3t9duk9",
+      "Integrity": "eFUP9u5ses7Ll0MMHJFbcdxj+3VAjZNy1tEIQllY4iM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js.map",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/js/bootstrap.min.js#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lxnhmosdkt",
+      "Integrity": "lzaJGZxMdBemIVMIbmmcIuJsWsH+uvcRXO2rj0IjDhc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap-datetimepicker.min.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/bootstrap/js/bootstrap-datetimepicker.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m25daq4lk0",
+      "Integrity": "7sxJBHfaUsZT4Y0gPBGr5dFnrfbzYzEY8pOlCne4AI8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap-datetimepicker.min.js"
     },
     {
       "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap-tagsinput\\css\\bootstrap-tagsinput.css",
@@ -19503,6 +20070,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\plugins\\fancybox\\jquery.fancybox.min.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\feather\\feather.css",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/feather/feather#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mf7r58d0fy",
+      "Integrity": "nowc/do3RkzHecYT0ghDY21gHG1gU8ea1GBGuaWnDDY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\feather\\feather.css"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\feather\\fonts\\feather-webfont.woff",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/feather/fonts/feather-webfont#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "41uwfwuzzx",
+      "Integrity": "+BBG6q8LNAfkIxws/nxpux9V2LNPOCBlJantan5LWuc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\feather\\fonts\\feather-webfont.woff"
     },
     {
       "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\fontawesome\\css\\all.css",
@@ -21057,6 +21666,153 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\plugins\\ion-rangeslider\\js\\ion.rangeSlider.min.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.css",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/jvectormap/jquery-jvectormap-2.0.3#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ttpdo857wk",
+      "Integrity": "AQzlLHLLDB9eNIk32bnRW3H1fAkmKO5VRfRAu+KYhGg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.css"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.min.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wlfga8hts8",
+      "Integrity": "BG06gFvt9kIgwfg+DjkudpTjId2xnB06mQnowcCPEB0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.min.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-in-mill.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/jvectormap/jquery-jvectormap-in-mill#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gxhoqdlmda",
+      "Integrity": "xO7AYUtmnhsXHPM9AT0zvsLwxh4a4yk2qTiJDgde6Ak=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-in-mill.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-ru-mill.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/jvectormap/jquery-jvectormap-ru-mill#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jshpzhyqvb",
+      "Integrity": "rVI6AR1XiknQH+qrhUpEIMTRvMZ61GgRNtxFMVoyX8E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-ru-mill.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-uk_countries-mill.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/jvectormap/jquery-jvectormap-uk_countries-mill#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "g7vekx3djm",
+      "Integrity": "fL37dNA7sQJRpObOGdu4lGXUwvvEzw4Js+sTyGESEgo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-uk_countries-mill.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-us-aea.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/jvectormap/jquery-jvectormap-us-aea#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qjl874upi3",
+      "Integrity": "6sk1/uWEk1WnCk9Pq/Vk73oWmvTBTHvAbOXqmA0MXcc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-us-aea.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-world-mill.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "assets/plugins/jvectormap/jquery-jvectormap-world-mill#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jfsj51sdf0",
+      "Integrity": "USB5mehYF46OaLJhT/YVHgvYeZUpobUbt8U1dz8B2RI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-world-mill.js"
     },
     {
       "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\select2\\css\\select2.css",
@@ -22737,6 +23493,69 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\DrivingLicense.png",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "Uploads/User_3/DrivingLicense#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xo11trkqog",
+      "Integrity": "L/jQvSArhbfEYkeFgVkyP3I4u4dWZ1gFFcNjmVuifHo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\User_3\\DrivingLicense.png"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\EmiratesId.png",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "Uploads/User_3/EmiratesId#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "20owcexgl1",
+      "Integrity": "firSveUpMg34w2JeRbIbU9iWrh9BI6ZGyvyC3gHK4bY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\User_3\\EmiratesId.png"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\Passport.png",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "Uploads/User_3/Passport#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "b7lwspy1kr",
+      "Integrity": "qcwyuNXy7mik3MI++z7ZNOeGTb4DOJZUaVdlnvjBUmY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\User_3\\Passport.png"
     }
   ],
   "Endpoints": [
@@ -22763,7 +23582,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 17 Sep 2024 04:35:01 GMT"
+          "Value": "Wed, 23 Oct 2024 17:56:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22808,7 +23627,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 17 Sep 2024 04:35:01 GMT"
+          "Value": "Wed, 23 Oct 2024 17:56:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22853,7 +23672,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 17 Sep 2024 04:35:01 GMT"
+          "Value": "Wed, 23 Oct 2024 17:56:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22890,7 +23709,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 17 Sep 2024 04:35:01 GMT"
+          "Value": "Wed, 23 Oct 2024 17:56:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22905,6 +23724,51 @@
       ]
     },
     {
+      "Route": "assets/css/admin.7resva15av.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\admin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "292655"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"s3A1oMPNkGE7qT0sUfLj6hHjCpPVTvBOe004MGkAP1w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 24 Oct 2024 04:31:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7resva15av"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/css/admin.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-s3A1oMPNkGE7qT0sUfLj6hHjCpPVTvBOe004MGkAP1w="
+        }
+      ]
+    },
+    {
       "Route": "assets/css/admin.css",
       "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\admin.css",
       "Selectors": [],
@@ -22915,7 +23779,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "250620"
+          "Value": "292655"
         },
         {
           "Name": "Content-Type",
@@ -22923,11 +23787,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"N+wJ6hc2D6oiphM/GVQek/O31TcwKp7ESHa1ziJSZG0=\""
+          "Value": "\"s3A1oMPNkGE7qT0sUfLj6hHjCpPVTvBOe004MGkAP1w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 11 Oct 2024 20:07:18 GMT"
+          "Value": "Thu, 24 Oct 2024 04:31:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22937,7 +23801,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-N+wJ6hc2D6oiphM/GVQek/O31TcwKp7ESHa1ziJSZG0="
+          "Value": "sha256-s3A1oMPNkGE7qT0sUfLj6hHjCpPVTvBOe004MGkAP1w="
         }
       ]
     },
@@ -23020,51 +23884,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-uFvAtv2T2STgxWitYevw0Rugyegb27iFwP19zAUQI2k="
-        }
-      ]
-    },
-    {
-      "Route": "assets/css/admin.zpxms357hv.css",
-      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\admin.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "250620"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"N+wJ6hc2D6oiphM/GVQek/O31TcwKp7ESHa1ziJSZG0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 11 Oct 2024 20:07:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zpxms357hv"
-        },
-        {
-          "Name": "label",
-          "Value": "assets/css/admin.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-N+wJ6hc2D6oiphM/GVQek/O31TcwKp7ESHa1ziJSZG0="
         }
       ]
     },
@@ -23479,6 +24298,170 @@
       ]
     },
     {
+      "Route": "assets/css/ckeditor.76c1ysajd7.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\ckeditor.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9898"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IVrfOikfkiG2fQ1DihFkoMy/LEYUU/MzSClR/+vZ6uc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "76c1ysajd7"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/css/ckeditor.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IVrfOikfkiG2fQ1DihFkoMy/LEYUU/MzSClR/+vZ6uc="
+        }
+      ]
+    },
+    {
+      "Route": "assets/css/ckeditor.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\ckeditor.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9898"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IVrfOikfkiG2fQ1DihFkoMy/LEYUU/MzSClR/+vZ6uc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IVrfOikfkiG2fQ1DihFkoMy/LEYUU/MzSClR/+vZ6uc="
+        }
+      ]
+    },
+    {
+      "Route": "assets/css/dataTables.bootstrap4.min.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\dataTables.bootstrap4.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5239"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"P1jasbHjK1FV2EbhzPvtXzwIzQUaCZCo3/pQeH6rvLs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-P1jasbHjK1FV2EbhzPvtXzwIzQUaCZCo3/pQeH6rvLs="
+        }
+      ]
+    },
+    {
+      "Route": "assets/css/dataTables.bootstrap4.min.vgmyampn7w.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\dataTables.bootstrap4.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5239"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"P1jasbHjK1FV2EbhzPvtXzwIzQUaCZCo3/pQeH6rvLs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vgmyampn7w"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/css/dataTables.bootstrap4.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-P1jasbHjK1FV2EbhzPvtXzwIzQUaCZCo3/pQeH6rvLs="
+        }
+      ]
+    },
+    {
       "Route": "assets/css/feather.css",
       "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\feather.css",
       "Selectors": [],
@@ -23639,6 +24622,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-j4Y54YmzUAiDr+cQefGxfH72vMSqVV9xCQ8kiewVw+M="
+        }
+      ]
+    },
+    {
+      "Route": "assets/css/select2.min.2ev8remmxd.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\select2.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15197"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6iN5hUJ9tVc9p9AuLOaI/iM3owj5oI29c2l0MPa8Cu0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2ev8remmxd"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/css/select2.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6iN5hUJ9tVc9p9AuLOaI/iM3owj5oI29c2l0MPa8Cu0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/css/select2.min.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\select2.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15197"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6iN5hUJ9tVc9p9AuLOaI/iM3owj5oI29c2l0MPa8Cu0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6iN5hUJ9tVc9p9AuLOaI/iM3owj5oI29c2l0MPa8Cu0="
         }
       ]
     },
@@ -96131,6 +97196,88 @@
       ]
     },
     {
+      "Route": "assets/js/admin.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\admin.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32392"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RuVTdqb6hgsCZXcbdWsRPQB8X/UK9IIxttdtY5xCeXg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RuVTdqb6hgsCZXcbdWsRPQB8X/UK9IIxttdtY5xCeXg="
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/admin.yxklsjcoqy.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\admin.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32392"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RuVTdqb6hgsCZXcbdWsRPQB8X/UK9IIxttdtY5xCeXg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yxklsjcoqy"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/js/admin.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RuVTdqb6hgsCZXcbdWsRPQB8X/UK9IIxttdtY5xCeXg="
+        }
+      ]
+    },
+    {
       "Route": "assets/js/backToTop.iwy0p9u9xr.js",
       "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\backToTop.js",
       "Selectors": [],
@@ -96705,6 +97852,170 @@
       ]
     },
     {
+      "Route": "assets/js/ckeditor.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\ckeditor.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "762372"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oqUvXgeEEKnQKPXANexemVZs+FmjdGhctnZZE+Fmne0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oqUvXgeEEKnQKPXANexemVZs+FmjdGhctnZZE+Fmne0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/ckeditor.ukbfexocro.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\ckeditor.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "762372"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oqUvXgeEEKnQKPXANexemVZs+FmjdGhctnZZE+Fmne0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ukbfexocro"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/js/ckeditor.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oqUvXgeEEKnQKPXANexemVZs+FmjdGhctnZZE+Fmne0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/dataTables.bootstrap4.min.cc0hte31q6.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\dataTables.bootstrap4.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BD86qK4LhH6iFPyHZXKio8Ahut9XjF9I5mOEVRWnYPw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cc0hte31q6"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/js/dataTables.bootstrap4.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BD86qK4LhH6iFPyHZXKio8Ahut9XjF9I5mOEVRWnYPw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/dataTables.bootstrap4.min.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\dataTables.bootstrap4.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4534"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BD86qK4LhH6iFPyHZXKio8Ahut9XjF9I5mOEVRWnYPw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BD86qK4LhH6iFPyHZXKio8Ahut9XjF9I5mOEVRWnYPw="
+        }
+      ]
+    },
+    {
       "Route": "assets/js/feather.min.js",
       "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\feather.min.js",
       "Selectors": [],
@@ -96947,6 +98258,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-czjuO72yxKdh7swg9XWeOOIWak8SFz8PGY+ZDKCj1iM="
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/jquery.dataTables.min.2knfsi53hj.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\jquery.dataTables.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "106738"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/qa0IAZKJTmfqp8ZabUkpFE1wK3Unjj28JALWM1KuPo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2knfsi53hj"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/js/jquery.dataTables.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/qa0IAZKJTmfqp8ZabUkpFE1wK3Unjj28JALWM1KuPo="
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/jquery.dataTables.min.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\jquery.dataTables.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "106738"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/qa0IAZKJTmfqp8ZabUkpFE1wK3Unjj28JALWM1KuPo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/qa0IAZKJTmfqp8ZabUkpFE1wK3Unjj28JALWM1KuPo="
         }
       ]
     },
@@ -97279,6 +98672,170 @@
       ]
     },
     {
+      "Route": "assets/js/multi.js/multi.min.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\multi.js\\multi.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1290"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2feYnOrcS15OCyYi4G4D436mqLmNdHF4jSajVYpYqY0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 Jun 2023 10:22:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2feYnOrcS15OCyYi4G4D436mqLmNdHF4jSajVYpYqY0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/multi.js/multi.min.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\multi.js\\multi.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3931"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8jSy4FoSFxH4c82XE8D7qLVbXrEG+zj498RnbSeg6m8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 Jun 2023 10:22:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8jSy4FoSFxH4c82XE8D7qLVbXrEG+zj498RnbSeg6m8="
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/multi.js/multi.min.l122lfza8u.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\multi.js\\multi.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1290"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2feYnOrcS15OCyYi4G4D436mqLmNdHF4jSajVYpYqY0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 Jun 2023 10:22:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l122lfza8u"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/js/multi.js/multi.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2feYnOrcS15OCyYi4G4D436mqLmNdHF4jSajVYpYqY0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/multi.js/multi.min.y7neq51fna.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\multi.js\\multi.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3931"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8jSy4FoSFxH4c82XE8D7qLVbXrEG+zj498RnbSeg6m8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 Jun 2023 10:22:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y7neq51fna"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/js/multi.js/multi.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8jSy4FoSFxH4c82XE8D7qLVbXrEG+zj498RnbSeg6m8="
+        }
+      ]
+    },
+    {
       "Route": "assets/js/owl.carousel.min.js",
       "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\owl.carousel.min.js",
       "Selectors": [],
@@ -97361,7 +98918,7 @@
       ]
     },
     {
-      "Route": "assets/js/script.a0pjowakrc.js",
+      "Route": "assets/js/script.cunyjde7v4.js",
       "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\script.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -97371,7 +98928,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "50205"
+          "Value": "50209"
         },
         {
           "Name": "Content-Type",
@@ -97379,11 +98936,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Wj1YODSr/hY+GpKCorKnVcaC1Gf8sYV50Lv2T5er/v8=\""
+          "Value": "\"zGsw6Y9wCuXZD6Mu2ktVQIfRmU0nhLxCjFWt+dOU+TA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 17 Sep 2024 04:35:02 GMT"
+          "Value": "Tue, 22 Oct 2024 08:54:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -97393,7 +98950,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "a0pjowakrc"
+          "Value": "cunyjde7v4"
         },
         {
           "Name": "label",
@@ -97401,7 +98958,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Wj1YODSr/hY+GpKCorKnVcaC1Gf8sYV50Lv2T5er/v8="
+          "Value": "sha256-zGsw6Y9wCuXZD6Mu2ktVQIfRmU0nhLxCjFWt+dOU+TA="
         }
       ]
     },
@@ -97416,7 +98973,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "50205"
+          "Value": "50209"
         },
         {
           "Name": "Content-Type",
@@ -97424,11 +98981,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Wj1YODSr/hY+GpKCorKnVcaC1Gf8sYV50Lv2T5er/v8=\""
+          "Value": "\"zGsw6Y9wCuXZD6Mu2ktVQIfRmU0nhLxCjFWt+dOU+TA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 17 Sep 2024 04:35:02 GMT"
+          "Value": "Tue, 22 Oct 2024 08:54:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -97438,7 +98995,89 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Wj1YODSr/hY+GpKCorKnVcaC1Gf8sYV50Lv2T5er/v8="
+          "Value": "sha256-zGsw6Y9wCuXZD6Mu2ktVQIfRmU0nhLxCjFWt+dOU+TA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/select2.min.7ax058ykat.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\select2.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66666"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gfL+iZ8v2CiftU9vSmg1RyQwVO5+qw9bgDqfdW7RdSo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7ax058ykat"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/js/select2.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gfL+iZ8v2CiftU9vSmg1RyQwVO5+qw9bgDqfdW7RdSo="
+        }
+      ]
+    },
+    {
+      "Route": "assets/js/select2.min.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\select2.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66666"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gfL+iZ8v2CiftU9vSmg1RyQwVO5+qw9bgDqfdW7RdSo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gfL+iZ8v2CiftU9vSmg1RyQwVO5+qw9bgDqfdW7RdSo="
         }
       ]
     },
@@ -97767,6 +99406,1400 @@
         {
           "Name": "integrity",
           "Value": "sha256-RGDxWWF00GzKlX/ayixx4aN3zx1vB+5Mdf+zvz/JegM="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/css/bootstrap.0al6ztee2g.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "292882"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OKjG6lDAxEQIwlsGVXM7pruc5rRuO74G9zI6KcOursA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0al6ztee2g"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/css/bootstrap.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-OKjG6lDAxEQIwlsGVXM7pruc5rRuO74G9zI6KcOursA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/css/bootstrap.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "292882"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OKjG6lDAxEQIwlsGVXM7pruc5rRuO74G9zI6KcOursA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-OKjG6lDAxEQIwlsGVXM7pruc5rRuO74G9zI6KcOursA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/css/bootstrap.css.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "678646"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"O7snp3BOoHHJYg1RU1JV1Rks8zC5MYmHuwLZBD+u68s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-O7snp3BOoHHJYg1RU1JV1Rks8zC5MYmHuwLZBD+u68s="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/css/bootstrap.css.priv05uvv0.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "678646"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"O7snp3BOoHHJYg1RU1JV1Rks8zC5MYmHuwLZBD+u68s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "priv05uvv0"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/css/bootstrap.css.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-O7snp3BOoHHJYg1RU1JV1Rks8zC5MYmHuwLZBD+u68s="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/css/bootstrap.min.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "232919"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gw2ultXFnkPH+A1vQrvYGpV65moDUZmeLbD2X+7SWos=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gw2ultXFnkPH+A1vQrvYGpV65moDUZmeLbD2X+7SWos="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/css/bootstrap.min.css.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "589307"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aK6EaF3bzgKXu86ktHC98MlPeLQlS93BVKSjhnOFLwM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-aK6EaF3bzgKXu86ktHC98MlPeLQlS93BVKSjhnOFLwM="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/css/bootstrap.min.css.sfua1mugok.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "589307"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aK6EaF3bzgKXu86ktHC98MlPeLQlS93BVKSjhnOFLwM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sfua1mugok"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/css/bootstrap.min.css.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-aK6EaF3bzgKXu86ktHC98MlPeLQlS93BVKSjhnOFLwM="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/css/bootstrap.min.phwklrx2ki.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "232919"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gw2ultXFnkPH+A1vQrvYGpV65moDUZmeLbD2X+7SWos=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "phwklrx2ki"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/css/bootstrap.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gw2ultXFnkPH+A1vQrvYGpV65moDUZmeLbD2X+7SWos="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.3z7e6jcchw.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "150792"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IS6B+GOXVkHvvszifQot/evx5FFan8zpIOwMmUCSZ70=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3z7e6jcchw"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/js/bootstrap.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IS6B+GOXVkHvvszifQot/evx5FFan8zpIOwMmUCSZ70="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.bundle.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "215064"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"te81aD6F9aa2SJuw8Do7gTLc3NG7baRzPSe1Cw5+Y1o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-te81aD6F9aa2SJuw8Do7gTLc3NG7baRzPSe1Cw5+Y1o="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.bundle.js.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "451770"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nt6dM/isl7bjessuHdkV9PU4lygDbdsJu3BlPeRbyAs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nt6dM/isl7bjessuHdkV9PU4lygDbdsJu3BlPeRbyAs="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.bundle.js.qm38hbak0o.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "451770"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nt6dM/isl7bjessuHdkV9PU4lygDbdsJu3BlPeRbyAs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qm38hbak0o"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/js/bootstrap.bundle.js.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nt6dM/isl7bjessuHdkV9PU4lygDbdsJu3BlPeRbyAs="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.bundle.min.cgnkm5grl2.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "80426"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RIIp+d6RhFDpPAxTdGO/skjFbNZM0Axu+v3uBxhe1sI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cgnkm5grl2"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/js/bootstrap.bundle.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RIIp+d6RhFDpPAxTdGO/skjFbNZM0Axu+v3uBxhe1sI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.bundle.min.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "80426"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RIIp+d6RhFDpPAxTdGO/skjFbNZM0Axu+v3uBxhe1sI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RIIp+d6RhFDpPAxTdGO/skjFbNZM0Axu+v3uBxhe1sI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.bundle.min.js.llx8tuhx2q.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "333078"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GSH9nQGDQNh9D2nORvaKUuolz5n+lrmOHedM/P+WVZw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "llx8tuhx2q"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/js/bootstrap.bundle.min.js.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GSH9nQGDQNh9D2nORvaKUuolz5n+lrmOHedM/P+WVZw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.bundle.min.js.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "333078"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GSH9nQGDQNh9D2nORvaKUuolz5n+lrmOHedM/P+WVZw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GSH9nQGDQNh9D2nORvaKUuolz5n+lrmOHedM/P+WVZw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.bundle.vr29y6m4cb.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "215064"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"te81aD6F9aa2SJuw8Do7gTLc3NG7baRzPSe1Cw5+Y1o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vr29y6m4cb"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/js/bootstrap.bundle.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-te81aD6F9aa2SJuw8Do7gTLc3NG7baRzPSe1Cw5+Y1o="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.esm.9l606n85tv.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "141417"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XWMH5YUP9GlrXNls5oJm21kZHe6LeE7XrWwsKgK3Ml4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9l606n85tv"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/js/bootstrap.esm.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XWMH5YUP9GlrXNls5oJm21kZHe6LeE7XrWwsKgK3Ml4="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.esm.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "141417"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XWMH5YUP9GlrXNls5oJm21kZHe6LeE7XrWwsKgK3Ml4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XWMH5YUP9GlrXNls5oJm21kZHe6LeE7XrWwsKgK3Ml4="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.esm.js.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "308207"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IPVMyDWoTT+wyxMWqyZcAtByCdSYtiPZhH0lBrbCjP4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IPVMyDWoTT+wyxMWqyZcAtByCdSYtiPZhH0lBrbCjP4="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.esm.js.o6r5icn62k.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "308207"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IPVMyDWoTT+wyxMWqyZcAtByCdSYtiPZhH0lBrbCjP4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o6r5icn62k"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/js/bootstrap.esm.js.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IPVMyDWoTT+wyxMWqyZcAtByCdSYtiPZhH0lBrbCjP4="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.esm.min.c0v9te1kh1.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "73984"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PErEAMNs0j4c54siz+tj6U+8YnBbP6GoAlwCYkuDq3c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c0v9te1kh1"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/js/bootstrap.esm.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PErEAMNs0j4c54siz+tj6U+8YnBbP6GoAlwCYkuDq3c="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.esm.min.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "73984"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PErEAMNs0j4c54siz+tj6U+8YnBbP6GoAlwCYkuDq3c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PErEAMNs0j4c54siz+tj6U+8YnBbP6GoAlwCYkuDq3c="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.esm.min.js.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "221179"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DAwUlccSFtUDppCbLxTVrMFHr+x0gs0hLsigIs/BTOI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DAwUlccSFtUDppCbLxTVrMFHr+x0gs0hLsigIs/BTOI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.esm.min.js.o1d4puk7gs.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "221179"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DAwUlccSFtUDppCbLxTVrMFHr+x0gs0hLsigIs/BTOI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o1d4puk7gs"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/js/bootstrap.esm.min.js.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DAwUlccSFtUDppCbLxTVrMFHr+x0gs0hLsigIs/BTOI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "150792"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IS6B+GOXVkHvvszifQot/evx5FFan8zpIOwMmUCSZ70=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IS6B+GOXVkHvvszifQot/evx5FFan8zpIOwMmUCSZ70="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.js.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "309348"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4PzS+joOjuZh3PmGu53C0hw+22N6yM8MIofFXsMeYvo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4PzS+joOjuZh3PmGu53C0hw+22N6yM8MIofFXsMeYvo="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.js.s9kdte20bp.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "309348"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4PzS+joOjuZh3PmGu53C0hw+22N6yM8MIofFXsMeYvo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s9kdte20bp"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/js/bootstrap.js.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4PzS+joOjuZh3PmGu53C0hw+22N6yM8MIofFXsMeYvo="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.min.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "60410"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eFUP9u5ses7Ll0MMHJFbcdxj+3VAjZNy1tEIQllY4iM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eFUP9u5ses7Ll0MMHJFbcdxj+3VAjZNy1tEIQllY4iM="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.min.js.lxnhmosdkt.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "216913"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lzaJGZxMdBemIVMIbmmcIuJsWsH+uvcRXO2rj0IjDhc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lxnhmosdkt"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/js/bootstrap.min.js.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lzaJGZxMdBemIVMIbmmcIuJsWsH+uvcRXO2rj0IjDhc="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.min.js.map",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "216913"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lzaJGZxMdBemIVMIbmmcIuJsWsH+uvcRXO2rj0IjDhc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lzaJGZxMdBemIVMIbmmcIuJsWsH+uvcRXO2rj0IjDhc="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap.min.kta3t9duk9.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "60410"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eFUP9u5ses7Ll0MMHJFbcdxj+3VAjZNy1tEIQllY4iM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kta3t9duk9"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/js/bootstrap.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eFUP9u5ses7Ll0MMHJFbcdxj+3VAjZNy1tEIQllY4iM="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap-datetimepicker.min.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap-datetimepicker.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38511"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7sxJBHfaUsZT4Y0gPBGr5dFnrfbzYzEY8pOlCne4AI8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7sxJBHfaUsZT4Y0gPBGr5dFnrfbzYzEY8pOlCne4AI8="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/bootstrap/js/bootstrap-datetimepicker.min.m25daq4lk0.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap-datetimepicker.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38511"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7sxJBHfaUsZT4Y0gPBGr5dFnrfbzYzEY8pOlCne4AI8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m25daq4lk0"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/bootstrap/js/bootstrap-datetimepicker.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7sxJBHfaUsZT4Y0gPBGr5dFnrfbzYzEY8pOlCne4AI8="
         }
       ]
     },
@@ -98833,6 +101866,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-qCzzn+e0z+gQb5VfmIwfInKUAGqoTm0bV/VA6MYqT0Y="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/feather/feather.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\feather\\feather.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12555"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nowc/do3RkzHecYT0ghDY21gHG1gU8ea1GBGuaWnDDY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nowc/do3RkzHecYT0ghDY21gHG1gU8ea1GBGuaWnDDY="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/feather/feather.mf7r58d0fy.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\feather\\feather.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12555"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nowc/do3RkzHecYT0ghDY21gHG1gU8ea1GBGuaWnDDY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mf7r58d0fy"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/feather/feather.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nowc/do3RkzHecYT0ghDY21gHG1gU8ea1GBGuaWnDDY="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/feather/fonts/feather-webfont.41uwfwuzzx.woff",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\feather\\fonts\\feather-webfont.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28984"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+BBG6q8LNAfkIxws/nxpux9V2LNPOCBlJantan5LWuc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "41uwfwuzzx"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/feather/fonts/feather-webfont.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+BBG6q8LNAfkIxws/nxpux9V2LNPOCBlJantan5LWuc="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/feather/fonts/feather-webfont.woff",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\feather\\fonts\\feather-webfont.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28984"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+BBG6q8LNAfkIxws/nxpux9V2LNPOCBlJantan5LWuc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+BBG6q8LNAfkIxws/nxpux9V2LNPOCBlJantan5LWuc="
         }
       ]
     },
@@ -104901,6 +108098,580 @@
         {
           "Name": "integrity",
           "Value": "sha256-sxXaOIJ9BGqcclPN4DcteaCE/vN6SSFyPifVHjoDqvs="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6769"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AQzlLHLLDB9eNIk32bnRW3H1fAkmKO5VRfRAu+KYhGg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AQzlLHLLDB9eNIk32bnRW3H1fAkmKO5VRfRAu+KYhGg="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "57117"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BG06gFvt9kIgwfg+DjkudpTjId2xnB06mQnowcCPEB0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BG06gFvt9kIgwfg+DjkudpTjId2xnB06mQnowcCPEB0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.wlfga8hts8.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "57117"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BG06gFvt9kIgwfg+DjkudpTjId2xnB06mQnowcCPEB0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wlfga8hts8"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BG06gFvt9kIgwfg+DjkudpTjId2xnB06mQnowcCPEB0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-2.0.3.ttpdo857wk.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6769"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AQzlLHLLDB9eNIk32bnRW3H1fAkmKO5VRfRAu+KYhGg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ttpdo857wk"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AQzlLHLLDB9eNIk32bnRW3H1fAkmKO5VRfRAu+KYhGg="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-in-mill.gxhoqdlmda.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-in-mill.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "114804"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xO7AYUtmnhsXHPM9AT0zvsLwxh4a4yk2qTiJDgde6Ak=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gxhoqdlmda"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/jvectormap/jquery-jvectormap-in-mill.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xO7AYUtmnhsXHPM9AT0zvsLwxh4a4yk2qTiJDgde6Ak="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-in-mill.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-in-mill.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "114804"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xO7AYUtmnhsXHPM9AT0zvsLwxh4a4yk2qTiJDgde6Ak=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xO7AYUtmnhsXHPM9AT0zvsLwxh4a4yk2qTiJDgde6Ak="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-ru-mill.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-ru-mill.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "150398"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rVI6AR1XiknQH+qrhUpEIMTRvMZ61GgRNtxFMVoyX8E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rVI6AR1XiknQH+qrhUpEIMTRvMZ61GgRNtxFMVoyX8E="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-ru-mill.jshpzhyqvb.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-ru-mill.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "150398"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rVI6AR1XiknQH+qrhUpEIMTRvMZ61GgRNtxFMVoyX8E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jshpzhyqvb"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/jvectormap/jquery-jvectormap-ru-mill.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rVI6AR1XiknQH+qrhUpEIMTRvMZ61GgRNtxFMVoyX8E="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-uk_countries-mill.g7vekx3djm.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-uk_countries-mill.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "64826"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fL37dNA7sQJRpObOGdu4lGXUwvvEzw4Js+sTyGESEgo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g7vekx3djm"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/jvectormap/jquery-jvectormap-uk_countries-mill.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fL37dNA7sQJRpObOGdu4lGXUwvvEzw4Js+sTyGESEgo="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-uk_countries-mill.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-uk_countries-mill.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "64826"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fL37dNA7sQJRpObOGdu4lGXUwvvEzw4Js+sTyGESEgo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fL37dNA7sQJRpObOGdu4lGXUwvvEzw4Js+sTyGESEgo="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-us-aea.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-us-aea.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95063"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6sk1/uWEk1WnCk9Pq/Vk73oWmvTBTHvAbOXqmA0MXcc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6sk1/uWEk1WnCk9Pq/Vk73oWmvTBTHvAbOXqmA0MXcc="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-us-aea.qjl874upi3.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-us-aea.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "95063"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6sk1/uWEk1WnCk9Pq/Vk73oWmvTBTHvAbOXqmA0MXcc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qjl874upi3"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/jvectormap/jquery-jvectormap-us-aea.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6sk1/uWEk1WnCk9Pq/Vk73oWmvTBTHvAbOXqmA0MXcc="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-world-mill.jfsj51sdf0.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-world-mill.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "104270"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"USB5mehYF46OaLJhT/YVHgvYeZUpobUbt8U1dz8B2RI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jfsj51sdf0"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/plugins/jvectormap/jquery-jvectormap-world-mill.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-USB5mehYF46OaLJhT/YVHgvYeZUpobUbt8U1dz8B2RI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/plugins/jvectormap/jquery-jvectormap-world-mill.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-world-mill.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "104270"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"USB5mehYF46OaLJhT/YVHgvYeZUpobUbt8U1dz8B2RI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 May 2024 10:27:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-USB5mehYF46OaLJhT/YVHgvYeZUpobUbt8U1dz8B2RI="
         }
       ]
     },
@@ -111461,6 +115232,252 @@
         {
           "Name": "integrity",
           "Value": "sha256-16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/User_3/DrivingLicense.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\DrivingLicense.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "722050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"L/jQvSArhbfEYkeFgVkyP3I4u4dWZ1gFFcNjmVuifHo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Oct 2024 21:09:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-L/jQvSArhbfEYkeFgVkyP3I4u4dWZ1gFFcNjmVuifHo="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/User_3/DrivingLicense.xo11trkqog.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\DrivingLicense.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "722050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"L/jQvSArhbfEYkeFgVkyP3I4u4dWZ1gFFcNjmVuifHo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Oct 2024 21:09:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xo11trkqog"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/User_3/DrivingLicense.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-L/jQvSArhbfEYkeFgVkyP3I4u4dWZ1gFFcNjmVuifHo="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/User_3/EmiratesId.20owcexgl1.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\EmiratesId.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "300050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"firSveUpMg34w2JeRbIbU9iWrh9BI6ZGyvyC3gHK4bY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Oct 2024 21:09:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "20owcexgl1"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/User_3/EmiratesId.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-firSveUpMg34w2JeRbIbU9iWrh9BI6ZGyvyC3gHK4bY="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/User_3/EmiratesId.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\EmiratesId.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "300050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"firSveUpMg34w2JeRbIbU9iWrh9BI6ZGyvyC3gHK4bY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Oct 2024 21:09:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-firSveUpMg34w2JeRbIbU9iWrh9BI6ZGyvyC3gHK4bY="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/User_3/Passport.b7lwspy1kr.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\Passport.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13030"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qcwyuNXy7mik3MI++z7ZNOeGTb4DOJZUaVdlnvjBUmY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Oct 2024 21:09:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b7lwspy1kr"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/User_3/Passport.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qcwyuNXy7mik3MI++z7ZNOeGTb4DOJZUaVdlnvjBUmY="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/User_3/Passport.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\Passport.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13030"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qcwyuNXy7mik3MI++z7ZNOeGTb4DOJZUaVdlnvjBUmY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Oct 2024 21:09:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qcwyuNXy7mik3MI++z7ZNOeGTb4DOJZUaVdlnvjBUmY="
         }
       ]
     }

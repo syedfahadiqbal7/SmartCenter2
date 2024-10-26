@@ -79,5 +79,10 @@ app.UseCors("AllowAllOrigins");
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapHub<NotificationHub>("/notificationHub");  // Map SignalR hub
+app.MapHub<NotificationHub>("/notificationHub").RequireCors("AllowAllOrigins");  // Map SignalR hub
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapHub<NotificationHub>("/notificationHub")
+//             .RequireCors("AllowAllOrigins"); // Use the same CORS policy
+//});
 app.Run();

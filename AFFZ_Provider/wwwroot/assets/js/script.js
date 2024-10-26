@@ -211,7 +211,7 @@ Version      : 1.0
 			"bFilter": false,
 			initComplete: (settings, json) => {
 				$('.dataTables_length').appendTo('#tablelength');
-				$('.dataTables_paginate').appendTo('#tablepagination');
+				/*$('.dataTables_paginate').appendTo('#tablepagination');*/
 				$('.dataTables_info').appendTo('#tableinfo');
 			},
 

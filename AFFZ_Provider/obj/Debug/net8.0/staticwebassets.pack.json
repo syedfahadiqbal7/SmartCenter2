@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\AFFZ_Provider.bdg1r0a6qo.bundle.scp.css"
     },
     {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\DrivingLicense.png",
+      "PackagePath": "staticwebassets\\Uploads\\User_3\\DrivingLicense.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\EmiratesId.png",
+      "PackagePath": "staticwebassets\\Uploads\\User_3\\EmiratesId.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\Passport.png",
+      "PackagePath": "staticwebassets\\Uploads\\User_3\\Passport.png"
+    },
+    {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\admin.css",
       "PackagePath": "staticwebassets\\assets\\css\\admin.css"
     },
@@ -33,12 +45,24 @@
       "PackagePath": "staticwebassets\\assets\\css\\bootstrap.min.css.map"
     },
     {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\ckeditor.css",
+      "PackagePath": "staticwebassets\\assets\\css\\ckeditor.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\dataTables.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\dataTables.bootstrap4.min.css"
+    },
+    {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\feather.css",
       "PackagePath": "staticwebassets\\assets\\css\\feather.css"
     },
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\owl.carousel.min.css",
       "PackagePath": "staticwebassets\\assets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\select2.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\select2.min.css"
     },
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\slick.css",
@@ -3577,6 +3601,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\works-six-3.png"
     },
     {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\admin.js",
+      "PackagePath": "staticwebassets\\assets\\js\\admin.js"
+    },
+    {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\backToTop.js",
       "PackagePath": "staticwebassets\\assets\\js\\backToTop.js"
     },
@@ -3605,6 +3633,14 @@
       "PackagePath": "staticwebassets\\assets\\js\\calander.js"
     },
     {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\ckeditor.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ckeditor.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\dataTables.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\dataTables.bootstrap4.min.js"
+    },
+    {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\feather.min.js",
       "PackagePath": "staticwebassets\\assets\\js\\feather.min.js"
     },
@@ -3625,6 +3661,10 @@
       "PackagePath": "staticwebassets\\assets\\js\\jquery.counterup.min.js"
     },
     {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.dataTables.min.js"
+    },
+    {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\jquery.waypoints.js",
       "PackagePath": "staticwebassets\\assets\\js\\jquery.waypoints.js"
     },
@@ -3633,12 +3673,24 @@
       "PackagePath": "staticwebassets\\assets\\js\\moment.min.js"
     },
     {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\multi.js\\multi.min.css",
+      "PackagePath": "staticwebassets\\assets\\js\\multi.js\\multi.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\multi.js\\multi.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\multi.js\\multi.min.js"
+    },
+    {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\owl.carousel.min.js",
       "PackagePath": "staticwebassets\\assets\\js\\owl.carousel.min.js"
     },
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\script.js",
       "PackagePath": "staticwebassets\\assets\\js\\script.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\select2.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\select2.min.js"
     },
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\js\\slick.js",
@@ -3663,6 +3715,74 @@
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap-tagsinput\\js\\bootstrap-tagsinput.js",
       "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap-tagsinput\\js\\bootstrap-tagsinput.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap-datetimepicker.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap-datetimepicker.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\plugins\\bootstrap\\js\\bootstrap.min.js.map"
     },
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\ckeditor\\ckeditor.css",
@@ -3707,6 +3827,14 @@
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\fancybox\\jquery.fancybox.min.js",
       "PackagePath": "staticwebassets\\assets\\plugins\\fancybox\\jquery.fancybox.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\feather\\feather.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\feather\\feather.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\feather\\fonts\\feather-webfont.woff",
+      "PackagePath": "staticwebassets\\assets\\plugins\\feather\\fonts\\feather-webfont.woff"
     },
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\fontawesome\\css\\all.css",
@@ -4003,6 +4131,34 @@
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\ion-rangeslider\\js\\ion.rangeSlider.min.js",
       "PackagePath": "staticwebassets\\assets\\plugins\\ion-rangeslider\\js\\ion.rangeSlider.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.css",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.css"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.min.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-2.0.3.min.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-in-mill.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-in-mill.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-ru-mill.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-ru-mill.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-uk_countries-mill.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-uk_countries-mill.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-us-aea.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-us-aea.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\jvectormap\\jquery-jvectormap-world-mill.js",
+      "PackagePath": "staticwebassets\\assets\\plugins\\jvectormap\\jquery-jvectormap-world-mill.js"
     },
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\plugins\\select2\\css\\select2.css",

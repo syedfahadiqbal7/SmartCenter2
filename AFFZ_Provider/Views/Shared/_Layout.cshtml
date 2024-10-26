@@ -1,13 +1,24 @@
-﻿<!DOCTYPE html>
+﻿@* <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AFFZ_MVC</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/AFFZ_MVC.styles.css" asp-append-version="true" />
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css">
+    <!-- Feather CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/feather/feather.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Datetimepicker CSS -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap-datetimepicker.min.css">
+  
+    <link rel="stylesheet" href="~/assets/css/select2.min.css">
+    <!-- Ck Editor -->
+    <link rel="stylesheet" href="~/assets/css/ckeditor.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="~/assets/css/admin.css">
 </head>
 <body>
     <header>
@@ -48,3 +59,4 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+ *@

@@ -12,6 +12,7 @@ public partial class MyDbContext : DbContext
         : base(options)
     {
     }
+    public DbSet<Review> Review { get; set; }
 
     public virtual DbSet<ActionLog> ActionLogs { get; set; }
 
@@ -78,13 +79,15 @@ public partial class MyDbContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     public virtual DbSet<UserGroupPermission> UserGroupPermissions { get; set; }
-
+    public virtual DbSet<M_SericeDefaultDocumentList> m_SericeDefaultDocumentList { get; set; }
     public virtual DbSet<UserRolePermission> UserRolePermissions { get; set; }
-
+    public DbSet<ServicesList> ServicesLists { get; set; }
+    public DbSet<ServiceDocumenList> ServiceDocumentList { get; set; } // New table
+    public DbSet<ServiceDocumentMapping> ServiceDocumentMapping { get; set; } // New table
     public virtual DbSet<UserSubscriptionChannel> UserSubscriptionChannels { get; set; }
     public virtual DbSet<Notification> Notifications { get; set; }
     public virtual DbSet<Message> Messages { get; set; }
-
+    public DbSet<M_SericeDocumentListBinding> M_ServiceDocumentListBinding { get; set; }
     //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
     //        => optionsBuilder.UseSqlServer("Server=ZAINMAQBOOL\\SQLEXPRESS;Database=Test;User Id=zain;Password=zain@123;TrustServerCertificate=Yes;");
@@ -156,7 +159,23 @@ public partial class MyDbContext : DbContext
                 .HasForeignKey(d => d.RoleId)
                 .HasConstraintName("FK__AdminUser__RoleI__6E01572D");
         });
+        modelBuilder.Entity<ServiceDocumenList>(entity =>
+        {
+            entity.HasKey(e => e.ServiceDocumenListtId);
+            entity.Property(e => e.ServiceDocumentName).HasColumnType("varchar(max)");
+        });
+        modelBuilder.Entity<Review>(entity =>
+        {
+            entity.HasKey(e => e.ReviewId);
+            entity.HasOne(r => r.CUser) // Navigation property to Customers
+                  .WithMany()           // Assuming Customers doesn't have a collection of Reviews
+                  .HasForeignKey(r => r.CustomerId); // Foreign key in Review
+        });
+        modelBuilder.Entity<M_SericeDefaultDocumentList>()
+                .HasNoKey()  // If you don't have a primary key
+                .ToTable("M_SericeDefaultDocumentList");
 
+        base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<ChatMessage>(entity =>
         {
             entity.HasKey(e => e.MessageId);
@@ -236,6 +255,9 @@ public partial class MyDbContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.ProfilePicture).IsUnicode(false);
         });
+        // Define composite primary key for ServiceDocumentMapping
+        modelBuilder.Entity<ServiceDocumentMapping>()
+            .HasKey(sd => new { sd.ServiceID, sd.ServiceDocumentListId });
 
         modelBuilder.Entity<DashboardItem>(entity =>
         {
@@ -684,6 +706,12 @@ public partial class MyDbContext : DbContext
 
             entity.ToTable("RequestForDisCountToMerchant");
 
+            // Disable automatic value generation for the primary key
+            //entity.Property(e => e.RFDTM).ValueGeneratedNever();
+
+            // Configure RFDTM as an identity column
+            entity.Property(e => e.RFDTM).UseIdentityColumn();
+
             entity.Property(e => e.RFDTM).HasColumnName("RFDTM");
             entity.Property(e => e.MID).HasColumnName("MID");
             entity.Property(e => e.RequestDateTime).HasColumnType("datetime");
@@ -722,22 +750,24 @@ public partial class MyDbContext : DbContext
 
             entity.ToTable("Service");
 
+            // Update this line
             entity.Property(e => e.ServiceId)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd() // Change this to ValueGeneratedOnAdd
                 .HasColumnName("ServiceID");
-            entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
+
+            entity.Property(e => e.CategoryID).HasColumnName("CategoryID");
             entity.Property(e => e.Description).HasColumnType("text");
-            entity.Property(e => e.MerchantId).HasColumnName("MerchantID");
+            entity.Property(e => e.MerchantID).HasColumnName("MerchantID");
             entity.Property(e => e.ServiceName)
                 .HasMaxLength(100)
                 .IsUnicode(false);
 
             entity.HasOne(d => d.Category).WithMany(p => p.Services)
-                .HasForeignKey(d => d.CategoryId)
+                .HasForeignKey(d => d.CategoryID)
                 .HasConstraintName("FK_Category_Service");
 
             entity.HasOne(d => d.Merchant).WithMany(p => p.Services)
-                .HasForeignKey(d => d.MerchantId)
+                .HasForeignKey(d => d.MerchantID)
                 .HasConstraintName("FK_Merchant_Service");
         });
 
@@ -940,7 +970,8 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.RoleId).HasColumnName("RoleID");
 
         });
-
+        modelBuilder.Entity<ServicesList>().ToTable("ServicesList");
+        modelBuilder.Entity<ServicesList>().HasKey(s => s.ServiceListID);
         modelBuilder.Entity<UserSubscriptionChannel>(entity =>
         {
             entity.HasKey(e => e.SubscriptionId);

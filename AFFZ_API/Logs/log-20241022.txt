@@ -1,0 +1,10 @@
+2024-10-22T18:12:37.6338598+04:00 0HN7IICHGGFCQ:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-10-22T18:12:37.9562253+04:00 0HN7IICHGGFCQ:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-10-22T18:12:39.7688407+04:00 0HN7IICHGGFCQ:00000009 [INF] Generated SQL: DECLARE @__merchantId_0 int = 3;
+
+SELECT [c].[MessageID], [c].[CreatedBy], [c].[CreatedDate], [c].[IsRead], [c].[MerchantID], [c].[MessageContent], [c].[MessageTimestamp], [c].[MessageType], [c].[ModifiedBy], [c].[ModifyDate], [c].[ReceiverID], [c].[SenderID]
+FROM [ChatMessage] AS [c]
+WHERE [c].[SenderID] = @__merchantId_0 OR [c].[ReceiverID] = @__merchantId_0 (a4a74139)
+2024-10-22T18:12:39.8809664+04:00 0HN7IICHGGFCQ:00000009 [INF] No Messages found retrieved successfully (59f49028)
+2024-10-22T18:12:44.2279632+04:00 0HN7IICHGGFCQ:0000000B [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-10-22T18:12:44.2428942+04:00 0HN7IICHGGFCQ:0000000B [WRN] No users found with uploaded documents. (5684a41c)

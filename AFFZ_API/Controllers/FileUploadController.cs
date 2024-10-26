@@ -3,6 +3,7 @@ using AFFZ_API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.Net;
 
 namespace AFFZ_API.Controllers
 {
@@ -56,6 +57,7 @@ namespace AFFZ_API.Controllers
                             ContentType = file.ContentType,
                             FileSize = file.FileSize,
                             UserId = model.UserId,
+                            MerchantId = model.MID,
                             FolderName = "Documents_" + model.UserId,
                             Status = "Pending",
                             DocumentAddedDate = DateTime.Now,
@@ -224,6 +226,43 @@ namespace AFFZ_API.Controllers
                 return StatusCode(500, "Internal server error.");
             }
         }
+        [HttpGet("GetServiceFileListByRFDFUId")]
+        public async Task<IActionResult> GetServiceFileListByRFDFUId(int rfdfuId)
+        {
+            try
+            {
+                if (rfdfuId <= 0)
+                {
+                    return BadRequest("Invalid RFDFU ID.");
+                }
+
+                var result = await (from r in _context.RequestForDisCountToUsers
+                                    join sm in _context.ServiceDocumentMapping on r.SID equals sm.ServiceID
+                                    join sdl in _context.ServiceDocumentList on sm.ServiceDocumentListId equals sdl.ServiceDocumenListtId
+                                    where r.RFDFU == rfdfuId
+                                    select new
+                                    {
+                                        r.RFDFU,
+                                        r.SID,
+                                        r.MID,
+                                        r.UID,
+                                        sdl.ServiceDocumentName,
+                                        sdl.ServiceDocumenListtId
+                                    }).ToListAsync();
+
+                if (result == null || !result.Any())
+                {
+                    return NotFound("No data found for the given RFDFU ID.");
+                }
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while fetching discount data by RFDFU ID.");
+                return StatusCode((int)HttpStatusCode.InternalServerError, "An internal server error occurred.");
+            }
+        }
 
         private void NotifyMerchant(int userId)
         {
@@ -251,6 +290,7 @@ namespace AFFZ_API.Controllers
     public class FileUploadModelAPI
     {
         public int UserId { get; set; }
+        public int MID { get; set; }
         public List<UploadedFile>? UploadedFiles { get; set; }
     }
 

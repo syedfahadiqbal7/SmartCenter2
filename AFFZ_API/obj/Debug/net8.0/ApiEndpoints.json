@@ -182,37 +182,6 @@
   },
   {
     "ContainingType": "AFFZ_API.Controllers.CategoryWithMerchant",
-    "Method": "IsRequestedService",
-    "RelativePath": "api/CategoryWithMerchant",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Mid",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "sid",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Boolean",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "AFFZ_API.Controllers.CategoryWithMerchant",
     "Method": "GetSubCategoriesList",
     "RelativePath": "api/CategoryWithMerchant/AllCategories",
     "HttpMethod": "GET",
@@ -628,6 +597,22 @@
   },
   {
     "ContainingType": "AFFZ_API.Controllers.FileUploadController",
+    "Method": "GetServiceFileListByRFDFUId",
+    "RelativePath": "api/FileUpload/GetServiceFileListByRFDFUId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rfdfuId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.FileUploadController",
     "Method": "ResendDocument",
     "RelativePath": "api/FileUpload/ResendDocument/{documentId}",
     "HttpMethod": "POST",
@@ -982,6 +967,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.MServiceDefaultDocumentController",
+    "Method": "GetServiceDocuments",
+    "RelativePath": "api/MServiceDefaultDocument/GetServiceDocuments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "serviceID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AFFZ_API.Models.ServiceDocument, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "AFFZ_API.Controllers.NotificationsController",
@@ -1423,6 +1434,48 @@
     ]
   },
   {
+    "ContainingType": "AFFZ_API.Controllers.ReviewsApiController",
+    "Method": "CreateReview",
+    "RelativePath": "api/ReviewsApi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "review",
+        "Type": "AFFZ_API.Models.Review",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ReviewsApiController",
+    "Method": "GetAllReviews",
+    "RelativePath": "api/ReviewsApi/GetAllReviews",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ReviewsApiController",
+    "Method": "GetReviewByServiceId",
+    "RelativePath": "api/ReviewsApi/GetReviewByServiceId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "serviceId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AFFZ_API.Controllers.AdminControllers.RolesController",
     "Method": "GetRoles",
     "RelativePath": "api/Roles",
@@ -1548,6 +1601,606 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[AFFZ_API.Models.Role, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ServiceController",
+    "Method": "CreateService",
+    "RelativePath": "api/Service/CreateService",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "service",
+        "Type": "AFFZ_API.Models.Service",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServiceController",
+    "Method": "DeleteService",
+    "RelativePath": "api/Service/DeleteService",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServiceController",
+    "Method": "GetAllServices",
+    "RelativePath": "api/Service/GetAllServices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "merchantId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AFFZ_API.Models.Service, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ServiceController",
+    "Method": "GetServiceById",
+    "RelativePath": "api/Service/GetServiceById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.Service",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ServiceController",
+    "Method": "UpdateService",
+    "RelativePath": "api/Service/UpdateService",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "service",
+        "Type": "AFFZ_API.Models.Service",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceCategoryController",
+    "Method": "DeleteServiceCategory",
+    "RelativePath": "api/ServiceCategory/DeleteServiceCategory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceCategoryController",
+    "Method": "GetAllServiceCategories",
+    "RelativePath": "api/ServiceCategory/GetAllServiceCategories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AFFZ_API.Models.ServiceCategory, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceCategoryController",
+    "Method": "GetServiceCategoryById",
+    "RelativePath": "api/ServiceCategory/GetServiceCategoryById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.ServiceCategory",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceCategoryController",
+    "Method": "PostServiceCategory",
+    "RelativePath": "api/ServiceCategory/PostServiceCategory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "serviceCategory",
+        "Type": "AFFZ_API.Models.ServiceCategory",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.ServiceCategory",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceCategoryController",
+    "Method": "UpdateServiceCategory",
+    "RelativePath": "api/ServiceCategory/UpdateServiceCategory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "serviceCategory",
+        "Type": "AFFZ_API.Models.ServiceCategory",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceDocumenListController",
+    "Method": "CreateDocument",
+    "RelativePath": "api/ServiceDocumenList/CreateDocument",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "document",
+        "Type": "AFFZ_API.Models.ServiceDocumenList",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceDocumenListController",
+    "Method": "DeleteDocument",
+    "RelativePath": "api/ServiceDocumenList/DeleteDocument/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceDocumenListController",
+    "Method": "GetAllDocuments",
+    "RelativePath": "api/ServiceDocumenList/GetAllDocuments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AFFZ_API.Models.ServiceDocumenList, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceDocumenListController",
+    "Method": "GetDocumentById",
+    "RelativePath": "api/ServiceDocumenList/GetDocumentById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.ServiceDocumenList",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceDocumenListController",
+    "Method": "UpdateDocument",
+    "RelativePath": "api/ServiceDocumenList/UpdateDocument/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "document",
+        "Type": "AFFZ_API.Models.ServiceDocumenList",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceDocumentListBindingsController",
+    "Method": "CreateServiceDocumentListBinding",
+    "RelativePath": "api/ServiceDocumentListBindings/CreateServiceDocumentListBinding",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "binding",
+        "Type": "AFFZ_API.Models.M_SericeDocumentListBinding",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.M_SericeDocumentListBinding",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceDocumentListBindingsController",
+    "Method": "DeleteServiceDocumentListBinding",
+    "RelativePath": "api/ServiceDocumentListBindings/DeleteServiceDocumentListBinding",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceDocumentListBindingsController",
+    "Method": "GetServiceDocumentListBindingByCategoryId",
+    "RelativePath": "api/ServiceDocumentListBindings/GetServiceDocumentListBindingByCategoryId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceDocumentListBindingsController",
+    "Method": "GetServiceDocumentListBindings",
+    "RelativePath": "api/ServiceDocumentListBindings/GetServiceDocumentListBindings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceDocumentListBindingsController",
+    "Method": "UpdateServiceDocumentListBinding",
+    "RelativePath": "api/ServiceDocumentListBindings/UpdateServiceDocumentListBinding",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "binding",
+        "Type": "AFFZ_API.Models.M_SericeDocumentListBinding",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceDocumentMappingController",
+    "Method": "CreateMapping",
+    "RelativePath": "api/ServiceDocumentMapping/CreateMapping",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mappings",
+        "Type": "System.Collections.Generic.List\u00601[[AFFZ_API.Models.ServiceDocumentMapping, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceDocumentMappingController",
+    "Method": "DeleteMappingsByServiceId",
+    "RelativePath": "api/ServiceDocumentMapping/DeleteMappingsByServiceId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServiceDocumentMappingController",
+    "Method": "GetMappingsByService",
+    "RelativePath": "api/ServiceDocumentMapping/GetMappingsByService",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AFFZ_API.Models.ServiceDocumentMapping, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServicesListController",
+    "Method": "PostServicesList",
+    "RelativePath": "api/ServicesList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "servicesList",
+        "Type": "AFFZ_API.Models.ServicesList",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.ServicesList",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServicesListController",
+    "Method": "PutServicesList",
+    "RelativePath": "api/ServicesList/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "servicesList",
+        "Type": "AFFZ_API.Models.ServicesList",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServicesListController",
+    "Method": "DeleteServicesList",
+    "RelativePath": "api/ServicesList/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServicesListController",
+    "Method": "GetServicesList",
+    "RelativePath": "api/ServicesList/GetServicesList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AFFZ_API.Models.ServicesList, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServicesListController",
+    "Method": "GetServicesListById",
+    "RelativePath": "api/ServicesList/GetServicesListById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.ServicesList",
         "MediaTypes": [
           "text/plain",
           "application/json",

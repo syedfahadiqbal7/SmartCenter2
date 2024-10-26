@@ -5,122 +5,122 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 namespace AFFZ_Provider.Controllers
 {
-	public class UserRequestToMerchant : Controller
-	{
-		private ILogger<UserRequestToMerchant> _logger;
-		private readonly HttpClient _httpClient;
-		IDataProtector _protector;
-		public UserRequestToMerchant(ILogger<UserRequestToMerchant> logger, IHttpClientFactory httpClientFactory, IConfiguration configuration, IDataProtectionProvider provider)
-		{
-			_httpClient = httpClientFactory.CreateClient("Main");
-			_protector = provider.CreateProtector("Example.SessionProtection");
-			_logger = logger;
-		}
-		public async Task<ActionResult> CheckReqest()
-		{
-			string _merchantId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
+    public class UserRequestToMerchant : Controller
+    {
+        private ILogger<UserRequestToMerchant> _logger;
+        private readonly HttpClient _httpClient;
+        IDataProtector _protector;
+        public UserRequestToMerchant(ILogger<UserRequestToMerchant> logger, IHttpClientFactory httpClientFactory, IConfiguration configuration, IDataProtectionProvider provider)
+        {
+            _httpClient = httpClientFactory.CreateClient("Main");
+            _protector = provider.CreateProtector("Example.SessionProtection");
+            _logger = logger;
+        }
+        public async Task<ActionResult> CheckReqest()
+        {
+            string _merchantId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
 
-			var jsonResponse = await _httpClient.GetAsync("CategoryWithMerchant/AllRequestMerchant?Mid=" + _merchantId);
-			jsonResponse.EnsureSuccessStatusCode();
+            var jsonResponse = await _httpClient.GetAsync("CategoryWithMerchant/AllRequestMerchant?Mid=" + _merchantId);
+            jsonResponse.EnsureSuccessStatusCode();
 
 
-			var responseString = await jsonResponse.Content.ReadAsStringAsync();
-			if (!string.IsNullOrEmpty(responseString))
-			{
-				try
-				{
-					List<RequestForDiscountViewModel> categories = JsonConvert.DeserializeObject<List<RequestForDiscountViewModel>>(responseString);
-					ViewBag.RequestForDisCountToMerchant = categories;
-				}
-				catch (JsonSerializationException ex)
-				{
-					// Log the exception details
-					_logger.LogError(ex, "JSON deserialization error.");
+            var responseString = await jsonResponse.Content.ReadAsStringAsync();
+            if (!string.IsNullOrEmpty(responseString))
+            {
+                try
+                {
+                    List<RequestForDiscountViewModel> categories = JsonConvert.DeserializeObject<List<RequestForDiscountViewModel>>(responseString);
+                    ViewBag.RequestForDisCountToMerchant = categories;
+                }
+                catch (JsonSerializationException ex)
+                {
+                    // Log the exception details
+                    _logger.LogError(ex, "JSON deserialization error.");
 
-					// Handle the error response accordingly
-					ViewBag.RequestForDisCountToMerchant = new List<RequestForDiscountViewModel>();
-					ModelState.AddModelError(string.Empty, "Failed to load Data.");
-				}
-			}
-			else
-			{
-				ViewBag.Categories = new List<RequestForDiscountViewModel>();
-			}
+                    // Handle the error response accordingly
+                    ViewBag.RequestForDisCountToMerchant = new List<RequestForDiscountViewModel>();
+                    ModelState.AddModelError(string.Empty, "Failed to load Data.");
+                }
+            }
+            else
+            {
+                ViewBag.Categories = new List<RequestForDiscountViewModel>();
+            }
 
-			// Check TempData for the response message
-			if (TempData.ContainsKey("SuccessMessage"))
-			{
-				if (!string.IsNullOrEmpty(TempData["SuccessMessage"].ToString()))
-				{
-					ViewBag.SaveResponse = TempData["SuccessMessage"].ToString();
-				}
-			}
+            // Check TempData for the response message
+            if (TempData.ContainsKey("SuccessMessage"))
+            {
+                if (!string.IsNullOrEmpty(TempData["SuccessMessage"].ToString()))
+                {
+                    ViewBag.SaveResponse = TempData["SuccessMessage"].ToString();
+                }
+            }
 
-			return View();
-		}
-		[HttpPost]
-		public async Task<ActionResult> ApplyDiscountedPrice(string RFDTM, string DiscountPrice, string MID, string UID, string SID)
-		{
-			string _merchantId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
+            return View();
+        }
+        [HttpPost]
+        public async Task<ActionResult> ApplyDiscountedPrice(string RFDTM, string DiscountPrice, string MID, string UID, string SID)
+        {
+            string _merchantId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
 
-			if (!string.IsNullOrEmpty(RFDTM) && !string.IsNullOrEmpty(DiscountPrice))
-			{
-				SubmitResponseByMerchant SRBM = new SubmitResponseByMerchant();
-				SRBM.RFDTM = RFDTM;
+            if (!string.IsNullOrEmpty(RFDTM) && !string.IsNullOrEmpty(DiscountPrice))
+            {
+                SubmitResponseByMerchant SRBM = new SubmitResponseByMerchant();
+                SRBM.RFDTM = RFDTM;
 
-				SRBM.DiscountPrice = DiscountPrice;
-				SRBM.UID = UID;
-				SRBM.SID = SID;
-				SRBM.MID = MID;
+                SRBM.DiscountPrice = DiscountPrice;
+                SRBM.UID = UID;
+                SRBM.SID = SID;
+                SRBM.MID = MID;
 
-				try
-				{
-					var responseMessage = await _httpClient.PostAsync("CategoryWithMerchant/SaveMerchantResponseForDiscount", Customs.GetJsonContent(SRBM));
-					responseMessage.EnsureSuccessStatusCode();
-					var responseString = await responseMessage.Content.ReadAsStringAsync();
-					// Use TempData to pass the response message to the Index view
-					TempData["SuccessMessage"] = responseString;
-					// Trigger notification
-					var notification = new Notification
-					{
-						UserId = UID.ToString(),
-						Message = $"Merchant [{UID.ToString()}] has sent a discount response for the visa type [{SID}] you requested.",
-						MerchantId = _merchantId,
-						RedirectToActionUrl = "MerchantResponseToUser/MerchantResponseIndex",
-						MessageFromId = Convert.ToInt32(_merchantId)
-					};
+                try
+                {
+                    var responseMessage = await _httpClient.PostAsync("CategoryWithMerchant/SaveMerchantResponseForDiscount", Customs.GetJsonContent(SRBM));
+                    responseMessage.EnsureSuccessStatusCode();
+                    var responseString = await responseMessage.Content.ReadAsStringAsync();
+                    // Use TempData to pass the response message to the Index view
+                    TempData["SuccessMessage"] = responseString;
+                    // Trigger notification
+                    var notification = new Notification
+                    {
+                        UserId = UID.ToString(),
+                        Message = $"Merchant [{UID.ToString()}] has sent a discount response for the visa type [{SID}] you requested.",
+                        MerchantId = _merchantId,
+                        RedirectToActionUrl = "MerchantResponseToUser/MerchantResponseIndex",
+                        MessageFromId = Convert.ToInt32(_merchantId)
+                    };
 
-					var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
-					string resString = await res.Content.ReadAsStringAsync();
-					_logger.LogInformation("Notification Response : " + resString);
-				}
-				catch (Exception ex)
-				{
-					// Log the exception details
-					// Use your preferred logging framework here. For example:
-					_logger.LogError(ex, "An error occurred while processing the discount request.");
-					TempData["FailMessage"] = ex.Message;
-				}
-			}
-			return RedirectToAction("CheckReqest");
-		}
-	}
-	public class RequestForDiscountViewModel
-	{
-		public int RFDTM { get; set; }
-		public int SID { get; set; }
-		public int UID { get; set; }
-		public int MID { get; set; }
-		public string ServiceName { get; set; }
-		public int? ServicePrice { get; set; }
-		public DateTime RequestDatetime { get; set; }
-	}
-	public class SubmitResponseByMerchant
-	{
-		public string RFDTM { get; set; }
-		public string DiscountPrice { get; set; }
-		public string MID { get; set; }
-		public string UID { get; set; }
-		public string SID { get; set; }
-	}
+                    var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                    string resString = await res.Content.ReadAsStringAsync();
+                    _logger.LogInformation("Notification Response : " + resString);
+                }
+                catch (Exception ex)
+                {
+                    // Log the exception details
+                    // Use your preferred logging framework here. For example:
+                    _logger.LogError(ex, "An error occurred while processing the discount request.");
+                    TempData["FailMessage"] = ex.Message;
+                }
+            }
+            return RedirectToAction("CheckReqest");
+        }
+    }
+    public class RequestForDiscountViewModel
+    {
+        public int RFDTM { get; set; }
+        public int SID { get; set; }
+        public int UID { get; set; }
+        public int MID { get; set; }
+        public string ServiceName { get; set; }
+        public int? ServicePrice { get; set; }
+        public DateTime RequestDatetime { get; set; }
+    }
+    public class SubmitResponseByMerchant
+    {
+        public string RFDTM { get; set; }
+        public string DiscountPrice { get; set; }
+        public string MID { get; set; }
+        public string UID { get; set; }
+        public string SID { get; set; }
+    }
 }
