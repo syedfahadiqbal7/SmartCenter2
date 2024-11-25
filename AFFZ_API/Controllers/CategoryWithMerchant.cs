@@ -250,9 +250,36 @@ namespace AFFZ_API.Controllers
         {
             try
             {
+                //var query = from service in _context.Services
+                //            join request in _context.RequestForDisCountToUsers
+                //             on new { TSID = service.ServiceId, TMID = service.MerchantID ?? 0 } equals new { TSID = request.SID, TMID = request.MID }
+                //            where service.MerchantID.HasValue
+                //            select new RequestForDisCountToUserViewModel
+                //            {
+                //                SID = request.SID,
+                //                ServicePrice = service.ServicePrice ?? 0,
+                //                ServiceName = service.ServiceName,
+                //                MerchantID = service.MerchantID ?? 0,
+                //                FINALPRICE = request.FINALPRICE,
+                //                UID = request.UID,
+                //                RFDFU = request.RFDFU,
+                //                IsMerchantSelected = request.IsMerchantSelected,
+                //                ResponseDateTime = request.ResponseDateTime,
+                //                IsPaymentDone = request.IsPaymentDone
+                //            };
                 var query = from service in _context.Services
                             join request in _context.RequestForDisCountToUsers
-                             on new { TSID = service.ServiceId, TMID = service.MerchantID ?? 0 } equals new { TSID = request.SID, TMID = request.MID }
+                                on new { TSID = service.ServiceId, TMID = service.MerchantID ?? 0 }
+                                equals new { TSID = request.SID, TMID = request.MID }
+                            join status in _context.CurrentServiceStatus
+                                on new { UID = request.UID, MID = service.MerchantID ?? 0, RFDFU = request.RFDFU }
+                                equals new { UID = status.UId, MID = status.MId, RFDFU = status.RFDFU }
+                                into statusJoin
+                            from status in statusJoin.DefaultIfEmpty() // Left join to handle missing status records
+                            join requestStatus in _context.RequestStatuses
+                                on Convert.ToInt32(status.CurrentStatus) equals requestStatus.StatusID
+                                into requestStatusJoin
+                            from requestStatus in requestStatusJoin.DefaultIfEmpty() // Left join to handle missing status records
                             where service.MerchantID.HasValue
                             select new RequestForDisCountToUserViewModel
                             {
@@ -265,11 +292,14 @@ namespace AFFZ_API.Controllers
                                 RFDFU = request.RFDFU,
                                 IsMerchantSelected = request.IsMerchantSelected,
                                 ResponseDateTime = request.ResponseDateTime,
-                                IsPaymentDone = request.IsPaymentDone
+                                IsPaymentDone = request.IsPaymentDone,
+                                CurrentStatus = requestStatus != null ? requestStatus.StatusDescription : "Unknown",  // Use StatusDescription or default to "Unknown"
+                                IsRequestCompleted = (requestStatus != null ? (requestStatus.StatusName == "Completed" ? true : false) : false)  // Use StatusDescription or default to "Unknown"
                             };
 
 
-
+                var sql = query.ToQueryString();
+                _logger.LogInformation(sql);
                 if (!string.IsNullOrEmpty(Uid))
                 {
                     int userid = Convert.ToInt32(Uid);
@@ -326,7 +356,7 @@ namespace AFFZ_API.Controllers
                     UserId = data.UID.ToString(),
                     Message = "Your discount request has an update.",
                 };
-                return Ok("Response Saved and sent to user.");
+                return Ok("Response Saved and sent to user With RFDFU ID-" + requestForDisCountToUser.RFDFU);
             }
             catch (Exception ex)
             {
@@ -409,6 +439,7 @@ namespace AFFZ_API.Controllers
                     SID = serData.SID,
                     FINALPRICE = serData.FINALPRICE,
                     ResponseDateTime = DateTime.Now,
+                    IsPaymentDone = serData.IsPaymentDone
                 };
 
                 // Attach the new entity and mark it as modified
@@ -424,6 +455,58 @@ namespace AFFZ_API.Controllers
                 _logger.LogError(ex, "An error occurred while processing the discount request.");
 
                 return StatusCode(500, "An internal server error occurred. Please try again later.");
+            }
+        }
+        // New API to update status
+        [HttpPost("UpdateServiceStatus")]
+        public async Task<IActionResult> UpdateServiceStatus([FromBody] CurrentServiceStatus statusUpdate)
+        {
+            try
+            {
+                if (statusUpdate == null || string.IsNullOrWhiteSpace(statusUpdate.CurrentStatus))
+                {
+                    return BadRequest("Invalid status update data.");
+                }
+
+                // Check if the record exists for the given UId, MId, and SID; if it does, update the status.
+                var existingStatus = await _context.CurrentServiceStatus
+                    .FirstOrDefaultAsync(cs => cs.UId == statusUpdate.UId && cs.MId == statusUpdate.MId && cs.RFDFU == statusUpdate.RFDFU);
+
+                if (existingStatus != null)
+                {
+                    existingStatus.CurrentStatus = statusUpdate.CurrentStatus;
+                }
+                else
+                {
+                    // If no record exists, create a new one
+                    _context.CurrentServiceStatus.Add(statusUpdate);
+                }
+
+                await _context.SaveChangesAsync();
+                return Ok("Service status updated successfully.");
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
+
+        }
+        [HttpGet("GetAllCurrentServiceStatus")]
+        public async Task<ActionResult<IEnumerable<CurrentServiceStatus>>> GetAllCurrentServiceStatus()
+        {
+            try
+            {
+                // Skip and take based on the pageNumber and pageSize
+                var CurrentServicesStatus = await _context.CurrentServiceStatus.ToListAsync();
+
+                return Ok(CurrentServicesStatus);
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }
@@ -477,6 +560,8 @@ namespace AFFZ_API.Controllers
         public int? IsMerchantSelected { get; set; }
         public int? IsPaymentDone { get; set; }
         public DateTime? ResponseDateTime { get; set; }
+        public string? CurrentStatus { get; set; }
+        public bool IsRequestCompleted { get; set; }
     }
     public class SearchRequest
     {

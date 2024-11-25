@@ -1,4 +1,8 @@
-﻿<link rel="stylesheet" href="assets/css/admin.css">
+﻿@{
+    var myPaymentHistory = ViewBag.GetRecentTransactions as List<AFFZ_Provider.Models.PaymentHistory>;
+    var MiniDashboard = ViewBag.MiniDashBoardData as AFFZ_Provider.Controllers.MiniDashBoardData;
+}
+<link rel="stylesheet" href="assets/css/admin.css">
 <style>
     .gradient-primary {
         background: linear-gradient(to right, #007bff, #00c6ff); /* Blue gradient */
@@ -33,34 +37,51 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Gradient Cards -->
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card gradient-primary">
-                        <div class="card-body text-center">
-                            <p class="card-text">USER SERVED</p>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="col-md-3">
                     <div class="card gradient-success">
                         <div class="card-body text-center">
-                            <p class="card-text">SUCCESS</p>
+                            <p class="card-text">TOTAL REVENUE (@ViewBag.GetTotalRevenue)</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card gradient-danger">
                         <div class="card-body text-center">
-                            <p class="card-text">FAILED</p>
+                            <p class="card-text">TOP REVENUE SERVICE (@ViewBag.GetTopRevenueService)</p>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <!-- Gradient Cards -->
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card gradient-primary">
+                        <div class="card-body text-center">
+                            <p class="card-text">USER SERVED(@MiniDashboard.TotalUsersServed)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card gradient-success">
+                        <div class="card-body text-center">
+                            <p class="card-text">SUCCESS(@MiniDashboard.TotalSuccessRequests)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card gradient-danger">
+                        <div class="card-body text-center">
+                            <p class="card-text">FAILED(@MiniDashboard.TotalFailedRequests)</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card gradient-warning">
                         <div class="card-body text-center">
-                            <p class="card-text">IN PROCESS</p>
+                            <p class="card-text">IN PROCESS(@MiniDashboard.TotalInProgressRequests)</p>
                         </div>
                     </div>
                 </div>
@@ -89,66 +110,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>28 Sep 2023</td>
-                                        <td>
-                                            <a href="view-service.html" class="table-imgname">
-                                                <img src="assets/img/services/service-03.jpg" class="me-2" alt="img">
-                                                <span>Computer Repair</span>
-                                            </a>
-                                        </td>
-                                        <td>$80</td>
-                                        <td><h6 class="badge-pending">Pending</h6></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>28 Sep 2023</td>
-                                        <td>
-                                            <a href="view-service.html" class="table-imgname">
-                                                <img src="assets/img/services/service-02.jpg" class="me-2" alt="img">
-                                                <span>Car Repair Services</span>
-                                            </a>
-                                        </td>
-                                        <td>$50</td>
-                                        <td><h6 class="badge-active">Completed</h6></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>28 Sep 2023</td>
-                                        <td>
-                                            <a href="view-service.html" class="table-imgname">
-                                                <img src="assets/img/services/service-04.jpg" class="me-2" alt="img">
-                                                <span>Steam Car Wash</span>
-                                            </a>
-                                        </td>
-                                        <td>$50</td>
-                                        <td><h6 class="badge-inactive">Inprogress</h6></td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>28 Sep 2023</td>
-                                        <td>
-                                            <a href="view-service.html" class="table-imgname">
-                                                <img src="assets/img/services/service-09.jpg" class="me-2" alt="img">
-                                                <span>House Cleaning </span>
-                                            </a>
-                                        </td>
-                                        <td>$50</td>
-                                        <td><h6 class="badge-delete">Cancelled</h6></td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>28 Sep 2023</td>
-                                        <td>
-                                            <a href="view-service.html" class="table-imgname">
-                                                <img src="assets/img/services/service-03.jpg" class="me-2" alt="img">
-                                                <span>Computer Repair</span>
-                                            </a>
-                                        </td>
-                                        <td>$80</td>
-                                        <td><h6 class="badge-pending">Pending</h6></td>
-                                    </tr>
+                                    @if (myPaymentHistory !=null)
+                                    {
+                                        @foreach (var item in myPaymentHistory)
+                                        {
+                                            <tr>
+                                                <td>@item.ID</td>
+                                                <td>@item.PAYMENTDATETIME</td>
+                                                <td>@item.SERVICEID</td>
+                                                <td>@item.AMOUNT</td>
+                                                <td><h6 class="badge-pending">@(item.ISPAYMENTSUCCESS == 1 ? "Done" : "Pending")</h6></td>
+                                            </tr>
+                                        }
+                                    }
                                 </tbody>
                             </table>
                         </div>

@@ -5,6 +5,26 @@
       "PackagePath": "staticwebassets\\AFFZ_Provider.bdg1r0a6qo.bundle.scp.css"
     },
     {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2023-12-26 140633.png",
+      "PackagePath": "staticwebassets\\Uploads\\Screenshot 2023-12-26 140633.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-01-02 141555.png",
+      "PackagePath": "staticwebassets\\Uploads\\Screenshot 2024-01-02 141555.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-01-02 145814.png",
+      "PackagePath": "staticwebassets\\Uploads\\Screenshot 2024-01-02 145814.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-01-25 132501.png",
+      "PackagePath": "staticwebassets\\Uploads\\Screenshot 2024-01-25 132501.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-05-10 164343.png",
+      "PackagePath": "staticwebassets\\Uploads\\Screenshot 2024-05-10 164343.png"
+    },
+    {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\DrivingLicense.png",
       "PackagePath": "staticwebassets\\Uploads\\User_3\\DrivingLicense.png"
     },
@@ -15,6 +35,10 @@
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\Passport.png",
       "PackagePath": "staticwebassets\\Uploads\\User_3\\Passport.png"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\ProfilePicture.png",
+      "PackagePath": "staticwebassets\\Uploads\\User_3\\ProfilePicture.png"
     },
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\admin.css",
@@ -4243,6 +4267,14 @@
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\js\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\js\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.unobtrusive.min.js"
     },
     {
       "Id": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\js\\notification.js",

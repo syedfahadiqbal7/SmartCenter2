@@ -270,6 +270,26 @@
   },
   {
     "ContainingType": "AFFZ_API.Controllers.CategoryWithMerchant",
+    "Method": "GetAllCurrentServiceStatus",
+    "RelativePath": "api/CategoryWithMerchant/GetAllCurrentServiceStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AFFZ_API.Models.CurrentServiceStatus, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.CategoryWithMerchant",
     "Method": "GetServiceListByMerchant",
     "RelativePath": "api/CategoryWithMerchant/GetServiceListByMerchant",
     "HttpMethod": "GET",
@@ -399,6 +419,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AFFZ_API.Controllers.CategoryWithMerchant",
+    "Method": "UpdateServiceStatus",
+    "RelativePath": "api/CategoryWithMerchant/UpdateServiceStatus",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "statusUpdate",
+        "Type": "AFFZ_API.Models.CurrentServiceStatus",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AFFZ_API.Controllers.CustomerControllers.CustomerUserManagmentController",
     "Method": "GetCustomers",
     "RelativePath": "api/Customers",
@@ -519,6 +555,11 @@
         "Name": "customers",
         "Type": "AFFZ_API.Models.Customers",
         "IsRequired": true
+      },
+      {
+        "Name": "referralCode",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
@@ -560,6 +601,126 @@
     ]
   },
   {
+    "ContainingType": "AFFZ_API.Controllers.MerchantControllers.DashboardController",
+    "Method": "GetRecentTransactionsAsync",
+    "RelativePath": "api/Dashboard/GetRecentTransactionsAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "count",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AFFZ_API.Models.PaymentHistory, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.MerchantControllers.DashboardController",
+    "Method": "GetTopRevenueServiceAsync",
+    "RelativePath": "api/Dashboard/GetTopRevenueServiceAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.TopServiceRevenueDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.MerchantControllers.DashboardController",
+    "Method": "GetTotalRevenueAsync",
+    "RelativePath": "api/Dashboard/GetTotalRevenueAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Decimal",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.MerchantControllers.DashboardController",
+    "Method": "GetDashboardStatistics",
+    "RelativePath": "api/Dashboard/statistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "merchantId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.FileUploadController",
+    "Method": "AllFileVerifies",
+    "RelativePath": "api/FileUpload/AllFileVerifies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "RFDFU",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AFFZ_API.Controllers.FileUploadController",
     "Method": "DeleteDocument",
     "RelativePath": "api/FileUpload/DeleteDocument/{documentId}",
@@ -597,6 +758,63 @@
   },
   {
     "ContainingType": "AFFZ_API.Controllers.FileUploadController",
+    "Method": "GetMerchantFile",
+    "RelativePath": "api/FileUpload/GetMerchantFile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "merchantId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "RFDFU",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AFFZ_API.Models.UploadedFile, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.FileUploadController",
+    "Method": "GetQuantityOfService",
+    "RelativePath": "api/FileUpload/GetQuantityOfService",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rfdfuId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.FileUploadController",
     "Method": "GetServiceFileListByRFDFUId",
     "RelativePath": "api/FileUpload/GetServiceFileListByRFDFUId",
     "HttpMethod": "GET",
@@ -606,6 +824,11 @@
       {
         "Name": "rfdfuId",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "UploadedBy",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
@@ -630,13 +853,34 @@
   {
     "ContainingType": "AFFZ_API.Controllers.FileUploadController",
     "Method": "ReviewDocuments",
-    "RelativePath": "api/FileUpload/ReviewDocuments/{userId}",
+    "RelativePath": "api/FileUpload/ReviewDocuments/{userId}/{rfdfu}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "rfdfu",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.FileUploadController",
+    "Method": "UpdateDocumenttoPendingStatus",
+    "RelativePath": "api/FileUpload/UpdateDocumenttoPendingStatus/{documentId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "documentId",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -666,7 +910,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "merchantId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1088,7 +1338,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "SavePaymentHistory",
+        "Name": "savePaymentHistory",
         "Type": "AFFZ_API.Models.PaymentHistory",
         "IsRequired": true
       }
@@ -1434,16 +1684,281 @@
     ]
   },
   {
-    "ContainingType": "AFFZ_API.Controllers.ReviewsApiController",
-    "Method": "CreateReview",
-    "RelativePath": "api/ReviewsApi",
+    "ContainingType": "AFFZ_API.Controllers.ReferralController",
+    "Method": "CompleteReferral",
+    "RelativePath": "api/Referral/Complete",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "review",
-        "Type": "AFFZ_API.Models.Review",
+        "Name": "referredCustomerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.Partial.SResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ReferralController",
+    "Method": "CreateReferral",
+    "RelativePath": "api/Referral/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "referrerCustomerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "referredCustomerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.Partial.SResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ReferralController",
+    "Method": "GetUserReferral",
+    "RelativePath": "api/Referral/GetUserReferral",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CustomerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.Partial.SResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.RequestStatusController",
+    "Method": "CreateStatus",
+    "RelativePath": "api/RequestStatus/CreateStatus",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "AFFZ_API.Models.RequestStatuses",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.RequestStatuses",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.RequestStatusController",
+    "Method": "DeleteStatus",
+    "RelativePath": "api/RequestStatus/DeleteStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.RequestStatusController",
+    "Method": "GetAllStatuses",
+    "RelativePath": "api/RequestStatus/GetAllStatuses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AFFZ_API.Models.RequestStatuses, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.RequestStatusController",
+    "Method": "GetRequestStatusIdByName",
+    "RelativePath": "api/RequestStatus/GetRequestStatusIdByName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "StatusName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.RequestStatusController",
+    "Method": "GetStatusById",
+    "RelativePath": "api/RequestStatus/GetStatusById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.RequestStatuses",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.RequestStatusController",
+    "Method": "RequestStatusList",
+    "RelativePath": "api/RequestStatus/RequestStatusList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AFFZ_API.Models.RequestStatuses, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.RequestStatusController",
+    "Method": "UpdateStatus",
+    "RelativePath": "api/RequestStatus/UpdateStatus",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "AFFZ_API.Models.RequestStatuses",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ReviewsApiController",
+    "Method": "CheckIfReviewed",
+    "RelativePath": "api/ReviewsApi/CheckIfReviewed",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "serviceId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "customerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ReviewsApiController",
+    "Method": "CreateOrUpdateReview",
+    "RelativePath": "api/ReviewsApi/CreateReview",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "_review",
+        "Type": "AFFZ_API.Models.ReviewCreate",
         "IsRequired": true
       }
     ],
@@ -1456,7 +1971,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "merchantId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1469,6 +1990,22 @@
     "Parameters": [
       {
         "Name": "serviceId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ReviewsApiController",
+    "Method": "GetUserReviewList",
+    "RelativePath": "api/ReviewsApi/GetUserReviewList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
         "Type": "System.Int32",
         "IsRequired": false
       }
@@ -1695,6 +2232,58 @@
     "ReturnTypes": [
       {
         "Type": "AFFZ_API.Models.Service",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ServiceController",
+    "Method": "GetSerViceNameByRFDFUID",
+    "RelativePath": "api/Service/GetSerViceNameByRFDFUID",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ServiceController",
+    "Method": "ServicesName",
+    "RelativePath": "api/Service/ServiceNameById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2129,27 +2718,6 @@
   },
   {
     "ContainingType": "AFFZ_API.Controllers.ServicesListController",
-    "Method": "PutServicesList",
-    "RelativePath": "api/ServicesList/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "servicesList",
-        "Type": "AFFZ_API.Models.ServicesList",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AFFZ_API.Controllers.ServicesListController",
     "Method": "DeleteServicesList",
     "RelativePath": "api/ServicesList/{id}",
     "HttpMethod": "DELETE",
@@ -2201,6 +2769,204 @@
     "ReturnTypes": [
       {
         "Type": "AFFZ_API.Models.ServicesList",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.ServicesListController",
+    "Method": "UpdateServicesList",
+    "RelativePath": "api/ServicesList/UpdateServicesList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "servicesList",
+        "Type": "AFFZ_API.Models.ServicesList",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.TrackServiceStatusHistoryController",
+    "Method": "CreateStatus",
+    "RelativePath": "api/TrackServiceStatusHistory/CreateStatus",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "AFFZ_API.Models.TrackServiceStatusHistory",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.TrackServiceStatusHistory",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.TrackServiceStatusHistoryController",
+    "Method": "DeleteStatus",
+    "RelativePath": "api/TrackServiceStatusHistory/DeleteStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.TrackServiceStatusHistoryController",
+    "Method": "GetAllStatuses",
+    "RelativePath": "api/TrackServiceStatusHistory/GetAllStatuses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AFFZ_API.Models.TrackServiceStatusHistory, AFFZ_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.TrackServiceStatusHistoryController",
+    "Method": "GetStatusById",
+    "RelativePath": "api/TrackServiceStatusHistory/GetStatusById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.TrackServiceStatusHistory",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.TrackServiceStatusHistoryController",
+    "Method": "UpdateStatus",
+    "RelativePath": "api/TrackServiceStatusHistory/UpdateStatus",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "AFFZ_API.Models.TrackServiceStatusHistory",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.WalletController",
+    "Method": "GetWalletPoints",
+    "RelativePath": "api/Wallet/GetWalletPoints",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.Partial.SResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AFFZ_API.Controllers.WalletController",
+    "Method": "UseReferralPoints",
+    "RelativePath": "api/Wallet/UsePoints",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pointsToUse",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AFFZ_API.Models.Partial.SResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",

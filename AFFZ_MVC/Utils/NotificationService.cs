@@ -1,5 +1,6 @@
 ﻿using AFFZ_Customer.Models;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace AFFZ_Customer.Utils
@@ -15,7 +16,7 @@ namespace AFFZ_Customer.Utils
             _httpContextAccessor = httpContextAccessor;
             _protector = provider.CreateProtector("Example.SessionProtection");
         }
-        public string GetUserId()
+        public async Task<string> GetUserId()
         {
             return _httpContextAccessor.HttpContext.Session.GetEncryptedString("UserId", _protector);
         }
@@ -32,6 +33,62 @@ namespace AFFZ_Customer.Utils
                 notificationsList = JsonConvert.DeserializeObject<List<Notification>>(responseString);
             }
             return notificationsList ?? new List<Notification>();
+        }
+        public async Task<string> GetUserName()
+        {
+
+            try
+            {
+                return _httpContextAccessor.HttpContext.Session.GetEncryptedString("CustomerName", _protector);
+            }
+            catch (Exception ex)
+            {
+                // Log exception if needed
+                Console.WriteLine($"Error fetching notifications: {ex.Message}");
+                return ex.Message;
+            }
+        }
+        [HttpGet]
+        public async Task<string> GetMemberSince()
+        {
+            try
+            {
+                return _httpContextAccessor.HttpContext.Session.GetEncryptedString("MemberSince", _protector);
+            }
+            catch (Exception ex)
+            {
+                // Log exception if needed
+                Console.WriteLine($"Error fetching notifications: {ex.Message}");
+                return ex.Message;
+            }
+        }
+        [HttpGet]
+        public async Task<string> GetReferralCode()
+        {
+            try
+            {
+                return _httpContextAccessor.HttpContext.Session.GetEncryptedString("ReferralCode", _protector);
+            }
+            catch (Exception ex)
+            {
+                // Log exception if needed
+                Console.WriteLine($"Error fetching ReferralCode : {ex.Message}");
+                return ex.Message;
+            }
+        }
+        [HttpGet]
+        public async Task<string> GetWalletPoints()
+        {
+            try
+            {
+                return _httpContextAccessor.HttpContext.Session.GetEncryptedString("walletPoints", _protector);
+            }
+            catch (Exception ex)
+            {
+                // Log exception if needed
+                Console.WriteLine($"Error fetching ReferralCode : {ex.Message}");
+                return ex.Message;
+            }
         }
     }
 }

@@ -23,15 +23,15 @@ namespace AFFZ_Customer.Controllers
         {
             try
             {
-                var response = await _httpClient.PostAsync("Customers/Register", Customs.GetJsonContent(model));
+                var response = await _httpClient.PostAsync($"Customers/Register?referralCode={model.ReferrerCode}", Customs.GetJsonContent(model));
                 try
                 {
                     response.EnsureSuccessStatusCode();
                 }
                 catch
                 {
-					return RedirectToAction("CustomersRegister", "Login");
-				}
+                    return RedirectToAction("CustomersRegister", "Login");
+                }
 
                 var responseString = await response.Content.ReadAsStringAsync();
 

@@ -15,7 +15,9 @@ public partial class UploadedFile
     public string? Status { get; set; }
 
     public int? UserId { get; set; }
-
+    public int? RFDFU { get; set; }
+    public string? UploadedBy { get; set; }
+    public int? MerchantId { get; set; }
     public DateTime? DocumentAddedDate { get; set; }
 
     public DateTime? DocumentModifiedDate { get; set; }

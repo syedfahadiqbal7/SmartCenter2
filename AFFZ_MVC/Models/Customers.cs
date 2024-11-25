@@ -29,6 +29,7 @@ public partial class Customers
     public string? Address { get; set; }
 
     public string? PostalCode { get; set; }
+    public string? ReferrerCode { get; set; }
 
     public string? ProfilePicture { get; set; }
 

@@ -72,6 +72,10 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\D
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\IdentityModel.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\IdentityModel.OidcClient.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\KubernetesClient.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
@@ -103,14 +107,10 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\D
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\Aspire\references\AFFZ_Provider.ProjectMetadata.g.cs
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\Aspire\references\SCAPI_WebFront.ProjectMetadata.g.cs
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\Aspire\references\_AppHost.ProjectMetadata.g.cs
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\AspireHost.sourcelink.json
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\AspireHost.csproj.Up2Date
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\AspireHost.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\refint\AspireHost.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\AspireHost.pdb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\AspireHost.genruntimeconfig.cache
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\ref\AspireHost.dll
-D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
-D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost\obj\Debug\net8.0\AspireHost.sourcelink.json

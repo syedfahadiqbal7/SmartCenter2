@@ -129,10 +129,18 @@ namespace AFFZ_API.Controllers
         {
             try
             {
-                _context.M_ServiceDocumentListBinding.Add(binding);
-                await _context.SaveChangesAsync();
+                if (!ServiceDocumentListCatandServBindingExists(binding.CategoryID, binding.ServiceDocumentListId))
+                {
+                    _context.M_ServiceDocumentListBinding.Add(binding);
+                    await _context.SaveChangesAsync();
 
-                return CreatedAtAction(nameof(GetServiceDocumentListBindings), new { id = binding.Id }, binding);
+                    return CreatedAtAction(nameof(GetServiceDocumentListBindings), new { id = binding.Id }, binding);
+                }
+                else
+                {
+                    _logger.LogError("This service and category is already bind.");
+                    return StatusCode(409, "This service and category is already bind");
+                }
             }
             catch (Exception ex)
             {
@@ -173,7 +181,7 @@ namespace AFFZ_API.Controllers
         {
             return _context.M_ServiceDocumentListBinding.Any(e => e.ServiceDocumentListId == id);
         }
-        private bool ServiceDocumentListCatandServBindingExists(int CategoryID, int ServiceId)
+        private bool ServiceDocumentListCatandServBindingExists(int? CategoryID, int? ServiceId)
         {
             return _context.M_ServiceDocumentListBinding.Any(e => e.ServiceDocumentListId == ServiceId && e.CategoryID == CategoryID);
         }

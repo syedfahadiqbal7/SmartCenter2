@@ -2492,9 +2492,33 @@ ul.custom-radiosbtn {
     margin: 0 5px;
 }
 
+
+
+.noti-wrapper .noti-message {
+    width: 17px;
+    color: #fff;
+    height: 17px;
+    border-radius: 50%;
+    background: #4c40ed;
+    position: absolute;
+    display: block !important;
+    right: 7px;
+    top: 0;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+
+.noti-wrapper .notify-link:hover .noti-message {
+    background: #fff;
+    color: #4c40ed;
+}
+
+
     .dropdown-heads > a {
         background: #F7F7FA;
-        width: 40px;
+        width: 50px;
         height: 40px;
         display: flex;
         align-items: center;
@@ -14058,7 +14082,7 @@ fieldset {
 }
 
     .review-list:last-child {
-        border-bottom: 0;
+        border-bottom: 5px solid #ccc;
     }
 
 .review-imgs {
@@ -14247,4 +14271,13 @@ fieldset {
 
 .customer-chat .chat-cont-profile .card-body {
     max-height: calc(100vh - 330px);
+}
+@keyframes blink {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.blinking {
+    animation: blink 1s infinite;
 }

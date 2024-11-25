@@ -93,7 +93,11 @@ public class ServiceController : ControllerBase
             {
                 return BadRequest("Invalid request data.");
             }
-
+            if (ServiceNameExists(service.ServiceName))
+            {
+                _logger.LogError("This service already Exist.");
+                return StatusCode(409, "This service already exist");
+            }
             // Do not set service.ServiceId explicitly
             _context.Services.Add(service);
             await _context.SaveChangesAsync(); // ServiceId is generated here
@@ -121,8 +125,34 @@ public class ServiceController : ControllerBase
 
         return NoContent();
     }
+    [HttpGet("ServiceNameById")]
+    public async Task<string> ServicesName(int id)
+    {
+        var data = await _context.Services.FindAsync(id);
+        return data.ServiceName;
+
+    }
+    [HttpGet("GetSerViceNameByRFDFUID")]
+    public async Task<string> GetSerViceNameByRFDFUID(int id)
+    {
+        try
+        {
+            int serviceId = await _context.RequestForDisCountToUsers.Where(x => x.RFDFU == id).Select(x => x.SID).FirstOrDefaultAsync();
+            return await ServicesName(serviceId);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+
+    }
     private bool ServiceExists(int id)
     {
         return _context.Services.Any(e => e.ServiceId == id);
+    }
+    private bool ServiceNameExists(string sname)
+    {
+        return _context.Services.Any(e => e.ServiceName == sname);
     }
 }

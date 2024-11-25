@@ -3,6 +3,7 @@ using AFFZ_API.Models;
 using AFFZ_API.Models.Partial;
 using AFFZ_API.Utils;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 
@@ -61,38 +62,33 @@ namespace AFFZ_API.Controllers.CustomerControllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Route("Register")]
-        public async Task<ActionResult<SResponse>> PostCustomer(Customers customers)
+        public async Task<ActionResult<SResponse>> PostCustomer(Customers customers, string referralCode = null)
         {
             try
             {
-
                 customers.RoleId = _context.Roles.Where(x => x.RoleName.ToLower() == "customers").Select(x => x.RoleId).FirstOrDefault();
                 customers.CreatedBy = 1;
                 customers.CreatedDate = DateTime.Now;
                 customers.Password = Cryptography.Encrypt(customers.Password); //need to encrypt
                 _context.Customers.Add(customers);
                 await _context.SaveChangesAsync();
-                bool res = await _emailService.SendEmail(customers.Email, "Welcome On Board with Smart Center", "You have successfully signup. Please remember your password for future reference and make sure to bookmark the website for future.", customers.CustomerName);
-                //if (res)
-                //{
-                //    return new SResponse
-                //    {
-                //        StatusCode = HttpStatusCode.OK,
-                //        Message = $"Customers Successfully Registered!",
-                //    };
-                //}
-                //else
-                //{
-                //    return new SResponse
-                //    {
-                //        StatusCode = HttpStatusCode.GatewayTimeout,
-                //        Message = $"Failed to send email!",
-                //    };
-                //}
+
+                // Call stored procedure to update referral table if referral code is provided
+                if (!string.IsNullOrEmpty(referralCode))
+                {
+                    var commandText = "EXEC UpdateReferralOnSignup @ReferredCustomerID, @ReferralCode";
+                    var referredCustomerIdParam = new SqlParameter("@ReferredCustomerID", customers.CustomerId);
+                    var referralCodeParam = new SqlParameter("@ReferralCode", referralCode);
+
+                    await _context.Database.ExecuteSqlRawAsync(commandText, referredCustomerIdParam, referralCodeParam);
+                }
+
+                bool res = await _emailService.SendEmail(customers.Email, "Welcome On Board with Smart Center", "You have successfully signed up. Please remember your password for future reference and make sure to bookmark the website for future.", customers.CustomerName);
+
                 return new SResponse
                 {
                     StatusCode = HttpStatusCode.OK,
-                    Message = $"Customers Successfully Registered!",
+                    Message = $"Customer successfully registered!",
                 };
             }
             catch (Exception ex)

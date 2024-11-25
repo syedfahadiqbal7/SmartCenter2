@@ -39,6 +39,7 @@
         <input type="hidden" name="MERCHANTID" value="@paginatedSubCategories.MerchantID" />
         <input type="hidden" name="SERVICEID" value="@paginatedSubCategories.SID" />
         <input type="hidden" name="RFDFU" value="@paginatedSubCategories.RFDFU" />
+        <input type="hidden" id="NoOfQuantity" name="NoOfQuantity" value="1" />
         <div class="product">
             Payment Details
             <div class="description">
@@ -142,6 +143,7 @@
         $('#increment').click(function() {
             quantity++;
             $('#quantity').val(quantity);
+            $('#NoOfQuantity').val(quantity);
             updateTotalCost();
         });
 
@@ -150,6 +152,7 @@
             if (quantity > 1) {
                 quantity--;
                 $('#quantity').val(quantity);
+                $('#NoOfQuantity').val(quantity);
                 updateTotalCost();
             }
         });

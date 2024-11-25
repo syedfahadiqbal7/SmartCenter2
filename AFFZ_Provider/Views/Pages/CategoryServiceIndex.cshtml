@@ -14,23 +14,24 @@
                 </div>
             </div>
         </div>
+        <!-- Display success message -->
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+        @if (TempData["FailMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["FailMessage"]
+            </div>
+        }
         <div class="row">
             <div class="col-md-12">
                 <div class="provide-table manage-table">
                     <a asp-action="CategoryServiceCreate" asp-controller="ServiceDocumentBindings" class="btn btn-primary">Create New Binding</a>
-                    <!-- Display messages -->
-                    @if (TempData["SuccessMessage"] != null)
-                    {
-                        <div class="alert alert-success">
-                            @TempData["SuccessMessage"]
-                        </div>
-                    }
-                    @if (TempData["FailMessage"] != null)
-                    {
-                        <div class="alert alert-danger">
-                            @TempData["FailMessage"]
-                        </div>
-                    }
+                   
                     <div class="table-responsive">
                         <div class="row">
                             <div class="col-md-3">
@@ -156,7 +157,7 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = '@Url.Action("MerchantServiceDeleteConfirmed", "MerchantService")?id=' + serviceId;
+                    window.location.href = '@Url.Action("CategoryServiceDeleteConfirmed", "ServiceDocumentBindings")?id=' + serviceId;
                 }
             });
         });

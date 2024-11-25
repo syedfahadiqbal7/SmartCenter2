@@ -25,16 +25,71 @@ namespace AFFZ_Provider.Utils
             string userId = _httpContextAccessor.HttpContext.Session.GetEncryptedString("ProviderId", _protector);
             if (string.IsNullOrEmpty(userId)) return new List<Notification>();
 
-            var notifications = await _httpClient.GetAsync($"Notifications/GetMerchantNotifications/{userId}");
-            notifications.EnsureSuccessStatusCode();
-
-            if (notifications != null)
+            try
             {
-                var responseString = await notifications.Content.ReadAsStringAsync();
+                var response = await _httpClient.GetAsync($"Notifications/GetMerchantNotifications/{userId}");
+                response.EnsureSuccessStatusCode();
+
+                var responseString = await response.Content.ReadAsStringAsync();
                 notificationsList = JsonConvert.DeserializeObject<List<Notification>>(responseString);
+            }
+            catch (Exception ex)
+            {
+                // Log exception if needed
+                Console.WriteLine($"Error fetching notifications: {ex.Message}");
             }
 
             return notificationsList ?? new List<Notification>();
         }
+        public async Task<string> GetUserName()
+        {
+
+            try
+            {
+                return _httpContextAccessor.HttpContext.Session.GetEncryptedString("ProviderName", _protector);
+            }
+            catch (Exception ex)
+            {
+                // Log exception if needed
+                Console.WriteLine($"Error fetching notifications: {ex.Message}");
+                return ex.Message;
+            }
+
+
+        }
+        public async Task<string> GetProviderEmail()
+        {
+
+            try
+            {
+                return _httpContextAccessor.HttpContext.Session.GetEncryptedString("Email", _protector);
+            }
+            catch (Exception ex)
+            {
+                // Log exception if needed
+                Console.WriteLine($"Error fetching Provider Details: {ex.Message}");
+                return ex.Message;
+            }
+
+
+        }
+        public async Task<string> GetProviderIsActive()
+        {
+
+            try
+            {
+                string IsActive = ((_httpContextAccessor.HttpContext.Session.GetEncryptedString("IsActive", _protector)) == "True" ? "Active" : "In Active");
+                return IsActive;
+            }
+            catch (Exception ex)
+            {
+                // Log exception if needed
+                Console.WriteLine($"Error fetching Provider Details: {ex.Message}");
+                return ex.Message;
+            }
+
+
+        }
+
     }
 }

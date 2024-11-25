@@ -30,8 +30,8 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDef
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.AssemblyInfoInputs.cache
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.AssemblyInfo.cs
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.csproj.CoreCompileInputs.cache
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.sourcelink.json
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\refint\SCAPI.ServiceDefaults.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.pdb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\ref\SCAPI.ServiceDefaults.dll
-D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.sourcelink.json

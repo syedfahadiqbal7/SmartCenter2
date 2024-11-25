@@ -1,8 +1,8 @@
-﻿
-using AFFZ_Provider.Models;
+﻿using AFFZ_Provider.Models;
 using AFFZ_Provider.Utils;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 
@@ -100,21 +100,26 @@ namespace AFFZ_Provider.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> ReviewDocument(int userId)
+        public async Task<ActionResult> ReviewDocument(int userId, int rfdfu, int quantity)
         {
             try
             {
-                var jsonResponse = await _httpClient.GetAsync($"FileUpload/ReviewDocuments/{userId}");
+                var jsonResponse = await _httpClient.GetAsync($"FileUpload/ReviewDocuments/{userId}/{rfdfu}");
                 string responseString = await jsonResponse.Content.ReadAsStringAsync();
                 FileUploadViewModel model = new FileUploadViewModel();
 
                 if (!string.IsNullOrEmpty(responseString))
                 {
                     List<UploadedFile> documentList = JsonConvert.DeserializeObject<List<UploadedFile>>(responseString);
-                    model.UploadedFiles = documentList.Where(x => x.UserId == userId).ToList();
+                    model.UploadedFiles = documentList.Where(x => x.UserId == userId && x.UploadedBy == "Customer").ToList();
                 }
                 ViewBag.UserId = userId;
                 ViewBag.SaveResponse = model;
+                ViewBag.RFDFU = rfdfu;
+                ViewBag.StatusList = await StatusList(0);
+                ViewBag.quantity = quantity;
+                var GetServicename = await _httpClient.GetAsync($"Service/GetSerViceNameByRFDFUID?id=" + rfdfu);
+                ViewBag.ServiceName = await GetServicename.Content.ReadAsStringAsync();
                 return View(model);
             }
             catch (JsonSerializationException ex)
@@ -189,7 +194,7 @@ namespace AFFZ_Provider.Controllers
 
                     var responseMessage = await _httpClient.PostAsync("FileUpload/UploadFiles", Customs.GetJsonContent(fileUploadModelAPI));
                     string responseString = await responseMessage.Content.ReadAsStringAsync();
-                    TempData["SuccessResponse"] = responseString;
+                    TempData["SuccessMessage"] = responseString;
                     return RedirectToAction("UploadDocuments");
                 }
 
@@ -197,6 +202,7 @@ namespace AFFZ_Provider.Controllers
             }
             catch (Exception ex)
             {
+                TempData["FailMessage"] = ex.Message;
                 _logger.LogError(ex, "An error occurred while uploading documents.");
                 return StatusCode(500, "An error occurred. Please try again later.");
 
@@ -214,7 +220,7 @@ namespace AFFZ_Provider.Controllers
                 return BadRequest("Invalid parameters.");
             }
 
-            var filePath = Path.Combine(_environment.WebRootPath, "uploads", folderName, fileName);
+            var filePath = Path.Combine(_environment.WebRootPath.Replace("AFFZ_Provider", "AFFZ_MVC"), "uploads", folderName, fileName);
             if (System.IO.File.Exists(filePath))
             {
                 var fileBytes = System.IO.File.ReadAllBytes(filePath);
@@ -234,16 +240,33 @@ namespace AFFZ_Provider.Controllers
 
             try
             {
-                var jsonResponse = await _httpClient.GetAsync("FileUpload/UsersWithDocuments");
+                var jsonResponse = await _httpClient.GetAsync("FileUpload/UsersWithDocuments?merchantId=" + merchantId);
                 string responseString = await jsonResponse.Content.ReadAsStringAsync();
                 UserDocumentsViewModel model = new UserDocumentsViewModel();
-
+                List<UserDocumentsViewModel> documentList = new List<UserDocumentsViewModel>();
                 if (!string.IsNullOrEmpty(responseString))
                 {
-                    List<UserDocumentsViewModel> documentList = JsonConvert.DeserializeObject<List<UserDocumentsViewModel>>(responseString);
-                    ViewBag.UsersWithDocuments = documentList.Where(x => x.MID == merchantId).ToList();
+                    documentList = JsonConvert.DeserializeObject<List<UserDocumentsViewModel>>(responseString);
+                    documentList = documentList.Where(x => x.MID == merchantId).ToList();
+
+                }
+                foreach (var document in documentList)
+                {
+                    int uid = document.UserId;
+                    int RFDFUID = document.RFDFU;
+                    jsonResponse = await _httpClient.GetAsync($"FileUpload/AllFileVerifies?userId={uid}&RFDFU={RFDFUID}");
+                    responseString = await jsonResponse.Content.ReadAsStringAsync();
+                    FileStatus fstatusmodel = new FileStatus();
+                    if (!string.IsNullOrEmpty(responseString))
+                    {
+                        document.FileStatus = JsonConvert.DeserializeObject<FileStatus>(responseString);
+
+                    }
                 }
 
+                ViewBag.UsersWithDocuments = documentList;
+                ViewBag.CurrentStatus = await GetStatusNameByRFDFU(documentList[0].RFDFU);
+                ViewBag.StatusList = await StatusList(0);
                 return View();
             }
             catch (JsonSerializationException ex)
@@ -261,7 +284,7 @@ namespace AFFZ_Provider.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> VerifyDocument(string documentId, string userId)
+        public async Task<IActionResult> VerifyDocument(string documentId, string documentName, int RFDFU, string userId, string quantity)
         {
             _logger.LogInformation("VerifyDocument method called for DocumentId: {DocumentId}", documentId);
             try
@@ -272,20 +295,45 @@ namespace AFFZ_Provider.Controllers
                 _logger.LogInformation($"Document verification response for DocumentId: {documentId}. Response : {responseString}");
                 TempData["SuccessMessage"] = responseString;
                 ViewBag.SaveResponse = responseString;
+                //Tracker
+                var TrackerUpdate = new TrackServiceStatusHistory
+                {
+                    ChangedByID = Convert.ToInt32(_merchantId),
+                    StatusID = 14,
+                    RFDFU = RFDFU,
+                    ChangedByUserType = "Merchant",
+                    ChangedOn = DateTime.Now,
+                    Comments = $"Document [{documentName}] Verified by Merchant"
+                };
+
+                // Send the request to the AFFZ_API
+                var TrackerUpdateResponse = await _httpClient.PostAsJsonAsync("TrackServiceStatusHistory/CreateStatus", TrackerUpdate);
+
+                if (TrackerUpdateResponse.IsSuccessStatusCode)
+                {
+
+                    //"Your service process has started. You will be notified once updated by the merchant.";//Notifiaction
+                    TempData["SuccessMessage"] = "Service and Tracker process Status Updated Successfully.";
+                }
+                else
+                {
+                    TempData["FailMessage"] = "Service updated but Failed to update the Tracker process.";
+                }
                 // Trigger notification
                 var notification = new Notification
                 {
                     UserId = userId.ToString(),
-                    Message = $"Merchant [{_merchantId.ToString()}] has Verify your Document [{documentId}].",
+                    Message = $"Merchant[{_merchantId.ToString()}] has Verify your Document[{documentId}].",
                     MerchantId = _merchantId,
-                    RedirectToActionUrl = "MerchantResponseToUser/CheckDocumentStatus",
-                    MessageFromId = Convert.ToInt32(_merchantId)
+                    RedirectToActionUrl = "/MerchantResponseToUser/CheckDocumentStatus",
+                    MessageFromId = Convert.ToInt32(_merchantId),
+                    SenderType = "Merchant"
                 };
 
                 var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
                 string resString = await res.Content.ReadAsStringAsync();
                 _logger.LogInformation("Notification Response : " + resString);
-                return RedirectToAction("ReviewDocument", new { userId });
+                return RedirectToAction("ReviewDocument", new { userId, RFDFU, quantity });
             }
             catch (Exception ex)
             {
@@ -294,9 +342,9 @@ namespace AFFZ_Provider.Controllers
             }
         }
         [HttpPost]
-        public async Task<IActionResult> ResendDocument(string documentId, string userId)
+        public async Task<IActionResult> ResendDocument(string documentId, string documentName, int RFDFU, string userId, string quantity)
         {
-            _logger.LogInformation("VerifyDocument method called for DocumentId: {DocumentId}", documentId);
+            _logger.LogInformation("ResendDocument method called for DocumentId: {DocumentId}", documentId);
             try
             {
                 var responseMessage = await _httpClient.PostAsync($"FileUpload/ResendDocument/{documentId}", Customs.GetJsonContent(documentId));
@@ -305,20 +353,48 @@ namespace AFFZ_Provider.Controllers
                 _logger.LogInformation($"Document verification response for DocumentId: {documentId}. Response : {responseString}");
                 TempData["SuccessMessage"] = responseString;
                 ViewBag.SaveResponse = responseString;
+
+                //Tracker
+                var TrackerUpdate = new TrackServiceStatusHistory
+                {
+                    ChangedByID = Convert.ToInt32(_merchantId),
+                    StatusID = 15,
+                    RFDFU = RFDFU,
+                    ChangedByUserType = "Merchant",
+                    ChangedOn = DateTime.Now,
+                    Comments = $"Document [{documentName}] Rejected by Merchant"
+                };
+
+                // Send the request to the AFFZ_API
+                var TrackerUpdateResponse = await _httpClient.PostAsJsonAsync("TrackServiceStatusHistory/CreateStatus", TrackerUpdate);
+
+                if (TrackerUpdateResponse.IsSuccessStatusCode)
+                {
+
+                    //"Your service process has started. You will be notified once updated by the merchant.";//Notifiaction
+                    TempData["SuccessMessage"] = "Service and Tracker process Status Updated Successfully.";
+                }
+                else
+                {
+                    TempData["FailMessage"] = "Service updated but Failed to update the Tracker process.";
+                }
+
+
                 // Trigger notification
                 var notification = new Notification
                 {
                     UserId = userId.ToString(),
-                    Message = $"Merchant [{_merchantId.ToString()}] has Declined your Document [{documentId}]. Please Resend. You Can Contact over the chat with Merchant to know more on document rejection.",
+                    Message = $"Merchant[{_merchantId.ToString()}] has Declined your Document[{documentId}]. Please Resend. You Can Contact over the chat with Merchant to know more on document rejection.",
                     MerchantId = _merchantId,
-                    RedirectToActionUrl = "MerchantResponseToUser/CheckDocumentStatus",
-                    MessageFromId = Convert.ToInt32(_merchantId)
+                    RedirectToActionUrl = "/MerchantResponseToUser/CheckDocumentStatus",
+                    MessageFromId = Convert.ToInt32(_merchantId),
+                    SenderType = "Merchant"
                 };
 
                 var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
                 string resString = await res.Content.ReadAsStringAsync();
                 _logger.LogInformation("Notification Response : " + resString);
-                return RedirectToAction("ReviewDocument", new { userId });
+                return RedirectToAction("ReviewDocument", new { userId, RFDFU, quantity });
             }
             catch (Exception ex)
             {
@@ -345,7 +421,275 @@ namespace AFFZ_Provider.Controllers
                 return StatusCode(500, "Internal server error.");
             }
         }
+        [HttpPost]
+        public async Task<IActionResult> ProcessToApplyForServiceStatus(string CurrentStatus, string UserId, string RFDFU, IFormFile UploadedFile)
+        {
+            var userId = int.Parse(UserId ?? "0"); // Placeholder for session-based User ID retrieval
+            var merchantId = int.Parse(HttpContext.Session.GetEncryptedString("ProviderId", _protector) ?? "0"); // Placeholder for session-based Merchant ID retrieval
+            var merchantName = HttpContext.Session.GetEncryptedString("ProviderName", _protector) ?? "0"; // Placeholder for session-based Merchant ID retrieval
+            var serviceId = int.Parse(RFDFU ?? "0"); // Placeholder for Service ID retrieval
 
+            var statusUpdate = new CurrentServiceStatusViewModel
+            {
+                UId = userId,
+                MId = merchantId,
+                RFDFU = Convert.ToInt32(RFDFU),
+                CurrentStatus = CurrentStatus
+            };
+
+            // Send the request to the AFFZ_API
+            var response = await _httpClient.PostAsJsonAsync("CategoryWithMerchant/UpdateServiceStatus", statusUpdate);
+
+            if (response.IsSuccessStatusCode)
+            {
+                //Get Status Id
+                if (CurrentStatus == "19" && UploadedFile != null)
+                {
+                    var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+                    if (!Directory.Exists(uploadsPath))
+                    {
+                        Directory.CreateDirectory(uploadsPath);
+                    }
+
+                    var filePath = Path.Combine(uploadsPath, UploadedFile.FileName);
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await UploadedFile.CopyToAsync(fileStream);
+                    }
+
+                    // Log file upload or save to DB
+                    _logger.LogInformation("File uploaded successfully: {FilePath}", filePath);
+
+                    // Optional: Call API to save file info in DB
+                    var fileUploadModelAPI = new FileUploadModelAPI
+                    {
+                        UserId = userId,
+                        RFDFU = Convert.ToInt32(RFDFU),
+                        MID = merchantId,
+                        UploadedBy = "Provider",
+                        UploadedFiles = new List<UploadedFile>()
+                    };
+
+                    if (UploadedFile.Length > 0)
+                    {
+                        var fileName = Path.GetFileName(UploadedFile.FileName);
+
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await UploadedFile.CopyToAsync(stream);
+                        }
+
+                        var uploadedFile = new UploadedFile
+                        {
+                            FileName = fileName,
+                            ContentType = UploadedFile.ContentType,
+                            FileSize = UploadedFile.Length,
+                            FolderName = $"{merchantName}_{userId}_{RFDFU}",
+                            Status = "Verified",
+                            UserId = userId,
+                            MerchantId = merchantId,
+                            RFDFU = int.Parse(RFDFU),
+                            UploadedBy = "Provider"
+                        };
+
+                        fileUploadModelAPI.UploadedFiles.Add(uploadedFile);
+                    }
+                    var fileResponse = await _httpClient.PostAsync("FileUpload/UploadFiles", Customs.GetJsonContent(fileUploadModelAPI));
+
+                    if (!fileResponse.IsSuccessStatusCode)
+                    {
+                        TempData["FailMessage"] = $"File upload failed with Error{await fileResponse.Content.ReadAsStringAsync()}, but status was updated.";
+                        return RedirectToAction("GetUsersWithDocuments");
+                    }
+                }
+                //"Your service process has started. You will be notified once updated by the merchant.";//Notifiaction
+                string StatusDesc = await getStatusName(Convert.ToInt32(CurrentStatus));
+
+                var TrackerUpdate = new TrackServiceStatusHistory
+                {
+                    ChangedByID = merchantId,
+                    StatusID = Convert.ToInt32(CurrentStatus),
+                    RFDFU = serviceId,
+                    ChangedByUserType = "Merchant",
+                    ChangedOn = DateTime.Now,
+                    Comments = StatusDesc
+                };
+
+                // Send the request to the AFFZ_API
+                var TrackerUpdateResponse = await _httpClient.PostAsJsonAsync("TrackServiceStatusHistory/CreateStatus", TrackerUpdate);
+
+                if (TrackerUpdateResponse.IsSuccessStatusCode)
+                {
+
+                    //"Your service process has started. You will be notified once updated by the merchant.";//Notifiaction
+                    TempData["SuccessMessage"] = "Service and Tracker process Status Updated Successfully.";
+                    // Trigger notification
+                    var notification = new Notification
+                    {
+                        UserId = userId.ToString(),
+                        Message = $"Merchant[{merchantId.ToString()}] has {StatusDesc}",
+                        MerchantId = merchantId.ToString(),
+                        RedirectToActionUrl = "/MerchantResponseToUser/CheckDocumentStatus",
+                        MessageFromId = Convert.ToInt32(merchantId),
+                        SenderType = "Merchant"
+                    };
+
+                    var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                    string resString = await res.Content.ReadAsStringAsync();
+                    _logger.LogInformation("Notification Response : " + resString);
+                    return RedirectToAction("GetUsersWithDocuments");
+                }
+                else
+                {
+                    TempData["FailMessage"] = "Service updated but Failed to update the Tracker process.";
+                    return RedirectToAction("GetUsersWithDocuments");
+                }
+            }
+            else
+            {
+                TempData["FailMessage"] = "Failed to update the service process.";
+                return RedirectToAction("GetUsersWithDocuments");
+            }
+        }
+        [HttpGet]
+        public async Task<string> getStatusName(int statusId)
+        {
+            string StatusDesc = string.Empty;
+            var jsonResponse = await _httpClient.GetAsync("RequestStatus/GetStatusById?id=" + statusId);
+            var responseString = await jsonResponse.Content.ReadAsStringAsync();
+
+            // Initialize an empty list for the documents
+            var statusList = new List<SelectListItem>();
+
+            if (!string.IsNullOrEmpty(responseString))
+            {
+                try
+                {
+                    // Deserialize the JSON response into a list of documents
+                    RequestStatus documents = JsonConvert.DeserializeObject<RequestStatus>(responseString);
+
+                    StatusDesc = documents.StatusName;
+                }
+                catch (JsonSerializationException ex)
+                {
+                    // Log any deserialization errors
+                    _logger.LogError(ex, "JSON deserialization error.");
+                    StatusDesc = ex.Message;
+                }
+                catch (Exception ex)
+                {
+                    StatusDesc = ex.Message;
+                }
+            }
+            return StatusDesc;
+            // Return the list of SelectListItem objects
+
+        }
+        public async Task<List<SelectListItem>> StatusList(int statusId)
+        {
+            var jsonResponse = await _httpClient.GetAsync("RequestStatus/GetAllStatuses?UserType=Merchant");
+            var responseString = await jsonResponse.Content.ReadAsStringAsync();
+
+            // Initialize an empty list for the documents
+            var statusList = new List<SelectListItem>();
+
+            if (!string.IsNullOrEmpty(responseString))
+            {
+                try
+                {
+                    // Deserialize the JSON response into a list of documents
+                    List<RequestStatus> documents = JsonConvert.DeserializeObject<List<RequestStatus>>(responseString);
+
+                    // Map each document to a SelectListItem
+                    statusList = documents.Select(doc => new SelectListItem
+                    {
+                        Text = doc.StatusDescription,
+                        Value = doc.StatusID.ToString(),
+                        Selected = doc.StatusID == statusId // Set selected based on IDs
+                    }).ToList();
+                }
+                catch (JsonSerializationException ex)
+                {
+                    // Log any deserialization errors
+                    _logger.LogError(ex, "JSON deserialization error.");
+                }
+            }
+
+            // Return the list of SelectListItem objects
+            return statusList;
+        }
+        public async Task<string> GetStatusName(int statusId)
+        {
+            try
+            {
+                var jsonResponse = await _httpClient.GetAsync("RequestStatus/GetAllStatuses?UserType=Merchant");
+                var responseString = await jsonResponse.Content.ReadAsStringAsync();
+
+                // Initialize an empty list for the documents
+                string statusName = string.Empty;
+
+                if (!string.IsNullOrEmpty(responseString))
+                {
+                    try
+                    {
+                        // Deserialize the JSON response into a list of documents
+                        List<RequestStatus> documents = JsonConvert.DeserializeObject<List<RequestStatus>>(responseString);
+
+                        // Map each document to a SelectListItem
+                        var result = documents.Find(x => x.StatusID.Equals(statusId));
+                        if (result != null)
+                        {
+                            statusName = documents.Where(x => x.StatusID == statusId).Select(x => x.StatusName).First();
+                        }
+                        else { statusName = "Pending"; }
+                    }
+                    catch (JsonSerializationException ex)
+                    {
+                        // Log any deserialization errors
+                        _logger.LogError(ex, "JSON deserialization error.");
+                        statusName = ex.Message;
+                    }
+                }
+
+                // Return the list of SelectListItem objects
+                return statusName;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<string> GetStatusNameByRFDFU(int Rfdfu)
+        {
+            var jsonResponse = await _httpClient.GetAsync("CategoryWithMerchant/GetAllCurrentServiceStatus?UserType=Merchant");
+            var responseString = await jsonResponse.Content.ReadAsStringAsync();
+            int statusId = 0;
+            // Initialize an empty list for the documents
+            string statusName = string.Empty;
+
+            if (!string.IsNullOrEmpty(responseString))
+            {
+                try
+                {
+                    // Deserialize the JSON response into a list of documents
+                    List<CurrentServiceStatusViewModel> CurrentStatus = JsonConvert.DeserializeObject<List<CurrentServiceStatusViewModel>>(responseString);
+
+                    // Map each document to a SelectListItem
+                    statusId = int.Parse(CurrentStatus.Where(x => x.RFDFU == Rfdfu).Select(x => x.CurrentStatus).First());
+                    statusName = await GetStatusName(statusId);
+                }
+                catch (JsonSerializationException ex)
+                {
+                    // Log any deserialization errors
+                    _logger.LogError(ex, "JSON deserialization error.");
+                    statusName = ex.Message;
+                }
+            }
+
+            // Return the list of SelectListItem objects
+            return statusName;
+        }
     }
     public class RequestForDisCountToUserViewModel
     {
@@ -369,14 +713,41 @@ namespace AFFZ_Provider.Controllers
     }
     public class UserDocumentsViewModel
     {
-        public int UserId { get; set; }
-        public int MID { get; set; }
         public int DocumentCount { get; set; }
+        public int ServiceID { get; set; }
+        public string ServiceName { get; set; }
+        public int ServicePrice { get; set; }
+        public int ServiceAmountPaidToAdmin { get; set; }
+        public string SelectedDocumentIds { get; set; }
+        public int CategoryID { get; set; }
+        public int FINALPRICE { get; set; }
+        public int RFDFU { get; set; }
+        public int IsPaymentDone { get; set; }
+        public int IsMerchantSelected { get; set; }
+        public string CompanyName { get; set; }
+        public string CustomerName { get; set; }
+        public int MID { get; set; }
+        public int Quantity { get; set; }
+        public int ISPAYMENTSUCCESS { get; set; }
+        public string PAYMENTTYPE { get; set; }
+        public int UserId { get; set; }//
+        public string MerchantName { get; set; }
+        public FileStatus? FileStatus { get; set; }
+    }
+
+    public class FileStatus
+    {
+        public int TotalFiles { get; set; }
+        public int TotalVerified { get; set; }
+        public int TotalPending { get; set; }
     }
     public class FileUploadModelAPI
     {
-
         public int UserId { get; set; }
+        public int MID { get; set; }
+        public int RFDFU { get; set; }
+        public string? UploadedBy { get; set; }
+
         public List<UploadedFile>? UploadedFiles { get; set; }
     }
 }

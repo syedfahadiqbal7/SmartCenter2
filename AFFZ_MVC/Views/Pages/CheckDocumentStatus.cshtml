@@ -6,7 +6,6 @@
 }
 
 <div class="col-lg-9">
-  
     <div class="table-responsive">
         <table class="table mb-0 custom-table">
             <thead class="thead-light">
@@ -21,14 +20,12 @@
                 </tr>
             </thead>
             <tbody>
-
                 @if (paginatedSubCategories == null || paginatedSubCategories.UploadedFiles == null)
                 {
                     <p><em>Loading Sub Categories...</em></p>
                 }
                 else
                 {
-
                     string RFDFU = !string.IsNullOrEmpty(ViewContext.HttpContext.Request.Query["RFDFU"].ToString()) ? ViewContext.HttpContext.Request.Query["RFDFU"] : "";
                     string MerchantID = !string.IsNullOrEmpty(ViewContext.HttpContext.Request.Query["MerchantID"].ToString()) ? ViewContext.HttpContext.Request.Query["MerchantID"] : "";
 
@@ -57,7 +54,14 @@
                                 }
                             </td>
                             <td>
-                                <a asp-action="DeleteDocument" class="btn btn-sm btn-danger eye-btn " asp-route-documentId="@file.UFID"><i class="ri-eye-line align-bottom me-1"></i>Delete</a>
+                                @if (file.Status == "Resend")
+                                {
+                                    <a href="javascript:void(0);" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#uploadModal" onclick="setFileDetails('@file.FileName', '@file.FolderName', @file.UFID, @file.RFDFU, @file.MerchantId)">ReUpload</a>
+                                }
+                                else
+                                {
+                                    <a asp-action="DeleteDocument" class="btn btn-sm btn-danger eye-btn" asp-route-documentId="@file.UFID"><i class="ri-eye-line align-bottom me-1"></i>Delete</a>
+                                }
                             </td>
                         </tr>
                     }
@@ -67,35 +71,45 @@
     </div>
 </div>
 
+<!-- Modal for Resending File -->
+<div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="uploadModalLabel">Upload New File</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="ReUploadDocument" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="FileName" id="FileName" />
+                    <input type="hidden" name="FolderName" id="FolderName" />
+                    <input type="hidden" name="UFID" id="UFID" />
+                    <input type="hidden" name="RFDFU" id="RFDFU" />
+                    <input type="hidden" name="MID" id="MID" />
+                    <div class="form-group">
+                        <label for="fileUpload">Choose file:</label>
+                        <input type="file" class="form-control" id="fileUpload" name="file" required />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!-- Scripts -->
-<script src="assets/js/jquery-3.7.0.min.js"></script>
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/feather.min.js"></script>
-<script src="assets/plugins/select2/js/select2.min.js"></script>
-<script src="assets/js/moment.min.js"></script>
-<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-<script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
-<script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
-<script src="assets/js/script.js"></script>
+<!-- JavaScript to Set File Details in Modal -->
 <script>
-    function previewImage(event) {
-        var reader = new FileReader();
-        reader.onload = function () {
-            var output = document.getElementById('imagePreview');
-            output.src = reader.result;
-        }
-        reader.readAsDataURL(event.target.files[0]);
+    function setFileDetails(fileName, folderName, ufid,rfdfu,MID) {
+        document.getElementById("FileName").value = fileName;
+        document.getElementById("FolderName").value = folderName;
+        document.getElementById("UFID").value = ufid;
+        document.getElementById("RFDFU").value = rfdfu;
+        document.getElementById("MID").value = MID;
+        $('#uploadModal').modal('show');
     }
-    $(document).ready(function () {
-        
-        $("form").submit(function () {
-            if ($("#fileUpload")[0].files.length === 0) {
-                $("#fileError").show();
-                return false;
-            }
-            $("#fileError").hide();
-            return true;
-        });
-    });
 </script>

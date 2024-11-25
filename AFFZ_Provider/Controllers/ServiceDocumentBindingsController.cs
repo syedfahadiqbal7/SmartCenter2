@@ -102,11 +102,15 @@ namespace AFFZ_Provider.Controllers
 
                 if (response.StatusCode == HttpStatusCode.Created)
                 {
+                    TempData["SuccessMessage"] = "Binding Successfully Done.";
                     return RedirectToAction(nameof(CategoryServiceIndex));
                 }
                 else
                 {
+                    ViewBag.ServiceListComboData = await ServiceListItems(0);
+                    ViewBag.ServiceCategoryComboData = await ServiceCategoryItems(0);
                     _logger.LogWarning($"Failed to create service document binding. Status code: {response.StatusCode}");
+                    TempData["FailMessage"] = await response.Content.ReadAsStringAsync();
                     return View(binding);
                 }
             }
@@ -191,8 +195,8 @@ namespace AFFZ_Provider.Controllers
             }
         }
         // GET: api/ServiceDocumentListBindings/Delete/5
-        [HttpPost]
-        public async Task<IActionResult> CategoryServiceDelete(int id)
+        [HttpGet]
+        public async Task<IActionResult> CategoryServiceDeleteConfirmed(int id)
         {
             try
             {

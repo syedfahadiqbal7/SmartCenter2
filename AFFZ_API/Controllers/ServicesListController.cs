@@ -39,8 +39,8 @@ namespace AFFZ_API.Controllers
         }
 
         // PUT: api/ServicesList/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutServicesList(int id, ServicesList servicesList)
+        [HttpPost("UpdateServicesList")]
+        public async Task<IActionResult> UpdateServicesList(int id, ServicesList servicesList)
         {
             if (id != servicesList.ServiceListID)
             {

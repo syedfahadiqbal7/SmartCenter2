@@ -1,5 +1,7 @@
 ﻿using AFFZ_API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 
 namespace AFFZ_API.Controllers
 {
@@ -15,25 +17,40 @@ namespace AFFZ_API.Controllers
             _logger = logger;
         }
         [HttpPost("sendRequestToSavePayment")]
-        public async Task<IActionResult> sendRequestToSavePayment(PaymentHistory SavePaymentHistory)
+        public async Task<IActionResult> sendRequestToSavePayment(PaymentHistory savePaymentHistory)
         {
-            _logger.LogInformation("sendRequestToSavePayment method called with UserId: {UserId}", SavePaymentHistory.PAYERID);
+            _logger.LogInformation("sendRequestToSavePayment method called with UserId: {UserId}", savePaymentHistory.PAYERID);
             try
             {
-                _context.Add(SavePaymentHistory);
+                // Save payment history
+                _context.Add(savePaymentHistory);
                 await _context.SaveChangesAsync();
                 _logger.LogInformation("Payment Done Successfully.");
-                return Ok("Payment Done Successfully.");
+
+                // Check if the payment was successful
+                if (savePaymentHistory.ISPAYMENTSUCCESS == 1)
+                {
+                    // Call CompleteReferral stored procedure to update referral status
+                    var commandCompleteReferral = "EXEC CompleteReferral @ReferredCustomerID";
+                    var referredCustomerIdParam = new SqlParameter("@ReferredCustomerID", savePaymentHistory.PAYERID);
+                    await _context.Database.ExecuteSqlRawAsync(commandCompleteReferral, referredCustomerIdParam);
+
+                    // Call UpdateReferrerPoints stored procedure to add points to referrer and referred customer
+                    var commandUpdateReferrerPoints = "EXEC UpdateReferrerPoints @ReferredCustomerID, @AmountSpent";
+                    var amountSpentParam = new SqlParameter("@AmountSpent", savePaymentHistory.AMOUNT);
+                    await _context.Database.ExecuteSqlRawAsync(commandUpdateReferrerPoints, referredCustomerIdParam, amountSpentParam);
+                }
+
+                return CreatedAtAction(nameof(sendRequestToSavePayment), new { id = savePaymentHistory.ID }, savePaymentHistory);
             }
             catch (Exception ex)
             {
                 // Log the exception details
-                // Use your preferred logging framework here. For example:
-                _logger.LogError(ex, "An error occurred while processing the discount request.");
-
+                _logger.LogError(ex, "An error occurred while processing the payment request.");
                 return StatusCode(500, ex.Message);
             }
         }
+
         //
         [HttpPost("UpdateRequestForDisCountToUserForPaymentDone")]
         public async Task<IActionResult> UpdateRequestForDisCountToUserForPaymentDone(RequestForDisCountToUser updatePaymentStatus)

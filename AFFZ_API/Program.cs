@@ -1,7 +1,7 @@
 using AFFZ_API;
 using AFFZ_API.Interfaces;
 using AFFZ_API.Models;
-using AFFZ_API.SignalRHub;
+using AFFZ_API.NotificationsHubs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -11,12 +11,27 @@ using System.Text.Json.Serialization;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowAllOrigins",
+//        builder => builder.AllowAnyOrigin()
+//                          .AllowAnyMethod()
+//                          .AllowAnyHeader());
+//});
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins",
-        builder => builder.AllowAnyOrigin()
-                          .AllowAnyMethod()
-                          .AllowAnyHeader());
+    options.AddPolicy("AllowSpecificOrigins", policy =>
+    {
+        policy.WithOrigins(
+            "https://localhost:7195",
+            "https://localhost:7096",
+            "https://localhost:7204"
+        // Add other client URLs here as needed
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials(); // Required to allow credentials
+    });
 });
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
@@ -74,12 +89,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseCors("AllowAllOrigins");
+// Apply the CORS policy globally
+app.UseCors("AllowSpecificOrigins");
+//app.UseCors("AllowAllOrigins");
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapHub<NotificationHub>("/notificationHub").RequireCors("AllowAllOrigins");  // Map SignalR hub
+app.MapHub<NotificationHub>("/notificationHub");
+// Map SignalR hub
 //app.UseEndpoints(endpoints =>
 //{
 //    endpoints.MapHub<NotificationHub>("/notificationHub")

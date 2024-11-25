@@ -1,7 +1,15 @@
-﻿
+﻿@using AFFZ_Provider.Utils
 @model AFFZ_Provider.Models.MenuView
+@inject NotificationService NotificationService
 
-<div class="settings-menu">
+@{
+    var username = await NotificationService.GetUserName();
+    var Email = await NotificationService.GetProviderEmail();
+    var IsActive = await NotificationService.GetProviderIsActive();
+   
+}
+
+@* <div class="settings-menu">
     <ul>
         @foreach(var item in Model.MenuItems)
         {
@@ -18,4 +26,155 @@
             </a>
         </li>
     </ul>
+</div> *@
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <div class="sidebar-logo">
+            <a href="Dashboard">
+                <img src="/assets/img/logo-small.png" class="img-fluid logo" alt="Logo">
+            </a>
+            <a href="Dashboard">
+                <img src="/assets/img/logo-small.png" class="img-fluid logo-small" alt="Logo">
+            </a>
+        </div>
+        <div class="siderbar-toggle">
+            <label class="switch" id="toggle_btn">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="active">
+                    <a href="/Dashboard"><i class="feather-grid"></i> <span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="/MerchantService/MerchantServiceIndex"><i class="feather-briefcase"></i> <span>My Services</span></a>
+                </li>
+                <li>
+                    <a href="/ReviewsClient/ProviderReviews"><i class="feather-briefcase"></i> <span>Customer Reviews</span></a>
+                </li>
+                <li>
+                    <a href="/ServiceDocumentBindings/CategoryServiceIndex"><i class="feather-briefcase"></i> <span>Cat and Services Binding</span></a>
+                </li>
+                <li>
+                    <a href="/UserRequestToMerchant/CheckReqest"><i class="feather-calendar"></i> <span>Bookings </span></a>
+                </li>
+
+                <li>
+                    <a href="/MerchantResponseToUser/GetUsersWithDocuments"><i class="feather-star"></i> <span>Review User Files</span></a>
+                </li>
+                <li>
+                    <a href="/Message/Inbox"><i class="feather-message-circle"></i> <span>Chat</span></a>
+                </li>
+                <li class="submenu">
+                    <a href="provider-settings.html"><i class="feather-settings"></i> <span>Settings</span> <span class="menu-arrow"></span></a>
+                    <ul>
+                        <li>
+                            <a href="provider-appointment-settings.html">Appointment Settings</a>
+                        </li>
+                        <li>
+                            <a href="/Profile">Account Settings</a>
+                        </li>
+                        <li>
+                            <a href="provider-social-profile.html">Social Profiles</a>
+                        </li>
+                        <li>
+                            <a href="provider-security-settings.html">Security Setting</a>
+                        </li>
+                        <li>
+                            <a href="provider-plan.html">Plan & Billings</a>
+                        </li>
+                        <li>
+                            <a href="payment-settings.html">Payment Settings</a>
+                        </li>
+                        <li>
+                            <a href="provider-notifcations.html">Notifications</a>
+                        </li>
+                        <li>
+                            <a href="provider-connected-apps.html">Connected Apps</a>
+                        </li>
+                        <li>
+                            <a href="verification.html">Profile Verification</a>
+                        </li>
+                        <li>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#del-account">Delete Account</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="@Url.Action("Logout", "Login")">
+                        <i class="feather-log-out me-2"></i> Logout
+                    </a>
+                </li>
+            </ul>
+            <div class="menu-bottom">
+                <div class="menu-user">
+                    <div class="menu-user-img avatar-online">
+                        <img src="@Url.Action("GetImage", "Login")" alt="user">
+                    </div>
+                    <div class="menu-user-info">
+                        <h6>@username</h6>
+                        <p>@Email</p>
+                    </div>
+                </div>
+                <a href="#" class="select-set"><i class="feather-settings"></i></a>
+                <div class="dropdown-menu user-drop" id="dropboxes">
+                    <div class="menu-user">
+                        <div class="menu-user-img avatar-online">
+                            <img src="@Url.Action("GetImage", "Login")" alt="user">
+                        </div>
+                        <div class="menu-user-info">
+                            <h6>@username</h6>
+                            <p>@IsActive</p>
+                        </div>
+                    </div>
+                    <div class="set-user">
+                        <p>Set as Away</p>
+                        <div class="status-toggle">
+                            <input type="checkbox" id="active-user" class="check">
+                            <label for="active-user" class="checktoggle">checkbox</label>
+                        </div>
+                    </div>
+                    <ul class="set-menu">
+                        <li>
+                            <a href="provider-security-settings.html">
+                                <i class="feather-settings me-2"></i> Settings
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Profile">
+                                <i class="feather-user me-2"></i> Your Account
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="feather-check-circle me-2"></i> Identity Verification
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="help-menu">
+                        <li>
+                            <a href="#">
+                                Help Center
+                            </a>
+                        </li>
+                        <li>
+                            <a href="terms-condition.html">
+                                Terms of Condition
+                            </a>
+                        </li>
+                        <li>
+                            <a href="privacy-policy.html">
+                                Privacy Policy
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

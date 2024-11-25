@@ -8,10 +8,10 @@ namespace AFFZ_Customer.Controllers
 {
     public class MerchantList : Controller
     {
-        private readonly ILogger<MerchantList> _logger;
         private static string _merchantIdCat = string.Empty;
+        private readonly ILogger<MerchantList> _logger;
         private readonly HttpClient _httpClient;
-        IDataProtector _protector;
+        private readonly IDataProtector _protector;
         public MerchantList(IHttpClientFactory httpClientFactory, ILogger<MerchantList> logger, IDataProtectionProvider provider)
         {
             _httpClient = httpClientFactory.CreateClient("Main");
@@ -19,46 +19,32 @@ namespace AFFZ_Customer.Controllers
             _logger = logger;
         }
         [HttpGet]
-        public async Task<ActionResult> SelectedMerchantList(string catName)
+        public async Task<IActionResult> SelectedMerchantList(string catName)
         {
-            _logger.LogInformation("Index method called with CatName: {CatName}", catName);
-
-            if (!string.IsNullOrEmpty(catName))
-            {
-                _merchantIdCat = catName;
-            }
-
-            List<CatWithMerchant> categories = new List<CatWithMerchant>();
-
+            _logger.LogInformation("SelectedMerchantList called with Category Name: {CategoryName}", catName);
+            var categories = new List<CatWithMerchant>();
             try
             {
-                var jsonResponse = await _httpClient.GetAsync($"CategoryWithMerchant/GetServiceListByMerchant?CatName={_merchantIdCat}");
-                jsonResponse.EnsureSuccessStatusCode();
-                if (jsonResponse != null)
-                {
-                    var responseString = await jsonResponse.Content.ReadAsStringAsync();
-                    categories = JsonConvert.DeserializeObject<List<CatWithMerchant>>(responseString);
-                    ViewBag.SubCategoriesWithMerchant = categories;
-                    //categories = JsonConvert.DeserializeObject<List<CatWithMerchant>>(jsonResponse);
-                    //ViewBag.SubCategoriesWithMerchant = categories;
-                }
-                else
-                {
-                    _logger.LogWarning("Received empty response from API");
-                    ViewBag.SubCategoriesWithMerchant = new List<CatWithMerchant>();
-                }
+                var response = await _httpClient.GetAsync($"CategoryWithMerchant/GetServiceListByMerchant?CatName={catName}");
+                response.EnsureSuccessStatusCode();
+
+                var responseString = await response.Content.ReadAsStringAsync();
+                categories = JsonConvert.DeserializeObject<List<CatWithMerchant>>(responseString) ?? new List<CatWithMerchant>();
+
+                ViewBag.SubCategoriesWithMerchant = categories;
+                _logger.LogInformation("Successfully retrieved categories for Category Name: {CategoryName}", catName);
             }
             catch (JsonSerializationException ex)
             {
-                _logger.LogError(ex, "JSON deserialization error.");
-                ViewBag.SubCategoriesWithMerchant = new List<CatWithMerchant>();
+                _logger.LogError(ex, "Error deserializing JSON response for SelectedMerchantList.");
+                ViewBag.SubCategoriesWithMerchant = categories;
                 ModelState.AddModelError(string.Empty, "Failed to load categories.");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An unexpected error occurred.");
-                ViewBag.SubCategoriesWithMerchant = new List<CatWithMerchant>();
-                ModelState.AddModelError(string.Empty, "An unexpected error occurred while loading categories.");
+                _logger.LogError(ex, "Unexpected error in SelectedMerchantList.");
+                ViewBag.SubCategoriesWithMerchant = categories;
+                ModelState.AddModelError(string.Empty, "An error occurred while loading categories.");
             }
 
             if (TempData.TryGetValue("SuccessMessage", out var saveResponse))
@@ -68,10 +54,9 @@ namespace AFFZ_Customer.Controllers
 
             return View();
         }
-        public async Task<ActionResult> RequestForDiscount(string id)
+        public async Task<IActionResult> RequestForDiscount(string id)
         {
-            _logger.LogInformation("RequestForDiscount method called with id: {Id}", id);
-            string userId = HttpContext.Session.GetEncryptedString("UserId", _protector);
+            _logger.LogInformation("RequestForDiscount initiated with id: {Id}", id);
             if (string.IsNullOrEmpty(id))
             {
                 _logger.LogWarning("RequestForDiscount called with empty id");
@@ -81,33 +66,23 @@ namespace AFFZ_Customer.Controllers
             try
             {
                 var reqIds = id.Split('~');
-                var discountRequestClass = new DiscountRequestClass
+                var discountRequest = new DiscountRequestClass
                 {
                     MerchantId = Convert.ToInt32(reqIds[0]),
                     ServiceId = Convert.ToInt32(reqIds[1]),
-                    UserId = Convert.ToInt32(HttpContext.Session.GetEncryptedString("UserId", _protector)) //HttpContext.Session.GetString("UserId")
+                    UserId = Convert.ToInt32(HttpContext.Session.GetEncryptedString("UserId", _protector))
                 };
 
-                var Request = await _httpClient.PostAsync("CategoryWithMerchant/sendRequestForDiscount", Customs.GetJsonContent(discountRequestClass));
-                var responseString = await Request.Content.ReadAsStringAsync();
-                // Trigger notification
-                var notification = new Notification
-                {
-                    UserId = HttpContext.Session.GetEncryptedString("UserId", _protector).ToString(),
-                    Message = $"User[{reqIds[1].ToString()}] has asked for a discount.",
-                    MerchantId = reqIds[0],
-                    RedirectToActionUrl = "UserRequestToMerchant/CheckReqest",
-                    MessageFromId = Convert.ToInt32(HttpContext.Session.GetEncryptedString("UserId", _protector))
-                };
+                var discountResponse = await _httpClient.PostAsync("CategoryWithMerchant/sendRequestForDiscount", Customs.GetJsonContent(discountRequest));
+                discountResponse.EnsureSuccessStatusCode();
+                TempData["SuccessMessage"] = "Request for discount submitted successfully.";
 
-                var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
-                string resString = await res.Content.ReadAsStringAsync();
-                _logger.LogInformation("Notification Response : " + resString);
-                TempData["SuccessMessage"] = responseString;
+                await UpdateTrackerStatus(reqIds, "User has asked for a discount.");
+                await TriggerNotification(reqIds[0], reqIds[1], discountRequest.UserId.ToString());
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while sending discount request.");
+                _logger.LogError(ex, "Error processing RequestForDiscount.");
                 TempData["FailMessage"] = "An error occurred while sending the discount request.";
             }
 
@@ -118,133 +93,221 @@ namespace AFFZ_Customer.Controllers
         {
             _logger.LogInformation("ProceedDirecttoPayment method called with id: {Id}", id);
             string userId = HttpContext.Session.GetEncryptedString("UserId", _protector);
+
             if (string.IsNullOrEmpty(id))
             {
                 _logger.LogWarning("ProceedDirecttoPayment called with empty id");
                 return NotFound();
             }
+
             RequestForDisCountToUserViewModel requestForDisCount = new RequestForDisCountToUserViewModel();
             var reqIds = id.Split('~');
-            int MerchantId = Convert.ToInt32(reqIds[0]);
-            int ServiceId = Convert.ToInt32(reqIds[1]);
-            int UserId = Convert.ToInt32(HttpContext.Session.GetEncryptedString("UserId", _protector));
+            int merchantId = Convert.ToInt32(reqIds[0]);
+            int serviceId = Convert.ToInt32(reqIds[1]);
+            int userIdInt = Convert.ToInt32(userId);
+
             try
             {
-
-                var discountRequestClass = new DiscountRequestClass
-                {
-                    MerchantId = MerchantId,
-                    ServiceId = ServiceId,
-                    UserId = UserId
-                };
-                //Create Request...
-                var Request = await _httpClient.PostAsync("CategoryWithMerchant/sendRequestForDiscount", Customs.GetJsonContent(discountRequestClass));
-                var responseString = await Request.Content.ReadAsStringAsync();
-                //get Detail of newly added request:
-                RequestForDiscountViewModel mdl = new RequestForDiscountViewModel();
-                var jsonResponse = await _httpClient.GetAsync("CategoryWithMerchant/AllRequestMerchant?Mid=" + reqIds[0]);
+                // Create discount request By Merchant and save in RequestForDiscountToMerchant
+                var discountRequestClass = new DiscountRequestClass { MerchantId = merchantId, ServiceId = serviceId, UserId = userIdInt };
+                var request = await _httpClient.PostAsync("CategoryWithMerchant/sendRequestForDiscount", Customs.GetJsonContent(discountRequestClass));
+                request.EnsureSuccessStatusCode();
+                await NotifyUser(reqIds, userIdInt, "#", $"User[{userIdInt}] has completed the payment and selected you as his final merchant. Wait for the files to get uploaded by the user.");
+                // Retrieve discount details sent to merchant
+                var jsonResponse = await _httpClient.GetAsync($"CategoryWithMerchant/AllRequestMerchant?Mid={reqIds[0]}");
                 jsonResponse.EnsureSuccessStatusCode();
 
-
-                responseString = await jsonResponse.Content.ReadAsStringAsync();
-                if (!string.IsNullOrEmpty(responseString))
+                //Add TrackingStatus 1,2
+                await UpdateServiceStatusAsync(userIdInt, 1, 0);
+                //Add changestatus
+                var statusUpdate = new CurrentServiceStatusViewModel
                 {
-                    try
-                    {
-                        List<RequestForDiscountViewModel> categories = JsonConvert.DeserializeObject<List<RequestForDiscountViewModel>>(responseString);
+                    UId = userIdInt,
+                    MId = merchantId,
+                    RFDFU = 0,
+                    CurrentStatus = "1"
+                };
 
-                        mdl = categories.Where(x => x.MID == MerchantId && x.SID == ServiceId && x.UID == UserId).OrderByDescending(x => x.RequestDatetime).FirstOrDefault();
-                    }
-                    catch (JsonSerializationException ex)
-                    {
-                        // Log the exception details
-                        _logger.LogError(ex, "JSON deserialization error.");
-
-                        // Handle the error response accordingly
-                        ViewBag.RequestForDisCountToMerchant = new List<RequestForDiscountViewModel>();
-                        ModelState.AddModelError(string.Empty, "Failed to load Data.");
-                    }
-                }
-                else
+                // Send the request to the AFFZ_API
+                var _changeStatusAdd = await _httpClient.PostAsJsonAsync("CategoryWithMerchant/UpdateServiceStatus", statusUpdate);
+                await UpdateServiceStatusAsync(userIdInt, 2, 0);
+                statusUpdate = new CurrentServiceStatusViewModel
                 {
-                    TempData["FailMessage"] = "An error occurred while payment. Please Try Again";
-                }
+                    UId = userIdInt,
+                    MId = merchantId,
+                    RFDFU = 0,
+                    CurrentStatus = "2"
+                };
 
-                //Discounted SAving...
+                // Send the request to the AFFZ_API
+                _changeStatusAdd = await _httpClient.PostAsJsonAsync("CategoryWithMerchant/UpdateServiceStatus", statusUpdate);
+                string responseString = await jsonResponse.Content.ReadAsStringAsync();
+                List<RequestForDiscountViewModel> categories = JsonConvert.DeserializeObject<List<RequestForDiscountViewModel>>(responseString);
 
-                SubmitResponseByMerchant SRBM = new SubmitResponseByMerchant();
-                SRBM.RFDTM = mdl.RFDTM.ToString();
-                SRBM.DiscountPrice = mdl.ServicePrice.ToString();
-                SRBM.UID = UserId.ToString();
-                SRBM.SID = ServiceId.ToString();
-                SRBM.MID = MerchantId.ToString();
-
-                try
+                var mdl = categories?.FirstOrDefault(x => x.MID == merchantId && x.SID == serviceId && x.UID == userIdInt);
+                if (mdl == null)
                 {
-                    var responseMessage1 = await _httpClient.PostAsync("CategoryWithMerchant/SaveMerchantResponseForDiscount", Customs.GetJsonContent(SRBM));
-                    responseMessage1.EnsureSuccessStatusCode();
-                    responseString = await responseMessage1.Content.ReadAsStringAsync();
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex, "An error occurred while processing the discount request.");
-                    TempData["FailMessage"] = ex.Message;
-                }
-                //Check Response from Merchant...
-
-                var jsonResponse1 = await _httpClient.GetAsync($"CategoryWithMerchant/AllResponsesFromMerchant?Uid={userId}");
-                jsonResponse1.EnsureSuccessStatusCode();
-                if (jsonResponse != null)
-                {
-                    var responseString3 = await jsonResponse1.Content.ReadAsStringAsync();
-                    List<RequestForDisCountToUserViewModel> Check_Response_from_Merchant = JsonConvert.DeserializeObject<List<RequestForDisCountToUserViewModel>>(responseString3);
-                    requestForDisCount = Check_Response_from_Merchant.Where(x => x.MerchantID == MerchantId && x.UID == UserId && x.SID == ServiceId && x.IsMerchantSelected == 0 && x.IsPaymentDone == 0).OrderByDescending(x => x.ResponseDateTime).FirstOrDefault();
-                }
-                else
-                {
-                    _logger.LogWarning("Empty response received from API for userId: {UserId}", userId);
-                    ViewBag.ResponseForDisCountFromMerchant = new List<RequestForDisCountToUserViewModel>();
+                    TempData["FailMessage"] = "Unable to retrieve discount data.";
+                    return RedirectToAction("ErrorPage");
                 }
 
+                // Save Merchant Response In Request For Discount To User and update RequestForDiscountToMerchant IsResponseSent
+                var submitResponse = new SubmitResponseByMerchant
+                {
+                    RFDTM = mdl.RFDTM.ToString(),
+                    DiscountPrice = mdl.ServicePrice.ToString(),
+                    UID = userIdInt.ToString(),
+                    SID = serviceId.ToString(),
+                    MID = merchantId.ToString()
+                };
 
+                var responseMessage = await _httpClient.PostAsync("CategoryWithMerchant/SaveMerchantResponseForDiscount", Customs.GetJsonContent(submitResponse));
+                responseMessage.EnsureSuccessStatusCode();
 
-                //Select Final Merchant...
+                int crfdfu = Convert.ToInt32((await responseMessage.Content.ReadAsStringAsync()).Split('-')[1]);
 
-                var srbm = new RequestForDisCountToUser
+                // Update Tracking Information
+                await UpdateServiceStatusAsync(userIdInt, 3, crfdfu);
+                await UpdateServiceStatusAsync(userIdInt, 4, crfdfu);
+
+                // Retrieve merchant responses for validation
+                var merchantResponses = await _httpClient.GetAsync($"CategoryWithMerchant/AllResponsesFromMerchant?Uid={userId}");
+                merchantResponses.EnsureSuccessStatusCode();
+
+                string responseString3 = await merchantResponses.Content.ReadAsStringAsync();
+                List<RequestForDisCountToUserViewModel> merchantDiscountResponses = JsonConvert.DeserializeObject<List<RequestForDisCountToUserViewModel>>(responseString3);
+
+                requestForDisCount = merchantDiscountResponses?
+                    .FirstOrDefault(x => x.MerchantID == merchantId && x.UID == userIdInt && x.SID == serviceId && x.IsMerchantSelected == 0 && x.IsPaymentDone == 0);
+
+                if (requestForDisCount == null)
+                {
+                    _logger.LogWarning("No pending discount responses found for userId: {UserId}", userId);
+                    TempData["FailMessage"] = "Discount selection was unsuccessful. Please try again.";
+                    return RedirectToAction("ErrorPage");
+                }
+
+                // Select final merchant
+                var selectFinalMerchant = new RequestForDisCountToUser
                 {
                     RFDFU = requestForDisCount.RFDFU,
-                    UID = requestForDisCount.UID,
+                    UID = userIdInt,
                     MID = requestForDisCount.MerchantID,
                     IsMerchantSelected = 1,
                     IsPaymentDone = 0
                 };
 
-                var responseMessage2 = await _httpClient.PostAsync("CategoryWithMerchant/SelectFinalMerchant", Customs.GetJsonContent(srbm));
-                responseString = await responseMessage2.Content.ReadAsStringAsync();
+                var finalMerchantResponse = await _httpClient.PostAsync("CategoryWithMerchant/SelectFinalMerchant", Customs.GetJsonContent(selectFinalMerchant));
+                finalMerchantResponse.EnsureSuccessStatusCode();
 
+                await UpdateServiceStatusAsync(userIdInt, 5, requestForDisCount.RFDFU);
+                await UpdateServiceStatusAsync(userIdInt, 6, requestForDisCount.RFDFU);
+                await UpdateServiceStatusAsync(userIdInt, 9, requestForDisCount.RFDFU);
 
+                await NotifyUser(reqIds, userIdInt, "#", $"User[{userIdInt}] has completed the payment and selected you as his final merchant. Wait for the files to get uploaded by the user.");
 
-                // Trigger notification
-                var notification = new Notification
-                {
-                    UserId = HttpContext.Session.GetEncryptedString("UserId", _protector).ToString(),
-                    Message = $"User[{reqIds[1].ToString()}] has payed the amount. Proceed to next steps.",
-                    MerchantId = reqIds[0],
-                    RedirectToActionUrl = "UserRequestToMerchant/CheckReqest",
-                    MessageFromId = Convert.ToInt32(HttpContext.Session.GetEncryptedString("UserId", _protector))
-                };
-
-                var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
-                string resString = await res.Content.ReadAsStringAsync();
-                _logger.LogInformation("Notification Response : " + resString);
-                TempData["SuccessMessage"] = responseString;
+                TempData["SuccessMessage"] = "Discount processed successfully.";
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while sending discount request.");
                 TempData["FailMessage"] = "An error occurred while sending the discount request.";
             }
-            return RedirectToAction("Payment", "MerchantResponseToUser", new { rfdfu = requestForDisCount.RFDFU, uid = UserId, merchantId = MerchantId });
+
+            return RedirectToAction("Payment", "MerchantResponseToUser", new { rfdfu = requestForDisCount.RFDFU, uid = userIdInt, merchantId = merchantId });
+        }
+        // Helper Method to Update Service Status
+        private async Task UpdateServiceStatusAsync(int userId, int statusId, int rfdfu)
+        {
+            var trackerUpdate = new TrackServiceStatusHistory
+            {
+                ChangedByID = userId,
+                StatusID = statusId,
+                RFDFU = rfdfu,
+                ChangedByUserType = "User",
+                ChangedOn = DateTime.Now,
+                Comments = $"User[{userId}] Direct Paying mode."
+            };
+            await TrackingDirectPayment(trackerUpdate);
+        }
+        // Helper Method to Send Notification
+        private async Task NotifyUser(string[] reqIds, int userId, string url, string message)
+        {
+            var notification = new Notification
+            {
+                UserId = HttpContext.Session.GetEncryptedString("UserId", _protector),
+                Message = message,
+                MerchantId = reqIds[0],
+                RedirectToActionUrl = url,
+                MessageFromId = userId
+            };
+
+            var response = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+            _logger.LogInformation("Notification response: {Response}", await response.Content.ReadAsStringAsync());
+        }
+        private async Task UpdateTrackerStatus(string[] reqIds, string comment)
+        {
+            int userId = Convert.ToInt32(HttpContext.Session.GetEncryptedString("UserId", _protector));
+            var trackerUpdate = new TrackServiceStatusHistory
+            {
+                ChangedByID = userId,
+                StatusID = 1,
+                RFDFU = 0,
+                ChangedByUserType = "User",
+                ChangedOn = DateTime.Now,
+                Comments = comment
+            };
+
+            try
+            {
+                var response = await _httpClient.PostAsJsonAsync("TrackServiceStatusHistory/CreateStatus", trackerUpdate);
+                response.EnsureSuccessStatusCode();
+                _logger.LogInformation("Tracker status updated successfully for request: {Request}", reqIds);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating tracker status.");
+                throw;
+            }
+        }
+        private async Task TriggerNotification(string merchantId, string serviceId, string userId)
+        {
+            var notification = new Notification
+            {
+                UserId = userId,
+                Message = $"User[{userId}] has asked for a discount For Service[{serviceId}]",
+                MerchantId = merchantId,
+                RedirectToActionUrl = "/UserRequestToMerchant/CheckReqest",
+                MessageFromId = Convert.ToInt32(userId)
+            };
+
+            try
+            {
+                var response = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                response.EnsureSuccessStatusCode();
+                _logger.LogInformation("Notification triggered successfully.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error triggering notification.");
+                throw;
+            }
+        }
+        private async Task TrackingDirectPayment(TrackServiceStatusHistory TrackerUpdate)
+        {
+            // Send the request to the AFFZ_API
+            var TrackerUpdateResponse = await _httpClient.PostAsJsonAsync("TrackServiceStatusHistory/CreateStatus", TrackerUpdate);
+
+            if (TrackerUpdateResponse.IsSuccessStatusCode)
+            {
+
+                //"Your service process has started. You will be notified once updated by the merchant.";//Notifiaction
+                TempData["SuccessMessage"] = "Service and Tracker process Status Updated Successfully.";
+            }
+            else
+            {
+                TempData["FailMessage"] = "Service updated but Failed to update the Tracker process.";
+            }
         }
     }
     public class CatWithMerchant

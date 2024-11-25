@@ -1,4 +1,0 @@
-2024-08-23T09:01:10.9882621+04:00 0HN63621C3OGF:00000010 [INF] sendRequestToSavePayment method called with UserId: "2" (b9981db9)
-2024-08-23T09:01:11.0897822+04:00 0HN63621C3OGF:00000010 [INF] Payment Done Successfully. (e71e65ea)
-2024-08-23T09:01:11.1438200+04:00 0HN63621C3OGF:00000011 [INF] UpdateRequestForDisCountToUserForPaymentDont method called with UserId: 2 (b12c6fe3)
-2024-08-23T09:01:11.1567706+04:00 0HN63621C3OGF:00000011 [INF] Payment status updated. (3afab57c)

@@ -20,4 +20,6 @@ public partial class UploadedFile
     public DateTime? DocumentAddedDate { get; set; }
 
     public DateTime? DocumentModifiedDate { get; set; }
+    public int RFDFU { get; set; }
+    public string? UploadedBy { get; set; }
 }

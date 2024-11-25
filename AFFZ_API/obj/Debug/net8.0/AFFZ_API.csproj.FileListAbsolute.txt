@@ -251,8 +251,6 @@ D:\TempTesting\AFFZ_API\obj\Debug\net8.0\refint\AFFZ_API.dll
 D:\TempTesting\AFFZ_API\obj\Debug\net8.0\AFFZ_API.pdb
 D:\TempTesting\AFFZ_API\obj\Debug\net8.0\AFFZ_API.genruntimeconfig.cache
 D:\TempTesting\AFFZ_API\obj\Debug\net8.0\ref\AFFZ_API.dll
-D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\appsettings.Development.json
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\appsettings.json
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\AFFZ_API.staticwebassets.endpoints.json
@@ -291,8 +289,10 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Deb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.DiaSymReader.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.DotNet.Scaffolding.Shared.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
@@ -524,6 +524,7 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\obj\Deb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.AFFZ_API.props
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.AFFZ_API.props
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\obj\Debug\net8.0\staticwebassets.pack.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\obj\Debug\net8.0\AFFZ_API.csproj.Up2Date
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\obj\Debug\net8.0\AFFZ_API.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_API\obj\Debug\net8.0\refint\AFFZ_API.dll

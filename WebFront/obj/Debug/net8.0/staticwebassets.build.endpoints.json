@@ -1,5 +1,6 @@
 {
   "Version": 1,
+  "ManifestType": "Build",
   "Endpoints": [
     {
       "Route": "Custom_JavaScript.bsodncgdii.js",
@@ -110,7 +111,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 17 Sep 2024 04:35:03 GMT"
+          "Value": "Mon, 25 Nov 2024 13:48:14 GMT"
         }
       ],
       "EndpointProperties": [
@@ -147,7 +148,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 17 Sep 2024 04:35:03 GMT"
+          "Value": "Mon, 25 Nov 2024 13:48:14 GMT"
         }
       ],
       "EndpointProperties": [

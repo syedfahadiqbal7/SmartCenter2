@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "AFFZ_Customer.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\AFFZ_API\\AFFZ_API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\AFFZ_Provider\\AFFZ_Provider.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\WebFront\\SCAPI.WebFront.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

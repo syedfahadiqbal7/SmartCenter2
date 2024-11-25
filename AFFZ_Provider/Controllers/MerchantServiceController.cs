@@ -195,7 +195,13 @@ namespace AFFZ_Provider.Controllers
                 if (!jsonResponse.IsSuccessStatusCode)
                 {
                     _logger.LogError("Service creation failed. Status code: {StatusCode}", jsonResponse.StatusCode);
-                    ModelState.AddModelError(string.Empty, "Failed to create service.");
+                    ModelState.AddModelError(string.Empty, await jsonResponse.Content.ReadAsStringAsync());
+                    ViewBag.ServiceListComboData = await ServiceListItems("");
+                    ViewBag.ServiceCategoryComboData = await ServiceCategoryItems(0);
+                    List<int> defaultDocsList = new List<int>();
+
+                    //ViewBag["defaultDocumentDAta"] = GetDefaultServiceDocumentListData(int.Parse())
+                    ViewBag.DocumentListComboData = await DocumentListItems(defaultDocsList);
                     return View(service);
                 }
 

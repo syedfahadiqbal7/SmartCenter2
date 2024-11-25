@@ -3,6 +3,19 @@
 <h2>Create Service Document Binding</h2>
 <div class="page-wrapper">
     <div class="content">
+        <!-- Display success message -->
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+        @if (TempData["FailMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["FailMessage"]
+            </div>
+        }
         <div class="row">
             <div class="col-lg-12 m-auto">
                 @using (Html.BeginForm("CategoryServiceCreate", null, FormMethod.Post, new { @class = "form", @novalidate = "novalidate" }))

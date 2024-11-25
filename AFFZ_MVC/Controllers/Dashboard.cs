@@ -1,7 +1,6 @@
 ﻿using AFFZ_Customer.Utils;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
 
 namespace AFFZ_Customer.Controllers
 {

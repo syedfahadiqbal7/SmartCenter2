@@ -12,5 +12,14 @@
         public bool IsRead { get; set; }
         public string RedirectToActionUrl { get; set; }
         public int MessageFromId { get; set; }
+        public string SenderType { get; set; }
+        public string NotificationType { get; set; }
+
+        // Constructor to set default values
+        public Notification()
+        {
+            SenderType = "Provider";          // Default value for SenderType
+            NotificationType = "Alert";    // Default value for NotificationType
+        }
     }
 }

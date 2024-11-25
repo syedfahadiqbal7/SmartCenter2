@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Gyp3U6ui5el7XxiXuxbrTfWp4b3ORgsfHmwtyvTdNd0=",
+  "Hash": "ypsV1TQRYReK8hui3P+y9nnYB6JlBI/K0JhKulO6X1s=",
   "Source": "AFFZ_Provider",
   "BasePath": "_content/AFFZ_Provider",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "7resva15av",
-      "Integrity": "s3A1oMPNkGE7qT0sUfLj6hHjCpPVTvBOe004MGkAP1w=",
+      "Fingerprint": "ub08eslqbq",
+      "Integrity": "qkEo5Rskm6F9uuzvOhmwicxr7RHQNtLlj0KInhk28sc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\admin.css"
@@ -22256,6 +22256,48 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\js\\jquery.validate.unobtrusive.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "js/jquery.validate.unobtrusive#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "co8ut7qx77",
+      "Integrity": "lN8nKsPLF/uAJ5e2eW1Hh/LZgn3wj4C40dxTDdwSfok=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\js\\jquery.validate.unobtrusive.min.js",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "js/jquery.validate.unobtrusive.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "48y08845bh",
+      "Integrity": "RFWFWIIPsjB4DucR4jqwxTWw13ZmtI+s6tVR2LJmZXk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jquery.validate.unobtrusive.min.js"
+    },
+    {
       "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\js\\notification.js",
       "SourceId": "AFFZ_Provider",
       "SourceType": "Discovered",
@@ -23495,6 +23537,111 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2023-12-26 140633.png",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "Uploads/Screenshot 2023-12-26 140633#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wlq0re1hld",
+      "Integrity": "tMkDptsqAbEzctjJES8M7UFEtEj5QI7S+l4y3aQpW/I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Screenshot 2023-12-26 140633.png"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-01-02 141555.png",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "Uploads/Screenshot 2024-01-02 141555#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bfz0rqlm4d",
+      "Integrity": "VybnEskkLGohhnb5hHEatt9zksRyYRrvXJdJiP/1VSo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Screenshot 2024-01-02 141555.png"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-01-02 145814.png",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "Uploads/Screenshot 2024-01-02 145814#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oq4cz81shp",
+      "Integrity": "ANZhJwqAcaA6iA1/S0NseDn27GsFSTfrAhhJMOuvoM0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Screenshot 2024-01-02 145814.png"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-01-25 132501.png",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "Uploads/Screenshot 2024-01-25 132501#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zr8szkeopd",
+      "Integrity": "b85/mtZHt2sO/jIch8wyXyWRaM5a+MRvJjYoEgs7yuI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Screenshot 2024-01-25 132501.png"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-05-10 164343.png",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "Uploads/Screenshot 2024-05-10 164343#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ne0mfin8mz",
+      "Integrity": "jxLeRy8bi3pKvtzXYBDFZ7a/aYZABXEtujVBdgzLTwE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Screenshot 2024-05-10 164343.png"
+    },
+    {
       "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\DrivingLicense.png",
       "SourceId": "AFFZ_Provider",
       "SourceType": "Discovered",
@@ -23556,6 +23703,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\User_3\\Passport.png"
+    },
+    {
+      "Identity": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\ProfilePicture.png",
+      "SourceId": "AFFZ_Provider",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\",
+      "BasePath": "_content/AFFZ_Provider",
+      "RelativePath": "Uploads/User_3/ProfilePicture#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oq4cz81shp",
+      "Integrity": "ANZhJwqAcaA6iA1/S0NseDn27GsFSTfrAhhJMOuvoM0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\User_3\\ProfilePicture.png"
     }
   ],
   "Endpoints": [
@@ -23582,7 +23750,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Oct 2024 17:56:22 GMT"
+          "Value": "Mon, 25 Nov 2024 13:48:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -23627,7 +23795,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Oct 2024 17:56:22 GMT"
+          "Value": "Mon, 25 Nov 2024 13:48:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -23672,7 +23840,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Oct 2024 17:56:22 GMT"
+          "Value": "Mon, 25 Nov 2024 13:48:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -23709,7 +23877,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Oct 2024 17:56:22 GMT"
+          "Value": "Mon, 25 Nov 2024 13:48:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -23724,51 +23892,6 @@
       ]
     },
     {
-      "Route": "assets/css/admin.7resva15av.css",
-      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\admin.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "292655"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"s3A1oMPNkGE7qT0sUfLj6hHjCpPVTvBOe004MGkAP1w=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 24 Oct 2024 04:31:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "7resva15av"
-        },
-        {
-          "Name": "label",
-          "Value": "assets/css/admin.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-s3A1oMPNkGE7qT0sUfLj6hHjCpPVTvBOe004MGkAP1w="
-        }
-      ]
-    },
-    {
       "Route": "assets/css/admin.css",
       "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\admin.css",
       "Selectors": [],
@@ -23779,7 +23902,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "292655"
+          "Value": "293233"
         },
         {
           "Name": "Content-Type",
@@ -23787,11 +23910,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"s3A1oMPNkGE7qT0sUfLj6hHjCpPVTvBOe004MGkAP1w=\""
+          "Value": "\"qkEo5Rskm6F9uuzvOhmwicxr7RHQNtLlj0KInhk28sc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 24 Oct 2024 04:31:02 GMT"
+          "Value": "Fri, 22 Nov 2024 07:08:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -23801,7 +23924,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-s3A1oMPNkGE7qT0sUfLj6hHjCpPVTvBOe004MGkAP1w="
+          "Value": "sha256-qkEo5Rskm6F9uuzvOhmwicxr7RHQNtLlj0KInhk28sc="
         }
       ]
     },
@@ -23884,6 +24007,51 @@
         {
           "Name": "integrity",
           "Value": "sha256-uFvAtv2T2STgxWitYevw0Rugyegb27iFwP19zAUQI2k="
+        }
+      ]
+    },
+    {
+      "Route": "assets/css/admin.ub08eslqbq.css",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\assets\\css\\admin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "293233"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qkEo5Rskm6F9uuzvOhmwicxr7RHQNtLlj0KInhk28sc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 22 Nov 2024 07:08:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ub08eslqbq"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/css/admin.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qkEo5Rskm6F9uuzvOhmwicxr7RHQNtLlj0KInhk28sc="
         }
       ]
     },
@@ -110398,6 +110566,170 @@
       ]
     },
     {
+      "Route": "js/jquery.validate.unobtrusive.co8ut7qx77.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\js\\jquery.validate.unobtrusive.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19398"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lN8nKsPLF/uAJ5e2eW1Hh/LZgn3wj4C40dxTDdwSfok=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Nov 2024 14:44:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "co8ut7qx77"
+        },
+        {
+          "Name": "label",
+          "Value": "js/jquery.validate.unobtrusive.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lN8nKsPLF/uAJ5e2eW1Hh/LZgn3wj4C40dxTDdwSfok="
+        }
+      ]
+    },
+    {
+      "Route": "js/jquery.validate.unobtrusive.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\js\\jquery.validate.unobtrusive.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19398"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lN8nKsPLF/uAJ5e2eW1Hh/LZgn3wj4C40dxTDdwSfok=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Nov 2024 14:44:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lN8nKsPLF/uAJ5e2eW1Hh/LZgn3wj4C40dxTDdwSfok="
+        }
+      ]
+    },
+    {
+      "Route": "js/jquery.validate.unobtrusive.min.48y08845bh.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\js\\jquery.validate.unobtrusive.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5831"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RFWFWIIPsjB4DucR4jqwxTWw13ZmtI+s6tVR2LJmZXk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Nov 2024 15:18:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "48y08845bh"
+        },
+        {
+          "Name": "label",
+          "Value": "js/jquery.validate.unobtrusive.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RFWFWIIPsjB4DucR4jqwxTWw13ZmtI+s6tVR2LJmZXk="
+        }
+      ]
+    },
+    {
+      "Route": "js/jquery.validate.unobtrusive.min.js",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\js\\jquery.validate.unobtrusive.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5831"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RFWFWIIPsjB4DucR4jqwxTWw13ZmtI+s6tVR2LJmZXk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Nov 2024 15:18:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RFWFWIIPsjB4DucR4jqwxTWw13ZmtI+s6tVR2LJmZXk="
+        }
+      ]
+    },
+    {
       "Route": "js/notification.js",
       "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\js\\notification.js",
       "Selectors": [],
@@ -115236,6 +115568,416 @@
       ]
     },
     {
+      "Route": "Uploads/Screenshot 2023-12-26 140633.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2023-12-26 140633.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8310"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tMkDptsqAbEzctjJES8M7UFEtEj5QI7S+l4y3aQpW/I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 12:26:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tMkDptsqAbEzctjJES8M7UFEtEj5QI7S+l4y3aQpW/I="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/Screenshot 2023-12-26 140633.wlq0re1hld.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2023-12-26 140633.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8310"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tMkDptsqAbEzctjJES8M7UFEtEj5QI7S+l4y3aQpW/I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 12:26:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wlq0re1hld"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/Screenshot 2023-12-26 140633.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tMkDptsqAbEzctjJES8M7UFEtEj5QI7S+l4y3aQpW/I="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/Screenshot 2024-01-02 141555.bfz0rqlm4d.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-01-02 141555.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "43298"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VybnEskkLGohhnb5hHEatt9zksRyYRrvXJdJiP/1VSo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 12:38:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bfz0rqlm4d"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/Screenshot 2024-01-02 141555.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VybnEskkLGohhnb5hHEatt9zksRyYRrvXJdJiP/1VSo="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/Screenshot 2024-01-02 141555.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-01-02 141555.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "43298"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VybnEskkLGohhnb5hHEatt9zksRyYRrvXJdJiP/1VSo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 12:38:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VybnEskkLGohhnb5hHEatt9zksRyYRrvXJdJiP/1VSo="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/Screenshot 2024-01-02 145814.oq4cz81shp.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-01-02 145814.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "141004"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ANZhJwqAcaA6iA1/S0NseDn27GsFSTfrAhhJMOuvoM0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 20 Nov 2024 13:53:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oq4cz81shp"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/Screenshot 2024-01-02 145814.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ANZhJwqAcaA6iA1/S0NseDn27GsFSTfrAhhJMOuvoM0="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/Screenshot 2024-01-02 145814.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-01-02 145814.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "141004"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ANZhJwqAcaA6iA1/S0NseDn27GsFSTfrAhhJMOuvoM0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 20 Nov 2024 13:53:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ANZhJwqAcaA6iA1/S0NseDn27GsFSTfrAhhJMOuvoM0="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/Screenshot 2024-01-25 132501.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-01-25 132501.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "253912"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"b85/mtZHt2sO/jIch8wyXyWRaM5a+MRvJjYoEgs7yuI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 12:36:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-b85/mtZHt2sO/jIch8wyXyWRaM5a+MRvJjYoEgs7yuI="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/Screenshot 2024-01-25 132501.zr8szkeopd.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-01-25 132501.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "253912"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"b85/mtZHt2sO/jIch8wyXyWRaM5a+MRvJjYoEgs7yuI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 12:36:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zr8szkeopd"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/Screenshot 2024-01-25 132501.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-b85/mtZHt2sO/jIch8wyXyWRaM5a+MRvJjYoEgs7yuI="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/Screenshot 2024-05-10 164343.ne0mfin8mz.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-05-10 164343.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "81502"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jxLeRy8bi3pKvtzXYBDFZ7a/aYZABXEtujVBdgzLTwE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 13:20:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ne0mfin8mz"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/Screenshot 2024-05-10 164343.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-jxLeRy8bi3pKvtzXYBDFZ7a/aYZABXEtujVBdgzLTwE="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/Screenshot 2024-05-10 164343.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\Screenshot 2024-05-10 164343.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "81502"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jxLeRy8bi3pKvtzXYBDFZ7a/aYZABXEtujVBdgzLTwE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Nov 2024 13:20:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-jxLeRy8bi3pKvtzXYBDFZ7a/aYZABXEtujVBdgzLTwE="
+        }
+      ]
+    },
+    {
       "Route": "Uploads/User_3/DrivingLicense.png",
       "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\DrivingLicense.png",
       "Selectors": [],
@@ -115478,6 +116220,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-qcwyuNXy7mik3MI++z7ZNOeGTb4DOJZUaVdlnvjBUmY="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/User_3/ProfilePicture.oq4cz81shp.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\ProfilePicture.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "141004"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ANZhJwqAcaA6iA1/S0NseDn27GsFSTfrAhhJMOuvoM0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 22 Nov 2024 07:36:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oq4cz81shp"
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/User_3/ProfilePicture.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ANZhJwqAcaA6iA1/S0NseDn27GsFSTfrAhhJMOuvoM0="
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/User_3/ProfilePicture.png",
+      "AssetFile": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AFFZ_Provider\\wwwroot\\Uploads\\User_3\\ProfilePicture.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "141004"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ANZhJwqAcaA6iA1/S0NseDn27GsFSTfrAhhJMOuvoM0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 22 Nov 2024 07:36:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ANZhJwqAcaA6iA1/S0NseDn27GsFSTfrAhhJMOuvoM0="
         }
       ]
     }

@@ -1,92 +1,238 @@
 ﻿@model List<AFFZ_Provider.Controllers.UserDocumentsViewModel>
 @{
     var paginatedSubCategories = ViewBag.UsersWithDocuments as List<AFFZ_Provider.Controllers.UserDocumentsViewModel>;
-    ViewData["Title"] = "UserList For Merchant";
+    ViewData["Title"] = "User List for Merchant";
 }
+<style>
+    .table-hover tbody tr:hover {
+        background-color: #f9f9f9;
+    }
+
+    .alert {
+        border-left: 5px solid #007bff;
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+
+    .badge {
+        font-size: 0.9rem;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: white;
+    }
+</style>
 <div class="page-wrapper">
     <div class="content container-fluid">
+        <!-- Breadcrumb -->
+        @* <div class="row mb-4">
+            <div class="col-md-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">User List</li>
+                    </ol>
+                </nav>
+            </div>
+        </div> *@
 
         <!-- Page Header -->
         <div class="page-header">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="provider-subtitle">
-                        <h6>Files</h6>
-                    </div>
-                </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">User List for Merchant</h4>
             </div>
         </div>
-        <!-- /Page Header -->
-        <div class="col-lg-9">
-            <div class="table-responsive">
-                <table class="table mb-0 custom-table">
-                    <thead class="thead-light">
-                        <tr>
-                            <th>#</th>
-                            <th>User ID</th>
-                            <th>Document Count</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if (paginatedSubCategories == null)
-                        {
-                            <p><em>Loading Sub Categories...</em></p>
-                        }
-                        else
-                        {
-                            @foreach (var user in paginatedSubCategories)
+
+        <!-- Success and Error Messages -->
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        @if (TempData["FailMessage"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                @TempData["FailMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <!-- User Table -->
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th>#</th>
+                                <th>Customer Name</th>
+                                <th>Service</th>
+                                <th>Paid Amount</th>
+                                <th>Payment Done</th>
+                                <th>Actions</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (paginatedSubCategories == null || !paginatedSubCategories.Any())
                             {
                                 <tr>
-                                    <td></td>
-                                    <td>@user.UserId</td>
-                                    <td>@user.DocumentCount</td>
-                                    <td>
-                                        <a asp-controller="MerchantResponseToUser" asp-action="ReviewDocument" asp-route-userId="@user.UserId" class="btn btn-primary">Review</a>
-                                        <a asp-controller="Message" asp-action="SendMessage" asp-route-SenderId="@user.UserId" class="btn btn-primary"><i class="fa fa-paper-plane me-1"></i>Chat</a>
+                                    <td colspan="7" class="text-center">
+                                        <em>No users found</em>
                                     </td>
                                 </tr>
                             }
-                        }
-                    </tbody>
-                </table>
+                            else
+                            {
+                                @foreach (var user in paginatedSubCategories)
+                                {
+                                    <tr>
+                                        <td>@user.UserId</td>
+                                        <td>@user.CustomerName</td>
+                                        <td>@user.ServiceName</td>
+                                        <td>AED @user.ServicePrice</td>
+                                        <td>
+                                            <span class="badge @((user.IsPaymentDone == 2) ? "bg-success" : "bg-warning")">
+                                                @(user.IsPaymentDone == 1 ? "Yes" : "No")
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <a asp-controller="MerchantResponseToUser" asp-action="ReviewDocument"
+                                               asp-route-rfdfu="@user.RFDFU" asp-route-quantity="@user.Quantity" asp-route-userId="@user.UserId"
+                                               class="btn btn-sm btn-outline-primary">
+                                                <i class="fa fa-file-alt"></i> Review
+                                            </a>
+                                            <a asp-controller="Message" asp-action="SendMessage"
+                                               asp-route-SenderId="@user.UserId"
+                                               class="btn btn-sm btn-outline-secondary">
+                                                <i class="fa fa-paper-plane"></i> Chat
+                                            </a>
+                                        </td>
+                                        <td>
+                                            @if (user.FileStatus.TotalVerified == user.DocumentCount && ViewBag.CurrentStatus != "Completed")
+                                            {
+                                                <button class="btn btn-sm btn-outline-success"
+                                                        onclick="checkDocumentsAndShowModal('@user.UserId','@user.RFDFU')">
+                                                    Update Status
+                                                </button>
+                                            }
+                                            else if (ViewBag.CurrentStatus == "Completed")
+                                            {
+                                                <span class="text-success">Service Completed Successfully.</span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
 </div>
-<!-- Scripts -->
-<script src="assets/js/jquery-3.7.0.min.js"></script>
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/feather.min.js"></script>
-<script src="assets/plugins/select2/js/select2.min.js"></script>
-<script src="assets/js/moment.min.js"></script>
-<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-<script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
-<script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
-<script src="assets/js/script.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#fileUpload").change(function () {
-            var fileInput = $(this)[0];
-            var files = fileInput.files;
+<div id="statusModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="statusModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content doctor-profile">
+            <div class="modal-header border-bottom-0 justify-content-between">
+                <h5 class="modal-title">Update Service Status</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body  pt-0">
+                <form id="statusUpdateForm" method="post" asp-controller="MerchantResponseToUser" asp-action="ProcessToApplyForServiceStatus" enctype="multipart/form-data">
+                    <input type="hidden" name="RFDFU" id="_RFDFU" />
+                    <input type="hidden" name="UserId" id="_UserId" />
+                    <div class="form-group">
+                        <label for="statusDropdown">Status</label>
 
-            var fileList = "";
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-                fileList += file.name + "<br>";
-            }
+                        <select class="form-select" name="CurrentStatus" id="statusDropdown" asp-items="@ViewBag.StatusList" required>
+                            <option value="">--Select--</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="fileUploadGroup" style="display: none;">
+                        <label for="fileUpload">Upload File (if required)</label>
+                        <input type="file" name="UploadedFile" id="fileUpload" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-            $("#selectedFiles").html(fileList);
-        });
+@section Scripts {
+ <script>
 
-        $("form").submit(function () {
-            if ($("#fileUpload")[0].files.length === 0) {
-                $("#fileError").show();
-                return false;
-            }
-            $("#fileError").hide();
-            return true;
-        });
-    });
+     $(document).ready(function() {
+       $("#fileUpload").change(function() {
+         var fileInput = $(this)[0];
+         var files = fileInput.files;
+         var fileList = "";
+         for (var i = 0; i < files.length; i++) {
+           var file = files[i];
+           fileList += file.name + " < br > ";
+         }
+         $("#selectedFiles").html(fileList);
+       });
+       //check file length if visible
+       $("form").submit(function() {
+            if ($("#fileUploadGroup").is(":visible")) {
+               // Check if any file is selected
+               if ($("#fileUpload")[0].files.length === 0) {
+                   e.preventDefault(); // Prevent form submission
+                   // Show an error message (you can customize this)
+                   alert("Please upload a file before submitting.");
+                   return false;
+               }
+           }
+           // Proceed with form submission if no issues
+           return true;
+       });
+       $("#statusDropdown").change(function() {
+         // Get the selected status ID
+         var selectedStatusId = $(this).val();
+         if (selectedStatusId) {
+           // Make an AJAX call to fetch the StatusName
+           $.ajax({
+                url: '@Url.Action("getStatusName", "MerchantResponseToUser")', // Adjust this URL as necessary
+             type: "GET",
+             data: {
+               statusId: selectedStatusId
+             },
+             success: function(response) {
+               // Process the response (StatusName)
+               console.log("Status Name:", response);
+               // Optionally display or store the StatusName
+               if (response === "Completed") {
+                   $("#fileUploadGroup").show();
+               } else {
+                   $("#fileUploadGroup").hide();
+               }
+             },
+             error: function(xhr, status, error) {
+               console.error("Error fetching status name:", error);
+             }
+           });
+         } else {
+           console.warn("No status selected.");
+         }
+       });
+     });
+
+     function checkDocumentsAndShowModal(user, rfdfu) {
+       // Here, you can verify if all documents are confirmed before showing modal.
+       console.log(user)
+       console.log(rfdfu)
+       document.getElementById("_UserId").value = user;
+       document.getElementById("_RFDFU").value = rfdfu;
+       $('#statusModal').modal('show');
+     }
 </script>
+}

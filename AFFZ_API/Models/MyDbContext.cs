@@ -41,6 +41,7 @@ public partial class MyDbContext : DbContext
     public virtual DbSet<MerchantDashboard> MerchantDashboards { get; set; }
 
     public virtual DbSet<MerchantRating> MerchantRatings { get; set; }
+    public virtual DbSet<RequestStatuses> RequestStatuses { get; set; }
 
     public virtual DbSet<MerchantUser> MerchantUsers { get; set; }
 
@@ -73,6 +74,8 @@ public partial class MyDbContext : DbContext
     public virtual DbSet<SubscribeChannel> SubscribeChannels { get; set; }
 
     public virtual DbSet<SuperUserDashboard> SuperUserDashboards { get; set; }
+    public virtual DbSet<CurrentServiceStatus> CurrentServiceStatus { get; set; }
+    public virtual DbSet<TrackServiceStatusHistory> TrackServiceStatusHistory { get; set; }
 
     public virtual DbSet<UploadedFile> UploadedFiles { get; set; }
 
@@ -88,6 +91,10 @@ public partial class MyDbContext : DbContext
     public virtual DbSet<Notification> Notifications { get; set; }
     public virtual DbSet<Message> Messages { get; set; }
     public DbSet<M_SericeDocumentListBinding> M_ServiceDocumentListBinding { get; set; }
+
+    public DbSet<Referral> Referral { get; set; }
+    public DbSet<Wallet> Wallet { get; set; }
+
     //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
     //        => optionsBuilder.UseSqlServer("Server=ZAINMAQBOOL\\SQLEXPRESS;Database=Test;User Id=zain;Password=zain@123;TrustServerCertificate=Yes;");
@@ -254,6 +261,7 @@ public partial class MyDbContext : DbContext
                 .HasMaxLength(10)
                 .IsUnicode(false);
             entity.Property(e => e.ProfilePicture).IsUnicode(false);
+            entity.ToTable(tb => tb.HasTrigger("trg_CreateWallet"));
         });
         // Define composite primary key for ServiceDocumentMapping
         modelBuilder.Entity<ServiceDocumentMapping>()
@@ -627,7 +635,9 @@ public partial class MyDbContext : DbContext
             entity.HasKey(e => e.ID);
 
             entity.ToTable("PaymentHistory");
+            entity.ToTable(tb => tb.HasTrigger("trg_CreateReferralCodeOnPaymentSuccess"));
         });
+
 
         modelBuilder.Entity<Permission>(entity =>
         {

@@ -80,14 +80,68 @@ namespace AFFZ_Provider.Controllers
                     var responseString = await responseMessage.Content.ReadAsStringAsync();
                     // Use TempData to pass the response message to the Index view
                     TempData["SuccessMessage"] = responseString;
+                    //Tracker
+
+                    var TrackerUpdate = new TrackServiceStatusHistory
+                    {
+                        ChangedByID = Convert.ToInt32(MID),
+                        StatusID = 3,
+                        RFDFU = Convert.ToInt32(responseString.Split('-')[1]),
+                        ChangedByUserType = "Merchant",
+                        ChangedOn = DateTime.Now,
+                        Comments = $"Merchant [{UID.ToString()}] has sent a discount response for the visa type [{SID}] you requested."
+                    };
+
+                    // Send the request to the AFFZ_API
+                    var TrackerUpdateResponse = await _httpClient.PostAsJsonAsync("TrackServiceStatusHistory/CreateStatus", TrackerUpdate);
+
+                    if (TrackerUpdateResponse.IsSuccessStatusCode)
+                    {
+
+                        //"Your service process has started. You will be notified once updated by the merchant.";//Notifiaction
+                        TempData["SuccessMessage"] = "Service and Tracker process Status Updated Successfully.";
+                    }
+                    else
+                    {
+                        TempData["FailMessage"] = "Service updated but Failed to update the Tracker process.";
+                    }
+
+                    TrackerUpdate = new TrackServiceStatusHistory
+                    {
+                        ChangedByID = Convert.ToInt32(MID),
+                        StatusID = 4,
+                        RFDFU = Convert.ToInt32(responseString.Split('-')[1]),
+                        ChangedByUserType = "Merchant",
+                        ChangedOn = DateTime.Now,
+                        Comments = $"Merchant [{UID.ToString()}] has sent a discount response for the visa type [{SID}] requested and waiting for selection."
+                    };
+
+                    // Send the request to the AFFZ_API
+                    TrackerUpdateResponse = await _httpClient.PostAsJsonAsync("TrackServiceStatusHistory/CreateStatus", TrackerUpdate);
+
+                    if (TrackerUpdateResponse.IsSuccessStatusCode)
+                    {
+
+                        //"Your service process has started. You will be notified once updated by the merchant.";//Notifiaction
+                        TempData["SuccessMessage"] = "Service and Tracker process Status Updated Successfully.";
+                    }
+                    else
+                    {
+                        TempData["FailMessage"] = "Service updated but Failed to update the Tracker process.";
+                    }
+
+
+
+
                     // Trigger notification
                     var notification = new Notification
                     {
                         UserId = UID.ToString(),
-                        Message = $"Merchant [{UID.ToString()}] has sent a discount response for the visa type [{SID}] you requested.",
+                        Message = $"Merchant[{_merchantId}] has sent a discount for the Service[{SID}] you requested.",
                         MerchantId = _merchantId,
-                        RedirectToActionUrl = "MerchantResponseToUser/MerchantResponseIndex",
-                        MessageFromId = Convert.ToInt32(_merchantId)
+                        RedirectToActionUrl = "/MerchantResponseToUser/MerchantResponseIndex",
+                        MessageFromId = Convert.ToInt32(_merchantId),
+                        SenderType = "Merchant"
                     };
 
                     var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));

@@ -3,6 +3,7 @@
 @inject NotificationService NotificationService
 @{
     var notifications = await NotificationService.GetNotificationsAsync();
+    var Username = await NotificationService.GetUserName();
     ViewBag.MerchantId = NotificationService.GetMerchantId();
     var controllerName = ViewContext.RouteData.Values["controller"]?.ToString();
 }
@@ -50,15 +51,16 @@
                 </div>
             </li>
             <!-- Notifications -->
-            <li class="nav-item dropdown has-arrow dropdown-heads">
+            <li class="nav-item dropdown has-arrow dropdown-heads noti-wrapper">
                 <a href="#" class="dropdown-toggle nav-link notify-link" data-bs-toggle="dropdown">
-                    <span class="noti-message">@notifications.Where(a => a.IsRead == false).ToList().Count</span>
+                    @* <span class="noti-message">@notifications.Where(a => a.IsRead == false).ToList().Count</span> *@
+                    <span class="notification-count noti-message">@notifications.Count(a => !a.IsRead)</span>
                     <img src="/assets/img/icons/bell-icon.svg" alt="Bell">
                 </a>
                 <div class="dropdown-menu notifications">
                     <div class="topnav-dropdown-header">
-                        <span class="notification-title">Notifications <bold>@notifications.Where(a => a.IsRead == false).ToList().Count</bold></span>
-                        <a href="javascript:void(0)" class="clear-noti" onclick="markAllAsRead(@ViewBag.MerchantId)">Mark all as read</a>
+                        <span class="notification-title">Notifications <bold><span class="notification-count">@notifications.Count(a => !a.IsRead)</span></bold></span>
+                        <a href="javascript:void(0)" class="clear-noti" onclick="markAllAsRead(@ViewBag.MerchantId,this)">Mark all as read</a>
                     </div>
                     <div class="noti-content">
                         <ul class="notification-list">
@@ -66,11 +68,11 @@
                             {
                                 string style = notification.IsRead ? "font-weight:100" : "";
                                 <li class="notification-message">
-                                    <a href="javascript:void(0)" onclick="markAsReadAndRedirect(@notification.Id, '@notification.RedirectToActionUrl')">
+                                    <a href="javascript:void(0)" onclick="markAsReadAndRedirect(@notification.Id, '@notification.RedirectToActionUrl', this)">
 
                                         <div class="media d-flex">
                                             <span class="avatar avatar-sm flex-shrink-0">
-                                                <img class="avatar-img rounded-circle" alt="user" src="/assets/img/provider/provider-01.jpg">
+                                                <img class="avatar-img rounded-circle" alt="user" src="@Url.Action("GetImage", "Login")">
                                             </span>
                                             <div class="media-body flex-grow-1">
                                                 <p class="noti-details">
@@ -104,12 +106,12 @@
             <li class="nav-item dropdown">
                 <a href="javascript:void(0)" class="user-link  nav-link" data-bs-toggle="dropdown">
                     <span class="user-img">
-                        <img class="rounded-circle" src="/assets/img/profiles/avatar-02.jpg" width="40" alt="Admin">
+                        <img class="rounded-circle" src="@Url.Action("GetImage", "Login")" width="40" alt="Admin">
                         <span class="animate-circle"></span>
                     </span>
                     <span class="user-content">
-                        <span class="user-name">John Smith</span>
-                        <span class="user-details">Demo User</span>
+                        <span class="user-name">@Username</span>
+                        @* <span class="user-details">Demo User</span> *@
                     </span>
                 </a>
                 <div class="dropdown-menu menu-drop-user">
@@ -136,3 +138,6 @@
     </div>
 
 </div>
+@section Scripts{
+    
+}

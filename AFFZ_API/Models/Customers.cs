@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace AFFZ_API.Models;
+﻿namespace AFFZ_API.Models;
 
 public partial class Customers
 {
@@ -35,7 +31,6 @@ public partial class Customers
     public string? PostalCode { get; set; }
 
     public string? ProfilePicture { get; set; }
-
     public DateTime? MemberSince { get; set; }
 
     public DateOnly? DOB { get; set; }

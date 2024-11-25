@@ -8,10 +8,12 @@ public partial class PaymentHistory
     public int ID { get; set; }
     public string PAYMENTTYPE { get; set; }
     public string AMOUNT { get; set; }
-    public string PAYERID { get; set; }
-    public string MERCHANTID { get; set; }
+    public int PAYERID { get; set; }
+    public int MERCHANTID { get; set; }
     public int ISPAYMENTSUCCESS { get; set; }
-    public string SERVICEID { get; set; }
+    public int Quantity { get; set; }
+    public int SERVICEID { get; set; }
 
     public DateTime PAYMENTDATETIME { get; set; }
+    public Service? Service { get; set; }
 }

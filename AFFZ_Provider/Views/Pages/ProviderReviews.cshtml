@@ -40,7 +40,8 @@
                             </h5>
                             <div class="review-user">
                                 @* <img class="avatar rounded-circle" src="@review.UserAvatarUrl" alt="@review.CustomerName"> @review.CustomerName, *@
-                                <img class="avatar rounded-circle" src="/assets/img/profiles/avatar-01.jpg" alt="@review.CUser.CustomerName"> @review.CUser.CustomerName,
+                                @* <img class="avatar rounded-circle" src="/assets/img/profiles/avatar-01.jpg" alt="@review.CUser.CustomerName"> *@
+                                <h6 style="float:left;">Reviewed By : </h6>@review.CUser.CustomerName,
                                 <span class="review-date">@review.ReviewDate.ToString("MMM dd, yyyy hh:mm tt")</span>
                             </div>
                         </div>
@@ -54,9 +55,14 @@
                                 {
                                     <i class="fas fa-star"></i>
                                 }
+                                (@review.Rating)
                             </div>
                         </div>
-                        <p style="width: 100%;">@review.ReviewText</p>
+                        <p style="width: 100%;"><b style="float:left;">Review : </b>
+
+                    @review.ReviewText
+
+                    </p>
                     </div>
                 }
             </div>

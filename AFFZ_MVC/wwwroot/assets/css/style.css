@@ -21511,6 +21511,7 @@ header.header nav ul li a:hover {
 		-webkit-transform: translateY(0);
 		-ms-transform: translateY(0);
 		transform: translateY(0);
+		overflow-y:scroll;
 	}
 	.header-navbar-rht li .dropdown-menu {
 		border-radius: 5px;
@@ -25120,4 +25121,13 @@ header.header nav ul li a:hover {
 		width: 100%;
 		height: 100%;	
 	}
+}
+@keyframes blink {
+	50% {
+		opacity: 0.5;
+	}
+}
+
+.blinking {
+	animation: blink 1s infinite;
 }
