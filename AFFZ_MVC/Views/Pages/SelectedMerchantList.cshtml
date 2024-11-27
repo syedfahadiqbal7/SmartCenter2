@@ -3,7 +3,20 @@
     var paginatedSubCategories = ViewBag.SubCategoriesWithMerchant as List<CatWithMerchant>;
     ViewData["Title"] = "Index";
 }
+<style>
+    .disabled {
+        background-color: #d6d6d6;
+        color: #999;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
 
+    .disabledCart {
+        color: #999;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+</style>
 <div class="col-lg-9">
     <!-- Display messages -->
     @if (TempData["SuccessMessage"] != null)
@@ -26,7 +39,6 @@
             }
             else
             {
-
                 @foreach (var _subcat in paginatedSubCategories)
                 {
                     <!-- Service List -->
@@ -34,7 +46,7 @@
                         <div class="service-cont">
                             <div class="service-cont-img">
                                 <a href="#service-details.html">
-                                    <img class="img-fluid serv-img" alt="Service Image" img src="~/assets/img/services/service-04.jpg">
+                                    <img class="img-fluid serv-img" alt="Service Image" src="~/assets/img/services/service-04.jpg">
                                 </a>
                                 <div class="fav-item">
                                     <a href="javascript:void(0)" class="fav-icon">
@@ -51,57 +63,66 @@
                                 </h3>
                                 <p><i class="feather-map-pin"></i>@_subcat.MERCHANTLOCATION</p>
                                 <div class="service-pro-img">
-                                    <img img src="~/assets/img/profiles/avatar-01.jpg" alt="user">
+                                    <img src="~/assets/img/profiles/avatar-01.jpg" alt="user">
                                     <span><i class="fas fa-star filled"></i>4.9</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="service-action">
+                        <div class="service-action" style="display: flex; align-items: center;">
                             <h6>AED@_subcat.PRICE</h6>
-                            @if (_subcat.IsRequestedAlready)
-                            {
-                                <a asp-action="RequestForDiscount" class="btn btn-light-danger disabled" asp-route-id="@_subcat.MID~@_subcat.SID">Request Sent</a>
-                            }
-                            else
-                            {
-                                @* <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@_subcat.MID~@_subcat.SID', 'RequestForDiscount' )">
-                                    PAY AED@_subcat.PRICE
-                                </a> *@
-                                <a class="btn btn-secondary" asp-action="ProceedDirecttoPayment" asp-route-id="@_subcat.MID~@_subcat.SID" style="float: right;">PAY AED@_subcat.PRICE</a>
-                                <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@_subcat.MID~@_subcat.SID', 'RequestForDiscount','PAY AED@_subcat.PRICE')" style="font-size: 10px;margin-top:10px;padding: 5px 10px;font-weight: bold;color: red;">Ask for Discount*</a>
-                            }
+                            <div>
+                                @if (_subcat.IsRequestedAlready)
+                                {
+                                    <a asp-action="RequestForDiscount" class="btn btn-light-danger disabled" asp-route-id="@_subcat.MID~@_subcat.SID">Request Sent</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-secondary" asp-action="ProceedDirecttoPayment" asp-route-id="@_subcat.MID~@_subcat.SID" style="margin-right: 10px;">PAY AED@_subcat.PRICE</a>
+                                    <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@_subcat.MID~@_subcat.SID', 'RequestForDiscount','PAY AED@_subcat.PRICE')" style="font-size: 10px;margin-top:10px;padding: 5px 10px;font-weight: bold;color: red;">Ask for Discount*</a>
+                                }
+                            </div>
+                            <!-- Cart Icon -->
+                            <div class="cart-icon" style="margin-left: auto;">
+                                <a href="javascript:void(0);" onclick="addToCart('@_subcat.MID', '@_subcat.SID')" @(_subcat.IsAddedToCart ? "class= disabledCart " : "")>
+                                    <i class="feather-shopping-cart" style="font-size: 24px; color: @_subcat.IsAddedToCart ? 'gray' : '#007bff';"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 }
-                <!-- Image Modal -->
-                <div class="modal fade custom-modal" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content doctor-profile">
-                            <div class="modal-header border-bottom-0 justify-content-between">
-                                <h5 class="modal-title" id="imageModalLabel">Request For Discount</h5>
-                                <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="feather-x"></i></button>
-                            </div>
-                            <div class="modal-body pt-0">
-                                <p id="Modalpayment"></p>
-                                <p id="buttonset">
-                                    
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             }
         </div>
     </div>
-
 </div>
 <script src="~/assets/js/script.js"></script>
 <script>
-    function showPaymentPopup(mid, sid,amount) {
+    function showPaymentPopup(mid, sid, amount) {
         $('#Modalpayment').html('<b style="color:red;font-size:12px">Please note: Requesting a discount may take 12 to 24 hours to process. If you like to proceed without a discount proceed with payment.</b > ');
         $('#buttonset').html('<a class="btn btn-secondary" href="/MerchantList/RequestForDiscount?id=' + mid + '" style="float: left;">Ask for Discount</a> <a class="btn btn-secondary" href="/MerchantList/ProceedDirecttoPayment?id=' + mid + '" style="float: right;">' + amount + '</a>');
-        // Show the modal
         $('#paymentModal').modal('show');
+    }
+
+    function addToCart(merchantId, serviceId) {
+        $.ajax({
+            type: "POST",
+            url: "/MerchantList/AddToCart",
+            data: {
+                merchantId: merchantId,
+                serviceId: serviceId
+            },
+            success: function (response) {
+                if (response.success) {
+                    alert("Service added to cart successfully!");
+                    // Disable the cart icon after adding to cart
+                    $('a[onclick="addToCart(\'' + merchantId + '\', \'' + serviceId + '\')"]').addClass('disabledCart');
+                    $('a[onclick="addToCart(\'' + merchantId + '\', \'' + serviceId + '\')] i').css('color', 'gray');
+                } else {
+                    alert("Failed to add service to cart.");
+                }
+            },
+            error: function () {
+                alert("An error occurred while adding the service to the cart.");
+            }
+        });
     }
 </script>

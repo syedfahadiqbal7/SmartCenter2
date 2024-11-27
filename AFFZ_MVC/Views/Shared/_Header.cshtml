@@ -7,7 +7,14 @@
     ViewBag.userId = await NotificationService.GetUserId();
     var ReferralCode = await NotificationService.GetReferralCode();
     var WalletPoints = await NotificationService.GetWalletPoints();
+    var cartItemCount = await NotificationService.GetCartItemCount();
+
 }
+<style>
+    .feather-shopping-cart:hover {
+        color: #fff !important;
+    }
+</style>
 <header class="header">
     <div class="container">
         <nav class="navbar navbar-expand-lg header-nav">
@@ -51,6 +58,17 @@
                     </a>
                 </li>
                 <!-- /Chat -->
+                <!-- Cart Icon with Item Count -->
+                <li class="nav-item logged-item cart-nav  noti-nav noti-wrapper">
+                    <a href="/Cart" class="nav-link">
+                        <span class="cart-count notification-count noti-message">@cartItemCount</span>
+                        @* <img src="/assets/img/icons/cart-icon.svg" alt="Cart Icon"> *@
+                        <i style="color:#000" class="feather-shopping-cart"></i>
+
+
+                    </a>
+                </li>
+                <!-- /Cart Icon -->
                 <!-- Notifications -->
                 <li class="nav-item dropdown logged-item noti-nav noti-wrapper">
                     <a href="#" class="dropdown-toggle nav-link notify-link" data-bs-toggle="dropdown">
