@@ -65,31 +65,48 @@
                             else
                             {
                                 @* <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@_subcat.MID~@_subcat.SID', 'RequestForDiscount' )">
-                                    PAY AED@_subcat.PRICE
-                                </a> *@
+                    PAY AED@_subcat.PRICE
+                    </a> *@
                                 <a class="btn btn-secondary" asp-action="ProceedDirecttoPayment" asp-route-id="@_subcat.MID~@_subcat.SID" style="float: right;">PAY AED@_subcat.PRICE</a>
-                                <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@_subcat.MID~@_subcat.SID', 'RequestForDiscount','PAY AED@_subcat.PRICE')" style="font-size: 10px;margin-top:10px;padding: 5px 10px;font-weight: bold;color: red;">Ask for Discount*</a>
+                                <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@_subcat.MID~@_subcat.SID', 'RequestForDiscount','PAY AED@_subcat.PRICE')" style="font-size: 11px;margin-top:10px;padding: 5px 10px;font-weight: bold;color: green;">Ask for Discount*</a>
                             }
                         </div>
                     </div>
                 }
                 <!-- Image Modal -->
                 <div class="modal fade custom-modal" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content doctor-profile">
-                            <div class="modal-header border-bottom-0 justify-content-between">
-                                <h5 class="modal-title" id="imageModalLabel">Request For Discount</h5>
-                                <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="feather-x"></i></button>
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content shadow-lg rounded-3 border-0" style="overflow: hidden;">
+                            <!-- Modal Header -->
+                            <div class="modal-header" style="background: linear-gradient(135deg, #f3f4f6, #e9ecef); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                                <h5 class="modal-title d-flex align-items-center" id="paymentModalLabel" style="font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">
+                                    <i class="bi bi-cash-coin me-2" style="color: #007bff;"></i> Request For Discount
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body pt-0">
-                                <p id="Modalpayment"></p>
-                                <p id="buttonset">
-                                    
-                                </p>
+                            <!-- /Modal Header -->
+                            <!-- Modal Body -->
+                            <div class="modal-body p-4">
+                                <div class="mb-4">
+                                    <p id="Modalpayment" class="text-muted" style="font-size: 1rem; line-height: 1.5;">
+                                        <!-- Dynamic content will be inserted here -->
+                                    </p>
+                                </div>
+
+                                <!-- Button Set -->
+                                <div class="d-flex justify-content-between align-items-center mt-3" id="buttonset">
+                                    <button type="button" class="btn btn-secondary shadow">Cancel</button>
+                                    <button type="submit" class="btn btn-primary shadow" style="background: linear-gradient(135deg, #007bff, #0056b3); border: none;">
+                                        <i class="bi bi-check-circle me-1"></i> Confirm
+                                    </button>
+                                </div>
                             </div>
+                            <!-- /Modal Body -->
                         </div>
                     </div>
                 </div>
+
+
 
             }
         </div>
@@ -98,9 +115,9 @@
 </div>
 <script src="~/assets/js/script.js"></script>
 <script>
-    function showPaymentPopup(mid, sid,amount) {
-        $('#Modalpayment').html('<b style="color:red;font-size:12px">Please note: Requesting a discount may take 12 to 24 hours to process. If you like to proceed without a discount proceed with payment.</b > ');
-        $('#buttonset').html('<a class="btn btn-secondary" href="/MerchantList/RequestForDiscount?id=' + mid + '" style="float: left;">Ask for Discount</a> <a class="btn btn-secondary" href="/MerchantList/ProceedDirecttoPayment?id=' + mid + '" style="float: right;">' + amount + '</a>');
+    function showPaymentPopup(mid, sid, amount) {
+        $('#Modalpayment').html('<p style="color:brown;font-size:12px">Please note: Requesting a discount may take 12 to 24 hours to process. If you like to proceed without a discount proceed with payment.</p> ');
+        $('#buttonset').html('<a class="btn btn-secondary" href="/MerchantList/RequestForDiscount?id=' + mid + '" style="float: left;color:green">Ask for Discount</a> <a class="btn btn-secondary" href="/MerchantList/ProceedDirecttoPayment?id=' + mid + '" style="float: right;">' + amount + '</a>');
         // Show the modal
         $('#paymentModal').modal('show');
     }

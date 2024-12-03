@@ -199,6 +199,39 @@
                             <button type="submit" class="btn btn-primary">Save Changes</button>
                         </div>
                 </form>
+                <div class="row">
+                    
+                    <h6 class="user-title" style="margin-top: 10px;">Merchant Status</h6>
+                    <p>@ViewBag.MerchantStatus</p>
+                    
+                        <form action="@Url.Action("LinkMerchant", "Profile")" method="post">
+                            <div class="form-group">
+                                <label class="col-form-label">Company Name</label>
+                                <input type="text" class="form-control" name="CompanyName" value="@ViewBag.ProviderMerchant.CompanyName" placeholder="Enter Company Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Contact Info</label>
+                                <input type="text" class="form-control" name="ContactInfo" value="@ViewBag.ProviderMerchant.ContactInfo" placeholder="Enter Contact Info">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Registration Method</label>
+                                <input type="text" class="form-control" name="RegistrationMethod" value="@ViewBag.ProviderMerchant.RegistrationMethod" placeholder="Enter Registration Method">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Company Registration Number</label>
+                                <input type="text" class="form-control" name="CompanyRegistrationNumber" value="@ViewBag.ProviderMerchant.CompanyRegistrationNumber" placeholder="Enter Registration Number" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Trading License</label>
+                                <input type="text" class="form-control" name="TradingLicense" value="@ViewBag.ProviderMerchant.TradingLicense" placeholder="Enter Trading License">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Merchant Location</label>
+                                <input type="text" class="form-control" name="MerchantLocation" value="@ViewBag.ProviderMerchant.MerchantLocation" placeholder="Enter Merchant Location">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Merchant Link</button>
+                        </form>
+                </div>
             </div>
 
 

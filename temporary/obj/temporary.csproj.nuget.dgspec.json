@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\temporary\\temporary.csproj": {}
+    "D:\\SmartCenter\\SmartCenter\\temporary\\temporary.csproj": {}
   },
   "projects": {
-    "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\temporary\\temporary.csproj": {
+    "D:\\SmartCenter\\SmartCenter\\temporary\\temporary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\temporary\\temporary.csproj",
+        "projectUniqueName": "D:\\SmartCenter\\SmartCenter\\temporary\\temporary.csproj",
         "projectName": "temporary",
-        "projectPath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\temporary\\temporary.csproj",
-        "packagesPath": "C:\\Users\\syed.fahad\\.nuget\\packages\\",
-        "outputPath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\temporary\\obj\\",
+        "projectPath": "D:\\SmartCenter\\SmartCenter\\temporary\\temporary.csproj",
+        "packagesPath": "C:\\Users\\FARAZ AHMED FAROOQUI\\.nuget\\packages\\",
+        "outputPath": "D:\\SmartCenter\\SmartCenter\\temporary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\syed.fahad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\FARAZ AHMED FAROOQUI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,9 +43,8 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+          "auditMode": "direct"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -85,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

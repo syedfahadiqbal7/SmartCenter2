@@ -1,9 +1,14 @@
-﻿namespace AFFZ_Provider.Models.Partial
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AFFZ_Provider.Models.Partial
 {
     public class LoginModel
     {
-        public string Email { get; set; } = null!;
+        [Required(ErrorMessage = "Please enter your email address.")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
+        public string Email { get; set; }
 
-        public string Password { get; set; } = null!;
+        [Required(ErrorMessage = "Please enter your password.")]
+        public string Password { get; set; }
     }
 }

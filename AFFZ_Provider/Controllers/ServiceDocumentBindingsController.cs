@@ -92,6 +92,8 @@ namespace AFFZ_Provider.Controllers
         {
             if (!ModelState.IsValid)
             {
+                ViewBag.ServiceListComboData = await ServiceListItems(0);
+                ViewBag.ServiceCategoryComboData = await ServiceCategoryItems(0);
                 return View(binding);
             }
 
@@ -111,6 +113,7 @@ namespace AFFZ_Provider.Controllers
                     ViewBag.ServiceCategoryComboData = await ServiceCategoryItems(0);
                     _logger.LogWarning($"Failed to create service document binding. Status code: {response.StatusCode}");
                     TempData["FailMessage"] = await response.Content.ReadAsStringAsync();
+
                     return View(binding);
                 }
             }
@@ -125,7 +128,7 @@ namespace AFFZ_Provider.Controllers
         {
             try
             {
-                var response = await _httpClient.GetAsync($"ServiceDocumentListBindings/GetServiceDocumentListBindingByCategoryId?id={id}");
+                var response = await _httpClient.GetAsync($"ServiceDocumentListBindings/GetBindingById?id={id}");
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     var responseString = await response.Content.ReadAsStringAsync();

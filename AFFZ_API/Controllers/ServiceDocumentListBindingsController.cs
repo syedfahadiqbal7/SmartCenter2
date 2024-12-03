@@ -54,6 +54,25 @@ namespace AFFZ_API.Controllers
             }
         }
 
+        [HttpGet("GetBindingById")]
+        public async Task<ActionResult<M_SericeDocumentListBinding>> GetBindingById(int id)
+        {
+            try
+            {
+                var databind = await _context.M_ServiceDocumentListBinding.Where(binding => binding.Id == id).FirstOrDefaultAsync();
+                if (databind == null)
+                {
+                    return NotFound();
+                }
+
+                return databind;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while fetching the service document list binding by ID.");
+                return StatusCode(500, "Internal server error");
+            }
+        }
 
         // GET: api/ServiceDocumentListBindings/5
         [HttpGet("GetServiceDocumentListBindingByCategoryId")]

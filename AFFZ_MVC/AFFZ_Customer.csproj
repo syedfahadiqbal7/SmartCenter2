@@ -287,6 +287,11 @@
     <Content Remove="wwwroot\assets\img\partner\partner5.svg" />
     <Content Remove="wwwroot\assets\img\partner\partner6.svg" />
     <Content Remove="wwwroot\assets\img\__logo.svg" />
+    <Content Remove="wwwroot\js\signup.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\js\signup.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -570,6 +575,7 @@
     <None Include="wwwroot\assets\img\partner\partner5.svg" />
     <None Include="wwwroot\assets\img\partner\partner6.svg" />
     <None Include="wwwroot\assets\img\__logo.svg" />
+    <None Include="wwwroot\js\signup.js" />
   </ItemGroup>
 
   <ItemGroup>

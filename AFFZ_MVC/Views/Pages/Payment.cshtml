@@ -1,154 +1,111 @@
 ﻿@{
     var paginatedSubCategories = ViewBag.ResponseForDisCountFromMerchant as AFFZ_Customer.Controllers.RequestForDisCountToUserViewModel;
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Payment Page";
     decimal FINALPRICE = paginatedSubCategories.FINALPRICE;
-    double vat = (Convert.ToDouble(FINALPRICE) * 0.05);// + 50;
+    double vat = (Convert.ToDouble(FINALPRICE) * 0.05);
     double Service_charge = 50;
     double Final = Convert.ToDouble(FINALPRICE) + vat;
     Final = Final + (Final * 0.10);
 }
 <script src="https://js.stripe.com/v3/"></script>
-<!-- Booking -->
-<div class="col-lg-9">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Booking Step -->
-    <ul class="step-register row">
-        @* <li class="activate col-md-4">
-        <div class="multi-step-icon">
-        <span><img src="~/assets/img/icons/calendar-icon.svg" alt="img"></span>
-        </div>
-        <div class="multi-step-info">
-        <h6>Appointment</h6>
-        <p>Choose time & date for the service</p>
-        </div>
-        </li> *@
-        <li class="active col-md-4">
-            <div class="multi-step-icon">
-                <span><img src="~/assets/img/icons/wallet-icon.svg" alt="img"></span>
-            </div>
-            <div class="multi-step-info">
-                <h6>Payment</h6>
-            </div>
-        </li>
+<div class="container col-lg-9">
+    <!-- Attractive Heading -->
+    <div class="mb-4">
+        <h1 class="text-primary fw-bold">
+            <i class="bi bi-credit-card"></i> Secure Payment
+        </h1>
+        <p class="text-muted">Review your booking and proceed with a secure payment.</p>
+    </div>
 
-    </ul>
-   
-    <form method="post" action="PaymentDone">
+    <!-- Booking Summary and Payment Details -->
+    <form method="post" action="PaymentDone" class="row gy-4">
         <input type="hidden" name="AMOUNT" id="hiddenAmount" value="@Final" />
         <input type="hidden" name="PAYERID" value="@paginatedSubCategories.UID" />
         <input type="hidden" name="MERCHANTID" value="@paginatedSubCategories.MerchantID" />
         <input type="hidden" name="SERVICEID" value="@paginatedSubCategories.SID" />
         <input type="hidden" name="RFDFU" value="@paginatedSubCategories.RFDFU" />
         <input type="hidden" id="NoOfQuantity" name="NoOfQuantity" value="1" />
-        <div class="product">
-            Payment Details
-            <div class="description">
-                
 
-            </div>
-        </div>
-
-        <div class="col-lg-6">
-            <h5 class="pay-title">Booking Summary</h5>
-            <div class="summary-box">
-                <div class="booking-info">
-                    <div class="service-book">
-                        <div class="service-book-img">
-                            <img src="~/assets/img/booking.jpg" alt="img">
+        <!-- Booking Summary -->
+        <div class="col-lg-9">
+            <div class="card shadow-lg border-0 rounded-4" style="background: linear-gradient(145deg, #f3f4f6, #e0e1e3);">
+                <div class="card-header text-white rounded-top-4" style="background: linear-gradient(135deg, #ccc, #0056b3);">
+                    <h5 class="mb-0">Booking Summary</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-light text-primary rounded-circle shadow-sm d-flex justify-content-center align-items-center"
+                             style="width: 80px; height: 80px;;margin-right: 10px;">
+                            <i class="bi bi-wallet-fill" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0"><strong>Service Provider:</strong> Smart Center</p>
+                            <p class="mb-0"><strong>Date:</strong> @DateTime.Now.ToString("dd/MM/yyyy")</p>
+                            <p><strong>Time:</strong> @DateTime.Now.ToString("HH:mm")</p>
                         </div>
                     </div>
-                </div>
-                <div class="booking-summary" style="padding-bottom:25px">
-                    <ul class="booking-date">
-                        <li>Date <span>@DateTime.Now.ToString("dd/MM/yyyy")</span></li>
-                        <li>Time <span>@DateTime.Now.ToString("HH:mm ")</span></li>
-                        <li>Service Provider <span>Smart Center</span></li>
+                    <ul class="list-unstyled mb-3">
+                        <li class="d-flex justify-content-between">
+                            <span>Subtotal:</span>
+                            <span>@paginatedSubCategories.FINALPRICE AED</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Convenience Charges:</span>
+                            <span>10%</span>
+                        </li>
                     </ul>
-                    <ul class="booking-date">
-                        <li>Subtotal <span>@paginatedSubCategories.FINALPRICE AED</span></li>
-                        <li>Convenient Charges <span>10%</span></li>
-                        <!--li>Vat &commat; 5% <span>@vat AED</span></li-->
-                    </ul>
-                    <!-- Counter for Quantity -->
-                    <div>
-                        <label for="quantity">Quantity:</label>
-                        <button type="button" id="decrement" class="btn btn-secondary">-</button>
-                        <input type="text" id="quantity" value="1" readonly style="width: 40px; text-align: center;" />
-                        <button type="button" id="increment" class="btn btn-secondary">+</button>
+                    <div class="d-flex align-items-center mb-3">
+                        <label for="quantity" class="me-2">Quantity:</label>
+                        <button type="button" id="decrement" class="btn btn-outline-secondary btn-sm shadow-sm">-</button>
+                        <input type="text" id="quantity" value="1" readonly class="form-control mx-2 text-center" style="width: 50px;">
+                        <button type="button" id="increment" class="btn btn-outline-secondary btn-sm shadow-sm">+</button>
                     </div>
-                    <div class="booking-total">
-                        <ul class="booking-total-list">
-                            <li>
-                                <span>Total</span>
-                                <span class="total-cost" id="totalCost">@Final AED</span>
-                            </li>
-                            <li style="float:right;font-size:10px">
-                                Vat &commat; 5% Included
-                            </li>
-                        </ul>
-
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>Total:</strong>
+                        <strong class="text-primary" id="totalCost" style="font-size: larger;">AED @Final</strong>
                     </div>
+                    <small class="text-muted text-end d-block" style="font-size: 12px;">* VAT (5%) included in total</small>
                 </div>
-            </div>
-        </div>
-
-        <div class="col-lg-6">
-            <div class="booking-pay">
-                <input type="submit" class="btn btn-primary btn-pay w-100" id="sbtn" value="Proceed to Pay AED @Final" />
-
-                @* <a href="javascript:void(0);" class="btn btn-secondary btn-skip">Skip</a> *@
+                <div class="card-footer text-center bg-transparent border-0">
+                    <input type="submit" class="btn btn-primary btn-lg w-100 shadow-lg" id="sbtn"
+                           style="background: linear-gradient(135deg, #007bff, #0056b3); border: none; border-radius: 8px;"
+                           value="Proceed to Pay AED @Final" />
+                </div>
             </div>
         </div>
     </form>
-    @* <form action="/create-checkout-session" method="POST">
-    <button type="submit" id="checkout-button">Checkout</button>
-    </form> *@
-    <!-- /Booking Payment -->
-
 </div>
-
 
 <!-- jQuery -->
 <script src="~/assets/js/jquery-3.7.0.min.js"></script>
-
 <!-- Bootstrap Core JS -->
 <script src="~/assets/js/bootstrap.bundle.min.js"></script>
-
-<!-- Fearther JS -->
-<script src="~/assets/js/feather.min.js"></script>
-
-<!-- select CSS -->
-<script src="~/assets/plugins/select2/js/select2.min.js"></script>
 <script>
-    $(document).ready(function() {
-        var basePrice = @FINALPRICE; // Initial total cost
-        var vat = @vat; // Initial VAT value
-        var serviceCharge = @Service_charge; // Service charge
+    $(document).ready(function () {
+        var basePrice = @FINALPRICE;
+        var vat = @vat;
+        var serviceCharge = @Service_charge;
         var quantity = 1;
 
-        // Update total cost based on quantity
         function updateTotalCost() {
             var subtotal = basePrice * quantity;
-            console.log(subtotal);
-            vat = (subtotal * 0.05);// + 50;
-            console.log(vat); console.log(serviceCharge * quantity);
+            vat = (subtotal * 0.05);
             var total = subtotal + vat + (serviceCharge * quantity);
-            console.log(total);
             $('#totalCost').text(total.toFixed(2) + " AED");
             $('#hiddenAmount').val(total.toFixed(2));
-            $('#sbtn').val("Proceed to Pay AED "+total.toFixed(2));
+            $('#sbtn').val("Proceed to Pay AED " + total.toFixed(2));
         }
 
-        // Increment quantity
-        $('#increment').click(function() {
+        $('#increment').click(function () {
             quantity++;
             $('#quantity').val(quantity);
             $('#NoOfQuantity').val(quantity);
             updateTotalCost();
         });
 
-        // Decrement quantity
-        $('#decrement').click(function() {
+        $('#decrement').click(function () {
             if (quantity > 1) {
                 quantity--;
                 $('#quantity').val(quantity);
@@ -158,5 +115,3 @@
         });
     });
 </script>
-<!-- Custom JS -->
-<script src="~/assets/js/script.js"></script>

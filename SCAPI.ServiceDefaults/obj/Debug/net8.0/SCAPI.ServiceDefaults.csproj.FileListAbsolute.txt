@@ -35,3 +35,16 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDef
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\refint\SCAPI.ServiceDefaults.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.pdb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\ref\SCAPI.ServiceDefaults.dll
+D:\SmartCenter\SmartCenter\SCAPI.ServiceDefaults\bin\Debug\net8.0\SCAPI.ServiceDefaults.deps.json
+D:\SmartCenter\SmartCenter\SCAPI.ServiceDefaults\bin\Debug\net8.0\SCAPI.ServiceDefaults.dll
+D:\SmartCenter\SmartCenter\SCAPI.ServiceDefaults\bin\Debug\net8.0\SCAPI.ServiceDefaults.pdb
+D:\SmartCenter\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.csproj.AssemblyReference.cache
+D:\SmartCenter\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+D:\SmartCenter\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.AssemblyInfoInputs.cache
+D:\SmartCenter\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.AssemblyInfo.cs
+D:\SmartCenter\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.csproj.CoreCompileInputs.cache
+D:\SmartCenter\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.sourcelink.json
+D:\SmartCenter\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.dll
+D:\SmartCenter\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\refint\SCAPI.ServiceDefaults.dll
+D:\SmartCenter\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\SCAPI.ServiceDefaults.pdb
+D:\SmartCenter\SmartCenter\SCAPI.ServiceDefaults\obj\Debug\net8.0\ref\SCAPI.ServiceDefaults.dll

@@ -22,101 +22,106 @@ namespace AFFZ_Provider.Controllers
             _protector = provider.CreateProtector("Example.SessionProtection");
         }
 
-        public async Task<IActionResult> Index()
-        {
+		public async Task<IActionResult> Index()
+		{
+			string providerId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
+			var response = await _httpClient.GetAsync($"Providers/{providerId}");
 
-            string providerId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
-            var response = await _httpClient.GetAsync($"Providers/{providerId}");
+			var responseString = await response.Content.ReadAsStringAsync();
+			ProviderUser customer = JsonConvert.DeserializeObject<ProviderUser>(responseString);
 
-            var responseString = await response.Content.ReadAsStringAsync();
-            ProviderUser customer = JsonConvert.DeserializeObject<ProviderUser>(responseString);
+			var merchantResponse = await _httpClient.GetAsync($"Provider/GetByProvider/{providerId}");
+			if (merchantResponse.IsSuccessStatusCode)
+			{
+				var merchantResponseString = await merchantResponse.Content.ReadAsStringAsync();
+				ProviderMerchant providerMerchant = JsonConvert.DeserializeObject<ProviderMerchant>(merchantResponseString);
+				ViewBag.MerchantStatus = providerMerchant.IsActive ? "Active" : "Under Review";
+			}
+			else
+			{
+				ViewBag.MerchantStatus = "Not Linked";
+			}
+            var merchantResponse = await _httpClient.GetAsync($"Provider/GetByProvider/{providerId}");
+            if (merchantResponse.IsSuccessStatusCode)
+            {
+                var merchantResponseString = await merchantResponse.Content.ReadAsStringAsync();
+                ProviderMerchant providerMerchant = JsonConvert.DeserializeObject<ProviderMerchant>(merchantResponseString);
+                ViewBag.MerchantStatus = providerMerchant.IsActive ? "Active" : "Under Review";
+            }
+            else
+            {
+                ViewBag.MerchantStatus = "Not Linked";
+            }
             return View("Profile", customer);
-        }
+		}
 
+		[HttpPost]
+		public async Task<IActionResult> UpdateProfile(ProviderUser model)
+		{
+			try
+			{
+				string profilePicturePath = string.Empty;
+				string passportPath = string.Empty;
+				string emiratesIdPath = string.Empty;
+				string drivingLicensePath = string.Empty;
+				_uploadPath += $"\\User_{model.ProviderId}";
 
-        [HttpPost]
-        public async Task<IActionResult> UpdateProfile(ProviderUser model)
-        {
-            try
-            {
-                string profilePicturePath = string.Empty;
-                string passportPath = string.Empty;
-                string emiratesIdPath = string.Empty;
-                string drivingLicensePath = string.Empty;
-                _uploadPath += $"\\User_{model.ProviderId}";
+				if (!Directory.Exists(_uploadPath))
+				{
+					Directory.CreateDirectory(_uploadPath);
+				}
 
-                if (!Directory.Exists(_uploadPath))
-                {
-                    Directory.CreateDirectory(_uploadPath);
-                }
-                if (model.ProfileImage != null)
-                {
-                    string userId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
-                    string fileName = $"ProfilePicture{model.ProfileImage.FileName.Substring(model.ProfileImage.FileName.LastIndexOf("."))}";
-                    profilePicturePath = Path.Combine(_uploadPath, fileName);
-                    using (var fileStream = new FileStream(profilePicturePath, FileMode.Create))
-                    {
-                        await model.ProfileImage.CopyToAsync(fileStream);
-                    }
-                }
+				// Handle file uploads here (e.g., profile picture, passport)
+				if (model.ProfileImage != null)
+				{
+					string fileName = $"ProfilePicture{model.ProfileImage.FileName.Substring(model.ProfileImage.FileName.LastIndexOf("."))}";
+					profilePicturePath = Path.Combine(_uploadPath, fileName);
+					using (var fileStream = new FileStream(profilePicturePath, FileMode.Create))
+					{
+						await model.ProfileImage.CopyToAsync(fileStream);
+					}
+				}
 
-                if (model.PassportFile != null)
-                {
-                    string userId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
-                    string fileName = $"Passport{model.PassportFile.FileName.Substring(model.PassportFile.FileName.LastIndexOf("."))}";
-                    passportPath = Path.Combine(_uploadPath, fileName);
-                    using (var fileStream = new FileStream(passportPath, FileMode.Create))
-                    {
-                        await model.PassportFile.CopyToAsync(fileStream);
-                    }
-                }
-                if (model.EmiratesIdFile != null)
-                {
-                    string userId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
-                    string fileName = $"EmiratesId{model.EmiratesIdFile.FileName.Substring(model.EmiratesIdFile.FileName.LastIndexOf("."))}";
-                    emiratesIdPath = Path.Combine(_uploadPath, fileName);
-                    using (var fileStream = new FileStream(emiratesIdPath, FileMode.Create))
-                    {
-                        await model.EmiratesIdFile.CopyToAsync(fileStream);
-                    }
-                }
-                if (model.DrivingLicenseFile != null)
-                {
-                    string userId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
-                    string fileName = $"DrivingLicense{model.DrivingLicenseFile.FileName.Substring(model.DrivingLicenseFile.FileName.LastIndexOf("."))}";
-                    drivingLicensePath = Path.Combine(_uploadPath, fileName);
-                    using (var fileStream = new FileStream(drivingLicensePath, FileMode.Create))
-                    {
-                        await model.DrivingLicenseFile.CopyToAsync(fileStream);
-                    }
-                }
+				model.ProfilePicture = profilePicturePath;
 
-                model.ProfilePicture = profilePicturePath;
-                model.Passport = passportPath;
-                model.EmiratesId = emiratesIdPath;
-                model.DrivingLicense = drivingLicensePath;
+				var response = await _httpClient.PostAsync("Providers/UpdateProfile", Customs.GetJsonContent(model));
+				response.EnsureSuccessStatusCode();
 
-                var response = await _httpClient.PostAsync("Providers/UpdateProfile", Customs.GetJsonContent(model));
-                response.EnsureSuccessStatusCode();
+				var responseString = await response.Content.ReadAsStringAsync();
+				SResponse sResponse = JsonConvert.DeserializeObject<SResponse>(responseString);
 
+				if (sResponse.StatusCode == HttpStatusCode.OK)
+				{
+					return RedirectToAction("Index", "Dashboard");
+				}
+				else
+				{
+					return RedirectToAction("Index", "Login");
+				}
+			}
+			catch (Exception ex)
+			{
+				return RedirectToAction("Index", "Login");
+			}
+		}
+		[HttpPost]
+		public async Task<IActionResult> LinkMerchant(Merchant model)
+		{
+			try
+			{
+				string providerId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
+				model.CreatedDate = DateTime.Now;
+				model.IsActive = false;
 
-                var responseString = await response.Content.ReadAsStringAsync();
-                SResponse sResponse = JsonConvert.DeserializeObject<SResponse>(responseString);
+				var response = await _httpClient.PostAsync("Providers/ProviderMerchantLink?providerId="+ providerId, Customs.GetJsonContent(model));
+				response.EnsureSuccessStatusCode();
 
-                if (sResponse.StatusCode == HttpStatusCode.OK)
-                {
-                    return RedirectToAction("Index", "Dashboard");
-                }
-                else
-                {
-                    return RedirectToAction("Index", "Login");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                return RedirectToAction("Index", "Login");
-            }
-        }
-    }
+				return RedirectToAction("Index");
+			}
+			catch (Exception ex)
+			{
+				return RedirectToAction("Index");
+			}
+		}
+	}
 }

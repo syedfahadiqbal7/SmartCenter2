@@ -1,6 +1,7 @@
 ﻿using AFFZ_API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -93,7 +94,7 @@ public class ServiceController : ControllerBase
             {
                 return BadRequest("Invalid request data.");
             }
-            if (ServiceNameExists(service.ServiceName))
+            if (ServiceNameExists(service.ServiceName,service.MerchantID))
             {
                 _logger.LogError("This service already Exist.");
                 return StatusCode(409, "This service already exist");
@@ -151,8 +152,8 @@ public class ServiceController : ControllerBase
     {
         return _context.Services.Any(e => e.ServiceId == id);
     }
-    private bool ServiceNameExists(string sname)
+    private bool ServiceNameExists(string sname,int? Mid)
     {
-        return _context.Services.Any(e => e.ServiceName == sname);
+        return _context.Services.Any(e => e.ServiceName == sname && e.MerchantID == Mid);
     }
 }

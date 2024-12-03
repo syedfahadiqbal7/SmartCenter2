@@ -71,10 +71,10 @@ namespace AFFZ_API.Controllers
                         .Where(n => n.UserId == userId && n.SenderType == "Merchant")
                         .OrderByDescending(n => n.Id)
                         .Join(
-                            _context.Merchants,
+                            _context.Customers,
                             notification => notification.UserId,
-                            merchant => merchant.MerchantId.ToString(),
-                            (notification, merchant) => new NotificationDTO
+                            customer => customer.CustomerId.ToString(),
+                            (notification, customer) => new NotificationDTO
                             {
                                 Id = notification.Id,
                                 UserId = notification.UserId,
@@ -84,7 +84,7 @@ namespace AFFZ_API.Controllers
                                 Message = notification.Message,
                                 CreatedDate = notification.CreatedDate,
                                 ReadDate = notification.ReadDate,
-                                SenderName = merchant.CompanyName,
+                                SenderName = customer.CustomerName,
                                 RedirectToActionUrl = notification.RedirectToActionUrl,
                                 NotificationType = notification.NotificationType,
                                 IsRead = notification.IsRead
@@ -192,28 +192,28 @@ namespace AFFZ_API.Controllers
                 if (Sendertype == "Merchant")
                 {
                     notifications = await _context.Notifications
-                        .Where(n => n.UserId == userId && n.SenderType == Sendertype)
-                        .OrderByDescending(n => n.Id)
-                        .Join(
-                            _context.Merchants,
-                            notification => notification.UserId,
-                            merchant => merchant.MerchantId.ToString(),
-                            (notification, merchant) => new NotificationDTO
-                            {
-                                Id = notification.Id,
-                                UserId = notification.UserId,
-                                SenderType = notification.SenderType,
-                                MerchantId = notification.MerchantId,
-                                MessageFromId = notification.MessageFromId,
-                                Message = notification.Message,
-                                CreatedDate = notification.CreatedDate,
-                                ReadDate = notification.ReadDate,
-                                SenderName = merchant.CompanyName,
-                                RedirectToActionUrl = notification.RedirectToActionUrl,
-                                NotificationType = notification.NotificationType,
-                                IsRead = notification.IsRead
-                            }
-                        ).ToListAsync();
+                       .Where(n => n.UserId == userId && n.SenderType == "Merchant")
+                       .OrderByDescending(n => n.Id)
+                       .Join(
+                           _context.Customers,
+                           notification => notification.UserId,
+                           customer => customer.CustomerId.ToString(),
+                           (notification, customer) => new NotificationDTO
+                           {
+                               Id = notification.Id,
+                               UserId = notification.UserId,
+                               SenderType = notification.SenderType,
+                               MerchantId = notification.MerchantId,
+                               MessageFromId = notification.MessageFromId,
+                               Message = notification.Message,
+                               CreatedDate = notification.CreatedDate,
+                               ReadDate = notification.ReadDate,
+                               SenderName = customer.CustomerName,
+                               RedirectToActionUrl = notification.RedirectToActionUrl,
+                               NotificationType = notification.NotificationType,
+                               IsRead = notification.IsRead
+                           }
+                       ).ToListAsync();
                     // Apply placeholder replacements after data retrieval
                     foreach (var notification in notifications)
                     {

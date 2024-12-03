@@ -89,7 +89,8 @@ public partial class MyDbContext : DbContext
     public DbSet<ServiceDocumentMapping> ServiceDocumentMapping { get; set; } // New table
     public virtual DbSet<UserSubscriptionChannel> UserSubscriptionChannels { get; set; }
     public virtual DbSet<Notification> Notifications { get; set; }
-    public virtual DbSet<Message> Messages { get; set; }
+    public virtual DbSet<Message> Messages { get; set; }//
+    public virtual DbSet<ProviderMerchant> ProviderMerchant { get; set; }
     public DbSet<M_SericeDocumentListBinding> M_ServiceDocumentListBinding { get; set; }
 
     public DbSet<Referral> Referral { get; set; }

@@ -12,19 +12,19 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("11bc7270-e8e7-4349-a89d-21626873204c")]
-[assembly: System.Reflection.AssemblyMetadata("dcpclipath", "C:\\Users\\syed.fahad\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\8.2.0\\to" +
-    "ols\\dcp.exe")]
-[assembly: System.Reflection.AssemblyMetadata("dcpextensionpaths", "C:\\Users\\syed.fahad\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\8.2.0\\to" +
-    "ols\\ext\\")]
-[assembly: System.Reflection.AssemblyMetadata("dcpbinpath", "C:\\Users\\syed.fahad\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\8.2.0\\to" +
-    "ols\\ext\\bin\\")]
-[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AspireHost")]
-[assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", "C:\\Users\\syed.fahad\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\8.2.0\\tools\\Aspi" +
-    "re.Dashboard.exe")]
+[assembly: System.Reflection.AssemblyMetadata("dcpclipath", "C:\\Users\\FARAZ AHMED FAROOQUI\\.nuget\\packages\\aspire.hosting.orchestration.win-x6" +
+    "4\\8.2.0\\tools\\dcp.exe")]
+[assembly: System.Reflection.AssemblyMetadata("dcpextensionpaths", "C:\\Users\\FARAZ AHMED FAROOQUI\\.nuget\\packages\\aspire.hosting.orchestration.win-x6" +
+    "4\\8.2.0\\tools\\ext\\")]
+[assembly: System.Reflection.AssemblyMetadata("dcpbinpath", "C:\\Users\\FARAZ AHMED FAROOQUI\\.nuget\\packages\\aspire.hosting.orchestration.win-x6" +
+    "4\\8.2.0\\tools\\ext\\bin\\")]
+[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "D:\\SmartCenter\\SmartCenter\\AspireHost")]
+[assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", "C:\\Users\\FARAZ AHMED FAROOQUI\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\8.2.0\\" +
+    "tools\\Aspire.Dashboard.exe")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("AspireHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1be3c0f42979e5b1925889e0d30612cefb2c4e97")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd66d4ed3cfaff27615c4e61d5e601f855c2e01b")]
 [assembly: System.Reflection.AssemblyProductAttribute("AspireHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AspireHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

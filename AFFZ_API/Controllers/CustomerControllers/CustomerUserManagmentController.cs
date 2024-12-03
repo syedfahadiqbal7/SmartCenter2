@@ -27,11 +27,16 @@ namespace AFFZ_API.Controllers.CustomerControllers
         {
             try
             {
+                if(loginDetail == null)
+                {
+                    return new SResponse
+                    {
+                        StatusCode = HttpStatusCode.InternalServerError,
+                        Message = $"Please Fill Email and Password.",
+                    };
+                }
                 string encryptedPassword = Cryptography.Encrypt(loginDetail.Password);
                 Customers customerdetail = await _context.Customers.Where(x => x.Email == loginDetail.Email && x.Password == encryptedPassword).FirstOrDefaultAsync();
-
-                string temp = Cryptography.Decrypt(customerdetail.Password);
-
                 if (customerdetail == null)
                 {
                     return new SResponse
@@ -40,6 +45,9 @@ namespace AFFZ_API.Controllers.CustomerControllers
                         Message = "Your Email/Password is wrong!"
                     };
                 }
+                string temp = Cryptography.Decrypt(customerdetail.Password);
+
+               
 
                 return new SResponse
                 {

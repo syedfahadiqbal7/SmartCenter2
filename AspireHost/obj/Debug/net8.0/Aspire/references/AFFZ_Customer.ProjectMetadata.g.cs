@@ -7,5 +7,5 @@ namespace Projects;
 [global::System.Diagnostics.DebuggerDisplay("Type = {GetType().Name,nq}, ProjectPath = {ProjectPath}")]
 public class AFFZ_Customer : global::Aspire.Hosting.IProjectMetadata
 {
-    public string ProjectPath => """D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_MVC\AFFZ_Customer.csproj""";
+    public string ProjectPath => """D:\SmartCenter\SmartCenter\AFFZ_MVC\AFFZ_Customer.csproj""";
 }

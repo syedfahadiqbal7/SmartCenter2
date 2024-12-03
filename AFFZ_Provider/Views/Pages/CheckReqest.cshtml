@@ -1,132 +1,153 @@
 ﻿@{
     var paginatedSubCategories = ViewBag.RequestForDisCountToMerchant as List<AFFZ_Provider.Controllers.RequestForDiscountViewModel>;
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Requests for Discounts";
 }
 <div class="page-wrapper">
     <div class="content container-fluid">
 
         <!-- Page Header -->
-        <div class="page-header">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="provider-subtitle">
-                        <h6>Request List</h6>
-                    </div>
-                </div>
+        <div class="page-header d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="page-title text-primary">🎉 Discount Requests</h1>
+                <p class="text-muted" style="font-size: 15px;">Manage and respond to user discount requests efficiently.</p>
             </div>
         </div>
         <!-- /Page Header -->
-        <!-- Coupons -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="provide-table manage-table">
-                    <!-- Display messages -->
-                    @if (TempData["SuccessMessage"] != null)
-                    {
-                        <div class="alert alert-success">
-                            @TempData["SuccessMessage"]
-                        </div>
-                    }
-                    @if (TempData["FailMessage"] != null)
-                    {
-                        <div class="alert alert-danger">
-                            @TempData["FailMessage"]
-                        </div>
-                    }
-                    <div class="table-responsive">
-                        <table class="table custom-table datatable mb-0" id="data-table">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th>Service Name</th>
-                                    <th>Service Price Quoted</th>
-                                    <th>Date Of Request</th>
-                                    @* <th>Status</th> *@
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if (paginatedSubCategories == null)
-                                {
-                                    <p><em>Loading Data...</em></p>
-                                }
-                                else
-                                {
+        <!-- Display messages -->
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        @if (TempData["FailMessage"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                @TempData["FailMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
 
-                                    @foreach (var _subcat in paginatedSubCategories)
-                                    {
-                                        <tr>
-                                            <td>@_subcat.ServiceName</td>
-                                            <td>@_subcat.ServicePrice</td>
-                                            <td>@_subcat.RequestDatetime</td>
-                                            @* <td><span class="badge-success">Action</span></td> *@
-                                            <td>
-                                                <div class="table-actions">
-                                                    <a class="btn btn-small btn-success" href="javascript:void();" data-bs-toggle="modal" data-bs-target="#ApplyDiscount_@_subcat.RFDTM">
-                                                        Apply Discount Price
-                                                    </a>
-                                                    @*<a class="action-set confirm-text" href="#">
-                                            <i class="feather-trash-2"></i>
-                                            </a>*@
+        <!-- Coupons Table -->
+        <div class="card shadow-sm">
+            <div class="card-header text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Discount Request List</h5>
+            </div>
+            <div class="card-body p-4">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Service Name</th>
+                                <th>Service Price Quoted</th>
+                                <th>Date Of Request</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (paginatedSubCategories == null || !paginatedSubCategories.Any())
+                            {
+                                <tr>
+                                    <td colspan="4" class="text-center text-muted">No data available.</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                foreach (var _subcat in paginatedSubCategories)
+                                {
+                                    <tr>
+                                        <td style="font-weight:bold">@_subcat.ServiceName</td>
+                                        <td>AED @_subcat.ServicePrice</td>
+                                        @* <td>@_subcat.RequestDatetime.ToString("yyyy-MM-dd")</td> *@
+                                        <td>@_subcat.RequestDatetime.ToString("F")</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#ApplyDiscount_@_subcat.RFDTM">
+                                                Apply Discount
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="ApplyDiscount_@_subcat.RFDTM" tabindex="-1" aria-labelledby="ApplyDiscountLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                                            <div class="modal-content shadow-lg rounded-3 border-0" style="overflow: hidden;">
+                                                <!-- Modal Header -->
+                                                <div class="modal-header" style="background: linear-gradient(135deg, #f3f4f6, #e9ecef); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                                                    <h5 class="modal-title d-flex align-items-center" id="ApplyDiscountLabel" style="font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">
+                                                        <i class="bi bi-tag-fill me-2" style="color: #007bff;"></i> Update Discount Price
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <!-- Edit Coupon  -->
-                                        <div class="modal modal-lg fade" id="ApplyDiscount_@_subcat.RFDTM">
-                                            <div class="modal-dialog modal-dialog-centered">
-                                                <div class="modal-content doctor-profile">
-                                                    <div class="modal-header border-bottom-0 justify-content-between">
-                                                        <h5 class="modal-title">Update Price On User Request</h5>
-                                                        <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="feather-x"></i></button>
-                                                    </div>
-                                                    <div class="modal-body pt-0">
-                                                        <form action="ApplyDiscountedPrice" method="post">
-                                                            <input type="hidden" name="RFDTM" value="@_subcat.RFDTM" />
-                                                            <input type="hidden" name="MID" value="@_subcat.MID" />
-                                                            <input type="hidden" name="UID" value="@_subcat.UID" />
-                                                            <input type="hidden" name="SID" value="@_subcat.SID" />
-                                                            <div class="row align-items-center">
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label class="col-form-label">Orignal Price : <strong>@_subcat.ServicePrice</strong></label>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label class="col-form-label">Discounted Price</label>
-                                                                        <input type="text" class="form-control" name="DiscountPrice" value="@_subcat.ServicePrice" placeholder="Amount">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row float-end">
-                                                                <div class="col-md-5 coupon-submit">
-                                                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
+                                                <!-- /Modal Header -->
+                                                <!-- Modal Body -->
+                                                <div class="modal-body p-4">
+                                                    <form id="discountForm_@_subcat.RFDTM" onsubmit="return validateDiscountPrice(@_subcat.ServicePrice, 'DiscountPrice_@_subcat.RFDTM')" action="ApplyDiscountedPrice" method="post">
+                                                        <input type="hidden" name="RFDTM" value="@_subcat.RFDTM" />
+                                                        <input type="hidden" name="MID" value="@_subcat.MID" />
+                                                        <input type="hidden" name="UID" value="@_subcat.UID" />
+                                                        <input type="hidden" name="SID" value="@_subcat.SID" />
+
+                                                        <!-- Original Price -->
+                                                        <div class="mb-4">
+                                                            <label for="OriginalPrice_@_subcat.RFDTM" class="form-label fw-bold">Original Price:</label>
+                                                            <input type="text" class="form-control border-2 shadow-sm" id="OriginalPrice_@_subcat.RFDTM" value="@_subcat.ServicePrice" readonly>
+                                                        </div>
+
+                                                        <!-- Discounted Price -->
+                                                        <div class="mb-4">
+                                                            <label for="DiscountPrice_@_subcat.RFDTM" class="form-label fw-bold">Discounted Price:</label>
+                                                            <input type="number" class="form-control border-2 shadow-sm" name="DiscountPrice" id="DiscountPrice_@_subcat.RFDTM" placeholder="Enter Discounted Price" required>
+                                                            <div class="invalid-feedback" id="errorDiscountPrice_@_subcat.RFDTM"></div>
+                                                        </div>
+
+                                                        <!-- Action Buttons -->
+                                                        <div class="d-flex justify-content-end">
+                                                            <button type="button" class="btn btn-secondary me-2 shadow" data-bs-dismiss="modal">Cancel</button>
+                                                            <button type="submit" class="btn btn-primary shadow" style="background: linear-gradient(135deg, #007bff, #0056b3); border: none;">
+                                                                <i class="bi bi-check-circle me-1"></i> Submit
+                                                            </button>
+                                                        </div>
+                                                    </form>
                                                 </div>
+                                                <!-- /Modal Body -->
                                             </div>
                                         </div>
-                                        <!-- /Edit Coupon  -->
-                                    }
+                                    </div>
+                                    <!-- /Modal -->
                                 }
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div id="tablelength"></div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="table-ingopage">
-                            <div id="tableinfo"></div>
-                            <div id="tablepagination"></div>
-                        </div>
-                    </div>
+                            }
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <!-- /Coupons -->
+        <!-- /Coupons Table -->
 
     </div>
-
 </div>
+<script>
+    function validateDiscountPrice(originalPrice, discountPriceId) {
+        const discountPriceInput = document.getElementById(discountPriceId);
+        const errorElement = document.getElementById('error' + discountPriceId);
+        const discountPrice = parseFloat(discountPriceInput.value);
+        const original = parseFloat(originalPrice);
+
+        // Reset error message
+        errorElement.textContent = '';
+        discountPriceInput.classList.remove('is-invalid');
+
+        if (isNaN(discountPrice) || discountPrice < 0) {
+            errorElement.textContent = 'Discount price must be a valid numeric value and not less than 0.';
+            discountPriceInput.classList.add('is-invalid');
+            return false;
+        }
+
+        if (discountPrice > original) {
+            errorElement.textContent = 'Discount price must not be greater than the original price.';
+            discountPriceInput.classList.add('is-invalid');
+            return false;
+        }
+
+        return true; // Form is valid
+    }
+</script>

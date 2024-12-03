@@ -1,0 +1,23 @@
+2024-11-27T21:18:36.0955913+04:00 0HN8F0F0I2HFT:00000006 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-11-27T21:35:17.9503990+04:00 0HN8F17A5HOD6:00000001 [INF] Attempting login for email: "fahad@gmail.com" (100386e3)
+2024-11-27T21:35:22.5561894+04:00 0HN8F17A5HOD6:00000001 [INF] User login successful for email: "fahad@gmail.com" (8ce767cc)
+2024-11-27T21:36:41.6806891+04:00 0HN8F17A5HOD6:0000000A [INF] Attempting to register new provider user with email: "farooqui.faraz@gmail.com" (5a36f565)
+2024-11-27T21:36:41.6958133+04:00 0HN8F17A5HOD6:0000000A [WRN] Missing required fields for registration. (88c846a4)
+2024-11-27T21:37:05.4321785+04:00 0HN8F17A5HOD7:00000001 [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-11-27T21:37:05.4612557+04:00 0HN8F17A5HOD7:00000001 [WRN] Login failed for email: "farooqui.faraz@gmail.com" (ab24df07)
+2024-11-27T21:38:05.6286296+04:00 0HN8F17A5HOD7:00000002 [INF] Attempting to register new provider user with email: "farooqui.faraz@gmail.com" (5a36f565)
+2024-11-27T21:38:19.5311809+04:00 0HN8F17A5HOD7:00000002 [WRN] Missing required fields for registration. (88c846a4)

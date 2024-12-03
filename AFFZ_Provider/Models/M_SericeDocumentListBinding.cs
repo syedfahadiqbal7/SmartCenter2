@@ -6,7 +6,11 @@ namespace AFFZ_Provider.Models
     {
         [Key]
         public int Id { get; set; } // Consider adding a primary key if not present
+        [Required]
         public int? CategoryID { get; set; }
+        [Required]
         public int? ServiceDocumentListId { get; set; }
     }
+
+
 }

@@ -45,6 +45,7 @@
                                     <th>Service Name</th>
                                    @*  <th>Description</th> *@
                                     <th>Price</th>
+                                    <th>Admin Commision</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -53,17 +54,18 @@
                                 {
                                     <tr>
                                         <td>@service.ServiceName</td>
-                                        @* <td>@service.Description</td> *@
+                                        
                                         <td>@service.ServicePrice</td>
+                                        <td>@service.ServiceAmountPaidToAdmin</td>
                                      @*    <td>
                                             <a href="@Url.Action("Edit", new { id = service.ServiceId })">Edit</a> |
                                             <a href="@Url.Action("Delete", new { id = service.ServiceId })">Delete</a>
 
                                         </td> *@
                                         <td>
-                                            <a href="@Url.Action("MerchantServiceEdit", "MerchantService", new { id = service.ServiceId })" class="btn btn-sm btn-warning">Edit</a>
-                                            <a href="javascript:;" data-id="@service.ServiceId" class="btn btn-sm btn-danger delete-service">Delete</a>
-                                            <a href="javascript:;" data-id="@service.ServiceId" class="btn btn-sm btn-info view-service">View</a>
+                                            <a href="@Url.Action("MerchantServiceEdit", "MerchantService", new { id = service.ServiceId })" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                                            <a href="javascript:;" data-id="@service.ServiceId" class="btn btn-sm btn-danger delete-service"><i class="fas fa-trash"></i></a>
+                                            <a href="javascript:;" data-id="@service.ServiceId" class="btn btn-sm btn-info view-service"><i class="fas fa-eye"></i></a>
                                         </td>
                                     </tr>
                                 }

@@ -29,11 +29,12 @@ namespace AFFZ_Provider.Controllers
                 var responseString = await response.Content.ReadAsStringAsync();
 
                 ViewData["Message"] = "Provider Registered!";
-
+                TempData["SuccessMessage"] = "Provider Registered!";
                 return RedirectToAction("Index", "Login");
             }
             catch (Exception ex)
             {
+                TempData["FailMessage"] = ex.Message;
                 return View("Error");
             }
         }
