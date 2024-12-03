@@ -1,7 +1,9 @@
 ﻿using AFFZ_Customer.Models;
+using AFFZ_Customer.Models.Partial;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AFFZ_Customer.Utils
 {
@@ -90,5 +92,25 @@ namespace AFFZ_Customer.Utils
                 return ex.Message;
             }
         }
+        [HttpGet]
+        public async Task<int> GetCartItemCount()
+        {
+            string userId = _httpContextAccessor.HttpContext.Session.GetEncryptedString("UserId", _protector);
+            if (string.IsNullOrEmpty(userId)) return 0;
+
+            var response = await _httpClient.GetAsync($"Cart/GetCartItems/{userId}");
+            response.EnsureSuccessStatusCode();
+
+            var responseString = await response.Content.ReadAsStringAsync();
+            var cartItems = JsonConvert.DeserializeObject<SResponse>(responseString);
+
+            if (cartItems.Data is JArray cartItemsArray)
+            {
+                return cartItemsArray.Count;
+            }
+
+            return 0;
+        }
+
     }
 }

@@ -1,8 +1,10 @@
 ﻿using AFFZ_Customer.Models;
+using AFFZ_Customer.Models.Partial;
 using AFFZ_Customer.Utils;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AFFZ_Customer.Controllers
 {
@@ -30,7 +32,33 @@ namespace AFFZ_Customer.Controllers
 
                 var responseString = await response.Content.ReadAsStringAsync();
                 categories = JsonConvert.DeserializeObject<List<CatWithMerchant>>(responseString) ?? new List<CatWithMerchant>();
+                // Fetch cart items for logged-in user
+                string userId = HttpContext.Session.GetEncryptedString("UserId", _protector);
+                if (!string.IsNullOrEmpty(userId))
+                {
+                    var cartResponse = await _httpClient.GetAsync($"Cart/GetCartItems/{userId}");
+                    cartResponse.EnsureSuccessStatusCode();
 
+                    var cartResponseString = await cartResponse.Content.ReadAsStringAsync();
+                    var cartItems = JsonConvert.DeserializeObject<SResponse>(cartResponseString);
+
+                    // Handle the Data property, which is a JArray
+                    var cartServiceJArray = cartItems.Data as JArray;
+                    if (cartServiceJArray != null)
+                    {
+                        // Convert the JArray to List<int>
+                        List<int> cartServiceList = cartServiceJArray.ToObject<List<int>>();
+
+                        // Mark services as already in cart if they exist in the cartServiceList
+                        foreach (var service in categories)
+                        {
+                            if (cartServiceList.Contains(Convert.ToInt32(service.SID)))
+                            {
+                                service.IsAddedToCart = true;
+                            }
+                        }
+                    }
+                }
                 ViewBag.SubCategoriesWithMerchant = categories;
                 _logger.LogInformation("Successfully retrieved categories for Category Name: {CategoryName}", catName);
             }
@@ -309,6 +337,45 @@ namespace AFFZ_Customer.Controllers
                 TempData["FailMessage"] = "Service updated but Failed to update the Tracker process.";
             }
         }
+        [HttpPost]
+        public async Task<IActionResult> AddToCart(int merchantId, int serviceId)
+        {
+            _logger.LogInformation("AddToCart initiated for MerchantId: {MerchantId}, ServiceId: {ServiceId}", merchantId, serviceId);
+            try
+            {
+                string userId = HttpContext.Session.GetEncryptedString("UserId", _protector);
+                if (string.IsNullOrEmpty(userId))
+                {
+                    _logger.LogWarning("User is not logged in. Redirecting to login page.");
+                    return Json(new { success = false, message = "User is not logged in" });
+                }
+
+                var cartRequest = new
+                {
+                    CustomerID = Convert.ToInt32(userId),
+                    ServiceID = serviceId,
+                    Quantity = 1 // Default quantity is 1 for each service
+                };
+
+                var response = await _httpClient.PostAsync("Cart/AddToCart", Customs.GetJsonContent(cartRequest));
+                response.EnsureSuccessStatusCode();
+
+                _logger.LogInformation("Service successfully added to cart for MerchantId: {MerchantId}, ServiceId: {ServiceId}", merchantId, serviceId);
+                return Json(new { success = true, message = "Service added to cart successfully" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while adding service to cart.");
+                return Json(new { success = false, message = "An error occurred while adding the service to the cart." });
+            }
+        }
+    }
+
+    public class CartRequest
+    {
+        public int CustomerID { get; set; }
+        public int ServiceID { get; set; }
+        public int Quantity { get; set; }
     }
     public class CatWithMerchant
     {
@@ -319,6 +386,8 @@ namespace AFFZ_Customer.Controllers
         public string? PRICE { get; set; }
         public string? MERCHANTLOCATION { get; set; }
         public bool IsRequestedAlready { get; set; }
+        public bool IsAddedToCart { get; set; } // New property added
+
     }
 
     public class DiscountRequestClass

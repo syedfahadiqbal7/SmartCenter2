@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AFFZ_API.Models
+namespace AFFZ_Customer.Models
 {
     [Table("RequestStatuses")]
     public class RequestStatuses
