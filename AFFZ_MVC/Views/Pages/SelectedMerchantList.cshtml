@@ -56,20 +56,25 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="service-action">
+                        <div class="service-action" style="display: flex; align-items: center;">
                             <h6>AED@_subcat.PRICE</h6>
-                            @if (_subcat.IsRequestedAlready)
-                            {
-                                <a asp-action="RequestForDiscount" class="btn btn-light-danger disabled" asp-route-id="@_subcat.MID~@_subcat.SID">Request Sent</a>
-                            }
-                            else
-                            {
-                                @* <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@_subcat.MID~@_subcat.SID', 'RequestForDiscount' )">
-                    PAY AED@_subcat.PRICE
-                    </a> *@
-                                <a class="btn btn-secondary" asp-action="ProceedDirecttoPayment" asp-route-id="@_subcat.MID~@_subcat.SID" style="float: right;">PAY AED@_subcat.PRICE</a>
-                                <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@_subcat.MID~@_subcat.SID', 'RequestForDiscount','PAY AED@_subcat.PRICE')" style="font-size: 11px;margin-top:10px;padding: 5px 10px;font-weight: bold;color: green;">Ask for Discount*</a>
-                            }
+                            <div>
+                                @if (_subcat.IsRequestedAlready)
+                                {
+                                    <a asp-action="RequestForDiscount" class="btn btn-light-danger disabled" asp-route-id="@_subcat.MID~@_subcat.SID">Request Sent</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-secondary" asp-action="ProceedDirecttoPayment" asp-route-id="@_subcat.MID~@_subcat.SID" style="margin-right: 10px;">PAY AED@_subcat.PRICE</a>
+                                    <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@_subcat.MID~@_subcat.SID', 'RequestForDiscount','PAY AED@_subcat.PRICE')" style="font-size: 10px;margin-top:10px;padding: 5px 10px;font-weight: bold;color: red;">Ask for Discount*</a>
+                                }
+                            </div>
+                            <!-- Cart Icon -->
+                            <div class="cart-icon" style="margin-left: auto;">
+                                <a href="javascript:void(0);" onclick="addToCart('@_subcat.MID', '@_subcat.SID')" @(_subcat.IsAddedToCart ? "class= disabledCart " : "")>
+                                    <i class="feather-shopping-cart" style="font-size: 24px; color: @_subcat.IsAddedToCart ? 'gray' : '#007bff';"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 }
@@ -120,5 +125,28 @@
         $('#buttonset').html('<a class="btn btn-secondary" href="/MerchantList/RequestForDiscount?id=' + mid + '" style="float: left;color:green">Ask for Discount</a> <a class="btn btn-secondary" href="/MerchantList/ProceedDirecttoPayment?id=' + mid + '" style="float: right;">' + amount + '</a>');
         // Show the modal
         $('#paymentModal').modal('show');
+    }
+    function addToCart(merchantId, serviceId) {
+        $.ajax({
+            type: "POST",
+            url: "/MerchantList/AddToCart",
+            data: {
+                merchantId: merchantId,
+                serviceId: serviceId
+            },
+            success: function (response) {
+                if (response.success) {
+                    alert("Service added to cart successfully!");
+                    // Disable the cart icon after adding to cart
+                    $('a[onclick="addToCart(\'' + merchantId + '\', \'' + serviceId + '\')"]').addClass('disabledCart');
+                    $('a[onclick="addToCart(\'' + merchantId + '\', \'' + serviceId + '\')] i').css('color', 'gray');
+                } else {
+                    alert("Failed to add service to cart.");
+                }
+            },
+            error: function () {
+                alert("An error occurred while adding the service to the cart.");
+            }
+        });
     }
 </script>
