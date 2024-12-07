@@ -4,12 +4,7 @@ using AFFZ_API.Models.Partial;
 using AFFZ_API.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace AFFZ_API.Controllers.MerchantControllers
 {
@@ -170,16 +165,46 @@ namespace AFFZ_API.Controllers.MerchantControllers
                 }
 
                 // Update profile details
-                existingProfile.FirstName = model.FirstName;
-                existingProfile.LastName = model.LastName;
-                existingProfile.PhoneNumber = model.PhoneNumber;
-                existingProfile.Address = model.Address;
-                existingProfile.PostalCode = model.PostalCode;
-                existingProfile.ProfilePicture = model.ProfilePicture;
-                existingProfile.Passport = model.Passport;
-                existingProfile.EmiratesId = model.EmiratesId;
-                existingProfile.DrivingLicense = model.DrivingLicense;
-
+                if (!string.IsNullOrEmpty(model.FirstName))
+                {
+                    existingProfile.FirstName = model.FirstName;
+                }
+                if (!string.IsNullOrEmpty(model.LastName))
+                {
+                    existingProfile.LastName = model.LastName;
+                }
+                if (!string.IsNullOrEmpty(model.PhoneNumber))
+                {
+                    existingProfile.PhoneNumber = model.PhoneNumber;
+                }
+                if (!string.IsNullOrEmpty(model.Address))
+                {
+                    existingProfile.Address = model.Address;
+                }
+                if (!string.IsNullOrEmpty(model.PostalCode))
+                {
+                    existingProfile.PostalCode = model.PostalCode;
+                }
+                if (!string.IsNullOrEmpty(model.ProfilePicture))
+                {
+                    existingProfile.ProfilePicture = model.ProfilePicture;
+                }
+                if (!string.IsNullOrEmpty(model.Passport))
+                {
+                    existingProfile.Passport = model.Passport;
+                }
+                if (!string.IsNullOrEmpty(model.EmiratesId))
+                {
+                    existingProfile.EmiratesId = model.EmiratesId;
+                }
+                if (!string.IsNullOrEmpty(model.DrivingLicense))
+                {
+                    existingProfile.DrivingLicense = model.DrivingLicense;
+                }
+                if (!string.IsNullOrEmpty(model.ProviderName))
+                {
+                    existingProfile.ProviderName = model.ProviderName;
+                }
                 await _context.SaveChangesAsync();
 
                 _logger.LogInformation("Profile updated successfully for provider ID: {ProviderId}", model.ProviderId);
@@ -199,7 +224,55 @@ namespace AFFZ_API.Controllers.MerchantControllers
                 };
             }
         }
+        [HttpPost("SaveMerchantDocument")]
+        public IActionResult SaveMerchantDocument([FromBody] MerchantDocuments model)
+        {
+            try
+            {
+                if (model == null || model.MerchantId == 0)
+                {
+                    return BadRequest("Invalid merchant document information.");
+                }
 
+                _logger.LogInformation("Processing merchant document for Merchant ID: {MerchantId}", model.MerchantId);
+
+                // Check if the document already exists (for update)
+                var existingDocument = _context.MerchantDocuments.FirstOrDefault(d => d.MDID == model.MDID);
+
+                if (existingDocument != null)
+                {
+                    // Update the existing document
+                    _logger.LogInformation("Updating existing document with Document ID: {DocumentId}", model.MDID);
+
+                    existingDocument.FileName = model.FileName;
+                    existingDocument.ContentType = model.ContentType;
+                    existingDocument.FileSize = model.FileSize;
+                    existingDocument.FolderName = model.FolderName;
+                    existingDocument.Status = model.Status;
+                    existingDocument.DocumentAddedDate = model.DocumentAddedDate;
+                    existingDocument.UploadedBy = model.UploadedBy;
+
+                    _context.MerchantDocuments.Update(existingDocument);
+                }
+                else
+                {
+                    // Add new document
+                    _logger.LogInformation("Adding new document for Merchant ID: {MerchantId}", model.MerchantId);
+                    model.DocumentAddedDate = DateTime.Now;
+                    _context.MerchantDocuments.Add(model);
+                }
+
+                _context.SaveChanges();
+
+                _logger.LogInformation("Merchant document processed successfully for Merchant ID: {MerchantId}", model.MerchantId);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Exception occurred while processing merchant document for Merchant ID: {MerchantId}", model.MerchantId);
+                return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while processing your request.");
+            }
+        }
         // GET: api/ProviderUsers/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ProviderUser>> GetMerchantUser(int id)
@@ -221,6 +294,58 @@ namespace AFFZ_API.Controllers.MerchantControllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Exception occurred while fetching provider user with ID: {ProviderId}", id);
+                return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while processing your request.");
+            }
+        }
+        //UpdateDocumentStatus
+
+        [HttpPost("UpdateDocumentStatus")]
+        public async Task<IActionResult> UpdateDocumentStatus([FromBody] UpdateDocumentStatusRequest request)
+        {
+            try
+            {
+                int id = Convert.ToInt32(request.MDid);
+
+                _logger.LogInformation("Fetching MerchantDocuments details with ID: {id}", id);
+                var merchantDocs = await _context.MerchantDocuments.FindAsync(id);
+
+                if (merchantDocs == null)
+                {
+                    _logger.LogWarning("Provider Document not found with ID: {id}", id);
+                    return NotFound();
+                }
+
+                merchantDocs.Status = request.Status;
+
+                await _context.SaveChangesAsync(); // Save changes to update the status in the database
+                _logger.LogInformation("Provider Document fetched and updated successfully with ID: {id}", id);
+
+                return Ok("Status Updated Successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Exception occurred while updating provider document with ID: {id}", request.MDid);
+                return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while processing your request.");
+            }
+        }
+        // GET: api/ProviderUsers/5
+        [HttpGet("FetchMerchantVerificationDocumentList")]
+        public async Task<IActionResult> FetchMerchantVerificationDocumentList()
+        {
+            try
+            {
+                var merchantDocsList = await _context.MerchantVerificationDocumentList.ToListAsync();
+
+                if (merchantDocsList == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(merchantDocsList);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
                 return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while processing your request.");
             }
         }
@@ -294,7 +419,7 @@ namespace AFFZ_API.Controllers.MerchantControllers
         // Additionally, implement an endpoint in your API to handle the linking of the provider to a merchant
         // Update the LinkProviderToMerchant endpoint to check if Merchant already exists and linked
         [HttpPost("ProviderMerchantLink")]
-        public IActionResult LinkProviderToMerchant([FromBody] Merchant providerMerchant, int providerId)
+        public async Task<IActionResult> LinkProviderToMerchant([FromBody] Merchant providerMerchant, int providerId, int merchantId)
         {
             try
             {
@@ -302,38 +427,72 @@ namespace AFFZ_API.Controllers.MerchantControllers
                 {
                     return BadRequest("Invalid provider or merchant information.");
                 }
+                //Check Provider Details:
+                var existingProfile = await _context.ProviderUsers.FirstOrDefaultAsync(x => x.ProviderId == providerId);
 
-                // Check if the merchant already exists and linked
-                var existingProviderMerchant = _context.ProviderMerchant.FirstOrDefault(pm => pm.ProviderID == providerId);
-                if (existingProviderMerchant != null)
+                if (existingProfile == null)
                 {
-                    // Update existing link
-                    existingProviderMerchant.ModifiedDate = DateTime.Now;
-                    existingProviderMerchant.IsActive = false;
-                    _context.SaveChanges();
+                    _logger.LogWarning("Provider profile not found for ID: {ProviderId}", providerId);
+                    return BadRequest("Provider profile not found..");
+
+                }
+
+
+                // Check if the merchant exists by MerchantID
+                var existingMerchant = _context.Merchants.FirstOrDefault(m => m.MerchantId == merchantId);
+                if (existingMerchant != null)
+                {
+                    // Update existing merchant details
+                    existingMerchant.CompanyName = providerMerchant.CompanyName;
+                    existingMerchant.ContactInfo = providerMerchant.ContactInfo;
+                    existingMerchant.RegistrationMethod = providerMerchant.RegistrationMethod;
+                    existingMerchant.IsActive = existingProfile.IsActive;
+                    existingMerchant.CompanyRegistrationNumber = providerMerchant.CompanyRegistrationNumber;
+                    existingMerchant.TradingLicense = providerMerchant.TradingLicense;
+                    existingMerchant.EmiratesId = providerMerchant.EmiratesId;
+                    existingMerchant.MerchantLocation = providerMerchant.MerchantLocation;
+                    existingMerchant.ModifyDate = DateTime.Now;
+                    existingMerchant.ModifiedBy = providerMerchant.ModifiedBy;
                 }
                 else
                 {
-                    // Add new Merchant and link to provider
+                    // Add new merchant
+                    providerMerchant.CreatedDate = DateTime.Now;
+                    providerMerchant.ModifyDate = DateTime.Now;
+                    providerMerchant.Deactivate = false;
                     _context.Merchants.Add(providerMerchant);
                     _context.SaveChanges();
 
-                    // Get the MerchantID of the saved merchant
-                    int merchantId = providerMerchant.MerchantId;
-
-                    ProviderMerchant _providerMerchant = new ProviderMerchant()
-                    {
-                        IsActive = false,
-                        CreatedDate = DateTime.Now,
-                        ModifiedDate = DateTime.Now,
-                        ProviderID = providerId,
-                        MerchantID = merchantId,
-                    };
-                    _context.ProviderMerchant.Add(_providerMerchant);
-                    _context.SaveChanges();
+                    // Update merchantId to reflect the newly added merchant's ID
+                    merchantId = providerMerchant.MerchantId;
                 }
 
-                return Ok();
+                // Check if the provider is already linked to this merchant
+                var existingProviderMerchant = _context.ProviderMerchant
+                    .FirstOrDefault(pm => pm.ProviderID == providerId && pm.MerchantID == merchantId);
+                if (existingProviderMerchant != null)
+                {
+                    // Update existing provider-merchant link
+                    existingProviderMerchant.ModifiedDate = DateTime.Now;
+                }
+                else
+                {
+                    // Add new provider-merchant link
+                    var newProviderMerchant = new ProviderMerchant
+                    {
+                        ProviderID = providerId,
+                        MerchantID = merchantId,
+                        IsActive = false, // Default to In active
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                    };
+                    _context.ProviderMerchant.Add(newProviderMerchant);
+                }
+
+                // Save all changes
+                _context.SaveChanges();
+
+                return Ok("Provider and merchant linked successfully.");
             }
             catch (Exception ex)
             {
@@ -341,6 +500,26 @@ namespace AFFZ_API.Controllers.MerchantControllers
                 return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while processing your request.");
             }
         }
+        [HttpGet("GetMerchantDocs/{MerchantId}")]
+        public async Task<IActionResult> GetMerchantDocs(int MerchantId)
+        {
+            try
+            {
+                var ProviderDocs = await _context.MerchantDocuments.Where(x => x.MerchantId == MerchantId).ToListAsync();
+                if (ProviderDocs == null)
+                {
+                    return NotFound("No data found for merchant.");
+                }
+
+                return Ok(ProviderDocs);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while fetching MerchantId Docs: {MerchantId}", MerchantId);
+                return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while processing your request.");
+            }
+        }
+
         // Implement an endpoint to get ProviderMerchant by ProviderID
         [HttpGet("GetByProvider/{providerId}")]
         public IActionResult GetProviderMerchantByProviderId(int providerId)
@@ -367,7 +546,14 @@ namespace AFFZ_API.Controllers.MerchantControllers
         {
             try
             {
-                var merchant = _context.Merchants.Where(x => x.MerchantId == MerchantId).FirstOrDefault();
+                var ProviderMerchant = _context.ProviderMerchant.Where(x => x.ProviderID == MerchantId).FirstOrDefault();
+                if (ProviderMerchant == null)
+                {
+                    return NotFound("No Provider Merchant Link found for the provided provider ID.");
+                }
+
+
+                var merchant = _context.Merchants.Where(x => x.MerchantId == ProviderMerchant.MerchantID).FirstOrDefault();
                 if (merchant == null)
                 {
                     return NotFound("No merchant found for the provided provider ID.");
@@ -384,5 +570,71 @@ namespace AFFZ_API.Controllers.MerchantControllers
         {
             return _context.ProviderUsers.Any(e => e.ProviderId == id);
         }
+        [HttpPost("ToggleMerchantStatus")]
+        public IActionResult ToggleMerchantStatus([FromBody] ToggleMerchantStatusRequest request)
+        {
+            try
+            {
+                var providerUsers = _context.ProviderUsers.FirstOrDefault(p => p.ProviderId == request.ProviderId);
+
+                if (providerUsers == null)
+                {
+                    return NotFound("Merchant not found.");
+                }
+
+                providerUsers.IsActive = request.IsActive;
+                providerUsers.ModifyDate = DateTime.Now; // Optional, if needed for auditing
+                _context.SaveChanges();
+
+                _logger.LogInformation("Merchant status updated successfully for Provider ID: {ProviderId}", request.ProviderId);
+
+                //Update Provider Merchant.
+
+                var providerMerchant = _context.ProviderMerchant.FirstOrDefault(p => p.ProviderID == request.ProviderId);
+
+                if (providerMerchant == null)
+                {
+                    return NotFound("Provider and Merchant Link not found.");
+                }
+
+                providerMerchant.IsActive = request.IsActive;
+                providerMerchant.ModifiedDate = DateTime.Now; // Optional, if needed for auditing
+                _context.SaveChanges();
+
+                _logger.LogInformation("Provider and Merchant Link status updated successfully for Provider ID: {ProviderId}", request.ProviderId);
+
+                //Update Merchant Table Status.
+
+                var merchant = _context.Merchants.FirstOrDefault(p => p.MerchantId == providerMerchant.MerchantID);
+
+                if (merchant == null)
+                {
+                    return NotFound("Merchant not found.");
+                }
+
+                merchant.IsActive = request.IsActive;
+                merchant.ModifyDate = DateTime.Now; // Optional, if needed for auditing
+                _context.SaveChanges();
+
+                _logger.LogInformation("Merchant status updated successfully for Provider ID: {ProviderId}", request.ProviderId);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error toggling status for Provider ID: {ProviderId}", request.ProviderId);
+                return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while updating the status.");
+            }
+        }
+    }
+    public class UpdateDocumentStatusRequest
+    {
+        public string MDid { get; set; }
+        public string Status { get; set; }
+    }
+    public class ToggleMerchantStatusRequest
+    {
+        public int ProviderId { get; set; }
+        public bool IsActive { get; set; }
     }
 }

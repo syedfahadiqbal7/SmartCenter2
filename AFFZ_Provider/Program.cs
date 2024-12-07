@@ -14,14 +14,6 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
     options.HttpOnly = HttpOnlyPolicy.None; // Ensure HttpOnly is not enforced
     options.Secure = CookieSecurePolicy.Always; // Enforce HTTPS
 });
-// Add services to the container.
-builder.Services.AddDistributedSqlServerCache(options =>
-{
-    options.ConnectionString = builder.Configuration.GetConnectionString("DBCS");
-    options.SchemaName = "dbo";
-    options.TableName = "SessionData";
-});
-
 // Add session services (if needed)
 builder.Services.AddSession(options =>
 {

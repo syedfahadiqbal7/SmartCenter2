@@ -6,7 +6,7 @@
     var username = await NotificationService.GetUserName();
     var Email = await NotificationService.GetProviderEmail();
     var IsActive = await NotificationService.GetProviderIsActive();
-   
+
 }
 
 @* <div class="settings-menu">
@@ -19,7 +19,7 @@
                 </a>
             </li>
         }
-        
+
         <li>
             <a href="/">
                 <i class="feather-log-out"></i> <span>Logout</span>
@@ -51,7 +51,40 @@
                 <li class="active">
                     <a href="/Dashboard"><i class="feather-grid"></i> <span>Dashboard</span></a>
                 </li>
+                @if (IsActive == "Active")
+                {
+                    foreach (var menuItem in Model.MenuItems)
+                    {
+                        <li class="@(menuItem.SubMenus?.Any() == true ? "submenu" : "")">
+                            <a href="@menuItem.MenuUrl">
+                                <i class="@menuItem.MenuIcon"></i> <span>@menuItem.MenuName</span>
+                                @if (menuItem.SubMenus?.Any() == true)
+                                {
+                                    <span class="menu-arrow"></span>
+                                }
+                            </a>
+                            @if (menuItem.SubMenus?.Any() == true)
+                            {
+                                <ul>
+                                    @foreach (var subMenu in menuItem.SubMenus)
+                                    {
+                                        <li>
+                                            <a href="@subMenu.SubMenuUrl">@subMenu.SubMenuName</a>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        </li>
+
+                    }
+                }
+                
                 <li>
+                    <a class="dropdown-item" href="@Url.Action("Logout", "Login")">
+                        <i class="feather-log-out me-2"></i> Logout
+                    </a>
+                </li>
+                @* <li>
                     <a href="/MerchantService/MerchantServiceIndex"><i class="feather-briefcase"></i> <span>My Services</span></a>
                 </li>
                 <li>
@@ -98,7 +131,7 @@
                             <a href="provider-connected-apps.html">Connected Apps</a>
                         </li>
                         <li>
-                            <a href="verification.html">Profile Verification</a>
+                            <a href="verification.html">Profile1 Verification</a>
                         </li>
                         <li>
                             <a href="#" data-bs-toggle="modal" data-bs-target="#del-account">Delete Account</a>
@@ -109,7 +142,7 @@
                     <a class="dropdown-item" href="@Url.Action("Logout", "Login")">
                         <i class="feather-log-out me-2"></i> Logout
                     </a>
-                </li>
+                </li> *@
             </ul>
             <div class="menu-bottom">
                 <div class="menu-user">

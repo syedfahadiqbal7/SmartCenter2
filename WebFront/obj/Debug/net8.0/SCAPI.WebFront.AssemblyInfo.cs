@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SCAPI.WebFront")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd66d4ed3cfaff27615c4e61d5e601f855c2e01b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a7a5eab91e3f024449aab5488a8ff2ef5c377c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("SCAPI.WebFront")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SCAPI.WebFront")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

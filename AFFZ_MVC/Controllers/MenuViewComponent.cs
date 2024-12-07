@@ -12,7 +12,8 @@ public class MenuViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync()
     {
-        var response = await _httpClient.GetStringAsync("Menus/GetMenusByRoleId");
+        //var response = await _httpClient.GetStringAsync("Menus/GetMenusByRoleId");
+        var response = await _httpClient.GetStringAsync("Menus/GetMenusByUserType?userType=Customer");
         var data = JsonConvert.DeserializeObject<List<MenuItems>>(response);
 
         MenuView view = new MenuView

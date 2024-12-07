@@ -1,11 +1,13 @@
-﻿namespace AFFZ_Provider.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AFFZ_Provider.Models;
 
 public partial class ProviderUser
 {
     public int ProviderId { get; set; }
 
     public string ProviderName { get; set; } = null!;
-
+    [Required(ErrorMessage = "Email is required.")]
     public string Email { get; set; } = null!;
 
     public string Password { get; set; } = null!;
@@ -23,11 +25,11 @@ public partial class ProviderUser
     public DateTime? ModifyDate { get; set; }
 
     public int? ModifiedBy { get; set; }
-
+    [Required(ErrorMessage = "First Name is required.")]
     public string? FirstName { get; set; }
 
     public string? LastName { get; set; }
-
+    [Required(ErrorMessage = "Phone Number is required.")]
     public string? PhoneNumber { get; set; }
 
     public string? ProfilePicture { get; set; }

@@ -7,5 +7,5 @@ namespace Projects;
 [global::System.Diagnostics.DebuggerDisplay("Type = {GetType().Name,nq}, ProjectPath = {ProjectPath}")]
 public class SCAPI_WebFront : global::Aspire.Hosting.IProjectMetadata
 {
-    public string ProjectPath => """D:\SmartCenter\SmartCenter\WebFront\SCAPI.WebFront.csproj""";
+    public string ProjectPath => """D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\SCAPI.WebFront.csproj""";
 }

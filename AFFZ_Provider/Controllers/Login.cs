@@ -3,12 +3,8 @@ using AFFZ_Provider.Models.Partial;
 using AFFZ_Provider.Utils;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using System;
 using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace AFFZ_Provider.Controllers
 {
@@ -102,7 +98,7 @@ namespace AFFZ_Provider.Controllers
                     HttpContext.Session.SetEncryptedString("Email", providerDetail.Email, _protector);
                     HttpContext.Session.SetEncryptedString("RoleId", providerDetail.RoleId.ToString(), _protector);
                     HttpContext.Session.SetEncryptedString("IsActive", providerDetail.IsActive.ToString(), _protector);
-                    HttpContext.Session.SetEncryptedString("ProfilePicturePath", providerDetail.ProfilePicture==null?"": providerDetail.ProfilePicture, _protector);
+                    HttpContext.Session.SetEncryptedString("ProfilePicturePath", providerDetail.ProfilePicture == null ? "" : providerDetail.ProfilePicture, _protector);
 
                     _logger.LogInformation("User {Email} logged in successfully.", providerDetail.Email);
 

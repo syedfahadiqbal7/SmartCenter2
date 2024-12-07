@@ -30,7 +30,7 @@ namespace AFFZ_API.Controllers.AdminControllers
             try
             {
                 var temp = await _context.Menus
-                            .Where(menu => _context.Permissions.Any(permission => permission.MenuId == menu.MenuId && permission.CanView == true))
+                            .Where(menu => _context.Permissions.Any(permission => permission.MenuId == menu.MenuId && permission.CanView == true) && menu.UserType == "Customer")
                             .ToListAsync();
                 return temp;
             }
@@ -58,7 +58,26 @@ namespace AFFZ_API.Controllers.AdminControllers
 
             return menus;
         }
+        [HttpGet]
+        [Route("GetMenusByUserType")]
+        public async Task<ActionResult<IEnumerable<Menu>>> GetMenusByUserType(string userType)
+        {
+            try
+            {
+                // Filter menus based on the provided userType
+                var menus = await _context.Menus
+                    .Where(menu => menu.UserType == userType && _context.Permissions.Any(permission => permission.MenuId == menu.MenuId && permission.CanView == true))
+                    .Include(menu => menu.SubMenus)
+                    .ToListAsync();
 
+                return Ok(menus);
+            }
+            catch (Exception ex)
+            {
+                // Log error (if needed)
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching menus.");
+            }
+        }
         // GET: api/Menus/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Menu>> GetMenu(int id)

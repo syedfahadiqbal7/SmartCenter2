@@ -1,7 +1,12 @@
-﻿namespace AFFZ_API.Models;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace AFFZ_API.Models;
 
 public partial class Merchant
 {
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int MerchantId { get; set; }
 
     public string CompanyName { get; set; } = null!;

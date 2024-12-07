@@ -3,8 +3,6 @@ using AFFZ_Customer.Models.Partial;
 using AFFZ_Customer.Utils;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using System.Net;
 
@@ -156,7 +154,7 @@ namespace AFFZ_Customer.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while logging out.");
             }
         }
-       
+
         // GET: Retrieve profile picture
         public IActionResult GetImage()
         {

@@ -222,7 +222,7 @@ namespace AFFZ_Provider.Controllers
 
             try
             {
-                
+
                 // Fetch dropdown data for the view
                 _logger.LogInformation("Fetching ServiceListComboData.");
                 ViewBag.ServiceListComboData = await ServiceListItems(ServiceName); // Fetch service list items for dropdown
@@ -341,7 +341,7 @@ namespace AFFZ_Provider.Controllers
                     _logger.LogWarning("Merchant ID not found in session. Redirecting to login.");
                     return RedirectToAction("Login", "Account"); // Redirect to login if Merchant ID is not found in session
                 }
-                if (service.ServicePrice<service.ServiceAmountPaidToAdmin)
+                if (service.ServicePrice < service.ServiceAmountPaidToAdmin)
                 {
 
                 }

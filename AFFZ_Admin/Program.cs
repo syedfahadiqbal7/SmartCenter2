@@ -4,6 +4,18 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigins",
+    builder =>
+    {
+        builder.WithOrigins("https://localhost:7195", "https://localhost:7096", "https://localhost:7083")
+               .AllowAnyHeader()
+               .AllowAnyMethod()
+               .AllowCredentials();
+    });
+});
 builder.Services.AddHttpClient("Main", client =>
 {
     client.BaseAddress = new Uri("https://localhost:7047/api/"); // Replace with your base URL
@@ -17,7 +29,7 @@ builder.Services.Configure<RazorViewEngineOptions>(options =>
                                                                  // Add more custom paths as needed
 });
 var app = builder.Build();
-
+app.UseCors("AllowSpecificOrigins");
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

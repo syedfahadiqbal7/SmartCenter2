@@ -91,6 +91,8 @@ public partial class MyDbContext : DbContext
     public virtual DbSet<Notification> Notifications { get; set; }
     public virtual DbSet<Message> Messages { get; set; }//
     public virtual DbSet<ProviderMerchant> ProviderMerchant { get; set; }
+    public virtual DbSet<MerchantVerificationDocumentList> MerchantVerificationDocumentList { get; set; }
+    public virtual DbSet<MerchantDocuments> MerchantDocuments { get; set; }
     public DbSet<M_SericeDocumentListBinding> M_ServiceDocumentListBinding { get; set; }
 
     public DbSet<Referral> Referral { get; set; }
@@ -422,7 +424,7 @@ public partial class MyDbContext : DbContext
             entity.ToTable("Merchant");
 
             entity.Property(e => e.MerchantId)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd() // Ensure EF treats it as an identity column
                 .HasColumnName("MerchantID");
             entity.Property(e => e.CompanyName)
                 .HasMaxLength(255)

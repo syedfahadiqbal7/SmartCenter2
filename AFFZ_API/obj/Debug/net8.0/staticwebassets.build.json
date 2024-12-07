@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "Y9mtgLQLtjfbjqIUl2savyEiAU4HiG7vEv1kyvrUkOk=",
+  "Hash": "8By5ZPlg0On8EtRLI7awt9JZ4q/1Giz4oebW6xXJkvw=",
   "Source": "AFFZ_API",
   "BasePath": "_content/AFFZ_API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

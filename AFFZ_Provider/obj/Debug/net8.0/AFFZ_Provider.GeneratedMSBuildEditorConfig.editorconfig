@@ -9,131 +9,133 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AFFZ_Provider
 build_property.RootNamespace = AFFZ_Provider
-build_property.ProjectDir = D:\SmartCenter\SmartCenter\AFFZ_Provider\
+build_property.ProjectDir = D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\SmartCenter\SmartCenter\AFFZ_Provider
+build_property.MSBuildProjectDirectory = D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/CategoryServiceCreate.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/CategoryServiceCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQ2F0ZWdvcnlTZXJ2aWNlQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/CategoryServiceDeleteGet.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/CategoryServiceDeleteGet.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQ2F0ZWdvcnlTZXJ2aWNlRGVsZXRlR2V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/CategoryServiceIndex.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/CategoryServiceIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQ2F0ZWdvcnlTZXJ2aWNlSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/CategoryServiceUpdate.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/CategoryServiceUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQ2F0ZWdvcnlTZXJ2aWNlVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/CheckReqest.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/CheckReqest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQ2hlY2tSZXFlc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/Dashboard.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/GetUsersWithDocuments.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/GetUsersWithDocuments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcR2V0VXNlcnNXaXRoRG9jdW1lbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/Inbox.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/Inbox.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcSW5ib3guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/Login.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/MerchantServiceCreate.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/MerchantServiceCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcTWVyY2hhbnRTZXJ2aWNlQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/MerchantServiceDelete.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/MerchantServiceDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcTWVyY2hhbnRTZXJ2aWNlRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/MerchantServiceEdit.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/MerchantServiceEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcTWVyY2hhbnRTZXJ2aWNlRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/MerchantServiceIndex.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/MerchantServiceIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcTWVyY2hhbnRTZXJ2aWNlSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/Profile.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/ProviderReviews.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/ProviderReviews.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcUHJvdmlkZXJSZXZpZXdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/ReviewDocument.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/ReviewDocument.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcUmV2aWV3RG9jdW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/SendMessage.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/SendMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcU2VuZE1lc3NhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/SignUp.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcU2lnblVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/transactiondetails.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/transactiondetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcdHJhbnNhY3Rpb25kZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/_CatServiceDetails.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/_CatServiceDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcX0NhdFNlcnZpY2VEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/_ServiceDetails.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/_ServiceDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcX1NlcnZpY2VEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Pages/_StatusModal.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Pages/_StatusModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcX1N0YXR1c01vZGFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Privacy.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Shared/HeaderLayout.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Shared/HeaderLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhlYWRlckxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Shared/MasterLayout.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Shared/MasterLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE1hc3RlckxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/_ViewImports.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/_ViewStart.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Components/Menu/Default.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Components/Menu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xNZW51XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SmartCenter/SmartCenter/AFFZ_Provider/Views/Shared/_Layout.cshtml]
+[D:/webapplication_codes2022preview/SmartCenter-main/SmartCenter/AFFZ_Provider/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-lbi5wdwmxd

@@ -6,6 +6,7 @@
     var Username = await NotificationService.GetUserName();
     ViewBag.MerchantId = NotificationService.GetMerchantId();
     var controllerName = ViewContext.RouteData.Values["controller"]?.ToString();
+    var IsActive = await NotificationService.GetProviderIsActive();
 }
 <div class="header">
     <div class="header-left">
@@ -22,9 +23,15 @@
 
     <div class="header-split">
         <div class="page-headers">
+            @if (IsActive == "In Active")
+            {
+                <span style="font-weight: bold;font-size: 17px;text-align: center !important;color: green;border: 1px solid #ccc;padding: 10px;box-shadow: 5px 5px aliceblue;">Please wait till your profile is verified.</span>
+            }
             <div class="search-bar">
-                <span><i class="fe fe-search"></i></span>
-                <input type="text" placeholder="Search" class="form-control">
+                
+                    
+               
+                @* <span><input type="text" placeholder="Search" class="form-control"></span> *@
             </div>
         </div>
         <ul class="nav user-menu">

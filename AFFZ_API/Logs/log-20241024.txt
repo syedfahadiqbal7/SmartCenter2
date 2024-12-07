@@ -1,7 +1,0 @@
-2024-10-24T09:03:05.1136489+04:00 0HN7JT4ESE2UN:00000003 [ERR] Error in GetAllReviews: Invalid column name 'CUserCustomerId'.
-Invalid column name 'CUserCustomerId'. (2dff7b97)
-2024-10-24T22:03:49.8655882+04:00 0HN7KAOICVAKG:0000001D [INF] Fetched service documents successfully. (271687fb)
-2024-10-24T23:10:02.5798143+04:00 0HN7KBS8LOFGJ:00000001 [INF] Fetched service documents successfully. (271687fb)
-2024-10-24T23:13:00.1440614+04:00 0HN7KBS8LOFGM:00000003 [INF] Fetched service documents successfully. (271687fb)
-2024-10-24T23:16:14.3657624+04:00 0HN7KBS8LOFGN:00000008 [INF] Fetched service documents successfully. (271687fb)
-2024-10-24T23:23:15.6142718+04:00 0HN7KC4LP7P36:0000000B [INF] Fetched service documents successfully. (271687fb)

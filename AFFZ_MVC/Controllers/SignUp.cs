@@ -2,11 +2,7 @@
 using AFFZ_Customer.Models.Partial;
 using AFFZ_Customer.Utils;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace AFFZ_Customer.Controllers
 {

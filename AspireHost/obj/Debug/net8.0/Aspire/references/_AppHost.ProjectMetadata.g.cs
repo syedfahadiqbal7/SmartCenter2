@@ -8,5 +8,5 @@ namespace Projects;
 public class AspireHost
 {
     private AspireHost() { }
-    public static string ProjectPath => """D:\SmartCenter\SmartCenter\AspireHost""";
+    public static string ProjectPath => """D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AspireHost""";
 }
