@@ -3,7 +3,16 @@
     var paginatedSubCategories = ViewBag.SubCategoriesWithMerchant as List<CatWithMerchant>;
     ViewData["Title"] = "Index";
 }
+<style>
+    .feather-shopping-cart:hover {
+        color: #000 !important;
+    }
 
+    .disabledCart {
+        pointer-events: none;
+        opacity: 0.6;
+    }
+</style>
 <div class="col-lg-9">
     <!-- Display messages -->
     @if (TempData["SuccessMessage"] != null)
@@ -72,7 +81,10 @@
                             <!-- Cart Icon -->
                             <div class="cart-icon" style="margin-left: auto;">
                                 <a href="javascript:void(0);" onclick="addToCart('@_subcat.MID', '@_subcat.SID')" @(_subcat.IsAddedToCart ? "class= disabledCart " : "")>
-                                    <i class="feather-shopping-cart" style="font-size: 24px; color: @_subcat.IsAddedToCart ? 'gray' : '#007bff';"></i>
+                                    @{
+                                        string color = (_subcat.IsAddedToCart?"gray":"#007bff");
+                                    }
+                                    <i class="feather-shopping-cart" style="font-size: 24px; color:@color;"></i>
                                 </a>
                             </div>
                         </div>
@@ -137,9 +149,11 @@
             success: function (response) {
                 if (response.success) {
                     alert("Service added to cart successfully!");
-                    // Disable the cart icon after adding to cart
-                    $('a[onclick="addToCart(\'' + merchantId + '\', \'' + serviceId + '\')"]').addClass('disabledCart');
-                    $('a[onclick="addToCart(\'' + merchantId + '\', \'' + serviceId + '\')] i').css('color', 'gray');
+                    // Disable the cart icon and update its state
+                    const cartButton = $('a[onclick="addToCart(\'' + merchantId + '\', \'' + serviceId + '\')"]');
+                    cartButton.addClass('disabledCart');
+                    cartButton.attr('title', 'Already in Cart');
+                    cartButton.find('i').css('color', 'gray');
                 } else {
                     alert("Failed to add service to cart.");
                 }

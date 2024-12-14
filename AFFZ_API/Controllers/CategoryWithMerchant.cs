@@ -250,23 +250,6 @@ namespace AFFZ_API.Controllers
         {
             try
             {
-                //var query = from service in _context.Services
-                //            join request in _context.RequestForDisCountToUsers
-                //             on new { TSID = service.ServiceId, TMID = service.MerchantID ?? 0 } equals new { TSID = request.SID, TMID = request.MID }
-                //            where service.MerchantID.HasValue
-                //            select new RequestForDisCountToUserViewModel
-                //            {
-                //                SID = request.SID,
-                //                ServicePrice = service.ServicePrice ?? 0,
-                //                ServiceName = service.ServiceName,
-                //                MerchantID = service.MerchantID ?? 0,
-                //                FINALPRICE = request.FINALPRICE,
-                //                UID = request.UID,
-                //                RFDFU = request.RFDFU,
-                //                IsMerchantSelected = request.IsMerchantSelected,
-                //                ResponseDateTime = request.ResponseDateTime,
-                //                IsPaymentDone = request.IsPaymentDone
-                //            };
                 var query = from service in _context.Services
                             join request in _context.RequestForDisCountToUsers
                                 on new { TSID = service.ServiceId, TMID = service.MerchantID ?? 0 }
@@ -302,8 +285,11 @@ namespace AFFZ_API.Controllers
                 _logger.LogInformation(sql);
                 if (!string.IsNullOrEmpty(Uid))
                 {
-                    int userid = Convert.ToInt32(Uid);
-                    query = query.Where(x => x.UID == userid);
+                    if (Uid != "Merchant")
+                    {
+                        int userid = Convert.ToInt32(Uid);
+                        query = query.Where(x => x.UID == userid);
+                    }
                 }
 
                 var result = await query.ToListAsync();

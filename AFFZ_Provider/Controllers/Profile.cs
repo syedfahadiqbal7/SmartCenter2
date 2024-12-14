@@ -72,7 +72,7 @@ namespace AFFZ_Provider.Controllers
                         var uploadedDoc = merchantDocuments.FirstOrDefault(md => md.FileName.Contains(document.MerchantVerificationDocumentName));
                         document.Status = uploadedDoc != null ? uploadedDoc.Status : "Not Yet Verified";
                         document.FilePath = uploadedDoc?.FolderName;
-                        document.MDID = uploadedDoc.MDID;
+                        document.MDID = uploadedDoc == null ? 0 : uploadedDoc.MDID;
                     }
                 }
 
@@ -203,6 +203,10 @@ namespace AFFZ_Provider.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     TempData["SuccessMessage"] = $"{documentType} uploaded successfully.";
+                    if (!string.IsNullOrEmpty(filePath))
+                    {
+                        HttpContext.Session.SetEncryptedString("ProfilePicturePath", filePath == null ? "" : filePath, _protector);
+                    }
                 }
                 else
                 {
@@ -322,67 +326,6 @@ namespace AFFZ_Provider.Controllers
             return RedirectToAction("Index");
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> UploadMerchantDocuments(IFormFile file, string documentMerchantType)
-        //{
-        //    if (file == null || file.Length == 0)
-        //    {
-        //        _logger.LogWarning("Invalid file upload attempt.");
-        //        TempData["ErrorMessage"] = "Please upload a valid file.";
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    try
-        //    {
-        //        string providerId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
-        //        if (string.IsNullOrEmpty(providerId))
-        //        {
-        //            _logger.LogWarning("ProviderId is missing from the session.");
-        //            TempData["ErrorMessage"] = "Session expired. Please log in again.";
-        //            return RedirectToAction("Login", "Account");
-        //        }
-
-        //        string providerDirectory = Path.Combine(_uploadPath, $"User_{providerId}");
-        //        Directory.CreateDirectory(providerDirectory);
-
-        //        string fileName = $"{documentMerchantType}_{DateTime.Now:yyyyMMddHHmmss}{Path.GetExtension(file.FileName)}";
-        //        string filePath = Path.Combine(providerDirectory, fileName);
-
-        //        await using var stream = new FileStream(filePath, FileMode.Create);
-        //        await file.CopyToAsync(stream);
-
-        //        // Create MerchantDocuments entry
-        //        MerchantDocuments newDocument = new MerchantDocuments
-        //        {
-        //            FileName = fileName,
-        //            ContentType = file.ContentType,
-        //            FileSize = file.Length,
-        //            FolderName = filePath,
-        //            Status = "Under Review",
-        //            DocumentAddedDate = DateTime.Now,
-        //            MerchantId = int.Parse(providerId),
-        //            UploadedBy = providerId
-        //        };
-
-        //        var response = await _httpClient.PostAsync("Providers/SaveMerchantDocument", Customs.GetJsonContent(newDocument));
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            TempData["SuccessMessage"] = $"{documentMerchantType} uploaded successfully.";
-        //        }
-        //        else
-        //        {
-        //            _logger.LogWarning($"Failed to save the document {documentMerchantType}.");
-        //            TempData["ErrorMessage"] = "Failed to save the uploaded document.";
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError(ex, $"Error while uploading {documentMerchantType}.");
-        //        TempData["ErrorMessage"] = $"An error occurred while uploading {documentMerchantType}.";
-        //    }
-
-        //    return RedirectToAction("Index");
-        //}
         private async Task<ProviderUser?> FetchProviderDataAsync(string providerId)
         {
             try

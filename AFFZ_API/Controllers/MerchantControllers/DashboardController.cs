@@ -73,6 +73,24 @@ namespace AFFZ_API.Controllers.MerchantControllers
 
             return sum;
         }
+        //
+        [HttpGet("GetTotalRevenueLastWeekAsync")]
+        public async Task<decimal> GetTotalRevenueLastWeekAsync(int mId)
+        {
+            var startOfWeek = DateTime.UtcNow.Date.AddDays(-(int)DateTime.UtcNow.DayOfWeek); // Start of the current week (Sunday)
+            var endOfWeek = startOfWeek.AddDays(7).AddSeconds(-1); // End of the current week (Saturday at 23:59:59)
+
+            var totalRevenue = (await _context.PaymentHistories
+                .AsNoTracking()
+                .Where(p => p.MERCHANTID == mId && p.PAYMENTDATETIME >= startOfWeek && p.PAYMENTDATETIME <= endOfWeek)
+                .ToListAsync())
+                .Sum(p => decimal.TryParse(p.AMOUNT, out var amount) ? amount : 0); // Parse AMOUNT on the client side
+
+
+
+            return totalRevenue;
+        }
+
         [HttpGet("GetTopRevenueServiceAsync")]
         public async Task<TopServiceRevenueDto> GetTopRevenueServiceAsync(int mid)
         {
@@ -117,14 +135,36 @@ namespace AFFZ_API.Controllers.MerchantControllers
             }
         }
         [HttpGet("GetRecentTransactionsAsync")]
-        public async Task<IEnumerable<PaymentHistory>> GetRecentTransactionsAsync(int mId, int count)
+        public async Task<IActionResult> GetRecentTransactionsAsync(int mId, int count)
         {
-            return await _context.PaymentHistories
-                .AsNoTracking()
-                .Where(p => p.MERCHANTID == mId)
-                .OrderByDescending(p => p.PAYMENTDATETIME)
-                .Take(count)
-                .ToListAsync();
+            //return await _context.PaymentHistories
+            //    .AsNoTracking()
+            //    .Where(p => p.MERCHANTID == mId)
+            //    .OrderByDescending(p => p.PAYMENTDATETIME)
+            //    .Take(count)
+            //    .ToListAsync();
+            var paymentHistoriesWithCustomerNames = await (
+                from payment in _context.PaymentHistories.AsNoTracking()
+                join customer in _context.Customers.AsNoTracking()
+                    on payment.PAYERID equals customer.CustomerId
+                where payment.MERCHANTID == mId
+                orderby payment.PAYMENTDATETIME descending
+                select new
+                {
+                    payment.ID,
+                    payment.PAYMENTTYPE,
+                    payment.AMOUNT,
+                    payment.PAYERID,
+                    payment.MERCHANTID,
+                    payment.ISPAYMENTSUCCESS,
+                    payment.Quantity,
+                    payment.SERVICEID,
+                    payment.PAYMENTDATETIME,
+                    CustomerName = customer.CustomerName
+                }
+            ).Take(count).ToListAsync();
+
+            return Ok(paymentHistoriesWithCustomerNames);
         }
     }
 }

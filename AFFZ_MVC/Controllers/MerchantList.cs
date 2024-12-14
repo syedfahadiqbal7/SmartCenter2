@@ -27,12 +27,14 @@ namespace AFFZ_Customer.Controllers
             var categories = new List<CatWithMerchant>();
             try
             {
+                // Fetch categories with merchants
                 var response = await _httpClient.GetAsync($"CategoryWithMerchant/GetServiceListByMerchant?CatName={catName}");
                 response.EnsureSuccessStatusCode();
 
                 var responseString = await response.Content.ReadAsStringAsync();
                 categories = JsonConvert.DeserializeObject<List<CatWithMerchant>>(responseString) ?? new List<CatWithMerchant>();
-                // Fetch cart items for logged-in user
+
+                // Fetch cart items for the logged-in user
                 string userId = HttpContext.Session.GetEncryptedString("UserId", _protector);
                 if (!string.IsNullOrEmpty(userId))
                 {
@@ -43,11 +45,14 @@ namespace AFFZ_Customer.Controllers
                     var cartItems = JsonConvert.DeserializeObject<SResponse>(cartResponseString);
 
                     // Handle the Data property, which is a JArray
-                    var cartServiceJArray = cartItems.Data as JArray;
-                    if (cartServiceJArray != null)
+                    if (cartItems.Data is JArray cartServiceJArray)
                     {
-                        // Convert the JArray to List<int>
-                        List<int> cartServiceList = cartServiceJArray.ToObject<List<int>>();
+                        // Extract the `serviceID` from each object in the array
+                        var cartServiceList = cartServiceJArray
+                            .Select(item => (int?)item["serviceID"]) // Use nullable int in case of missing values
+                            .Where(id => id.HasValue) // Filter out null values
+                            .Select(id => id.Value) // Convert to non-nullable int
+                            .ToList();
 
                         // Mark services as already in cart if they exist in the cartServiceList
                         foreach (var service in categories)
@@ -59,6 +64,7 @@ namespace AFFZ_Customer.Controllers
                         }
                     }
                 }
+
                 ViewBag.SubCategoriesWithMerchant = categories;
                 _logger.LogInformation("Successfully retrieved categories for Category Name: {CategoryName}", catName);
             }
@@ -116,7 +122,133 @@ namespace AFFZ_Customer.Controllers
 
             return RedirectToAction("SelectedMerchantList");
         }
+        public async Task<ActionResult> ProceedDirecttoPaymentByCart(string id, int quantity, string payment)
+        {
+            _logger.LogInformation("ProceedDirecttoPayment method called with id: {Id}", id);
+            string userId = HttpContext.Session.GetEncryptedString("UserId", _protector);
 
+            if (string.IsNullOrEmpty(id))
+            {
+                _logger.LogWarning("ProceedDirecttoPayment called with empty id");
+                return NotFound();
+            }
+
+            RequestForDisCountToUserViewModel requestForDisCount = new RequestForDisCountToUserViewModel();
+            var reqIds = id.Split('~');
+            int merchantId = Convert.ToInt32(reqIds[0]);
+            int serviceId = Convert.ToInt32(reqIds[1]);
+            int userIdInt = Convert.ToInt32(userId);
+
+            try
+            {
+                // Create discount request By Merchant and save in RequestForDiscountToMerchant
+                var discountRequestClass = new DiscountRequestClass { MerchantId = merchantId, ServiceId = serviceId, UserId = userIdInt };
+                var request = await _httpClient.PostAsync("CategoryWithMerchant/sendRequestForDiscount", Customs.GetJsonContent(discountRequestClass));
+                request.EnsureSuccessStatusCode();
+                await NotifyUser(reqIds, userIdInt, "#", $"User[{userIdInt}] has completed the payment and selected you as his final merchant. Wait for the files to get uploaded by the user.");
+                // Retrieve discount details sent to merchant
+                var jsonResponse = await _httpClient.GetAsync($"CategoryWithMerchant/AllRequestMerchant?Mid={reqIds[0]}");
+                jsonResponse.EnsureSuccessStatusCode();
+
+                //Add TrackingStatus 1,2
+                await UpdateServiceStatusAsync(userIdInt, 1, 0);
+                //Add changestatus
+                var statusUpdate = new CurrentServiceStatusViewModel
+                {
+                    UId = userIdInt,
+                    MId = merchantId,
+                    RFDFU = 0,
+                    CurrentStatus = "1"
+                };
+
+                // Send the request to the AFFZ_API
+                var _changeStatusAdd = await _httpClient.PostAsJsonAsync("CategoryWithMerchant/UpdateServiceStatus", statusUpdate);
+                await UpdateServiceStatusAsync(userIdInt, 2, 0);
+                statusUpdate = new CurrentServiceStatusViewModel
+                {
+                    UId = userIdInt,
+                    MId = merchantId,
+                    RFDFU = 0,
+                    CurrentStatus = "2"
+                };
+
+                // Send the request to the AFFZ_API
+                _changeStatusAdd = await _httpClient.PostAsJsonAsync("CategoryWithMerchant/UpdateServiceStatus", statusUpdate);
+                string responseString = await jsonResponse.Content.ReadAsStringAsync();
+                List<RequestForDiscountViewModel> categories = JsonConvert.DeserializeObject<List<RequestForDiscountViewModel>>(responseString);
+
+                var mdl = categories?.FirstOrDefault(x => x.MID == merchantId && x.SID == serviceId && x.UID == userIdInt);
+                if (mdl == null)
+                {
+                    TempData["FailMessage"] = "Unable to retrieve discount data.";
+                    return RedirectToAction("ErrorPage");
+                }
+
+                // Save Merchant Response In Request For Discount To User and update RequestForDiscountToMerchant IsResponseSent
+                var submitResponse = new SubmitResponseByMerchant
+                {
+                    RFDTM = mdl.RFDTM.ToString(),
+                    DiscountPrice = mdl.ServicePrice.ToString(),
+                    UID = userIdInt.ToString(),
+                    SID = serviceId.ToString(),
+                    MID = merchantId.ToString()
+                };
+
+                var responseMessage = await _httpClient.PostAsync("CategoryWithMerchant/SaveMerchantResponseForDiscount", Customs.GetJsonContent(submitResponse));
+                responseMessage.EnsureSuccessStatusCode();
+
+                int crfdfu = Convert.ToInt32((await responseMessage.Content.ReadAsStringAsync()).Split('-')[1]);
+
+                // Update Tracking Information
+                await UpdateServiceStatusAsync(userIdInt, 3, crfdfu);
+                await UpdateServiceStatusAsync(userIdInt, 4, crfdfu);
+
+                // Retrieve merchant responses for validation
+                var merchantResponses = await _httpClient.GetAsync($"CategoryWithMerchant/AllResponsesFromMerchant?Uid={userId}");
+                merchantResponses.EnsureSuccessStatusCode();
+
+                string responseString3 = await merchantResponses.Content.ReadAsStringAsync();
+                List<RequestForDisCountToUserViewModel> merchantDiscountResponses = JsonConvert.DeserializeObject<List<RequestForDisCountToUserViewModel>>(responseString3);
+
+                requestForDisCount = merchantDiscountResponses?
+                    .FirstOrDefault(x => x.MerchantID == merchantId && x.UID == userIdInt && x.SID == serviceId && x.IsMerchantSelected == 0 && x.IsPaymentDone == 0);
+
+                if (requestForDisCount == null)
+                {
+                    _logger.LogWarning("No pending discount responses found for userId: {UserId}", userId);
+                    TempData["FailMessage"] = "Discount selection was unsuccessful. Please try again.";
+                    return RedirectToAction("ErrorPage");
+                }
+
+                // Select final merchant
+                var selectFinalMerchant = new RequestForDisCountToUser
+                {
+                    RFDFU = requestForDisCount.RFDFU,
+                    UID = userIdInt,
+                    MID = requestForDisCount.MerchantID,
+                    IsMerchantSelected = 1,
+                    IsPaymentDone = 0
+                };
+
+                var finalMerchantResponse = await _httpClient.PostAsync("CategoryWithMerchant/SelectFinalMerchant", Customs.GetJsonContent(selectFinalMerchant));
+                finalMerchantResponse.EnsureSuccessStatusCode();
+
+                await UpdateServiceStatusAsync(userIdInt, 5, requestForDisCount.RFDFU);
+                await UpdateServiceStatusAsync(userIdInt, 6, requestForDisCount.RFDFU);
+                await UpdateServiceStatusAsync(userIdInt, 9, requestForDisCount.RFDFU);
+
+                await NotifyUser(reqIds, userIdInt, "#", $"User[{userIdInt}] has completed the payment and selected you as his final merchant. Wait for the files to get uploaded by the user.");
+
+                TempData["SuccessMessage"] = "Discount processed successfully.";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while sending discount request.");
+                TempData["FailMessage"] = "An error occurred while sending the discount request.";
+            }
+
+            return RedirectToAction("PaymentCart", "MerchantResponseToUser", new { rfdfu = requestForDisCount.RFDFU, uid = userIdInt, merchantId = merchantId, Quantity = quantity });
+        }
         public async Task<ActionResult> ProceedDirecttoPayment(string id)
         {
             _logger.LogInformation("ProceedDirecttoPayment method called with id: {Id}", id);

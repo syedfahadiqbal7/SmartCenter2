@@ -1,0 +1,318 @@
+2024-12-13T08:34:41.6337531+04:00 0HN8R5TQ9KJNH:00000001 [INF] Attempting login for email: "fahad@gmail.com" (100386e3)
+2024-12-13T08:34:43.0780989+04:00 0HN8R5TQ9KJNH:00000001 [INF] User login successful for email: "fahad@gmail.com" (8ce767cc)
+2024-12-13T08:34:44.3882178+04:00 0HN8R5TQ9KJNH:00000008 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:34:44.4715259+04:00 0HN8R5TQ9KJNH:00000008 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:37:04.9700719+04:00 0HN8R5TQ9KJNI:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:37:04.9959921+04:00 0HN8R5TQ9KJNI:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:42:13.1237238+04:00 0HN8R5TQ9KJNJ:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:42:13.1523893+04:00 0HN8R5TQ9KJNJ:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:45:19.0651375+04:00 0HN8R5TQ9KJNK:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:45:19.0868476+04:00 0HN8R5TQ9KJNK:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:47:40.2915887+04:00 0HN8R5TQ9KJNN:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:47:40.3133529+04:00 0HN8R5TQ9KJNN:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:49:16.9737926+04:00 0HN8R5TQ9KJNQ:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:49:16.9911331+04:00 0HN8R5TQ9KJNQ:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:51:10.0438788+04:00 0HN8R5TQ9KJNR:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:51:10.0563134+04:00 0HN8R5TQ9KJNR:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:52:42.9765906+04:00 0HN8R5TQ9KJNS:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:52:42.9956806+04:00 0HN8R5TQ9KJNS:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:53:47.2099430+04:00 0HN8R5TQ9KJNT:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:53:47.2274717+04:00 0HN8R5TQ9KJNT:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:54:24.6853550+04:00 0HN8R5TQ9KJNT:00000010 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:54:24.7076910+04:00 0HN8R5TQ9KJNT:00000010 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:55:56.6662134+04:00 0HN8R5TQ9KJNU:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:55:56.6892372+04:00 0HN8R5TQ9KJNU:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:57:04.5469118+04:00 0HN8R5TQ9KJNU:00000010 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:57:04.5668343+04:00 0HN8R5TQ9KJNU:00000010 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:59:01.9682776+04:00 0HN8R5TQ9KJNV:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:59:01.9921335+04:00 0HN8R5TQ9KJNV:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:59:15.5978229+04:00 0HN8R5TQ9KJNV:00000010 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:59:15.6203333+04:00 0HN8R5TQ9KJNV:00000010 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T08:59:38.5219550+04:00 0HN8R5TQ9KJNV:00000019 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T08:59:38.5395865+04:00 0HN8R5TQ9KJNV:00000019 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T09:00:15.0540492+04:00 0HN8R5TQ9KJNV:00000022 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T09:00:15.0792724+04:00 0HN8R5TQ9KJNV:00000022 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T09:00:27.6142265+04:00 0HN8R5TQ9KJNV:0000002B [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T09:00:27.6373026+04:00 0HN8R5TQ9KJNV:0000002B [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T09:01:31.9113409+04:00 0HN8R5TQ9KJO0:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T09:01:31.9295176+04:00 0HN8R5TQ9KJO0:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T10:18:38.0428449+04:00 0HN8R5TQ9KJO8:00000013 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T10:18:38.1851250+04:00 0HN8R5TQ9KJO8:00000019 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T10:18:51.7636525+04:00 0HN8R5TQ9KJO8:00000021 [INF] UpdateCart initiated for CartItemId: 3, Quantity: 1 (a2fe9cce)
+2024-12-13T10:18:51.7737351+04:00 0HN8R5TQ9KJO8:00000021 [INF] Cart item quantity updated to: 1 (486b217d)
+2024-12-13T10:19:15.2827835+04:00 0HN8R5TQ9KJO8:0000002A [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T10:19:21.3340630+04:00 0HN8R5TQ9KJO8:0000002E [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T10:19:27.4791865+04:00 0HN8R5TQ9KJO8:00000032 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T10:19:37.6627972+04:00 0HN8R5TQ9KJO8:0000003F [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T10:21:10.5961726+04:00 0HN8R5TQ9KJO9:00000001 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T10:21:28.7036198+04:00 0HN8R5TQ9KJO9:0000000D [INF] AddToCart initiated for CustomerId: 2, ServiceId: 355 (172dbc0d)
+2024-12-13T10:21:28.7202050+04:00 0HN8R5TQ9KJO9:0000000D [INF] Service successfully added to cart for CustomerId: 2, ServiceId: 355 (6b3e0092)
+2024-12-13T10:21:39.9809071+04:00 0HN8R5TQ9KJO9:00000013 [INF] AddToCart initiated for CustomerId: 2, ServiceId: 355 (172dbc0d)
+2024-12-13T10:21:57.2854227+04:00 0HN8R5TQ9KJO9:0000001D [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T10:22:02.9413100+04:00 0HN8R5TQ9KJO9:00000024 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T10:22:04.5341356+04:00 0HN8R5TQ9KJO9:00000028 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T10:22:05.9200620+04:00 0HN8R5TQ9KJO9:0000002C [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T10:29:44.1215865+04:00 0HN8R5TQ9KJOC:00000006 [INF] No reviews found for merchantId: 0 (8c68048d)
+2024-12-13T10:29:44.1762110+04:00 0HN8R5TQ9KJOC:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T10:29:44.2003550+04:00 0HN8R5TQ9KJOC:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T10:31:00.9781538+04:00 0HN8R5TQ9KJOG:00000006 [INF] No reviews found for merchantId: 0 (8c68048d)
+2024-12-13T10:31:01.0041619+04:00 0HN8R5TQ9KJOG:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T10:31:01.0357231+04:00 0HN8R5TQ9KJOG:00000007 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T10:31:06.0767491+04:00 0HN8R5TQ9KJOF:00000006 [INF] AddToCart initiated for CustomerId: 2, ServiceId: 355 (172dbc0d)
+2024-12-13T10:31:06.1025563+04:00 0HN8R5TQ9KJOF:00000006 [INF] Service successfully added to cart for CustomerId: 2, ServiceId: 355 (6b3e0092)
+2024-12-13T10:31:40.1663514+04:00 0HN8R5TQ9KJOG:0000000E [INF] No reviews found for merchantId: 0 (8c68048d)
+2024-12-13T10:31:40.1880063+04:00 0HN8R5TQ9KJOG:0000000F [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T10:31:40.2803451+04:00 0HN8R5TQ9KJOG:0000000F [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T10:48:49.7547222+04:00 0HN8R86OTD0E7:00000009 [INF] AddToCart initiated for CustomerId: 2, ServiceId: 355 (172dbc0d)
+2024-12-13T10:48:57.2246224+04:00 0HN8R86OTD0E7:0000000A [INF] AddToCart initiated for CustomerId: 2, ServiceId: 355 (172dbc0d)
+2024-12-13T10:49:15.1746882+04:00 0HN8R86OTD0E7:0000001E [INF] AddToCart initiated for CustomerId: 2, ServiceId: 355 (172dbc0d)
+2024-12-13T10:49:15.2651279+04:00 0HN8R86OTD0E7:0000001E [INF] Service successfully added to cart for CustomerId: 2, ServiceId: 355 (6b3e0092)
+2024-12-13T11:19:13.9202331+04:00 0HN8R8OG5638G:0000000B [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T11:20:13.5776160+04:00 0HN8R8Q2A8L7H:00000017 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T11:26:20.1215461+04:00 0HN8R8TNESS86:00000001 [INF] Attempting login for email: "fahad@gmail.com" (100386e3)
+2024-12-13T11:26:23.3738845+04:00 0HN8R8TNESS86:00000001 [INF] User login successful for email: "fahad@gmail.com" (8ce767cc)
+2024-12-13T11:26:24.8892513+04:00 0HN8R8TNESS86:00000007 [INF] No reviews found for merchantId: 3 (58ba9d33)
+2024-12-13T11:26:24.9255774+04:00 0HN8R8TNESS86:00000008 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-13T11:26:24.9835569+04:00 0HN8R8TNESS86:00000008 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-13T11:26:38.9297134+04:00 0HN8R8TNESS89:00000007 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T11:27:11.7938240+04:00 0HN8R8TNESS89:0000002C [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T11:27:12.6203218+04:00 0HN8R8TNESS89:00000032 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-13T11:27:25.1807737+04:00 0HN8R8TNESS89:00000036 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)

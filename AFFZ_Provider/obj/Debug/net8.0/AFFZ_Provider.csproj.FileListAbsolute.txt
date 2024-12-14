@@ -168,10 +168,10 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\ob
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.AFFZ_Provider.props
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.AFFZ_Provider.props
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\staticwebassets.pack.json
-D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\AFFZ_Pro.A254C783.Up2Date
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\AFFZ_Provider.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\refint\AFFZ_Provider.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\AFFZ_Provider.pdb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\AFFZ_Provider.genruntimeconfig.cache
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\ref\AFFZ_Provider.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Provider\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

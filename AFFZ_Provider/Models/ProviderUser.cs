@@ -5,11 +5,13 @@ namespace AFFZ_Provider.Models;
 public partial class ProviderUser
 {
     public int ProviderId { get; set; }
-
+    [Required(ErrorMessage = "Company Name is required.")]
     public string ProviderName { get; set; } = null!;
     [Required(ErrorMessage = "Email is required.")]
+    [EmailAddress(ErrorMessage = "Invalid email format.")]
     public string Email { get; set; } = null!;
-
+    [Required(ErrorMessage = "Password is required.")]
+    [MinLength(8, ErrorMessage = "Password must be at least 8 characters.")]
     public string Password { get; set; } = null!;
 
     public int? RoleId { get; set; }

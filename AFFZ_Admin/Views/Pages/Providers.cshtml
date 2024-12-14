@@ -71,7 +71,35 @@
         </div>
     </div>
 </div>
-
+<!-- Edit Customer Modal -->
+<div class="modal fade" id="edit-customer" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Merchant Documents</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-striped align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>#</th>
+                                <th>Document</th>
+                                <th>Preview</th>
+                                <th>Status</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="merchant-documents-body">
+                            <!-- Content loaded dynamically via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Image Viewer Modal -->
 <div class="modal fade" id="image-viewer-modal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -119,7 +147,7 @@
             const documents = await response.json();
             const documentsBody = document.getElementById('merchant-documents-body');
             documentsBody.innerHTML = '';
-
+             console.log(response);
             const baseUrl = "https://localhost:7096";
 
             documents.forEach((doc, index) => {
@@ -131,7 +159,7 @@
                 const isImage = /\.(jpg|jpeg|png|gif)$/i.test(fileUrl);
                 const isPDF = /\.pdf$/i.test(fileUrl);
                 const viewIcon = isImage ? 'fe fe-image' : isPDF ? 'fe fe-file-text' : '';
-
+               
                 // Conditionally render buttons based on document status
                 let actionButtons = '';
                 if (doc.status === 'Verified') {

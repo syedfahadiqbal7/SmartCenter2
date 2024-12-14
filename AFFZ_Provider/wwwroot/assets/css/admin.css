@@ -47,15 +47,15 @@ html {
 body {
     background-color: #fff;
     color: #74788D;
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
+    font-family: "Archivo", sans-serif;
+    font-size: 16px;
     height: 100%;
     overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: #2A313D;
-    font-family: "Roboto", sans-serif;
+    font-family: "Archivo", sans-serif;
     margin-top: 0;
 }
 
@@ -79,6 +79,11 @@ input:-webkit-autofill {
 
 img {
     max-width: 100%;
+}
+
+.book-crd {
+    border-left: 7px solid #FF008A;
+    border-radius: 10px;
 }
 
 ul {
@@ -1348,20 +1353,353 @@ button.bg-danger:focus, button.bg-danger:hover {
 }
 
 .card .card-header {
-    background-color: #fff;
-    border-bottom: 1px solid #eaeaea;
+    border-color: #EBECED;
+    position: relative;
+    background: transparent;
+    padding: 1rem 1.25rem 1rem;
 }
 
-    .card .card-header .card-title {
-        margin-bottom: 0;
-        font-size: 18px;
+@media (max-width: 767.98px) {
+    .card .card-header {
+        padding: 15px;
     }
+}
 
+.card .card-header .card-title {
+    margin-bottom: 0rem;
+    font-size: 18px;
+}
+.card .card-header .subtitle {
+    padding-top: 0.3125rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+.card .card-footer {
+    border-color: #EBECED;
+    background: transparent;
+    padding: 1rem 1.25rem 1rem;
+}
+.card.custom-card {
+    border-radius: 4px;
+    border: 0;
+    background-color: #FFF;
+    position: relative;
+    margin-block-end: 1.5rem;
+    width: 100%;
+}
+
+.card.custom-card .card-header {
+    padding: 1rem 1.25rem;
+    background-color: transparent !important;
+    border-block-end: 1px solid #EBECED;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
 .btn-update:hover {
     background: transparent;
     color: #4C40ED;
 }
+.card.custom-card .card-header:first-child {
+    border-radius: 0.625rem 0.625rem 0 0;
+}
 
+.card.custom-card .card-header .card-title {
+    position: relative;
+    margin-block-end: 0;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+    .card.custom-card .card-header .card-title .subtitle {
+        margin-block-end: 0;
+        text-transform: initial;
+    }
+
+.card.custom-card .card-footer {
+    background-color: transparent !important;
+    border-block-start: 1px solid #EBECED;
+    padding: 1rem 1.5rem;
+    font-size: 14px;
+}
+
+.card.custom-card .card-body {
+    padding: 1.5rem;
+    color: #656B76;
+}
+
+.card.custom-card .card-link {
+    font-size: 0.75rem;
+}
+
+.card .card-text {
+    font-size: 0.813rem;
+}
+
+.card .footer-card-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.card.overlay-card {
+    position: relative;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+    .card.overlay-card .card-header {
+        border-block-end: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card.overlay-card .card-footer {
+        border-block-start: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card.overlay-card .over-content-bottom {
+        top: auto;
+    }
+
+    .card.overlay-card:before {
+        content: "";
+        inset-inline-start: 0;
+        inset-inline-end: 0;
+        inset-block-start: 0;
+        inset-block-end: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+        position: absolute;
+    }
+
+.card.card-bg-primary {
+    background-color: #FF008A;
+    color: #FFF;
+}
+
+    .card.card-bg-primary .card-header {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-end: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .card.card-bg-primary .card-header:before {
+            background-color: #FFF;
+        }
+
+    .card.card-bg-primary .card-body {
+        color: #FFF;
+    }
+
+    .card.card-bg-primary .card-footer {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-start: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+.card.card-bg-secondary {
+    background-color: #282B8B;
+    color: #FFF;
+}
+
+    .card.card-bg-secondary .card-header {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-end: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .card.card-bg-secondary .card-header:before {
+            background-color: #FFF;
+        }
+
+    .card.card-bg-secondary .card-body {
+        color: #FFF;
+    }
+
+    .card.card-bg-secondary .card-footer {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-start: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+.card.card-bg-warning {
+    background-color: #FFC107;
+    color: #FFF;
+}
+
+    .card.card-bg-warning .card-header {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-end: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .card.card-bg-warning .card-header:before {
+            background-color: #FFF;
+        }
+
+    .card.card-bg-warning .card-body {
+        color: #FFF;
+    }
+
+    .card.card-bg-warning .card-footer {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-start: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+.card.card-bg-info {
+    background-color: #5625E8;
+    color: #FFF;
+}
+
+    .card.card-bg-info .card-header {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-end: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .card.card-bg-info .card-header:before {
+            background-color: #FFF;
+        }
+
+    .card.card-bg-info .card-body {
+        color: #FFF;
+    }
+
+    .card.card-bg-info .card-footer {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-start: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+.card.card-bg-success {
+    background-color: #03C95A;
+    color: #FFF;
+}
+
+    .card.card-bg-success .card-header {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-end: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .card.card-bg-success .card-header:before {
+            background-color: #FFF;
+        }
+
+    .card.card-bg-success .card-body {
+        color: #FFF;
+    }
+
+    .card.card-bg-success .card-footer {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-start: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+.card.card-bg-danger {
+    background-color: #E70D0D;
+    color: #FFF;
+}
+
+    .card.card-bg-danger .card-header {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-end: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .card.card-bg-danger .card-header:before {
+            background-color: #FFF;
+        }
+
+    .card.card-bg-danger .card-body {
+        color: #FFF;
+    }
+
+    .card.card-bg-danger .card-footer {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-start: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+.card.card-bg-light {
+    background-color: #E9EAEB;
+    color: #656B76;
+}
+
+    .card.card-bg-light .card-header {
+        background-color: rgba(0, 0, 0, 0.05) !important;
+        color: #656B76;
+        border-block-end: #EBECED;
+    }
+
+    .card.card-bg-light .card-body {
+        color: #656B76;
+    }
+
+    .card.card-bg-light .card-footer {
+        background-color: rgba(0, 0, 0, 0.05) !important;
+        color: #656B76;
+        border-block-start: #EBECED;
+    }
+
+.card.card-bg-dark {
+    background-color: #111827;
+    color: #FFF;
+}
+
+    .card.card-bg-dark .card-header {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-end: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .card.card-bg-dark .card-header:before {
+            background-color: #FFF;
+        }
+
+    .card.card-bg-dark .card-body {
+        color: #FFF;
+    }
+
+    .card.card-bg-dark .card-footer {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FFF;
+        border-block-start: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+.card .card-anchor {
+    position: absolute;
+    top: 0;
+    inset-inline-end: 0;
+    bottom: 0;
+    inset-inline-start: 0;
+    z-index: 1;
+    pointer-events: auto;
+    content: "";
+}
+
+.card .collapse-close {
+    display: none;
+}
+
+.card.card .collapsed .collapse-close {
+    display: block;
+}
+
+.card.card .collapsed .collapse-open {
+    display: none;
+}
+
+.card.card-fullscreen {
+    position: fixed;
+    top: 0;
+    inset-inline-start: 0;
+    inset-inline-start: 0;
+    bottom: 0;
+    z-index: 9999;
+    margin: 0;
+}
 .custom-control-input:checked ~ .custom-control-label::before {
     color: #fff;
     border-color: #007bff;
@@ -1378,7 +1716,11 @@ button.bg-danger:focus, button.bg-danger:hover {
     content: "";
     background: no-repeat 50%/50% 50%;
 }
-
+.prov-icon {
+    width: 34px;
+    height: 34px;
+   
+}
 .custom-control-input {
     position: absolute;
     left: 0;
@@ -2516,15 +2858,15 @@ ul.custom-radiosbtn {
 }
 
 
-    .dropdown-heads > a {
-        background: #F7F7FA;
-        width: 50px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        border-radius: 50px;
-        justify-content: center;
-    }
+.dropdown-heads > a {
+    background: #F7F7FA;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    justify-content: center;
+}
 
 .user-menu.nav > li > a {
     color: #74788D;
@@ -4135,15 +4477,31 @@ html.menu-opened {
 }
 
 .card {
-    border-radius: 8px;
-    border: 2px solid rgba(220, 220, 220, 0.3);
-    box-shadow: none;
-    margin-bottom: 25px;
-    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: #FFF;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #EBECED;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.08);
+    color: inherit;
 }
 
 .card-body {
-    padding: 25px;
+    padding: 1.25rem;
+}
+
+.card .card-title {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #242B3A;
+}
+
+@media (max-width: 767.98px) {
+    .card .card-title {
+        font-size: 16px;
+    }
 }
 
 .sidebar-logo {
@@ -7323,7 +7681,6 @@ a.blog-author-name:hover, a.comment-btn:hover {
 
 .card-body {
     position: relative;
-    padding: 25px;
 }
 
 .app-listing {
@@ -14272,6 +14629,7 @@ fieldset {
 .customer-chat .chat-cont-profile .card-body {
     max-height: calc(100vh - 330px);
 }
+
 @keyframes blink {
     50% {
         opacity: 0.5;

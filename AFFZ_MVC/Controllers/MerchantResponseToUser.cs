@@ -515,6 +515,48 @@ namespace AFFZ_Customer.Controllers
 
             return View();
         }
+        [HttpGet]
+        public async Task<ActionResult> PaymentCart(string rfdfu, string uid, string merchantId, int Quantity)
+        {
+            string userId = HttpContext.Session.GetEncryptedString("UserId", _protector); // Placeholder for session user ID retrieval
+
+            try
+            {
+                var jsonResponse = await _httpClient.GetAsync($"CategoryWithMerchant/AllResponsesFromMerchant?Uid={userId}");
+                string responseString = await jsonResponse.Content.ReadAsStringAsync();
+                if (!string.IsNullOrEmpty(responseString))
+                {
+                    int selectedServiceId = Convert.ToInt32(rfdfu);
+                    List<RequestForDisCountToUserViewModel> categories = JsonConvert.DeserializeObject<List<RequestForDisCountToUserViewModel>>(responseString);
+                    ViewBag.ResponseForDisCountFromMerchant = categories.FirstOrDefault(x => x.RFDFU == selectedServiceId);
+                    ViewBag.Quantity = Quantity;
+                }
+                else
+                {
+                    _logger.LogWarning("Empty response received from API for userId: {UserId}", userId);
+                    ViewBag.ResponseForDisCountFromMerchant = new List<RequestForDisCountToUserViewModel>();
+                }
+            }
+            catch (JsonSerializationException ex)
+            {
+                _logger.LogError(ex, "JSON deserialization error for userId: {UserId}", userId);
+                ViewBag.ResponseForDisCountFromMerchant = new List<RequestForDisCountToUserViewModel>();
+                ModelState.AddModelError(string.Empty, "Failed to load data.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while fetching data for userId: {UserId}", userId);
+                ViewBag.ResponseForDisCountFromMerchant = new List<RequestForDisCountToUserViewModel>();
+                ModelState.AddModelError(string.Empty, "An unexpected error occurred while loading data.");
+            }
+
+            if (TempData.TryGetValue("SaveResponse", out var saveResponse))
+            {
+                ViewBag.SaveResponse = saveResponse.ToString();
+            }
+
+            return View("Payment");
+        }
         private async Task<ActionResult> PaymentGatewaytelr(string _price, long _quantity, string servicetype, string merchantname)
         {
 

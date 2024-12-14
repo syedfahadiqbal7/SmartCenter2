@@ -1,4 +1,4 @@
-﻿<div class="col-lg-9 cart-section">
+﻿<div class="cart-section col-lg-9">
     <h4>Your Cart</h4>
     @if (Model?.CartItem != null && Model.CartItem.Count > 0)
     {
@@ -16,11 +16,21 @@
             </thead>
             <tbody>
                 @{
-                    decimal totalAmount = 0;
+                    var merchantServiceTotals = new Dictionary<string, decimal>();
                     foreach (var item in Model.CartItem)
                     {
                         var subtotal = item.ServicePrice * item.Quantity;
-                        totalAmount += subtotal;
+                        string merchantServiceKey = $"{item.MID}_{item.ServiceID}_{item.Quantity}";
+
+                        if (merchantServiceTotals.ContainsKey(merchantServiceKey))
+                        {
+                            merchantServiceTotals[merchantServiceKey] += subtotal;
+                        }
+                        else
+                        {
+                            merchantServiceTotals[merchantServiceKey] = subtotal;
+                        }
+
                         <tr>
                             <td>@item.ServiceID</td>
                             <td>@item.ServiceName</td>
@@ -45,15 +55,55 @@
                 }
             </tbody>
             <tfoot>
-                <tr>
-                    <td colspan="4" class="text-end"><strong>Total:</strong></td>
-                    <td colspan="3">@totalAmount.ToString("F2") AED</td>
-                </tr>
+                @foreach (var kvp in merchantServiceTotals)
+                {
+                    var keys = kvp.Key.Split('_');
+                    var mid = keys[0];
+                    var serviceId = keys[1];
+                    var quantity = keys[2];
+                    var p = kvp.Value.ToString("F2");
+                    <tr>
+                        <td colspan="4" class="text-end"><strong>Total for Merchant @mid, Service @serviceId:</strong></td>
+                        <td colspan="2">@p AED</td>
+                        <td>
+                            <a href="javascript:void(0);" class="btn btn-secondary" onclick="showPaymentPopup('@mid~@serviceId', 'RequestForDiscount','@p')" style="font-size: 10px;margin-top:10px;padding: 5px 10px;font-weight: bold;color: red;">Ask for Discount*</a>
+                            <a class="btn btn-secondary" href="/MerchantList/ProceedDirecttoPaymentByCart?id=@mid~@serviceId&quantity=@quantity" style="margin-right: 10px;">PAY AED @p</a>
+
+                        </td>
+                    </tr>
+                }
+
             </tfoot>
         </table>
+        <!-- Image Modal -->
+        <div class="modal fade custom-modal" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content doctor-profile">
+                    <div class="modal-header border-bottom-0 justify-content-between">
+                        <h5 class="modal-title" id="imageModalLabel">Request For Discount</h5>
+                        <button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="feather-x"></i></button>
+                    </div>
+                    <div class="modal-body pt-0">
+                        <p id="Modalpayment"></p>
+                        <p id="buttonset">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
     else
     {
         <p>No items in the cart.</p>
     }
 </div>
+<script src="~/assets/js/script.js"></script>
+<script>
+    function showPaymentPopup(mid, sid, amount) {
+        alert(mid+" - "+sid+" - "+amount);
+        $('#Modalpayment').html('<b style="color:red;font-size:12px">Please note: Requesting a discount may take 12 to 24 hours to process. If you like to proceed without a discount proceed with payment.</b > ');
+        $('#buttonset').html('<a class="btn btn-secondary" href="/MerchantList/RequestForDiscount?id=' + mid + '" style="float: left;">Ask for Discount</a> <a class="btn btn-secondary" href="/MerchantList/ProceedDirecttoPayment?id=' + mid + '" style="float: right;">' + amount + '</a>');
+        $('#paymentModal').modal('show');
+    }
+</script>

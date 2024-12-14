@@ -114,10 +114,10 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\D
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.AFFZ_Admin.props
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.AFFZ_Admin.props
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\staticwebassets.pack.json
-D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\AFFZ_Admin.csproj.Up2Date
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\AFFZ_Admin.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\refint\AFFZ_Admin.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\AFFZ_Admin.pdb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\AFFZ_Admin.genruntimeconfig.cache
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\ref\AFFZ_Admin.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

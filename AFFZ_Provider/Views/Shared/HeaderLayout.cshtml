@@ -8,6 +8,14 @@
     var controllerName = ViewContext.RouteData.Values["controller"]?.ToString();
     var IsActive = await NotificationService.GetProviderIsActive();
 }
+<style>
+    #profile-tab .active
+    {
+        color: black;
+        font-weight: bold;
+        border: 1px solid #000;
+    }
+</style>
 <div class="header">
     <div class="header-left">
         <a href="Dashboard" class="logo">
@@ -25,7 +33,24 @@
         <div class="page-headers">
             @if (IsActive == "In Active")
             {
-                <span style="font-weight: bold;font-size: 17px;text-align: center !important;color: green;border: 1px solid #ccc;padding: 10px;box-shadow: 5px 5px aliceblue;">Please wait till your profile is verified.</span>
+                @* <span style="font-weight: bold;font-size: 17px;text-align: center !important;color: darkred;border: 1px solid #ccc;padding: 10px;box-shadow: 5px 5px aliceblue;">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    Profile Is In active.
+                </span> *@
+                <div class="alert alert-warning d-flex align-items-center" role="alert" style="padding: 5px;">
+                    <i class="fa-solid fa-triangle-exclamation text-warning me-2" style="font-size: 1.5rem;"></i>
+                    <div>
+                        <strong>Account Not Activated:</strong> Your account is not yet activated. Please click <a href="/Profile">Here</a> to complete the required steps to activate your account and access all features.
+                        @* <div class="mt-2">
+                            <a href="/support" class="btn btn-sm btn-primary">
+                                <i class="bi bi-envelope-fill"></i> Contact Support
+                            </a>
+                            <a href="/activation-instructions" class="btn btn-sm btn-outline-secondary">
+                                <i class="bi bi-info-circle-fill"></i> Learn How to Activate
+                            </a>
+                        </div> *@
+                    </div>
+                </div>
             }
             <div class="search-bar">
                 

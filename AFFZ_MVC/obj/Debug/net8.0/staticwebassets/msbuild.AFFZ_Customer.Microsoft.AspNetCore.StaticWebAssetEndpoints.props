@@ -4,13 +4,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AFFZ_Customer.u2aqiibcg3.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-hj\u002BcQTZDuhxp0rBeHflPx2GXS6sMB2mGZNvL5\u002BtbL4o="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022hj\u002BcQTZDuhxp0rBeHflPx2GXS6sMB2mGZNvL5\u002BtbL4o=\u0022"},{"Name":"Last-Modified","Value":"Thu, 05 Dec 2024 12:36:42 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022hj\u002BcQTZDuhxp0rBeHflPx2GXS6sMB2mGZNvL5\u002BtbL4o=\u0022"},{"Name":"Last-Modified","Value":"Mon, 09 Dec 2024 08:03:41 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AFFZ_Customer/AFFZ_Customer.u2aqiibcg3.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AFFZ_Customer.u2aqiibcg3.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"u2aqiibcg3"},{"Name":"integrity","Value":"sha256-hj\u002BcQTZDuhxp0rBeHflPx2GXS6sMB2mGZNvL5\u002BtbL4o="},{"Name":"label","Value":"_content/AFFZ_Customer/AFFZ_Customer.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022hj\u002BcQTZDuhxp0rBeHflPx2GXS6sMB2mGZNvL5\u002BtbL4o=\u0022"},{"Name":"Last-Modified","Value":"Thu, 05 Dec 2024 12:36:42 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022hj\u002BcQTZDuhxp0rBeHflPx2GXS6sMB2mGZNvL5\u002BtbL4o=\u0022"},{"Name":"Last-Modified","Value":"Mon, 09 Dec 2024 08:03:41 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AFFZ_Customer/assets/css/bootstrap-datetimepicker.min.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\bootstrap-datetimepicker.min.css'))</AssetFile>

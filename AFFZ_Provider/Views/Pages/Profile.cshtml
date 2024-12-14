@@ -102,7 +102,7 @@
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="PhoneNumber" class="form-label">Mobile Number <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" value="@Model?.PhoneNumber" placeholder="Enter Mobile Number" required>
+                                            <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" value="@Model?.PhoneNumber" placeholder="Enter Mobile Number" readonly>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="CreatedDate" class="form-label">Date of Registration</label>
@@ -110,7 +110,7 @@
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="ProviderName" class="form-label">Provider Name <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="ProviderName" name="ProviderName" value="@Model?.ProviderName" placeholder="Enter Business Name" required>
+                                            <input type="text" class="form-control" id="ProviderName" name="ProviderName" value="@Model?.ProviderName" placeholder="Enter Business Name" readonly>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Save Changes</button>
@@ -147,19 +147,21 @@
                                             <div class="shadow-sm p-3 rounded bg-white position-relative hover-effect">
                                                 <h6 class="fw-semibold text-dark">
                                                     @document.MerchantVerificationDocumentName
-                                                    <span class="badge bg-@(document.Status == "Verified" ? "success" : "warning") text-light ms-2">
+                                                    
                                                         @if (string.IsNullOrEmpty(document.FilePath))
                                                         {
-                                                            @No
-                                                            ;
+                                                            <span class="badge  bg-@(document.Status == "Verified" ? "success" : "danger") text-light ms-2">
+                                                                @No
+                                                            </span>
                                                         }
                                                         else
                                                         {
-                                                            @document.Status
-                                                            ;
+                                                             <span class="badge bg-@(document.Status == "Verified" ? "success" : "warning") text-light ms-2">
+                                                                @document.Status
+                                                            </span>
 
                                                         }
-                                                    </span>
+                                                    
                                                 </h6>
                                                 <div class="d-flex align-items-center justify-content-between mt-3">
                                                     <div class="linked-acc d-flex align-items-center">
@@ -188,11 +190,12 @@
                                     <h5>Merchant Linking</h5>
                                     <div div class="mb-3">
                                         <label class="col-form-label">Company Name</label>
-                                        <input type="text" class="form-control" name="CompanyName" value="@ViewBag.MerchantDetail.CompanyName" placeholder="Enter Company Name" required>
+                                        
+                                        <input type="text" class="form-control" name="CompanyName" value="@(!string.IsNullOrEmpty(ViewBag.MerchantDetail.CompanyName)?ViewBag.MerchantDetail.CompanyName:Model?.ProviderName)" placeholder="Enter Company Name" required>
                                     </div>
                                     <div div class="mb-3">
                                         <label class="col-form-label">Contact Info</label>
-                                        <input type="text" class="form-control" name="ContactInfo" value="@ViewBag.MerchantDetail.ContactInfo" placeholder="Enter Contact Info">
+                                        <input type="text" class="form-control" name="ContactInfo" value="@(!string.IsNullOrEmpty(@ViewBag.MerchantDetail.ContactInfo)?ViewBag.MerchantDetail.ContactInfo:Model?.PhoneNumber)" placeholder="Enter Contact Info">
                                     </div>
                                     <div div class="mb-3">
                                         <label class="col-form-label">Registration Method</label>
@@ -344,5 +347,24 @@
         viewImageModal.addEventListener('hidden.bs.modal', function () {
             modalImage.src = ''; // Clear the image when modal is closed
         });
+    });
+        document.addEventListener('DOMContentLoaded', () => {
+        const activeTabKey = 'activeTab';
+
+        // Remember the active tab
+        document.querySelectorAll('.nav-link').forEach(tab => {
+            tab.addEventListener('click', () => {
+                localStorage.setItem(activeTabKey, tab.id);
+            });
+        });
+
+        // Restore the active tab
+        const activeTabId = localStorage.getItem(activeTabKey);
+        if (activeTabId) {
+            const activeTab = document.getElementById(activeTabId);
+            if (activeTab) {
+                new bootstrap.Tab(activeTab).show();
+            }
+        }
     });
 </script>

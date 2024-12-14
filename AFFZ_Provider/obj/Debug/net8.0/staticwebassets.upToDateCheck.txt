@@ -1045,6 +1045,12 @@ wwwroot\assets\plugins\slimscroll\jquery.slimscroll.js
 wwwroot\assets\plugins\slimscroll\jquery.slimscroll.min.js
 wwwroot\assets\plugins\sweetalert\sweetalert2.all.min.js
 wwwroot\assets\plugins\sweetalert\sweetalerts.min.js
+wwwroot\assets\plugins\tabler-icons\fonts\tabler-icons539a.eot
+wwwroot\assets\plugins\tabler-icons\fonts\tabler-icons539a.ttf
+wwwroot\assets\plugins\tabler-icons\fonts\tabler-icons539a.woff2
+wwwroot\assets\plugins\tabler-icons\fonts\tabler-iconsd41d.eot
+wwwroot\assets\plugins\tabler-icons\fonts\tabler-iconsd41d.woff
+wwwroot\assets\plugins\tabler-icons\tabler-icons.css
 wwwroot\assets\plugins\theia-sticky-sidebar\maps\ResizeSensor.js.map
 wwwroot\assets\plugins\theia-sticky-sidebar\maps\ResizeSensor.min.js.map
 wwwroot\assets\plugins\theia-sticky-sidebar\maps\theia-sticky-sidebar.js.map
@@ -1123,6 +1129,16 @@ wwwroot\Uploads\Screenshot 2024-01-02 145814.png
 wwwroot\Uploads\Screenshot 2024-01-25 132501.png
 wwwroot\Uploads\Screenshot 2024-05-10 164343.png
 wwwroot\Uploads\User_\_20241204001856.png
+wwwroot\Uploads\User_10\DrivingLicense_20241207220325.png
+wwwroot\Uploads\User_10\EmiratesId_20241207220308.png
+wwwroot\Uploads\User_10\Passport_20241207220246.png
+wwwroot\Uploads\User_10\ProfilePicture_20241207220148.png
+wwwroot\Uploads\User_10\ProfilePicture_20241207220643.png
+wwwroot\Uploads\User_10\TradingLicense_20241207220257.png
+wwwroot\Uploads\User_12\EmiratesId_20241207232002.png
+wwwroot\Uploads\User_12\Passport_20241207231028.png
+wwwroot\Uploads\User_12\ProfilePicture_20241207230726.png
+wwwroot\Uploads\User_12\ProfilePicture_20241207231008.png
 wwwroot\Uploads\User_3\DrivingLicense.png
 wwwroot\Uploads\User_3\DrivingLicense_20241204185924.png
 wwwroot\Uploads\User_3\DrivingLicense_20241206100156.png
@@ -1145,3 +1161,11 @@ wwwroot\Uploads\User_4\DrivingLicense_20241205084713.png
 wwwroot\Uploads\User_4\EmiratesId_20241205084654.png
 wwwroot\Uploads\User_4\Passport_20241205084728.png
 wwwroot\Uploads\User_4\ProfilePicture_20241205084436.jpg
+wwwroot\Uploads\User_5\DrivingLicense_20241207192428.png
+wwwroot\Uploads\User_5\DrivingLicense_20241207193731.png
+wwwroot\Uploads\User_5\EmiratesId_20241207192406.png
+wwwroot\Uploads\User_5\EmiratesId_20241207193719.png
+wwwroot\Uploads\User_5\Passport_20241207192211.png
+wwwroot\Uploads\User_5\ProfilePicture_20241207192052.jpg
+wwwroot\Uploads\User_5\TradingLicense_20241207192418.png
+wwwroot\Uploads\User_9\ProfilePicture_20241207214741.png

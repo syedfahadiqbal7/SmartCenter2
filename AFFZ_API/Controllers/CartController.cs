@@ -116,6 +116,7 @@ namespace AFFZ_API.Controllers
                             CartItemID = cartItem.CartItemID,
                             CustomerId = customerId,
                             ServiceID = cartItem.ServiceID,
+                            MID = service.MerchantID,
                             ServiceName = service.ServiceName,
                             ServicePrice = (decimal)service.ServicePrice,
                             Quantity = cartItem.Quantity,

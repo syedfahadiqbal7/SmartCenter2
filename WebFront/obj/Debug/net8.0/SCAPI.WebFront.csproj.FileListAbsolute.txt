@@ -1111,7 +1111,6 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\obj\Deb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SCAPI.WebFront.props
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SCAPI.WebFront.props
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\obj\Debug\net8.0\staticwebassets.pack.json
-D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\obj\Debug\net8.0\SCAPI.We.A468B7A9.Up2Date
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\obj\Debug\net8.0\SCAPI.WebFront.dll
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\obj\Debug\net8.0\refint\SCAPI.WebFront.dll

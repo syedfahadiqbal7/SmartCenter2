@@ -94,58 +94,93 @@
 </style>
 
 <div class="container d-flex flex-column align-items-center justify-content-start">
-    <div class="col-md-6 col-lg-5">
+    <div class="col-md-8 col-lg-7">
         <div class="login-wrap">
             <div class="login-header text-center">
                 <h3>Sign Up</h3>
             </div>
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+            @if (TempData["FailMessage"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["FailMessage"]
+                </div>
+            }
 
             <!-- Sign-Up Form -->
             <form action="@Url.Action("ProvidersRegister", "SignUp")" method="post" id="signUpForm">
                 <div asp-validation-summary="All" class="text-danger"></div>
+
                 <div class="mb-3">
-                    <label class="form-label">Name</label>
-                    <input asp-for="ProviderName" class="form-control" placeholder="Enter your name" required>
+                    <label class="form-label">First Name</label>
+                    <div class="d-flex align-items-center">
+                        <input asp-for="FirstName" class="form-control" placeholder="Enter your first name" required>
+                        <i class="fa-solid fa-circle-info ms-2 text-primary" data-bs-toggle="tooltip" title="Enter your first name as it appears on official documents."></i>
+                    </div>
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Last Name</label>
+                    <div class="d-flex align-items-center">
+                        <input asp-for="LastName" class="form-control" placeholder="Enter your last name">
+                        <i class="fa-solid fa-circle-info ms-2 text-primary" data-bs-toggle="tooltip" title="Enter your last name as it appears on official documents."></i>
+                    </div>
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Registered Company Name</label>
+                    <div class="d-flex align-items-center">
+                        <input asp-for="ProviderName" class="form-control" placeholder="Enter provider name" required>
+                        <i class="fa-solid fa-circle-info ms-2 text-primary" data-bs-toggle="tooltip" title="This is the name of your organization or business."></i>
+                    </div>
                     <span asp-validation-for="ProviderName" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <input asp-for="Email" type="email" class="form-control" placeholder="johndoe@example.com" required>
-                    @* <span asp-validation-for="Email" class="text-danger"></span> *@
+                    <div class="d-flex align-items-center">
+                        <input asp-for="Email" type="email" class="form-control" placeholder="johndoe@example.com" required>
+                        <i class="fa-solid fa-circle-info ms-2 text-primary" data-bs-toggle="tooltip" title="Enter a valid email address to receive account notifications."></i>
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
                     <label class="form-label">Phone Number</label>
-                    <input asp-for="PhoneNumber" class="form-control" placeholder="(256) 789-6253" required>
+                    <div class="d-flex align-items-center">
+                        <input asp-for="PhoneNumber" class="form-control" placeholder="(256) 789-6253" required>
+                        <i class="fa-solid fa-circle-info ms-2 text-primary" data-bs-toggle="tooltip" title="Provide a valid phone number for contact purposes."></i>
+                    </div>
                     <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
                     <label class="form-label d-block">Password</label>
-                    <div class="pass-group">
+                    <div class="d-flex align-items-center">
                         <input asp-for="Password" type="password" class="form-control pass-input" placeholder="*************" required minlength="8">
-                        <span class="toggle-password feather-eye-off" ></span>
+                        <i class="fa-solid fa-circle-info ms-2 text-primary" data-bs-toggle="tooltip" title="Create a strong password with at least 8 characters."></i>
                     </div>
-                    @* <span asp-validation-for="Password" class="text-danger"></span> *@
+                    <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
                     <label class="form-label">Re-enter Password</label>
-                    <div class="pass-group">
+                    <div class="d-flex align-items-center">
                         <input type="password" class="form-control pass-input" placeholder="Re-enter your password" id="ConfirmPassword" required>
-                        <span class="toggle-password feather-eye-off" ></span>
+                        <i class="fa-solid fa-circle-info ms-2 text-primary" data-bs-toggle="tooltip" title="Ensure this matches the password you entered above."></i>
                     </div>
                     <span id="confirmPasswordError" class="text-danger"></span>
                 </div>
+
                 <button type="submit" class="btn btn-primary btn-sm w-100 login-btn">Sign Up</button>
             </form>
-            <div class="login-or my-3 position-relative text-center">
-                <span class="or-line position-absolute top-50 start-0 w-100"></span>
-                <span class="span-or">OR</span>
-            </div>
-            <div class="social-login">
-                <a href="#" class="btn btn-google btn-sm w-100"><img src="/assets/img/icons/google.svg" class="me-2" alt="img">Sign Up with Google</a>
-            </div>
-            <p class="no-acc">Already have an account? <a href="~/Login">Login</a></p>
-            <!-- /Sign-Up Form -->
-
         </div>
     </div>
 </div>
@@ -166,10 +201,7 @@
             icon.classList.add('feather-eye-off');
         }
     }
-</script>
 
-<!-- Password Match Validation Script -->
-<script>
     document.getElementById('signUpForm').addEventListener('submit', function (e) {
         const password = document.querySelector('input[name="Password"]').value;
         const confirmPassword = document.getElementById('ConfirmPassword').value;
@@ -181,6 +213,13 @@
         } else {
             errorSpan.textContent = "";
         }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
     });
 </script>
 

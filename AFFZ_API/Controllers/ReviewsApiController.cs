@@ -161,5 +161,43 @@ namespace AFFZ_API.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+        [HttpGet("GetAllReviewsWithAverageRating")]
+        public async Task<IActionResult> GetAllReviewsWithAverageRating(int merchantId)
+        {
+            try
+            {
+                var reviewData = await _context.Review
+                    .Include(r => r.Service)
+                    .Where(r => r.merchantId == merchantId)
+                    .GroupBy(r => new { r.ServiceId, r.Service.ServiceName })
+                    .Select(g => new
+                    {
+                        ServiceId = g.Key.ServiceId,
+                        ServiceName = g.Key.ServiceName,
+                        AverageRating = g.Average(r => r.Rating),
+                        TotalReviews = g.Count(),
+                        Reviews = g.Select(r => new
+                        {
+                            r.ReviewText,
+                            r.Rating,
+                            r.ReviewDate
+                        }).ToList()
+                    })
+                    .ToListAsync();
+
+                if (!reviewData.Any())
+                {
+                    _logger.LogInformation($"No reviews found for merchantId: {merchantId}");
+                    return NotFound("No reviews found.");
+                }
+
+                return Ok(reviewData);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error in {nameof(GetAllReviewsWithAverageRating)}: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
     }
 }

@@ -1,0 +1,15 @@
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\AFFZ_Admin
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\appsettings.Development.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\appsettings.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\AFFZ_Admin.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\AFFZ_Admin.deps.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\AFFZ_Admin.runtimeconfig.json
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\AFFZ_Admin.pdb
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\Microsoft.Win32.SystemEvents.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\Newtonsoft.Json.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\Stripe.net.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\System.Configuration.ConfigurationManager.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\System.Drawing.Common.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\System.Security.Cryptography.ProtectedData.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\System.Security.Permissions.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\AFFZ_Admin\bin\Release\net8.0\linux-x64\publish\System.Windows.Extensions.dll

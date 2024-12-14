@@ -110,7 +110,14 @@ namespace AFFZ_API.Controllers.MerchantControllers
                         Message = "Email, Password, and Provider Name are required."
                     });
                 }
-
+                // Check if any existing merchant has the same EmiratesId, Trading License, Contact Number, or Company Registration Number
+                var checkProvider = await _context.ProviderUsers
+                    .FirstOrDefaultAsync(m => m.Email == merchant.Email ||
+                                               m.PhoneNumber == merchant.PhoneNumber);
+                if (checkProvider != null)
+                {
+                    return BadRequest("A Provider with the same Email Address or Contact Number already exists.");
+                }
                 // Encrypt password before saving
                 merchant.RoleId = _context.Roles.Where(x => x.RoleName.ToLower() == "merchant").Select(x => x.RoleId).FirstOrDefault();
                 merchant.CreatedBy = 1;
@@ -457,6 +464,25 @@ namespace AFFZ_API.Controllers.MerchantControllers
                 else
                 {
                     // Add new merchant
+                    // Validate required fields for a new merchant
+                    if (string.IsNullOrEmpty(providerMerchant.EmiratesId) ||
+                        string.IsNullOrEmpty(providerMerchant.TradingLicense) ||
+                        string.IsNullOrEmpty(providerMerchant.ContactInfo) ||
+                        string.IsNullOrEmpty(providerMerchant.CompanyRegistrationNumber))
+                    {
+                        return BadRequest("EmiratesId, Trading License, Contact Number, and Company Registration Number are required.");
+                    }
+
+                    // Check if any existing merchant has the same EmiratesId, Trading License, Contact Number, or Company Registration Number
+                    var checkMerchant = await _context.Merchants
+                        .FirstOrDefaultAsync(m => m.EmiratesId == providerMerchant.EmiratesId ||
+                                                   m.TradingLicense == providerMerchant.TradingLicense ||
+                                                   m.ContactInfo == providerMerchant.ContactInfo ||
+                                                   m.CompanyRegistrationNumber == providerMerchant.CompanyRegistrationNumber);
+                    if (checkMerchant != null)
+                    {
+                        return BadRequest("A merchant with the same EmiratesId, Trading License, Contact Number, or Company Registration Number already exists.");
+                    }
                     providerMerchant.CreatedDate = DateTime.Now;
                     providerMerchant.ModifyDate = DateTime.Now;
                     providerMerchant.Deactivate = false;

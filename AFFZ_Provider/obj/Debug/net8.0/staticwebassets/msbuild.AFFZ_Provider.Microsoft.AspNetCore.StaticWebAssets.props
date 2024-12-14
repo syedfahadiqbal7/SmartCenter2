@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ub08eslqbq</Fingerprint>
-      <Integrity>qkEo5Rskm6F9uuzvOhmwicxr7RHQNtLlj0KInhk28sc=</Integrity>
+      <Fingerprint>7pnkkh5chw</Fingerprint>
+      <Integrity>BYO0wd6u5/bKmO20hLCC2SYXM4Ta840a6Us8I8g2Dug=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\admin.css'))</OriginalItemSpec>
@@ -120,8 +120,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>phwklrx2ki</Fingerprint>
-      <Integrity>gw2ultXFnkPH+A1vQrvYGpV65moDUZmeLbD2X+7SWos=</Integrity>
+      <Fingerprint>17hnf5boni</Fingerprint>
+      <Integrity>zQlBuI/TaRBxAfbsPJG1xCFVU7aR52Z1xh0onOpW6vQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\css\bootstrap.min.css'))</OriginalItemSpec>
@@ -18864,6 +18864,114 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\sweetalert\sweetalerts.min.js'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\tabler-icons\fonts\tabler-icons539a.eot'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>assets/plugins/tabler-icons/fonts/tabler-icons539a.eot</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>g6k3ekiuf3</Fingerprint>
+      <Integrity>6MbDlrgojmUoyt0pRz4w4S9US7dx5TCLS0XDlKJF7Kk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\tabler-icons\fonts\tabler-icons539a.eot'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\tabler-icons\fonts\tabler-icons539a.ttf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>assets/plugins/tabler-icons/fonts/tabler-icons539a.ttf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>4brerv2kwh</Fingerprint>
+      <Integrity>wHhn8Ph4oxp/8cKtpvXEfFdQgx9lZEo+2CXSs0v5t8U=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\tabler-icons\fonts\tabler-icons539a.ttf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\tabler-icons\fonts\tabler-icons539a.woff2'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>assets/plugins/tabler-icons/fonts/tabler-icons539a.woff2</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>0353vuqoah</Fingerprint>
+      <Integrity>hGwYNrAZO8KBN27j2tM81V6Jz8SzETwWJNXTjiqByf0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\tabler-icons\fonts\tabler-icons539a.woff2'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\tabler-icons\fonts\tabler-iconsd41d.eot'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>assets/plugins/tabler-icons/fonts/tabler-iconsd41d.eot</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>g6k3ekiuf3</Fingerprint>
+      <Integrity>6MbDlrgojmUoyt0pRz4w4S9US7dx5TCLS0XDlKJF7Kk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\tabler-icons\fonts\tabler-iconsd41d.eot'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\tabler-icons\fonts\tabler-iconsd41d.woff'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>assets/plugins/tabler-icons/fonts/tabler-iconsd41d.woff</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>rdf8b3dire</Fingerprint>
+      <Integrity>3yZH7xNa6DIx35sp+Amw2+Pobvk1s5eqgcAgcdzcDaw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\tabler-icons\fonts\tabler-iconsd41d.woff'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\tabler-icons\tabler-icons.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>assets/plugins/tabler-icons/tabler-icons.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>9oy9ia93lk</Fingerprint>
+      <Integrity>ySE2ubx0A4926bezG8LOqozBqK+aOOtQFFWQqCPFiHk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\tabler-icons\tabler-icons.css'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\plugins\theia-sticky-sidebar\maps\ResizeSensor.js.map'))">
       <SourceType>Package</SourceType>
       <SourceId>AFFZ_Provider</SourceId>
@@ -20268,6 +20376,186 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_\_20241204001856.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_10\DrivingLicense_20241207220325.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_10/DrivingLicense_20241207220325.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>f16y45u6v8</Fingerprint>
+      <Integrity>7ZTziWylVPjOo3fPUIw/dcHp8vACnCGsLN7l8UJU8i4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_10\DrivingLicense_20241207220325.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_10\EmiratesId_20241207220308.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_10/EmiratesId_20241207220308.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>emg5zp97gn</Fingerprint>
+      <Integrity>msVpQQ/a9/PkOs4uhTYzK+QAsqVoL/Dqol973DdvhaI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_10\EmiratesId_20241207220308.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_10\Passport_20241207220246.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_10/Passport_20241207220246.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wlq0re1hld</Fingerprint>
+      <Integrity>tMkDptsqAbEzctjJES8M7UFEtEj5QI7S+l4y3aQpW/I=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_10\Passport_20241207220246.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_10\ProfilePicture_20241207220148.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_10/ProfilePicture_20241207220148.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>zn4ikhkd90</Fingerprint>
+      <Integrity>4R+Osp9KPqSzONxMDR5xiH3g5chGeeQIacicJaBueWA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_10\ProfilePicture_20241207220148.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_10\ProfilePicture_20241207220643.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_10/ProfilePicture_20241207220643.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>erx640j9iz</Fingerprint>
+      <Integrity>auQXrLIg6oQ3jlRrCS9WCL6p0041z1gbSv5i/yc4u1w=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_10\ProfilePicture_20241207220643.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_10\TradingLicense_20241207220257.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_10/TradingLicense_20241207220257.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>8z4tcqs2m8</Fingerprint>
+      <Integrity>dDJV4M4TrFgju0gPU7XbvCwBZ6nIMwa45V+EocCKR4M=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_10\TradingLicense_20241207220257.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_12\EmiratesId_20241207232002.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_12/EmiratesId_20241207232002.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>zr8szkeopd</Fingerprint>
+      <Integrity>b85/mtZHt2sO/jIch8wyXyWRaM5a+MRvJjYoEgs7yuI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_12\EmiratesId_20241207232002.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_12\Passport_20241207231028.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_12/Passport_20241207231028.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>jqf05q7nq6</Fingerprint>
+      <Integrity>VbO3Zcmh3O2CicGuRTFcZrxbovuvs9nDoCrWDhlOBTc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_12\Passport_20241207231028.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_12\ProfilePicture_20241207230726.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_12/ProfilePicture_20241207230726.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wlq0re1hld</Fingerprint>
+      <Integrity>tMkDptsqAbEzctjJES8M7UFEtEj5QI7S+l4y3aQpW/I=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_12\ProfilePicture_20241207230726.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_12\ProfilePicture_20241207231008.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_12/ProfilePicture_20241207231008.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wlq0re1hld</Fingerprint>
+      <Integrity>tMkDptsqAbEzctjJES8M7UFEtEj5QI7S+l4y3aQpW/I=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_12\ProfilePicture_20241207231008.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_3\DrivingLicense.png'))">
       <SourceType>Package</SourceType>
       <SourceId>AFFZ_Provider</SourceId>
@@ -20663,6 +20951,150 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_4\ProfilePicture_20241205084436.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\DrivingLicense_20241207192428.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_5/DrivingLicense_20241207192428.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>9ibyzpktpa</Fingerprint>
+      <Integrity>PwrB2pARkfOQp14i8V9jRml/KxmtoOrirK2FgQy63Sk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\DrivingLicense_20241207192428.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\DrivingLicense_20241207193731.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_5/DrivingLicense_20241207193731.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wlq0re1hld</Fingerprint>
+      <Integrity>tMkDptsqAbEzctjJES8M7UFEtEj5QI7S+l4y3aQpW/I=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\DrivingLicense_20241207193731.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\EmiratesId_20241207192406.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_5/EmiratesId_20241207192406.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>sj17ymeech</Fingerprint>
+      <Integrity>mN1AvFGZN5FboLqa9eH6MJW/oP7sKtaBv1rh6kL8D88=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\EmiratesId_20241207192406.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\EmiratesId_20241207193719.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_5/EmiratesId_20241207193719.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>f99qngzrik</Fingerprint>
+      <Integrity>Y1iMwS3jDjEwU0cfizZRVS1pcZ6K7fnRTOlnaCtcAIM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\EmiratesId_20241207193719.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\Passport_20241207192211.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_5/Passport_20241207192211.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ne0mfin8mz</Fingerprint>
+      <Integrity>jxLeRy8bi3pKvtzXYBDFZ7a/aYZABXEtujVBdgzLTwE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\Passport_20241207192211.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\ProfilePicture_20241207192052.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_5/ProfilePicture_20241207192052.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ua91hyfi35</Fingerprint>
+      <Integrity>qjHYAhAqC/S7dynCHsapWzPWXMpp1egVIQn7ZubciqA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\ProfilePicture_20241207192052.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\TradingLicense_20241207192418.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_5/TradingLicense_20241207192418.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>rauvketnzo</Fingerprint>
+      <Integrity>3TgUb6DjdJ6QEgkcsYeqcvwM9ixkXgTCabJLbLTDMhA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_5\TradingLicense_20241207192418.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_9\ProfilePicture_20241207214741.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>AFFZ_Provider</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AFFZ_Provider</BasePath>
+      <RelativePath>Uploads/User_9/ProfilePicture_20241207214741.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wlq0re1hld</Fingerprint>
+      <Integrity>tMkDptsqAbEzctjJES8M7UFEtEj5QI7S+l4y3aQpW/I=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uploads\User_9\ProfilePicture_20241207214741.png'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>
