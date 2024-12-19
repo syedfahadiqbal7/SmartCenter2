@@ -19,8 +19,8 @@ namespace AFFZ_API.Utils
                     new Claim(ClaimTypes.NameIdentifier, userId)
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(30), // Token expires in 30 minutes
-                Issuer = "https://localhost:7047/",
-                Audience = "https://localhost:7047/",
+                Issuer = "http://192.168.0.115:1501/",
+                Audience = "http://192.168.0.115:1501/",
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 

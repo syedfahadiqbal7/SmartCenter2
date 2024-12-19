@@ -400,6 +400,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SCAPI.ServiceDefaults\SCAPI.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="Views\Pages\GetUsersWithDocuments.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

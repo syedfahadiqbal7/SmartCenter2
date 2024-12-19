@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\AFFZ_Customer.props" />
-</Project>

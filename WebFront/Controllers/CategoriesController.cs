@@ -1,14 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using SCAPI.WebFront.Models;
 namespace SCAPI.WebFront.Controllers
 {
     public class CategoriesController : Controller
     {
         private readonly ILogger<CategoriesController> _logger;
-        private readonly IConfiguration _Config;
-        public CategoriesController(ILogger<CategoriesController> logger, IConfiguration config)
+        private readonly string _userUrl;
+        public CategoriesController(ILogger<CategoriesController> logger, IOptions<AppSettings> appSettings, WebApiHelper webApiHelper)
         {
-            _Config = config;
+            _userUrl = appSettings.Value.UserUrl;
             _logger = logger;
         }
 
@@ -78,7 +80,7 @@ namespace SCAPI.WebFront.Controllers
 
                 ViewBag.SubCategories = categories;
                 ViewBag.Categories = getCategoriesList ?? new List<ServiceCat>();
-                ViewBag.CustomerUrl = _Config.GetValue<string>("AppSettings:UserUrl").ToString();//_config.GetValue<string>("WebService:WCFUSERNAME")
+                ViewBag.CustomerUrl = _userUrl;//_config.GetValue<string>("WebService:WCFUSERNAME")
             }
             catch (Exception ex)
             {

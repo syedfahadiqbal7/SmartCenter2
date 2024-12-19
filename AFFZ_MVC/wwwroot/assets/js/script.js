@@ -14,12 +14,12 @@ Version      : 1.0
 
 	if ($(window).width() <= 991) {
 		var Sidemenu = function () {
-			this.$menuItem = $('.main-nav a');
+			this.$menuItem = $('.settings-menu a');
 		};
 
 		function init() {
 			var $this = Sidemenu;
-			$('.main-nav a').on('click', function (e) {
+			$('.settings-menu a').on('click', function (e) {
 				if ($(this).parent().hasClass('has-submenu')) {
 					e.preventDefault();
 				}

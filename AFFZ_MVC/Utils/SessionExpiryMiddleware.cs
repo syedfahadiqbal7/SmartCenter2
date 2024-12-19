@@ -5,10 +5,12 @@ namespace AFFZ_Customer.Utils
     public class SessionExpiryMiddleware
     {
         private readonly RequestDelegate _next;
+        private string BaseUrl = string.Empty;
 
-        public SessionExpiryMiddleware(RequestDelegate next)
+        public SessionExpiryMiddleware(RequestDelegate next, IAppSettingsService service)
         {
             _next = next;
+            BaseUrl = service.GetBaseIpAddress();
         }
 
         public async Task InvokeAsync(HttpContext context)
@@ -26,7 +28,7 @@ namespace AFFZ_Customer.Utils
                         if (path.StartsWith("/MerchantList/SelectedMerchantList"))
                         {
                             var returnUrl = Uri.EscapeDataString(context.Request.GetDisplayUrl());
-                            var loginUrl = $"https://localhost:7195/Login/Index?returnUrl={returnUrl}";
+                            var loginUrl = $"https://{context.Request.Host}/Login/Index?returnUrl={returnUrl}";
                             context.Response.Redirect(loginUrl);
                             return;
                         }

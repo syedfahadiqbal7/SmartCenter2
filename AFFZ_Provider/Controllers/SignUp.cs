@@ -31,7 +31,7 @@ namespace AFFZ_Provider.Controllers
                 // Deserialize the response to extract the message
                 var jsonResponse = JsonSerializer.Deserialize<ResponseModel>(responseString);
 
-                if (response.StatusCode == HttpStatusCode.OK && jsonResponse != null && jsonResponse.statusCode==200)
+                if (response.StatusCode == HttpStatusCode.OK && jsonResponse != null && jsonResponse.statusCode == 200)
                 {
                     TempData["SuccessMessage"] = jsonResponse.message;
                     return RedirectToAction("Index", "Login");

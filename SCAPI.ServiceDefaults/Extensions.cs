@@ -2,12 +2,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 
-namespace Microsoft.Extensions.Hosting;
+namespace SCAPI.ServiceDefaults;
 
 public static class Extensions
 {
@@ -30,7 +31,11 @@ public static class Extensions
 
         return builder;
     }
-
+    /// <summary>
+    /// The ConfigureOpenTelemetry() method, which adds logging, metrics, and tracing services.
+    /// </summary>
+    /// <param name="builder"></param>
+    /// <returns></returns>
     public static IHostApplicationBuilder ConfigureOpenTelemetry(this IHostApplicationBuilder builder)
     {
         builder.Logging.AddOpenTelemetry(logging =>
@@ -58,7 +63,11 @@ public static class Extensions
 
         return builder;
     }
-
+    /// <summary>
+    /// The AddOpenTelemetryExporters() method, which adds OpenTelemetry Protocol (OTLP) exporters.
+    /// </summary>
+    /// <param name="builder"></param>
+    /// <returns></returns>
     private static IHostApplicationBuilder AddOpenTelemetryExporters(this IHostApplicationBuilder builder)
     {
         var useOtlpExporter = !string.IsNullOrWhiteSpace(builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"]);

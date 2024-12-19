@@ -1,4 +1,5 @@
-﻿@{
+﻿@inject AFFZ_Provider.Utils.IAppSettingsService AppSettingsService
+@{
     var controllerName = ViewContext.RouteData.Values["controller"]?.ToString();
 }
 <!DOCTYPE html>
@@ -17,6 +18,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css">
+    
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
@@ -25,20 +27,19 @@
     <link rel="stylesheet" href="/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css">
 
     <!-- Sweet Alert2 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.5/sweetalert2.css">
+    <link href="/assets/plugins/sweetalert/sweetalert2.css" rel="stylesheet" />
 
     <!-- Datatable CSS -->
     <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css">
 
     <!-- Fearther CSS -->
-    <link rel="stylesheet" href="/assets/css/feather.css">
+    <link href="/assets/css/feather.css" rel="stylesheet" />
 
     <!-- Datetimepicker CSS -->
     <link rel="stylesheet" href="/assets/css/bootstrap-datetimepicker.min.css">
     
 
     <!-- Main CSS -->
-    <!--link rel="stylesheet" href="/assets/css/style.css"-->
     @if (controllerName == "Login" || controllerName == "SignUp")
     {
         <link rel="stylesheet" href="/assets/css/style.css">
@@ -47,14 +48,9 @@
     {
         <link rel="stylesheet" href="/assets/css/admin.css">
     }
-
-    <!--link rel="stylesheet" href="/assets/plugins/datatables/datatables.min.css"-->
-    <!--link href="~/css/site.css" rel="stylesheet" /-->
-
-
 </head>
 
-<body class="provider-body">
+<body>
 
 
     <div class="main-wrapper">
@@ -81,11 +77,8 @@
     <!-- jQuery -->
     <script src="/assets/js/jquery-3.7.0.min.js"></script>
 
-    <!-- jQuery Validation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-    <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
-    <!-- SignalR Client -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.7/signalr.min.js"></script>
+    <!-- select JS -->
+    <script src="/assets/plugins/select2/js/select2.min.js"></script>
 
     <!-- Bootstrap Core JS -->
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
@@ -93,23 +86,43 @@
     <!-- Fearther JS -->
     <script src="/assets/js/feather.min.js"></script>
 
-    <!-- select JS -->
-    <script src="/assets/plugins/select2/js/select2.min.js"></script>
-
-    <!-- Datetimepicker JS -->
-    <script src="/assets/js/moment.min.js"></script>
-    <script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
-
-    <!-- Slimscroll JS -->
-    <script src="/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
     <!-- Datatables JS -->
     <script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="/assets/plugins/datatables/datatables.min.js"></script>
 
-    <!-- Custom JS -->
-    <script src="/assets/js/script.js"></script>
+    <!-- Slimscroll JS -->
+    <script src="/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
+
+    <!-- Sweetalert 2 -->
+    <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+
+    <!-- jQuery Validation -->
+    <script src="/assets/js/jquery.validate.min.js"></script>
+    <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
+
+
+    <!-- SignalR Client -->
+    <script src="/assets/js/signalr.min.js"></script>
+
+    
+
+    
+
+    <!-- Datetimepicker JS -->
+    <script src="/assets/js/moment.min.js"></script>
+    <script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    
+
+   
+
+    <!-- Custom JS -->
+    @* <script src="/assets/js/script.js"></script> *@
+    <script src="~/assets/js/admin.js"></script>
 
 
     <script src="~/js/jquery.validate.unobtrusive.js"></script>
@@ -117,9 +130,15 @@
     <!-- Render scripts at the bottom -->
     @RenderSection("Scripts", required: false)
     <script>
+        const baseIpAddress = "@AppSettingsService.GetBaseIpAddress()";
+        console.log("Base IP Address: " + baseIpAddress);
+        const apiBaseUrl = "https://"+baseIpAddress+":1501"; // AFFZ_API base URL
+        const clientType = "AFFZ_Provider";
+        console.log("API URL: " + apiBaseUrl);
+        console.log("Client: " + clientType);
         function markAsReadAndRedirect(notificationId, redirectUrl, element) {
             // Mark the notification as read via an API call
-            fetch(`https://localhost:7047/api/Notifications/${notificationId}/mark-as-read`, {
+            fetch(`${apiBaseUrl}/api/Notifications/${notificationId}/mark-as-read`, {
                 method: 'POST',
             })
                 .then(response => {
@@ -139,7 +158,7 @@
         }
 
         function markAllAsRead(userOrMerchantId,element) {
-            fetch(`https://localhost:7047/api/Notifications/mark-all-as-read?UserOrMerchantid=${userOrMerchantId}&isUser=false`, {
+            fetch(`${apiBaseUrl}/api/Notifications/mark-all-as-read?UserOrMerchantid=${userOrMerchantId}&isUser=false`, {
                 method: 'POST',
             })
                 .then(response => {
@@ -156,21 +175,32 @@
                     alert('An error occurred while processing your request.');
                 });
         }
-                // Replace `http://localhost:5000` with AFFZ_API's base URL
-
-    </script>
-    <script>
-         const apiBaseUrl = "https://localhost:7047"; // AFFZ_API base URL
-         const clientType = "AFFZ_Provider";
          const connection = new signalR.HubConnectionBuilder()
         .withUrl(`${apiBaseUrl}/notificationHub`, { withCredentials: true }) // Ensure credentials are allowed
         .build();
 
         console.log(connection);
-                // Add the client to the appropriate group
-        connection.start().then(() => {
-            connection.invoke("JoinGroup", clientType); // Joins either AFFZ_Customer or AFFZ_Provider group
-        }).catch(err => console.error(err.toString()));
+
+        // Utility to ensure the connection is in the proper state
+        async function ensureConnectionStarted() {
+            if (connection.state === signalR.HubConnectionState.Disconnected) {
+                try {
+                    await connection.start();
+                    console.log("SignalR connection started.");
+                } catch (err) {
+                    console.error("Error starting SignalR connection:", err.toString());
+                }
+            } else {
+                console.log(`SignalR connection already in state: ${connection.state}`);
+            }
+        }
+                // Add the client to the appropriate group and Start the connection and invoke methods
+        ensureConnectionStarted().then(() => {
+            connection.invoke("JoinGroup", clientType) // Joins either AFFZ_Customer or AFFZ_Provider group
+                .catch(err => console.error("Error joining group:", err.toString()));
+        });
+
+
         connection.on("ReceiveNotification", function (notifications) {
 
             // Filter for unread notifications
@@ -219,10 +249,10 @@
 
 
 
-        // Start the connection
-        connection.start().catch(function (err) {
-            console.log(err.toString());
-            return console.error(err.toString());
+        // Restart connection on disconnection
+        connection.onclose(async () => {
+            console.warn("SignalR connection closed. Attempting to reconnect...");
+            await ensureConnectionStarted();
         });
     </script>
 </body>

@@ -1,4 +1,5 @@
-﻿@{
+﻿@inject SCAPI.WebFront.IAppSettingsService AppSettingsService
+@{
     var categories = ViewBag.Categories as List<SCAPI.WebFront.Controllers.ServiceCat>;
     ViewData["Title"] = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -267,7 +268,10 @@
 <!-- Custom JS -->
 <script src="~/assets/js/script.js"></script>
 <script>
-
+     const baseIpAddress = "@AppSettingsService.GetBaseIpAddress()";
+        console.log("Base IP Address: " + baseIpAddress);
+         const apiBaseUrl = "https://"+baseIpAddress+":1501";
+    console.log("API Url: " + apiBaseUrl);
     $(document).ready(function () {
         $("#CityName").autocomplete({
             source: function (request, response) {
@@ -275,7 +279,7 @@
                 $.ajax({
                     type: "GET",
                     contentType: "application/json; charset=utf-8",
-                    url: "https://localhost:7047/api/MainPage/GetCities/" + request.term,
+                    url: baseIpAddress+"/api/MainPage/GetCities/" + request.term,
                     dataType: "json",
                     crossDomain: true,
                     format: "json",
@@ -302,7 +306,7 @@
                 $.ajax({
                     type: "GET",
                     contentType: "application/json; charset=utf-8",
-                    url: "https://localhost:7047/api/MainPage/GetCategories/" + request.term,
+                    url: baseIpAddress+"/api/MainPage/GetCategories/" + request.term,
                     dataType: "json",
                     crossDomain: true,
                     format: "json",

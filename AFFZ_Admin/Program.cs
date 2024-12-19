@@ -1,25 +1,56 @@
 using Microsoft.AspNetCore.Mvc.Razor;
-
+using SCAPI.ServiceDefaults;
+using System.Net;
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddServiceDefaults();
+//builder.AddDefaultHealthChecks();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+var sharedConfig = new ConfigurationBuilder()
+    .AddJsonFile(builder.Configuration["SharedFileLocation"].ToString(), optional: false, reloadOnChange: true)
+    .Build();
+
+var baseIP = sharedConfig["BaseIP"];
+var apiHttpPort = sharedConfig["Ports:AFFZ_API:Http"];
+var apiHttpsPort = sharedConfig["Ports:AFFZ_API:Https"];
+
+var CustomerHttpPort = sharedConfig["Ports:AFFZ_Customer:Http"];
+var CustomerHttpsPort = sharedConfig["Ports:AFFZ_Customer:Https"];
+
+var AdminHttpPort = sharedConfig["Ports:AFFZ_Admin:Http"];
+var AdminHttpsPort = sharedConfig["Ports:AFFZ_Admin:Https"];
+
+var ProviderHttpPort = sharedConfig["Ports:AFFZ_Provider:Http"];
+var ProviderHttpsPort = sharedConfig["Ports:AFFZ_Provider:Https"];
+
+var WebFrontHttpPort = sharedConfig["Ports:SCAPI_WebFront:Http"];
+var WebFrontHttpsPort = sharedConfig["Ports:SCAPI_WebFront:Https"];
+
+var CertificateName = sharedConfig["Certificate:Path"];
+var CertificatePassword = sharedConfig["Certificate:Password"];
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigins",
-    builder =>
+    options.AddPolicy("AllowSpecificOrigins", policy =>
     {
-        builder.WithOrigins("https://localhost:7195", "https://localhost:7096", "https://localhost:7083")
-               .AllowAnyHeader()
-               .AllowAnyMethod()
-               .AllowCredentials();
+        policy.WithOrigins(
+            $"https://{baseIP}:{CustomerHttpsPort}",
+            $"https://{baseIP}:{ProviderHttpsPort}",
+            $"https://{baseIP}:{WebFrontHttpsPort}",
+            $"https://{baseIP}:{AdminHttpsPort}"
+        // Add other client URLs here as needed
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials(); // Required to allow credentials
     });
 });
 builder.Services.AddHttpClient("Main", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:7047/api/"); // Replace with your base URL
-                                                                 // Additional configuration like headers, timeouts, etc., can be set here
+    client.BaseAddress = new Uri($"https://{baseIP}:{apiHttpsPort}/api/"); // Replace with your base URL
+                                                                           // Additional configuration like headers, timeouts, etc., can be set here
 });
 builder.Services.Configure<RazorViewEngineOptions>(options =>
 {
@@ -28,7 +59,28 @@ builder.Services.Configure<RazorViewEngineOptions>(options =>
     options.ViewLocationFormats.Add("/Views/Shared/{0}.cshtml"); // Shared views path
                                                                  // Add more custom paths as needed
 });
+var handler = new HttpClientHandler
+{
+    ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
+};
+//builder.WebHost.UseKestrel()
+//    .ConfigureAppConfiguration((hostingContext, config) =>
+//    {
+//        config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+//    });
+builder.WebHost.UseKestrel(options =>
+{
+
+    options.Listen(IPAddress.Parse(baseIP), Convert.ToInt32(AdminHttpPort));
+    options.Listen(IPAddress.Parse(baseIP), Convert.ToInt32(AdminHttpsPort), listenOptions =>
+    {
+        listenOptions.UseHttps(CertificateName, CertificatePassword);
+    });
+});
 var app = builder.Build();
+var loggerFactory = app.Services.GetService<ILoggerFactory>();
+
+loggerFactory.AddFile(builder.Configuration["Logging:LogFilePath"].ToString());
 app.UseCors("AllowSpecificOrigins");
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

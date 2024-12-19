@@ -143,12 +143,12 @@
 
     async function loadMerchantDocuments(providerId) {
         try {
-            const response = await fetch(`https://localhost:7047/api/Providers/GetMerchantDocs/${providerId}`);
+            const response = await fetch(`http://192.168.0.115:1501/api/Providers/GetMerchantDocs/${providerId}`);
             const documents = await response.json();
             const documentsBody = document.getElementById('merchant-documents-body');
             documentsBody.innerHTML = '';
              console.log(response);
-            const baseUrl = "https://localhost:7096";
+            const baseUrl = "http://192.168.0.115:7096";
 
             documents.forEach((doc, index) => {
                 // Extract the path from "Uploads" onward
@@ -234,7 +234,7 @@
                 const newStatus = statusButton.getAttribute('data-status');
 
                 try {
-                    const response = await fetch(`https://localhost:7047/api/Providers/UpdateDocumentStatus`, {
+                    const response = await fetch(`http://192.168.0.115:1501/api/Providers/UpdateDocumentStatus`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -289,7 +289,7 @@
 
     document.getElementById('confirm-toggle-status').addEventListener('click', async () => {
         try {
-            const response = await fetch(`https://localhost:7047/api/Providers/ToggleMerchantStatus`, {
+            const response = await fetch(`http://192.168.0.115:1501/api/Providers/ToggleMerchantStatus`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ providerId: selectedProviderId, isActive: newStatus }),

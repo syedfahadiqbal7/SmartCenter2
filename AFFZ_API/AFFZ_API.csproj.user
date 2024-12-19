@@ -12,5 +12,6 @@
     <WebStackScaffolding_DbContextTypeFullName>AFFZ_API.Models.MyDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>False</WebStackScaffolding_IsViewGenerationSelected>
+    <NameOfLastUsedPublishProfile>D:\webapplication_codes2022preview\SmartCenter-main\SmartCenterServer\AFFZ_API\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

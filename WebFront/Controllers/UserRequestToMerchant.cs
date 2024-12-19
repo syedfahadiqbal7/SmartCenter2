@@ -5,7 +5,7 @@ namespace SCAPI.WebFront.Controllers
     public class UserRequestToMerchant : Controller
     {
         private ILogger<MerchantListController> _logger;
-        public UserRequestToMerchant(ILogger<MerchantListController> logger)
+        public UserRequestToMerchant(ILogger<MerchantListController> logger, WebApiHelper webApiHelper)
         {
             _logger = logger;
         }

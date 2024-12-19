@@ -5,28 +5,49 @@ using AFFZ_API.NotificationsHubs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using SCAPI.ServiceDefaults;
+using System.Net;
 using System.Text;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy("AllowAllOrigins",
-//        builder => builder.AllowAnyOrigin()
-//                          .AllowAnyMethod()
-//                          .AllowAnyHeader());
-//});
+builder.AddServiceDefaults();
+//builder.AddDefaultHealthChecks();
+
+// Load shared configuration
+var sharedConfig = new ConfigurationBuilder()
+    .AddJsonFile(builder.Configuration["SharedFileLocation"].ToString(), optional: false, reloadOnChange: true)
+    .Build();
+
+var baseIP = sharedConfig["BaseIP"];
+var apiHttpPort = sharedConfig["Ports:AFFZ_API:Http"];
+var apiHttpsPort = sharedConfig["Ports:AFFZ_API:Https"];
+
+var CustomerHttpPort = sharedConfig["Ports:AFFZ_Customer:Http"];
+var CustomerHttpsPort = sharedConfig["Ports:AFFZ_Customer:Https"];
+
+var AdminHttpPort = sharedConfig["Ports:AFFZ_Admin:Http"];
+var AdminHttpsPort = sharedConfig["Ports:AFFZ_Admin:Https"];
+
+var ProviderHttpPort = sharedConfig["Ports:AFFZ_Provider:Http"];
+var ProviderHttpsPort = sharedConfig["Ports:AFFZ_Provider:Https"];
+
+var WebFrontHttpPort = sharedConfig["Ports:SCAPI_WebFront:Http"];
+var WebFrontHttpsPort = sharedConfig["Ports:SCAPI_WebFront:Https"];
+
+var CertificateName = sharedConfig["Certificate:Path"];
+var CertificatePassword = sharedConfig["Certificate:Password"];
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigins", policy =>
     {
         policy.WithOrigins(
-            "https://localhost:7195",
-            "https://localhost:7096",
-            "https://localhost:7204",
-            "https://localhost:7083"
+            $"https://{baseIP}:{CustomerHttpsPort}",
+            $"https://{baseIP}:{ProviderHttpsPort}",
+            $"https://{baseIP}:{WebFrontHttpsPort}",
+            $"https://{baseIP}:{AdminHttpsPort}"
         // Add other client URLs here as needed
         )
         .AllowAnyHeader()
@@ -43,15 +64,6 @@ builder.Services.AddDbContext<MyDbContext>
     (
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBCS"))
     );
-//builder.Services.AddSession(options =>
-//{
-//	options.IdleTimeout = TimeSpan.FromMinutes(30);
-//	options.Cookie.HttpOnly = true;
-//	options.Cookie.IsEssential = true;
-//	options.Cookie.Name = "SmartCenter"; // Consistent name
-//});
-//builder.Services.AddDataProtection();
-// Configure JWT authentication
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -65,8 +77,8 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = "https://localhost:7047/",
-        ValidAudience = "https://localhost:7047/",
+        ValidIssuer = $"https://{baseIP}:7047/",
+        ValidAudience = $"https://{baseIP}:7047/",
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is the key secret JWT"))
     };
 });
@@ -78,12 +90,20 @@ builder.Services.AddSwaggerGen();
 // Configure email service with settings from appsettings.json
 builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
 builder.Services.AddTransient<IEmailService, EmailNotifications>();
+builder.WebHost.UseKestrel(options =>
+{
+    options.Listen(IPAddress.Parse(baseIP), Convert.ToInt32(apiHttpPort));
+    options.Listen(IPAddress.Parse(baseIP), Convert.ToInt32(apiHttpsPort), listenOptions =>
+    {
+        listenOptions.UseHttps(CertificateName, CertificatePassword);
+    });
+});
 var app = builder.Build();
 var loggerFactory = app.Services.GetService<ILoggerFactory>();
 
 loggerFactory.AddFile(builder.Configuration["Logging:LogFilePath"].ToString());
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+//if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -98,9 +118,4 @@ app.UseAuthorization();
 app.MapControllers();
 app.MapHub<NotificationHub>("/notificationHub");
 // Map SignalR hub
-//app.UseEndpoints(endpoints =>
-//{
-//    endpoints.MapHub<NotificationHub>("/notificationHub")
-//             .RequireCors("AllowAllOrigins"); // Use the same CORS policy
-//});
 app.Run();

@@ -20,7 +20,7 @@ namespace AFFZ_Customer
             if (context.Request.Path.StartsWithSegments("/MerchantList/SelectedMerchantList") && !context.Session.Keys.Contains("UserId"))
             {
                 var returnUrl = Uri.EscapeDataString(context.Request.GetDisplayUrl());
-                var loginUrl = $"https://localhost:7195/Login/Index?returnUrl={returnUrl}";
+                var loginUrl = $"http://192.168.0.115:7195/Login/Index?returnUrl={returnUrl}";
                 context.Response.Redirect(loginUrl);
                 //return;
             }

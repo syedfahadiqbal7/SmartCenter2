@@ -1,5 +1,5 @@
 ﻿const connection = new signalR.HubConnectionBuilder()
-    .withUrl("https://localhost:7047/notificationHub", { withCredentials: true })
+    .withUrl("http://192.168.0.115:1501/notificationHub", { withCredentials: true })
     .build();
 
 connection.on("ReceiveNotification", function (message) {
