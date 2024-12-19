@@ -1,8 +1,9 @@
 ﻿using AFFZ_Customer.Models;
-using AFFZ_Customer.Models.Partial;
 using AFFZ_Customer.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Net;
+using Microsoft.Extensions.Logging;
 
 namespace AFFZ_Customer.Controllers
 {
@@ -11,7 +12,6 @@ namespace AFFZ_Customer.Controllers
         private readonly HttpClient _httpClient;
         private readonly ILogger<SignUp> _logger;
 
-        // Constructor to initialize HttpClient and Logger
         public SignUp(IHttpClientFactory httpClientFactory, ILogger<SignUp> logger)
         {
             _httpClient = httpClientFactory.CreateClient("Main");
@@ -23,72 +23,111 @@ namespace AFFZ_Customer.Controllers
         public IActionResult Index()
         {
             _logger.LogDebug("SignUp page requested.");
-            return View("SignUp", new Customers()); // Render the SignUp view with an empty Customers model
+            return View("SignUp", new Customers());
         }
 
         // POST: Register a new customer
         [HttpPost]
         public async Task<IActionResult> CustomersRegister(Customers model)
         {
-            _logger.LogDebug("CustomersRegister action called with model: {@Model}", model);
-
-            // Validate the model state
-            if (!ModelState.IsValid)
-            {
-                _logger.LogWarning("Invalid registration model state.");
-                // Log each validation error for debugging purposes
-                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
-                {
-                    _logger.LogWarning("Model validation error: {ErrorMessage}", error.ErrorMessage);
-                }
-                return View("SignUp", model); // Return the SignUp view with the current model to display validation errors
-            }
-
             try
             {
-                _logger.LogDebug("Sending registration request to API with referral code: {ReferrerCode}", model.ReferrerCode);
-                // Send a POST request to the API to register the customer
-                var response = await _httpClient.PostAsync($"Customers/Register?referralCode={model.ReferrerCode}", Customs.GetJsonContent(model));
-                _logger.LogDebug("Received response with status code: {StatusCode}", response.StatusCode);
+                _logger.LogDebug("CustomersRegister action called with model: {@Model}", model);
 
-                // Ensure the response indicates success
-                if (!response.IsSuccessStatusCode)
+                // Validate ModelState
+                if (!ModelState.IsValid)
                 {
-                    _logger.LogWarning("Registration request failed with status code: {StatusCode}", response.StatusCode);
-                    ModelState.AddModelError(string.Empty, "Registration failed. Please try again.");
-                    return View("SignUp", model); // Return the SignUp view with an error message
+                    _logger.LogWarning("Model validation failed.");
+                    foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        _logger.LogWarning("Validation error: {ErrorMessage}", error.ErrorMessage);
+                    }
+                    return View("SignUp", model);
                 }
 
-                var responseString = await response.Content.ReadAsStringAsync();
-                _logger.LogDebug("Received response content: {ResponseString}", responseString);
-
-                // Parse the response to check for any additional errors
-                var sResponse = JsonConvert.DeserializeObject<SResponse>(responseString);
-                if (sResponse == null || sResponse.StatusCode != System.Net.HttpStatusCode.OK)
+                try
                 {
-                    _logger.LogWarning("Registration failed. StatusCode: {StatusCode}, Data: {Data}", sResponse?.StatusCode, sResponse?.Data);
-                    ModelState.AddModelError(string.Empty, "Registration failed. Please try again.");
-                    return View("SignUp", model); // Return the SignUp view with an error message
-                }
+                    _logger.LogInformation("Sending registration request to API.");
+                    var response = await _httpClient.PostAsync(
+                        $"Customers/Register?referralCode={(!string.IsNullOrEmpty(model.ReferrerCode) ? model.ReferrerCode : " ")}",
+                        Customs.GetJsonContent(model)
+                    );
 
-                _logger.LogInformation("User registered successfully with customer ID: {CustomerId}", sResponse.Data);
-                ViewData["Message"] = "User Registered!";
-                return RedirectToAction("Index", "Login"); // Redirect to the login page after successful registration
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    _logger.LogDebug("API Response: {ResponseContent}", responseContent);
+
+                    // Handle non-success HTTP status
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        _logger.LogWarning("API returned error status: {StatusCode}", response.StatusCode);
+                        ModelState.AddModelError(string.Empty, "Registration failed. Please try again.");
+                        return View("SignUp", model);
+                    }
+
+                    // Deserialize API response
+                    var sResponse = JsonConvert.DeserializeObject<SResponse>(responseContent);
+                    if (sResponse == null)
+                    {
+                        _logger.LogWarning("Failed to parse API response.");
+                        ModelState.AddModelError(string.Empty, "Unexpected response from the server.");
+                        return View("SignUp", model);
+                    }
+
+                    if (sResponse.StatusCode != HttpStatusCode.OK)
+                    {
+                        _logger.LogWarning("API returned failure status: {StatusCode}, Message: {Message}",
+                            sResponse.StatusCode, sResponse.Message);
+                        ModelState.AddModelError(string.Empty, sResponse.Message ?? "Registration failed.");
+                        return View("SignUp", model);
+                    }
+
+                    // Success scenario
+                    _logger.LogInformation("User successfully registered.");
+                    TempData["SuccessMessage"] = "User registered successfully! Please verify your email.";
+                    return RedirectToAction("Index", "Login");
+                }
+                catch (HttpRequestException httpEx)
+                {
+                    _logger.LogError(httpEx, "HTTP request failed during customer registration.");
+                    ModelState.AddModelError(string.Empty, "Unable to connect to the server. Please try again later.");
+                    return View("SignUp", model);
+                }
+                catch (JsonException jsonEx)
+                {
+                    _logger.LogError(jsonEx, "Failed to deserialize API response.");
+                    ModelState.AddModelError(string.Empty, "Invalid response from the server. Please contact support.");
+                    return View("SignUp", model);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "An unexpected error occurred during customer registration.");
+                    ModelState.AddModelError(string.Empty, "An unexpected error occurred. Please try again later.");
+                    return View("SignUp", model);
+                }
             }
-            catch (HttpRequestException httpEx)
+            catch (Exception)
             {
-                // Handle HTTP request errors (e.g., network issues)
-                _logger.LogError(httpEx, "HTTP request failed during customer registration.");
-                ModelState.AddModelError(string.Empty, "Unable to connect to the server. Please try again later.");
-                return View("SignUp", model); // Return the SignUp view with an error message
-            }
-            catch (Exception ex)
-            {
-                // Handle any other unexpected errors
-                _logger.LogError(ex, "An unexpected error occurred during customer registration.");
-                ModelState.AddModelError(string.Empty, "An unexpected error occurred. Please try again.");
-                return View("SignUp", model); // Return the SignUp view with an error message
+
+                throw;
             }
         }
+    }
+
+    // Utility class for converting content
+    public static class Customs
+    {
+        public static StringContent GetJsonContent(object obj)
+        {
+            var jsonString = JsonConvert.SerializeObject(obj);
+            return new StringContent(jsonString, System.Text.Encoding.UTF8, "application/json");
+        }
+    }
+
+    // Model for standardized API response
+    public class SResponse
+    {
+        public HttpStatusCode StatusCode { get; set; }
+        public string Message { get; set; }
+        public object Data { get; set; }
     }
 }

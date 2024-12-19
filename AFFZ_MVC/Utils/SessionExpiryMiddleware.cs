@@ -19,7 +19,7 @@ namespace AFFZ_Customer.Utils
                 {
                     // Check if the request is not for the login page to avoid redirect loop
                     var path = context.Request.Path.Value;
-                    var isLoginPage = path == "/" || path == "/Login/Index" || path == "/Login/CustomersLogin" || path == "/Signup" || path == "/SignUp/CustomersRegister";
+                    var isLoginPage = path == "/" || path == "/Login/Index" || path == "/Login/CustomersLogin" || path == "/Signup" || path == "/SignUp/CustomersRegister" || path == "/Login/ForgotPassword" || path == "/ResetPassword";
 
                     if (!isLoginPage)
                     {

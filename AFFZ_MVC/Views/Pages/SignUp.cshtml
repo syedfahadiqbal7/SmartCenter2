@@ -85,6 +85,19 @@
             <div class="login-header text-center">
                 <h3>Sign Up</h3>
             </div>
+            <!-- Success and Error Messages -->
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+            @if (TempData["FailMessage"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["FailMessage"]
+                </div>
+            }
 
             <!-- Sign Up Form -->
             <form action="@Url.Action("CustomersRegister", "SignUp")" method="post" id="signUpForm">

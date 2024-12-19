@@ -1,0 +1,148 @@
+2024-12-16T13:26:07.8696194+04:00 0HN8TMAQPCGI5:00000001 [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-16T13:26:07.9648168+04:00 0HN8TMAQPCGI5:00000001 [WRN] Login failed for email: "farooqui.faraz@gmail.com" (ab24df07)
+2024-12-16T13:26:17.6802276+04:00 0HN8TMAQPCGI5:00000002 [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-16T13:26:17.6936341+04:00 0HN8TMAQPCGI5:00000002 [INF] User login successful for email: "farooqui.faraz@gmail.com" (8ce767cc)
+2024-12-16T13:26:19.9148154+04:00 0HN8TMAQPCGI5:00000008 [INF] No reviews found for merchantId: 5 (90f70d9f)
+2024-12-16T13:26:20.1967736+04:00 0HN8TMAQPCGI5:00000009 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-16T16:48:59.4683525+04:00 0HN8TPV2F8RRB:00000002 [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-16T16:48:59.5026368+04:00 0HN8TPV2F8RRB:00000002 [INF] User login successful for email: "farooqui.faraz@gmail.com" (8ce767cc)
+2024-12-16T16:49:00.4832756+04:00 0HN8TPV2F8RRB:00000008 [INF] No reviews found for merchantId: 5 (90f70d9f)
+2024-12-16T16:49:00.8110614+04:00 0HN8TPV2F8RRB:00000009 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-16T21:35:45.1859739+04:00 0HN8TUVUBOME2:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T21:42:04.1037779+04:00 0HN8TUVUBOME2:00000001 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T21:42:19.6225852+04:00 0HN8TUVUBOME5:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T21:45:57.3751259+04:00 0HN8TUVUBOME6:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T21:45:59.6323606+04:00 0HN8TUVUBOME6:00000001 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T21:48:20.2212890+04:00 0HN8TUVUBOME7:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T21:48:22.9898515+04:00 0HN8TUVUBOME7:00000001 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T21:50:46.2485092+04:00 0HN8TV8EV7HTG:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T21:51:46.8338279+04:00 0HN8TV8EV7HTG:00000002 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T21:51:49.6144813+04:00 0HN8TV8EV7HTG:00000002 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T22:22:54.4506209+04:00 0HN8TVQD9USMS:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T22:23:04.2743193+04:00 0HN8TVQD9USMS:00000001 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T22:27:29.0226120+04:00 0HN8TVSSJBAE1:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T22:28:07.3057403+04:00 0HN8TVSSJBAE1:00000001 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T22:31:28.3705429+04:00 0HN8TVSSJBAE2:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AFFZ_API.Controllers.MerchantControllers.ProviderUsersController.VerifyEmail(String token)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-16T22:33:39.8324559+04:00 0HN8U00EN9470:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T22:34:13.3494521+04:00 0HN8U00EN9470:00000002 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T22:34:17.4456832+04:00 0HN8U00EN9470:00000002 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T22:52:37.5075493+04:00 0HN8U0B0F9GKC:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T22:52:47.9505410+04:00 0HN8U0B0F9GKC:00000001 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T22:54:48.6802057+04:00 0HN8U0B0F9GKD:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T22:55:05.5250291+04:00 0HN8U0B0F9GKD:00000001 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T23:05:30.1993229+04:00 0HN8U0GNE7M81:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T23:05:46.1412208+04:00 0HN8U0GNE7M81:00000001 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T23:13:06.7039589+04:00 0HN8U0LAM6RES:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T23:13:17.6166256+04:00 0HN8U0LAM6RES:00000001 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T23:29:17.6759225+04:00 0HN8U0UQ0S437:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T23:29:32.7088347+04:00 0HN8U0UQ0S437:00000001 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T23:34:08.1609714+04:00 0HN8U11MJ4K3Q:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T23:34:42.8484942+04:00 0HN8U11MJ4K3Q:00000001 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T23:37:13.7406114+04:00 0HN8U11MJ4K3R:00000001 [INF] Attempting login for email: "zaararida@gmail.com" (100386e3)
+2024-12-16T23:37:13.9852234+04:00 0HN8U11MJ4K3R:00000001 [INF] User login successful for email: "zaararida@gmail.com" (8ce767cc)
+2024-12-16T23:37:16.6706818+04:00 0HN8U11MJ4K3R:00000007 [INF] No reviews found for merchantId: 25 (522ba6a5)
+2024-12-16T23:37:16.9572364+04:00 0HN8U11MJ4K3R:00000008 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-16T23:47:30.7329835+04:00 0HN8U19O73M4G:00000001 [INF] Attempting to register new provider user with email: "zaararida@gmail.com" (5a36f565)
+2024-12-16T23:47:44.3407645+04:00 0HN8U19O73M4G:00000001 [INF] Merchant user registered successfully with email: "zaararida@gmail.com" (df36e828)
+2024-12-16T23:48:10.3171594+04:00 0HN8U19O73M4G:00000002 [INF] Attempting login for email: "zaararida@gmail.com" (100386e3)
+2024-12-16T23:48:16.7251484+04:00 0HN8U19O73M4G:00000002 [WRN] Please Check your email (zaararida@gmail.com) for the verification link. (05d9d8e3)
+2024-12-16T23:48:49.1516261+04:00 0HN8U19O73M4G:00000003 [INF] Attempting login for email: "zaararida@gmail.com" (100386e3)
+2024-12-16T23:48:49.1972078+04:00 0HN8U19O73M4G:00000003 [INF] User login successful for email: "zaararida@gmail.com" (8ce767cc)
+2024-12-16T23:48:51.8809254+04:00 0HN8U19O73M4G:00000009 [INF] No reviews found for merchantId: 26 (41bd05c8)
+2024-12-16T23:48:52.3158143+04:00 0HN8U19O73M4G:0000000A [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-16T23:49:40.5195378+04:00 0HN8U19O73M4H:00000002 [INF] Attempting login for email: "zaararida@gmail.com" (100386e3)
+2024-12-16T23:49:40.5897787+04:00 0HN8U19O73M4H:00000002 [WRN] Login failed for email: "zaararida@gmail.com" (ab24df07)
+2024-12-16T23:49:52.7366268+04:00 0HN8U19O73M4H:00000003 [INF] Attempting login for email: "zaararida@gmail.com" (100386e3)
+2024-12-16T23:49:52.7724992+04:00 0HN8U19O73M4H:00000003 [INF] User login successful for email: "zaararida@gmail.com" (8ce767cc)
+2024-12-16T23:49:53.0772973+04:00 0HN8U19O73M4H:00000009 [INF] No reviews found for merchantId: 26 (41bd05c8)
+2024-12-16T23:49:53.1357394+04:00 0HN8U19O73M4H:0000000A [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-16T23:50:16.1861181+04:00 0HN8U19O73M4H:0000000F [INF] Attempting to register new provider user with email: "zaararaida@gmail.com" (5a36f565)
+2024-12-16T23:50:36.6347907+04:00 0HN8U19O73M4H:00000010 [INF] Attempting to register new provider user with email: "zaararaida@gmail.com" (5a36f565)
+2024-12-16T23:50:38.6196619+04:00 0HN8U19O73M4H:00000010 [INF] Merchant user registered successfully with email: "zaararaida@gmail.com" (df36e828)

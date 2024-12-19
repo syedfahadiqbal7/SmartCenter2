@@ -185,6 +185,112 @@ namespace AFFZ_Provider.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult ForgotPassword()
+        {
+            return View("ForgotPassword", new ForgotPasswordModel());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                _logger.LogWarning("Invalid forgot password model state.");
+                return View("ForgotPassword", model);
+            }
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(model.Email))
+                {
+                    ModelState.AddModelError(string.Empty, "Email is required.");
+                    return View("ForgotPassword", model);
+                }
+
+                var response = await _httpClient.GetAsync($"Providers/CheckEmail/{model.Email}");
+                if (!response.IsSuccessStatusCode)
+                {
+                    _logger.LogWarning("Email not registered: {Email}", model.Email);
+                    ModelState.AddModelError(string.Empty, "This email address is not registered with us.");
+                    return View("ForgotPassword", model);
+                }
+
+                // Send password reset link
+                var emailResponse = await _httpClient.PostAsync("Providers/SendPasswordResetEmail", Customs.GetJsonContent(model.Email));
+                if (!emailResponse.IsSuccessStatusCode)
+                {
+                    _logger.LogError("Failed to send password reset email for: {Email}", model.Email);
+                    ModelState.AddModelError(string.Empty, "An error occurred while sending the reset email.");
+                    return View("ForgotPassword", model);
+                }
+
+                TempData["SuccessMessage"] = "A password reset link has been sent to your email.";
+                return RedirectToAction("Index", "Login");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred during forgot password.");
+                ModelState.AddModelError(string.Empty, "An unexpected error occurred. Please try again later.");
+                return View("ForgotPassword", model);
+            }
+        }
+
+        //Reset Password:
+
+        [HttpGet]
+        [Route("ResetPassword")]
+        public IActionResult ResetPassword(string token)
+        {
+            if (string.IsNullOrWhiteSpace(token))
+            {
+                TempData["FailMessage"] = "Invalid or expired token.";
+                return RedirectToAction("ForgotPassword");
+            }
+
+            return View("ResetPassword", new ResetPasswordModel { Token = token });
+        }
+
+        [HttpPost]
+        [Route("ResetPassword")]
+        public async Task<IActionResult> ResetPassword(ResetPasswordModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("ResetPassword", model);
+            }
+
+            try
+            {
+                var content = Customs.GetJsonContent(model);
+                var response = await _httpClient.PostAsync("Providers/ResetPassword", content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    var errorResponse = await response.Content.ReadAsStringAsync();
+                    TempData["FailMessage"] = string.IsNullOrEmpty(errorResponse) ? "Failed to reset password." : errorResponse;
+                    return View("ResetPassword", model);
+                }
+
+                TempData["SuccessMessage"] = "Your password has been reset successfully.";
+                return RedirectToAction("Index", "Login");
+            }
+            catch (HttpRequestException ex)
+            {
+                _logger.LogError(ex, "HTTP request error during password reset.");
+                ModelState.AddModelError(string.Empty, "An error occurred while connecting to the server.");
+                return View("ResetPassword", model);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred during password reset.");
+                ModelState.AddModelError(string.Empty, "An unexpected error occurred. Please try again later.");
+                return View("ResetPassword", model);
+            }
+        }
+
+
+
         /// <summary>
         /// Determines the content type based on the file extension.
         /// </summary>

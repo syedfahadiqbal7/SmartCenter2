@@ -1,0 +1,18 @@
+2024-12-19T09:10:17.6010143+04:00 0HN8VTCG5FGSE:00000001 [INF] Attempting login for email: "zaararida@gmail.com" (100386e3)
+2024-12-19T09:10:17.6931589+04:00 0HN8VTCG5FGSE:00000001 [INF] User login successful for email: "zaararida@gmail.com" (8ce767cc)
+2024-12-19T09:10:18.6245120+04:00 0HN8VTCG5FGSE:00000007 [INF] No reviews found for merchantId: 38 (51dea9ab)
+2024-12-19T09:10:18.7493493+04:00 0HN8VTCG5FGSE:00000008 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)

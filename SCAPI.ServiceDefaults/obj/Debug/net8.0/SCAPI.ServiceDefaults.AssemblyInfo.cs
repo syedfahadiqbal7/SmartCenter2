@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SCAPI.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1556ff9881082b120059ae5a17ef64b696e34cb1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+130e6066e1942abf9a7c5d95de744874d46675f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("SCAPI.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SCAPI.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

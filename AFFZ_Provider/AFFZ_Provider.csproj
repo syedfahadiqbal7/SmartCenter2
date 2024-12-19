@@ -14,7 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\reset-password.js" />
     <Content Remove="wwwroot\js\signup.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Utils\reset.password.css" />
   </ItemGroup>
 
   <ItemGroup>
@@ -384,6 +389,7 @@
     <None Include="wwwroot\assets\plugins\theia-sticky-sidebar\ResizeSensor.min.js" />
     <None Include="wwwroot\assets\plugins\theia-sticky-sidebar\theia-sticky-sidebar.js" />
     <None Include="wwwroot\assets\plugins\theia-sticky-sidebar\theia-sticky-sidebar.min.js" />
+    <None Include="wwwroot\js\reset-password.js" />
     <None Include="wwwroot\js\signup.js" />
   </ItemGroup>
 
