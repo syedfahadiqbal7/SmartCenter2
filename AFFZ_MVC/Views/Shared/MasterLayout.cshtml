@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@inject AFFZ_Customer.Utils.IAppSettingsService AppSettingsService
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Truelysell | Template</title>
+    <title>@ViewData["Title"] | Smart Center</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="/assets/img/favicon.png">
@@ -93,9 +94,15 @@
     <script src="/assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script>
+        const baseIpAddress = "@AppSettingsService.GetBaseIpAddress()";
+        console.log("Base IP Address: " + baseIpAddress);
+        const apiBaseUrl = "https://"+baseIpAddress+":1501"; // AFFZ_API base URL
+        const clientType = "AFFZ_Customer";
+        console.log("API URL: " + apiBaseUrl);
+        console.log("Client: " + clientType);
         function markAsReadAndRedirect(notificationId, redirectUrl, element) {
             // Mark the notification as read via an API call
-            fetch(`https://localhost:7047/api/Notifications/${notificationId}/mark-as-read`, {
+            fetch(`${apiBaseUrl}/api/Notifications/${notificationId}/mark-as-read`, {
                 method: 'POST',
             })
                 .then(response => {
@@ -115,7 +122,7 @@
         }
 
         function markAllAsRead(userOrMerchantId) {
-            fetch(`https://localhost:7047/api/Notifications/mark-all-as-read?UserOrMerchantid=${userOrMerchantId}&isUser=true`, {
+            fetch(`${apiBaseUrl}/api/Notifications/mark-all-as-read?UserOrMerchantid=${userOrMerchantId}&isUser=true`, {
                 method: 'POST',
             })
                 .then(response => {
@@ -131,29 +138,42 @@
                     alert('An error occurred while processing your request.');
                 });
         }
-    </script>
-    <script>
-         const apiBaseUrl = "https://localhost:7047"; // AFFZ_API base URL
-         const clientType = "AFFZ_Customer";
-         const connection = new signalR.HubConnectionBuilder()
-        .withUrl(`${apiBaseUrl}/notificationHub`, { withCredentials: true }) // Ensure credentials are allowed
-        .build();
+
+                const connection = new signalR.HubConnectionBuilder()
+            .withUrl(`${apiBaseUrl}/notificationHub`, { withCredentials: true }) // Ensure credentials are allowed
+            .build();
 
         console.log(connection);
-        // Add the client to the appropriate group
-        connection.start().then(() => {
-            connection.invoke("JoinGroup", clientType); // Joins either AFFZ_Customer or AFFZ_Provider group
-        }).catch(err => console.error(err.toString()));
+
+        // Utility to ensure the connection is in the proper state
+        async function ensureConnectionStarted() {
+            if (connection.state === signalR.HubConnectionState.Disconnected) {
+                try {
+                    await connection.start();
+                    console.log("SignalR connection started.");
+                } catch (err) {
+                    console.error("Error starting SignalR connection:", err.toString());
+                }
+            } else {
+                console.log(`SignalR connection already in state: ${connection.state}`);
+            }
+        }
+
+        // Start the connection and invoke methods
+        ensureConnectionStarted().then(() => {
+            connection.invoke("JoinGroup", clientType) // Joins either AFFZ_Customer or AFFZ_Provider group
+                .catch(err => console.error("Error joining group:", err.toString()));
+        });
+
+        // Handle incoming notifications
         connection.on("ReceiveNotification", function (notifications) {
-            // Select the notification list element and clear it
             const notificationList = document.querySelector('.notification-list');
             const sortedNotifications = notifications.sort((a, b) => b.id - a.id); // Ensure descending order
             notificationList.innerHTML = '';
 
-            // Loop through each notification and add it to the list with the blinking effect
             sortedNotifications.forEach(notification => {
                 const newNotification = document.createElement('li');
-                newNotification.classList.add('notification-message', 'blinking'); // Add blinking class
+                newNotification.classList.add('notification-message', 'blinking');
 
                 newNotification.innerHTML = `
                     <a href="javascript:void(0)" onclick="markAsReadAndRedirect(${notification.id}, '${notification.redirectToActionUrl}', this)">
@@ -172,7 +192,6 @@
                         </div>
                     </a>`;
 
-                // Append new notification to the list
                 notificationList.prepend(newNotification);
 
                 // Remove blinking effect when clicked
@@ -186,12 +205,21 @@
             notificationCountElement.textContent = notifications.length;
         });
 
+        // Restart connection on disconnection
+        connection.onclose(async () => {
+            console.warn("SignalR connection closed. Attempting to reconnect...");
+            await ensureConnectionStarted();
+        });
+                document.addEventListener("DOMContentLoaded", function () {
+            const mobileBtn = document.getElementById("mobile_btn");
+            const settingsMenu = document.querySelector(".settings-menu");
 
-
-        // Start the connection
-        connection.start().catch(function (err) {
-            console.log(err.toString());
-            return console.error(err.toString());
+            if (mobileBtn && settingsMenu) {
+                mobileBtn.addEventListener("click", function () {
+                    // Toggle the visibility of the settings menu
+                    settingsMenu.classList.toggle("open");
+                });
+            }
         });
     </script>
 </body>

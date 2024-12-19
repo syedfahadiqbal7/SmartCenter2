@@ -1117,3 +1117,4 @@ D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\obj\Deb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\obj\Debug\net8.0\SCAPI.WebFront.pdb
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\obj\Debug\net8.0\SCAPI.WebFront.genruntimeconfig.cache
 D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\obj\Debug\net8.0\ref\SCAPI.WebFront.dll
+D:\webapplication_codes2022preview\SmartCenter-main\SmartCenter\WebFront\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

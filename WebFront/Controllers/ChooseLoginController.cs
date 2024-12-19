@@ -1,19 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using SCAPI.WebFront.Models;
 
 namespace SCAPI.WebFront.Controllers
 {
     public class ChooseLoginController : Controller
     {
-        public IConfiguration Configuration { get; }
-
-        public ChooseLoginController(IConfiguration configuration)
+        private readonly string _userUrl;
+        private readonly string _providerUrl;
+        public ChooseLoginController(IOptions<AppSettings> appSettings)
         {
-            Configuration = configuration;
+            _userUrl = appSettings.Value.UserUrl;
+            _providerUrl = appSettings.Value.ProviderUrl;
         }
         public IActionResult Index()
         {
-            ViewBag.UserUrl = Configuration["AppSettings:UserUrl"];
-            ViewBag.ProviderUrl = Configuration["AppSettings:ProviderUrl"];
+            ViewBag.UserUrl = _userUrl;
+            ViewBag.ProviderUrl = _providerUrl;
 
             return View();
         }

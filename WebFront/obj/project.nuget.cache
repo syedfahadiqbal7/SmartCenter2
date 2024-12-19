@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i0RFhTprGs4=",
+  "dgSpecHash": "qsNmG/BNKf8=",
   "success": true,
-  "projectFilePath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\WebFront\\SCAPI.WebFront.csproj",
+  "projectFilePath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenterServer\\WebFront\\SCAPI.WebFront.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\syed.fahad\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\syed.fahad\\.nuget\\packages\\azure.identity\\1.10.2\\azure.identity.1.10.2.nupkg.sha512",

@@ -1,0 +1,34 @@
+{
+  "BaseIP": "192.168.7.57",
+  "Ports": {
+    "AFFZ_Admin": {
+      "Http": "5089",
+      "Https": "7083"
+    },
+    "AFFZ_Customer": {
+      "Http": "5255",
+      "Https": "7195"
+    },
+    "AFFZ_API": {
+      "Http": "1502",
+      "Https": "1501"
+    },
+    "AFFZ_Provider": {
+      "Http": "5283",
+      "Https": "7096"
+    },
+    "SCAPI_WebFront": {
+      "Http": "5012",
+      "Https": "7204"
+    }
+  },
+  "JwtSettings": {
+    "Issuer": "https://192.168.7.57:7047/",
+    "Audience": "https://192.168.7.57:7047/",
+    "Key": "this is the key secret JWT"
+  },
+  "Certificate": {
+    "Path": "my-office-certificate.pfx",
+    "Password": "SmartCenter@12345"
+  }
+}

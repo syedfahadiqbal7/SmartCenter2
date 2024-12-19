@@ -116,7 +116,11 @@ namespace AFFZ_API.Controllers.MerchantControllers
                                                m.PhoneNumber == merchant.PhoneNumber);
                 if (checkProvider != null)
                 {
-                    return BadRequest("A Provider with the same Email Address or Contact Number already exists.");
+                    return new SResponse
+                    {
+                        StatusCode = HttpStatusCode.BadRequest,
+                        Message = "A Provider with the same Email Address or Contact Number already exists.",
+                    };
                 }
                 // Encrypt password before saving
                 merchant.RoleId = _context.Roles.Where(x => x.RoleName.ToLower() == "merchant").Select(x => x.RoleId).FirstOrDefault();

@@ -8,25 +8,6 @@
     var IsActive = await NotificationService.GetProviderIsActive();
 
 }
-
-@* <div class="settings-menu">
-    <ul>
-        @foreach(var item in Model.MenuItems)
-        {
-            <li>
-                <a href="@item.MenuUrl">
-                    <i class="@item.MenuIcon"></i> <span>@item.MenuName</span>
-                </a>
-            </li>
-        }
-
-        <li>
-            <a href="/">
-                <i class="feather-log-out"></i> <span>Logout</span>
-            </a>
-        </li>
-    </ul>
-</div> *@
 <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
         <div class="sidebar-logo">
@@ -85,70 +66,6 @@
                     </a>
                 </li>
             </ul>
-            @*<div class="menu-bottom">
-                <div class="menu-user">
-                    <div class="menu-user-img avatar-online">
-                        <img src="@Url.Action("GetImage", "Login")" alt="user">
-                    </div>
-                    <div class="menu-user-info">
-                        <h6>@username</h6>
-                        <p>@Email</p>
-                    </div>
-                </div>
-                <a href="#" class="select-set"><i class="feather-settings"></i></a>
-                 <div class="dropdown-menu user-drop" id="dropboxes">
-                    <div class="menu-user">
-                        <div class="menu-user-img avatar-online">
-                            <img src="@Url.Action("GetImage", "Login")" alt="user">
-                        </div>
-                        <div class="menu-user-info">
-                            <h6>@username</h6>
-                            <p>@IsActive</p>
-                        </div>
-                    </div>
-                    <div class="set-user">
-                        <p>Set as Away</p>
-                        <div class="status-toggle">
-                            <input type="checkbox" id="active-user" class="check">
-                            <label for="active-user" class="checktoggle">checkbox</label>
-                        </div>
-                    </div>
-                    <ul class="set-menu">
-                        <li>
-                            <a href="provider-security-settings.html">
-                                <i class="feather-settings me-2"></i> Settings
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/Profile">
-                                <i class="feather-user me-2"></i> Your Account
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="feather-check-circle me-2"></i> Identity Verification
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="help-menu">
-                        <li>
-                            <a href="#">
-                                Help Center
-                            </a>
-                        </li>
-                        <li>
-                            <a href="terms-condition.html">
-                                Terms of Condition
-                            </a>
-                        </li>
-                        <li>
-                            <a href="privacy-policy.html">
-                                Privacy Policy
-                            </a>
-                        </li>
-                    </ul>
-                </div> 
-            </div>*@
         </div>
     </div>
 </div>

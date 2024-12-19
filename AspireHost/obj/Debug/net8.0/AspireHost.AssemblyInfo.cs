@@ -18,13 +18,13 @@ using System.Reflection;
     "ols\\ext\\")]
 [assembly: System.Reflection.AssemblyMetadata("dcpbinpath", "C:\\Users\\syed.fahad\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\8.2.0\\to" +
     "ols\\ext\\bin\\")]
-[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AspireHost")]
+[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenterServer\\AspireHost")]
 [assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", "C:\\Users\\syed.fahad\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\8.2.0\\tools\\Aspi" +
     "re.Dashboard.exe")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("AspireHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1556ff9881082b120059ae5a17ef64b696e34cb1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+130e6066e1942abf9a7c5d95de744874d46675f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("AspireHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AspireHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

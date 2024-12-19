@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E6H+i9u92u8=",
+  "dgSpecHash": "zHFxavPYq8A=",
   "success": true,
-  "projectFilePath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\AspireHost\\AspireHost.csproj",
+  "projectFilePath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenterServer\\AspireHost\\AspireHost.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\syed.fahad\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\8.2.0\\aspire.dashboard.sdk.win-x64.8.2.0.nupkg.sha512",
     "C:\\Users\\syed.fahad\\.nuget\\packages\\aspire.hosting\\8.2.0\\aspire.hosting.8.2.0.nupkg.sha512",

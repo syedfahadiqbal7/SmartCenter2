@@ -1,6 +1,0 @@
-2024-11-06T00:35:56.2911802+04:00 0HN7TR3R7S66B:00000003 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
-2024-11-06T00:35:56.4281627+04:00 0HN7TR3R7S66B:00000003 [INF] Payment Done Successfully. (e71e65ea)
-2024-11-06T00:35:56.4750020+04:00 0HN7TR3R7S66B:00000004 [INF] UpdateRequestForDisCountToUserForPaymentDont method called with UserId: 2 (b12c6fe3)
-2024-11-06T00:35:56.4843546+04:00 0HN7TR3R7S66B:00000004 [INF] Payment status updated. (3afab57c)
-2024-11-06T00:36:09.0928504+04:00 0HN7TR3R7S66C:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
-2024-11-06T00:36:09.1675944+04:00 0HN7TR3R7S66C:00000007 [WRN] No users found with uploaded documents. (5684a41c)

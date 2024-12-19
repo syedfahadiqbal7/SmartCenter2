@@ -1,8 +1,10 @@
-﻿@{
+﻿@inject SCAPI.WebFront.IAppSettingsService AppSettingsService
+@{
     var paginatedSubCategories = ViewBag.SubCategories as List<SCAPI.WebFront.Controllers.AllSubCategories>;
     var Filtercatories = ViewBag.Categories as List<SCAPI.WebFront.Controllers.ServiceCat>;
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
 
 <div class="main-wrapper">
@@ -245,6 +247,9 @@
             // Redirect to the new URL
             window.location.href = newUrl;
         }
+        const baseIpAddress = "@AppSettingsService.GetBaseIpAddress()";
+        console.log("Base IP Address: " + baseIpAddress);
+         const apiBaseUrl = "https://"+baseIpAddress+":1501";
     $(document).ready(function () {
         $("#CityName").autocomplete({
             source: function (request, response) {
@@ -252,7 +257,7 @@
                 $.ajax({
                     type: "GET",
                     contentType: "application/json; charset=utf-8",
-                    url: "https://localhost:7047/api/MainPage/GetCities/" + request.term,
+                    url: apiBaseUrl+"/api/MainPage/GetCities/" + request.term,
                     dataType: "json",
                     crossDomain: true,
                     format: "json",
@@ -270,7 +275,6 @@
                     error: function (error) {
                         console.log('message Error' + JSON.stringify(error));
                     }
-                    //}
                 });
             }
         });

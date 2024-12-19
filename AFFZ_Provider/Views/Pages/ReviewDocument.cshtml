@@ -189,7 +189,7 @@
     function showImagePopup(fileName, folderName) {
         // Construct the full image URL
         //var imageUrl = '@Url.Content("~/uploads/")' + folderName + '/' + fileName;
-        var imageUrl = 'https://localhost:7195/uploads/' + folderName + '/' + fileName;
+            var imageUrl = 'http://192.168.0.115:7195/uploads/' + folderName + '/' + fileName;
 
         // Set the src attribute of the image in the modal
         $('#modalImage').attr('src', imageUrl);

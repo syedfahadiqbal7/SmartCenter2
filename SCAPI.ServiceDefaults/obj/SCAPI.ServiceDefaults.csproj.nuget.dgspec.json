@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj": {}
+    "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenterServer\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj": {}
   },
   "projects": {
-    "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj": {
+    "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenterServer\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj",
+        "projectUniqueName": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenterServer\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj",
         "projectName": "SCAPI.ServiceDefaults",
-        "projectPath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj",
+        "projectPath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenterServer\\SCAPI.ServiceDefaults\\SCAPI.ServiceDefaults.csproj",
         "packagesPath": "C:\\Users\\syed.fahad\\.nuget\\packages\\",
-        "outputPath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenter\\SCAPI.ServiceDefaults\\obj\\",
+        "outputPath": "D:\\webapplication_codes2022preview\\SmartCenter-main\\SmartCenterServer\\SCAPI.ServiceDefaults\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

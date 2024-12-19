@@ -1,39 +1,4 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>Truelysell | Template</title>
-
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="/assets/img/favicon.png" />
-
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
-
-	<!-- Fearther CSS -->
-	<link rel="stylesheet" href="/assets/css/feather.css">
-
-	<!-- select CSS -->
-	<link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
-
-	<!-- Datetimepicker CSS -->
-	<link rel="stylesheet" href="/assets/css/bootstrap-datetimepicker.min.css">
-
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="/assets/css/style.css">
-
-</head>
-
-<body>
-
-	<div class="main-wrapper">
-
-		<!-- Header -->
+﻿		<!-- Header -->
 		<header class="header">
 			<div class="container">
 				<nav class="navbar navbar-expand-lg header-nav">
@@ -52,7 +17,7 @@
 							<img src="/assets/img/logo-small.png" class="img-fluid" alt="Logo">
 						</a>
 					</div>
-					<div class="main-menu-wrapper">
+					@* <div class="main-menu-wrapper">
 						<div class="menu-header">
 							<a href="index.html" class="menu-logo">
 								<img src="/assets/img/logo.svg" class="img-fluid" alt="Logo">
@@ -68,7 +33,7 @@
 								<a href="login.html">Login</a>
 							</li>
 						</ul>
-					</div>
+					</div> *@
 					<ul class="nav header-navbar-rht noti-pop-detail">
 						<!-- Chat -->
 						<li class="nav-item logged-item msg-nav">
@@ -155,39 +120,3 @@
 		<div class="mouse-cursor cursor-inner"></div>
 		<!-- /Cursor -->
 
-	</div>
-
-	<!-- jQuery -->
-	<script src="/assets/js/jquery-3.7.0.min.js"></script>
-
-	<!-- Bootstrap Core JS -->
-	<script src="/assets/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Fearther JS -->
-	<script src="/assets/js/feather.min.js"></script>
-
-	<!-- select JS -->
-	<script src="/assets/plugins/select2/js/select2.min.js"></script>
-
-	<!-- Datetimepicker JS -->
-	<script src="/assets/js/moment.min.js"></script>
-	<script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
-
-	<!-- Sticky Sidebar JS -->
-	<script src="/assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
-	<script src="/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
-
-	<!-- Custom JS -->
-	<script src="/assets/js/script.js"></script>
-	<script>
-		function markAllAsRead() {
-			fetch('/api/notifications/mark-all-as-read', { method: 'POST' })
-				.then(response => {
-					if (response.ok) {
-						// Optionally, refresh the page or update the UI
-					}
-				});
-		}
-	</script>
-</body>
-</html>

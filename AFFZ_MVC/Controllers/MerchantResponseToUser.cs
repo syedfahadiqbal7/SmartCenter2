@@ -2,6 +2,7 @@
 using AFFZ_Customer.Utils;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using RestSharp;
 using Stripe;
@@ -16,14 +17,15 @@ namespace AFFZ_Customer.Controllers
         private readonly IWebHostEnvironment _environment;
         private readonly HttpClient _httpClient;
         private readonly IDataProtector _protector;
-
-        public MerchantResponseToUser(ILogger<MerchantResponseToUser> logger, IWebHostEnvironment environment, IHttpClientFactory httpClientFactory, IDataProtectionProvider provider)
+        private string BaseUrlIp = string.Empty;
+        public MerchantResponseToUser(ILogger<MerchantResponseToUser> logger, IWebHostEnvironment environment, IHttpClientFactory httpClientFactory, IDataProtectionProvider provider, IOptions<AppSettings> options)
         {
             // Initialize HTTP client, data protector, logger, and environment
             _httpClient = httpClientFactory.CreateClient("Main");
             _protector = provider.CreateProtector("Example.SessionProtection");
             _logger = logger;
             _environment = environment;
+            BaseUrlIp = options.Value.BaseIpAddress;
             _logger.LogInformation("MerchantResponseToUser controller initialized"); // Log initialization
         }
 
@@ -560,7 +562,7 @@ namespace AFFZ_Customer.Controllers
         private async Task<ActionResult> PaymentGatewaytelr(string _price, long _quantity, string servicetype, string merchantname)
         {
 
-            var domain = "https://localhost:7195/MerchantResponseToUser/";
+            var domain = "https://" + BaseUrlIp + ":7195/MerchantResponseToUser/";
             string SuccessUrl = domain + "success";
             string CancelUrl = domain + "cancel";
 
@@ -577,7 +579,7 @@ namespace AFFZ_Customer.Controllers
         {
 
             StripeConfiguration.ApiKey = "sk_test_51Q0Hq0KyRuGjwLZlAu0o3PzTHoVHZhb9HZwJuvGFl7CLsa1NI3xgPJwYKITHYYVbQKVHVv2h85E1b7YBB2OTa5bF00k0mbfMR3";
-            var domain = "https://localhost:7195/MerchantResponseToUser/";
+            var domain = "https://" + BaseUrlIp + ":7195/MerchantResponseToUser/";
             var optionsProduct = new ProductCreateOptions
             {
                 Name = "1 month Visa",
