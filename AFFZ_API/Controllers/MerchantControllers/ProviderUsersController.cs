@@ -4,7 +4,6 @@ using AFFZ_API.Models.Partial;
 using AFFZ_API.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using NuGet.Common;
 using System.Net;
 
 namespace AFFZ_API.Controllers.MerchantControllers
@@ -18,15 +17,16 @@ namespace AFFZ_API.Controllers.MerchantControllers
         private readonly IEmailService _emailService;
         private readonly ILogger<ProviderUsersController> _logger;
         private readonly string _jsonFilePath;
+        private string BaseUrl = string.Empty;
 
-        public ProviderUsersController(MyDbContext context, IEmailService emailService, ILogger<ProviderUsersController> logger, IConfiguration config)
+        public ProviderUsersController(MyDbContext context, IEmailService emailService, ILogger<ProviderUsersController> logger, IConfiguration config, IAppSettingsService service)
         {
             _context = context;
             _emailService = emailService;
             _logger = logger;
             _Config = config;
             _jsonFilePath = Path.Combine(AppContext.BaseDirectory, "Resources", "MEmailTemplates.json");
-
+            BaseUrl = service.GetBaseIpAddress();
         }
 
         // GET: api/ProviderUsers
@@ -215,7 +215,7 @@ namespace AFFZ_API.Controllers.MerchantControllers
                 await _context.SaveChangesAsync();
 
                 // Generate email verification Link
-                var verificationLink = $"{Request.Scheme}://localhost:7047/api/Providers/VerifyEmail?token={merchant.PasswordResetToken}";
+                var verificationLink = $"{Request.Scheme}://{BaseUrl}:7047/api/Providers/VerifyEmail?token={merchant.PasswordResetToken}";
 
                 // Load JSON file
                 var emailLoader = new EmailTemplateLoader(_jsonFilePath);
@@ -918,7 +918,7 @@ namespace AFFZ_API.Controllers.MerchantControllers
                 user.TokenExpiry = DateTime.Now.AddHours(1); // Token valid for 1 hour
                 await _context.SaveChangesAsync();
 
-                string resetLink = $"{Request.Scheme}://localhost:7096/ResetPassword?token={user.PasswordResetToken}";
+                string resetLink = $"{Request.Scheme}://{BaseUrl}:7096/ResetPassword?token={user.PasswordResetToken}";
 
 
                 // Load JSON file
@@ -1009,9 +1009,9 @@ namespace AFFZ_API.Controllers.MerchantControllers
             }
             catch (Exception ex)
             {
-                return BadRequest( ex.Message);
+                return BadRequest(ex.Message);
             }
-            
+
         }
     }
     public class UpdateDocumentStatusRequest

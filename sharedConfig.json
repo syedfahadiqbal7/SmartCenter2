@@ -1,5 +1,5 @@
 {
-  "BaseIP": "192.168.7.57",
+  "BaseIP": "192.168.0.115",
   "Ports": {
     "AFFZ_Admin": {
       "Http": "5089",
@@ -23,12 +23,12 @@
     }
   },
   "JwtSettings": {
-    "Issuer": "https://192.168.7.57:7047/",
-    "Audience": "https://192.168.7.57:7047/",
+    "Issuer": "https://192.168.0.115:7047/",
+    "Audience": "https://192.168.0.115:7047/",
     "Key": "this is the key secret JWT"
   },
   "Certificate": {
-    "Path": "my-office-certificate.pfx",
+    "Path": "my-certificate.pfx",
     "Password": "SmartCenter@12345"
   }
 }

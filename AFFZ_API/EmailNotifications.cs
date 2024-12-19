@@ -16,7 +16,7 @@ namespace AFFZ_API
             _smtpSettings = smtpSettings.Value;
         }
 
-      
+
         //public async Task<bool> SendEmail(string to, string subject, string body, string toname, bool isHtml = true)
         //{
         //    try

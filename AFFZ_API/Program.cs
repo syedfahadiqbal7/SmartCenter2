@@ -2,6 +2,7 @@ using AFFZ_API;
 using AFFZ_API.Interfaces;
 using AFFZ_API.Models;
 using AFFZ_API.NotificationsHubs;
+using AFFZ_API.Utils;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -38,6 +39,12 @@ var WebFrontHttpsPort = sharedConfig["Ports:SCAPI_WebFront:Https"];
 
 var CertificateName = sharedConfig["Certificate:Path"];
 var CertificatePassword = sharedConfig["Certificate:Password"];
+
+// Define configuration programmatically
+builder.Services.Configure<AppSettings>(options =>
+{
+    options.BaseIpAddress = baseIP;
+});
 
 builder.Services.AddCors(options =>
 {
@@ -98,6 +105,7 @@ builder.WebHost.UseKestrel(options =>
         listenOptions.UseHttps(CertificateName, CertificatePassword);
     });
 });
+builder.Services.AddSingleton<IAppSettingsService, AppSettingsService>();
 var app = builder.Build();
 var loggerFactory = app.Services.GetService<ILoggerFactory>();
 

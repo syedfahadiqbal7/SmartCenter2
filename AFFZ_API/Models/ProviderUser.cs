@@ -51,11 +51,11 @@ public partial class ProviderUser
 }
 
 public class ForgotPasswordModel
-    {
-        [Required(ErrorMessage = "Email is required.")]
-        [EmailAddress(ErrorMessage = "Invalid email address.")]
-        public string Email { get; set; }
-    }
+{
+    [Required(ErrorMessage = "Email is required.")]
+    [EmailAddress(ErrorMessage = "Invalid email address.")]
+    public string Email { get; set; }
+}
 
 public class ResetPasswordModel
 {

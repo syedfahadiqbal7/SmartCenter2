@@ -1,5 +1,4 @@
-﻿using AFFZ_API.Controllers.MerchantControllers;
-using AFFZ_API.Interfaces;
+﻿using AFFZ_API.Interfaces;
 using AFFZ_API.Models;
 using AFFZ_API.Models.Partial;
 using AFFZ_API.Utils;
@@ -7,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
-using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace AFFZ_API.Controllers.CustomerControllers
 {
@@ -17,19 +15,20 @@ namespace AFFZ_API.Controllers.CustomerControllers
     {
         private readonly IEmailService _emailService;
         private readonly MyDbContext _context;
-        private readonly IConfiguration _Config; 
+        private readonly IConfiguration _Config;
         private readonly ILogger<CustomerUserManagmentController> _logger;
         private readonly string _jsonFilePath;
+        private string BaseUrl = string.Empty;
 
 
-        public CustomerUserManagmentController(MyDbContext context, IEmailService emailService, IConfiguration config, ILogger<CustomerUserManagmentController> logger)
+        public CustomerUserManagmentController(MyDbContext context, IEmailService emailService, IConfiguration config, ILogger<CustomerUserManagmentController> logger, IAppSettingsService service)
         {
             _context = context;
             _emailService = emailService;
             _Config = config;
             _logger = logger;
             _jsonFilePath = Path.Combine(AppContext.BaseDirectory, "Resources", "CEmailTemplates.json");
-
+            BaseUrl = service.GetBaseIpAddress();
         }
 
         [HttpPost]
@@ -305,7 +304,7 @@ namespace AFFZ_API.Controllers.CustomerControllers
                 return new SResponse
                 {
                     StatusCode = HttpStatusCode.InternalServerError,
-                    Message = "Error Message:"+ex.Message+" Exception:"+ex.ToString()
+                    Message = "Error Message:" + ex.Message + " Exception:" + ex.ToString()
                 };
             }
         }
@@ -514,8 +513,8 @@ namespace AFFZ_API.Controllers.CustomerControllers
                 user.VerificationToken = Guid.NewGuid().ToString(); // Generate a unique token                
                 user.TokenExpiry = DateTime.Now.AddHours(1); // Token valid for 1 hour
 
-                
-                string resetLink = $"{Request.Scheme}://localhost:7195/ResetPassword?token={user.VerificationToken}";
+
+                string resetLink = $"{Request.Scheme}://{BaseUrl}:7195/ResetPassword?token={user.VerificationToken}";
 
                 // Load email template
                 var loader = new EmailTemplateLoader(_jsonFilePath);
@@ -526,7 +525,7 @@ namespace AFFZ_API.Controllers.CustomerControllers
                     .Replace("{{CustomerName}}", user.CustomerName)
                     .Replace("{{ResetLink}}", resetLink)
                     .Replace("{{CurrentYear}}", DateTime.Now.Year.ToString());
-               
+
                 await _context.SaveChangesAsync();
 
                 bool emailSent = await _emailService.SendEmail(email, "Password Reset Request", emailBody, user.CustomerName, isHtml: true);
