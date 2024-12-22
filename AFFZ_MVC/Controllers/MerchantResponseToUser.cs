@@ -18,7 +18,10 @@ namespace AFFZ_Customer.Controllers
         private readonly HttpClient _httpClient;
         private readonly IDataProtector _protector;
         private string BaseUrlIp = string.Empty;
-        public MerchantResponseToUser(ILogger<MerchantResponseToUser> logger, IWebHostEnvironment environment, IHttpClientFactory httpClientFactory, IDataProtectionProvider provider, IOptions<AppSettings> options)
+        private string PublicDomain = string.Empty;
+        private string ApiHttpsPort = string.Empty;
+        private string CustomerHttpsPort = string.Empty;
+        public MerchantResponseToUser(ILogger<MerchantResponseToUser> logger, IWebHostEnvironment environment, IHttpClientFactory httpClientFactory, IDataProtectionProvider provider, IOptions<AppSettings> options, IAppSettingsService service)
         {
             // Initialize HTTP client, data protector, logger, and environment
             _httpClient = httpClientFactory.CreateClient("Main");
@@ -26,6 +29,8 @@ namespace AFFZ_Customer.Controllers
             _logger = logger;
             _environment = environment;
             BaseUrlIp = options.Value.BaseIpAddress;
+            PublicDomain = service.GetPublicDomain();
+            ApiHttpsPort = service.GetApiHttpsPort();
             _logger.LogInformation("MerchantResponseToUser controller initialized"); // Log initialization
         }
 
@@ -103,7 +108,8 @@ namespace AFFZ_Customer.Controllers
                 _logger.LogDebug("Retrieved SaveResponse from TempData: {SaveResponse}", saveResponse); // Log retrieved TempData message
                 ViewBag.SaveResponse = saveResponse.ToString();
             }
-
+            var verificationLink = $"{Request.Scheme}://{PublicDomain}:{ApiHttpsPort}";
+            ViewBag.APIUrl = verificationLink;
             return View();
         }
         [HttpGet]

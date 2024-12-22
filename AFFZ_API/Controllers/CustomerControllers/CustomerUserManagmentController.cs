@@ -19,8 +19,9 @@ namespace AFFZ_API.Controllers.CustomerControllers
         private readonly ILogger<CustomerUserManagmentController> _logger;
         private readonly string _jsonFilePath;
         private string BaseUrl = string.Empty;
-
-
+        private string PublicDomain = string.Empty;
+        private string ApiHttpsPort = string.Empty;
+        private string CustomerHttpsPort = string.Empty;
         public CustomerUserManagmentController(MyDbContext context, IEmailService emailService, IConfiguration config, ILogger<CustomerUserManagmentController> logger, IAppSettingsService service)
         {
             _context = context;
@@ -29,6 +30,9 @@ namespace AFFZ_API.Controllers.CustomerControllers
             _logger = logger;
             _jsonFilePath = Path.Combine(AppContext.BaseDirectory, "Resources", "CEmailTemplates.json");
             BaseUrl = service.GetBaseIpAddress();
+            PublicDomain = service.GetPublicDomain();
+            ApiHttpsPort = service.GetApiHttpsPort();
+            CustomerHttpsPort = service.GetCustomerHttpsPort();
         }
 
         [HttpPost]
@@ -75,131 +79,6 @@ namespace AFFZ_API.Controllers.CustomerControllers
                 };
             }
         }
-
-        //[HttpPost]
-        //[Route("Register")]
-        //public async Task<ActionResult<SResponse>> PostCustomer(Customers customers, string referralCode = null)
-        //{
-        //    try
-        //    {
-        //        customers.RoleId = _context.Roles.Where(x => x.RoleName.ToLower() == "customers").Select(x => x.RoleId).FirstOrDefault();
-        //        customers.CreatedBy = 1;
-        //        customers.CreatedDate = DateTime.Now;
-        //        customers.Password = Cryptography.Encrypt(customers.Password); //need to encrypt
-        //        _context.Customers.Add(customers);
-        //        await _context.SaveChangesAsync();
-
-        //        // Call stored procedure to update referral table if referral code is provided
-        //        if (!string.IsNullOrEmpty(referralCode))
-        //        {
-        //            var commandText = "EXEC UpdateReferralOnSignup @ReferredCustomerID, @ReferralCode";
-        //            var referredCustomerIdParam = new SqlParameter("@ReferredCustomerID", customers.CustomerId);
-        //            var referralCodeParam = new SqlParameter("@ReferralCode", referralCode);
-
-        //            await _context.Database.ExecuteSqlRawAsync(commandText, referredCustomerIdParam, referralCodeParam);
-        //        }
-        //        string emailBody = $@"<!DOCTYPE html>
-        //                                <html>
-        //                                <head>
-        //                                    <style>
-        //                                        body {{
-        //                                            font-family: Arial, sans-serif;
-        //                                            background-color: #f8f9fa;
-        //                                            margin: 0;
-        //                                            padding: 0;
-        //                                        }}
-        //                                        .email-container {{
-        //                                            max-width: 600px;
-        //                                            margin: 20px auto;
-        //                                            background: #ffffff;
-        //                                            border-radius: 10px;
-        //                                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        //                                            padding: 20px;
-        //                                        }}
-        //                                        .header {{
-        //                                            text-align: center;
-        //                                            color: #343a40;
-        //                                            margin-bottom: 20px;
-        //                                        }}
-        //                                        .header h1 {{
-        //                                            font-size: 24px;
-        //                                        }}
-        //                                        .content {{
-        //                                            color: #555555;
-        //                                            line-height: 1.6;
-        //                                        }}
-        //                                        .content a {{
-        //                                            color: #007bff;
-        //                                            text-decoration: none;
-        //                                            font-weight: bold;
-        //                                        }}
-        //                                        .content a:hover {{
-        //                                            text-decoration: underline;
-        //                                        }}
-        //                                        .footer {{
-        //                                            margin-top: 20px;
-        //                                            text-align: center;
-        //                                            font-size: 12px;
-        //                                            color: #888888;
-        //                                        }}
-        //                                        .btn {{
-        //                                            display: inline-block;
-        //                                            padding: 10px 20px;
-        //                                            margin-top: 20px;
-        //                                            background-color: #28a745;
-        //                                            color: #ffffff;
-        //                                            text-decoration: none;
-        //                                            border-radius: 5px;
-        //                                            font-size: 16px;
-        //                                        }}
-        //                                        .btn:hover {{
-        //                                            background-color: #218838;
-        //                                        }}
-        //                                    </style>
-        //                                </head>
-        //                                <body>
-        //                                    <div class='email-container'>
-        //                                        <div class='header'>
-        //                                            <h1>Welcome to Smart Center!</h1>
-        //                                        </div>
-        //                                        <div class='content'>
-        //                                            <p>Dear <strong>{merchant.ProviderName}</strong>,</p>
-        //                                            <p>Congratulations! Your signup was successful, and we are delighted to have you onboard at <strong>Smart Center</strong>.</p>
-        //                                            <p>To get started and unlock all the features we have to offer, please verify your email address by clicking the button below:</p>
-        //                                            <p style='text-align: center;'>
-        //                                                <a href='{verificationLink}' class='btn'>Verify Email</a>
-        //                                            </p>
-        //                                            <p>If you did not sign up for this account, please ignore this email or contact our support team immediately.</p>
-        //                                            <p>Welcome again, and we look forward to helping you achieve success with Smart Center!</p>
-        //                                        </div>
-        //                                        <div class='footer'>
-        //                                            <p>&copy; {DateTime.Now.Year} Smart Center. All Rights Reserved.</p>
-        //                                        </div>
-        //                                    </div>
-        //                                </body>
-        //                                </html>";
-
-        //        bool emailSent = await _emailService.SendEmail(customers.Email, "Welcome to Smart Center!", emailBody, customers.CustomerName, isHtml: true);
-
-
-        //        //bool res = await _emailService.SendEmail(customers.Email, "Welcome On Board with Smart Center", "You have successfully signed up. Please remember your password for future reference and make sure to bookmark the website for future.", customers.CustomerName);
-
-        //        return new SResponse
-        //        {
-        //            StatusCode = HttpStatusCode.OK,
-        //            Message = $"Customer successfully registered!",
-        //        };
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return new SResponse
-        //        {
-        //            StatusCode = HttpStatusCode.InternalServerError,
-        //            Message = $"Exception: {ex.Message}",
-        //        };
-        //    }
-        //}
-
 
         // GET: api/Customers
 
@@ -265,7 +144,7 @@ namespace AFFZ_API.Controllers.CustomerControllers
 
 
                 // Generate email verification Link
-                var verificationLink = $"{Request.Scheme}://{Request.Host}/api/Customers/VerifyEmail?token={customers.VerificationToken}";
+                var verificationLink = $"{Request.Scheme}://{PublicDomain}:{ApiHttpsPort}/api/Customers/VerifyEmail?token={customers.VerificationToken}";
 
                 // Load email template
                 var loader = new EmailTemplateLoader(_jsonFilePath);
@@ -469,8 +348,7 @@ namespace AFFZ_API.Controllers.CustomerControllers
             try
             {
                 // Get Customer URL from configuration
-                string CustomerUrl = _Config.GetValue<string>("AppSettings:CustomerUrl").ToString();
-
+                string CustomerUrl = $"{Request.Scheme}://{PublicDomain}:{CustomerHttpsPort}/"; 
                 // Find the customer by verification token and ensure token is not expired
                 var customer = await _context.Customers
                     .FirstOrDefaultAsync(c => c.VerificationToken == token && c.TokenExpiry > DateTime.Now);
@@ -514,7 +392,7 @@ namespace AFFZ_API.Controllers.CustomerControllers
                 user.TokenExpiry = DateTime.Now.AddHours(1); // Token valid for 1 hour
 
 
-                string resetLink = $"{Request.Scheme}://{BaseUrl}:7195/ResetPassword?token={user.VerificationToken}";
+                string resetLink = $"{Request.Scheme}://{PublicDomain}:{CustomerHttpsPort}/ResetPassword?token={user.VerificationToken}";
 
                 // Load email template
                 var loader = new EmailTemplateLoader(_jsonFilePath);

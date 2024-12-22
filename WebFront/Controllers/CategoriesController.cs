@@ -8,9 +8,11 @@ namespace SCAPI.WebFront.Controllers
     {
         private readonly ILogger<CategoriesController> _logger;
         private readonly string _userUrl;
+        private readonly string _publicCustomerDomain;
         public CategoriesController(ILogger<CategoriesController> logger, IOptions<AppSettings> appSettings, WebApiHelper webApiHelper)
         {
             _userUrl = appSettings.Value.UserUrl;
+            _publicCustomerDomain = appSettings.Value.PublicCustomerDomain;
             _logger = logger;
         }
 

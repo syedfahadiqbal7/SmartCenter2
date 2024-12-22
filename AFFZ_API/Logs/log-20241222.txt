@@ -1,0 +1,1734 @@
+2024-12-22T00:26:03.1444946+04:00  [WRN] Overriding address(es) '"http://localhost:52730, https://localhost:52731"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T00:27:59.1473052+04:00 0HN91VNABHFFK:00000001 [INF] Attempting login for email: "akbar.khan83@gmail.com" (100386e3)
+2024-12-22T00:28:02.5440665+04:00 0HN91VNABHFFK:00000001 [WRN] Login failed for email: "akbar.khan83@gmail.com" (ab24df07)
+2024-12-22T00:38:35.9239577+04:00  [WRN] Overriding address(es) '"http://localhost:53279, https://localhost:53280"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T00:43:02.8246900+04:00 0HN91VU40EFFS:00000001 [INF] Attempting to register new provider user with email: "fahad.emamar@gmail.com" (5a36f565)
+2024-12-22T00:43:05.4566925+04:00 0HN91VU40EFFT:00000001 [INF] Attempting to register new provider user with email: "fahad.emamar@gmail.com" (5a36f565)
+2024-12-22T00:43:07.1351725+04:00 0HN91VU40EFFS:00000001 [INF] Merchant user registered successfully with email: "fahad.emamar@gmail.com" (df36e828)
+2024-12-22T00:45:48.1462770+04:00 0HN91VU40EFFU:00000001 [INF] Attempting to register new provider user with email: "fahad.emamar@gmail.com" (5a36f565)
+2024-12-22T00:46:04.4625479+04:00 0HN91VU40EFFV:00000001 [INF] Attempting to register new provider user with email: "fahad.emamar@gmail.com" (5a36f565)
+2024-12-22T00:49:28.6000709+04:00  [WRN] Overriding address(es) '"http://localhost:53626, https://localhost:53627"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T00:50:40.7351233+04:00 0HN9204APUA7N:00000001 [INF] Attempting to register new provider user with email: "fahad.emamar@gmail.com" (5a36f565)
+2024-12-22T00:50:53.1753068+04:00 0HN9204APUA7O:00000001 [INF] Attempting to register new provider user with email: "fahad.emamar@gmail.com" (5a36f565)
+2024-12-22T00:51:04.7780711+04:00 0HN9204APUA7N:00000001 [INF] Merchant user registered successfully with email: "fahad.emamar@gmail.com" (df36e828)
+2024-12-22T00:57:44.5581306+04:00 0HN9204APUA7P:00000001 [INF] Attempting to register new provider user with email: "fahad.emamar@gmail.com" (5a36f565)
+2024-12-22T00:58:33.3743166+04:00 0HN9204APUA7P:00000002 [INF] Attempting to register new provider user with email: "fahad.emamar@gmail.com" (5a36f565)
+2024-12-22T00:58:33.3788447+04:00 0HN9204APUA7P:00000002 [INF] ProvidersRegister called at 12/22/2024 00:58:33 (04e2a516)
+2024-12-22T01:01:54.8021446+04:00  [WRN] Overriding address(es) '"http://localhost:53898, https://localhost:53899"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T01:03:37.8431990+04:00 0HN920B6CBP0T:00000001 [INF] Attempting to register new provider user with email: "fahad.emamar@gmail.com" (5a36f565)
+2024-12-22T01:03:38.3007796+04:00 0HN920B6CBP0T:00000001 [INF] ProvidersRegister called at 12/22/2024 01:03:38 (04e2a516)
+2024-12-22T01:04:29.4017446+04:00 0HN920B6CBP0U:00000001 [INF] Attempting to register new provider user with email: "fahad.emamar@gmail.com" (5a36f565)
+2024-12-22T01:04:31.0522775+04:00 0HN920B6CBP0U:00000001 [INF] ProvidersRegister called at 12/22/2024 01:04:31 (04e2a516)
+2024-12-22T01:04:52.4764507+04:00 0HN920B6CBP0U:00000001 [ERR] Exception occurred during registration for email: "fahad.emamar@gmail.com" (b047e80c)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ__Provider__A9D105346E5F54D8'. Cannot insert duplicate key in object 'dbo.ProviderUser'. The duplicate key value is (fahad.emamar@gmail.com).
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:cfe13ace-c6ae-4d53-8c6d-6b35577980dd
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.MerchantControllers.ProviderUsersController.PostMerchant(ProviderUser merchant) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\MerchantControllers\ProviderUsersController.cs:line 216
+2024-12-22T01:05:01.7478009+04:00 0HN920B6CBP0T:00000001 [INF] Merchant user registered successfully with email: "fahad.emamar@gmail.com" (df36e828)
+2024-12-22T01:05:37.2157239+04:00 0HN920B6CBP15:00000001 [INF] Attempting to register new provider user with email: "fahad.emamar@gmail.com" (5a36f565)
+2024-12-22T01:05:37.2191840+04:00 0HN920B6CBP15:00000001 [INF] ProvidersRegister called at 12/22/2024 01:05:37 (04e2a516)
+2024-12-22T01:05:41.8226325+04:00 0HN920B6CBP15:00000001 [INF] Merchant user registered successfully with email: "fahad.emamar@gmail.com" (df36e828)
+2024-12-22T01:07:57.0601142+04:00 0HN920B6CBP1E:00000001 [INF] Attempting to register new provider user with email: "akbar.khan83@gmail.com" (5a36f565)
+2024-12-22T01:07:57.0670893+04:00 0HN920B6CBP1E:00000001 [INF] ProvidersRegister called at 12/22/2024 01:07:57 (04e2a516)
+2024-12-22T01:07:59.3260790+04:00 0HN920B6CBP1E:00000001 [INF] Merchant user registered successfully with email: "akbar.khan83@gmail.com" (df36e828)
+2024-12-22T01:08:49.4838310+04:00 0HN920B6CBP1E:00000002 [INF] Attempting to register new provider user with email: "farooqui.faraz@gmail.com" (5a36f565)
+2024-12-22T01:08:49.4913769+04:00 0HN920B6CBP1E:00000002 [INF] ProvidersRegister called at 12/22/2024 01:08:49 (04e2a516)
+2024-12-22T01:08:54.1070493+04:00 0HN920B6CBP1E:00000002 [INF] Merchant user registered successfully with email: "farooqui.faraz@gmail.com" (df36e828)
+2024-12-22T01:22:57.4847868+04:00  [WRN] Overriding address(es) '"http://localhost:54308, https://localhost:54309"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T01:23:28.4622334+04:00 0HN920MI8PHLR:00000001 [INF] Attempting to register new provider user with email: "akbar.khan83@gmail.com" (5a36f565)
+2024-12-22T01:23:28.4622320+04:00 0HN920MI8PHLS:00000001 [INF] Attempting to register new provider user with email: "farooqui.faraz@gmail.com" (5a36f565)
+2024-12-22T01:23:28.4670283+04:00 0HN920MI8PHLS:00000001 [INF] ProvidersRegister called at 12/22/2024 01:23:28 (04e2a516)
+2024-12-22T01:23:28.4696492+04:00 0HN920MI8PHLR:00000001 [INF] ProvidersRegister called at 12/22/2024 01:23:28 (04e2a516)
+2024-12-22T01:23:33.8555853+04:00 0HN920MI8PHLR:00000001 [INF] Merchant user registered successfully with email: "akbar.khan83@gmail.com" (df36e828)
+2024-12-22T01:23:34.1176770+04:00 0HN920MI8PHLS:00000001 [INF] Merchant user registered successfully with email: "farooqui.faraz@gmail.com" (df36e828)
+2024-12-22T01:27:20.8458458+04:00  [WRN] Overriding address(es) '"http://localhost:54390, https://localhost:54391"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T01:28:03.6031645+04:00 0HN920P1TP2MN:00000001 [INF] Attempting login for email: "akbar.khan83@gmail.com" (100386e3)
+2024-12-22T01:28:03.8749042+04:00 0HN920P1TP2MN:00000001 [INF] User login successful for email: "akbar.khan83@gmail.com" (8ce767cc)
+2024-12-22T01:28:06.2615297+04:00 0HN920P1TP2MN:00000007 [INF] No reviews found for merchantId: 2 (67f73bac)
+2024-12-22T01:28:06.5042353+04:00 0HN920P1TP2MN:00000008 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T01:28:09.6801940+04:00 0HN920P1TP2MN:0000000D [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-22T01:28:09.7075817+04:00 0HN920P1TP2MN:0000000D [WRN] Login failed for email: "farooqui.faraz@gmail.com" (ab24df07)
+2024-12-22T01:29:36.7979686+04:00 0HN920P1TP2MN:00000018 [INF] No reviews found for merchantId: 2 (67f73bac)
+2024-12-22T01:29:36.8233410+04:00 0HN920P1TP2MN:00000019 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T01:29:43.6348523+04:00 0HN920P1TP2MN:0000001E [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T01:29:43.7140288+04:00 0HN920P1TP2MN:0000001E [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T01:30:08.3748626+04:00 0HN920P1TP2N0:00000002 [INF] Attempting to update profile for provider ID: 2 (8f0a648c)
+2024-12-22T01:30:08.3984220+04:00 0HN920P1TP2N0:00000002 [INF] Profile updated successfully for provider ID: 2 (f0118220)
+2024-12-22T01:30:08.4488651+04:00 0HN920P1TP2N0:00000003 [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T01:30:08.4612071+04:00 0HN920P1TP2N0:00000003 [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T01:30:23.6738445+04:00 0HN920P1TP2N0:00000009 [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-22T01:30:23.7286615+04:00 0HN920P1TP2N0:00000009 [WRN] Login failed for email: "farooqui.faraz@gmail.com" (ab24df07)
+2024-12-22T01:30:33.9038818+04:00 0HN920P1TP2N0:0000000A [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-22T01:30:33.9188263+04:00 0HN920P1TP2N0:0000000A [INF] User login successful for email: "farooqui.faraz@gmail.com" (8ce767cc)
+2024-12-22T01:30:34.1330592+04:00 0HN920P1TP2N0:00000010 [INF] No reviews found for merchantId: 1 (bd40e63e)
+2024-12-22T01:30:34.1539795+04:00 0HN920P1TP2N0:00000011 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T01:30:38.2228359+04:00 0HN920P1TP2N0:00000016 [INF] Processing merchant document for Merchant ID: 2 (58494a3b)
+2024-12-22T01:30:38.2372885+04:00 0HN920P1TP2N0:00000016 [INF] Adding new document for Merchant ID: 2 (22ee19c4)
+2024-12-22T01:30:38.3120689+04:00 0HN920P1TP2N0:00000016 [INF] Merchant document processed successfully for Merchant ID: 2 (e9966a4c)
+2024-12-22T01:30:38.3545780+04:00 0HN920P1TP2N0:00000017 [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T01:30:38.3622845+04:00 0HN920P1TP2N0:00000017 [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T01:31:10.8298517+04:00 0HN920P1TP2N0:0000001E [INF] Processing merchant document for Merchant ID: 2 (58494a3b)
+2024-12-22T01:31:10.8351753+04:00 0HN920P1TP2N0:0000001E [INF] Updating existing document with Document ID: 16 (d8562969)
+2024-12-22T01:31:10.8986063+04:00 0HN920P1TP2N0:0000001E [INF] Merchant document processed successfully for Merchant ID: 2 (e9966a4c)
+2024-12-22T01:31:10.9390966+04:00 0HN920P1TP2N0:0000001F [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T01:31:10.9461791+04:00 0HN920P1TP2N0:0000001F [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T01:31:19.3304104+04:00 0HN920P1TP2N0:0000002A [INF] No reviews found for merchantId: 1 (bd40e63e)
+2024-12-22T01:31:19.3487447+04:00 0HN920P1TP2N0:0000002B [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T01:31:25.3332276+04:00 0HN920P1TP2N0:00000030 [INF] Processing merchant document for Merchant ID: 2 (58494a3b)
+2024-12-22T01:31:25.3420255+04:00 0HN920P1TP2N0:00000030 [INF] Adding new document for Merchant ID: 2 (22ee19c4)
+2024-12-22T01:31:25.3815826+04:00 0HN920P1TP2N0:00000030 [INF] Merchant document processed successfully for Merchant ID: 2 (e9966a4c)
+2024-12-22T01:31:25.4514448+04:00 0HN920P1TP2N0:00000031 [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T01:31:25.4598816+04:00 0HN920P1TP2N0:00000031 [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T01:31:43.6414562+04:00 0HN920P1TP2N0:00000037 [INF] Processing merchant document for Merchant ID: 2 (58494a3b)
+2024-12-22T01:31:43.6457217+04:00 0HN920P1TP2N0:00000037 [INF] Adding new document for Merchant ID: 2 (22ee19c4)
+2024-12-22T01:31:43.7022379+04:00 0HN920P1TP2N0:00000037 [INF] Merchant document processed successfully for Merchant ID: 2 (e9966a4c)
+2024-12-22T01:31:43.7613828+04:00 0HN920P1TP2N0:00000038 [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T01:31:43.7692365+04:00 0HN920P1TP2N0:00000038 [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T01:31:57.5696540+04:00 0HN920P1TP2N0:0000003E [INF] Processing merchant document for Merchant ID: 2 (58494a3b)
+2024-12-22T01:31:57.5896720+04:00 0HN920P1TP2N0:0000003E [INF] Adding new document for Merchant ID: 2 (22ee19c4)
+2024-12-22T01:31:57.5977599+04:00 0HN920P1TP2N0:0000003E [INF] Merchant document processed successfully for Merchant ID: 2 (e9966a4c)
+2024-12-22T01:31:57.6377400+04:00 0HN920P1TP2N0:0000003F [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T01:31:57.6459777+04:00 0HN920P1TP2N0:0000003F [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T01:32:22.8457469+04:00 0HN920P1TP2N5:00000001 [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T01:32:22.8996767+04:00 0HN920P1TP2N5:00000001 [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T01:32:28.2588592+04:00 0HN920P1TP2N5:00000008 [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T01:32:28.2724037+04:00 0HN920P1TP2N5:00000008 [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T01:32:43.5634675+04:00 0HN920P1TP2N5:0000000E [INF] Processing merchant document for Merchant ID: 1 (58494a3b)
+2024-12-22T01:32:43.5714321+04:00 0HN920P1TP2N5:0000000E [INF] Adding new document for Merchant ID: 1 (22ee19c4)
+2024-12-22T01:32:43.5932004+04:00 0HN920P1TP2N5:0000000E [INF] Merchant document processed successfully for Merchant ID: 1 (e9966a4c)
+2024-12-22T01:32:43.6446564+04:00 0HN920P1TP2N5:0000000F [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T01:32:43.6516091+04:00 0HN920P1TP2N5:0000000F [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T01:32:52.9751342+04:00 0HN920P1TP2N5:00000015 [INF] Processing merchant document for Merchant ID: 1 (58494a3b)
+2024-12-22T01:32:52.9837190+04:00 0HN920P1TP2N5:00000015 [INF] Adding new document for Merchant ID: 1 (22ee19c4)
+2024-12-22T01:32:53.0243525+04:00 0HN920P1TP2N5:00000015 [INF] Merchant document processed successfully for Merchant ID: 1 (e9966a4c)
+2024-12-22T01:32:53.0633355+04:00 0HN920P1TP2N5:00000016 [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T01:32:53.0692982+04:00 0HN920P1TP2N5:00000016 [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T01:33:03.7685105+04:00 0HN920P1TP2N5:0000001C [INF] Processing merchant document for Merchant ID: 1 (58494a3b)
+2024-12-22T01:33:03.7777057+04:00 0HN920P1TP2N5:0000001C [INF] Adding new document for Merchant ID: 1 (22ee19c4)
+2024-12-22T01:33:03.7853395+04:00 0HN920P1TP2N5:0000001C [INF] Merchant document processed successfully for Merchant ID: 1 (e9966a4c)
+2024-12-22T01:33:03.9041230+04:00 0HN920P1TP2N5:0000001D [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T01:33:03.9099399+04:00 0HN920P1TP2N5:0000001D [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T01:33:12.2292693+04:00 0HN920P1TP2N5:00000023 [INF] Processing merchant document for Merchant ID: 1 (58494a3b)
+2024-12-22T01:33:12.2371078+04:00 0HN920P1TP2N5:00000023 [INF] Adding new document for Merchant ID: 1 (22ee19c4)
+2024-12-22T01:33:12.2721581+04:00 0HN920P1TP2N5:00000023 [INF] Merchant document processed successfully for Merchant ID: 1 (e9966a4c)
+2024-12-22T01:33:12.3335534+04:00 0HN920P1TP2N5:00000024 [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T01:33:12.3463776+04:00 0HN920P1TP2N5:00000024 [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T01:33:22.7996747+04:00 0HN920P1TP2N5:0000002A [INF] Attempting to update profile for provider ID: 2 (8f0a648c)
+2024-12-22T01:33:22.8107260+04:00 0HN920P1TP2N5:0000002A [INF] Profile updated successfully for provider ID: 2 (f0118220)
+2024-12-22T01:33:22.8642381+04:00 0HN920P1TP2N5:0000002B [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T01:33:22.8734195+04:00 0HN920P1TP2N5:0000002B [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T01:34:20.6011315+04:00 0HN920P1TP2N5:00000032 [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T01:34:20.6072184+04:00 0HN920P1TP2N5:00000032 [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T01:36:49.3090755+04:00 0HN920P1TP2NA:00000002 [INF] Fetching all provider users. (e6347852)
+2024-12-22T01:37:31.7426488+04:00 0HN920P1TP2NB:00000001 [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T01:37:31.7530909+04:00 0HN920P1TP2NB:00000001 [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T01:37:32.8148527+04:00 0HN920P1TP2NB:00000008 [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T01:37:32.8230658+04:00 0HN920P1TP2NB:00000008 [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T01:37:32.9481506+04:00 0HN920P1TP2NB:0000000F [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T01:37:32.9529815+04:00 0HN920P1TP2NB:0000000F [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T01:37:33.8418041+04:00 0HN920P1TP2NB:00000016 [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T01:37:33.8509484+04:00 0HN920P1TP2NB:00000016 [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T01:37:33.9795320+04:00 0HN920P1TP2NB:0000001D [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T01:37:33.9841928+04:00 0HN920P1TP2NB:0000001D [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T01:37:34.8655323+04:00 0HN920P1TP2NB:00000029 [INF] No reviews found for merchantId: 1 (bd40e63e)
+2024-12-22T01:37:34.8883451+04:00 0HN920P1TP2NB:0000002A [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T01:58:22.6489272+04:00  [WRN] Overriding address(es) '"http://localhost:55023, https://localhost:55024"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T01:59:43.0589183+04:00 0HN921AVK9FH4:00000002 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:00:48.1560454+04:00 0HN921AVK9FH5:00000001 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:04:23.0085279+04:00  [WRN] Overriding address(es) '"http://localhost:55328, https://localhost:55329"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T02:06:55.8345142+04:00  [WRN] Overriding address(es) '"http://localhost:55488, https://localhost:55489"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T02:07:57.8204228+04:00 0HN921FJ0QBU5:00000002 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:10:43.7660486+04:00 0HN921FJ0QBU6:00000001 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:10:55.0786983+04:00 0HN921FJ0QBU6:00000002 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:13:23.7524752+04:00 0HN921FJ0QBU7:00000001 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:16:52.6507935+04:00 0HN921FJ0QBU8:00000001 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:17:10.8314827+04:00 0HN921FJ0QBU8:00000002 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:18:56.0414106+04:00 0HN921FJ0QBU9:00000001 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:19:49.2359011+04:00 0HN921FJ0QBU9:00000002 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:19:57.7482377+04:00 0HN921FJ0QBU9:00000003 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:20:46.4599945+04:00 0HN921FJ0QBUB:00000005 [INF] Fetching MerchantDocuments details with ID: 16 (3b2ed0bc)
+2024-12-22T02:20:46.7555359+04:00 0HN921FJ0QBUB:00000005 [INF] Provider Document fetched and updated successfully with ID: 16 (5818bd1b)
+2024-12-22T02:20:58.3998496+04:00 0HN921FJ0QBUC:00000001 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:35:31.4016031+04:00 0HN921FJ0QBUD:00000001 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:38:35.7030376+04:00  [WRN] Overriding address(es) '"http://localhost:56939, https://localhost:56940"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T02:40:05.3980725+04:00 0HN9221I2TGO9:00000002 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:44:23.3789209+04:00 0HN9221I2TGOC:00000001 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:45:06.3033704+04:00 0HN9221I2TGOB:00000009 [INF] Fetching MerchantDocuments details with ID: 20 (3b2ed0bc)
+2024-12-22T02:45:06.5250135+04:00 0HN9221I2TGOB:00000009 [INF] Provider Document fetched and updated successfully with ID: 20 (5818bd1b)
+2024-12-22T02:45:09.0857523+04:00 0HN9221I2TGOB:0000000D [INF] Fetching MerchantDocuments details with ID: 21 (3b2ed0bc)
+2024-12-22T02:45:09.1286260+04:00 0HN9221I2TGOB:0000000D [INF] Provider Document fetched and updated successfully with ID: 21 (5818bd1b)
+2024-12-22T02:45:12.0150683+04:00 0HN9221I2TGOB:00000013 [INF] Fetching MerchantDocuments details with ID: 22 (3b2ed0bc)
+2024-12-22T02:45:12.0315977+04:00 0HN9221I2TGOB:00000013 [INF] Provider Document fetched and updated successfully with ID: 22 (5818bd1b)
+2024-12-22T02:45:17.1871343+04:00 0HN9221I2TGOB:00000019 [INF] Fetching MerchantDocuments details with ID: 23 (3b2ed0bc)
+2024-12-22T02:45:17.2311011+04:00 0HN9221I2TGOB:00000019 [INF] Provider Document fetched and updated successfully with ID: 23 (5818bd1b)
+2024-12-22T02:45:25.3228729+04:00 0HN9221I2TGOB:00000021 [INF] Fetching MerchantDocuments details with ID: 17 (3b2ed0bc)
+2024-12-22T02:45:25.3598364+04:00 0HN9221I2TGOB:00000021 [INF] Provider Document fetched and updated successfully with ID: 17 (5818bd1b)
+2024-12-22T02:45:29.5953723+04:00 0HN9221I2TGOB:00000025 [INF] Fetching MerchantDocuments details with ID: 18 (3b2ed0bc)
+2024-12-22T02:45:29.6094097+04:00 0HN9221I2TGOB:00000025 [INF] Provider Document fetched and updated successfully with ID: 18 (5818bd1b)
+2024-12-22T02:45:32.1484457+04:00 0HN9221I2TGOB:0000002B [INF] Fetching MerchantDocuments details with ID: 19 (3b2ed0bc)
+2024-12-22T02:45:32.2162675+04:00 0HN9221I2TGOB:0000002B [INF] Provider Document fetched and updated successfully with ID: 19 (5818bd1b)
+2024-12-22T02:46:01.4849819+04:00 0HN9221I2TGOH:00000001 [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-22T02:46:01.5207517+04:00 0HN9221I2TGOH:00000001 [INF] User login successful for email: "farooqui.faraz@gmail.com" (8ce767cc)
+2024-12-22T02:46:02.7719254+04:00 0HN9221I2TGOH:00000007 [INF] No reviews found for merchantId: 1 (bd40e63e)
+2024-12-22T02:46:02.8958287+04:00 0HN9221I2TGOH:00000008 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T02:47:08.7465921+04:00 0HN9221I2TGOH:0000000D [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T02:47:08.7719880+04:00 0HN9221I2TGOH:0000000D [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T02:47:22.3705947+04:00 0HN9221I2TGOH:00000015 [INF] Processing merchant document for Merchant ID: 1 (58494a3b)
+2024-12-22T02:47:22.3866617+04:00 0HN9221I2TGOH:00000015 [INF] Updating existing document with Document ID: 22 (d8562969)
+2024-12-22T02:47:22.4066478+04:00 0HN9221I2TGOH:00000015 [INF] Merchant document processed successfully for Merchant ID: 1 (e9966a4c)
+2024-12-22T02:47:22.5663015+04:00 0HN9221I2TGOH:00000016 [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T02:47:22.5745667+04:00 0HN9221I2TGOH:00000016 [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T02:47:27.6025936+04:00 0HN9221I2TGOM:00000001 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:47:39.1037431+04:00 0HN9221I2TGOB:00000033 [INF] Fetching MerchantDocuments details with ID: 22 (3b2ed0bc)
+2024-12-22T02:47:39.1647345+04:00 0HN9221I2TGOB:00000033 [INF] Provider Document fetched and updated successfully with ID: 22 (5818bd1b)
+2024-12-22T02:47:44.6956638+04:00 0HN9221I2TGOH:0000001D [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T02:47:44.7041976+04:00 0HN9221I2TGOH:0000001D [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T02:47:55.0369138+04:00 0HN9221I2TGOB:00000039 [INF] Merchant status updated successfully for Provider ID: 1 (d9c2e338)
+2024-12-22T02:47:55.0705520+04:00 0HN9221I2TGOB:00000039 [INF] Provider and Merchant Link status updated successfully for Provider ID: 1 (33344282)
+2024-12-22T02:47:55.1121450+04:00 0HN9221I2TGOB:00000039 [INF] Merchant status updated successfully for Provider ID: 1 (d9c2e338)
+2024-12-22T02:47:57.1618115+04:00 0HN9221I2TGOM:00000002 [INF] Fetching all provider users. (e6347852)
+2024-12-22T02:48:02.2969980+04:00 0HN9221I2TGON:00000001 [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T02:48:02.3069338+04:00 0HN9221I2TGON:00000001 [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T02:48:24.3867748+04:00 0HN9221I2TGON:00000008 [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-22T02:48:24.4553285+04:00 0HN9221I2TGON:00000008 [INF] User login successful for email: "farooqui.faraz@gmail.com" (8ce767cc)
+2024-12-22T02:48:25.0135614+04:00 0HN9221I2TGON:0000000E [INF] No reviews found for merchantId: 1 (bd40e63e)
+2024-12-22T02:48:25.0528489+04:00 0HN9221I2TGON:0000000F [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T02:48:44.0058698+04:00 0HN9221I2TGON:0000001F [INF] Fetched service documents successfully. (271687fb)
+2024-12-22T02:50:35.6954796+04:00 0HN9221I2TGOP:00000004 [INF] Fetched service documents successfully. (271687fb)
+2024-12-22T02:51:04.3730584+04:00 0HN9221I2TGOP:0000000B [INF] Fetched service documents successfully. (271687fb)
+2024-12-22T02:51:48.3331375+04:00 0HN9221I2TGOP:0000001C [INF] Fetched service documents successfully. (271687fb)
+2024-12-22T02:52:45.2956977+04:00 0HN9221I2TGOB:0000003F [INF] Merchant status updated successfully for Provider ID: 2 (d9c2e338)
+2024-12-22T02:53:04.7255230+04:00 0HN9221I2TGOU:00000004 [INF] Fetched service documents successfully. (271687fb)
+2024-12-22T02:53:36.6036919+04:00 0HN9221I2TGOU:00000015 [INF] Fetched service documents successfully. (271687fb)
+2024-12-22T02:57:15.2713683+04:00 0HN9221I2TGPG:00000001 [INF] Attempting to register new customer with email: "zaararida@gmail.com" (c30252b0)
+2024-12-22T02:57:18.1873014+04:00 0HN9221I2TGPG:00000001 [INF] Customer registered successfully with email: "zaararida@gmail.com" (82541fa5)
+2024-12-22T03:03:51.4332366+04:00  [WRN] Overriding address(es) '"http://localhost:58053, https://localhost:58054"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T03:04:17.8823821+04:00 0HN922EUCH8G4:00000001 [INF] Attempting to register new customer with email: "zaararida@gmail.com" (c30252b0)
+2024-12-22T03:04:23.6302146+04:00 0HN922EUCH8G4:00000001 [INF] Customer registered successfully with email: "zaararida@gmail.com" (82541fa5)
+2024-12-22T03:04:30.0912078+04:00 0HN922EUCH8G5:00000001 [INF] Attempting login for email: "akbar.khan83@gmail.com" (100386e3)
+2024-12-22T03:04:30.1642258+04:00 0HN922EUCH8G5:00000001 [INF] User login successful for email: "akbar.khan83@gmail.com" (8ce767cc)
+2024-12-22T03:04:31.1700387+04:00 0HN922EUCH8G5:00000007 [INF] No reviews found for merchantId: 2 (67f73bac)
+2024-12-22T03:04:31.3206521+04:00 0HN922EUCH8G5:00000008 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T03:05:37.2193067+04:00 0HN922EUCH8G5:0000001E [INF] No reviews found for merchantId: 2 (67f73bac)
+2024-12-22T03:05:37.2425929+04:00 0HN922EUCH8G5:0000001F [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T03:06:49.0263020+04:00 0HN922EUCH8GJ:00000002 [INF] Fetching all provider users. (e6347852)
+2024-12-22T03:08:00.7468788+04:00 0HN922EUCH8GK:0000000C [INF] Fetched service documents successfully. (271687fb)
+2024-12-22T03:12:02.5050430+04:00 0HN922EUCH8H8:00000015 [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-22T03:12:02.5464528+04:00 0HN922EUCH8H8:00000015 [INF] User login successful for email: "farooqui.faraz@gmail.com" (8ce767cc)
+2024-12-22T03:12:02.7133685+04:00 0HN922EUCH8H8:0000001B [INF] No reviews found for merchantId: 1 (bd40e63e)
+2024-12-22T03:12:02.7296828+04:00 0HN922EUCH8H8:0000001C [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T03:12:07.6813720+04:00 0HN922EUCH8H8:00000021 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T03:12:07.7125458+04:00 0HN922EUCH8H8:00000021 [WRN] No users found with uploaded documents. (5684a41c)
+2024-12-22T03:12:36.8139777+04:00 0HN922EUCH8H8:00000031 [INF] Fetched service documents successfully. (271687fb)
+2024-12-22T03:12:56.5655947+04:00 0HN922EUCH8HA:00000005 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T03:13:12.6581107+04:00 0HN922EUCH8HA:0000000E [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T03:13:28.7915294+04:00 0HN922EUCH8HB:00000004 [INF] Fetched service documents successfully. (271687fb)
+2024-12-22T03:13:58.5581704+04:00 0HN922EUCH8HA:00000012 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T03:14:52.9429136+04:00 0HN922EUCH8HC:00000001 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T03:17:04.7158747+04:00 0HN922EUCH8HI:00000001 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T03:17:07.9392704+04:00 0HN922EUCH8HI:00000005 [INF] Fetching provider user with ID: 1 (0bca2dfb)
+2024-12-22T03:17:07.9483661+04:00 0HN922EUCH8HI:00000005 [INF] Provider user fetched successfully with ID: 1 (18c35d23)
+2024-12-22T03:24:01.4779601+04:00 0HN922EUCH8HN:00000001 [INF] sendRequestToSavePayment method called with UserId: 1 (b9981db9)
+2024-12-22T03:24:01.5560528+04:00 0HN922EUCH8HN:00000001 [INF] Payment Done Successfully. (e71e65ea)
+2024-12-22T03:24:01.6202588+04:00 0HN922EUCH8HN:00000002 [INF] UpdateRequestForDisCountToUserForPaymentDont method called with UserId: 1 (b12c6fe3)
+2024-12-22T03:24:01.6287195+04:00 0HN922EUCH8HN:00000002 [INF] Payment status updated. (3afab57c)
+2024-12-22T03:24:09.0384421+04:00 0HN922EUCH8HN:00000009 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T03:24:28.5640335+04:00 0HN922EUCH8HN:0000000D [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T03:26:56.8840300+04:00 0HN922EUCH8HS:00000001 [INF] Attempting to register new customer with email: "akbar.khan@blueirissoft.com" (c30252b0)
+2024-12-22T03:26:57.1073458+04:00 0HN922EUCH8HS:00000001 [ERR] An error occurred during customer registration for email: "akbar.khan@blueirissoft.com" (21386680)
+Microsoft.Data.SqlClient.SqlException (0x80131904): The parameterized query '(@ReferredCustomerID nvarchar(4000),@ReferralCode nvarchar(36))E' expects the parameter '@ReferredCustomerID', which was not supplied.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlRawAsync(DatabaseFacade databaseFacade, String sql, IEnumerable`1 parameters, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.CustomerControllers.CustomerUserManagmentController.PostCustomer(Customers customers, String referralCode) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\CustomerControllers\CustomerUserManagmentController.cs:line 139
+ClientConnectionId:fcee539f-6bd0-4eaa-844d-0993d277c76f
+Error Number:8178,State:1,Class:16
+2024-12-22T03:27:27.5673015+04:00 0HN922EUCH8HS:00000002 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T03:28:18.2072293+04:00 0HN922EUCH8HS:0000000C [INF] Attempting to register new customer with email: "akbar.khan@blueirissoft.com" (c30252b0)
+2024-12-22T03:28:18.3005559+04:00 0HN922EUCH8HS:0000000C [ERR] An error occurred during customer registration for email: "akbar.khan@blueirissoft.com" (21386680)
+Microsoft.Data.SqlClient.SqlException (0x80131904): The parameterized query '(@ReferredCustomerID nvarchar(4000),@ReferralCode nvarchar(36))E' expects the parameter '@ReferredCustomerID', which was not supplied.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__210_1(IAsyncResult result)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.ExecuteSqlRawAsync(DatabaseFacade databaseFacade, String sql, IEnumerable`1 parameters, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.CustomerControllers.CustomerUserManagmentController.PostCustomer(Customers customers, String referralCode) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\CustomerControllers\CustomerUserManagmentController.cs:line 139
+ClientConnectionId:fcee539f-6bd0-4eaa-844d-0993d277c76f
+Error Number:8178,State:1,Class:16
+2024-12-22T03:28:39.8681040+04:00 0HN922EUCH8HS:0000000E [INF] UploadFiles method called with UserId: 1 (8b46a149)
+2024-12-22T03:28:39.9169854+04:00 0HN922EUCH8HS:0000000E [INF] Files uploaded successfully for UserId: 1 (c2cd0574)
+2024-12-22T03:28:40.0664807+04:00 0HN922EUCH8HS:00000011 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T03:29:07.9845736+04:00 0HN922EUCH8I3:00000004 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T03:29:08.0579761+04:00 0HN922EUCH8I3:00000004 [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T03:29:08.1028626+04:00 0HN922EUCH8I3:00000005 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T03:29:08.1187229+04:00 0HN922EUCH8I3:00000005 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T03:29:13.0788970+04:00 0HN922EUCH8I3:0000000B [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T03:29:13.0958828+04:00 0HN922EUCH8I3:0000000B [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T03:29:48.5559531+04:00 0HN922EUCH8I8:00000001 [INF] Attempting to register new customer with email: "akbar.khan@blueirissoft.com" (c30252b0)
+2024-12-22T03:29:51.7789144+04:00 0HN922EUCH8I8:00000001 [INF] Customer registered successfully with email: "akbar.khan@blueirissoft.com" (82541fa5)
+2024-12-22T03:34:09.9097270+04:00 0HN922EUCH8IJ:00000004 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T03:34:09.9556402+04:00 0HN922EUCH8IJ:00000004 [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T03:35:58.3701202+04:00 0HN922EUCH8J9:00000001 [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T03:35:59.4299904+04:00 0HN922EUCH8J9:00000001 [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T03:35:59.4629028+04:00 0HN922EUCH8J9:00000002 [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T03:35:59.4750647+04:00 0HN922EUCH8J9:00000002 [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T03:42:46.2865387+04:00 0HN922EUCH8K3:00000001 [INF] Attempting login for email: "akbar.khan83@gmail.com" (100386e3)
+2024-12-22T03:42:46.3247274+04:00 0HN922EUCH8K3:00000001 [INF] User login successful for email: "akbar.khan83@gmail.com" (8ce767cc)
+2024-12-22T03:42:46.5360636+04:00 0HN922EUCH8K3:00000007 [INF] No reviews found for merchantId: 2 (67f73bac)
+2024-12-22T03:42:46.5632136+04:00 0HN922EUCH8K3:00000008 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T03:42:52.3682450+04:00 0HN922EUCH8K3:0000000D [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T03:42:52.3771862+04:00 0HN922EUCH8K3:0000000D [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T03:43:33.8100420+04:00 0HN922EUCH8K3:00000014 [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T03:43:33.8224905+04:00 0HN922EUCH8K3:00000014 [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T03:44:03.2746649+04:00 0HN922EUCH8K4:00000002 [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T03:44:03.2840388+04:00 0HN922EUCH8K4:00000002 [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T04:09:28.4399086+04:00 0HN922EUCH8K8:00000001 [INF] VerifyDocument method called for DocumentId: 1 (e7d101e2)
+2024-12-22T04:09:28.4740528+04:00 0HN922EUCH8K8:00000001 [INF] Document verified successfully for DocumentId: 1 (20f033f8)
+2024-12-22T04:09:50.2076939+04:00 0HN922EUCH8K8:00000003 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:09:50.2128024+04:00 0HN922EUCH8K8:00000003 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:09:59.8561065+04:00 0HN922EUCH8K8:00000007 [INF] ResendDocument method called for DocumentId: 2 (62cce771)
+2024-12-22T04:09:59.8958719+04:00 0HN922EUCH8K8:00000007 [INF] Document marked for resending for DocumentId: 2 (20a86a94)
+2024-12-22T04:10:06.9124339+04:00 0HN922EUCH8K8:00000009 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:10:06.9217093+04:00 0HN922EUCH8K8:00000009 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:11:58.4200135+04:00 0HN922EUCH8KQ:00000001 [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-22T04:11:58.4352049+04:00 0HN922EUCH8KQ:00000001 [INF] User login successful for email: "farooqui.faraz@gmail.com" (8ce767cc)
+2024-12-22T04:11:58.7793289+04:00 0HN922EUCH8KQ:00000007 [INF] No reviews found for merchantId: 1 (bd40e63e)
+2024-12-22T04:11:58.8344532+04:00 0HN922EUCH8KQ:00000008 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:12:15.5333241+04:00 0HN922EUCH8KQ:0000000D [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T04:12:15.5652323+04:00 0HN922EUCH8KQ:0000000D [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T04:12:15.6005775+04:00 0HN922EUCH8KQ:0000000E [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:12:15.6125266+04:00 0HN922EUCH8KQ:0000000E [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:12:17.5119978+04:00 0HN922EUCH8KQ:00000014 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:12:17.5216205+04:00 0HN922EUCH8KQ:00000014 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:12:18.6607258+04:00 0HN922EUCH8KQ:00000019 [INF] Attempting login for email: "akbar.khan83@gmail.com" (100386e3)
+2024-12-22T04:12:18.6722056+04:00 0HN922EUCH8KQ:00000019 [INF] User login successful for email: "akbar.khan83@gmail.com" (8ce767cc)
+2024-12-22T04:12:18.9005770+04:00 0HN922EUCH8KQ:0000001F [INF] No reviews found for merchantId: 2 (67f73bac)
+2024-12-22T04:12:18.9250949+04:00 0HN922EUCH8KQ:00000020 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:23:08.4421938+04:00  [WRN] Overriding address(es) '"http://localhost:60747, https://localhost:60748"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T04:24:09.0253436+04:00 0HN923RK8ASBF:00000001 [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-22T04:24:11.5217699+04:00 0HN923RK8ASBF:00000001 [WRN] Login failed for email: "farooqui.faraz@gmail.com" (ab24df07)
+2024-12-22T04:24:28.5909198+04:00 0HN923RK8ASBF:00000002 [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-22T04:24:28.7684618+04:00 0HN923RK8ASBF:00000002 [INF] User login successful for email: "farooqui.faraz@gmail.com" (8ce767cc)
+2024-12-22T04:24:29.9959012+04:00 0HN923RK8ASBF:00000008 [INF] No reviews found for merchantId: 1 (bd40e63e)
+2024-12-22T04:24:30.0895975+04:00 0HN923RK8ASBF:00000009 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:24:34.3401280+04:00 0HN923RK8ASBF:0000000E [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T04:24:34.3843238+04:00 0HN923RK8ASBF:0000000E [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T04:24:34.4617789+04:00 0HN923RK8ASBF:0000000F [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:24:34.4932673+04:00 0HN923RK8ASBF:0000000F [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:24:36.1649963+04:00 0HN923RK8ASBF:00000015 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:24:36.2187555+04:00 0HN923RK8ASBF:00000015 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:25:18.7447480+04:00 0HN923RK8ASBF:0000001A [INF] VerifyDocument method called for DocumentId: 3 (e7d101e2)
+2024-12-22T04:25:18.9276908+04:00 0HN923RK8ASBF:0000001A [INF] Document verified successfully for DocumentId: 3 (20f033f8)
+2024-12-22T04:25:19.3815635+04:00 0HN923RK8ASBF:0000001D [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:25:19.3934328+04:00 0HN923RK8ASBF:0000001D [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:25:22.0884398+04:00 0HN923RK8ASBF:00000022 [INF] VerifyDocument method called for DocumentId: 4 (e7d101e2)
+2024-12-22T04:25:22.1040166+04:00 0HN923RK8ASBF:00000022 [INF] Document verified successfully for DocumentId: 4 (20f033f8)
+2024-12-22T04:25:22.2827548+04:00 0HN923RK8ASBF:00000025 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:25:22.2967736+04:00 0HN923RK8ASBF:00000025 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:25:33.5603805+04:00 0HN923RK8ASBF:0000002A [INF] ResendDocument method called for DocumentId: 5 (62cce771)
+2024-12-22T04:25:33.5778165+04:00 0HN923RK8ASBF:0000002A [INF] Document marked for resending for DocumentId: 5 (20a86a94)
+2024-12-22T04:25:33.7182931+04:00 0HN923RK8ASBF:0000002D [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:25:33.7296190+04:00 0HN923RK8ASBF:0000002D [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:25:36.4849685+04:00 0HN923RK8ASBF:00000032 [INF] VerifyDocument method called for DocumentId: 6 (e7d101e2)
+2024-12-22T04:25:36.4964641+04:00 0HN923RK8ASBF:00000032 [INF] Document verified successfully for DocumentId: 6 (20f033f8)
+2024-12-22T04:25:36.6306204+04:00 0HN923RK8ASBF:00000035 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:25:36.6387278+04:00 0HN923RK8ASBF:00000035 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:26:25.5756428+04:00 0HN923RK8ASBP:00000002 [INF] Attempting login for email: "akbar.khan83@gmail.com" (100386e3)
+2024-12-22T04:26:25.5907991+04:00 0HN923RK8ASBP:00000002 [INF] User login successful for email: "akbar.khan83@gmail.com" (8ce767cc)
+2024-12-22T04:26:25.9802802+04:00 0HN923RK8ASBP:00000008 [INF] No reviews found for merchantId: 2 (67f73bac)
+2024-12-22T04:26:26.0422162+04:00 0HN923RK8ASBP:00000009 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:26:29.5044425+04:00 0HN923RK8ASBP:0000000E [INF] Attempting login for email: "akbar.khan83@gmail.com" (100386e3)
+2024-12-22T04:26:29.5142219+04:00 0HN923RK8ASBP:0000000E [INF] User login successful for email: "akbar.khan83@gmail.com" (8ce767cc)
+2024-12-22T04:26:29.6961450+04:00 0HN923RK8ASBP:00000014 [INF] No reviews found for merchantId: 2 (67f73bac)
+2024-12-22T04:26:29.7218736+04:00 0HN923RK8ASBP:00000015 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:26:41.0006789+04:00 0HN923RK8ASBG:00000012 [INF] DeleteDocument method called for DocumentId: 2 (4a557ea6)
+2024-12-22T04:26:41.0343644+04:00 0HN923RK8ASBG:00000012 [INF] User Has Reshared the Document DocumentId: 2 (bcb104c4)
+2024-12-22T04:27:29.3027571+04:00 0HN923RK8ASBS:00000005 [INF] DeleteDocument method called for DocumentId: 5 (4a557ea6)
+2024-12-22T04:27:29.3235918+04:00 0HN923RK8ASBS:00000005 [INF] User Has Reshared the Document DocumentId: 5 (bcb104c4)
+2024-12-22T04:27:29.6483426+04:00 0HN923RK8ASBS:0000000C [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:27:46.7723345+04:00 0HN923RK8ASBS:00000015 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:27:56.3813207+04:00 0HN923RK8ASBP:0000002A [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-22T04:27:56.3975455+04:00 0HN923RK8ASBP:0000002A [WRN] Login failed for email: "farooqui.faraz@gmail.com" (ab24df07)
+2024-12-22T04:28:10.2060238+04:00 0HN923RK8ASC2:00000001 [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-22T04:28:10.2192741+04:00 0HN923RK8ASC2:00000001 [WRN] Login failed for email: "farooqui.faraz@gmail.com" (ab24df07)
+2024-12-22T04:28:31.4651534+04:00 0HN923RK8ASBS:00000019 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:29:20.2409163+04:00 0HN923RK8ASC2:00000002 [INF] Attempting login for email: "farooqui.faraz@gmail.com" (100386e3)
+2024-12-22T04:29:20.2531174+04:00 0HN923RK8ASC2:00000002 [INF] User login successful for email: "farooqui.faraz@gmail.com" (8ce767cc)
+2024-12-22T04:29:20.4336445+04:00 0HN923RK8ASC2:00000008 [INF] No reviews found for merchantId: 1 (bd40e63e)
+2024-12-22T04:29:20.4759157+04:00 0HN923RK8ASC2:00000009 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:29:49.6675389+04:00 0HN923RK8ASC2:0000000E [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T04:29:49.7014039+04:00 0HN923RK8ASC2:0000000E [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T04:29:49.7426093+04:00 0HN923RK8ASC2:0000000F [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:29:49.7557097+04:00 0HN923RK8ASC2:0000000F [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:29:56.3802008+04:00 0HN923RK8ASC2:00000015 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:29:56.3915102+04:00 0HN923RK8ASC2:00000015 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:30:00.3985402+04:00 0HN923RK8ASC2:0000001A [INF] ResendDocument method called for DocumentId: 2 (62cce771)
+2024-12-22T04:30:00.4130874+04:00 0HN923RK8ASC2:0000001A [INF] Document marked for resending for DocumentId: 2 (20a86a94)
+2024-12-22T04:30:00.5727661+04:00 0HN923RK8ASC2:0000001D [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:30:00.5846041+04:00 0HN923RK8ASC2:0000001D [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:30:03.6789037+04:00 0HN923RK8ASC2:00000022 [INF] VerifyDocument method called for DocumentId: 5 (e7d101e2)
+2024-12-22T04:30:03.6959064+04:00 0HN923RK8ASC2:00000022 [INF] Document verified successfully for DocumentId: 5 (20f033f8)
+2024-12-22T04:30:03.8222286+04:00 0HN923RK8ASC2:00000025 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:30:03.8304621+04:00 0HN923RK8ASC2:00000025 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:30:33.9177055+04:00 0HN923RK8ASC3:00000005 [INF] DeleteDocument method called for DocumentId: 2 (4a557ea6)
+2024-12-22T04:30:33.9269786+04:00 0HN923RK8ASC3:00000005 [INF] User Has Reshared the Document DocumentId: 2 (bcb104c4)
+2024-12-22T04:32:02.8200177+04:00 0HN923RK8ASC8:00000001 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:32:02.8301263+04:00 0HN923RK8ASC8:00000001 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:32:30.2694346+04:00 0HN923RK8ASCD:00000001 [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T04:32:30.2871472+04:00 0HN923RK8ASCD:00000001 [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T04:33:00.3036585+04:00 0HN923RK8ASC8:00000006 [INF] ResendDocument method called for DocumentId: 2 (62cce771)
+2024-12-22T04:33:00.3435968+04:00 0HN923RK8ASC8:00000006 [INF] Document marked for resending for DocumentId: 2 (20a86a94)
+2024-12-22T04:33:00.4982046+04:00 0HN923RK8ASC8:00000009 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:33:00.5071663+04:00 0HN923RK8ASC8:00000009 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:33:23.6034246+04:00 0HN923RK8ASCD:00000007 [INF] DeleteDocument method called for DocumentId: 2 (4a557ea6)
+2024-12-22T04:33:23.6388986+04:00 0HN923RK8ASCD:00000007 [INF] User Has Reshared the Document DocumentId: 2 (bcb104c4)
+2024-12-22T04:33:27.4206542+04:00 0HN923RK8ASC8:0000000E [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:33:27.4285258+04:00 0HN923RK8ASC8:0000000E [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:33:38.9305950+04:00 0HN923RK8ASC8:00000013 [INF] VerifyDocument method called for DocumentId: 2 (e7d101e2)
+2024-12-22T04:33:38.9488030+04:00 0HN923RK8ASC8:00000013 [INF] Document verified successfully for DocumentId: 2 (20f033f8)
+2024-12-22T04:33:39.1050835+04:00 0HN923RK8ASC8:00000016 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:33:39.1129382+04:00 0HN923RK8ASC8:00000016 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:33:45.5128267+04:00 0HN923RK8ASC8:0000001B [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T04:33:45.5585128+04:00 0HN923RK8ASC8:0000001B [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T04:33:45.5922306+04:00 0HN923RK8ASC8:0000001C [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:33:45.6044518+04:00 0HN923RK8ASC8:0000001C [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:33:57.0023670+04:00 0HN923RK8ASC8:00000027 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T04:33:57.0137209+04:00 0HN923RK8ASC8:00000027 [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T04:33:57.0554384+04:00 0HN923RK8ASC8:00000028 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:33:57.0695276+04:00 0HN923RK8ASC8:00000028 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:34:03.6049471+04:00 0HN923RK8ASCD:0000001A [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:34:03.9318881+04:00 0HN923RK8ASCD:0000001A [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:34:05.4285596+04:00 0HN923RK8ASCD:0000001D [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:34:05.5333875+04:00 0HN923RK8ASCD:0000001D [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:34:08.7598854+04:00 0HN923RK8ASCK:00000003 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:34:08.8560508+04:00 0HN923RK8ASCK:00000003 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:34:14.5443301+04:00 0HN923RK8ASCK:00000004 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:34:14.6400903+04:00 0HN923RK8ASCK:00000004 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:34:33.5843334+04:00 0HN923RK8ASCL:00000001 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:34:36.2741846+04:00 0HN923RK8ASCL:00000005 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:34:36.3705240+04:00 0HN923RK8ASCL:00000005 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:34:38.4576796+04:00 0HN923RK8ASCL:00000006 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:34:38.5746270+04:00 0HN923RK8ASCL:00000006 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:34:40.8516125+04:00 0HN923RK8ASCL:00000007 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:34:40.9581973+04:00 0HN923RK8ASCL:00000007 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:34:47.1380253+04:00 0HN923RK8ASCL:00000008 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:34:47.2269260+04:00 0HN923RK8ASCL:00000008 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:35:10.0407902+04:00 0HN923RK8ASCL:00000009 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:35:16.3520403+04:00 0HN923RK8ASCL:0000000D [INF] Fetching provider user with ID: 2 (0bca2dfb)
+2024-12-22T04:35:16.3622032+04:00 0HN923RK8ASCL:0000000D [INF] Provider user fetched successfully with ID: 2 (18c35d23)
+2024-12-22T04:36:01.8253100+04:00 0HN923RK8ASCL:00000013 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:36:06.3316737+04:00 0HN923RK8ASCL:00000017 [WRN] No Messages found (bcd8fac9)
+2024-12-22T04:36:14.1709100+04:00 0HN923RK8ASCL:0000001B [WRN] No Messages found (bcd8fac9)
+2024-12-22T04:36:16.8395626+04:00 0HN923RK8ASCL:0000001F [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:36:48.6002775+04:00 0HN923RK8ASCQ:00000001 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:36:48.7588095+04:00 0HN923RK8ASCQ:00000001 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:36:49.6012862+04:00 0HN923RK8ASCQ:00000002 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:36:49.7008921+04:00 0HN923RK8ASCQ:00000002 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:36:52.9761094+04:00 0HN923RK8ASCQ:00000003 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:36:53.0718844+04:00 0HN923RK8ASCQ:00000003 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:37:00.2373562+04:00 0HN923RK8ASCQ:00000004 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:37:00.3405528+04:00 0HN923RK8ASCQ:00000004 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:38:21.0838492+04:00 0HN923RK8ASCR:00000001 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:38:21.1911560+04:00 0HN923RK8ASCR:00000001 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:38:22.6293035+04:00 0HN923RK8ASCR:00000002 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:38:22.6836474+04:00 0HN923RK8ASCR:00000002 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:38:24.7674011+04:00 0HN923RK8ASCR:00000003 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:38:24.8198286+04:00 0HN923RK8ASCR:00000003 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:38:27.8329312+04:00 0HN923RK8ASCR:00000004 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:38:27.8815286+04:00 0HN923RK8ASCR:00000004 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:39:17.9881543+04:00 0HN923RK8ASCR:00000005 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:44:28.2091954+04:00 0HN923RK8ASCR:00000005 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:73229e61-9a9b-4da3-82d4-55f3174a2ace
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:45:24.2333408+04:00 0HN923RK8ASD7:00000001 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:46:13.8148988+04:00 0HN923RK8ASD7:00000001 [ERR] An error occurred while processing the payment request. (0f5bd7c8)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UC_ReferredCustomer'. Cannot insert duplicate key in object 'dbo.Referral'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:7203729b-8ee0-4a0f-88c3-1d7a185b691b
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AFFZ_API.Controllers.PaymentController.sendRequestToSavePayment(PaymentHistory savePaymentHistory) in D:\SmartCenter\SmartCenter21122024\AFFZ_API\Controllers\PaymentController.cs:line 27
+2024-12-22T04:46:34.9994563+04:00 0HN923RK8ASDB:00000001 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:46:37.5783679+04:00 0HN923RK8ASDB:00000001 [INF] Payment Done Successfully. (e71e65ea)
+2024-12-22T04:46:53.8730308+04:00 0HN923RK8ASD9:00000001 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:46:55.8278660+04:00 0HN923RK8ASD9:00000001 [INF] Payment Done Successfully. (e71e65ea)
+2024-12-22T04:47:27.9078613+04:00 0HN923RK8ASDC:00000001 [INF] sendRequestToSavePayment method called with UserId: 2 (b9981db9)
+2024-12-22T04:47:27.9407440+04:00 0HN923RK8ASDC:00000001 [INF] Payment Done Successfully. (e71e65ea)
+2024-12-22T04:47:28.9963202+04:00 0HN923RK8ASDC:00000002 [INF] UpdateRequestForDisCountToUserForPaymentDont method called with UserId: 2 (b12c6fe3)
+2024-12-22T04:47:29.0028673+04:00 0HN923RK8ASDC:00000002 [INF] Payment status updated. (3afab57c)
+2024-12-22T04:47:35.3946246+04:00 0HN923RK8ASDC:00000009 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:47:48.2842442+04:00 0HN923RK8ASDC:0000000D [INF] No Messages found retrieved successfully (59f49028)
+2024-12-22T04:48:20.7410881+04:00 0HN923RK8ASDC:00000012 [INF] No Messages found retrieved successfully (59f49028)
+2024-12-22T04:48:26.3061026+04:00 0HN923RK8ASDC:00000016 [INF] No Messages found retrieved successfully (59f49028)
+2024-12-22T04:48:27.5641384+04:00 0HN923RK8ASDC:0000001A [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:49:26.9955211+04:00 0HN923RK8ASDH:00000002 [INF] UploadFiles method called with UserId: 2 (8b46a149)
+2024-12-22T04:49:27.0543820+04:00 0HN923RK8ASDH:00000002 [INF] Files uploaded successfully for UserId: 2 (c2cd0574)
+2024-12-22T04:49:27.2761657+04:00 0HN923RK8ASDH:00000005 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:49:35.8988773+04:00 0HN923RK8ASDI:00000006 [INF] No reviews found for merchantId: 2 (67f73bac)
+2024-12-22T04:49:35.9572587+04:00 0HN923RK8ASDI:00000007 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:50:10.9864054+04:00 0HN923RK8ASDI:0000000C [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T04:50:11.0181501+04:00 0HN923RK8ASDI:0000000C [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T04:50:11.0599425+04:00 0HN923RK8ASDI:0000000D [INF] ReviewDocuments method called for UserId: 2 (852993a5)
+2024-12-22T04:50:11.0722880+04:00 0HN923RK8ASDI:0000000D [INF] Documents retrieved successfully for UserId: 2 (53f85e53)
+2024-12-22T04:50:14.9106636+04:00 0HN923RK8ASDI:00000013 [INF] ReviewDocuments method called for UserId: 2 (852993a5)
+2024-12-22T04:50:14.9194102+04:00 0HN923RK8ASDI:00000013 [INF] Documents retrieved successfully for UserId: 2 (53f85e53)
+2024-12-22T04:50:19.7412163+04:00 0HN923RK8ASDI:0000001D [INF] No reviews found for merchantId: 1 (bd40e63e)
+2024-12-22T04:50:19.8016769+04:00 0HN923RK8ASDI:0000001E [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:50:20.0277059+04:00 0HN923RK8ASDI:00000022 [INF] VerifyDocument method called for DocumentId: 7 (e7d101e2)
+2024-12-22T04:50:20.0724436+04:00 0HN923RK8ASDI:00000022 [INF] Document verified successfully for DocumentId: 7 (20f033f8)
+2024-12-22T04:50:20.2015914+04:00 0HN923RK8ASDI:00000025 [INF] ReviewDocuments method called for UserId: 2 (852993a5)
+2024-12-22T04:50:20.2069629+04:00 0HN923RK8ASDI:00000025 [INF] Documents retrieved successfully for UserId: 2 (53f85e53)
+2024-12-22T04:50:34.9537689+04:00 0HN923RK8ASDI:0000002A [INF] VerifyDocument method called for DocumentId: 8 (e7d101e2)
+2024-12-22T04:50:35.0057221+04:00 0HN923RK8ASDI:0000002A [INF] Document verified successfully for DocumentId: 8 (20f033f8)
+2024-12-22T04:50:35.1662498+04:00 0HN923RK8ASDI:0000002D [INF] ReviewDocuments method called for UserId: 2 (852993a5)
+2024-12-22T04:50:35.1791305+04:00 0HN923RK8ASDI:0000002D [INF] Documents retrieved successfully for UserId: 2 (53f85e53)
+2024-12-22T04:50:41.2673492+04:00 0HN923RK8ASDI:00000032 [INF] ResendDocument method called for DocumentId: 9 (62cce771)
+2024-12-22T04:50:41.3174685+04:00 0HN923RK8ASDI:00000032 [INF] Document marked for resending for DocumentId: 9 (20a86a94)
+2024-12-22T04:50:41.4735882+04:00 0HN923RK8ASDI:00000035 [INF] ReviewDocuments method called for UserId: 2 (852993a5)
+2024-12-22T04:50:41.4860370+04:00 0HN923RK8ASDI:00000035 [INF] Documents retrieved successfully for UserId: 2 (53f85e53)
+2024-12-22T04:50:58.4693109+04:00 0HN923RK8ASDI:0000003A [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T04:50:58.4993948+04:00 0HN923RK8ASDI:0000003A [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T04:50:58.5300020+04:00 0HN923RK8ASDI:0000003B [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:50:58.5416747+04:00 0HN923RK8ASDI:0000003B [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:51:32.1451411+04:00 0HN923RK8ASDI:00000041 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:51:32.1534861+04:00 0HN923RK8ASDI:00000041 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:51:45.5046558+04:00 0HN923RK8ASDP:00000001 [INF] DeleteDocument method called for DocumentId: 9 (4a557ea6)
+2024-12-22T04:51:45.5523738+04:00 0HN923RK8ASDP:00000001 [INF] User Has Reshared the Document DocumentId: 9 (bcb104c4)
+2024-12-22T04:52:36.0255930+04:00 0HN923RK8ASDQ:00000004 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T04:52:36.0550300+04:00 0HN923RK8ASDQ:00000004 [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T04:52:36.0842359+04:00 0HN923RK8ASDQ:00000005 [INF] ReviewDocuments method called for UserId: 2 (852993a5)
+2024-12-22T04:52:36.0979712+04:00 0HN923RK8ASDQ:00000005 [INF] Documents retrieved successfully for UserId: 2 (53f85e53)
+2024-12-22T04:52:38.9626627+04:00 0HN923RK8ASDQ:0000000F [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T04:52:38.9765648+04:00 0HN923RK8ASDQ:0000000F [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T04:52:39.0196882+04:00 0HN923RK8ASDQ:00000010 [INF] ReviewDocuments method called for UserId: 1 (852993a5)
+2024-12-22T04:52:39.0276852+04:00 0HN923RK8ASDQ:00000010 [INF] Documents retrieved successfully for UserId: 1 (53f85e53)
+2024-12-22T04:52:39.9235987+04:00 0HN923RK8ASDQ:00000016 [INF] ReviewDocuments method called for UserId: 2 (852993a5)
+2024-12-22T04:52:39.9382055+04:00 0HN923RK8ASDQ:00000016 [INF] Documents retrieved successfully for UserId: 2 (53f85e53)
+2024-12-22T04:52:42.7008900+04:00 0HN923RK8ASDQ:0000001B [INF] VerifyDocument method called for DocumentId: 9 (e7d101e2)
+2024-12-22T04:52:42.7447549+04:00 0HN923RK8ASDQ:0000001B [INF] Document verified successfully for DocumentId: 9 (20f033f8)
+2024-12-22T04:52:42.9751811+04:00 0HN923RK8ASDQ:0000001E [INF] ReviewDocuments method called for UserId: 2 (852993a5)
+2024-12-22T04:52:42.9898167+04:00 0HN923RK8ASDQ:0000001E [INF] Documents retrieved successfully for UserId: 2 (53f85e53)
+2024-12-22T04:52:48.2003124+04:00 0HN923RK8ASDP:00000008 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:53:02.8401875+04:00 0HN923RK8ASDQ:00000027 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T04:53:02.8557693+04:00 0HN923RK8ASDQ:00000027 [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T04:53:02.8960103+04:00 0HN923RK8ASDQ:00000028 [INF] ReviewDocuments method called for UserId: 2 (852993a5)
+2024-12-22T04:53:02.9052499+04:00 0HN923RK8ASDQ:00000028 [INF] Documents retrieved successfully for UserId: 2 (53f85e53)
+2024-12-22T04:54:15.5728115+04:00 0HN923RK8ASDV:00000001 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:54:22.7829599+04:00 0HN923RK8ASE4:00000006 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T04:54:22.8166735+04:00 0HN923RK8ASE4:00000006 [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T04:54:22.8626360+04:00 0HN923RK8ASE4:00000007 [INF] ReviewDocuments method called for UserId: 2 (852993a5)
+2024-12-22T04:54:22.8763622+04:00 0HN923RK8ASE4:00000007 [INF] Documents retrieved successfully for UserId: 2 (53f85e53)
+2024-12-22T04:54:33.4065478+04:00 0HN923RK8ASDV:00000005 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:55:09.3980758+04:00 0HN923RK8ASE5:00000003 [INF] UploadFiles method called with UserId: 2 (8b46a149)
+2024-12-22T04:55:09.4072512+04:00 0HN923RK8ASE5:00000003 [INF] Files uploaded successfully for UserId: 2 (c2cd0574)
+2024-12-22T04:55:09.5523555+04:00 0HN923RK8ASE5:00000007 [INF] GetUsersWithDocuments method called. (826a3c84)
+2024-12-22T04:55:09.5688662+04:00 0HN923RK8ASE5:00000007 [INF] Users with documents retrieved successfully. (00c8d984)
+2024-12-22T04:55:09.6054202+04:00 0HN923RK8ASE5:00000008 [INF] ReviewDocuments method called for UserId: 2 (852993a5)
+2024-12-22T04:55:09.6137513+04:00 0HN923RK8ASE5:00000008 [INF] Documents retrieved successfully for UserId: 2 (53f85e53)
+2024-12-22T04:55:25.2808885+04:00 0HN923RK8ASDV:00000009 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T04:55:49.8813448+04:00 0HN923RK8ASE5:0000000E [INF] ReviewDocuments method called for UserId: 2 (852993a5)
+2024-12-22T04:55:49.8917857+04:00 0HN923RK8ASE5:0000000E [INF] Documents retrieved successfully for UserId: 2 (53f85e53)
+2024-12-22T05:00:06.2215458+04:00 0HN923RK8ASE7:0000000A [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T05:09:41.1822741+04:00  [WRN] Overriding address(es) '"http://localhost:62313, https://localhost:62314"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T05:10:34.7820215+04:00 0HN924LGQOVH5:00000007 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T05:11:03.8845654+04:00 0HN924LGQOVH5:0000000B [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T05:14:25.1935631+04:00 0HN924LGQOVH6:00000001 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T05:15:07.2313865+04:00 0HN924LGQOVH6:00000005 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T05:17:27.3350234+04:00  [WRN] Overriding address(es) '"http://localhost:62695, https://localhost:62696"'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. (88de3686)
+2024-12-22T05:17:49.5112995+04:00 0HN924PJQDEH4:00000007 [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)
+2024-12-22T05:18:34.0941153+04:00 0HN924PJQDEH4:0000000B [INF] SELECT [r].[SID], COALESCE([s].[ServicePrice], 0) AS [ServicePrice], [s].[ServiceName], COALESCE([s].[MerchantID], 0) AS [MerchantID], CAST([r].[FINALPRICE] AS decimal(18,2)) AS [FINALPRICE], [r].[UID], [r].[RFDFU], [r].[IsMerchantSelected], [r].[ResponseDateTime], [r].[IsPaymentDone], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN [r0].[StatusDescription]
+    ELSE N'Unknown'
+END AS [CurrentStatus], CASE
+    WHEN [r0].[StatusID] IS NOT NULL THEN CASE
+        WHEN [r0].[StatusName] = N'Completed' THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END
+    ELSE CAST(0 AS bit)
+END AS [IsRequestCompleted]
+FROM [Service] AS [s]
+INNER JOIN [RequestForDisCountToUser] AS [r] ON [s].[ServiceID] = [r].[SID] AND COALESCE([s].[MerchantID], 0) = [r].[MID]
+LEFT JOIN [CurrentServiceStatus] AS [c] ON [r].[UID] = [c].[UId] AND COALESCE([s].[MerchantID], 0) = [c].[MId] AND [r].[RFDFU] = [c].[RFDFU]
+LEFT JOIN [RequestStatuses] AS [r0] ON CONVERT(int, [c].[CurrentStatus]) = [r0].[StatusID]
+WHERE [s].[MerchantID] IS NOT NULL (fb864ff2)

@@ -148,6 +148,10 @@
             errorSpan.textContent = "";
         }
     });
+    document.querySelector("signUpForm").addEventListener("submit", function (e) {
+        const submitButton = this.querySelector("button[type='submit']");
+        submitButton.disabled = true;
+    });
 </script>
 
 <!-- Bootstrap JS -->

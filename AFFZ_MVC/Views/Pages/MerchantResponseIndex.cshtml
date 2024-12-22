@@ -188,6 +188,8 @@
 </div>
 
 <script>
+    const apiurl = '@ViewBag.APIUrl';
+    console.log("APPLICATION URL :" + apiurl);
     document.addEventListener('DOMContentLoaded', function () {
         const rows = document.querySelectorAll('.table-row');
         const modal = document.getElementById('actionModal');
@@ -238,7 +240,7 @@
                         const merchantId = this.dataset.merchantid;
                         const rfdfu = this.dataset.rfdfu;
 
-                        fetch(`http://192.168.0.115:1501/api/FileUpload/GetMerchantFile?merchantId=${merchantId}&RFDFU=${rfdfu}`)
+                        fetch(`${apiurl}/api/FileUpload/GetMerchantFile?merchantId=${merchantId}&RFDFU=${rfdfu}`)
                             .then(response => response.json())
                             .then(files => {
                                 console.log(files);
@@ -362,7 +364,7 @@
                     alert('Please provide a rating and review text.');
                     return;
                 }
-            fetch('http://192.168.0.115:1501/api/ReviewsApi/CreateReview', {
+            fetch(apiurl+'/api/ReviewsApi/CreateReview', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
