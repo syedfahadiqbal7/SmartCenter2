@@ -1,3 +1,5 @@
+using AFFZ_Admin.Models;
+using AFFZ_Admin.Utils;
 using Microsoft.AspNetCore.Mvc.Razor;
 using SCAPI.ServiceDefaults;
 using System.Net;
@@ -13,6 +15,7 @@ var sharedConfig = new ConfigurationBuilder()
     .Build();
 
 var baseIP = sharedConfig["BaseIP"];
+var PublicDomain = sharedConfig["PublicDomain"];
 var apiHttpPort = sharedConfig["Ports:AFFZ_API:Http"];
 var apiHttpsPort = sharedConfig["Ports:AFFZ_API:Https"];
 
@@ -30,6 +33,16 @@ var WebFrontHttpsPort = sharedConfig["Ports:SCAPI_WebFront:Https"];
 
 var CertificateName = sharedConfig["Certificate:Path"];
 var CertificatePassword = sharedConfig["Certificate:Password"];
+
+// Define configuration programmatically
+builder.Services.Configure<AppSettings>(options =>
+{
+    options.BaseIpAddress = baseIP;
+    options.PublicDomain = PublicDomain;
+    options.ApiHttpsPort = apiHttpsPort;
+    options.MerchantHttpsPort = ProviderHttpsPort;
+    options.CustomerHttpsPort = CustomerHttpsPort;
+});
 
 builder.Services.AddCors(options =>
 {
@@ -77,6 +90,9 @@ builder.WebHost.UseKestrel(options =>
         listenOptions.UseHttps(CertificateName, CertificatePassword);
     });
 });
+
+builder.Services.AddSingleton<IAppSettingsService, AppSettingsService>();
+
 var app = builder.Build();
 var loggerFactory = app.Services.GetService<ILoggerFactory>();
 
