@@ -8,6 +8,7 @@ using RestSharp;
 using Stripe;
 using Stripe.Checkout;
 using System.ComponentModel.DataAnnotations;
+using System.Net;
 
 namespace AFFZ_Customer.Controllers
 {
@@ -18,7 +19,10 @@ namespace AFFZ_Customer.Controllers
         private readonly HttpClient _httpClient;
         private readonly IDataProtector _protector;
         private string BaseUrlIp = string.Empty;
-        public MerchantResponseToUser(ILogger<MerchantResponseToUser> logger, IWebHostEnvironment environment, IHttpClientFactory httpClientFactory, IDataProtectionProvider provider, IOptions<AppSettings> options)
+        private string PublicDomain = string.Empty;
+        private string ApiHttpsPort = string.Empty;
+        private string CustomerHttpsPort = string.Empty;
+        public MerchantResponseToUser(ILogger<MerchantResponseToUser> logger, IWebHostEnvironment environment, IHttpClientFactory httpClientFactory, IDataProtectionProvider provider, IOptions<AppSettings> options, IAppSettingsService service)
         {
             // Initialize HTTP client, data protector, logger, and environment
             _httpClient = httpClientFactory.CreateClient("Main");
@@ -26,6 +30,8 @@ namespace AFFZ_Customer.Controllers
             _logger = logger;
             _environment = environment;
             BaseUrlIp = options.Value.BaseIpAddress;
+            PublicDomain = service.GetPublicDomain();
+            ApiHttpsPort = service.GetApiHttpsPort();
             _logger.LogInformation("MerchantResponseToUser controller initialized"); // Log initialization
         }
 
@@ -103,7 +109,8 @@ namespace AFFZ_Customer.Controllers
                 _logger.LogDebug("Retrieved SaveResponse from TempData: {SaveResponse}", saveResponse); // Log retrieved TempData message
                 ViewBag.SaveResponse = saveResponse.ToString();
             }
-
+            var verificationLink = $"{Request.Scheme}://{PublicDomain}:{ApiHttpsPort}";
+            ViewBag.APIUrl = verificationLink;
             return View();
         }
         [HttpGet]
@@ -342,7 +349,7 @@ namespace AFFZ_Customer.Controllers
 
                 // Send notification request via API
                 _logger.LogDebug("Sending notification request via API.");
-                var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                var res = await _httpClient.PostAsync("Notifications/CreateNotification?StatusId=11", Customs.GetJsonContent(notification));
                 string resString = await res.Content.ReadAsStringAsync();
                 _logger.LogInformation("Notification Response: {Response}", resString);
 
@@ -388,6 +395,17 @@ namespace AFFZ_Customer.Controllers
                 PaymentHistory UpdatedPaymentHistory = JsonConvert.DeserializeObject<PaymentHistory>(responseString);
                 if (UpdatedPaymentHistory.ID > 0)
                 {
+
+                    string ReferralCode = HttpContext.Session.GetEncryptedString("ReferralCode", _protector);
+                    if (string.IsNullOrEmpty(ReferralCode))
+                    {
+                        string userId = HttpContext.Session.GetEncryptedString("UserId", _protector);
+                        string refcode = await GetReferralCode(Convert.ToInt32(userId));
+                        // Store additional information in session
+                        HttpContext.Session.SetEncryptedString("ReferralCode", refcode, _protector);
+                    }
+
+
                     var discountUpdateInfo = new RequestForDisCountToUser
                     {
                         RFDFU = Convert.ToInt32(rfdfu),
@@ -455,14 +473,14 @@ namespace AFFZ_Customer.Controllers
                     var notification = new Notification
                     {
                         UserId = payerId.ToString(),
-                        Message = $"User[{payerId.ToString()}] has payment has been recieved. Please continue to Apply for the service requested.",
+                        Message = $"User[{payerId.ToString()}] payment has been recieved. Please continue to Apply for the service requested.",
                         MerchantId = merchantId.ToString(),
                         RedirectToActionUrl = "",
                         MessageFromId = Convert.ToInt32(payerId),
                         SenderType = "Customer"
                     };
 
-                    var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                    var res = await _httpClient.PostAsync("Notifications/CreateNotification?StatusId=11", Customs.GetJsonContent(notification));
                     string resString = await res.Content.ReadAsStringAsync();
                     _logger.LogInformation("Notification Response : " + resString);
                 }
@@ -474,6 +492,58 @@ namespace AFFZ_Customer.Controllers
             {
                 _logger.LogError(ex, "An error occurred while processing the payment.");
                 return StatusCode(500, "An internal server error occurred. Please try again later.");
+            }
+        }
+        // Helper method to get the referral code
+        private async Task<string> GetReferralCode(int? referrerCustomerId)
+        {
+            _logger.LogDebug("GetReferralCode called with referrerCustomerId: {ReferrerCustomerId}", referrerCustomerId);
+            if (!referrerCustomerId.HasValue)
+            {
+                _logger.LogWarning("Referrer customer ID is null.");
+                return "No Code.";
+            }
+
+            try
+            {
+                // Send request to retrieve referral code
+                _logger.LogDebug("Sending request to retrieve referral code for CustomerId: {CustomerId}", referrerCustomerId);
+                var response = await _httpClient.GetAsync($"Referral/GetUserReferral?CustomerId={referrerCustomerId}");
+                _logger.LogDebug("Received response with status code: {StatusCode}", response.StatusCode);
+
+                // Check if the response was successful
+                if (!response.IsSuccessStatusCode)
+                {
+                    _logger.LogWarning("Failed to retrieve referral code. StatusCode: {StatusCode}", response.StatusCode);
+                    return "No Code.";
+                }
+
+                // Deserialize the response
+                var responseString = await response.Content.ReadAsStringAsync();
+                _logger.LogDebug("Received response content: {ResponseString}", responseString);
+                SResponse sResponse = JsonConvert.DeserializeObject<SResponse>(responseString);
+
+                // Return the referral code if available
+                if (sResponse.StatusCode == HttpStatusCode.OK && sResponse.Data != null)
+                {
+                    _logger.LogDebug("Referral code retrieved successfully.");
+                    return sResponse.Data.ToString();
+                }
+                else
+                {
+                    _logger.LogWarning("Failed to retrieve referral code. StatusCode: {StatusCode}, Data: {Data}", sResponse.StatusCode, sResponse.Data);
+                    return "No Code.";
+                }
+            }
+            catch (HttpRequestException httpEx)
+            {
+                _logger.LogError(httpEx, "HTTP request failed while retrieving referral code.");
+                return "Error retrieving code.";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while retrieving referral code.");
+                return "Error retrieving code.";
             }
         }
         [HttpGet]
@@ -735,7 +805,7 @@ namespace AFFZ_Customer.Controllers
                     SenderType = "Customer"
                 };
 
-                var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                var res = await _httpClient.PostAsync("Notifications/CreateNotification?StatusId=5", Customs.GetJsonContent(notification));
                 string resString = await res.Content.ReadAsStringAsync();
                 _logger.LogInformation("Notification Response : " + resString);
                 return RedirectToAction("MerchantResponseIndex");
@@ -780,7 +850,7 @@ namespace AFFZ_Customer.Controllers
                     SenderType = "Customer"
                 };
 
-                var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                var res = await _httpClient.PostAsync("Notifications/CreateNotification?StatusId=7", Customs.GetJsonContent(notification));
                 string resString = await res.Content.ReadAsStringAsync();
                 _logger.LogInformation("Notification Response : " + resString);
                 return RedirectToAction("MerchantResponseIndex");
@@ -999,7 +1069,7 @@ namespace AFFZ_Customer.Controllers
                         SenderType = "Customer"
                     };
 
-                    var notificationResponse = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                    var notificationResponse = await _httpClient.PostAsync("Notifications/CreateNotification?StatusId=13", Customs.GetJsonContent(notification));
                     string notificationResponseString = await notificationResponse.Content.ReadAsStringAsync();
                     _logger.LogInformation("Notification Response : " + notificationResponseString);
 
@@ -1147,7 +1217,7 @@ namespace AFFZ_Customer.Controllers
                     SenderType = "Customer"
                 };
 
-                var notificationResponse = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                var notificationResponse = await _httpClient.PostAsync("Notifications/CreateNotification?StatusId=13", Customs.GetJsonContent(notification));
                 string notificationResponseString = await notificationResponse.Content.ReadAsStringAsync();
                 _logger.LogInformation("Notification Response : " + notificationResponseString);
 

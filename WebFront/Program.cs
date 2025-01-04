@@ -34,6 +34,8 @@ var sharedConfig = new ConfigurationBuilder()
     .Build();
 
 var baseIP = sharedConfig["BaseIP"];
+var PublicDomain = sharedConfig["PublicDomain"];
+
 var apiHttpPort = sharedConfig["Ports:AFFZ_API:Http"];
 var apiHttpsPort = sharedConfig["Ports:AFFZ_API:Https"];
 
@@ -106,7 +108,10 @@ builder.Services.Configure<AppSettings>(options =>
 {
     options.UserUrl = $"https://{baseIP}:{CustomerHttpsPort}/";
     options.ProviderUrl = $"https://{baseIP}:{ProviderHttpsPort}/";
+    options.AdminUrl = $"https://{baseIP}:{AdminHttpsPort}/";
     options.APIURL = $"https://{baseIP}:{apiHttpsPort}";
+    options.PublicCustomerDomain = $"https://{PublicDomain}:{CustomerHttpsPort}/";
+    options.PublicMerchantDomain = $"https://{PublicDomain}:{ProviderHttpsPort}/";
 });
 builder.Services.AddSingleton<WebApiHelper>(); // Register the helper class
 builder.Services.AddSingleton<IAppSettingsService, AppSettingsService>();

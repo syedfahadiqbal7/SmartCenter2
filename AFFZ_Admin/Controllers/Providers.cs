@@ -1,4 +1,5 @@
 ﻿using AFFZ_Admin.Models;
+using AFFZ_Admin.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
@@ -8,10 +9,17 @@ namespace AFFZ_Admin.Controllers
     public class Providers : Controller
     {
         private readonly HttpClient _httpClient;
-
-        public Providers(IHttpClientFactory httpClientFactory)
+        private string BaseUrl = string.Empty;
+        private string PublicDomain = string.Empty;
+        private string ApiHttpsPort = string.Empty;
+        private string MerchantHttpsPort = string.Empty;
+        public Providers(IHttpClientFactory httpClientFactory, IAppSettingsService service)
         {
             _httpClient = httpClientFactory.CreateClient("Main");
+            BaseUrl = service.GetBaseIpAddress();
+            PublicDomain = service.GetPublicDomain();
+            ApiHttpsPort = service.GetApiHttpsPort();
+            MerchantHttpsPort = service.GetMerchantHttpsPort();
         }
 
         public async Task<IActionResult> Index()
@@ -21,7 +29,8 @@ namespace AFFZ_Admin.Controllers
                 var response = await _httpClient.GetAsync("Providers");
                 var responseString = await response.Content.ReadAsStringAsync();
                 var providers = JsonConvert.DeserializeObject<List<ProviderUser>>(responseString);
-
+                ViewBag.APILink = _httpClient.BaseAddress;
+                ViewBag.MerchantLink = $"{Request.Scheme}://{PublicDomain}:{MerchantHttpsPort}/";
                 return View("Providers", providers);
             }
             catch (Exception ex)

@@ -97,6 +97,12 @@
                                                         <div class="mb-4">
                                                             <label for="DiscountPrice_@_subcat.RFDTM" class="form-label fw-bold">Discounted Price:</label>
                                                             <input type="number" class="form-control border-2 shadow-sm" name="DiscountPrice" id="DiscountPrice_@_subcat.RFDTM" placeholder="Enter Discounted Price" required>
+                                                            <div class="text-danger mt-2" id="noteDiscountPrice_@_subcat.RFDTM" style="display: none;">
+                                                                Discounted price should not be greater than the original price. The value has been reset to the original price.
+                                                            </div>
+                                                            <div class="text-muted mt-2" id="paymentNote_@_subcat.RFDTM" style="font-size: 0.9em;">
+                                                                <!-- This will update dynamically -->
+                                                            </div>
                                                             <div class="invalid-feedback" id="errorDiscountPrice_@_subcat.RFDTM"></div>
                                                         </div>
 
@@ -126,28 +132,50 @@
     </div>
 </div>
 <script>
-    function validateDiscountPrice(originalPrice, discountPriceId) {
-        const discountPriceInput = document.getElementById(discountPriceId);
-        const errorElement = document.getElementById('error' + discountPriceId);
-        const discountPrice = parseFloat(discountPriceInput.value);
-        const original = parseFloat(originalPrice);
+        function validateDiscountPrice(originalPrice, discountInputId) {
+        const discountInput = document.getElementById(discountInputId);
+        const discountPrice = parseFloat(discountInput.value);
+        const originalPriceValue = parseFloat(originalPrice);
+        const noteElement = document.getElementById(`note${discountInputId}`);
 
-        // Reset error message
-        errorElement.textContent = '';
-        discountPriceInput.classList.remove('is-invalid');
-
-        if (isNaN(discountPrice) || discountPrice < 0) {
-            errorElement.textContent = 'Discount price must be a valid numeric value and not less than 0.';
-            discountPriceInput.classList.add('is-invalid');
+        if (discountPrice > originalPriceValue) {
+            // Show the error note and prevent form submission
+            noteElement.style.display = "block";
+            discountInput.classList.add("is-invalid");
+            discountInput.value = originalPriceValue; // Replace the value
             return false;
+        } else {
+            // Hide the error note and allow form submission
+            noteElement.style.display = "none";
+            discountInput.classList.remove("is-invalid");
+            return true;
         }
-
-        if (discountPrice > original) {
-            errorElement.textContent = 'Discount price must not be greater than the original price.';
-            discountPriceInput.classList.add('is-invalid');
-            return false;
-        }
-
-        return true; // Form is valid
     }
+
+    //Attach real-time validation to the input
+        document.querySelectorAll("[id^=DiscountPrice_]").forEach(input => {
+            
+        input.addEventListener("input", function () {
+            const originalPrice = parseFloat(document.getElementById(`OriginalPrice_${this.id.split('_')[1]}`).value);
+            const discountPrice = parseFloat(this.value);
+            const noteElement = document.getElementById(`note${this.id}`);
+            const paymentNoteElement = document.getElementById(`paymentNote_${this.id.split('_')[1]}`);
+            if (discountPrice > originalPrice) {
+                noteElement.style.display = "block";
+                this.value = originalPrice; // Replace the value dynamically
+                this.classList.add("is-invalid");
+            } else {
+                noteElement.style.display = "none";
+                this.classList.remove("is-invalid");
+            }
+            // Update the payment note dynamically
+            if (!isNaN(discountPrice) && discountPrice > 0) {
+                paymentNoteElement.innerHTML = `The customer will pay the discounted amount of <span class="fw-bold text-primary">AED ${discountPrice}</span>.`;
+            } else {
+                paymentNoteElement.innerHTML = "Please enter a valid discounted price.";
+            }
+        });
+    });
+
+
 </script>

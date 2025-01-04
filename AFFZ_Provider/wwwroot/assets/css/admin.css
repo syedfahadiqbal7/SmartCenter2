@@ -13675,13 +13675,17 @@ fieldset {
 
     .dropdown-heads {
         margin: 0 5px;
+        
+    }
+    .provider-body .dropdown-heads {
         display: none;
     }
-
     .page-headers {
         display: none;
     }
-
+    .user-menu li.dropdown.dropdown-heads {
+        margin-right: 0;
+    }
     .header-split {
         justify-content: flex-end;
     }
@@ -14351,7 +14355,9 @@ fieldset {
     .card-body {
         padding: 1.25rem;
     }
-
+    .provider-body .dropdown-heads.noti-wrapper {
+        display: inherit;
+    }
     .card-header, .card-footer {
         padding: 0.75rem 1.25rem;
     }
@@ -14638,4 +14644,29 @@ fieldset {
 
 .blinking {
     animation: blink 1s infinite;
+}
+@media (max-width: 768px) {
+    .alert {
+        font-size: 0.9rem;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .alert .fa-triangle-exclamation {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .alert div {
+            text-align: left;
+        }
+
+    .alert-container {
+        position: sticky;
+        top: 0;
+        z-index: 1050;
+        margin: 10px;
+    }
 }

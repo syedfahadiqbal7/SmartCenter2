@@ -1,5 +1,7 @@
-﻿using AFFZ_API.Models;
+﻿using AFFZ_API.Interfaces;
+using AFFZ_API.Models;
 using AFFZ_API.NotificationsHubs;
+using AFFZ_API.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
@@ -14,16 +16,28 @@ namespace AFFZ_API.Controllers
         private readonly MyDbContext _context;
         private readonly ILogger<NotificationsController> _logger;
         private readonly IHubContext<NotificationHub> _hubContext;
+        private string BaseUrl = string.Empty;
+        private string PublicDomain = string.Empty;
+        private string ApiHttpsPort = string.Empty;
+        private string MerchantHttpsPort = string.Empty;
+        private string CustomerHttpsPort = string.Empty;
+        private readonly IEmailService _emailService;
 
-        public NotificationsController(MyDbContext context, ILogger<NotificationsController> logger, IHubContext<NotificationHub> hubContext)
+        public NotificationsController(MyDbContext context, ILogger<NotificationsController> logger, IHubContext<NotificationHub> hubContext, IEmailService emailService, IAppSettingsService service)
         {
             _context = context;
             _logger = logger;
             _hubContext = hubContext;
+            _emailService = emailService;
+            BaseUrl = service.GetBaseIpAddress();
+            PublicDomain = service.GetPublicDomain();
+            ApiHttpsPort = service.GetApiHttpsPort();
+            MerchantHttpsPort = service.GetMerchantHttpsPort();
+            CustomerHttpsPort = service.GetCustomerHttpsPort();
         }
 
         [HttpPost("CreateNotification")]
-        public async Task<IActionResult> CreateNotification(Notification notification)
+        public async Task<IActionResult> CreateNotification(Notification notification, string StatusId)
         {
             try
             {
@@ -41,12 +55,14 @@ namespace AFFZ_API.Controllers
                 if (notification.SenderType == "Customer")
                 {
                     await _hubContext.Clients.Group("AFFZ_Provider").SendAsync("ReceiveNotification", notify);
+                    await SendNotificationEmailToMerchant(notification);
                 }
                 else if (notification.SenderType == "Merchant")
                 {
                     await _hubContext.Clients.Group("AFFZ_Customer").SendAsync("ReceiveNotification", notify);
+                    await SendNotificationEmailToCustomer(notification);
                 }
-
+                //await SendNotificationEmail(notification, StatusId);
                 // await _hubContext.Clients.All.SendAsync("ReceiveNotification", notify);
 
                 return Ok(notification);
@@ -58,6 +74,181 @@ namespace AFFZ_API.Controllers
             }
         }
 
+        private async Task<string> NotificationEmailTemplate(string Emailmsg, string status)
+        {
+            string EmailTemplate = "<!DOCTYPE html>\n<html>\n<head>\n<style>\nbody { font-family: Arial, sans-serif; background-color: #f8f9fa; margin: 0; padding: 0; }\n.email-container { max-width: 600px; margin: 20px auto; background: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; }\n.header { text-align: center; color: #343a40; margin-bottom: 20px; }\n.header h1 { font-size: 24px; }\n.content { color: #555555; line-height: 1.6; }\n.footer { margin-top: 20px; text-align: center; font-size: 12px; color: #888888; }\n</style>\n</head>\n<body>\n<div class='email-container'>\n<div class='header'><h1>Service Status: InProgress</h1></div>\n<div class='content'>\n<p>Hello <strong>{{Name}}</strong>,</p>\n<p>Status Description: <em>" + status + "</em></p>\n<p>" + Emailmsg + "</p>\n</div>\n<div class='footer'><p>&copy; {{CurrentYear}} SmartCenter. All Rights Reserved.</p></div>\n</div>\n</body>\n</html>";
+
+            return EmailTemplate;
+        }
+        private async Task<bool> SendNotificationEmail(Notification notification, string StatusID)
+        {
+            try
+            {
+                string templatePath = string.Empty;
+                string RedirectUrlLoc = string.Empty;
+                if (notification.SenderType == "Customer")
+                {
+                    templatePath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "CEmailTemplates.json");
+                    RedirectUrlLoc = $"{Request.Scheme}://{PublicDomain}:{CustomerHttpsPort}/";
+                }
+                else
+                {
+                    templatePath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "MEmailTemplates.json");
+                    RedirectUrlLoc = $"{Request.Scheme}://{PublicDomain}:{MerchantHttpsPort}/";
+                }
+                var emailTemplateLoader = new EmailTemplateLoader(templatePath);
+
+                EmailTemplate emailTemplate = new EmailTemplate();
+                string userName = string.Empty;
+                string EmailAddress = string.Empty;
+
+                // Load Template Based on NotificationType
+                if (!string.IsNullOrEmpty(notification.SenderType))
+                {
+                    //emailTemplate = emailTemplateLoader.GetStatusNotificationTemplate($"{StatusID}");
+                    emailTemplate.Body = await NotificationEmailTemplate(notification.Message, emailTemplate.Subject);
+                    int CID = Convert.ToInt32(notification.UserId);
+                    int MID = Convert.ToInt32(notification.MerchantId);
+                    userName = notification.SenderType != "Customer"
+                        ? _context.Customers.FirstOrDefault(c => c.CustomerId == CID)?.CustomerName
+                        : _context.ProviderUsers.FirstOrDefault(p => p.ProviderId == MID)?.ProviderName;
+                    EmailAddress = notification.SenderType != "Customer"
+                        ? _context.Customers.FirstOrDefault(c => c.CustomerId == CID)?.Email
+                        : _context.ProviderUsers.FirstOrDefault(p => p.ProviderId == MID)?.Email;
+                }
+                else
+                {
+
+                    //add log no Template found
+                }
+
+                // Replace Placeholders
+                string emailBody = emailTemplate.Body
+                    .Replace("{{Name}}", userName ?? "Application User")
+                    .Replace("{{ResetLink}}", RedirectUrlLoc)
+                    .Replace("{{CurrentYear}}", DateTime.UtcNow.Year.ToString());
+
+                // Simulate Email Sending
+                _logger.LogInformation("Sending Email to: {Email}, Subject: {Subject}", notification.MessageFromId, emailTemplate.Subject);
+                _logger.LogInformation("Email Body: {Body}", emailBody);
+
+                // Use your IEmailService here to send the email
+                // Example:
+                bool emailSent = await _emailService.SendEmail(EmailAddress, emailTemplate.Subject, emailBody, userName, isHtml: true);
+
+                // Simulated Success
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to send email for notification.");
+                return false;
+            }
+        }
+        private async Task<bool> SendNotificationEmailToCustomer(Notification notification)
+        {
+            try
+            {
+                string templatePath = string.Empty;
+                string RedirectUrlLoc = string.Empty;
+                EmailTemplate emailTemplate = new EmailTemplate();
+                string userName = string.Empty;
+                string EmailAddress = string.Empty;
+
+                // Load Template Based on NotificationType
+                if (!string.IsNullOrEmpty(notification.SenderType))
+                {
+                    emailTemplate.Subject = (!notification.Message.Contains("Success") ? notification.Message.Contains("Fail") ? "Service Status - Failed Providing Service." : "Service Status - In Progress." : "Service Status - Completed Successfully.");
+                    //emailTemplate.Body = await NotificationEmailTemplate(notification.Message, emailTemplate.Subject);
+                    int CID = Convert.ToInt32(notification.UserId);
+                    int MID = Convert.ToInt32(notification.MerchantId);
+                    string SenderName = _context.ProviderUsers.FirstOrDefault(p => p.ProviderId == MID)?.ProviderName;
+                    userName = _context.Customers.FirstOrDefault(c => c.CustomerId == CID)?.CustomerName;
+                    EmailAddress = _context.Customers.FirstOrDefault(c => c.CustomerId == CID)?.Email;
+                    emailTemplate.Body = await NotificationEmailTemplate(ReplaceAllPlaceholders(notification.Message, SenderName, null, null), emailTemplate.Subject);
+                }
+                else
+                {
+
+                    //add log no Template found
+                }
+
+                // Replace Placeholders
+                string emailBody = emailTemplate.Body
+                    .Replace("{{Name}}", userName ?? "Application User")
+                    .Replace("{{ResetLink}}", RedirectUrlLoc)
+                    .Replace("{{CurrentYear}}", DateTime.UtcNow.Year.ToString());
+
+                // Simulate Email Sending
+                _logger.LogInformation("Sending Email to: {Email}, Subject: {Subject}", EmailAddress, emailTemplate.Subject);
+                _logger.LogInformation("Email Body: {Body}", emailBody);
+
+                // Use your IEmailService here to send the email
+                // Example:
+                bool emailSent = await _emailService.SendEmail(EmailAddress, emailTemplate.Subject, emailBody, userName, isHtml: true);
+
+                // Simulated Success
+                return emailSent;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to send email for notification.");
+                return false;
+            }
+        }
+        private async Task<bool> SendNotificationEmailToMerchant(Notification notification)
+        {
+            try
+            {
+                string RedirectUrlLoc = string.Empty;
+
+
+                EmailTemplate emailTemplate = new EmailTemplate();
+                string userName = string.Empty;
+                string EmailAddress = string.Empty;
+
+                // Load Template Based on NotificationType
+                if (!string.IsNullOrEmpty(notification.SenderType))
+                {
+                    emailTemplate.Subject = (!notification.Message.Contains("Success") ? notification.Message.Contains("Fail") ? "Service Status - Failed Providing Service." : "Service Status - In Progress." : "Service Status - Completed Successfully.");
+                    //emailTemplate = emailTemplateLoader.GetStatusNotificationTemplate($"{StatusID}");
+
+                    int CID = Convert.ToInt32(notification.UserId);
+                    int MID = Convert.ToInt32(notification.MerchantId);
+                    userName = _context.ProviderUsers.FirstOrDefault(p => p.ProviderId == MID)?.ProviderName;
+                    string SenderName = _context.Customers.FirstOrDefault(c => c.CustomerId == CID)?.CustomerName;
+                    EmailAddress = _context.ProviderUsers.FirstOrDefault(p => p.ProviderId == MID)?.Email;
+                    emailTemplate.Body = await NotificationEmailTemplate(ReplaceAllPlaceholders(notification.Message, SenderName, null, null), emailTemplate.Subject);
+                }
+                else
+                {
+
+                    //add log no Template found
+                }
+
+                // Replace Placeholders
+                string emailBody = emailTemplate.Body
+                    .Replace("{{Name}}", userName ?? "Application Merchant")
+                    .Replace("{{ResetLink}}", RedirectUrlLoc)
+                    .Replace("{{CurrentYear}}", DateTime.UtcNow.Year.ToString());
+
+                // Simulate Email Sending
+                _logger.LogInformation("Sending Email to: {Email}, Subject: {Subject}", EmailAddress, emailTemplate.Subject);
+                _logger.LogInformation("Email Body: {Body}", emailBody);
+
+                // Use your IEmailService here to send the email
+                // Example:
+                bool emailSent = await _emailService.SendEmail(EmailAddress, emailTemplate.Subject, emailBody, userName, isHtml: true);
+
+                // Simulated Success
+                return emailSent;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to send email for notification.");
+                return false;
+            }
+        }
         [HttpGet("GetUserNotifications/{userId}")]
         public async Task<IActionResult> GetUserNotifications(string userId)
         {

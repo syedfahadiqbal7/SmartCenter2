@@ -26,6 +26,7 @@ public partial class Service
     public int ServiceAmountPaidToAdmin { get; set; }
     [Required(ErrorMessage = "Description is required.")]
     public string? SelectedDocumentIds { get; set; }
+
 }
 
 
@@ -35,4 +36,5 @@ public partial class SubCatPage
     public int? CatId { get; set; }
     public string ServiceName { get; set; } = null!;
     public string Location { get; set; } = null!;
+    public string? ServiceImage { get; set; } = null!;
 }

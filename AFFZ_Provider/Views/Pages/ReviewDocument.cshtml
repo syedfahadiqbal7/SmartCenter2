@@ -111,7 +111,9 @@
                                 }
                             </tbody>
                         </table>
-                        <button class="btn btn-primary" onclick="checkDocumentsAndShowModal('@allFilesVerified','@ViewBag.UserId','@ViewBag.RFDFU')">Start Process</button>
+                        @* <button class="btn btn-primary" onclick="checkDocumentsAndShowModal('@allFilesVerified','@ViewBag.UserId','@ViewBag.RFDFU')">Start Process</button> *@
+                      
+                        <a asp-action="GetUsersWithDocuments" asp-controller="MerchantResponseToUser" class="btn btn-secondary">Go Back</a>
                     </div>
                 </div>
                 <div class="row">
@@ -189,7 +191,8 @@
     function showImagePopup(fileName, folderName) {
         // Construct the full image URL
         //var imageUrl = '@Url.Content("~/uploads/")' + folderName + '/' + fileName;
-            var imageUrl = 'http://192.168.0.115:7195/uploads/' + folderName + '/' + fileName;
+            const url = '@ViewBag.UserUrl';
+            var imageUrl = url+'/uploads/' + folderName + '/' + fileName;
 
         // Set the src attribute of the image in the modal
         $('#modalImage').attr('src', imageUrl);

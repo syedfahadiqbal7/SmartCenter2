@@ -83,7 +83,7 @@
     <div class="col-md-6 col-lg-5 mx-auto">
         <div class="login-wrap">
             <div class="login-header text-center">
-                <h3>Sign Up</h3>
+                <h3>Customer Sign Up</h3>
             </div>
             <!-- Success and Error Messages -->
             @if (TempData["SuccessMessage"] != null)
@@ -120,9 +120,13 @@
                 <div class="mb-3">
                     <label class="form-label">Password</label>
                     <div class="pass-group">
+                        
                         <input type="password" class="form-control pass-input" placeholder="*************" name="Password" asp-for="Password" id="Password">
-                        <span class="toggle-password feather-eye-off" ></span>
+                        <span class="toggle-password feather-eye-off"></span>
+                        
+                        
                     </div>
+                    <label id="Password-error" class="error" for="Password"></label>
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
 

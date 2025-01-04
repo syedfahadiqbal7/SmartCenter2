@@ -43,10 +43,17 @@ namespace AFFZ_API.Controllers
         [HttpPost("PostServiceCategory")]
         public async Task<ActionResult<ServiceCategory>> PostServiceCategory(ServiceCategory serviceCategory)
         {
-            _context.ServiceCategories.Add(serviceCategory);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.ServiceCategories.Add(serviceCategory);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("GetServiceCategory", new { id = serviceCategory.CategoryId }, serviceCategory);
+            }
+            catch (Exception ex)
+            {
 
-            return CreatedAtAction("GetServiceCategory", new { id = serviceCategory.CategoryId }, serviceCategory);
+                throw;
+            }
         }
 
         // PUT: api/ServiceCategory/5
@@ -83,16 +90,24 @@ namespace AFFZ_API.Controllers
         [HttpPost("DeleteServiceCategory")]
         public async Task<IActionResult> DeleteServiceCategory(int id)
         {
-            var serviceCategory = await _context.ServiceCategories.FindAsync(id);
-            if (serviceCategory == null)
+            try
             {
-                return NotFound();
+                var serviceCategory = await _context.ServiceCategories.FindAsync(id);
+                if (serviceCategory == null)
+                {
+                    return NotFound();
+                }
+
+                _context.ServiceCategories.Remove(serviceCategory);
+                await _context.SaveChangesAsync();
+
+                return NoContent();
             }
+            catch (Exception ex)
+            {
 
-            _context.ServiceCategories.Remove(serviceCategory);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
+                throw;
+            }
         }
 
         private bool ServiceCategoryExists(int id)

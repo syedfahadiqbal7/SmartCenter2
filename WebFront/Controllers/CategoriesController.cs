@@ -8,9 +8,13 @@ namespace SCAPI.WebFront.Controllers
     {
         private readonly ILogger<CategoriesController> _logger;
         private readonly string _userUrl;
+        private readonly string _adminUrl;
+        private readonly string _publicCustomerDomain;
         public CategoriesController(ILogger<CategoriesController> logger, IOptions<AppSettings> appSettings, WebApiHelper webApiHelper)
         {
             _userUrl = appSettings.Value.UserUrl;
+            _adminUrl = appSettings.Value.AdminUrl;
+            _publicCustomerDomain = appSettings.Value.PublicCustomerDomain;
             _logger = logger;
         }
 
@@ -81,6 +85,7 @@ namespace SCAPI.WebFront.Controllers
                 ViewBag.SubCategories = categories;
                 ViewBag.Categories = getCategoriesList ?? new List<ServiceCat>();
                 ViewBag.CustomerUrl = _userUrl;//_config.GetValue<string>("WebService:WCFUSERNAME")
+                ViewBag.AdminUrl = _adminUrl;//_config.GetValue<string>("WebService:WCFUSERNAME")
             }
             catch (Exception ex)
             {
@@ -97,5 +102,6 @@ namespace SCAPI.WebFront.Controllers
         public int ServicePrice { get; set; }
         public int CatId { get; set; }
         public string? Location { get; set; }
+        public string? ServiceImage { get; set; }
     }
 }

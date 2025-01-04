@@ -15,13 +15,21 @@ namespace AFFZ_Provider.Controllers
         private static string _merchantIdCat = string.Empty;
         private readonly HttpClient _httpClient;
         IDataProtector _protector;
-        public MerchantResponseToUser(ILogger<MerchantResponseToUser> logger, IWebHostEnvironment environment, IHttpClientFactory httpClientFactory, IDataProtectionProvider provider)
+        private string BaseUrl = string.Empty;
+        private string PublicDomain = string.Empty;
+        private string ApiHttpsPort = string.Empty;
+        private string CustomerHttpsPort = string.Empty;
+        public MerchantResponseToUser(ILogger<MerchantResponseToUser> logger, IWebHostEnvironment environment, IHttpClientFactory httpClientFactory, IDataProtectionProvider provider, IAppSettingsService service)
         {
 
             _httpClient = httpClientFactory.CreateClient("Main");
             _protector = provider.CreateProtector("Example.SessionProtection");
             _logger = logger;
             _environment = environment;
+            BaseUrl = service.GetBaseIpAddress();
+            PublicDomain = service.GetPublicDomain();
+            ApiHttpsPort = service.GetApiHttpsPort();
+            CustomerHttpsPort = service.GetCustomerHttpsPort();
         }
 
         [HttpGet]
@@ -118,6 +126,7 @@ namespace AFFZ_Provider.Controllers
                 ViewBag.RFDFU = rfdfu;
                 ViewBag.StatusList = await StatusList(0);
                 ViewBag.quantity = quantity;
+                ViewBag.UserUrl = $"{Request.Scheme}://{PublicDomain}:{CustomerHttpsPort}";
                 var GetServicename = await _httpClient.GetAsync($"Service/GetSerViceNameByRFDFUID?id=" + rfdfu);
                 ViewBag.ServiceName = await GetServicename.Content.ReadAsStringAsync();
                 return View(model);
@@ -330,7 +339,7 @@ namespace AFFZ_Provider.Controllers
                     SenderType = "Merchant"
                 };
 
-                var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                var res = await _httpClient.PostAsync("Notifications/CreateNotification?StatusId=14", Customs.GetJsonContent(notification));
                 string resString = await res.Content.ReadAsStringAsync();
                 _logger.LogInformation("Notification Response : " + resString);
                 return RedirectToAction("ReviewDocument", new { userId, RFDFU, quantity });
@@ -391,7 +400,7 @@ namespace AFFZ_Provider.Controllers
                     SenderType = "Merchant"
                 };
 
-                var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                var res = await _httpClient.PostAsync("Notifications/CreateNotification?StatusId=15", Customs.GetJsonContent(notification));
                 string resString = await res.Content.ReadAsStringAsync();
                 _logger.LogInformation("Notification Response : " + resString);
                 return RedirectToAction("ReviewDocument", new { userId, RFDFU, quantity });
@@ -534,7 +543,7 @@ namespace AFFZ_Provider.Controllers
                         SenderType = "Merchant"
                     };
 
-                    var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                    var res = await _httpClient.PostAsync("Notifications/CreateNotification?StatusId=" + CurrentStatus, Customs.GetJsonContent(notification));
                     string resString = await res.Content.ReadAsStringAsync();
                     _logger.LogInformation("Notification Response : " + resString);
                     return RedirectToAction("GetUsersWithDocuments");

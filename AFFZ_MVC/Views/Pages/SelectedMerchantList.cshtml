@@ -35,15 +35,16 @@
             }
             else
             {
-
+                string AdminProtalUrl = ViewBag.AdminUrl;
                 @foreach (var _subcat in paginatedSubCategories)
                 {
+                    string ImgUrl = $"{AdminProtalUrl}{_subcat.ServiceImage}";
                     <!-- Service List -->
                     <div class="service-list">
                         <div class="service-cont">
                             <div class="service-cont-img">
                                 <a href="#service-details.html">
-                                    <img class="img-fluid serv-img" alt="Service Image" img src="~/assets/img/services/service-04.jpg">
+                                    <img class="img-fluid serv-img" alt="Service Image" img src="@ImgUrl">
                                 </a>
                                 <div class="fav-item">
                                     <a href="javascript:void(0)" class="fav-icon">

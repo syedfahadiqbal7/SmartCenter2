@@ -73,6 +73,25 @@ namespace AFFZ_API.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+        [HttpGet("GetBindingByServiceId")]
+        public async Task<ActionResult<M_SericeDocumentListBinding>> GetBindingByServiceId(int id)
+        {
+            try
+            {
+                var databind = await _context.M_ServiceDocumentListBinding.Where(binding => binding.ServiceDocumentListId == id).FirstOrDefaultAsync();
+                if (databind == null)
+                {
+                    return NotFound();
+                }
+
+                return databind;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while fetching the service document list binding by ID.");
+                return StatusCode(500, "Internal server error");
+            }
+        }
 
         // GET: api/ServiceDocumentListBindings/5
         [HttpGet("GetServiceDocumentListBindingByCategoryId")]
@@ -191,7 +210,29 @@ namespace AFFZ_API.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+        // DELETE: api/ServiceDocumentListBindings/5
+        [HttpGet("DeleteServiceandCategoryBinding")]
+        public async Task<IActionResult> DeleteServiceandCategoryBinding(int id)
+        {
+            try
+            {
+                var binding = await _context.M_ServiceDocumentListBinding.Where(x => x.ServiceDocumentListId == id).FirstOrDefaultAsync();
+                if (binding == null)
+                {
+                    return NotFound();
+                }
 
+                _context.M_ServiceDocumentListBinding.Remove(binding);
+                await _context.SaveChangesAsync();
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while deleting the service document list binding.");
+                return StatusCode(500, "Internal server error");
+            }
+        }
         private bool ServiceDocumentListBindingCategoryExists(int id)
         {
             return _context.M_ServiceDocumentListBinding.Any(e => e.CategoryID == id);

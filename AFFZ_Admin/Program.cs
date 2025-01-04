@@ -40,6 +40,7 @@ builder.Services.Configure<AppSettings>(options =>
     options.BaseIpAddress = baseIP;
     options.PublicDomain = PublicDomain;
     options.ApiHttpsPort = apiHttpsPort;
+    options.AdminHttpsPort = AdminHttpsPort;
     options.MerchantHttpsPort = ProviderHttpsPort;
     options.CustomerHttpsPort = CustomerHttpsPort;
 });

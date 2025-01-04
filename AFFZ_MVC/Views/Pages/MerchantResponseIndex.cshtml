@@ -150,11 +150,11 @@
                                 <label for="rating" class="fw-bold">Rating</label>
                                 <div id="ratingStars" class="d-flex align-items-center gap-1">
                                     <!-- Render stars for ratings -->
-                                    <i class="fas fa-star rating-star text-warning" data-value="1"></i>
-                                    <i class="fas fa-star rating-star text-warning" data-value="2"></i>
-                                    <i class="fas fa-star rating-star text-warning" data-value="3"></i>
-                                    <i class="fas fa-star rating-star text-warning" data-value="4"></i>
-                                    <i class="fas fa-star rating-star text-warning" data-value="5"></i>
+                                    <i class="fas fa-star rating-star" data-value="1"></i>
+                                    <i class="fas fa-star rating-star" data-value="2"></i>
+                                    <i class="fas fa-star rating-star" data-value="3"></i>
+                                    <i class="fas fa-star rating-star" data-value="4"></i>
+                                    <i class="fas fa-star rating-star" data-value="5"></i>
                                 </div>
                                 <input type="hidden" id="rating" />
                                 <input type="hidden" id="merchantId" />
@@ -188,6 +188,8 @@
 </div>
 
 <script>
+    const apiurl = '@ViewBag.APIUrl';
+    console.log("APPLICATION URL :" + apiurl);
     document.addEventListener('DOMContentLoaded', function () {
         const rows = document.querySelectorAll('.table-row');
         const modal = document.getElementById('actionModal');
@@ -238,7 +240,7 @@
                         const merchantId = this.dataset.merchantid;
                         const rfdfu = this.dataset.rfdfu;
 
-                        fetch(`http://192.168.0.115:1501/api/FileUpload/GetMerchantFile?merchantId=${merchantId}&RFDFU=${rfdfu}`)
+                        fetch(`${apiurl}/api/FileUpload/GetMerchantFile?merchantId=${merchantId}&RFDFU=${rfdfu}`)
                             .then(response => response.json())
                             .then(files => {
                                 console.log(files);
@@ -275,9 +277,9 @@
                         if (isPaymentDone) {
                             actionsDiv.innerHTML = `
                                  <div class="d-flex flex-wrap justify-content-between">
-        <a href="/Message/SendMessage?MerchantID=${merchantId}" class="btn btn-primary btn-sm m-1" style="flex: 1 1 calc(24% - 10px);" title="Send a message to the merchant">
+        <!--a href="/Message/SendMessage?MerchantID=${merchantId}" class="btn btn-primary btn-sm m-1" style="flex: 1 1 calc(24% - 10px);" title="Send a message to the merchant">
             <i class="fas fa-envelope"></i> Chat
-        </a>
+        </a-->
         <a href="/MerchantResponseToUser/UploadDocuments?RFDFU=${rfdfu}&UID=${uid}&MerchantID=${merchantId}" class="btn btn-success btn-sm m-1" style="flex: 1 1 calc(24% - 10px);" title="Upload required documents">
             <i class="fas fa-upload"></i> Upload Files
         </a>
@@ -362,7 +364,7 @@
                     alert('Please provide a rating and review text.');
                     return;
                 }
-            fetch('http://192.168.0.115:1501/api/ReviewsApi/CreateReview', {
+            fetch(apiurl+'/api/ReviewsApi/CreateReview', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

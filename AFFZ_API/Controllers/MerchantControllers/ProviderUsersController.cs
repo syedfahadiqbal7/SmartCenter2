@@ -18,7 +18,9 @@ namespace AFFZ_API.Controllers.MerchantControllers
         private readonly ILogger<ProviderUsersController> _logger;
         private readonly string _jsonFilePath;
         private string BaseUrl = string.Empty;
-
+        private string PublicDomain = string.Empty;
+        private string ApiHttpsPort = string.Empty;
+        private string MerchantHttpsPort = string.Empty;
         public ProviderUsersController(MyDbContext context, IEmailService emailService, ILogger<ProviderUsersController> logger, IConfiguration config, IAppSettingsService service)
         {
             _context = context;
@@ -27,6 +29,9 @@ namespace AFFZ_API.Controllers.MerchantControllers
             _Config = config;
             _jsonFilePath = Path.Combine(AppContext.BaseDirectory, "Resources", "MEmailTemplates.json");
             BaseUrl = service.GetBaseIpAddress();
+            PublicDomain = service.GetPublicDomain();
+            ApiHttpsPort = service.GetApiHttpsPort();
+            MerchantHttpsPort = service.GetMerchantHttpsPort();
         }
 
         // GET: api/ProviderUsers
@@ -106,69 +111,6 @@ namespace AFFZ_API.Controllers.MerchantControllers
             }
         }
 
-        //[HttpPost]
-        //[Route("Register")]
-        //public async Task<ActionResult<SResponse>> PostMerchant(ProviderUser merchant)
-        //{
-        //    try
-        //    {
-        //        _logger.LogInformation("Attempting to register new provider user with email: {Email}", merchant.Email);
-
-        //        // Validate input
-        //        if (string.IsNullOrEmpty(merchant.Email) || string.IsNullOrEmpty(merchant.Password) || string.IsNullOrEmpty(merchant.ProviderName))
-        //        {
-        //            _logger.LogWarning("Missing required fields for registration.");
-        //            return BadRequest(new SResponse
-        //            {
-        //                StatusCode = HttpStatusCode.BadRequest,
-        //                Message = "Email, Password, and Provider Name are required."
-        //            });
-        //        }
-        //        // Check if any existing merchant has the same EmiratesId, Trading License, Contact Number, or Company Registration Number
-        //        var checkProvider = await _context.ProviderUsers
-        //            .FirstOrDefaultAsync(m => m.Email == merchant.Email ||
-        //                                       m.PhoneNumber == merchant.PhoneNumber);
-        //        if (checkProvider != null)
-        //        {
-        //            return new SResponse
-        //            {
-        //                StatusCode = HttpStatusCode.BadRequest,
-        //                Message = "A Provider with the same Email Address or Contact Number already exists.",
-        //            };
-        //        }
-        //        // Encrypt password before saving
-        //        merchant.RoleId = _context.Roles.Where(x => x.RoleName.ToLower() == "merchant").Select(x => x.RoleId).FirstOrDefault();
-        //        merchant.CreatedBy = 1;
-        //        merchant.CreatedDate = DateTime.Now;
-        //        merchant.Password = Cryptography.Encrypt(merchant.Password);
-
-        //        _context.ProviderUsers.Add(merchant);
-        //        await _context.SaveChangesAsync();
-
-        //        bool emailSent = await _emailService.SendEmail(merchant.Email, "Welcome On Board with Smart Center", "You have successfully signed up. Please remember your password for future reference and make sure to bookmark the website for future.", merchant.ProviderName);
-        //        if (!emailSent)
-        //        {
-        //            _logger.LogWarning("Failed to send registration email to: {Email}", merchant.Email);
-        //        }
-
-        //        _logger.LogInformation("Provider user registered successfully with email: {Email}", merchant.Email);
-        //        return new SResponse
-        //        {
-        //            StatusCode = HttpStatusCode.OK,
-        //            Message = "Provider Successfully Registered!",
-        //        };
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError(ex, "Exception occurred during registration for email: {Email}", merchant.Email);
-        //        return new SResponse
-        //        {
-        //            StatusCode = HttpStatusCode.InternalServerError,
-        //            Message = "An error occurred while processing your request. Please try again later."
-        //        };
-        //    }
-        //}
-
         [HttpPost]
         [Route("Register")]
         public async Task<ActionResult<SResponse>> PostMerchant(ProviderUser merchant)
@@ -187,7 +129,7 @@ namespace AFFZ_API.Controllers.MerchantControllers
                         Message = "Email, Password, and Provider Name are required."
                     });
                 }
-
+                _logger.LogInformation("ProvidersRegister called at {Time}", DateTime.Now);
                 var checkProvider = await _context.ProviderUsers
                     .FirstOrDefaultAsync(m => m.Email == merchant.Email || m.PhoneNumber == merchant.PhoneNumber);
 
@@ -215,7 +157,7 @@ namespace AFFZ_API.Controllers.MerchantControllers
                 await _context.SaveChangesAsync();
 
                 // Generate email verification Link
-                var verificationLink = $"{Request.Scheme}://{BaseUrl}:7047/api/Providers/VerifyEmail?token={merchant.PasswordResetToken}";
+                var verificationLink = $"{Request.Scheme}://{PublicDomain}:{ApiHttpsPort}/api/Providers/VerifyEmail?token={merchant.PasswordResetToken}";
 
                 // Load JSON file
                 var emailLoader = new EmailTemplateLoader(_jsonFilePath);
@@ -632,6 +574,7 @@ namespace AFFZ_API.Controllers.MerchantControllers
                 return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while processing your request.");
             }
         }
+
         [HttpGet("GetMerchantDocs/{MerchantId}")]
         public async Task<IActionResult> GetMerchantDocs(int MerchantId)
         {
@@ -707,50 +650,91 @@ namespace AFFZ_API.Controllers.MerchantControllers
         {
             try
             {
-                var providerUsers = _context.ProviderUsers.FirstOrDefault(p => p.ProviderId == request.ProviderId);
-
-                if (providerUsers == null)
+                // Validate ProviderUser data
+                var providerUser = _context.ProviderUsers.FirstOrDefault(p => p.ProviderId == request.ProviderId);
+                if (providerUser == null)
                 {
                     return NotFound("Merchant not found.");
                 }
 
-                providerUsers.IsActive = request.IsActive;
-                providerUsers.ModifyDate = DateTime.Now; // Optional, if needed for auditing
+                var missingProviderFields = new List<string>();
+
+                if (string.IsNullOrWhiteSpace(providerUser.FirstName)) missingProviderFields.Add("First Name");
+                if (string.IsNullOrWhiteSpace(providerUser.Email)) missingProviderFields.Add("Email");
+                if (string.IsNullOrWhiteSpace(providerUser.PhoneNumber)) missingProviderFields.Add("Mobile Number");
+                if (string.IsNullOrWhiteSpace(providerUser.ProviderName)) missingProviderFields.Add("Provider Name");
+                if (string.IsNullOrWhiteSpace(providerUser.Address)) missingProviderFields.Add("Address");
+                if (string.IsNullOrWhiteSpace(providerUser.PostalCode)) missingProviderFields.Add("Postal Code");
+
+                if (missingProviderFields.Any())
+                {
+                    return BadRequest($"Missing fields in ProviderUser: {string.Join(", ", missingProviderFields)}.");
+                }
+
+                // Validate MerchantDocuments
+                var merchantDocuments = _context.MerchantDocuments.Where(md => md.MerchantId == request.ProviderId).ToList();
+                if (!merchantDocuments.Any(md => md.Status == "Verified"))
+                {
+                    return BadRequest("Merchant documents are not verified.");
+                }
+
+                //Get MerchantId from linking Table
+                var merchantLinkId = _context.ProviderMerchant.FirstOrDefault(pm => pm.ProviderID == request.ProviderId);
+                if (merchantLinkId == null)
+                {
+                    return NotFound("Merchant Details not found.");
+                }
+
+                // Validate Merchant Linking Form
+                var merchant = _context.Merchants.FirstOrDefault(m => m.MerchantId == merchantLinkId.MerchantID);
+                if (merchant == null)
+                {
+                    return NotFound("Merchant not found.");
+                }
+
+                var missingMerchantFields = new List<string>();
+
+                if (string.IsNullOrWhiteSpace(merchant.CompanyName)) missingMerchantFields.Add("Company Name");
+                if (string.IsNullOrWhiteSpace(merchant.ContactInfo)) missingMerchantFields.Add("Contact Info");
+                if (string.IsNullOrWhiteSpace(merchant.RegistrationMethod)) missingMerchantFields.Add("Registration Method");
+                if (string.IsNullOrWhiteSpace(merchant.CompanyRegistrationNumber)) missingMerchantFields.Add("Company Registration Number");
+                if (string.IsNullOrWhiteSpace(merchant.TradingLicense)) missingMerchantFields.Add("Trading License");
+                if (string.IsNullOrWhiteSpace(merchant.EmiratesId)) missingMerchantFields.Add("Emirates ID Number");
+                if (string.IsNullOrWhiteSpace(merchant.MerchantLocation)) missingMerchantFields.Add("Merchant Location");
+
+                if (missingMerchantFields.Any())
+                {
+                    return BadRequest($"Missing fields in Merchant: {string.Join(", ", missingMerchantFields)}.");
+                }
+
+                // Update ProviderUser status
+                providerUser.IsActive = request.IsActive;
+                providerUser.ModifyDate = DateTime.Now;
                 _context.SaveChanges();
 
-                _logger.LogInformation("Merchant status updated successfully for Provider ID: {ProviderId}", request.ProviderId);
+                _logger.LogInformation("ProviderUser status updated successfully for Provider ID: {ProviderId}", request.ProviderId);
 
-                //Update Provider Merchant.
-
-                var providerMerchant = _context.ProviderMerchant.FirstOrDefault(p => p.ProviderID == request.ProviderId);
-
+                // Update ProviderMerchant status
+                var providerMerchant = _context.ProviderMerchant.FirstOrDefault(pm => pm.ProviderID == request.ProviderId);
                 if (providerMerchant == null)
                 {
                     return NotFound("Provider and Merchant Link not found.");
                 }
 
                 providerMerchant.IsActive = request.IsActive;
-                providerMerchant.ModifiedDate = DateTime.Now; // Optional, if needed for auditing
+                providerMerchant.ModifiedDate = DateTime.Now;
                 _context.SaveChanges();
 
-                _logger.LogInformation("Provider and Merchant Link status updated successfully for Provider ID: {ProviderId}", request.ProviderId);
+                _logger.LogInformation("ProviderMerchant status updated successfully for Provider ID: {ProviderId}", request.ProviderId);
 
-                //Update Merchant Table Status.
-
-                var merchant = _context.Merchants.FirstOrDefault(p => p.MerchantId == providerMerchant.MerchantID);
-
-                if (merchant == null)
-                {
-                    return NotFound("Merchant not found.");
-                }
-
+                // Update Merchant status
                 merchant.IsActive = request.IsActive;
-                merchant.ModifyDate = DateTime.Now; // Optional, if needed for auditing
+                merchant.ModifyDate = DateTime.Now;
                 _context.SaveChanges();
 
-                _logger.LogInformation("Merchant status updated successfully for Provider ID: {ProviderId}", request.ProviderId);
+                _logger.LogInformation("Merchant status updated successfully for Merchant ID: {MerchantId}", merchant.MerchantId);
 
-                return Ok();
+                return Ok("Merchant status updated successfully.");
             }
             catch (Exception ex)
             {
@@ -778,130 +762,6 @@ namespace AFFZ_API.Controllers.MerchantControllers
                 return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while processing your request.");
             }
         }
-        //        public async Task<IActionResult> SendPasswordResetEmail([FromBody] string email)
-        //        {
-        //            try
-        //            {
-        //                var user = await _context.ProviderUsers.FirstOrDefaultAsync(u => u.Email == email);
-        //                if (user == null)
-        //                {
-        //                    return NotFound("Email not registered.");
-        //                }
-
-        //                string token = Guid.NewGuid().ToString(); // Generate a unique token
-        //                user.PasswordResetToken = token;
-        //                user.TokenExpiry = DateTime.Now.AddHours(1); // Token valid for 1 hour
-        //                await _context.SaveChangesAsync();
-
-        //                string resetLink = $"{Request.Scheme}://{Request.Host}/ResetPassword?token={token}";
-        //                 resetLink = $"{Request.Scheme}://localhost:7096/ResetPassword?token={token}";
-        //                //string emailBody = $"Hi {user.ProviderName},<br><br>" +
-        //                //                   "You have requested to reset your password. Please click the link below to reset your password:<br>" +
-        //                //                   $"<a href='{resetLink}'>Reset Password</a><br><br>" +
-        //                //                   "If you didn’t request this, please ignore this email.";
-        //                string emailBody = $@"
-        //<!DOCTYPE html>
-        //<html>
-        //<head>
-        //    <style>
-        //        body {{
-        //            font-family: Arial, sans-serif;
-        //            background-color: #f8f9fa;
-        //            margin: 0;
-        //            padding: 0;
-        //        }}
-        //        .email-container {{
-        //            max-width: 600px;
-        //            margin: 20px auto;
-        //            background: #ffffff;
-        //            border-radius: 10px;
-        //            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        //            padding: 20px;
-        //        }}
-        //        .header {{
-        //            text-align: center;
-        //            color: #343a40;
-        //            margin-bottom: 20px;
-        //        }}
-        //        .header h1 {{
-        //            font-size: 24px;
-        //        }}
-        //        .content {{
-        //            color: #555555;
-        //            line-height: 1.6;
-        //        }}
-        //        .content a {{
-        //            color: #007bff;
-        //            text-decoration: none;
-        //            font-weight: bold;
-        //        }}
-        //        .content a:hover {{
-        //            text-decoration: underline;
-        //        }}
-        //        .footer {{
-        //            margin-top: 20px;
-        //            text-align: center;
-        //            font-size: 12px;
-        //            color: #888888;
-        //        }}
-        //        .btn {{
-        //            display: inline-block;
-        //            padding: 10px 20px;
-        //            margin-top: 20px;
-        //            background-color: #007bff;
-        //            color: #ffffff;
-        //            text-decoration: none;
-        //            border-radius: 5px;
-        //            font-size: 16px;
-        //        }}
-        //        .btn:hover {{
-        //            background-color: #0056b3;
-        //        }}
-        //    </style>
-        //</head>
-        //<body>
-        //    <div class='email-container'>
-        //        <div class='header'>
-        //            <h1>Reset Your Password</h1>
-        //        </div>
-        //        <div class='content'>
-        //            <p>Hi <strong>{user.ProviderName}</strong>,</p>
-        //            <p>You have requested to reset your password. Please click the button below to reset your password:</p>
-        //            <p style='text-align: center;'>
-        //                <a href='{resetLink}' class='btn'>Reset Password</a>
-        //            </p>
-        //            <p>If you didn’t request this, please ignore this email. This link will expire in 24 hours.</p>
-        //        </div>
-        //        <div class='footer'>
-        //            <p>&copy; {DateTime.Now.Year} Your Company Name. All Rights Reserved.</p>
-        //        </div>
-        //    </div>
-        //</body>
-        //</html>";
-
-        //                MailMessage message = new MailMessage();
-        //                message.To.Add(email);
-        //                message.Subject = "Password Reset Request";
-        //                message.Body = emailBody;
-        //                message.IsBodyHtml = true; // Ensure the email is sent as HTML
-
-        //                bool emailSent = await _emailService.SendEmail(email, "Password Reset Request", emailBody, user.ProviderName);
-        //                if (!emailSent)
-        //                {
-        //                    _logger.LogWarning("Failed to send password reset email to: {Email}", email);
-        //                    return StatusCode((int)HttpStatusCode.InternalServerError, "Failed to send email.");
-        //                }
-
-        //                return Ok("Password reset email sent successfully.");
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                _logger.LogError(ex, "Error occurred while sending password reset email.");
-        //                return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while processing your request.");
-        //            }
-        //        }
-
-
         [HttpPost("SendPasswordResetEmail")]
         public async Task<IActionResult> SendPasswordResetEmail([FromBody] string email)
         {
@@ -918,7 +778,7 @@ namespace AFFZ_API.Controllers.MerchantControllers
                 user.TokenExpiry = DateTime.Now.AddHours(1); // Token valid for 1 hour
                 await _context.SaveChangesAsync();
 
-                string resetLink = $"{Request.Scheme}://{BaseUrl}:7096/ResetPassword?token={user.PasswordResetToken}";
+                string resetLink = $"{Request.Scheme}://{PublicDomain}:{MerchantHttpsPort}/ResetPassword?token={user.PasswordResetToken}";
 
 
                 // Load JSON file
@@ -990,7 +850,8 @@ namespace AFFZ_API.Controllers.MerchantControllers
         {
             try
             {
-                string MerchantUrl = _Config.GetValue<string>("AppSettings:ProviderUrl").ToString();
+                //string MerchantUrl = _Config.GetValue<string>("AppSettings:ProviderUrl").ToString();
+                string MerchantUrl = $"{Request.Scheme}://{PublicDomain}:{MerchantHttpsPort}/";
                 var user = await _context.ProviderUsers
                 .FirstOrDefaultAsync(u => u.PasswordResetToken == token && u.TokenExpiry > DateTime.Now);
 

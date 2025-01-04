@@ -17,7 +17,15 @@ namespace AFFZ_Provider.Utils
         }
         public string GetMerchantId()
         {
-            return _httpContextAccessor.HttpContext.Session.GetEncryptedString("ProviderId", _protector);
+            try
+            {
+                return _httpContextAccessor.HttpContext.Session.GetEncryptedString("ProviderId", _protector);
+            }
+            catch (Exception ex)
+            {
+                return "";
+            }
+
         }
         public async Task<List<Notification>> GetNotificationsAsync()
         {

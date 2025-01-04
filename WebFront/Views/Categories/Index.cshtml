@@ -4,7 +4,7 @@
     var Filtercatories = ViewBag.Categories as List<SCAPI.WebFront.Controllers.ServiceCat>;
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    
+
 }
 
 <div class="main-wrapper">
@@ -50,10 +50,6 @@
                                     <h5>Filter by</h5>
                                     <a href="#" class="reset-link">Reset Filters</a>
                                 </div>
-                                @*  <div class="filter-content">
-                            <h2>Keyword</h2>
-                            <input type="text" class="form-control" placeholder="What are you looking for?">
-                            </div> *@
                                 <div class="row filter-content">
                                     <h2>Categories <span><i class="feather-chevron-down"></i></span></h2>
                                     <div class="filter-checkbox" id="fill-more">
@@ -139,17 +135,19 @@
                         <div class="row">
                             @{
                                 string CustomerProtalUrl = ViewBag.CustomerUrl;
+                                string AdminProtalUrl = ViewBag.AdminUrl;
+                               
                             }
                             @foreach (var _subcat in paginatedSubCategories)
                             {
-
+                                string ImgUrl = $"{AdminProtalUrl}{_subcat.ServiceImage}";
                                 string MerchantListUrl = ViewBag.CustomerUrl + "MerchantList/SelectedMerchantList?catName=" + _subcat.ServiceName;
                                 <!-- Service List -->
                                 <div class="col-xl-4 col-md-6">
                                     <div class="service-widget servicecontent">
                                         <div class="service-img">
                                             <a href="@MerchantListUrl" target="_blank">
-                                                <img class="img-fluid serv-img" alt="Service Image" src="~/assets/img/services/service-04.jpg">
+                                                <img class="img-fluid serv-img" alt="Service Image" src="@ImgUrl">
                                             </a>
                                             <div class="fav-item">
                                                 <a href="@MerchantListUrl" target="_blank"><span class="item-cat">@_subcat.ServiceName</span></a>

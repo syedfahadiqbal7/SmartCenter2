@@ -144,7 +144,7 @@ namespace AFFZ_Provider.Controllers
                         SenderType = "Merchant"
                     };
 
-                    var res = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                    var res = await _httpClient.PostAsync("Notifications/CreateNotification?StatusId=3", Customs.GetJsonContent(notification));
                     string resString = await res.Content.ReadAsStringAsync();
                     _logger.LogInformation("Notification Response : " + resString);
                 }

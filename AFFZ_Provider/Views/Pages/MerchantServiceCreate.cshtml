@@ -66,7 +66,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Service Category</label>
-                                        <select class="form-select" name="CategoryID" id="CategoryID" asp-items="@ViewBag.ServiceCategoryComboData">
+                                        <select class="form-select" name="CategoryID" id="CategoryID" asp-items="@ViewBag.ServiceCategoryComboData" required>
                                             <option value="">--Select--</option>
                                         </select>
                                         @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
@@ -75,7 +75,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Service Title</label>
-                                        <select class="form-select" name="ServiceName" id="ServiceName" asp-items="@ViewBag.ServiceListComboData">
+                                        <select class="form-select" name="ServiceName" id="ServiceName" asp-items="@ViewBag.ServiceListComboData" required>
                                             <option value="">--Select--</option>
                                         </select>
                                         @Html.ValidationMessageFor(model => model.ServiceName, "", new { @class = "text-danger" })

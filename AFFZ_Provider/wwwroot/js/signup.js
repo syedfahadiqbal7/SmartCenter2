@@ -11,7 +11,16 @@
     // Apply validation to the form
     $("#signUpForm").validate({
         rules: {
-            CustomerName: {
+            FirstName: {
+                required: true
+            },
+            LastName: {
+                required: true
+            },
+            ProviderName: {
+                required: true
+            },
+            PhoneNumber: {
                 required: true
             },
             Email: {
@@ -24,8 +33,17 @@
             }
         },
         messages: {
-            CustomerName: {
-                required: "Please enter your name."
+            FirstName: {
+                required: "Please enter your First name."
+            },
+            LastName: {
+                required: "Please enter your Last name."
+            },
+            ProviderName: {
+                required: "Please enter your Registered Company Name."
+            },
+            PhoneNumber: {
+                required: "Please enter your Phone Number."
             },
             Email: {
                 required: "Please enter your email address.",

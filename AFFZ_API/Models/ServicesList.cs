@@ -7,5 +7,7 @@ namespace AFFZ_API.Models
         [Key]
         public int ServiceListID { get; set; }
         public string ServiceName { get; set; }
+        public string ServiceImage { get; set; }
+
     }
 }

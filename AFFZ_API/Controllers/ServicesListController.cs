@@ -69,7 +69,7 @@ namespace AFFZ_API.Controllers
         }
 
         // POST: api/ServicesList
-        [HttpPost]
+        [HttpPost("PostServicesList")]
         public async Task<ActionResult<ServicesList>> PostServicesList(ServicesList servicesList)
         {
             _context.ServicesLists.Add(servicesList);
@@ -79,7 +79,7 @@ namespace AFFZ_API.Controllers
         }
 
         // DELETE: api/ServicesList/5
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteServicesList")]
         public async Task<IActionResult> DeleteServicesList(int id)
         {
             var servicesList = await _context.ServicesLists.FindAsync(id);

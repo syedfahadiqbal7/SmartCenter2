@@ -181,14 +181,17 @@ namespace AFFZ_API.Controllers
             var query = from merchant in _context.Merchants
                         join service in _context.Services
                         on merchant.MerchantId equals service.MerchantID
+                        join serviceList in _context.ServicesLists
+                        on service.ServiceName equals serviceList.ServiceName // Match service.ServiceName with serviceList.ServiceName
                         select new ServiceMerchantDTO
                         {
                             MID = merchant.MerchantId,
                             SID = service.ServiceId,
                             MERCHANTNAME = merchant.CompanyName,
-                            SERVICENAME = service.ServiceName,
+                            SERVICENAME = serviceList.ServiceName, // Fetch ServiceName from ServicesList
                             PRICE = service.ServicePrice,
                             MERCHANTLOCATION = merchant.MerchantLocation,
+                            ServiceImage = serviceList.ServiceImage, // Include ServiceImage
                             IsRequestedAlready = false
                         };
 
@@ -503,6 +506,7 @@ namespace AFFZ_API.Controllers
         public int SID { get; set; }
         public string MERCHANTNAME { get; set; }
         public string SERVICENAME { get; set; }
+        public string? ServiceImage { get; set; }
         public int? PRICE { get; set; }
         public string MERCHANTLOCATION { get; set; }
         public bool IsRequestedAlready { get; set; }

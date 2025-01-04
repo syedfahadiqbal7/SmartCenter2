@@ -57,7 +57,7 @@
     <div class="col-md-8 col-lg-7">
         <div class="login-wrap">
             <div class="login-header text-center">
-                <h3>Sign Up</h3>
+                <h3>Merchant Sign Up</h3>
             </div>
 
             <!-- Success and Error Messages -->
@@ -81,42 +81,46 @@
                 <!-- First Name -->
                 <div class="mb-3">
                     <label class="form-label">First Name</label>
-                    <input asp-for="FirstName" class="form-control" placeholder="Enter your first name" required>
+                    <input asp-for="FirstName" class="form-control" placeholder="Enter your first name" id="FirstName" required>
                     <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
 
                 <!-- Last Name -->
                 <div class="mb-3">
                     <label class="form-label">Last Name</label>
-                    <input asp-for="LastName" class="form-control" placeholder="Enter your last name">
+                    <input asp-for="LastName" class="form-control" placeholder="Enter your last name" id="LastName">
                     <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
 
                 <!-- Registered Company Name -->
                 <div class="mb-3">
                     <label class="form-label">Registered Company Name</label>
-                    <input asp-for="ProviderName" class="form-control" placeholder="Enter provider name" required>
+                    <input asp-for="ProviderName" class="form-control" placeholder="Enter provider name" id="ProviderName" required>
                     <span asp-validation-for="ProviderName" class="text-danger"></span>
                 </div>
 
                 <!-- Email -->
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <input asp-for="Email" type="email" class="form-control" placeholder="johndoe@example.com" required>
+                    <input asp-for="Email" type="email" class="form-control" placeholder="johndoe@example.com" id="Email" required>
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
 
                 <!-- Phone Number -->
                 <div class="mb-3">
                     <label class="form-label">Phone Number</label>
-                    <input asp-for="PhoneNumber" class="form-control" placeholder="(256) 789-6253" required>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="(256) 789-6253" id="PhoneNumber" required>
                     <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                 </div>
 
                 <!-- Password -->
                 <div class="mb-3">
                     <label class="form-label">Password</label>
-                    <input asp-for="Password" type="password" class="form-control pass-input" placeholder="*************" required minlength="8">
+                    <div class="pass-group">
+                        <input asp-for="Password" type="password" class="form-control pass-input" placeholder="*************" required minlength="8" id="Password">
+                        <span class="toggle-password feather-eye-off"></span>
+                    </div>
+                    <label id="Password-error" class="error" for="Password"></label>
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
 
@@ -130,7 +134,9 @@
                 <!-- Sign-Up Button -->
                 <button type="submit" class="btn btn-primary w-100 login-btn">Sign Up</button>
             </form>
+            <p class="no-acc">Already have an account? <a href="~/Login">Login</a></p>
         </div>
+        
     </div>
 </div>
 
@@ -148,7 +154,17 @@
             errorSpan.textContent = "";
         }
     });
+    document.querySelector("signUpForm").addEventListener("submit", function (e) {
+        const submitButton = this.querySelector("button[type='submit']");
+        submitButton.disabled = true;
+    });
 </script>
 
-<!-- Bootstrap JS -->
+<!-- Include Bootstrap JS (if not already included in your layout) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Include jQuery and Validation scripts -->
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/js/signup.js"></script>

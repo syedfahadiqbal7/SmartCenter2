@@ -97,8 +97,8 @@
                                         <td>@user.ServiceName</td>
                                         <td>AED @user.ServicePrice</td>
                                         <td>
-                                            <span class="badge @((user.IsPaymentDone == 2) ? "bg-success" : "bg-warning")">
-                                                @(user.IsPaymentDone == 1 ? "Yes" : "No")
+                                            <span class="badge @((user.IsPaymentDone >0) ? "bg-success" : "bg-warning")">
+                                                @(user.IsPaymentDone >0 ? "Yes" : "No")
                                             </span>
                                         </td>
                                         <td>

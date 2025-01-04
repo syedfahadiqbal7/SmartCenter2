@@ -6,6 +6,10 @@ namespace AFFZ_Provider.Utils
     public interface IAppSettingsService
     {
         string GetBaseIpAddress();
+        string GetPublicDomain();
+        string GetApiHttpsPort();
+        string GetMerchantHttpsPort();
+        string GetCustomerHttpsPort();
     }
 
     public class AppSettingsService : IAppSettingsService
@@ -17,9 +21,30 @@ namespace AFFZ_Provider.Utils
             _settings = options.Value;
         }
 
+        public string GetApiHttpsPort()
+        {
+            return _settings.ApiHttpsPort;
+        }
+
         public string GetBaseIpAddress()
         {
             return _settings.BaseIpAddress;
         }
+
+        public string GetCustomerHttpsPort()
+        {
+            return _settings.CustomerHttpsPort;
+        }
+
+        public string GetMerchantHttpsPort()
+        {
+            return _settings.MerchantHttpsPort;
+        }
+
+        public string GetPublicDomain()
+        {
+            return _settings.PublicDomain;
+        }
+
     }
 }

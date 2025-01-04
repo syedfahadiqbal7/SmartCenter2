@@ -23,15 +23,50 @@ namespace AFFZ_API.Controllers
 			 
 			 */
 
-            var categories = await _context.Services.GroupBy(sc => new { sc.ServiceName, sc.ServicePrice, sc.Merchant.MerchantLocation, sc.CategoryID }).Select(g => new SubCatPage
+            try
             {
-                CatId = g.Key.CategoryID,
-                ServiceName = g.Key.ServiceName,
-                ServicePrice = g.Key.ServicePrice,
-                Location = g.Key.MerchantLocation
-            }).ToListAsync();
+                //var categories = await _context.Services.GroupBy(sc => new { sc.ServiceName, sc.ServicePrice, sc.Merchant.MerchantLocation, sc.CategoryID, }).Select(g => new SubCatPage
+                //{
+                //    CatId = g.Key.CategoryID,
+                //    ServiceName = g.Key.ServiceName,
+                //    ServicePrice = g.Key.ServicePrice,
+                //    Location = g.Key.MerchantLocation
+                //}).ToListAsync();
+                var categories = await _context.Services
+                .GroupBy(sc => new
+                {
+                    sc.ServiceName,
+                    sc.ServicePrice,
+                    sc.Merchant.MerchantLocation,
+                    sc.CategoryID
+                })
+                .Select(g => new
+                {
+                    g.Key.ServiceName,
+                    g.Key.ServicePrice,
+                    g.Key.MerchantLocation,
+                    g.Key.CategoryID
+                })
+                .Join(
+                    _context.ServicesLists, // Joining with ServicesList
+                    s => s.ServiceName,    // Matching ServiceName in Services
+                    sl => sl.ServiceName,  // with ServiceName in ServicesList
+                    (s, sl) => new SubCatPage
+                    {
+                        CatId = s.CategoryID,
+                        ServiceName = s.ServiceName,
+                        ServicePrice = s.ServicePrice,
+                        Location = s.MerchantLocation,
+                        ServiceImage = sl.ServiceImage // Including ServiceImage
+                    })
+                .ToListAsync();
+                return Ok(categories);
+            }
+            catch (Exception ex)
+            {
 
-            return Ok(categories);
+                throw;
+            }
         }
 
         [HttpGet("getServiceByName")]

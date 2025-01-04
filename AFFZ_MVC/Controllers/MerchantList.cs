@@ -1,5 +1,4 @@
 ﻿using AFFZ_Customer.Models;
-using AFFZ_Customer.Models.Partial;
 using AFFZ_Customer.Utils;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
@@ -14,11 +13,14 @@ namespace AFFZ_Customer.Controllers
         private readonly ILogger<MerchantList> _logger;
         private readonly HttpClient _httpClient;
         private readonly IDataProtector _protector;
-        public MerchantList(IHttpClientFactory httpClientFactory, ILogger<MerchantList> logger, IDataProtectionProvider provider)
+        private string _adminUrl = string.Empty;
+
+        public MerchantList(IHttpClientFactory httpClientFactory, ILogger<MerchantList> logger, IDataProtectionProvider provider, IAppSettingsService service)
         {
             _httpClient = httpClientFactory.CreateClient("Main");
             _protector = provider.CreateProtector("Example.SessionProtection");
             _logger = logger;
+            _adminUrl = $"https://{service.GetBaseIpAddress()}:{service.GetAdminHttpsPort()}";
         }
         [HttpGet]
         public async Task<IActionResult> SelectedMerchantList(string catName)
@@ -66,6 +68,7 @@ namespace AFFZ_Customer.Controllers
                 }
 
                 ViewBag.SubCategoriesWithMerchant = categories;
+                ViewBag.AdminUrl = _adminUrl;
                 _logger.LogInformation("Successfully retrieved categories for Category Name: {CategoryName}", catName);
             }
             catch (JsonSerializationException ex)
@@ -145,7 +148,7 @@ namespace AFFZ_Customer.Controllers
                 var discountRequestClass = new DiscountRequestClass { MerchantId = merchantId, ServiceId = serviceId, UserId = userIdInt };
                 var request = await _httpClient.PostAsync("CategoryWithMerchant/sendRequestForDiscount", Customs.GetJsonContent(discountRequestClass));
                 request.EnsureSuccessStatusCode();
-                await NotifyUser(reqIds, userIdInt, "#", $"User[{userIdInt}] has completed the payment and selected you as his final merchant. Wait for the files to get uploaded by the user.");
+                await NotifyUser(reqIds, userIdInt, "#", $"User[{userIdInt}] has completed the payment and selected you as his final merchant. Wait for the files to get uploaded by the user.", "11");
                 // Retrieve discount details sent to merchant
                 var jsonResponse = await _httpClient.GetAsync($"CategoryWithMerchant/AllRequestMerchant?Mid={reqIds[0]}");
                 jsonResponse.EnsureSuccessStatusCode();
@@ -237,7 +240,7 @@ namespace AFFZ_Customer.Controllers
                 await UpdateServiceStatusAsync(userIdInt, 6, requestForDisCount.RFDFU);
                 await UpdateServiceStatusAsync(userIdInt, 9, requestForDisCount.RFDFU);
 
-                await NotifyUser(reqIds, userIdInt, "#", $"User[{userIdInt}] has completed the payment and selected you as his final merchant. Wait for the files to get uploaded by the user.");
+                await NotifyUser(reqIds, userIdInt, "#", $"User[{userIdInt}] has completed the payment and selected you as his final merchant. Wait for the files to get uploaded by the user.", "11");
 
                 TempData["SuccessMessage"] = "Discount processed successfully.";
             }
@@ -272,7 +275,7 @@ namespace AFFZ_Customer.Controllers
                 var discountRequestClass = new DiscountRequestClass { MerchantId = merchantId, ServiceId = serviceId, UserId = userIdInt };
                 var request = await _httpClient.PostAsync("CategoryWithMerchant/sendRequestForDiscount", Customs.GetJsonContent(discountRequestClass));
                 request.EnsureSuccessStatusCode();
-                await NotifyUser(reqIds, userIdInt, "#", $"User[{userIdInt}] has completed the payment and selected you as his final merchant. Wait for the files to get uploaded by the user.");
+                await NotifyUser(reqIds, userIdInt, "#", $"User[{userIdInt}] has completed the payment and selected you as his final merchant. Wait for the files to get uploaded by the user.", "11");
                 // Retrieve discount details sent to merchant
                 var jsonResponse = await _httpClient.GetAsync($"CategoryWithMerchant/AllRequestMerchant?Mid={reqIds[0]}");
                 jsonResponse.EnsureSuccessStatusCode();
@@ -364,7 +367,7 @@ namespace AFFZ_Customer.Controllers
                 await UpdateServiceStatusAsync(userIdInt, 6, requestForDisCount.RFDFU);
                 await UpdateServiceStatusAsync(userIdInt, 9, requestForDisCount.RFDFU);
 
-                await NotifyUser(reqIds, userIdInt, "#", $"User[{userIdInt}] has completed the payment and selected you as his final merchant. Wait for the files to get uploaded by the user.");
+                await NotifyUser(reqIds, userIdInt, "#", $"User[{userIdInt}] has completed the payment and selected you as his final merchant. Wait for the files to get uploaded by the user.", "11");
 
                 TempData["SuccessMessage"] = "Discount processed successfully.";
             }
@@ -391,7 +394,7 @@ namespace AFFZ_Customer.Controllers
             await TrackingDirectPayment(trackerUpdate);
         }
         // Helper Method to Send Notification
-        private async Task NotifyUser(string[] reqIds, int userId, string url, string message)
+        private async Task NotifyUser(string[] reqIds, int userId, string url, string message, string StatusId)
         {
             var notification = new Notification
             {
@@ -402,7 +405,7 @@ namespace AFFZ_Customer.Controllers
                 MessageFromId = userId
             };
 
-            var response = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+            var response = await _httpClient.PostAsync("Notifications/CreateNotification?StatusId=" + StatusId, Customs.GetJsonContent(notification));
             _logger.LogInformation("Notification response: {Response}", await response.Content.ReadAsStringAsync());
         }
         private async Task UpdateTrackerStatus(string[] reqIds, string comment)
@@ -443,7 +446,7 @@ namespace AFFZ_Customer.Controllers
 
             try
             {
-                var response = await _httpClient.PostAsync("Notifications/CreateNotification", Customs.GetJsonContent(notification));
+                var response = await _httpClient.PostAsync("Notifications/CreateNotification?StatusId=1", Customs.GetJsonContent(notification));
                 response.EnsureSuccessStatusCode();
                 _logger.LogInformation("Notification triggered successfully.");
             }
@@ -515,6 +518,7 @@ namespace AFFZ_Customer.Controllers
         public string? SID { get; set; }
         public string? MERCHANTNAME { get; set; }
         public string? SERVICENAME { get; set; }
+        public string? ServiceImage { get; set; }
         public string? PRICE { get; set; }
         public string? MERCHANTLOCATION { get; set; }
         public bool IsRequestedAlready { get; set; }

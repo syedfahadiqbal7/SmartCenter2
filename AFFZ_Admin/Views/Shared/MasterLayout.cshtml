@@ -296,6 +296,27 @@
                                     <li>
                                         <a href="~/Providers">Providers </a>
                                     </li>
+                                    <li>
+                                        <a href="~/ServiceCategory/CategoryIndex">Category </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:void(0);">
+                                    <i class="fe fe-user"></i>
+                                    <span>Application Masters</span>
+                                    <span class="menu-arrow"><i class="fe fe-chevron-right"></i></span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="~/ServiceCategory/CategoryIndex">Category</a>
+                                    </li>
+                                    <li>
+                                        <a href="~/ServicesList/ServicesListIndex">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Category and Service Binding</a>
+                                    </li>
                                 </ul>
                             </li>
                             <li>
@@ -388,7 +409,8 @@
 
         <!-- Custom JS -->
         <script src="/assets/js/admin.js"></script>
-
+    <!-- Render scripts at the bottom -->
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>

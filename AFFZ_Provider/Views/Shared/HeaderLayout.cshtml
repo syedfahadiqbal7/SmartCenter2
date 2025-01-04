@@ -9,12 +9,28 @@
     var IsActive = await NotificationService.GetProviderIsActive();
 }
 <style>
-    #profile-tab .active
-    {
+    #profile-tab .active {
         color: black;
         font-weight: bold;
         border: 1px solid #000;
     }
+    .alert {
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+   .alert.alert-danger {
+       background-color: #f8d7da;
+       border-color: #f5c2c7;
+   }
+
+   .alert .fa-triangle-exclamation {
+       font-size: 0.9rem;
+   }
+
+    
 </style>
 <div class="header">
     <div class="header-left">
@@ -28,41 +44,29 @@
     <a class="mobile_btn" id="mobile_btn" href="javascript:void(0);">
         <i class="fas fa-align-left"></i>
     </a>
-
+    
     <div class="header-split">
         <div class="page-headers">
-            @if (IsActive == "In Active")
-            {
-                @* <span style="font-weight: bold;font-size: 17px;text-align: center !important;color: darkred;border: 1px solid #ccc;padding: 10px;box-shadow: 5px 5px aliceblue;">
-                    <i class="bi bi-exclamation-triangle"></i>
-                    Profile Is In active.
-                </span> *@
-                <div class="alert alert-warning d-flex align-items-center" role="alert" style="padding: 5px;">
-                    <i class="fa-solid fa-triangle-exclamation text-warning me-2" style="font-size: 1.5rem;"></i>
-                    <div>
-                        <strong>Account Not Activated:</strong> Your account is not yet activated. Please click <a href="/Profile">Here</a> to complete the required steps to activate your account and access all features.
-                        @* <div class="mt-2">
-                            <a href="/support" class="btn btn-sm btn-primary">
-                                <i class="bi bi-envelope-fill"></i> Contact Support
-                            </a>
-                            <a href="/activation-instructions" class="btn btn-sm btn-outline-secondary">
-                                <i class="bi bi-info-circle-fill"></i> Learn How to Activate
-                            </a>
-                        </div> *@
+            <div class="alert-container">
+                @if (IsActive == "In Active")
+                {
+                    <div class="alert alert-danger d-flex align-items-center" role="alert">
+                        <i class="fa-solid fa-triangle-exclamation text-warning me-2"></i>
+                        <div>
+                            <strong>Account Not Activated:</strong> Your account is not yet activated. Please click
+                            <a href="/Profile">Here</a> to complete the required steps to activate your account and access all features.
+                        </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
             <div class="search-bar">
-                
-                    
-               
                 @* <span><input type="text" placeholder="Search" class="form-control"></span> *@
             </div>
         </div>
         <ul class="nav user-menu">
-            <li class="nav-item">
+            @* <li class="nav-item">
                 <a href="http://192.168.0.115:7204/" class="viewsite"><i class="fe fe-globe me-2"></i>View Site</a>
-            </li>
+            </li> *@
             <li class="nav-item dropdown has-arrow dropdown-heads flag-nav">
                 <a class="nav-link" data-bs-toggle="dropdown" href="javascript:void(0);" role="button">
                     <img src="/assets/img/flags/us1.png" alt="Flag" height="20">
@@ -83,7 +87,7 @@
                 </div>
             </li>
             <!-- Notifications -->
-            <li class="nav-item dropdown has-arrow dropdown-heads noti-wrapper">
+            <li class="nav-item  has-arrow dropdown-heads dropdown logged-item noti-nav noti-wrapper">
                 <a href="#" class="dropdown-toggle nav-link notify-link" data-bs-toggle="dropdown">
                     @* <span class="noti-message">@notifications.Where(a => a.IsRead == false).ToList().Count</span> *@
                     <span class="notification-count noti-message">@notifications.Count(a => !a.IsRead)</span>
@@ -170,6 +174,3 @@
     </div>
 
 </div>
-@section Scripts{
-    
-}

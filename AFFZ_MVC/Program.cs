@@ -23,6 +23,7 @@ var sharedConfig = new ConfigurationBuilder()
     .Build();
 
 var baseIP = sharedConfig["BaseIP"];
+var PublicDomain = sharedConfig["PublicDomain"];
 var apiHttpPort = sharedConfig["Ports:AFFZ_API:Http"];
 var apiHttpsPort = sharedConfig["Ports:AFFZ_API:Https"];
 
@@ -45,6 +46,11 @@ var CertificatePassword = sharedConfig["Certificate:Password"];
 builder.Services.Configure<AppSettings>(options =>
 {
     options.BaseIpAddress = baseIP;
+    options.PublicDomain = PublicDomain;
+    options.ApiHttpsPort = apiHttpsPort;
+    options.AdminHttpsPort = AdminHttpsPort;
+    options.MerchantHttpsPort = ProviderHttpsPort;
+    options.CustomerHttpsPort = CustomerHttpsPort;
 });
 
 builder.Services.AddCors(options =>

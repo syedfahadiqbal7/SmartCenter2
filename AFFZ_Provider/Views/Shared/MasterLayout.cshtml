@@ -1,6 +1,9 @@
-﻿@inject AFFZ_Provider.Utils.IAppSettingsService AppSettingsService
+﻿@using AFFZ_Provider.Utils
+@inject AFFZ_Provider.Utils.IAppSettingsService AppSettingsService
+@inject NotificationService NotificationService
 @{
     var controllerName = ViewContext.RouteData.Values["controller"]?.ToString();
+    var MerchantId = NotificationService.GetMerchantId();
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +21,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css">
-    
+
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
@@ -37,7 +40,7 @@
 
     <!-- Datetimepicker CSS -->
     <link rel="stylesheet" href="/assets/css/bootstrap-datetimepicker.min.css">
-    
+
 
     <!-- Main CSS -->
     @if (controllerName == "Login" || controllerName == "SignUp")
@@ -50,7 +53,7 @@
     }
 </head>
 
-<body>
+<body class="provider-body">
 
 
     <div class="main-wrapper">
@@ -108,17 +111,17 @@
     <!-- SignalR Client -->
     <script src="/assets/js/signalr.min.js"></script>
 
-    
 
-    
+
+
 
     <!-- Datetimepicker JS -->
     <script src="/assets/js/moment.min.js"></script>
     <script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
 
-    
 
-   
+
+
 
     <!-- Custom JS -->
     @* <script src="/assets/js/script.js"></script> *@
@@ -129,13 +132,17 @@
 
     <!-- Render scripts at the bottom -->
     @RenderSection("Scripts", required: false)
-    <script>
-        const baseIpAddress = "@AppSettingsService.GetBaseIpAddress()";
+    @if (controllerName != "Login" || controllerName != "SignUp")
+    {
+        <script>
+            const baseIpAddress = "@AppSettingsService.GetBaseIpAddress()";
         console.log("Base IP Address: " + baseIpAddress);
         const apiBaseUrl = "https://"+baseIpAddress+":1501"; // AFFZ_API base URL
         const clientType = "AFFZ_Provider";
         console.log("API URL: " + apiBaseUrl);
         console.log("Client: " + clientType);
+        var loggedInMerchantId = '@MerchantId';
+        console.log("LoggedIn Merchant Id: " + loggedInMerchantId);
         function markAsReadAndRedirect(notificationId, redirectUrl, element) {
             // Mark the notification as read via an API call
             fetch(`${apiBaseUrl}/api/Notifications/${notificationId}/mark-as-read`, {
@@ -202,19 +209,24 @@
 
 
         connection.on("ReceiveNotification", function (notifications) {
+            console.log("Received notifications:", notifications);
 
-            // Filter for unread notifications
-            const unreadNotifications = notifications.filter(notification => !notification.isRead);
-            console.log("total Unread Notifications : "+unreadNotifications);
-            // Select the notification list element and clear it
+            // Filter notifications for the logged-in merchant
+            const merchantNotifications = notifications.filter(notification =>
+                notification.merchantId === loggedInMerchantId
+            );
+
+            // Process merchant-specific notifications as before
+            const unreadNotifications = merchantNotifications.filter(notification => !notification.isRead);
+            console.log("Unread Notifications:", unreadNotifications);
+
             const notificationList = document.querySelector('.notification-list');
-            const sortedNotifications = notifications.sort((a, b) => b.id - a.id); // Ensure descending order
+            const sortedNotifications = merchantNotifications.sort((a, b) => b.id - a.id);
             notificationList.innerHTML = '';
 
-            // Loop through each notification and add it to the list with the blinking effect
             sortedNotifications.forEach(notification => {
                 const newNotification = document.createElement('li');
-                newNotification.classList.add('notification-message', 'blinking'); // Add blinking class
+                newNotification.classList.add('notification-message', 'blinking');
 
                 newNotification.innerHTML = `
                     <a href="javascript:void(0)" onclick="markAsReadAndRedirect(${notification.id}, '${notification.redirectToActionUrl}', this)">
@@ -233,27 +245,22 @@
                         </div>
                     </a>`;
 
-                // Append new notification to the list
                 notificationList.prepend(newNotification);
 
-                // Remove blinking effect when clicked
                 newNotification.addEventListener('click', function () {
                     newNotification.classList.remove('blinking');
                 });
             });
 
-        // Update the notification count with only unread notifications
-        const notificationCountElement = document.querySelector(".notification-count");
-        notificationCountElement.textContent = unreadNotifications.length;
+            const notificationCountElement = document.querySelector(".notification-count");
+            notificationCountElement.textContent = unreadNotifications.length;
         });
-
-
-
         // Restart connection on disconnection
         connection.onclose(async () => {
             console.warn("SignalR connection closed. Attempting to reconnect...");
             await ensureConnectionStarted();
         });
     </script>
+    }
 </body>
 </html>

@@ -9,27 +9,27 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .hover-effect:hover {
-        transform: scale(1.03);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
+        .hover-effect:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
 
     .btn-upload {
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .btn-upload:hover {
-        background-color: #0056b3 !important;
-        color: #fff !important;
-    }
+        .btn-upload:hover {
+            background-color: #0056b3 !important;
+            color: #fff !important;
+        }
 
     .linked-acc button img {
         transition: transform 0.3s ease;
     }
 
-    .linked-acc button img:hover {
-        transform: scale(1.1);
-    }
+        .linked-acc button img:hover {
+            transform: scale(1.1);
+        }
 </style>
 
 
@@ -147,21 +147,31 @@
                                             <div class="shadow-sm p-3 rounded bg-white position-relative hover-effect">
                                                 <h6 class="fw-semibold text-dark">
                                                     @document.MerchantVerificationDocumentName
-                                                    
-                                                        @if (string.IsNullOrEmpty(document.FilePath))
-                                                        {
-                                                            <span class="badge  bg-@(document.Status == "Verified" ? "success" : "danger") text-light ms-2">
-                                                                @No
-                                                            </span>
-                                                        }
-                                                        else
-                                                        {
-                                                             <span class="badge bg-@(document.Status == "Verified" ? "success" : "warning") text-light ms-2">
-                                                                @document.Status
-                                                            </span>
 
-                                                        }
-                                                    
+                                                    @if (string.IsNullOrEmpty(document.FilePath))
+                                                    {
+                                                        <span class="badge  bg-@(document.Status == "Verified" ? "success" : "danger") text-light ms-2">
+                                                            @No
+                                                        </span>
+                                                    }
+                                                    else if (document.Status == "Verified")
+                                                    {
+                                                        <span class="badge bg-success text-light ms-2">
+                                                            @document.Status
+                                                        </span>
+                                                    }
+                                                    else if (document.Status == "Under Review")
+                                                    {
+                                                        <span class="badge bg-warning text-light ms-2">
+                                                            @document.Status
+                                                        </span>
+                                                    }
+                                                    else if (document.Status == "Rejected")
+                                                    {
+                                                        <span class="badge bg-danger text-light ms-2">
+                                                            @document.Status
+                                                        </span>
+                                                    }
                                                 </h6>
                                                 <div class="d-flex align-items-center justify-content-between mt-3">
                                                     <div class="linked-acc d-flex align-items-center">
@@ -187,36 +197,44 @@
                                 <form action="@Url.Action("LinkMerchant", "Profile")" method="post">
                                     <input type="hidden" name="providerId" value="@ViewBag.providerId" />
                                     <input type="hidden" name="MerchantId" value="@ViewBag.MerchantDetail.MerchantId" />
+                                    <!-- Display validation errors -->
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                     <h5>Merchant Linking</h5>
-                                    <div div class="mb-3">
+                                    <div class="mb-3">
                                         <label class="col-form-label">Company Name</label>
-                                        
-                                        <input type="text" class="form-control" name="CompanyName" value="@(!string.IsNullOrEmpty(ViewBag.MerchantDetail.CompanyName)?ViewBag.MerchantDetail.CompanyName:Model?.ProviderName)" placeholder="Enter Company Name" required>
+                                        <input type="text" class="form-control" name="CompanyName" value="@(!string.IsNullOrEmpty(ViewBag.MerchantDetail.CompanyName) ? ViewBag.MerchantDetail.CompanyName : Model?.ProviderName)" placeholder="Enter Company Name" required>
                                     </div>
-                                    <div div class="mb-3">
+
+                                    <div class="mb-3">
                                         <label class="col-form-label">Contact Info</label>
-                                        <input type="text" class="form-control" name="ContactInfo" value="@(!string.IsNullOrEmpty(@ViewBag.MerchantDetail.ContactInfo)?ViewBag.MerchantDetail.ContactInfo:Model?.PhoneNumber)" placeholder="Enter Contact Info">
+                                        <input type="text" class="form-control" name="ContactInfo" value="@(!string.IsNullOrEmpty(ViewBag.MerchantDetail.ContactInfo) ? ViewBag.MerchantDetail.ContactInfo : Model?.PhoneNumber)" placeholder="Enter Contact Info">
                                     </div>
-                                    <div div class="mb-3">
+
+                                    <div class="mb-3">
                                         <label class="col-form-label">Registration Method</label>
                                         <input type="text" class="form-control" name="RegistrationMethod" value="@ViewBag.MerchantDetail.RegistrationMethod" placeholder="Enter Registration Method">
                                     </div>
-                                    <div div class="mb-3">
+                                    <div class="mb-3">
                                         <label class="col-form-label">Company Registration Number</label>
                                         <input type="text" class="form-control" name="CompanyRegistrationNumber" value="@ViewBag.MerchantDetail.CompanyRegistrationNumber" placeholder="Enter Registration Number" required>
                                     </div>
-                                    <div div class="mb-3">
+
+                                    <div class="mb-3">
                                         <label class="col-form-label">Trading License</label>
                                         <input type="text" class="form-control" name="TradingLicense" value="@ViewBag.MerchantDetail.TradingLicense" placeholder="Enter Trading License">
                                     </div>
-                                    <div div class="mb-3">
+
+                                    <div class="mb-3">
                                         <label class="col-form-label">Emirates Id Number</label>
-                                        <input type="text" class="form-control" name="EmiratesId" value="@ViewBag.MerchantDetail.EmiratesId" placeholder="Enter Trading License">
+                                        <input type="text" class="form-control" name="EmiratesId" value="@ViewBag.MerchantDetail.EmiratesId" placeholder="Enter Emirates Id Number">
                                     </div>
-                                    <div div class="mb-3">
+                                    <div class="mb-3">
                                         <label class="col-form-label">Merchant Location</label>
-                                        <input type="text" class="form-control" name="MerchantLocation" value="@ViewBag.MerchantDetail.MerchantLocation" placeholder="Enter Merchant Location">
+                                        <select class="form-select" name="MerchantLocation" id="MerchantLocation" asp-items="@ViewBag.Locations">
+                                            <option value="">--Select--</option>
+                                        </select>
                                     </div>
+
                                     <button type="submit" class="btn btn-primary">Update Merchant Link</button>
                                 </form>
                             </div>
@@ -241,9 +259,9 @@
             <div class="modal-body">
                 <form id="imageUploadForm" action="@Url.Action("UploadDocuments", "Profile")" method="post" enctype="multipart/form-data">
                     <input type="hidden" id="uploadContext" name="documentType" />
-                    
+
                     <div class="drag-drop-area">
-                        <input type="file" id="imageInput" name="file" accept=".jpg,.png" onchange="validateImage()" />
+                        <input type="file" id="imageInput" name="file" accept=".jpg,.png" onchange="validateImage()" required />
                         <p>Drag & drop image or <span>Browse</span></p>
                         <p class="small">Supported formats: JPG, PNG</p>
                     </div>
@@ -267,7 +285,7 @@
                     <input type="hidden" id="uploadMerchantContext" name="documentMerchantType" />
                     <input type="hidden" id="documentId" name="documentId" value="" />
                     <div class="drag-drop-area">
-                        <input type="file" id="imageInput" name="file" accept=".jpg,.png" onchange="validateImage()" />
+                        <input type="file" id="merchantImageInput" name="file" accept=".jpg,.png" onchange="validateMerchantImages()" required />
                         <p>Drag & drop image or <span>Browse</span></p>
                         <p class="small">Supported formats: JPG, PNG</p>
                     </div>
@@ -293,16 +311,25 @@
 </div>
 <script>
     function validateImage() {
-        const input = document.getElementById('imageInput');
-        const file = input.files[0];
-        console.log(file.type);
-        if (file && (file.type === 'image/jpeg' || file.type === 'image/png')) {
-            // Display preview
-            const preview = document.getElementById('previewArea');
-            preview.innerHTML = `<img src="${URL.createObjectURL(file)}" alt="Preview" style="width: 100%; max-height: 200px;">`;
-        } else {
-            alert('Invalid file format. Please upload a JPG or PNG file.');
-            input.value = ''; // Reset the input
+        const fileInput = document.getElementById('imageInput');
+        const file = fileInput.files[0];
+        const allowedExtensions = ['image/jpeg', 'image/png'];
+
+        if (file && !allowedExtensions.includes(file.type)) {
+            alert('Invalid file type. Only JPG and PNG are supported.');
+            fileInput.value = ''; // Clear the input
+            return false;
+        }
+    }
+    function validateMerchantImages() {
+        const fileInput = document.getElementById('merchantImageInput');
+        const file = fileInput.files[0];
+        const allowedExtensions = ['image/jpeg', 'image/png'];
+
+        if (file && !allowedExtensions.includes(file.type)) {
+            alert('Invalid file type. Only JPG and PNG are supported.');
+            fileInput.value = ''; // Clear the input
+            return false;
         }
     }
         document.addEventListener('DOMContentLoaded', () => {

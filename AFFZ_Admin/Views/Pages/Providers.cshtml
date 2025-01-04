@@ -4,8 +4,8 @@
     <div class="content">
         <!-- Page Header -->
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h4 class="fw-bold">Customer Management</h4>
-            <div class="btn-group">
+            <h4 class="fw-bold">Provider Management</h4>
+            <div class="btn-group"> 
                 <a href="customers.html" class="btn btn-outline-primary active" data-bs-toggle="tooltip" title="Customer List">
                     <i class="bi bi-list-ul"></i>
                 </a>
@@ -18,7 +18,7 @@
         <!-- Customer Table -->
         <div class="card shadow-sm">
             <div class="card-header bg-primary text-white">
-                <h5 class="mb-0">Customer List</h5>
+                <h5 class="mb-0">Provider List</h5>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -143,23 +143,27 @@
 
     async function loadMerchantDocuments(providerId) {
         try {
-            const response = await fetch(`http://192.168.0.115:1501/api/Providers/GetMerchantDocs/${providerId}`);
+            // Inject Razor variable as a string
+            const apiLink = '@ViewBag.APILink';
+            const response = await fetch(`${apiLink}Providers/GetMerchantDocs/${providerId}`);
             const documents = await response.json();
             const documentsBody = document.getElementById('merchant-documents-body');
             documentsBody.innerHTML = '';
-             console.log(response);
-            const baseUrl = "http://192.168.0.115:7096";
+            console.log(response);
+
+            // Inject Razor variable as a string
+            const baseUrl = '@ViewBag.MerchantLink';
 
             documents.forEach((doc, index) => {
                 // Extract the path from "Uploads" onward
                 const relativePath = doc.folderName.split("Uploads")[1];
                 const DownloadFilePath = `\\Uploads\\${relativePath.replace(/\\/g, '\\')}`;
-                const fileUrl = `${baseUrl}/Uploads${relativePath.replace(/\\/g, '/')}`;
+                const fileUrl = `${baseUrl}Uploads${relativePath.replace(/\\/g, '/')}`;
 
                 const isImage = /\.(jpg|jpeg|png|gif)$/i.test(fileUrl);
                 const isPDF = /\.pdf$/i.test(fileUrl);
                 const viewIcon = isImage ? 'fe fe-image' : isPDF ? 'fe fe-file-text' : '';
-               
+
                 // Conditionally render buttons based on document status
                 let actionButtons = '';
                 if (doc.status === 'Verified') {
@@ -167,11 +171,11 @@
                                 <button onclick="downloadFile('${DownloadFilePath}')" class="btn btn-primary btn-sm">
                                     <i class="fe fe-download"></i> Download File
                                 </button>`;
-                                            } else if (doc.status === 'Rejected') {
-                                                actionButtons = `
+                } else if (doc.status === 'Rejected') {
+                    actionButtons = `
                                 <span class="text-muted">Waiting for new file</span>`;
-                                            } else {
-                                                actionButtons = `
+                } else {
+                    actionButtons = `
                                 <button class="btn btn-success btn-sm update-status" data-doc-id="${doc.mdid}" data-status="Verified">
                                     <i class="fe fe-check"></i> Accept
                                 </button>
@@ -208,6 +212,7 @@
         }
     }
 
+
     function initializeEventListeners(providerId) {
         // Handle document view
         document.querySelectorAll('.view-document').forEach(viewButton => {
@@ -232,9 +237,10 @@
             statusButton.addEventListener('click', async () => {
                 const docId = statusButton.getAttribute('data-doc-id');
                 const newStatus = statusButton.getAttribute('data-status');
-
+                const apiLink = '@ViewBag.APILink';
                 try {
-                    const response = await fetch(`http://192.168.0.115:1501/api/Providers/UpdateDocumentStatus`, {
+                    
+                    const response = await fetch(`${apiLink}Providers/UpdateDocumentStatus`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -287,9 +293,10 @@
         });
     });
 
-    document.getElementById('confirm-toggle-status').addEventListener('click', async () => {
+        document.getElementById('confirm-toggle-status').addEventListener('click', async () => {
         try {
-            const response = await fetch(`http://192.168.0.115:1501/api/Providers/ToggleMerchantStatus`, {
+            const apiLink = '@ViewBag.APILink';
+            const response = await fetch(`${apiLink}Providers/ToggleMerchantStatus`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ providerId: selectedProviderId, isActive: newStatus }),
@@ -299,13 +306,15 @@
                 alert("Status updated successfully.");
                 location.reload(); // Refresh the page to show updated status
             } else {
-                alert("Failed to update status.");
+                const errorMessage = await response.text(); // Get the error message from the server response
+                alert(`Failed to update status: ${errorMessage}`);
             }
         } catch (error) {
             console.error("Error updating status:", error);
-            alert("An error occurred. Please try again.");
+            alert("An unexpected error occurred. Please try again.");
         }
     });
+
     
         document.addEventListener('DOMContentLoaded', function () {
             const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));

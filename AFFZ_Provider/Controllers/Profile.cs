@@ -2,6 +2,7 @@
 using AFFZ_Provider.Utils;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 
 namespace AFFZ_Provider.Controllers
@@ -45,6 +46,8 @@ namespace AFFZ_Provider.Controllers
                 await PopulateMerchantDetails(providerId);
                 ViewBag.ProviderId = providerId;
 
+
+
                 // Fetch MerchantVerificationDocumentList
                 var documentListResponse = await _httpClient.GetAsync($"Providers/FetchMerchantVerificationDocumentList");
                 var documentListString = await documentListResponse.Content.ReadAsStringAsync();
@@ -76,7 +79,6 @@ namespace AFFZ_Provider.Controllers
                     }
                 }
 
-
                 ViewBag.Documents = documents;
 
                 return View("Profile", customer);
@@ -106,18 +108,44 @@ namespace AFFZ_Provider.Controllers
 
             try
             {
-                model.ModifyDate = DateTime.Now;
-
-                var response = await _httpClient.PostAsync("Providers/UpdateProfile", Customs.GetJsonContent(model));
-                if (response.IsSuccessStatusCode)
+                // Fetch existing data
+                string providerId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
+                if (string.IsNullOrEmpty(providerId))
                 {
-                    TempData["SuccessMessage"] = "Profile updated successfully.";
+                    TempData["ErrorMessage"] = "Session expired. Please log in again.";
+                    return RedirectToAction("Login", "Account");
+                }
+
+                var existingProviderUser = await FetchProviderDataAsync(providerId);
+                if (existingProviderUser == null)
+                {
+                    TempData["ErrorMessage"] = "Failed to retrieve existing provider information.";
+                    return RedirectToAction("Index");
+                }
+
+                // Check if any values have changed
+                bool isModified = IsProviderUserModified(existingProviderUser, model);
+
+                if (isModified)
+                {
+                    model.IsActive = false; // Deactivate user if values are modified
+                    model.ModifyDate = DateTime.Now;
+
+                    var response = await _httpClient.PostAsync("Providers/UpdateProfile", Customs.GetJsonContent(model));
+                    if (response.IsSuccessStatusCode)
+                    {
+                        TempData["SuccessMessage"] = "Profile updated successfully. Profile need to be re evaluate. Please wait till verification.";
+                    }
+                    else
+                    {
+                        var error = await response.Content.ReadAsStringAsync();
+                        _logger.LogWarning($"Failed to update profile: {error}");
+                        TempData["FailMessage"] = "Failed to update profile.";
+                    }
                 }
                 else
                 {
-                    var error = await response.Content.ReadAsStringAsync();
-                    _logger.LogWarning($"Failed to update profile: {error}");
-                    TempData["FailMessage"] = "Failed to update profile.";
+                    TempData["SuccessMessage"] = "No changes detected. Profile not updated.";
                 }
             }
             catch (Exception ex)
@@ -136,21 +164,50 @@ namespace AFFZ_Provider.Controllers
         {
             try
             {
-                model.ModifyDate = DateTime.Now;
-
-                var response = await _httpClient.PostAsync("Providers/UpdateProfile", Customs.GetJsonContent(model));
-                if (response.IsSuccessStatusCode)
+                // Fetch existing data
+                string providerId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
+                if (string.IsNullOrEmpty(providerId))
                 {
-                    TempData["SuccessMessage"] = "Address updated successfully.";
+                    TempData["ErrorMessage"] = "Session expired. Please log in again.";
+                    return RedirectToAction("Login", "Account");
+                }
+
+                var existingProviderUser = await FetchProviderDataAsync(providerId);
+                if (existingProviderUser == null)
+                {
+                    TempData["ErrorMessage"] = "Failed to retrieve existing provider information.";
+                    return RedirectToAction("Index");
+                }
+
+                // Check if any values have changed
+                bool isModified = IsProviderUserAddressModified(existingProviderUser, model);
+
+                if (isModified)
+                {
+                    model.IsActive = false; // Deactivate user if values are modified
+                    model.ModifyDate = DateTime.Now;
+
+                    var response = await _httpClient.PostAsync("Providers/UpdateProfile", Customs.GetJsonContent(model));
+                    if (response.IsSuccessStatusCode)
+                    {
+                        TempData["SuccessMessage"] = "Profile Address updated successfully. Profile need to be re evaluate. Please wait till verification.";
+                    }
+                    else
+                    {
+                        var error = await response.Content.ReadAsStringAsync();
+                        _logger.LogWarning($"Failed to update Profile Address : {error}");
+                        TempData["FailMessage"] = "Failed to update Profile Address.";
+                    }
                 }
                 else
                 {
-                    TempData["ErrorMessage"] = "Failed to update address.";
+                    TempData["SuccessMessage"] = "No changes detected. Profile Address not updated.";
                 }
             }
             catch (Exception ex)
             {
-                TempData["ErrorMessage"] = $"Error: {ex.Message}";
+                _logger.LogError(ex, "Error while updating Profile Address information.");
+                TempData["FailMessage"] = "An error occurred while updating the Profile Address.";
             }
 
             return RedirectToAction("Index");
@@ -192,7 +249,11 @@ namespace AFFZ_Provider.Controllers
                     TempData["ErrorMessage"] = "Failed to retrieve provider information.";
                     return RedirectToAction("Index");
                 }
-
+                if (!string.IsNullOrEmpty(customer.ProfilePicture) && System.IO.File.Exists(customer.ProfilePicture))
+                {
+                    System.IO.File.Delete(customer.ProfilePicture);
+                    _logger.LogInformation($"Deleted existing file: {customer.ProfilePicture}");
+                }
                 // Update the corresponding field
                 UpdateDocumentField(customer, documentType, filePath);
 
@@ -239,7 +300,7 @@ namespace AFFZ_Provider.Controllers
                 {
                     _logger.LogWarning("ProviderId is missing from the session.");
                     TempData["ErrorMessage"] = "Session expired. Please log in again.";
-                    return RedirectToAction("Login", "Account");
+                    return RedirectToAction("Index", "Account");
                 }
 
                 string providerDirectory = Path.Combine(_uploadPath, $"User_{providerId}");
@@ -278,8 +339,12 @@ namespace AFFZ_Provider.Controllers
                         TempData["ErrorMessage"] = "Document not found for update.";
                         return RedirectToAction("Index");
                     }
-
-                    // Update the document's details
+                    // Check and delete the existing file
+                    if (!string.IsNullOrEmpty(document.FolderName) && System.IO.File.Exists(document.FolderName))
+                    {
+                        System.IO.File.Delete(document.FolderName);
+                        _logger.LogInformation($"Deleted existing file: {document.FolderName}");
+                    }
                     document.FileName = fileName;
                     document.ContentType = file.ContentType;
                     document.FileSize = file.Length;
@@ -372,6 +437,7 @@ namespace AFFZ_Provider.Controllers
         {
             try
             {
+                Merchant merchant = new Merchant();
                 var merchantResponse = await _httpClient.GetAsync($"Providers/GetByProvider/{providerId}");
                 if (merchantResponse.IsSuccessStatusCode)
                 {
@@ -386,8 +452,10 @@ namespace AFFZ_Provider.Controllers
                         if (merchantDetailResponse.IsSuccessStatusCode)
                         {
                             var merchantDetailString = await merchantDetailResponse.Content.ReadAsStringAsync();
-                            var merchant = JsonConvert.DeserializeObject<Merchant>(merchantDetailString);
+                            merchant = JsonConvert.DeserializeObject<Merchant>(merchantDetailString);
                             ViewBag.MerchantDetail = merchant;
+                            // Define Merchant Locations
+
                         }
                     }
                 }
@@ -396,6 +464,18 @@ namespace AFFZ_Provider.Controllers
                     ViewBag.MerchantStatus = "Not Linked";
                     ViewBag.MerchantDetail = new Merchant();
                 }
+                var locations = new List<SelectListItem>
+                {
+                    new SelectListItem { Value = "Sharjah", Text = "Sharjah" },
+                    new SelectListItem { Value = "Dubai", Text = "Dubai" },
+                    new SelectListItem { Value = "Ras-al-khaimah", Text = "Ras-al-khaimah" },
+                    new SelectListItem { Value = "Ajman", Text = "Ajman" },
+                    new SelectListItem { Value = "Umm-al-quain", Text = "Umm-al-quain" },
+                    new SelectListItem { Value = "AbuDhabhi", Text = "Abu Dhabi" },
+                    new SelectListItem { Value = "Fujairah", Text = "Fujairah" }
+                };
+
+                ViewBag.Locations = new SelectList(locations, "Value", "Text", merchant.MerchantLocation);
             }
             catch (Exception ex)
             {
@@ -410,10 +490,20 @@ namespace AFFZ_Provider.Controllers
         {
             try
             {
-                //model.CreatedDate = DateTime.Now;
+                if (!ModelState.IsValid)
+                {
+                    TempData["ErrorMessage"] = "Please fill in all required fields.";
+                    return View("Index", model); // Pass the current model back to the view
+                }
+
                 model.ModifiedBy = providerId;
                 model.CreatedBy = providerId;
-                var response = await _httpClient.PostAsync($"Providers/ProviderMerchantLink?providerId={providerId}&MerchantId={MerchantId}", Customs.GetJsonContent(model));
+
+                var response = await _httpClient.PostAsync(
+                    $"Providers/ProviderMerchantLink?providerId={providerId}&MerchantId={MerchantId}",
+                    Customs.GetJsonContent(model)
+                );
+
                 if (response.IsSuccessStatusCode)
                 {
                     TempData["SuccessMessage"] = "Merchant linked successfully.";
@@ -430,6 +520,7 @@ namespace AFFZ_Provider.Controllers
 
             return RedirectToAction("Index");
         }
+
         public async Task<IActionResult> GetUserProfile(int providerId)
         {
             ProviderUser customer = null;
@@ -448,6 +539,23 @@ namespace AFFZ_Provider.Controllers
             customer.DrivingLicense = Url.Content($"~/uploads/driving_licenses/{customer.DrivingLicense}");
 
             return View(customer);
+        }
+        private bool IsProviderUserModified(ProviderUser existing, ProviderUser updated)
+        {
+            // Compare each field to determine if a change has occurred
+            return !string.Equals(existing.FirstName, updated.FirstName, StringComparison.OrdinalIgnoreCase) ||
+                   !string.Equals(existing.LastName, updated.LastName, StringComparison.OrdinalIgnoreCase) ||
+                   !string.Equals(existing.Email, updated.Email, StringComparison.OrdinalIgnoreCase) ||
+                   !string.Equals(existing.PhoneNumber, updated.PhoneNumber, StringComparison.OrdinalIgnoreCase) ||
+                   !string.Equals(existing.ProviderName, updated.ProviderName, StringComparison.OrdinalIgnoreCase); // Compare other relevant fields as needed
+
+        }
+        private bool IsProviderUserAddressModified(ProviderUser existing, ProviderUser updated)
+        {
+            // Compare each field to determine if a change has occurred
+            return !string.Equals(existing.Address, updated.Address, StringComparison.OrdinalIgnoreCase) ||
+                   !string.Equals(existing.PostalCode, updated.PostalCode, StringComparison.OrdinalIgnoreCase);
+
         }
     }
 }
