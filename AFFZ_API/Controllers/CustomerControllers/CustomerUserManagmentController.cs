@@ -2,6 +2,8 @@
 using AFFZ_API.Models;
 using AFFZ_API.Models.Partial;
 using AFFZ_API.Utils;
+using Google.Apis.Auth;
+using Google.Apis.Auth.OAuth2;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -129,6 +131,10 @@ namespace AFFZ_API.Controllers.CustomerControllers
                 customers.VerificationToken = Guid.NewGuid().ToString();
                 customers.TokenExpiry = DateTime.Now.AddHours(24); // Token valid for 24 hours
 
+
+
+                _context.Customers.Add(customers);
+                await _context.SaveChangesAsync();
                 // Call stored procedure to update referral table if referral code is provided
                 if (!string.IsNullOrEmpty(referralCode))
                 {
@@ -138,10 +144,6 @@ namespace AFFZ_API.Controllers.CustomerControllers
 
                     await _context.Database.ExecuteSqlRawAsync(commandText, referredCustomerIdParam, referralCodeParam);
                 }
-
-                _context.Customers.Add(customers);
-                await _context.SaveChangesAsync();
-
 
                 // Generate email verification Link
                 var verificationLink = $"{Request.Scheme}://{PublicDomain}:{ApiHttpsPort}/api/Customers/VerifyEmail?token={customers.VerificationToken}";
@@ -252,12 +254,17 @@ namespace AFFZ_API.Controllers.CustomerControllers
                 if (existingProfile != null)
                 {
                     existingProfile.FirstName = model.FirstName;
+                    existingProfile.CustomerName = model.CustomerName;
                     existingProfile.LastName = model.LastName;
                     existingProfile.PhoneNumber = model.PhoneNumber;
                     existingProfile.Address = model.Address;
                     existingProfile.DOB = model.DOB;
                     existingProfile.PostalCode = model.PostalCode;
-                    existingProfile.ProfilePicture = model.ProfilePicture;
+
+                    if (!string.IsNullOrEmpty(model.ProfilePicture))
+                    {
+                        existingProfile.ProfilePicture = model.ProfilePicture;
+                    }
                 }
 
 
@@ -348,7 +355,7 @@ namespace AFFZ_API.Controllers.CustomerControllers
             try
             {
                 // Get Customer URL from configuration
-                string CustomerUrl = $"{Request.Scheme}://{PublicDomain}:{CustomerHttpsPort}/"; 
+                string CustomerUrl = $"{Request.Scheme}://{PublicDomain}:{CustomerHttpsPort}/";
                 // Find the customer by verification token and ensure token is not expired
                 var customer = await _context.Customers
                     .FirstOrDefaultAsync(c => c.VerificationToken == token && c.TokenExpiry > DateTime.Now);
@@ -454,7 +461,79 @@ namespace AFFZ_API.Controllers.CustomerControllers
                 return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while processing your request.");
             }
         }
+        [HttpPost]
+        [Route("GoogleLogin")]
+        public async Task<ActionResult<SResponse>> GoogleLogin([FromBody] GoogleLoginModel googleLoginModel)
+        {
+            try
+            {
+                var payload = await VerifyGoogleTokenAsync(googleLoginModel.IdToken);
+
+                // Check if user exists, if not, create new customer
+                var existingCustomer = await _context.Customers
+                    .FirstOrDefaultAsync(c => c.Email == payload.Email);
+
+                if (existingCustomer == null)
+                {
+                    // Create new customer from Google profile
+                    var newCustomer = new Customers
+                    {
+                        CustomerName = payload.Name,
+                        Email = payload.Email,
+                        Password = Cryptography.Encrypt(Guid.NewGuid().ToString()), // Set a dummy password as it's not needed for Google login
+                        IsEmailVerified = true, // Google verifies the email
+                        CreatedBy = 1, // System ID
+                        CreatedDate = DateTime.Now
+                    };
+
+                    _context.Customers.Add(newCustomer);
+                    await _context.SaveChangesAsync();
+                    existingCustomer = newCustomer;
+                }
+
+                // Success response
+                return Ok(new SResponse
+                {
+                    StatusCode = HttpStatusCode.OK,
+                    Message = "Google Login successful",
+                    Data = existingCustomer
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred during Google Login.");
+                return new SResponse
+                {
+                    StatusCode = HttpStatusCode.InternalServerError,
+                    Message = "Error during Google Login: " + ex.Message
+                };
+            }
+        }
+        private async Task<GoogleJsonWebSignature.Payload> VerifyGoogleTokenAsync(string idToken)
+        {
+            // Load your Google service account credentials or OAuth2 credentials
+            var credential = await GoogleCredential.GetApplicationDefaultAsync();
+
+            // Alternatively, use a specific credentials file:
+            // var credential = GoogleCredential.FromFile("path_to_your_service_account_file.json");
+
+            // Use GoogleJsonWebSignature to validate the token
+            var settings = new GoogleJsonWebSignature.ValidationSettings
+            {
+                // Optionally specify audience here, but it should be set as required
+                Audience = new[] { "982691889737-shum2qj5ad523tkd25sie7j7aeo2k1vh.apps.googleusercontent.com" }
+            };
+
+            // Validate the ID token
+            var validPayload = await GoogleJsonWebSignature.ValidateAsync(idToken, settings);
+
+            return validPayload;
+        }
 
 
+    }
+    public class GoogleLoginModel
+    {
+        public string IdToken { get; set; }
     }
 }

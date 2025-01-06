@@ -1,11 +1,13 @@
 ﻿using AFFZ_Provider.Models;
 using AFFZ_Provider.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace AFFZ_Provider.Controllers
 {
+    [Authorize]
     public class MessageController : Controller
     {
         private readonly ILogger<MessageController> _logger;

@@ -34,8 +34,8 @@
                         <th>#</th>
                         <th>Service Name</th>
                         <th>Current Status</th>
-                        <th>Amount Before Discount</th>
-                        <th>Amount After Discount</th>
+                        <th>Amount Before Discount(Without Vat)</th>
+                        <th>Amount After Discount(Inc.Vat)</th>
                         <th>Response Date</th>
                     </tr>
                 </thead>
@@ -234,7 +234,7 @@
 
                     const _currentStatus = this.dataset.currentstatus;
                      console.log("currentStatus : "+_currentStatus);
-                    if (_currentStatus === "Service Completed Successfully") {
+                    if (_currentStatus === "Service Completed Successfully" || _currentStatus === "Service Failed or Rejected by Authority") {
                         // Show the file section and fetch the file
                         fileSection.style.display = "block";
                         const merchantId = this.dataset.merchantid;

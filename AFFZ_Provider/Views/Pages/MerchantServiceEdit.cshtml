@@ -88,10 +88,10 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Service Title</label>
-                                                <select class="form-select" name="ServiceName" id="ServiceName" asp-items="@ViewBag.ServiceListComboData" required>
+                                                <select class="form-select" name="SID" id="SID" asp-items="@ViewBag.ServiceListComboData" required>
                                                     <option value="">--Select--</option>
                                                 </select>
-                                                @Html.ValidationMessageFor(model => model.ServiceName, "", new { @class = "text-danger" })
+                                                @Html.ValidationMessageFor(model => model.SID, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                     </div>

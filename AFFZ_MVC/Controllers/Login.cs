@@ -1,7 +1,6 @@
 ﻿using AFFZ_Customer.Models;
 using AFFZ_Customer.Models.Partial;
 using AFFZ_Customer.Utils;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -34,7 +33,25 @@ namespace AFFZ_Customer.Controllers
         {
             _logger.LogDebug("Index action called with returnUrl: {ReturnUrl}", returnUrl);
             ViewBag.ReturnUrl = returnUrl; // Store return URL to navigate back after login
-            return View("Login", new LoginModel()); // Render the login view
+            string IsloginExist = HttpContext.Session.GetEncryptedString("UserId", _protector);
+            if (!string.IsNullOrEmpty(IsloginExist))
+            {
+                // Redirect to the last visited page if available
+                var referer = Request.Headers["Referer"].ToString();
+                if (!string.IsNullOrEmpty(referer))
+                {
+                    _logger.LogInformation("CustomerId exists. Redirecting to: {Referer}", referer);
+                    return Redirect(referer);
+                }
+
+                // Fallback to dashboard if no referer is available
+                _logger.LogInformation("CustomerId exists. Redirecting to Dashboard.");
+                return RedirectToAction("Index", "Dashboard");
+            }
+            else
+            {
+                return View("Login", new LoginModel()); // Render the login view
+            }
         }
 
 

@@ -34,7 +34,7 @@ namespace AFFZ_Admin.Controllers
                 //var servicesList = await _httpClient.GetFromJsonAsync<List<ServicesListViewModel>>($"ServicesList/GetServicesList");
                 var response = await _httpClient.GetAsync("ServicesList/GetServicesList");
                 var responseString = await response.Content.ReadAsStringAsync();
-                var servicesList = JsonConvert.DeserializeObject<List<ServicesListViewModel>>(responseString);
+                var servicesList = JsonConvert.DeserializeObject<List<ServiceWithCategoryBinding>>(responseString);
                 ViewBag.APILink = _httpClient.BaseAddress;
                 ViewBag.MerchantLink = $"{Request.Scheme}://{PublicDomain}:{MerchantHttpsPort}/";
                 return View(servicesList);
@@ -357,5 +357,16 @@ namespace AFFZ_Admin.Controllers
         public int Id { get; set; } // Consider adding a primary key if not present
         public int? CategoryID { get; set; }
         public int? ServiceDocumentListId { get; set; }
+    }
+    public class ServiceWithCategoryBinding
+    {
+        public int ServiceListID { get; set; }
+        public string? ServiceName { get; set; }
+        public string? ServiceImage { get; set; }
+        public string? CategoryName { get; set; }
+        public int CategoryID { get; set; }
+        public int ServiceCategoryBindingId { get; set; }
+        public string? BindingStatus { get; set; } // To store the "No binding found" message
+        public string? CategoryStatus { get; set; } // To store the "No category associated" message
     }
 }

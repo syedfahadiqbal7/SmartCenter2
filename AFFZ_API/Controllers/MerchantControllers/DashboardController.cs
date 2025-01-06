@@ -97,30 +97,35 @@ namespace AFFZ_API.Controllers.MerchantControllers
             try
             {
                 var payments = await _context.PaymentHistories
-                    .Include(p => p.Service)
-                    .Where(p => p.MERCHANTID == mid)
-                    .ToListAsync();
-
-
+                                .Include(p => p.Service)
+                                .Where(p => p.MERCHANTID == mid)
+                                .ToListAsync();
 
                 var topService = payments
-                    .GroupBy(p => new { p.SERVICEID, p.Service.ServiceName })
-                    .Select(g =>
+                    .GroupBy(p => new { p.SERVICEID, p.Service.SID })
+                    .Select(g => new
                     {
-                        decimal totalRevenue = g.Sum(p =>
-                            decimal.TryParse(p.AMOUNT, out decimal amount) ? amount : 0);
-
-                        return new TopServiceRevenueDto
-                        {
-                            ServiceId = g.Key.SERVICEID,
-                            ServiceName = g.Key.ServiceName,
-                            TotalRevenue = totalRevenue
-                        };
+                        g.Key.SERVICEID,
+                        g.Key.SID,
+                        TotalRevenue = g.Sum(p =>
+                            decimal.TryParse(p.AMOUNT, out decimal amount) ? amount : 0)
                     })
+                    .Join(
+                        _context.ServicesLists, // Join with ServicesLists to get ServiceName
+                        grouped => grouped.SID,
+                        serviceList => serviceList.ServiceListID,
+                        (grouped, serviceList) => new TopServiceRevenueDto
+                        {
+                            ServiceId = grouped.SERVICEID,
+                            ServiceName = serviceList.ServiceName, // Fetch ServiceName from ServicesList
+                            TotalRevenue = grouped.TotalRevenue
+                        }
+                    )
                     .OrderByDescending(s => s.TotalRevenue)
                     .FirstOrDefault();
 
                 return topService;
+
 
             }
             catch (InvalidCastException ex)

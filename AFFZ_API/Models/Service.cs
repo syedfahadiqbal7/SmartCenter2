@@ -13,7 +13,7 @@ public partial class Service
 
     public int? MerchantID { get; set; }
     [Required(ErrorMessage = "Service Title is required.")]
-    public string ServiceName { get; set; } = null!;
+    public int SID { get; set; }
 
     public string? Description { get; set; }
     [Range(0, int.MaxValue, ErrorMessage = "Price must be a positive number.")]

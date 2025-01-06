@@ -1,5 +1,6 @@
 ﻿using AFFZ_Provider.Models;
 using AFFZ_Provider.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,6 +9,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AFFZ_Provider.Controllers
 {
+    [Authorize]
     public class MerchantResponseToUser : Controller
     {
         private readonly ILogger<MerchantResponseToUser> _logger;
@@ -271,8 +273,10 @@ namespace AFFZ_Provider.Controllers
                         document.FileStatus = JsonConvert.DeserializeObject<FileStatus>(responseString);
 
                     }
+                    jsonResponse = await _httpClient.GetAsync($"CategoryWithMerchant/GetCurrentServiceStatusById?customerId={uid}&RFDFU={RFDFUID}&mid={merchantId}");
+                    responseString = await jsonResponse.Content.ReadAsStringAsync();
+                    document.ServiceStatus = JsonConvert.DeserializeObject<RequestStatus>(responseString);
                 }
-
                 ViewBag.UsersWithDocuments = documentList;
                 ViewBag.CurrentStatus = await GetStatusNameByRFDFU(documentList[0].RFDFU);
                 ViewBag.StatusList = await StatusList(0);
@@ -452,7 +456,7 @@ namespace AFFZ_Provider.Controllers
             if (response.IsSuccessStatusCode)
             {
                 //Get Status Id
-                if (CurrentStatus == "19" && UploadedFile != null)
+                if ((CurrentStatus == "19" || CurrentStatus == "17") && UploadedFile != null)
                 {
                     var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
                     if (!Directory.Exists(uploadsPath))
@@ -741,6 +745,7 @@ namespace AFFZ_Provider.Controllers
         public string PAYMENTTYPE { get; set; }
         public int UserId { get; set; }//
         public string MerchantName { get; set; }
+        public RequestStatus? ServiceStatus { get; set; }
         public FileStatus? FileStatus { get; set; }
     }
 

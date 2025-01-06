@@ -1,5 +1,6 @@
 ﻿using AFFZ_Provider.Models;
 using AFFZ_Provider.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -7,6 +8,7 @@ using Newtonsoft.Json;
 
 namespace AFFZ_Provider.Controllers
 {
+    [Authorize]
     public class Profile : Controller
     {
         private readonly HttpClient _httpClient;

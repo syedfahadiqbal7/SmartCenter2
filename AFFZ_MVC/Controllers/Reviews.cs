@@ -36,6 +36,11 @@ namespace AFFZ_Customer.Controllers
                 {
                     var responseString = await jsonResponse.Content.ReadAsStringAsync();
                     List<ReViewDto> MyReviews = JsonConvert.DeserializeObject<List<ReViewDto>>(responseString);
+                    foreach (var item in MyReviews)
+                    {
+                        item.Service.serviceName = item.Service.SID.ToString();
+                        item.ReviewText = item.ReviewText.PadRight(64, '.');
+                    }
                     ViewBag.MyReviews = MyReviews;
                 }
                 else

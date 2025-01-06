@@ -22,8 +22,27 @@ public class ServiceController : ControllerBase
             // Skip and take based on the pageNumber and pageSize
             var paginatedServices = await _context.Services
                 .Where(x => x.MerchantID == merchantId)
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
+                .Join(
+                    _context.ServicesLists,  // Join with ServicesLists to get ServiceName
+                    service => service.SID,
+                    serviceList => serviceList.ServiceListID,
+                    (service, serviceList) => new
+                    {
+                        service.ServiceId,
+                        service.CategoryID,
+                        service.MerchantID,
+                        service.SID,
+                        service.Description,
+                        service.ServicePrice,
+                        service.ServiceAmountPaidToAdmin,
+                        service.SelectedDocumentIds,
+                        service.Category,
+                        service.Merchant,
+                        ServiceName = serviceList.ServiceName  // Fetch ServiceName from ServicesList
+                    }
+                )
+                .Skip((pageNumber - 1) * pageSize)  // Pagination: Skip records for the given page number
+                .Take(pageSize)  // Pagination: Take the specified page size
                 .ToListAsync();
 
             var totalRecords = await _context.Services.Where(x => x.MerchantID == merchantId).CountAsync();
@@ -93,7 +112,7 @@ public class ServiceController : ControllerBase
             {
                 return BadRequest("Invalid request data.");
             }
-            if (ServiceNameExists(service.ServiceName, service.MerchantID))
+            if (ServiceNameExists(service.SID, service.MerchantID))
             {
                 _logger.LogError("This service already Exist.");
                 return StatusCode(409, "This service already exist");
@@ -129,7 +148,8 @@ public class ServiceController : ControllerBase
     public async Task<string> ServicesName(int id)
     {
         var data = await _context.Services.FindAsync(id);
-        return data.ServiceName;
+        var Service = await _context.ServicesLists.FindAsync(data.SID);
+        return Service.ServiceName;
 
     }
     [HttpGet("GetSerViceNameByRFDFUID")]
@@ -166,8 +186,8 @@ public class ServiceController : ControllerBase
     {
         return _context.Services.Any(e => e.ServiceId == id);
     }
-    private bool ServiceNameExists(string sname, int? Mid)
+    private bool ServiceNameExists(int sid, int? Mid)
     {
-        return _context.Services.Any(e => e.ServiceName == sname && e.MerchantID == Mid);
+        return _context.Services.Any(e => e.SID == sid && e.MerchantID == Mid);
     }
 }

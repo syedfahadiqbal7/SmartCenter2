@@ -475,8 +475,14 @@ namespace AFFZ_API.Controllers
                 int serviceId = int.Parse(serviceMatch.Groups[1].Value);
 
                 // Query the database to get the ServiceName for the extracted ServiceId
-                _sName = _context.Services.Where(s => s.ServiceId == serviceId).Select(s => s.ServiceName).FirstOrDefault();
-
+                //_sName = _context.Services.Where(s => s.ServiceId == serviceId).Select(s => s.SID).FirstOrDefault();
+                _sName = _context.Services
+    .Where(x => x.ServiceId == serviceId)
+    .Join(_context.ServicesLists,
+          service => service.SID,
+          serviceList => serviceList.ServiceListID,
+          (service, serviceList) => serviceList.ServiceName)
+    .FirstOrDefault();
                 if (!string.IsNullOrEmpty(_sName))
                 {
                     message = Regex.Replace(message, @"Service\[\d+\]", $"Service[{_sName}]");

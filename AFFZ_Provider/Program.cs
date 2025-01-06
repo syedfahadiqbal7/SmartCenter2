@@ -1,5 +1,6 @@
 using AFFZ_Provider.Models;
 using AFFZ_Provider.Utils;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Mvc.Razor;
 using SCAPI.ServiceDefaults;
@@ -19,6 +20,7 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
     options.HttpOnly = HttpOnlyPolicy.None; // Ensure HttpOnly is not enforced
     options.Secure = CookieSecurePolicy.Always; // Enforce HTTPS
 });
+
 // Add session services (if needed)
 builder.Services.AddSession(options =>
 {
@@ -74,6 +76,17 @@ builder.Services.AddCors(options =>
         .AllowCredentials(); // Required to allow credentials
     });
 });
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Login/Index"; // Redirect to this path if unauthorized
+        options.LogoutPath = "/Login/Logout"; // Optional: Logout redirection path
+        options.AccessDeniedPath = "/Login/AccessDenied"; // Optional: Access denied redirection
+        options.Cookie.HttpOnly = true; // Mitigate XSS
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Use Secure Cookies
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30); // Session duration
+        options.SlidingExpiration = true; // Extend session on activity
+    });
 // Add services to the container.
 builder.Services.AddHttpClient("Main", client =>
 {
@@ -106,6 +119,12 @@ builder.WebHost.UseKestrel(options =>
     });
 });
 builder.Services.AddSingleton<IAppSettingsService, AppSettingsService>();
+// Add logging and error handling
+builder.Services.AddLogging(logging =>
+{
+    logging.AddConsole();
+    logging.AddDebug();
+});
 var app = builder.Build();
 app.UseCors("AllowSpecificOrigins");
 // Configure the HTTP request pipeline.
@@ -115,12 +134,15 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+var loggerFactory = app.Services.GetService<ILoggerFactory>();
 
+loggerFactory.AddFile(builder.Configuration["Logging:LogFilePath"].ToString());
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
-app.UseRouting();
 app.UseSession();
+app.UseRouting();
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

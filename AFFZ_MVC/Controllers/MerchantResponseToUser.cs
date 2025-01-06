@@ -32,6 +32,7 @@ namespace AFFZ_Customer.Controllers
             BaseUrlIp = options.Value.BaseIpAddress;
             PublicDomain = service.GetPublicDomain();
             ApiHttpsPort = service.GetApiHttpsPort();
+            CustomerHttpsPort = service.GetCustomerHttpsPort();
             _logger.LogInformation("MerchantResponseToUser controller initialized"); // Log initialization
         }
 
@@ -201,14 +202,24 @@ namespace AFFZ_Customer.Controllers
                 }
                 responseString = await getServiceName.Content.ReadAsStringAsync();
                 _logger.LogDebug("Service details response: {ResponseString}", responseString);
-                var services = JsonConvert.DeserializeObject<List<Service>>(responseString);
-                var service = services?.FirstOrDefault();
+                var services = JsonConvert.DeserializeObject<Service>(responseString);
+                var service = services;
                 if (service == null)
                 {
                     _logger.LogWarning("Service not found in the response for serviceId: {ServiceId}", serviceId);
                     return NotFound("Service not found.");
                 }
-
+                string ServiceName = string.Empty;
+                //
+                var ServiceNameRequest = await _httpClient.GetAsync("CategoryServices/getServiceNameFromServiceList?id=" + service.SID);
+                if (!getServiceName.IsSuccessStatusCode)
+                {
+                    _logger.LogWarning("Failed to fetch serviceList details for serviceListId: {ServiceListId}", service.SID);
+                    return NotFound("serviceList not found.");
+                }
+                responseString = await ServiceNameRequest.Content.ReadAsStringAsync();
+                _logger.LogDebug("Service details response: {ResponseString}", responseString);
+                ServiceName = responseString;
                 // Store relevant data in session using data protector
                 _logger.LogDebug("Storing relevant data in session.");
                 HttpContext.Session.SetEncryptedString("amount", amount, _protector);
@@ -220,8 +231,8 @@ namespace AFFZ_Customer.Controllers
                 HttpContext.Session.SetEncryptedString("NoOfQuantity", NoOfQuantity, _protector);
 
                 // Call payment gateway API to process payment
-                _logger.LogDebug("Calling payment gateway with amount: {Amount}, serviceName: {ServiceName}, providerName: {ProviderName}", parsedAmount, service.serviceName, providerUser.ProviderName);
-                var paymentGatewayResponse = await PaymentGateway(parsedAmount.ToString(), 1, service.serviceName, providerUser.ProviderName);
+                _logger.LogDebug("Calling payment gateway with amount: {Amount}, serviceName: {ServiceName}, providerName: {ProviderName}", parsedAmount, ServiceName, providerUser.ProviderName);
+                var paymentGatewayResponse = await PaymentGateway(parsedAmount.ToString(), 1, ServiceName, providerUser.ProviderName);
                 return paymentGatewayResponse;
             }
             catch (Exception ex)
@@ -387,7 +398,8 @@ namespace AFFZ_Customer.Controllers
                     ISPAYMENTSUCCESS = 1,
                     SERVICEID = serviceId,
                     PAYMENTDATETIME = DateTime.Now,
-                    Quantity = NoOfQuantity
+                    Quantity = NoOfQuantity,
+                    RFDFU = Convert.ToInt32(rfdfu)
                 };
 
                 var responseMessage = await _httpClient.PostAsync("Payment/sendRequestToSavePayment", Customs.GetJsonContent(paymentHistory));
@@ -632,7 +644,7 @@ namespace AFFZ_Customer.Controllers
         private async Task<ActionResult> PaymentGatewaytelr(string _price, long _quantity, string servicetype, string merchantname)
         {
 
-            var domain = "https://" + BaseUrlIp + ":7195/MerchantResponseToUser/";
+            var domain = "https://" + BaseUrlIp + ":" + CustomerHttpsPort + "/MerchantResponseToUser/";
             string SuccessUrl = domain + "success";
             string CancelUrl = domain + "cancel";
 
@@ -649,7 +661,7 @@ namespace AFFZ_Customer.Controllers
         {
 
             StripeConfiguration.ApiKey = "sk_test_51Q0Hq0KyRuGjwLZlAu0o3PzTHoVHZhb9HZwJuvGFl7CLsa1NI3xgPJwYKITHYYVbQKVHVv2h85E1b7YBB2OTa5bF00k0mbfMR3";
-            var domain = "https://" + BaseUrlIp + ":7195/MerchantResponseToUser/";
+            var domain = "https://" + BaseUrlIp + ":" + CustomerHttpsPort + "/MerchantResponseToUser/";
             var optionsProduct = new ProductCreateOptions
             {
                 Name = "1 month Visa",

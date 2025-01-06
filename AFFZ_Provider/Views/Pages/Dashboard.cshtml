@@ -1,9 +1,12 @@
-﻿@{
+﻿@using AFFZ_Provider.Utils
+@inject NotificationService NotificationService
+@{
     var myPaymentHistory = ViewBag.GetRecentTransactions as List<AFFZ_Provider.Controllers.PaymentHistoryWithCustomer>;
     var MiniDashboard = ViewBag.MiniDashBoardData as AFFZ_Provider.Controllers.MiniDashBoardData;
     var TopServices = ViewBag.TopServices as List<AFFZ_Provider.Models.ServiceReviewViewModel>;
     var Bookings = ViewBag.UsersWithDocuments as List<AFFZ_Provider.Controllers.RequestForDisCountToUserViewModel>;
     var Review = ViewBag.DashboardReview as AFFZ_Provider.Models.ReviewViewModel;
+    var IsActive = await NotificationService.GetProviderIsActive();
 }
 <link rel="stylesheet" href="assets/css/admin.css">
 <style>
@@ -331,10 +334,10 @@
                                             <div class="d-flex justify-content-between align-items-center flex-wrap row-gap-2">
                                                 <div class="d-flex">
                                                     <a href="ReviewsClient/ProviderReviews" class="avatar avatar-lg flex-shrink-0 me-2">
-                                                    <img src="assets/img/services/service-63.jpg" class="rounded-circle" alt="@Review.Service.ServiceName">
+                                                    <img src="assets/img/services/service-63.jpg" class="rounded-circle" alt="@Review.Service.SID">
                                                     </a>
                                                     <div>
-                                                    <a href="ReviewsClient/ProviderReviews" class="fw-medium">@Review.Service.ServiceName</a>
+                                                    <a href="ReviewsClient/ProviderReviews" class="fw-medium">@Review.Service.SID</a>
                                                         <span class="fs-12 d-block">
                                                         <i class="ti ti-clock"></i> $@Review.ReviewDate.ToString("MMM dd, yyyy hh:mm tt")
                                                         </span>
@@ -473,7 +476,9 @@
 <script>
          document.addEventListener('DOMContentLoaded', function () {
         // Detect screen size and show modal for mobile or tablet devices
-        if (window.innerWidth <= 768) {
+        var ShowPopup='@IsActive';
+
+        if (window.innerWidth <= 768 && ShowPopup == "In Active") {
             var activationModal = new bootstrap.Modal(document.getElementById('activationModal'), {
                 backdrop: 'static', // Disable background close
                 keyboard: false // Disable keyboard close

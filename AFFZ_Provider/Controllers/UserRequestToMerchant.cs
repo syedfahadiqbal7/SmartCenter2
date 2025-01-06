@@ -1,10 +1,12 @@
 ﻿using AFFZ_Provider.Models;
 using AFFZ_Provider.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 namespace AFFZ_Provider.Controllers
 {
+    [Authorize]
     public class UserRequestToMerchant : Controller
     {
         private ILogger<UserRequestToMerchant> _logger;
@@ -19,7 +21,10 @@ namespace AFFZ_Provider.Controllers
         public async Task<ActionResult> CheckReqest()
         {
             string _merchantId = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
-
+            if (string.IsNullOrEmpty(_merchantId))
+            {
+                return RedirectToAction("Index", "Login");
+            }
             var jsonResponse = await _httpClient.GetAsync("CategoryWithMerchant/AllRequestMerchant?Mid=" + _merchantId);
             jsonResponse.EnsureSuccessStatusCode();
 

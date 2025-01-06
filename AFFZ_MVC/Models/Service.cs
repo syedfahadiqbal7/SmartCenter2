@@ -8,9 +8,10 @@ public partial class Service
 
     public int? merchantId { get; set; }
 
-    public string serviceName { get; set; } = null!;
+    public int SID { get; set; }
 
     public string? description { get; set; }
+    public string? serviceName { get; set; }
 
     public int? servicePrice { get; set; }
 

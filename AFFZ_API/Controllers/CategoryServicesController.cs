@@ -25,42 +25,37 @@ namespace AFFZ_API.Controllers
 
             try
             {
-                //var categories = await _context.Services.GroupBy(sc => new { sc.ServiceName, sc.ServicePrice, sc.Merchant.MerchantLocation, sc.CategoryID, }).Select(g => new SubCatPage
-                //{
-                //    CatId = g.Key.CategoryID,
-                //    ServiceName = g.Key.ServiceName,
-                //    ServicePrice = g.Key.ServicePrice,
-                //    Location = g.Key.MerchantLocation
-                //}).ToListAsync();
                 var categories = await _context.Services
-                .GroupBy(sc => new
-                {
-                    sc.ServiceName,
-                    sc.ServicePrice,
-                    sc.Merchant.MerchantLocation,
-                    sc.CategoryID
-                })
-                .Select(g => new
-                {
-                    g.Key.ServiceName,
-                    g.Key.ServicePrice,
-                    g.Key.MerchantLocation,
-                    g.Key.CategoryID
-                })
-                .Join(
-                    _context.ServicesLists, // Joining with ServicesList
-                    s => s.ServiceName,    // Matching ServiceName in Services
-                    sl => sl.ServiceName,  // with ServiceName in ServicesList
-                    (s, sl) => new SubCatPage
-                    {
-                        CatId = s.CategoryID,
-                        ServiceName = s.ServiceName,
-                        ServicePrice = s.ServicePrice,
-                        Location = s.MerchantLocation,
-                        ServiceImage = sl.ServiceImage // Including ServiceImage
-                    })
-                .ToListAsync();
+                                .GroupBy(sc => new
+                                {
+                                    sc.SID,
+                                    sc.ServicePrice,
+                                    MerchantLocation = sc.Merchant.MerchantLocation,
+                                    sc.CategoryID
+                                })
+                                .Select(g => new
+                                {
+                                    g.Key.SID,
+                                    g.Key.ServicePrice,
+                                    g.Key.MerchantLocation,
+                                    g.Key.CategoryID
+                                })
+                                .Join(
+                                    _context.ServicesLists, // Joining with ServicesList
+                                    s => s.SID,             // Match SID from Services
+                                    sl => sl.ServiceListID, // with ServiceListID from ServicesList
+                                    (s, sl) => new SubCatPage
+                                    {
+                                        CatId = s.CategoryID,
+                                        ServiceName = sl.ServiceName,  // Use ServiceName from ServicesList
+                                        ServicePrice = s.ServicePrice,
+                                        Location = s.MerchantLocation,
+                                        ServiceImage = sl.ServiceImage // Include ServiceImage
+                                    })
+                                .ToListAsync();
+
                 return Ok(categories);
+
             }
             catch (Exception ex)
             {
@@ -74,9 +69,18 @@ namespace AFFZ_API.Controllers
         {
 
             int sid = Convert.ToInt32(id);
-            var servicedata = _context.Services.Where(x => x.ServiceId == sid);
+            var servicedata = await _context.Services.Where(x => x.ServiceId == sid).FirstOrDefaultAsync();
 
             return Ok(servicedata);
+        }
+        [HttpGet("getServiceNameFromServiceList")]
+        public async Task<ActionResult<string>> getServiceNameFromServiceList(int id)
+        {
+
+            int sid = Convert.ToInt32(id);
+            var servicedata = await _context.ServicesLists.Where(x => x.ServiceListID == sid).FirstOrDefaultAsync();
+
+            return Ok(servicedata.ServiceName);
         }
     }
     //Defines the data structure returned by the search endpoint, including service name, company name, merchant location, price, and average rating.

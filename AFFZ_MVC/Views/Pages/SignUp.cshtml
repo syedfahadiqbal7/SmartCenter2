@@ -137,7 +137,9 @@
                 <span class="span-or">OR</span>
             </div>
             <div class="social-login">
-                <a href="#" class="btn btn-google btn-sm w-100 mb-2"><img src="/assets/img/icons/google.svg" class="me-2" alt="img">Sign Up with Google</a>
+                <a href="#" class="btn btn-google btn-sm w-100 mb-2 g-signin2" data-onsuccess="onSignIn">
+                    <img src="/assets/img/icons/google.svg" class="me-2" alt="img">Sign Up with Google
+                </a>
             </div>
             <p class="no-acc">Already have an account? <a href="~/Login">Login</a></p>
             <!-- /Sign Up Form -->
@@ -162,6 +164,7 @@
             icon.classList.add('feather-eye-off');
         }
     }
+     
 </script>
 
 <!-- Include Feather Icons (for eye icon) -->
@@ -172,9 +175,61 @@
 
 <!-- Include Bootstrap JS (if not already included in your layout) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <!-- Include jQuery and Validation scripts -->
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 <script src="~/js/signup.js"></script>
+<script>
+    function onSignIn(googleUser) {
+        const apiurl = '@ViewBag.APIUrl';
+        console.log("APPLICATION URL :" + apiurl);
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("Google id_token :" + id_token);
+        // Send this ID token to the server for verification
+        fetch(`${apiurl}/api/Customers/GoogleLogin`, {
+            method: 'POST',
+            body: JSON.stringify({ idToken: id_token }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.StatusCode === 200) {
+                window.location.href = '/Home/Index';  // Redirect to home page after successful login
+            } else {
+                alert('Google Sign-In failed. Please try again.');
+            }
+        })
+        .catch(err => {
+            alert('Error in Google Sign-In');
+            console.error(err);
+        });
+    }
+     // Initialize Google Sign-In
+    // Initialize the Google Sign-In API with your client ID
+    function initGoogleSignIn() {
+        gapi.load('auth2', function() {
+            gapi.auth2.init({
+                client_id: '982691889737-shum2qj5ad523tkd25sie7j7aeo2k1vh.apps.googleusercontent.com' // Replace with your actual client ID
+            }).then(function () {
+                // Initialize sign-in button once API is ready
+                gapi.signin2.render('google-signin-button', {
+                    'scope': 'profile email',
+                    'width': 240,
+                    'height': 50,
+                    'longtitle': true,
+                    'theme': 'dark',
+                    'onsuccess': onSignIn
+                });
+            });
+        });
+    }
+
+    // Initialize the sign-in button after the page loads
+    window.onload = function() {
+        initGoogleSignIn();
+    }
+</script>

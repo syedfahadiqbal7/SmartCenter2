@@ -19,9 +19,28 @@ namespace AFFZ_API.Controllers
 
         // GET: api/ServicesList
         [HttpGet("GetServicesList")]
-        public async Task<ActionResult<IEnumerable<ServicesList>>> GetServicesList()
+        public async Task<ActionResult<List<ServiceWithCategoryBinding>>> GetServicesList()
         {
-            return await _context.ServicesLists.ToListAsync();
+            //return await _context.ServicesLists.ToListAsync();
+            var servicesWithCategories = await (from service in _context.ServicesLists
+                                                join binding in _context.M_ServiceDocumentListBinding
+                                                    on service.ServiceListID equals binding.ServiceDocumentListId into bindingJoin
+                                                from binding in bindingJoin.DefaultIfEmpty() // Left join to ensure we include all services
+                                                join category in _context.ServiceCategories
+                                                    on binding.CategoryID equals category.CategoryId into categoryJoin
+                                                from category in categoryJoin.DefaultIfEmpty() // Left join to ensure we include all services
+                                                select new ServiceWithCategoryBinding
+                                                {
+                                                    ServiceListID = service.ServiceListID,
+                                                    ServiceName = service.ServiceName,
+                                                    ServiceImage = service.ServiceImage,
+                                                    CategoryName = category.CategoryName ?? "No Category associated with service", // Custom message if no category
+                                                    CategoryID = (category.CategoryId == null ? 0 : category.CategoryId),
+                                                    ServiceCategoryBindingId = (binding.Id == null ? 0 : binding.Id),
+                                                    BindingStatus = binding == null ? "No binding found" : string.Empty, // Custom message if no binding
+                                                    CategoryStatus = category == null ? "No Category associated with service" : string.Empty // Custom message if no category
+                                                }).ToListAsync();
+            return servicesWithCategories;
         }
 
         // GET: api/ServicesList/5
@@ -98,5 +117,16 @@ namespace AFFZ_API.Controllers
         {
             return _context.ServicesLists.Any(e => e.ServiceListID == id);
         }
+    }
+    public class ServiceWithCategoryBinding
+    {
+        public int ServiceListID { get; set; }
+        public string? ServiceName { get; set; }
+        public string? ServiceImage { get; set; }
+        public string? CategoryName { get; set; }
+        public int CategoryID { get; set; }
+        public int ServiceCategoryBindingId { get; set; }
+        public string? BindingStatus { get; set; } // To store the "No binding found" message
+        public string? CategoryStatus { get; set; } // To store the "No category associated" message
     }
 }

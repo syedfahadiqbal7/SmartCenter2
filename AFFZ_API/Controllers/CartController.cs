@@ -42,9 +42,16 @@ namespace AFFZ_API.Controllers
 
                 foreach (var cartItem in cart.CartItem)
                 {
-                    var service = await _context.Services
-                        .Where(s => s.ServiceId == cartItem.ServiceID)
-                        .FirstOrDefaultAsync();
+                    var service = await (from s in _context.Services
+                                         join sl in _context.ServicesLists
+                                         on s.SID equals sl.ServiceListID
+                                         where s.ServiceId == cartItem.ServiceID
+                                         select new
+                                         {
+                                             s.ServiceId,
+                                             s.ServicePrice,
+                                             ServiceName = sl.ServiceName
+                                         }).FirstOrDefaultAsync();
 
                     if (service != null)
                     {
@@ -54,13 +61,14 @@ namespace AFFZ_API.Controllers
                             CartItemID = cartItem.CartItemID,
                             CustomerId = customerId,
                             ServiceID = cartItem.ServiceID,
-                            ServiceName = service.ServiceName,
+                            ServiceName = service.ServiceName, // Correctly assign the ServiceName here
                             ServicePrice = (decimal)service.ServicePrice,
                             Quantity = cartItem.Quantity,
                             AddedDate = cartItem.AddedDate
                         });
                     }
                 }
+
 
                 return new SResponse
                 {
@@ -104,9 +112,16 @@ namespace AFFZ_API.Controllers
 
                 foreach (var cartItem in cart.CartItem)
                 {
-                    var service = await _context.Services
-                        .Where(s => s.ServiceId == cartItem.ServiceID)
-                        .FirstOrDefaultAsync();
+                    var service = await (from s in _context.Services
+                                         join sl in _context.ServicesLists
+                                         on s.SID equals sl.ServiceListID
+                                         where s.ServiceId == cartItem.ServiceID
+                                         select new
+                                         {
+                                             s.ServiceId,
+                                             s.ServicePrice,
+                                             ServiceName = sl.ServiceName
+                                         }).FirstOrDefaultAsync();
 
                     if (service != null)
                     {
@@ -116,14 +131,14 @@ namespace AFFZ_API.Controllers
                             CartItemID = cartItem.CartItemID,
                             CustomerId = customerId,
                             ServiceID = cartItem.ServiceID,
-                            MID = service.MerchantID,
-                            ServiceName = service.ServiceName,
+                            ServiceName = service.ServiceName, // Correctly assign the ServiceName here
                             ServicePrice = (decimal)service.ServicePrice,
                             Quantity = cartItem.Quantity,
                             AddedDate = cartItem.AddedDate
                         });
                     }
                 }
+
                 var cartData = new CartItems()
                 {
                     CartID = cart.CartID,

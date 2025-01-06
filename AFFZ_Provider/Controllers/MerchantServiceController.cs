@@ -1,5 +1,6 @@
 ﻿using AFFZ_Provider.Models;
 using AFFZ_Provider.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,6 +9,7 @@ using Newtonsoft.Json;
 
 namespace AFFZ_Provider.Controllers
 {
+    [Authorize]
     public class MerchantServiceController : Controller
     {
         private readonly ILogger<MerchantServiceController> _logger;
@@ -49,7 +51,7 @@ namespace AFFZ_Provider.Controllers
             if (string.IsNullOrEmpty(_merchantId))
             {
                 _logger.LogWarning("Merchant ID not found in session."); // Log a warning if Merchant ID is not found
-                return Unauthorized(); // Return Unauthorized response
+                return RedirectToAction("Index", "Login");
             }
 
             // Validate the Merchant ID
@@ -189,7 +191,18 @@ namespace AFFZ_Provider.Controllers
                     ModelState.AddModelError(string.Empty, "Error processing service details."); // Add model error for deserialization error
                     return PartialView("_ServiceDetails", new Service()); // Return partial view with an empty Service object
                 }
+                //ServiceNameById
 
+                response = await _httpClient.GetAsync($"Service/ServiceNameById?id={id}"); // Send GET request to fetch service by ID
+                if (!response.IsSuccessStatusCode)
+                {
+                    _logger.LogError("Failed to fetch service. Status code: {StatusCode}", response.StatusCode); // Log an error if the response is not successful
+                    ModelState.AddModelError(string.Empty, "Failed to load service details."); // Add model error for failed service load
+                    return PartialView("_ServiceDetails", new Service()); // Return partial view with an empty Service object
+                }
+
+                responseString = await response.Content.ReadAsStringAsync();
+                service.ServiceName = responseString;
                 _logger.LogInformation("Successfully fetched service details for ID: {Id}", id); // Log success
                 return PartialView("_ServiceDetails", service); // Return partial view with the Service object
             }
@@ -216,25 +229,25 @@ namespace AFFZ_Provider.Controllers
 
         // Method to create a new merchant service
         [HttpGet]
-        public async Task<IActionResult> MerchantServiceCreate(string ServiceName = "", int CategoryID = 0)
+        public async Task<IActionResult> MerchantServiceCreate(string SID = "0", int CategoryID = 0)
         {
-            _logger.LogInformation("MerchantServiceCreate called with ServiceName: {ServiceName}, CategoryID: {CategoryID}", ServiceName, CategoryID); // Log method entry with parameters
+            _logger.LogInformation("MerchantServiceCreate called with SID: {SID}, CategoryID: {CategoryID}", SID, CategoryID); // Log method entry with parameters
 
             try
             {
 
                 // Fetch dropdown data for the view
                 _logger.LogInformation("Fetching ServiceListComboData.");
-                ViewBag.ServiceListComboData = await ServiceListItems(ServiceName); // Fetch service list items for dropdown
+                ViewBag.ServiceListComboData = await ServiceListItems(Convert.ToInt32(SID)); // Fetch service list items for dropdown
 
                 _logger.LogInformation("Fetching ServiceCategoryComboData.");
                 ViewBag.ServiceCategoryComboData = await ServiceCategoryItems(CategoryID); // Fetch service category items for dropdown
 
                 List<int> defaultDocsList = new List<int>();
-                if (!string.IsNullOrEmpty(ServiceName))
+                if (!string.IsNullOrEmpty(SID))
                 {
-                    _logger.LogInformation("Fetching Service ID for ServiceName: {ServiceName}", ServiceName); // Log fetching Service ID
-                    int sid = await GetServiceId(ServiceName); // Get service ID based on ServiceName
+                    _logger.LogInformation("Fetching Service ID for SID: {SID}", SID); // Log fetching Service ID
+                    int sid = await GetServiceId(Convert.ToInt32(SID)); // Get service ID based on SID
 
                     _logger.LogInformation("Fetching Default Service Document List Data for Service ID: {ServiceID}", sid); // Log fetching default document list
                     defaultDocsList = await GetDefaultServiceDocumentListData(sid); // Get default service document list
@@ -328,10 +341,11 @@ namespace AFFZ_Provider.Controllers
         // POST: Service/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> MerchantServiceCreate([Bind("CategoryID,ServiceName,Description,ServicePrice,ServiceAmountPaidToAdmin, SelectedDocumentIds")] Service service, List<int> selectedDocumentIds)
+        public async Task<IActionResult> MerchantServiceCreate([Bind("CategoryID,SID,Description,ServicePrice,ServiceAmountPaidToAdmin, SelectedDocumentIds")] Service service, List<int> selectedDocumentIds)
         {
             try
             {
+                //service.SID = Convert.ToInt32(service.ServiceName);
                 _logger.LogInformation("MerchantServiceCreate POST called.");
 
                 // Validate session Merchant ID
@@ -353,7 +367,7 @@ namespace AFFZ_Provider.Controllers
                 if (!ModelState.IsValid)
                 {
                     _logger.LogWarning("Invalid service model."); // Log warning if model state is invalid
-                    ViewBag.ServiceListComboData = await ServiceListItems(""); // Populate dropdowns for the view in case of invalid model state
+                    ViewBag.ServiceListComboData = await ServiceListItems(0); // Populate dropdowns for the view in case of invalid model state
                     ViewBag.ServiceCategoryComboData = await ServiceCategoryItems(0);
                     ViewBag.DocumentListComboData = await DocumentListItems(new List<int>());
                     return View(service); // Return the view with the service model containing errors
@@ -366,7 +380,7 @@ namespace AFFZ_Provider.Controllers
                 {
                     _logger.LogError("Service creation failed. Status code: {StatusCode}", jsonResponse.StatusCode); // Log error if service creation fails
                     ModelState.AddModelError(string.Empty, await jsonResponse.Content.ReadAsStringAsync()); // Add error message to model state
-                    ViewBag.ServiceListComboData = await ServiceListItems(""); // Populate dropdowns for the view
+                    ViewBag.ServiceListComboData = await ServiceListItems(0); // Populate dropdowns for the view
                     ViewBag.ServiceCategoryComboData = await ServiceCategoryItems(0);
                     ViewBag.DocumentListComboData = await DocumentListItems(new List<int>());
                     return View(service); // Return the view with the service model containing errors
@@ -411,7 +425,7 @@ namespace AFFZ_Provider.Controllers
             }
 
             // Return view with errors if any
-            ViewBag.ServiceListComboData = await ServiceListItems(""); // Populate dropdowns for the view
+            ViewBag.ServiceListComboData = await ServiceListItems(0); // Populate dropdowns for the view
             ViewBag.ServiceCategoryComboData = await ServiceCategoryItems(0);
             ViewBag.DocumentListComboData = await DocumentListItems(new List<int>());
             return View(service); // Return the view with the service model containing errors
@@ -470,7 +484,7 @@ namespace AFFZ_Provider.Controllers
 
                 // Populate the document list for selection and pass the selected IDs
                 ViewBag.DocumentListComboData = await DocumentListItems(selectedDocumentIds); // Populate document list dropdown
-                ViewBag.ServiceListComboData = await ServiceListItems(service.ServiceName); // Populate service list dropdown
+                ViewBag.ServiceListComboData = await ServiceListItems(service.SID); // Populate service list dropdown
                 ViewBag.ServiceCategoryComboData = await ServiceCategoryItems(service.CategoryID); // Populate category list dropdown
 
                 _logger.LogInformation("Returning view for editing service ID: {Id}", id); // Log returning the edit view
@@ -498,7 +512,7 @@ namespace AFFZ_Provider.Controllers
         // POST: Service/Edit/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> MerchantServiceEdit(int id, [Bind("ServiceId,CategoryID,ServiceName,Description,ServicePrice,ServiceAmountPaidToAdmin")] Service service, List<int> selectedDocumentIds)
+        public async Task<IActionResult> MerchantServiceEdit(int id, [Bind("ServiceId,CategoryID,SID,Description,ServicePrice,ServiceAmountPaidToAdmin")] Service service, List<int> selectedDocumentIds)
         {
             _logger.LogInformation("MerchantServiceEdit POST called with ID: {Id}", id); // Log method entry with the service ID
 
@@ -707,9 +721,9 @@ namespace AFFZ_Provider.Controllers
         }
 
         // Helper method to get a list of services for dropdown
-        public async Task<List<SelectListItem>> ServiceListItems(string servicename)
+        public async Task<List<SelectListItem>> ServiceListItems(int sid)
         {
-            _logger.LogInformation("ServiceListItems called with service name: {ServiceName}", servicename); // Log method entry with service name
+            _logger.LogInformation("ServiceListItems called with service name: {ServiceListId}", sid); // Log method entry with service name
 
             try
             {
@@ -727,8 +741,8 @@ namespace AFFZ_Provider.Controllers
                     return serviceList.Select(i => new SelectListItem
                     {
                         Text = i.ServiceName,
-                        Value = i.ServiceName,
-                        Selected = servicename == i.ServiceName // Set selected item based on input parameter
+                        Value = i.ServiceListID.ToString(),
+                        Selected = sid == i.ServiceListID // Set selected item based on input parameter
                     }).ToList();
                 }
             }
@@ -752,7 +766,7 @@ namespace AFFZ_Provider.Controllers
         }
 
         // Helper method to get service ID by service name
-        public async Task<int> GetServiceId(string servicename)
+        public async Task<int> GetServiceId(int servicename)
         {
             _logger.LogInformation("GetServiceId called with service name: {ServiceName}", servicename); // Log method entry with service name
             int serviceId = 0;
@@ -770,7 +784,7 @@ namespace AFFZ_Provider.Controllers
                 if (!string.IsNullOrEmpty(responseString))
                 {
                     List<ServicesList> serviceList = JsonConvert.DeserializeObject<List<ServicesList>>(responseString); // Deserialize response to list of ServicesList
-                    serviceId = serviceList.Where(x => x.ServiceName == servicename).Select(x => x.ServiceListID).FirstOrDefault(); // Find service ID by name
+                    serviceId = serviceList.Where(x => x.ServiceListID == servicename).Select(x => x.ServiceListID).FirstOrDefault(); // Find service ID by name
                 }
             }
             catch (JsonSerializationException ex)

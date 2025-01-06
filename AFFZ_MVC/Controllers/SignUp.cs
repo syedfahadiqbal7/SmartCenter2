@@ -1,9 +1,9 @@
 ﻿using AFFZ_Customer.Models;
 using AFFZ_Customer.Utils;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Net;
-using Microsoft.Extensions.Logging;
 
 namespace AFFZ_Customer.Controllers
 {
@@ -11,18 +11,26 @@ namespace AFFZ_Customer.Controllers
     {
         private readonly HttpClient _httpClient;
         private readonly ILogger<SignUp> _logger;
-
-        public SignUp(IHttpClientFactory httpClientFactory, ILogger<SignUp> logger)
+        private string BaseUrlIp = string.Empty;
+        private string PublicDomain = string.Empty;
+        private string ApiHttpsPort = string.Empty;
+        private string CustomerHttpsPort = string.Empty;
+        public SignUp(IHttpClientFactory httpClientFactory, ILogger<SignUp> logger, IOptions<AppSettings> options, IAppSettingsService service)
         {
             _httpClient = httpClientFactory.CreateClient("Main");
             _logger = logger;
             _logger.LogDebug("SignUp controller initialized.");
+            BaseUrlIp = options.Value.BaseIpAddress;
+            PublicDomain = service.GetPublicDomain();
+            ApiHttpsPort = service.GetApiHttpsPort();
         }
 
         // GET: SignUp page
         public IActionResult Index()
         {
             _logger.LogDebug("SignUp page requested.");
+            var verificationLink = $"{Request.Scheme}://{PublicDomain}:{ApiHttpsPort}";
+            ViewBag.APIUrl = verificationLink;
             return View("SignUp", new Customers());
         }
 
@@ -47,6 +55,11 @@ namespace AFFZ_Customer.Controllers
 
                 try
                 {
+                    if (await GetReferralCode(model.ReferrerCode))
+                    {
+                        TempData["FailMessage"] = "Referral Code is already in use. Try another one.";
+                        return View("SignUp", model);
+                    }
                     _logger.LogInformation("Sending registration request to API.");
                     var response = await _httpClient.PostAsync(
                         $"Customers/Register?referralCode={(!string.IsNullOrEmpty(model.ReferrerCode) ? model.ReferrerCode : " ")}",
@@ -110,6 +123,42 @@ namespace AFFZ_Customer.Controllers
 
                 throw;
             }
+        }
+        private async Task<bool> GetReferralCode(string? referrercode)
+        {
+            bool res = false;
+            _logger.LogDebug("GetReferralCode called with referrerCustomerId: {referrercode}", referrercode);
+            if (!string.IsNullOrEmpty(referrercode))
+            {
+                _logger.LogWarning("Referrer customer ID is null.");
+            }
+
+            try
+            {
+                // Send request to retrieve referral code
+                var response = await _httpClient.GetAsync($"Referral/CheckReferral?referrercode={referrercode}");
+                _logger.LogDebug("Received response with status code: {StatusCode}", response.StatusCode);
+
+                // Check if the response was successful
+                if (!response.IsSuccessStatusCode)
+                {
+                    _logger.LogWarning("Failed to retrieve referral code. StatusCode: {StatusCode}", response.StatusCode);
+                }
+
+                // Deserialize the response
+                var responseString = await response.Content.ReadAsStringAsync();
+                _logger.LogDebug("Received response content: {ResponseString}", responseString);
+                res = Convert.ToBoolean(responseString);
+            }
+            catch (HttpRequestException httpEx)
+            {
+                _logger.LogError(httpEx, "HTTP request failed while retrieving referral code.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while retrieving referral code.");
+            }
+            return res;
         }
     }
 

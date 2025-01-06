@@ -127,5 +127,18 @@ namespace AFFZ_API.Controllers
                 };
             }
         }
+        [HttpGet]
+        [Route("CheckReferral")]
+        public async Task<bool> CheckReferral(string referrercode)
+        {
+            try
+            {
+                return _context.Referral.Where(r => r.ReferralCode == referrercode).Any();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

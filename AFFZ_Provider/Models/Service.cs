@@ -11,7 +11,8 @@ namespace AFFZ_Provider.Models
 
         public int? MerchantID { get; set; }
 
-        public string ServiceName { get; set; } = null!;
+        public int SID { get; set; }
+        public string? ServiceName { get; set; }
 
         public string? Description { get; set; }
 

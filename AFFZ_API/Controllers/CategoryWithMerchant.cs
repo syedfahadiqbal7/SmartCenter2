@@ -26,6 +26,8 @@ namespace AFFZ_API.Controllers
             var query = from rm in _context.RequestForDisCountToMerchants
                         join ser in _context.Services
                         on new { MID = (int)rm.MID, SID = (int)rm.SID } equals new { MID = (int)ser.MerchantID, SID = (int)ser.ServiceId }
+                        join sl in _context.ServicesLists
+                        on ser.SID equals sl.ServiceListID
                         where rm.MID == id && rm.IsResponseSent == 0
                         select new RequestForDiscountViewModel
                         {
@@ -33,7 +35,7 @@ namespace AFFZ_API.Controllers
                             SID = (int)ser.ServiceId,
                             UID = (int)rm.UID,
                             MID = rm.MID,
-                            ServiceName = ser.ServiceName,
+                            ServiceName = sl.ServiceName, // Get ServiceName from ServicesList
                             ServicePrice = ser.ServicePrice,
                             RequestDatetime = rm.RequestDateTime
                         };
@@ -56,38 +58,47 @@ namespace AFFZ_API.Controllers
             }
 
             var query = _context.Services
-                .Join(_context.Merchants,
-                      service => service.MerchantID,
-                      merchant => merchant.MerchantId,
-                      (service, merchant) => new { service, merchant })
-                .GroupJoin(_context.MerchantRatings,
-                           combined => combined.merchant.MerchantId,
-                           rating => rating.RatedMerchantId,
-                           (combined, ratings) => new { combined.service, combined.merchant, ratings })
-                .SelectMany(x => x.ratings.DefaultIfEmpty(),
-                            (combined, rating) => new
-                            {
-                                combined.service,
-                                combined.merchant,
-                                Rating = rating != null ? rating.RatingValue : (int?)null
-                            })
-                .GroupBy(x => new
-                {
-                    x.service.ServiceName,
-                    x.merchant.CompanyName,
-                    x.merchant.MerchantLocation,
-                    x.service.ServicePrice
-                })
-                .Select(g => new ServiceDto
-                {
-                    ServiceName = g.Key.ServiceName,
-                    CompanyName = g.Key.CompanyName,
-                    MerchantLocation = g.Key.MerchantLocation,
-                    Price = (decimal)g.Key.ServicePrice,
-                    AverageRating = g.Average(x => x.Rating ?? 0)
-                })
-                .AsQueryable();
-
+            .Join(_context.Merchants,
+                  service => service.MerchantID,
+                  merchant => merchant.MerchantId,
+                  (service, merchant) => new { service, merchant })
+            .GroupJoin(_context.MerchantRatings,
+                       combined => combined.merchant.MerchantId,
+                       rating => rating.RatedMerchantId,
+                       (combined, ratings) => new { combined.service, combined.merchant, ratings })
+            .SelectMany(x => x.ratings.DefaultIfEmpty(),
+                        (combined, rating) => new
+                        {
+                            combined.service,
+                            combined.merchant,
+                            Rating = rating != null ? rating.RatingValue : (int?)null
+                        })
+            .Join(_context.ServicesLists, // Join with ServicesList
+                  x => x.service.SID,
+                  sl => sl.ServiceListID,
+                  (x, sl) => new
+                  {
+                      x.service,
+                      x.merchant,
+                      x.Rating,
+                      ServiceName = sl.ServiceName // Get ServiceName from ServicesList
+                  })
+            .GroupBy(x => new
+            {
+                x.ServiceName,
+                x.merchant.CompanyName,
+                x.merchant.MerchantLocation,
+                x.service.ServicePrice
+            })
+            .Select(g => new ServiceDto
+            {
+                ServiceName = g.Key.ServiceName,
+                CompanyName = g.Key.CompanyName,
+                MerchantLocation = g.Key.MerchantLocation,
+                Price = (decimal)g.Key.ServicePrice,
+                AverageRating = g.Average(x => x.Rating ?? 0)
+            })
+            .AsQueryable();
             if (!string.IsNullOrEmpty(request.Keyword))
             {
                 query = query.Where(s => s.ServiceName.Contains(request.Keyword) ||
@@ -159,11 +170,29 @@ namespace AFFZ_API.Controllers
 			 * Select: The Select method is then used to project the grouped data into a new ServiceCategoryDto. The CategoryId is taken from the first record in each group, and the CategoryName is the grouping key (g.Key).
 			 
 			 */
-            var categories = await _context.Services.GroupBy(sc => new { sc.ServiceName, sc.ServicePrice }).Select(g => new SubCatPage
+            var categories = await _context.Services
+            .Join(_context.ServicesLists,
+                  service => service.SID,
+                  serviceList => serviceList.ServiceListID,
+                  (service, serviceList) => new
+                  {
+                      service.SID,
+                      service.ServicePrice,
+                      serviceList.ServiceName
+                  })
+            .GroupBy(sc => new
+            {
+                sc.SID,
+                sc.ServicePrice,
+                sc.ServiceName
+            })
+            .Select(g => new SubCatPage
             {
                 ServiceName = g.Key.ServiceName,
                 ServicePrice = g.Key.ServicePrice
-            }).ToListAsync();
+            })
+            .ToListAsync();
+
 
             return Ok(categories);
         }
@@ -182,7 +211,7 @@ namespace AFFZ_API.Controllers
                         join service in _context.Services
                         on merchant.MerchantId equals service.MerchantID
                         join serviceList in _context.ServicesLists
-                        on service.ServiceName equals serviceList.ServiceName // Match service.ServiceName with serviceList.ServiceName
+                        on service.SID equals serviceList.ServiceListID // Match service.ServiceName with serviceList.ServiceName
                         select new ServiceMerchantDTO
                         {
                             MID = merchant.MerchantId,
@@ -234,7 +263,7 @@ namespace AFFZ_API.Controllers
 
                 string MerchantEmail = _context.ProviderUsers.Where(x => x.ProviderId == mid).Select(x => x.Email).FirstOrDefault();
                 string MerchantName = _context.ProviderUsers.Where(x => x.ProviderId == mid).Select(x => x.ProviderName).FirstOrDefault();
-                string ServiceName = _context.Services.Where(x => x.ServiceId == data.ServiceId).Select(x => x.ServiceName).FirstOrDefault();
+                string ServiceName = _context.Services.Where(x => x.ServiceId == data.ServiceId).Join(_context.ServicesLists, service => service.SID, serviceList => serviceList.ServiceListID, (service, serviceList) => serviceList.ServiceName).FirstOrDefault();
                 bool res = await _emailService.SendEmail(MerchantEmail, "Service Inquiry-SmartCenter", "Dear " + MerchantName + ", You Have recieved a request from a user. Inquiry type:" + ServiceName, MerchantName);
                 return Ok("Request Sent To Merchant");
             }
@@ -254,6 +283,8 @@ namespace AFFZ_API.Controllers
             try
             {
                 var query = from service in _context.Services
+                            join serviceList in _context.ServicesLists
+                                on service.SID equals serviceList.ServiceListID // Join with ServicesList to get ServiceName
                             join request in _context.RequestForDisCountToUsers
                                 on new { TSID = service.ServiceId, TMID = service.MerchantID ?? 0 }
                                 equals new { TSID = request.SID, TMID = request.MID }
@@ -271,7 +302,7 @@ namespace AFFZ_API.Controllers
                             {
                                 SID = request.SID,
                                 ServicePrice = service.ServicePrice ?? 0,
-                                ServiceName = service.ServiceName,
+                                ServiceName = serviceList.ServiceName, // Fetch ServiceName from ServicesList
                                 MerchantID = service.MerchantID ?? 0,
                                 FINALPRICE = request.FINALPRICE,
                                 UID = request.UID,
@@ -280,8 +311,9 @@ namespace AFFZ_API.Controllers
                                 ResponseDateTime = request.ResponseDateTime,
                                 IsPaymentDone = request.IsPaymentDone,
                                 CurrentStatus = requestStatus != null ? requestStatus.StatusDescription : "Unknown",  // Use StatusDescription or default to "Unknown"
-                                IsRequestCompleted = (requestStatus != null ? (requestStatus.StatusName == "Completed" ? true : false) : false)  // Use StatusDescription or default to "Unknown"
+                                IsRequestCompleted = requestStatus != null && (requestStatus.StatusName == "Completed" || requestStatus.StatusName == "Failed") // Check for both statuses // Check if StatusName is "Completed"
                             };
+
 
 
                 var sql = query.ToQueryString();
@@ -492,6 +524,21 @@ namespace AFFZ_API.Controllers
                 var CurrentServicesStatus = await _context.CurrentServiceStatus.ToListAsync();
 
                 return Ok(CurrentServicesStatus);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        [HttpGet("GetCurrentServiceStatusById")]
+        public async Task<RequestStatuses> GetCurrentServiceStatusById(int customerId, int RFDFU, int mid)
+        {
+            try
+            {
+                // Skip and take based on the pageNumber and pageSize
+                var CurrentServicesStatus = await _context.CurrentServiceStatus.Where(x => x.UId == customerId && x.MId == mid && x.RFDFU == RFDFU).FirstOrDefaultAsync();
+                var stringStatus = await _context.RequestStatuses.Where(x => x.StatusID == Convert.ToInt32(CurrentServicesStatus.CurrentStatus)).FirstOrDefaultAsync();
+                return stringStatus;
             }
             catch (Exception)
             {

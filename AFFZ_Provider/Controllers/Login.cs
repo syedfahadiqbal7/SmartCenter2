@@ -1,10 +1,13 @@
 ﻿using AFFZ_Provider.Models;
 using AFFZ_Provider.Models.Partial;
 using AFFZ_Provider.Utils;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net;
+using System.Security.Claims;
 
 namespace AFFZ_Provider.Controllers
 {
@@ -29,7 +32,27 @@ namespace AFFZ_Provider.Controllers
         /// <returns>Login view.</returns>
         public IActionResult Index()
         {
-            return View("Login", new LoginModel());
+            // Check if ProviderId exists in the session
+            string dta = HttpContext.Session.GetEncryptedString("ProviderId", _protector);
+            if (!string.IsNullOrEmpty(dta))
+            {
+                // Redirect to the last visited page if available
+                var referer = Request.Headers["Referer"].ToString();
+                if (!string.IsNullOrEmpty(referer))
+                {
+                    _logger.LogInformation("ProviderId exists. Redirecting to: {Referer}", referer);
+                    return Redirect(referer);
+                }
+
+                // Fallback to dashboard if no referer is available
+                _logger.LogInformation("ProviderId exists. Redirecting to Dashboard.");
+                return RedirectToAction("Index", "Dashboard");
+            }
+            else
+            {
+                return View("Login", new LoginModel());
+            }
+
         }
 
         /// <summary>
@@ -40,6 +63,7 @@ namespace AFFZ_Provider.Controllers
         [HttpPost]
         public async Task<IActionResult> ProviderLogin(LoginModel model)
         {
+
             if (!ModelState.IsValid)
             {
                 // Log model state errors
@@ -101,7 +125,22 @@ namespace AFFZ_Provider.Controllers
                     HttpContext.Session.SetEncryptedString("ProfilePicturePath", providerDetail.ProfilePicture == null ? "" : providerDetail.ProfilePicture, _protector);
 
                     _logger.LogInformation("User {Email} logged in successfully.", providerDetail.Email);
+                    // Create authentication claims
+                    var claims = new List<Claim>
+                        {
+                            new Claim(ClaimTypes.Name, providerDetail.ProviderName),
+                            new Claim("ProviderId", providerDetail.ProviderId.ToString())
+                        };
 
+                    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var authProperties = new AuthenticationProperties
+                    {
+                        IsPersistent = true, // Set to true if you want the cookie to persist across sessions
+                        ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(30)
+                    };
+
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                        new ClaimsPrincipal(claimsIdentity), authProperties);
                     return RedirectToAction("Index", "Dashboard");
                 }
                 else

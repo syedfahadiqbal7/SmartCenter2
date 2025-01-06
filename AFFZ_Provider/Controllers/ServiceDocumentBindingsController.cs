@@ -1,4 +1,5 @@
 ﻿using AFFZ_Provider.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
@@ -6,6 +7,7 @@ using System.Net;
 
 namespace AFFZ_Provider.Controllers
 {
+    [Authorize]
     public class ServiceDocumentBindingsController : Controller
     {
         private readonly HttpClient _httpClient;

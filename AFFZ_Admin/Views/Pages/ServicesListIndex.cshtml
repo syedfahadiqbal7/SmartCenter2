@@ -1,5 +1,5 @@
 ﻿<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
+@model IEnumerable<AFFZ_Admin.Controllers.ServiceWithCategoryBinding>
 <div class="page-wrapper page-settings">
     <div class="content">
         <!-- Customer Table -->
@@ -44,6 +44,7 @@
                                 <th>Service ID</th>
                                 <th>Service Image</th>
                                 <th>Service Name</th>
+                                <th>Category Name</th>
                                 <th class ="text-center">Actions</th>
                             </tr>
                         </thead>
@@ -60,6 +61,7 @@
                                         </div>
                                     </td>
                                     <td>@service.ServiceName</td>
+                                    <td>@service.CategoryName</td>
                                     <td class="text-center">
                                         <div class="table-actions d-flex">
                                             @* <a asp-action="ServicesListEdit" asp-route-id="@service.ServiceListID" class="btn delete-table me-2"><i class="fe fe-edit"></i></a> *@

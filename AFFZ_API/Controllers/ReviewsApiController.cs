@@ -61,7 +61,7 @@ namespace AFFZ_API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Error in {nameof(GetAllReviews)}: {ex.Message}");
+                _logger.LogError($"Error in {nameof(GetUserReviewList)}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -167,13 +167,17 @@ namespace AFFZ_API.Controllers
             try
             {
                 var reviewData = await _context.Review
-                    .Include(r => r.Service)
-                    .Where(r => r.merchantId == merchantId)
-                    .GroupBy(r => new { r.ServiceId, r.Service.ServiceName })
-                    .Select(g => new
+                .Include(r => r.Service)
+                .Where(r => r.merchantId == merchantId)
+                .GroupBy(r => new { r.ServiceId, r.Service.SID })
+                .Join(
+                    _context.ServicesLists, // Join with ServicesLists to get ServiceName
+                    g => g.Key.SID,
+                    serviceList => serviceList.ServiceListID,
+                    (g, serviceList) => new
                     {
                         ServiceId = g.Key.ServiceId,
-                        ServiceName = g.Key.ServiceName,
+                        ServiceName = serviceList.ServiceName, // Fetch ServiceName from ServicesList
                         AverageRating = g.Average(r => r.Rating),
                         TotalReviews = g.Count(),
                         Reviews = g.Select(r => new
@@ -182,8 +186,9 @@ namespace AFFZ_API.Controllers
                             r.Rating,
                             r.ReviewDate
                         }).ToList()
-                    })
-                    .ToListAsync();
+                    }
+                )
+                .ToListAsync();
 
                 if (!reviewData.Any())
                 {

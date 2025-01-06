@@ -773,7 +773,7 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.CategoryID).HasColumnName("CategoryID");
             entity.Property(e => e.Description).HasColumnType("text");
             entity.Property(e => e.MerchantID).HasColumnName("MerchantID");
-            entity.Property(e => e.ServiceName)
+            entity.Property(e => e.SID)
                 .HasMaxLength(100)
                 .IsUnicode(false);
 

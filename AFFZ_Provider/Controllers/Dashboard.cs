@@ -1,11 +1,13 @@
 ﻿using AFFZ_Provider.Models;
 using AFFZ_Provider.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace AFFZ_Provider.Controllers
 {
+    [Authorize]
     public class Dashboard : Controller
     {
         private readonly ILogger<Dashboard> _logger;
@@ -100,6 +102,7 @@ namespace AFFZ_Provider.Controllers
                     else
                     {
                         _logger.LogError($"Failed to fetch reviews: {TopServices.StatusCode}");
+                        ViewBag.TopServices = new List<ServiceReviewViewModel>();
                     }
                 }
                 catch (Exception ex)
@@ -127,8 +130,8 @@ namespace AFFZ_Provider.Controllers
                 }
                 catch (Exception ex)
                 {
-
-                    throw;
+                    _logger.LogError($"Error in Fetching TopServices: {ex.Message}");
+                    return View("Dashboard", new List<ServiceReviewViewModel>());
                 }
                 try
                 {
@@ -147,8 +150,8 @@ namespace AFFZ_Provider.Controllers
                 }
                 catch (Exception ex)
                 {
-
-                    throw;
+                    _logger.LogError($"Error in Fetching TopServices: {ex.Message}");
+                    return View("Dashboard", new List<ServiceReviewViewModel>());
                 }
                 try
                 {
@@ -168,17 +171,17 @@ namespace AFFZ_Provider.Controllers
                         return View(new List<ReviewViewModel>());
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
-                    throw;
+                    _logger.LogError($"Error in Fetching TopServices: {ex.Message}");
+                    return View("Dashboard", new List<ServiceReviewViewModel>());
                 }
                 return View("Dashboard");
             }
             catch (Exception ex)
             {
-
-                throw;
+                _logger.LogError($"Error in Fetching TopServices: {ex.Message}");
+                return View("Dashboard", new List<ServiceReviewViewModel>());
             }
         }
 

@@ -121,7 +121,7 @@ namespace AFFZ_API.Controllers
             SELECT        
                 COUNT(DISTINCT UploadedFile.UFID) AS DocumentCount,
                 Service.ServiceID, 
-                Service.ServiceName, 
+	            ServicesList.ServiceName,
                 Service.ServicePrice, 
                 Service.ServiceAmountPaidToAdmin, 
                 Service.SelectedDocumentIds, 
@@ -136,7 +136,8 @@ namespace AFFZ_API.Controllers
                 Merchant.MerchantID AS MID, 
                 PaymentHistory.Quantity, 
                 PaymentHistory.ISPAYMENTSUCCESS, 
-                PaymentHistory.PAYMENTTYPE
+                PaymentHistory.PAYMENTTYPE,
+                Service.SID
             FROM            
                 PaymentHistory 
                 INNER JOIN Merchant 
@@ -153,9 +154,12 @@ namespace AFFZ_API.Controllers
                     ON Customer.CustomerId = UploadedFile.UserId 
                     AND Merchant.MerchantID = UploadedFile.MerchantId 
                     AND RequestForDisCountToUser.RFDFU = UploadedFile.RFDFU
+	             INNER JOIN ServicesList 
+                    ON ServicesList.ServiceListID = Service.SID 
             GROUP BY 
                 Service.ServiceID, 
-                Service.ServiceName, 
+                Service.SID, 
+	            ServicesList.ServiceName,
                 Service.ServicePrice, 
                 Service.ServiceAmountPaidToAdmin, 
                 Service.SelectedDocumentIds, 
