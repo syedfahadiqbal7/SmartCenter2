@@ -6,6 +6,7 @@
     double Service_charge = 50;
     double Final = Convert.ToDouble(FINALPRICE) + vat;
     Final = Final + (Final * 0.10);
+    Final = Math.Round(Final, 3); // Rounds to 2 decimal places
 }
 <script src="https://js.stripe.com/v3/"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">

@@ -1,4 +1,10 @@
 ﻿@inject AFFZ_Customer.Utils.IAppSettingsService AppSettingsService
+@using AFFZ_Customer.Utils
+@inject NotificationService NotificationService
+@{
+    var controllerName = ViewContext.RouteData.Values["controller"]?.ToString();
+    var CustomerId = await NotificationService.GetUserId();
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,6 +106,8 @@
         const clientType = "AFFZ_Customer";
         console.log("API URL: " + apiBaseUrl);
         console.log("Client: " + clientType);
+        var loggedInCustomerId = '@CustomerId';
+        console.log("LoggedIn Customer Id: " + loggedInCustomerId);
         function markAsReadAndRedirect(notificationId, redirectUrl, element) {
             // Mark the notification as read via an API call
             fetch(`${apiBaseUrl}/api/Notifications/${notificationId}/mark-as-read`, {
@@ -139,7 +147,7 @@
                 });
         }
 
-                const connection = new signalR.HubConnectionBuilder()
+        const connection = new signalR.HubConnectionBuilder()
             .withUrl(`${apiBaseUrl}/notificationHub`, { withCredentials: true }) // Ensure credentials are allowed
             .build();
 
@@ -167,10 +175,20 @@
 
         // Handle incoming notifications
         connection.on("ReceiveNotification", function (notifications) {
-            const notificationList = document.querySelector('.notification-list');
-            const sortedNotifications = notifications.sort((a, b) => b.id - a.id); // Ensure descending order
-            notificationList.innerHTML = '';
 
+            // Filter notifications for the logged-in customer
+            const customerNotifications = notifications.filter(notification =>
+                notification.userId === loggedInCustomerId
+            );
+
+            // Process merchant-specific notifications as before
+            const unreadNotifications = customerNotifications.filter(notification => !notification.isRead);
+            
+
+            const notificationList = document.querySelector('.notification-list');
+            const sortedNotifications = unreadNotifications.sort((a, b) => b.id - a.id); // Ensure descending order
+            notificationList.innerHTML = '';
+            console.log("sortedNotifications:", sortedNotifications);
             sortedNotifications.forEach(notification => {
                 const newNotification = document.createElement('li');
                 newNotification.classList.add('notification-message', 'blinking');
@@ -199,10 +217,13 @@
                     newNotification.classList.remove('blinking');
                 });
             });
-
+            console.log("sortedNotifications.length:", sortedNotifications.length);
             // Update the notification count
             const notificationCountElement = document.querySelector(".notification-count");
-            notificationCountElement.textContent = notifications.length;
+            const notificationCountElementSpan = document.querySelector(".span.notification-count.noti-message");
+            notificationCountElement.textContent = sortedNotifications.length;
+            notificationCountElementSpan.textContent = sortedNotifications.length;
+
         });
 
         // Restart connection on disconnection

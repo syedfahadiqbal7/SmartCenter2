@@ -113,7 +113,7 @@
                                             </a>
                                         </td>
                                         <td>
-                                            @if (user.FileStatus.TotalVerified == user.DocumentCount && ViewBag.CurrentStatus != "Completed")
+                                            @if (user.FileStatus.TotalVerified == user.DocumentCount && user.ServiceStatus.StatusName != "Completed")
                                             {
                                                 if (user.ServiceStatus.StatusName == "Failed" || user.ServiceStatus.StatusName == "Completed")
                                                 {
@@ -131,7 +131,7 @@
                                                 }
                                                 
                                             }
-                                            else if (ViewBag.CurrentStatus == "Completed")
+                                            else if (user.ServiceStatus.StatusName == "Completed")
                                             {
                                                 <span class="text-success">Service Completed Successfully.</span>
                                             }

@@ -34,6 +34,13 @@ namespace AFFZ_Provider.Controllers
                 {
                     var content = await response.Content.ReadAsStringAsync();
                     var reviews = JsonConvert.DeserializeObject<List<ReviewViewModel>>(content);
+                    foreach (var item in reviews)
+                    {
+                        item.ServiceName = await GetServiceName(item.Service.SID);
+                        item.ServiceImageUrl = await GetServiceImage(item.Service.SID);
+                        item.ReviewText = item.ReviewText.PadRight(64, '.');
+                    }
+                    //ViewBag.MyReviews = MyReviews;
                     return View(reviews);
                 }
                 else
@@ -46,6 +53,60 @@ namespace AFFZ_Provider.Controllers
 
                 throw;
             }
+        }
+
+        private async Task<string> GetServiceImage(int sID)
+        {
+            string ServiceImage = string.Empty;
+            try
+            {
+                var jsonResponse = await _httpClient.GetAsync($"ServicesList/GetServiceImageId?id={sID}");
+                jsonResponse.EnsureSuccessStatusCode();
+                if (jsonResponse != null)
+                {
+                    ServiceImage = await jsonResponse.Content.ReadAsStringAsync();
+                }
+                else
+                {
+                    _logger.LogWarning("Empty response received from API.");
+                }
+            }
+            catch (JsonSerializationException ex)
+            {
+                _logger.LogError(ex, "JSON deserialization error ");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while fetching data.");
+            }
+            return ServiceImage;
+        }
+
+        private async Task<string> GetServiceName(int ServiceId)
+        {
+            string ServiceName = string.Empty;
+            try
+            {
+                var jsonResponse = await _httpClient.GetAsync($"ServicesList/GetServiceNameById?id={ServiceId}");
+                jsonResponse.EnsureSuccessStatusCode();
+                if (jsonResponse != null)
+                {
+                    ServiceName = await jsonResponse.Content.ReadAsStringAsync();
+                }
+                else
+                {
+                    _logger.LogWarning("Empty response received from API.");
+                }
+            }
+            catch (JsonSerializationException ex)
+            {
+                _logger.LogError(ex, "JSON deserialization error ");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while fetching data.");
+            }
+            return ServiceName;
         }
     }
 }

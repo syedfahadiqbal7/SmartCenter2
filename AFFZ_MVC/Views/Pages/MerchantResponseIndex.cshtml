@@ -377,7 +377,7 @@
                         document.getElementById('reviewForm').reset();
                         document.querySelectorAll('.rating-star').forEach(star => star.classList.remove('selected'));
                         $(reviewModal).modal('hide');
-                        $(actionModal).modal('show');
+                        $(actionModal).modal('hide');
                     } else {
                         alert('Failed to submit review.');
                     }

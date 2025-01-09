@@ -112,7 +112,27 @@ namespace AFFZ_API.Controllers
 
             return NoContent();
         }
+        [HttpGet("GetServiceNameById")]
+        public async Task<string> GetServiceNameById(int id)
+        {
+            var servicesList = await _context.ServicesLists.FindAsync(id);
+            if (servicesList == null)
+            {
+                return "NotFound";
+            }
+            return servicesList.ServiceName;
 
+        }
+        public async Task<string> GetServiceImageId(int id)
+        {
+            var servicesList = await _context.ServicesLists.FindAsync(id);
+            if (servicesList == null)
+            {
+                return "NotFound";
+            }
+            return servicesList.ServiceImage;
+
+        }
         private bool ServicesListExists(int id)
         {
             return _context.ServicesLists.Any(e => e.ServiceListID == id);

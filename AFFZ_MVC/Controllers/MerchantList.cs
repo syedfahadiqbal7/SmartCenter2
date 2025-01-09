@@ -26,11 +26,17 @@ namespace AFFZ_Customer.Controllers
         public async Task<IActionResult> SelectedMerchantList(string catName)
         {
             _logger.LogInformation("SelectedMerchantList called with Category Name: {CategoryName}", catName);
+            int UserId = 0;
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetEncryptedString("UserId", _protector)))
+            {
+                UserId = Convert.ToInt32(HttpContext.Session.GetEncryptedString("UserId", _protector));
+            }
+
             var categories = new List<CatWithMerchant>();
             try
             {
                 // Fetch categories with merchants
-                var response = await _httpClient.GetAsync($"CategoryWithMerchant/GetServiceListByMerchant?CatName={catName}");
+                var response = await _httpClient.GetAsync($"CategoryWithMerchant/GetServiceListByMerchant?CatName={catName}&uid={UserId}");
                 response.EnsureSuccessStatusCode();
 
                 var responseString = await response.Content.ReadAsStringAsync();
@@ -523,7 +529,7 @@ namespace AFFZ_Customer.Controllers
         public string? MERCHANTLOCATION { get; set; }
         public bool IsRequestedAlready { get; set; }
         public bool IsAddedToCart { get; set; } // New property added
-
+        public int SERVICERATING { get; set; }
     }
 
     public class DiscountRequestClass

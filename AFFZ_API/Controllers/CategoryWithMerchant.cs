@@ -49,6 +49,17 @@ namespace AFFZ_API.Controllers
         {
             return _context.RequestForDisCountToMerchants.Where(x => x.MID == Mid && x.SID == sid && x.IsResponseSent == 0).Any();
         }
+        private bool IsRequestedServiceCheckAfterMerchantResponse(int Mid, int sid, int uid)
+        {
+            return _context.RequestForDisCountToUsers
+    .Where(x => x.MID == Mid
+                && x.SID == sid
+                && x.IsPaymentDone > -1
+                && x.UID == uid
+                && x.ResponseDateTime.Value.Year == DateTime.Now.Year
+                && x.ResponseDateTime.Value.Month == DateTime.Now.Month)
+    .Any();
+        }
         [HttpGet("search")]
         public async Task<IActionResult> Search([FromQuery] SearchRequest request)
         {
@@ -205,38 +216,123 @@ namespace AFFZ_API.Controllers
             return Ok(categories);
         }
         [HttpGet("GetServiceListByMerchant")]
-        public async Task<IActionResult> GetServiceListByMerchant(string CatName)
+        public async Task<IActionResult> GetServiceListByMerchant(string CatName, int uid)
         {
-            var query = from merchant in _context.Merchants
-                        join service in _context.Services
-                        on merchant.MerchantId equals service.MerchantID
-                        join serviceList in _context.ServicesLists
-                        on service.SID equals serviceList.ServiceListID // Match service.ServiceName with serviceList.ServiceName
-                        select new ServiceMerchantDTO
+            try
+            {
+                var query = from merchant in _context.Merchants
+                            join service in _context.Services
+                            on merchant.MerchantId equals service.MerchantID
+                            join serviceList in _context.ServicesLists
+                            on service.SID equals serviceList.ServiceListID
+                            select new ServiceMerchantDTO
+                            {
+                                MID = merchant.MerchantId,
+                                SID = service.ServiceId,
+                                MERCHANTNAME = merchant.CompanyName,
+                                SERVICENAME = serviceList.ServiceName,
+                                PRICE = service.ServicePrice,
+                                MERCHANTLOCATION = merchant.MerchantLocation,
+                                ServiceImage = serviceList.ServiceImage,
+                                IsRequestedAlready = false,
+                                SERVICERATING = 0
+                            };
+
+                if (!string.IsNullOrEmpty(CatName))
+                {
+                    query = query.Where(x => x.SERVICENAME == CatName);
+                }
+
+                var result = await query.ToListAsync();
+                //var finalResult = result.Select(item => new ServiceMerchantDTO
+                //{
+                //    MID = item.MID,
+                //    SID = item.SID,
+                //    MERCHANTNAME = item.MERCHANTNAME,
+                //    SERVICENAME = item.SERVICENAME,
+                //    PRICE = item.PRICE,
+                //    MERCHANTLOCATION = item.MERCHANTLOCATION,
+                //    ServiceImage = item.ServiceImage,
+                //    IsRequestedAlready = item.IsRequestedAlready,
+                //    SERVICERATING = (int)Math.Round(item.AverageRating, 0)
+                //}).ToList();
+                foreach (var item in result)
+                {
+                    // Step 1: Check if the service exists in RequestForDisCountToMerchant
+                    var discountToMerchantExists = await _context.RequestForDisCountToMerchants
+                        .Where(x => x.SID == item.SID && x.MID == item.MID && x.UID == uid).FirstOrDefaultAsync();
+                    var servRating = await _context.Review
+                        .Where(x => x.ServiceId == item.SID && x.merchantId == item.MID && x.CustomerId == uid).Select(x => x.Rating).FirstOrDefaultAsync();
+                    item.SERVICERATING = servRating;// (servRating == null ? 0 : servRating);
+                    if (discountToMerchantExists == null)
+                    {
+                        item.IsRequestedAlready = false; // Since record exists in RequestForDisCountToUser
+                        continue; // Skip further checks
+                    }
+                    else if (discountToMerchantExists.IsResponseSent == 0)
+                    {
+                        item.IsRequestedAlready = true;
+                        continue; // Skip further checks
+                    }
+                    else
+                    {
+                        // Step 2: Check if the service exists in RequestForDisCountToUser within the current month
+                        var discountToUser = await _context.RequestForDisCountToUsers
+                            .Where(x => x.SID == item.SID && x.MID == item.MID && x.UID == uid
+                                && x.ResponseDateTime.HasValue
+                                && x.ResponseDateTime.Value.Month == DateTime.Now.Month
+                                && x.ResponseDateTime.Value.Year == DateTime.Now.Year
+                                && x.IsPaymentDone > -1)
+                            .FirstOrDefaultAsync();
+
+                        if (discountToUser == null)
                         {
-                            MID = merchant.MerchantId,
-                            SID = service.ServiceId,
-                            MERCHANTNAME = merchant.CompanyName,
-                            SERVICENAME = serviceList.ServiceName, // Fetch ServiceName from ServicesList
-                            PRICE = service.ServicePrice,
-                            MERCHANTLOCATION = merchant.MerchantLocation,
-                            ServiceImage = serviceList.ServiceImage, // Include ServiceImage
-                            IsRequestedAlready = false
-                        };
+                            item.IsRequestedAlready = false;
+                            continue; // Skip further checks
+                        }
 
-            if (!string.IsNullOrEmpty(CatName))
-            {
-                query = query.Where(x => x.SERVICENAME == CatName);
-            }
+                        // Step 3: Check if RFDFU exists in CurrentServiceStatus
+                        var currentServiceStatus = await _context.CurrentServiceStatus
+                            .Where(x => x.RFDFU == discountToUser.RFDFU && x.MId == item.MID && x.UId == uid)
+                            .FirstOrDefaultAsync();
 
-            var result = await query.ToListAsync();
-            // Modify the IsRequestedAlready property for each item
-            foreach (var item in result)
-            {
-                item.IsRequestedAlready = IsRequestedService(item.MID, item.SID);
+                        if (currentServiceStatus == null)
+                        {
+                            item.IsRequestedAlready = true; // Since record exists in RequestForDisCountToUser
+                            continue; // Skip further checks
+                        }
+
+                        // Step 4: Evaluate the value of RequestStatuses.StatusName
+                        var statusName = await _context.RequestStatuses
+                            .Where(x => x.StatusID == Convert.ToInt32(currentServiceStatus.CurrentStatus))
+                            .Select(x => x.StatusName)
+                            .FirstOrDefaultAsync();
+
+                        if (statusName == "InProgress" || statusName == "Pending")
+                        {
+                            item.IsRequestedAlready = true;
+                        }
+                        else if (statusName == "Failed" || statusName == "Completed")
+                        {
+                            item.IsRequestedAlready = false;
+                        }
+                        else
+                        {
+                            item.IsRequestedAlready = true;
+                        }
+                    }
+
+                }
+
+                return Ok(result);
             }
-            return Ok(result);
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
+
         [HttpPost("sendRequestForDiscount")]
         public async Task<IActionResult> sendRequestForDiscount(DiscountRequestClass data)
         {
@@ -555,6 +651,7 @@ namespace AFFZ_API.Controllers
         public string SERVICENAME { get; set; }
         public string? ServiceImage { get; set; }
         public int? PRICE { get; set; }
+        public int SERVICERATING { get; set; }
         public string MERCHANTLOCATION { get; set; }
         public bool IsRequestedAlready { get; set; }
     }

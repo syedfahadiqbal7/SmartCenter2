@@ -38,8 +38,9 @@ namespace AFFZ_Customer.Controllers
                     List<ReViewDto> MyReviews = JsonConvert.DeserializeObject<List<ReViewDto>>(responseString);
                     foreach (var item in MyReviews)
                     {
-                        item.Service.serviceName = item.Service.SID.ToString();
+                        item.Service.serviceName = await GetServiceName(item.Service.SID);
                         item.ReviewText = item.ReviewText.PadRight(64, '.');
+                        item.ServiceImageUrl = await GetServiceImage(item.Service.SID);
                     }
                     ViewBag.MyReviews = MyReviews;
                 }
@@ -71,6 +72,58 @@ namespace AFFZ_Customer.Controllers
 
 
             return View("Reviews");
+        }
+        private async Task<string> GetServiceName(int ServiceId)
+        {
+            string ServiceName = string.Empty;
+            try
+            {
+                var jsonResponse = await _httpClient.GetAsync($"ServicesList/GetServiceNameById?id={ServiceId}");
+                jsonResponse.EnsureSuccessStatusCode();
+                if (jsonResponse != null)
+                {
+                    ServiceName = await jsonResponse.Content.ReadAsStringAsync();
+                }
+                else
+                {
+                    _logger.LogWarning("Empty response received from API.");
+                }
+            }
+            catch (JsonSerializationException ex)
+            {
+                _logger.LogError(ex, "JSON deserialization error ");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while fetching data.");
+            }
+            return ServiceName;
+        }
+        private async Task<string> GetServiceImage(int sID)
+        {
+            string ServiceImage = string.Empty;
+            try
+            {
+                var jsonResponse = await _httpClient.GetAsync($"ServicesList/GetServiceImageId?id={sID}");
+                jsonResponse.EnsureSuccessStatusCode();
+                if (jsonResponse != null)
+                {
+                    ServiceImage = await jsonResponse.Content.ReadAsStringAsync();
+                }
+                else
+                {
+                    _logger.LogWarning("Empty response received from API.");
+                }
+            }
+            catch (JsonSerializationException ex)
+            {
+                _logger.LogError(ex, "JSON deserialization error ");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while fetching data.");
+            }
+            return ServiceImage;
         }
     }
 }
