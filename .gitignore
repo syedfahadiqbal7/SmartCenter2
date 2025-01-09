@@ -61,3 +61,5 @@
 /AFFZ_Admin/Controllers/CategoryClientController.cs
 /AFFZ_API/Controllers/CategoryWithMerchant.cs
 /WebFront/obj/SCAPI.WebFront.csproj.nuget.g.props
+/AFFZ_API/obj/Debug/net8.0/AFFZ_API.assets.cache
+/AFFZ_Provider/obj/Debug/net8.0/AFFZ_Provider.assets.cache
