@@ -86,9 +86,19 @@
                                         <td>@user.CustomerName</td>
                                         <td>@user.ServiceName</td>
                                         <td>
-                                            <span class="badge @((user.ServiceStatus.StatusName =="Failed") ? "bg-danger" : "bg-warning")">
-                                                @user.ServiceStatus.StatusDescription
-                                            </span>
+                                            @if (user.ServiceStatus.StatusName == "Completed")
+                                            {
+                                                <span class="badge bg-success")">
+                                                    @user.ServiceStatus.StatusDescription
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge @((user.ServiceStatus.StatusName =="Failed") ? "bg-danger" : "bg-warning")">
+                                                    @user.ServiceStatus.StatusDescription
+                                                </span>
+                                            }
+                                            
                                         </td>
                                         <!--td>AED @user.FINALPRICE</td-->
                                         <td>

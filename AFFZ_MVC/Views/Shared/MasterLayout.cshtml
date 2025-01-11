@@ -174,24 +174,82 @@
         });
 
         // Handle incoming notifications
-        connection.on("ReceiveNotification", function (notifications) {
+        // connection.on("ReceiveNotification", function (notifications) {
 
+        //     // Filter notifications for the logged-in customer
+        //     const customerNotifications = notifications.filter(notification =>
+        //         notification.userId === loggedInCustomerId
+        //     );
+
+        //     // Process merchant-specific notifications as before
+        //     const unreadNotifications = customerNotifications.filter(notification => !notification.isRead);
+            
+
+        //     const notificationList = document.querySelector('.notification-list');
+        //     const sortedNotifications = unreadNotifications.sort((a, b) => b.id - a.id); // Ensure descending order
+        //     notificationList.innerHTML = '';
+        //     console.log("sortedNotifications:", sortedNotifications);
+        //     sortedNotifications.forEach(notification => {
+        //         const newNotification = document.createElement('li');
+        //         newNotification.classList.add('notification-message', 'blinking');
+
+        //         newNotification.innerHTML = `
+        //             <a href="javascript:void(0)" onclick="markAsReadAndRedirect(${notification.id}, '${notification.redirectToActionUrl}', this)">
+        //                 <div class="media d-flex">
+        //                     <span class="avatar avatar-sm flex-shrink-0">
+        //                         <img class="avatar-img rounded-circle" alt="user" src="/assets/img/provider/provider-01.jpg">
+        //                     </span>
+        //                     <div class="media-body flex-grow-1">
+        //                         <p class="noti-details">
+        //                             <span class="noti-title">${notification.message}</span>
+        //                         </p>
+        //                         <p class="noti-time">
+        //                             <span class="notification-time">${new Date(notification.createdDate).toLocaleString()}</span>
+        //                         </p>
+        //                     </div>
+        //                 </div>
+        //             </a>`;
+
+        //         notificationList.prepend(newNotification);
+
+        //         // Remove blinking effect when clicked
+        //         newNotification.addEventListener('click', function () {
+        //             newNotification.classList.remove('blinking');
+        //         });
+        //     });
+        //     console.log("sortedNotifications.length:", sortedNotifications.length);
+        //     // Update the notification count
+        //     const notificationCountElement = document.querySelector(".notification-count");
+        //     const notificationCountElementSpan = document.querySelector(".span.notification-count.noti-message");
+        //     notificationCountElement.textContent = sortedNotifications.length;
+        //     notificationCountElementSpan.textContent = sortedNotifications.length;
+
+        // });
+        connection.on("ReceiveNotification", function (notifications) {
             // Filter notifications for the logged-in customer
             const customerNotifications = notifications.filter(notification =>
                 notification.userId === loggedInCustomerId
             );
 
-            // Process merchant-specific notifications as before
-            const unreadNotifications = customerNotifications.filter(notification => !notification.isRead);
-            
+            // Sort all notifications in descending order by ID
+            const sortedNotifications = customerNotifications.sort((a, b) => b.id - a.id);
 
+            // Clear the notification list before adding updated notifications
             const notificationList = document.querySelector('.notification-list');
-            const sortedNotifications = unreadNotifications.sort((a, b) => b.id - a.id); // Ensure descending order
             notificationList.innerHTML = '';
+
             console.log("sortedNotifications:", sortedNotifications);
+
             sortedNotifications.forEach(notification => {
                 const newNotification = document.createElement('li');
-                newNotification.classList.add('notification-message', 'blinking');
+                newNotification.classList.add('notification-message');
+
+                // Set color based on read status
+                if (notification.isRead) {
+                    newNotification.style.color = 'black'; // Read notifications in black
+                } else {
+                    newNotification.style.color = 'blue'; // Unread notifications in blue
+                }
 
                 newNotification.innerHTML = `
                     <a href="javascript:void(0)" onclick="markAsReadAndRedirect(${notification.id}, '${notification.redirectToActionUrl}', this)">
@@ -210,22 +268,24 @@
                         </div>
                     </a>`;
 
+                // Prepend the notification to show the most recent at the top
                 notificationList.prepend(newNotification);
 
-                // Remove blinking effect when clicked
+                // Remove the blue color (unread) when clicked, marking it as read
                 newNotification.addEventListener('click', function () {
-                    newNotification.classList.remove('blinking');
+                    newNotification.style.color = 'black'; // Change to black on click
                 });
             });
+
             console.log("sortedNotifications.length:", sortedNotifications.length);
+
             // Update the notification count
+            const unreadNotifications = sortedNotifications.filter(notification => !notification.isRead);
             const notificationCountElement = document.querySelector(".notification-count");
             const notificationCountElementSpan = document.querySelector(".span.notification-count.noti-message");
-            notificationCountElement.textContent = sortedNotifications.length;
-            notificationCountElementSpan.textContent = sortedNotifications.length;
-
+            notificationCountElement.textContent = unreadNotifications.length;
+            notificationCountElementSpan.textContent = unreadNotifications.length;
         });
-
         // Restart connection on disconnection
         connection.onclose(async () => {
             console.warn("SignalR connection closed. Attempting to reconnect...");

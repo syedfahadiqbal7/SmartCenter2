@@ -600,7 +600,7 @@ namespace AFFZ_Provider.Controllers
         }
         public async Task<List<SelectListItem>> StatusList(int statusId)
         {
-            var jsonResponse = await _httpClient.GetAsync("RequestStatus/GetAllStatuses?UserType=Merchant");
+            var jsonResponse = await _httpClient.GetAsync("RequestStatus/GetAllStatusesToUpdateMerchant?UserType=Merchant");
             var responseString = await jsonResponse.Content.ReadAsStringAsync();
 
             // Initialize an empty list for the documents

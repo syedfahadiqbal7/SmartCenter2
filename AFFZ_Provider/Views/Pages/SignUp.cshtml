@@ -109,7 +109,7 @@
                 <!-- Phone Number -->
                 <div class="mb-3">
                     <label class="form-label">Phone Number</label>
-                    <input asp-for="PhoneNumber" class="form-control" placeholder="(256) 789-6253" id="PhoneNumber" required>
+                    <input asp-for="PhoneNumber" class="numeric-input form-control" placeholder="123456789" id="PhoneNumber" required>
                     <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                 </div>
 
@@ -168,3 +168,11 @@
 <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 <script src="~/js/signup.js"></script>
+<script>
+    const inputBox = document.querySelector('.numeric-input');
+
+    inputBox.addEventListener('input', (event) => {
+        // Remove any non-numeric characters
+        event.target.value = event.target.value.replace(/[^0-9]/g, '');
+    });
+</script>

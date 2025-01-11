@@ -26,6 +26,7 @@ namespace AFFZ_Admin.Controllers
 
                 List<Menu>? rolesList = JsonSerializer.Deserialize<List<Menu>>(responseString);
                 TempData["RoleId"] = roleId;
+                ViewBag.RoleName = await GetRoleName(roleId);
                 return View("RolePermissions", rolesList);
             }
             catch (Exception ex)
@@ -51,6 +52,24 @@ namespace AFFZ_Admin.Controllers
             catch (Exception ex)
             {
                 return View("Error");
+            }
+        }
+
+        private async Task<string> GetRoleName(int id)
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync("Roles");
+                response.EnsureSuccessStatusCode();
+
+                var responseString = await response.Content.ReadAsStringAsync();
+                List<Role> rolesList = JsonSerializer.Deserialize<List<Role>>(responseString);
+                string Rolename = rolesList.Where(x=>x.RoleId == id).Select(x=>x.RoleName).FirstOrDefault();
+                return Rolename;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
             }
         }
     }

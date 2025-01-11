@@ -30,6 +30,11 @@ namespace AFFZ_API.Controllers
         {
             return await _context.RequestStatuses.Where(x => x.Usertype == UserType).ToListAsync();
         }
+        [HttpGet("GetAllStatusesToUpdateMerchant")]
+        public async Task<ActionResult<IEnumerable<RequestStatuses>>> GetAllStatusesToUpdateMerchant(string UserType)
+        {
+            return await _context.RequestStatuses.Where(x => x.Usertype == UserType && x.StatusID>15).ToListAsync();
+        }
 
         // GET: api/RequestStatus/5
         [HttpGet("GetStatusById")]

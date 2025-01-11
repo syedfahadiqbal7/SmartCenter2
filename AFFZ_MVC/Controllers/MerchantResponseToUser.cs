@@ -485,7 +485,7 @@ namespace AFFZ_Customer.Controllers
                     var notification = new Notification
                     {
                         UserId = payerId.ToString(),
-                        Message = $"User[{payerId.ToString()}] payment has been recieved. Please continue to Apply for the service requested.",
+                        Message = $"User[{payerId.ToString()}] payment has been recieved. Please continue to Apply for the service requested. Paid Amount={Convert.ToInt32(amount.Split('.')[0])}",
                         MerchantId = merchantId.ToString(),
                         RedirectToActionUrl = "",
                         MessageFromId = Convert.ToInt32(payerId),
@@ -949,6 +949,7 @@ namespace AFFZ_Customer.Controllers
         [HttpPost]
         public async Task<IActionResult> UploadDocuments(int RFDFU, FileUploadViewModel model)
         {
+            string FileNameTypes = string.Empty;
             if (model == null || model.UserDocuments == null || model.UserDocuments.Count == 0)
             {
                 _logger.LogWarning("Invalid model passed to UploadDocuments");
@@ -1014,7 +1015,7 @@ namespace AFFZ_Customer.Controllers
                                 var fileName = $"{personName}_{serviceDocumentName}_{documentList[j].ServiceDocumenListtId}_{j}_{model.UserId}_{model.Merchant}_{documentList[j].ServiceDocumenListtId}_{RFDFU}{fileExtension}";
                                 var filePath = Path.Combine(folderPath, fileName);
 
-
+                                FileNameTypes += serviceDocumentName + ",";
 
 
                                 using (var stream = new FileStream(filePath, FileMode.Create))
@@ -1074,7 +1075,7 @@ namespace AFFZ_Customer.Controllers
                     var notification = new Notification
                     {
                         UserId = loginUserId.ToString(),
-                        Message = $"User[{loginUserId}] has uploaded some documents.",
+                        Message = $"User[{loginUserId}] has uploaded ({FileNameTypes.TrimEnd(',')}) documents.",
                         MerchantId = model.Merchant.ToString(),
                         RedirectToActionUrl = "/MerchantResponseToUser/GetUsersWithDocuments",
                         MessageFromId = loginUserId,
@@ -1307,7 +1308,7 @@ namespace AFFZ_Customer.Controllers
                 _logger.LogInformation($"Document Deletion response for DocumentId: {documentId}. Response : {responseString}");
                 //TempData["SaveResponse"] = responseMessage;
                 ViewBag.SaveResponse = responseString;
-                return RedirectToAction("UploadDocuments");
+                return RedirectToAction("CheckDocumentStatus");
             }
             catch (Exception ex)
             {

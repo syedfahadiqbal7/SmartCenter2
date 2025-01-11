@@ -2,37 +2,27 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/AFFZ_MVC/.vs/AFFZ_MVC/FileContentIndex/3c38d355-4a09-4409-84d9-b8fa206225af.vsidx
-/AFFZ_MVC/.vs/AFFZ_MVC/FileContentIndex/58a6bb45-3078-4d5d-af98-6a7100ca891b.vsidx
-/AFFZ_MVC/.vs/AFFZ_MVC/FileContentIndex/86ff9ee7-e3f1-4d5d-a3e9-9a837edcc874.vsidx
-/AFFZ_API/Logs/log-20241126.txt
-/AFFZ_API/Logs/log-20241127.txt
-/AFFZ_Provider/obj
-/AFFZ_Admin/obj/AFFZ_Admin.csproj.nuget.dgspec.json
-/AFFZ_Admin/obj/project.assets.json
-/AFFZ_Admin/obj/AFFZ_Admin.csproj.nuget.g.props
-/AFFZ_Admin/obj/project.nuget.cache
-/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.AssemblyInfo.cs
-/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.AssemblyInfoInputs.cache
-/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.assets.cache
-/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.csproj.AssemblyReference.cache
-/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.GeneratedMSBuildEditorConfig.editorconfig
-/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.RazorAssemblyInfo.cache
-/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.RazorAssemblyInfo.cs
-/AFFZ_Admin/obj/Debug/net8.0/staticwebassets.removed.txt
-*.cache
-/AFFZ_API/obj/AFFZ_API.csproj.nuget.dgspec.json
-/AFFZ_API/obj/AFFZ_API.csproj.nuget.g.props
-/AFFZ_API/obj/project.assets.json
-/AFFZ_API/obj/Debug/net8.0/AFFZ_API.assets.cache
-/AFFZ_API/obj/Debug/net8.0/AFFZ_API.GeneratedMSBuildEditorConfig.editorconfig
-/AFFZ_API/obj/Debug/net8.0/staticwebassets.removed.txt
-/AFFZ_API/obj/Debug/net8.0/AFFZ_API.AssemblyInfo.cs
-/AFFZ_MVC/.vs/AFFZ_MVC/config
-/AFFZ_MVC/.vs/AFFZ_MVC/DesignTimeBuild
-/AFFZ_MVC/.vs/AFFZ_MVC/FileContentIndex
-/AFFZ_MVC/.vs/AFFZ_MVC/v17
+/AFFZ_MVC/bin
 /AFFZ_MVC/obj
+/AFFZ_MVC/Logs
+/AFFZ_API/Logs
+/AFFZ_API/.vs
+/AFFZ_API/bin
+/AFFZ_Provider/obj
+/AFFZ_Provider/Logs
+/AFFZ_Provider/.vs
+/AFFZ_Provider/bin
+/AFFZ_Admin/obj
+/AFFZ_Admin/.vs
+/AFFZ_Admin/bin
+/AFFZ_Admin/Logs
+/WebFront/.vs
+/WebFront/bin
+/WebFront/obj
+/WebFront/Logs
+*.cache
+/AFFZ_API/obj
+/AFFZ_MVC/.vs
 /AspireHost/obj
 /SCAPI.ServiceDefaults/obj/Debug/net8.0/SCAPI.ServiceDefaults.AssemblyInfo.cs
 /SCAPI.ServiceDefaults/obj/Debug/net8.0/SCAPI.ServiceDefaults.AssemblyInfoInputs.cache
@@ -63,3 +53,49 @@
 /WebFront/obj/SCAPI.WebFront.csproj.nuget.g.props
 /AFFZ_API/obj/Debug/net8.0/AFFZ_API.assets.cache
 /AFFZ_Provider/obj/Debug/net8.0/AFFZ_Provider.assets.cache
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Aishwarya Rai_EmiratesId_1_0_0_1_1_2.png
+/AFFZ_MVC/appsettings.json
+/AFFZ_MVC/my-certificate.pfx
+/AFFZ_Provider/appsettings.json
+/AFFZ_Provider/my-certificate.pfx
+/AFFZ_Provider/wwwroot/Uploads/3.jpg
+/AFFZ_Provider/wwwroot/Uploads/Dark Modern Gradient 5 Step Sales Process Infographic.jpg
+/AFFZ_Provider/wwwroot/Uploads/download20250105113835.png
+/AspireHost/appsettings.json
+/AspireHost/my-certificate.pfx
+/AspireHost/Properties/launchSettings.json
+/WebFront/appsettings.json
+/WebFront/my-certificate.pfx
+/AFFZ_11012025.zip
+/sharedConfig.json
+/AFFZ_Admin/appsettings.json
+/AFFZ_Admin/my-certificate.pfx
+/AFFZ_API/appsettings.json
+/AFFZ_API/my-certificate.pfx
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Aishwarya Rai_Passport1stPage_2_1_0_1_2_2.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Aishwarya Rai_Passport2ndPage_3_2_0_1_3_2.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Aishwarya Rai_TenancyContract_10_3_0_1_10_2.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_DrivingLicense_5_3_0_1_5_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_EmiratesId_1_0_0_1_1_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_EmiratesId_1_4_0_1_1_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_Passport1stPage_2_1_0_1_2_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_Passport1stPage_2_5_0_1_2_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_Passport2ndPage_3_2_0_1_3_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_Passport2ndPage_3_6_0_1_3_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_VisaCopy_4_2_0_1_4_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_2/Sona_Birthcertificate_16_5_0_1_16_3.png
+/AFFZ_MVC/wwwroot/uploads/Documents_2/Sona_DrivingLicense_5_4_0_1_5_3.jpg
+/AFFZ_MVC/wwwroot/uploads/Documents_2/Sona_EmiratesId_1_0_0_1_1_3.jpg
+/AFFZ_MVC/wwwroot/uploads/Documents_2/Sona_Passport1stPage_2_1_0_1_2_3.png
+/AFFZ_MVC/wwwroot/uploads/Documents_2/Sona_Passport2ndPage_3_2_0_1_3_3.jpg
+/AFFZ_MVC/wwwroot/uploads/Documents_2/Sona_VisaCopy_4_3_0_1_4_3.jpg
+/AFFZ_Provider/wwwroot/Uploads/User_1/DrivingLicense_20250109230124.jpg
+/AFFZ_Provider/wwwroot/Uploads/User_1/EmiratesId_20250109233030.jpg
+/AFFZ_Provider/wwwroot/Uploads/User_1/Passport_20250109230022.jpg
+/AFFZ_Provider/wwwroot/Uploads/User_1/ProfilePicture_20250109225957.jpg
+/AFFZ_Provider/wwwroot/Uploads/User_1/TradingLicense_20250109230104.jpg
+/SCAPI.ServiceDefaults/obj/Debug/net8.0/SCAPI.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+/SCAPI.ServiceDefaults/obj/Debug/net8.0/SCAPI.ServiceDefaults.GlobalUsings.g.cs
+/SCAPI.ServiceDefaults/obj/project.assets.json
+/SCAPI.ServiceDefaults/obj/SCAPI.ServiceDefaults.csproj.nuget.dgspec.json
+/SCAPI.ServiceDefaults/obj/SCAPI.ServiceDefaults.csproj.nuget.g.props

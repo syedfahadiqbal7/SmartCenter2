@@ -208,7 +208,7 @@
         });
 
 
-        connection.on("ReceiveNotification", function (notifications) {
+        @* connection.on("ReceiveNotification", function (notifications) {
             console.log("Received notifications:", notifications);
 
             // Filter notifications for the logged-in merchant
@@ -254,7 +254,72 @@
 
             const notificationCountElement = document.querySelector(".notification-count");
             notificationCountElement.textContent = unreadNotifications.length;
-        });
+        }); *@
+            connection.on("ReceiveNotification", function (notifications) {
+                console.log("Received notifications:", notifications);
+
+                // Filter notifications for the logged-in merchant
+                const merchantNotifications = notifications.filter(notification =>
+                    notification.merchantId === loggedInMerchantId
+                );
+
+                // Sort all notifications in descending order by ID
+                const sortedNotifications = merchantNotifications.sort((a, b) => b.id - a.id);
+                console.log("Sorted Notifications:", sortedNotifications);
+
+                // Clear the existing notification list
+                const notificationList = document.querySelector('.notification-list');
+                notificationList.innerHTML = '';
+
+                // Loop through the sorted notifications and display them
+                sortedNotifications.forEach(notification => {
+                    const newNotification = document.createElement('li');
+                    newNotification.classList.add('notification-message');
+
+                    // Set the color based on read status
+                    if (notification.isRead) {
+                        newNotification.style.color = 'black'; // Read notifications in black
+                    } else {
+                        newNotification.style.color = 'blue'; // Unread notifications in blue
+                    }
+
+                    // Build the notification HTML
+                    newNotification.innerHTML = `
+                        <a href="javascript:void(0)" onclick="markAsReadAndRedirect(${notification.id}, '${notification.redirectToActionUrl}', this)">
+                            <div class="media d-flex">
+                                <span class="avatar avatar-sm flex-shrink-0">
+                                    <img class="avatar-img rounded-circle" alt="user" src="/assets/img/provider/provider-01.jpg">
+                                </span>
+                                <div class="media-body flex-grow-1">
+                                    <p class="noti-details">
+                                        <span class="noti-title">${notification.message}</span>
+                                    </p>
+                                    <p class="noti-time">
+                                        <span class="notification-time">${new Date(notification.createdDate).toLocaleString()}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>`;
+
+                    // Prepend the notification to the list
+                    notificationList.prepend(newNotification);
+
+                    // Mark notification as read and update the color to black when clicked
+                    newNotification.addEventListener('click', function () {
+                        notification.isRead = true; // Update the notification status
+                        newNotification.style.color = 'black'; // Change color to black
+                        newNotification.classList.remove('blinking');
+                    });
+                });
+
+                // Update the notification count (only for unread notifications)
+                const unreadNotifications = sortedNotifications.filter(notification => !notification.isRead);
+                console.log("Unread Notifications:", unreadNotifications);
+
+                const notificationCountElement = document.querySelector(".notification-count");
+                notificationCountElement.textContent = unreadNotifications.length;
+            });
+
         // Restart connection on disconnection
         connection.onclose(async () => {
             console.warn("SignalR connection closed. Attempting to reconnect...");
