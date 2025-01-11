@@ -100,7 +100,7 @@
                     </div>
                     <div class="noti-content">
                         <ul class="notification-list">
-                            @foreach (var notification in notifications)
+                            @foreach (var notification in notifications.OrderByDescending(n => n.Id))
                             {
                                 string style = notification.IsRead ? "font-weight:100" : "";
                                 <li class="notification-message">

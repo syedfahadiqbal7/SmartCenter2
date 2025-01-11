@@ -186,7 +186,7 @@
             
 
             const notificationList = document.querySelector('.notification-list');
-            const sortedNotifications = unreadNotifications.sort((a, b) => b.id - a.id); // Ensure descending order
+            const sortedNotifications = unreadNotifications;//.sort((a, b) => b.id - a.id); // Ensure descending order
             notificationList.innerHTML = '';
             console.log("sortedNotifications:", sortedNotifications);
             sortedNotifications.forEach(notification => {

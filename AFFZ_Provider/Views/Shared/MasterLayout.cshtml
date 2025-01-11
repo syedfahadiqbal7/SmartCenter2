@@ -223,35 +223,34 @@
             const notificationList = document.querySelector('.notification-list');
             const sortedNotifications = merchantNotifications.sort((a, b) => b.id - a.id);
             notificationList.innerHTML = '';
+            console.log("sorted Notifications:", sortedNotifications);
+            sortedNotifications.forEach(_noti => {
+            console.log("_noti.id"+_noti.id);
+            const newNotification = document.createElement('li');
+            newNotification.classList.add('notification-message', 'blinking');
 
-            sortedNotifications.forEach(notification => {
-                const newNotification = document.createElement('li');
-                newNotification.classList.add('notification-message', 'blinking');
-
-                newNotification.innerHTML = `
-                    <a href="javascript:void(0)" onclick="markAsReadAndRedirect(${notification.id}, '${notification.redirectToActionUrl}', this)">
-                        <div class="media d-flex">
-                            <span class="avatar avatar-sm flex-shrink-0">
-                                <img class="avatar-img rounded-circle" alt="user" src="/assets/img/provider/provider-01.jpg">
-                            </span>
-                            <div class="media-body flex-grow-1">
-                                <p class="noti-details">
-                                    <span class="noti-title">${notification.message}</span>
-                                </p>
-                                <p class="noti-time">
-                                    <span class="notification-time">${new Date(notification.createdDate).toLocaleString()}</span>
-                                </p>
-                            </div>
+            newNotification.innerHTML = `
+                <a href="javascript:void(0)" onclick="markAsReadAndRedirect(${_noti.id}, '${_noti.redirectToActionUrl}', this)">
+                    <div class="media d-flex">
+                        <span class="avatar avatar-sm flex-shrink-0">
+                            <img class="avatar-img rounded-circle" alt="user" src="/assets/img/provider/provider-01.jpg">
+                        </span>
+                        <div class="media-body flex-grow-1">
+                            <p class="noti-details">
+                                <span class="noti-title">${_noti.message}</span>
+                            </p>
+                            <p class="noti-time">
+                                <span class="notification-time">${new Date(_noti.createdDate).toLocaleString()}</span>
+                            </p>
                         </div>
-                    </a>`;
-
-                notificationList.prepend(newNotification);
-
-                newNotification.addEventListener('click', function () {
-                    newNotification.classList.remove('blinking');
-                });
+                    </div>
+                </a>`;
+            notificationList.prepend(newNotification);
+            if (!_noti.isRead) {
+                newNotification.classList.add('blinking');
+            }
             });
-
+            console.log("List of Notifications:", notificationList);
             const notificationCountElement = document.querySelector(".notification-count");
             notificationCountElement.textContent = unreadNotifications.length;
         });
