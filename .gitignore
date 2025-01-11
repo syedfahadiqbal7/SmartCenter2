@@ -24,5 +24,91 @@
 /AFFZ_API/obj
 /AFFZ_MVC/.vs
 /AspireHost/obj
-/AspireHost/bin
-/SCAPI.ServiceDefaults/obj
+/SCAPI.ServiceDefaults/obj/Debug/net8.0/SCAPI.ServiceDefaults.AssemblyInfo.cs
+/SCAPI.ServiceDefaults/obj/Debug/net8.0/SCAPI.ServiceDefaults.AssemblyInfoInputs.cache
+/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.AssemblyInfo.cs
+/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.AssemblyInfoInputs.cache
+/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.GeneratedMSBuildEditorConfig.editorconfig
+/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.RazorAssemblyInfo.cache
+/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.RazorAssemblyInfo.cs
+/AFFZ_API/Controllers/CategoryWithMerchant.cs
+/AFFZ_API/Controllers/NotificationsController.cs
+/AFFZ_API/Controllers/ServiceCategoryController.cs
+/AFFZ_API/Controllers/TrackServiceStatusHistoryController.cs
+/AFFZ_API/obj/Debug/net8.0/AFFZ_API.AssemblyInfo.cs
+/AFFZ_API/obj/Debug/net8.0/AFFZ_API.AssemblyInfoInputs.cache
+/AFFZ_API/obj/Debug/net8.0/AFFZ_API.GeneratedMSBuildEditorConfig.editorconfig
+/AFFZ_API/Utils/CEmailTemplateLoader.cs
+/AFFZ_MVC/Views/Pages/SelectedMerchantList.cshtml
+/AFFZ_MVC/wwwroot/ServiceImages/1MonthVisaBanner.jpeg
+/AFFZ_MVC/wwwroot/assets/img/services/service-04.png
+/WebFront/obj/Debug/net8.0/SCAPI.WebFront.AssemblyInfoInputs.cache
+/WebFront/obj/Debug/net8.0/SCAPI.WebFront.GeneratedMSBuildEditorConfig.editorconfig
+/WebFront/obj/Debug/net8.0/SCAPI.WebFront.RazorAssemblyInfo.cache
+/WebFront/Views/Categories/Index.cshtml
+/WebFront/wwwroot/ServiceImages/1MonthVisaBanner.jpeg
+/WebFront/wwwroot/ServiceImages/Visa_Banner.png
+/AFFZ_Admin/Controllers/CategoryClientController.cs
+/AFFZ_API/Controllers/CategoryWithMerchant.cs
+/WebFront/obj/SCAPI.WebFront.csproj.nuget.g.props
+/AFFZ_API/obj/Debug/net8.0/AFFZ_API.assets.cache
+/AFFZ_Provider/obj/Debug/net8.0/AFFZ_Provider.assets.cache
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Aishwarya Rai_EmiratesId_1_0_0_1_1_2.png
+/AFFZ_MVC/appsettings.json
+/AFFZ_MVC/my-certificate.pfx
+/AFFZ_Provider/appsettings.json
+/AFFZ_Provider/my-certificate.pfx
+/AFFZ_Provider/wwwroot/Uploads/3.jpg
+/AFFZ_Provider/wwwroot/Uploads/Dark Modern Gradient 5 Step Sales Process Infographic.jpg
+/AFFZ_Provider/wwwroot/Uploads/download20250105113835.png
+/AspireHost/appsettings.json
+/AspireHost/my-certificate.pfx
+/AspireHost/Properties/launchSettings.json
+/WebFront/appsettings.json
+/WebFront/my-certificate.pfx
+/AFFZ_11012025.zip
+/sharedConfig.json
+/AFFZ_Admin/appsettings.json
+/AFFZ_Admin/my-certificate.pfx
+/AFFZ_API/appsettings.json
+/AFFZ_API/my-certificate.pfx
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Aishwarya Rai_Passport1stPage_2_1_0_1_2_2.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Aishwarya Rai_Passport2ndPage_3_2_0_1_3_2.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Aishwarya Rai_TenancyContract_10_3_0_1_10_2.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_DrivingLicense_5_3_0_1_5_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_EmiratesId_1_0_0_1_1_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_EmiratesId_1_4_0_1_1_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_Passport1stPage_2_1_0_1_2_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_Passport1stPage_2_5_0_1_2_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_Passport2ndPage_3_2_0_1_3_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_Passport2ndPage_3_6_0_1_3_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_1/Syeda Hafsa Iqbal_VisaCopy_4_2_0_1_4_1.png
+/AFFZ_MVC/wwwroot/uploads/Documents_2/Sona_Birthcertificate_16_5_0_1_16_3.png
+/AFFZ_MVC/wwwroot/uploads/Documents_2/Sona_DrivingLicense_5_4_0_1_5_3.jpg
+/AFFZ_MVC/wwwroot/uploads/Documents_2/Sona_EmiratesId_1_0_0_1_1_3.jpg
+/AFFZ_MVC/wwwroot/uploads/Documents_2/Sona_Passport1stPage_2_1_0_1_2_3.png
+/AFFZ_MVC/wwwroot/uploads/Documents_2/Sona_Passport2ndPage_3_2_0_1_3_3.jpg
+/AFFZ_MVC/wwwroot/uploads/Documents_2/Sona_VisaCopy_4_3_0_1_4_3.jpg
+/AFFZ_Provider/wwwroot/Uploads/User_1/DrivingLicense_20250109230124.jpg
+/AFFZ_Provider/wwwroot/Uploads/User_1/EmiratesId_20250109233030.jpg
+/AFFZ_Provider/wwwroot/Uploads/User_1/Passport_20250109230022.jpg
+/AFFZ_Provider/wwwroot/Uploads/User_1/ProfilePicture_20250109225957.jpg
+/AFFZ_Provider/wwwroot/Uploads/User_1/TradingLicense_20250109230104.jpg
+/SCAPI.ServiceDefaults/obj/Debug/net8.0/SCAPI.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+/SCAPI.ServiceDefaults/obj/Debug/net8.0/SCAPI.ServiceDefaults.GlobalUsings.g.cs
+/SCAPI.ServiceDefaults/obj/project.assets.json
+/SCAPI.ServiceDefaults/obj/SCAPI.ServiceDefaults.csproj.nuget.dgspec.json
+/SCAPI.ServiceDefaults/obj/SCAPI.ServiceDefaults.csproj.nuget.g.props
+/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.assets.cache
+/AFFZ_Admin/obj/Debug/net8.0/AFFZ_Admin.csproj.AssemblyReference.cache
+/AFFZ_Admin/obj/project.nuget.cache
+/AFFZ_Provider/obj/AFFZ_Provider.csproj.nuget.dgspec.json
+/AFFZ_Provider/obj/AFFZ_Provider.csproj.nuget.g.props
+/AFFZ_Provider/obj/AFFZ_Provider.csproj.nuget.g.targets
+/AFFZ_Provider/obj/Debug/net8.0/AFFZ_Provider.csproj.AssemblyReference.cache
+/AFFZ_Provider/obj/project.assets.json
+/AFFZ_Provider/obj/project.nuget.cache
+/temporary/obj/Release/net8.0/temporary.AssemblyInfo.cs
+/temporary/obj/Release/net8.0/temporary.GeneratedMSBuildEditorConfig.editorconfig
+/WebFront/obj/Debug/net8.0/SCAPI.WebFront.assets.cache
+/WebFront/obj/Debug/net8.0/SCAPI.WebFront.csproj.AssemblyReference.cache
